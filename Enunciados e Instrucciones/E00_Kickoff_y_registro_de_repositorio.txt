@@ -1,0 +1,50 @@
+E00 — Kickoff y registro de repositorio
+
+Objetivo
+Comprender el problema completo, recibir el sitio asignado y dejar operativo el entorno de trabajo del equipo.
+
+Antes de la actividad
+Revisar el documento general del proyecto.
+
+Confirmar integrantes del equipo.
+
+Tener acceso a Git/GitHub.
+
+Llevar notebook con Python disponible.
+
+Durante la actividad
+Se presentará:
+
+la asignación de sitio climático por grupo;
+
+el caso de hormigón masivo;
+
+el paper de Ju y Lei;
+
+la especificación ICH;
+
+el flujo BIM → IFC → solver → confiabilidad;
+
+la geometría de referencia;
+
+los límites 70 °C y 20 °C;
+
+la forma de evaluación.
+
+Cada grupo debe crear o confirmar su repositorio y hacer un primer commit.
+
+Evidencia / entrega
+Al final de la sesión registrar:
+
+Grupo:
+Integrantes:
+URL repositorio:
+SHA inicial:
+No tiene puntaje, pero es requisito para las evaluaciones posteriores.
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado:
+
+Repositorio:
+Commit evaluado:
+Esta actividad no tiene puntaje; la tabla de rúbrica no aplica.
