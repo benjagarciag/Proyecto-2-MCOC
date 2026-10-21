@@ -9,7 +9,7 @@ Fuente: [enunciado oficial E01](../../Enunciados%20e%20Instrucciones/E01_Semana_
 - [x] README mínimo con instalación y organización del proyecto.
 - [x] Entorno inicial Python 3.12 con dependencias fijadas.
 - [x] Primeros tests automatizados (31 casos comprobados).
-- [x] Primer modelo IFC/Bonsai con cinco vertidas y propiedades leídas desde Python, incluido en esta preentrega.
+- [x] Primer modelo IFC/Bonsai con cinco vertidas y propiedades leídas desde Python, incluido en esta entrega.
 - [x] Implementación inicial del solver 1D.
 - [ ] Preparación oral de cada integrante.
 
@@ -42,8 +42,10 @@ Dirichlet, Neumann y Robin; discretización 1D y estabilidad explícita.
 
 ## Entrega en Canvas
 
-Esta preentrega incorpora los avances BIM y sus scripts en el commit
-`E01 - Pre entrega`. Para consultar su SHA completo, ejecutar `git rev-parse HEAD`
+Esta entrega incorpora el modelo BIM unificado y sus scripts en el commit
+`Entrega E01`. Se conserva un único `fundacion.ifc` con propiedades y un único
+`fundacion.blend` con materiales, terreno, iluminación y cámara.
+Para consultar el SHA completo, ejecutar `git rev-parse HEAD`
 desde ese commit. Declarar en Canvas el SHA de la versión que se evaluará.
 Las 31 pruebas volvieron a pasar el 21 de octubre.
 
@@ -53,7 +55,7 @@ explícitamente en E02; sigue pendiente y conviene practicarla. E01 evalúa
 comprensión oral y navegación por código real.
 
 - Repositorio: https://github.com/benjagarciag/Proyecto-2-MCOC
-- Commit evaluado: **pendiente de definir al cerrar la entrega**.
+- Commit de entrega: `Entrega E01`. Declarar su SHA completo en Canvas.
 - Nota opcional: hasta 100 palabras indicando lo incompleto.
 
 No se pide informe adicional. Este archivo sirve para organizar el trabajo del

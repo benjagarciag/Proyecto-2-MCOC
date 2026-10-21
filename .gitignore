@@ -1,6 +1,9 @@
 # Entorno local de Python
 .venv/
 
+# Apuntes personales de estudio (excluidos del repositorio)
+/Estudio_entregas/
+
 # Cachés y archivos temporales
 __pycache__/
 *.py[cod]

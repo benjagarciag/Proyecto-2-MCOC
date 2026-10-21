@@ -5,10 +5,9 @@ Esta carpeta contiene el modelo y el script del punto 23 de
 
 | Archivo | Uso |
 | --- | --- |
-| `fundacion.ifc` | Modelo original guardado desde Bonsai. |
-| `fundacion.blend` | Sesión auxiliar de Blender. El modelo BIM se abre desde el IFC. |
+| `fundacion.ifc` | Único modelo BIM de trabajo: geometría, identidad y propiedades de las cinco vertidas. |
+| `fundacion.blend` | Única sesión Blender: fundación, materiales de hormigón, terreno con pasto, iluminación y cámara. Vinculada a `fundacion.ifc`. |
 | `agregar_propiedades.py` | Agrega las propiedades del ejemplo de §24 usando IfcOpenShell. |
-| `fundacion_props.ifc` | Copia del modelo con las propiedades incorporadas. Abrir esta en Bonsai. |
 | `verificar_ifc.py` | Punto 25: lee el IFC e imprime nombres, clases, GUID, propiedades y dimensiones. |
 
 Desde PowerShell, en la raíz del proyecto:
@@ -18,8 +17,8 @@ Desde PowerShell, en la raíz del proyecto:
 ```
 
 El script abre el IFC, busca exactamente `Vertida_01` a `Vertida_05`, crea el
-Property Set `UANDES_HormigonMasivo` en cada una y guarda `fundacion_props.ifc`.
-Conserva el archivo original, la geometría, los nombres y los GUID. Si faltan
+Property Set `UANDES_HormigonMasivo` en cada una y actualiza el mismo `fundacion.ifc`.
+Conserva la geometría, los nombres, los GUID y los valores de propiedades ya existentes. Si faltan
 vertidas o sus nombres están duplicados, se detiene antes de escribir.
 
 Los valores proceden del ejemplo docente:
@@ -41,16 +40,18 @@ La referencia temporal del retiro de moldaje deberá aclararse al definir el pla
 Para ver las propiedades en Blender con Bonsai:
 
 1. Guardar primero cualquier cambio pendiente del modelo abierto.
-2. Elegir **File → Open IFC Project** y abrir `fundacion_props.ifc` de esta carpeta.
+2. Elegir **File → Open IFC Project** y abrir `fundacion.ifc` de esta carpeta.
 3. Seleccionar una vertida.
 4. Ir a **Object Information → Property Sets** y desplegar `UANDES_HormigonMasivo`.
 5. Para conservar las ediciones posteriores, usar **File → Save IFC Project**.
 
-El comando sin argumentos vuelve a generar la misma copia desde `fundacion.ifc`;
-por eso reemplaza las ediciones hechas únicamente en `fundacion_props.ifc`.
-Para completar propiedades de un IFC ya editado, pasar su ruta como entrada y
-otra ruta de salida: el script conserva sus valores existentes y completa los
-campos faltantes, sin duplicar el set.
+El comando sin argumentos completa los campos faltantes en `fundacion.ifc`, sin
+duplicar el set ni reemplazar sus valores existentes. Guarda primero cualquier
+edición pendiente en Bonsai y vuelve a abrir el IFC después de ejecutar el script,
+para que Bonsai cargue los cambios externos. Para trabajar sobre otra entrada,
+pasar su ruta como argumento. Una segunda ruta permite elegir otra salida si se
+necesita explícitamente. La escritura usa un temporal y reemplaza el destino
+solo cuando termina correctamente; el temporal se elimina al finalizar.
 
 La guía contiene un error tipográfico en el nombre del comando del punto 23;
 el script completo aparece en el punto 24. Aquí se utiliza el nombre español
@@ -64,7 +65,7 @@ Ejecutar desde la raíz, después de guardar el IFC:
 .\.venv\Scripts\python.exe desarrollo/fundacion/verificar_ifc.py
 ```
 
-El script lee `fundacion_props.ifc` sin modificarlo. Comprueba que existen
+El script lee `fundacion.ifc` sin modificarlo. Comprueba que existen
 exactamente las cinco vertidas con clase IfcFooting y las siete propiedades,
 triangula sus geometrías e imprime sus límites en coordenadas globales, en metros.
 Los límites forman una caja envolvente (bounding box), no son el volumen de la pieza.

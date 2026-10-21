@@ -1,11 +1,13 @@
 r"""Punto 23 de la guía: incorporar propiedades docentes a las cinco vertidas.
 
 Ejecutar desde la raíz: .\.venv\Scripts\python.exe desarrollo/fundacion/agregar_propiedades.py
-También acepta dos rutas: entrada.ifc salida.ifc.
+Actualiza fundacion.ifc; también acepta entrada.ifc [salida.ifc].
 """
 
 import argparse
+import os
 from pathlib import Path
+import tempfile
 
 import ifcopenshell
 import ifcopenshell.api.pset
@@ -17,9 +19,6 @@ CARPETA = Path(__file__).resolve().parent
 
 
 def agregar_propiedades(entrada: Path, salida: Path) -> None:
-    if entrada.resolve() == salida.resolve():
-        raise ValueError("La salida debe ser distinta de la entrada para conservar el original.")
-
     modelo = ifcopenshell.open(str(entrada))
     vertidas = []
     # Validar todos los nombres antes de modificar o escribir el modelo.
@@ -56,16 +55,24 @@ def agregar_propiedades(entrada: Path, salida: Path) -> None:
             ifcopenshell.api.pset.edit_pset(modelo, pset=pset, properties=propiedades)
         print(f"OK: {vertida.Name}")
 
-    modelo.write(str(salida))
+    # Escribir primero un temporal: el IFC actual solo se reemplaza al terminar.
+    with tempfile.NamedTemporaryFile(dir=salida.parent, prefix=".fundacion-", suffix=".tmp", delete=False) as archivo:
+        temporal = Path(archivo.name)
+    try:
+        modelo.write(str(temporal))
+        ifcopenshell.open(str(temporal))
+        os.replace(temporal, salida)
+    finally:
+        temporal.unlink(missing_ok=True)
     print(f"IFC con propiedades: {salida}")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("entrada", nargs="?", type=Path, default=CARPETA / "fundacion.ifc")
-    parser.add_argument("salida", nargs="?", type=Path, default=CARPETA / "fundacion_props.ifc")
+    parser.add_argument("salida", nargs="?", type=Path, help="Si se omite, actualizar la entrada")
     args = parser.parse_args()
-    agregar_propiedades(args.entrada, args.salida)
+    agregar_propiedades(args.entrada, args.salida or args.entrada)
 
 
 if __name__ == "__main__":

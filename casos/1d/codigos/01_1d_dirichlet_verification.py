@@ -17,21 +17,21 @@ FIG.mkdir(parents=True, exist_ok=True)
 os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".venv" / "cache" / "matplotlib"))
 import matplotlib.pyplot as plt
 
-L = 1.0                 # m
-alpha = 1.0e-4          # m^2/s
-Tizq = 0.0               # °C
-Tder = 10.0               # °C
-Tini = 20.
-A = 0*50.0                # °C
+L = 1.0                 # m (longitud de la barra)
+alpha = 1.0e-4          # m^2/s (Difusividad térmica)
+Tizq = 0.0              # °C (Condicion de Dirichlet izquierda)
+Tder = 10.0             # °C (Condicion de Dirichlet derecha)
+Tini = 20.              # °C (Condicion inicial)
+A = 0*50.0              # °C
 
-nx = 101
+nx = 101                #Discretización espacial (número de nodos)
 x = np.linspace(0.0, L, nx)
 dx = x[1] - x[0]
 
 # FTCS explícito. En 1D: r <= 1/2
 r_target = 0.45
 dt = r_target * dx**2 / alpha
-t_end = 3*1500.0
+t_end = 3* 1500.0
 nsteps = int(np.ceil(t_end / dt))
 dt = t_end / nsteps
 r = alpha * dt / dx**2

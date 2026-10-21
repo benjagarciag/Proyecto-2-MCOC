@@ -25,7 +25,7 @@ rho = 2400.0        # kg/m^3
 cp = 900.0          # J/(kg K)
 alpha = k/(rho*cp)
 
-h = 12.0                # W/(m^2 K)
+h = 120.0                # W/(m^2 K)
 Tini = 20.0             # °C: temperatura inicial de la losa
 Tinf_right = 20.0       # °C: aire del lado derecho
 Tinf_left_mean = 20.0   # °C: valor medio del aire del lado izquierdo

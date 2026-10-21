@@ -77,6 +77,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "archivo", nargs="?", type=Path,
-        default=Path(__file__).resolve().parent / "fundacion_props.ifc",
+        default=Path(__file__).resolve().parent / "fundacion.ifc",
     )
     verificar(parser.parse_args().archivo)
