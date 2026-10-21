@@ -1,0 +1,16 @@
+# Entorno local de Python
+.venv/
+
+# Cachés y archivos temporales
+__pycache__/
+*.py[cod]
+.pytest_cache/
+pytest-cache-files-*/
+.tmp/
+.matplotlib/
+.ipynb_checkpoints/
+.jupyter_runtime/
+.ipython/
+
+# Archivos temporales de Office
+~$*

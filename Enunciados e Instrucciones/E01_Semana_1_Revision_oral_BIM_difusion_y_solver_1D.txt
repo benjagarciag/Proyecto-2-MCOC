@@ -1,0 +1,60 @@
+E01 — Semana 1 / miércoles — Revisión oral: BIM, difusión y solver 1D
+
+Objetivo
+Demostrar comprensión inicial de BIM/IFC y de la física de difusión térmica, junto con avance real en un solver 1D.
+
+Antes de la actividad
+El repositorio debe contener:
+
+README mínimo;
+
+entorno reproducible;
+
+primeros tests;
+
+primer modelo IFC/Bonsai;
+
+implementación inicial 1D.
+
+Cada integrante debe haber leído las guías G00, G01, G02 y G05.
+
+Durante la actividad
+La revisión será grupo por grupo.
+
+Se podrá preguntar a cualquier integrante:
+
+¿qué es BIM?;
+
+¿qué es IFC?;
+
+¿qué rol cumple Blender?;
+
+¿qué agrega Bonsai?;
+
+¿por qué el solver no depende de Blender?;
+
+significado físico de k,\rho,c_p,\alpha;
+
+balance de energía;
+
+condición inicial;
+
+Dirichlet, Neumann y Robin;
+
+discretización 1D;
+
+estabilidad del esquema explícito.
+
+Se pedirá navegar por código real, no sólo diapositivas.
+
+Evidencia / entrega
+No hay informe adicional.
+
+Entregar en Canvas únicamente:
+
+Repositorio:
+Commit evaluado:
+Opcionalmente, una nota de máximo 100 palabras indicando qué parte consideran aún incompleta.
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado.

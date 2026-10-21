@@ -1,0 +1,414 @@
+Proyecto general — Planificación de vertidas de hormigón masivo mediante simulación
+1. Desafío
+El equipo deberá diseñar, justificar y defender un plan de construcción por vertidas para una fundación de hormigón masivo.
+
+El plan debe integrar:
+
+modelación CAD/BIM;
+
+IFC como formato abierto de intercambio;
+
+un solver térmico tridimensional desarrollado por el propio equipo;
+
+generación de calor por hidratación;
+
+condiciones de borde térmicas;
+
+datos meteorológicos reales y pronósticos;
+
+incertidumbre;
+
+confiabilidad;
+
+HPC;
+
+visualización científica 3D.
+
+La fecha hipotética de inicio de la construcción será:
+
+la fecha de entrega/defensa final del proyecto (TBD).
+
+Las clases regulares terminan el viernes 20 de noviembre de 2026. Desde el 21 de noviembre hasta la fecha final (TBD) no habrá nuevas exigencias semanales: ese período queda reservado para cerrar el software, corregir observaciones, ejecutar las corridas finales, actualizar los pronósticos meteorológicos y preparar la defensa.
+
+El horizonte de análisis será de:
+
+14 días desde el inicio de la primera vertida.
+
+El producto final no es “una simulación”. El producto es una decisión constructiva defendible.
+
+2. Pregunta de ingeniería
+Cada equipo deberá responder:
+
+¿Cómo recomendamos ejecutar las vertidas a partir de la fecha final de entrega/defensa para mantener el riesgo térmico dentro de los límites del proyecto, considerando la incertidumbre del hormigón, la ejecución y el clima?
+
+Las decisiones pueden incluir, entre otras:
+
+número y geometría de las vertidas;
+
+secuencia;
+
+hora de inicio;
+
+intervalo entre vertidas;
+
+temperatura de colocación;
+
+moldajes;
+
+aislación;
+
+momento de desmolde o retiro de aislación;
+
+enfriamiento o precooling si se justifica;
+
+acciones de contingencia ante cambios meteorológicos.
+
+3. Criterios térmicos del curso
+3.1 Temperatura máxima
+Se adopta como requisito del proyecto:
+
+Tmax menor igual a 70°C
+ 
+
+Para confiabilidad:
+
+
+P(Tmax mayor a 70°C)
+
+El límite de 70 °C es un criterio del proyecto docente. Coincide con el límite general de 70 °C indicado actualmente por ACI 301 para hormigón masivo, pero la especificación ICH chilena establece temperaturas máximas distintas según categoría y exposición. Por lo tanto, no debe afirmarse que “ICH exige siempre 70 °C”.
+
+3.2 Diferencial térmico
+Para este proyecto se adopta deliberadamente un límite conservador y fijo:
+
+Delta Tmax menor igual a 20°C
+
+Se evaluará:
+
+P(Delta Tmax mayor a 20°C)
+ 
+
+La especificación ICH 2019 no establece un único diferencial para todas las edades: su Tabla 4 permite 20, 25 o 30 °C según la resistencia real a compresión. En este curso se fija 20 °C para todo el análisis para evitar introducir un modelo mecánico/madurez adicional y mantener un criterio conservador.
+
+Como definición operacional del proyecto:
+
+Delta T(t) = Tmax,Ω(t) - Tmin,S25(t)
+ 
+
+donde:
+
+Tmax,Ω es la temperatura máxima dentro del hormigón;
+
+S25 corresponde a puntos/celdas representativos ubicados aproximadamente 25 mm bajo las superficies exteriores;
+
+el máximo se toma en el tiempo durante los 14 días.
+
+El equipo puede proponer una definición físicamente superior, pero debe justificarla y mantener trazabilidad con el criterio núcleo–superficie.
+
+3.3 Limitación importante
+Cumplir Delta T menor igual a 20°C se tratará como un criterio de control del riesgo de agrietamiento térmico, no como una demostración mecánica rigurosa de “cero grietas”.
+
+No se exige un análisis termo-viscoelástico completo.
+
+4. Caso base
+La geometría se basará en la fundación de turbina eólica estudiada por Ju y Lei (2019).
+
+Datos inequívocos reportados:
+
+fundación de aproximadamente 18 m × 18 m;
+
+espesor 3,30 m;
+
+parte superior cilíndrica de aproximadamente 7 m de diámetro;
+
+el caso de referencia fue hormigonado dentro de un período de 24 h;
+
+el trabajo dispone sensores en diferentes alturas y compara resultados medidos y simulados.
+
+El paper reporta, en el caso sin control térmico, un máximo cercano a 73 °C en el núcleo alrededor del cuarto día y un diferencial núcleo-superficie de aproximadamente 35 °C.
+
+Regla geométrica
+El artículo no define inequívocamente todas las cotas necesarias para reconstruir cada detalle tridimensional.
+
+Por ello:
+
+el profesor entregará o validará una geometría oficial del curso;
+
+las simplificaciones geométricas deben documentarse;
+
+los grupos no deben inventar silenciosamente dimensiones faltantes;
+
+todos deben conservar las dimensiones globales y rasgos principales definidos para el caso.
+
+5. Método numérico
+El solver será desarrollado por los estudiantes.
+
+El enfoque base será una grilla cartesiana regular con balance térmico por celda, que puede interpretarse como diferencias finitas basadas en balance o como un esquema finite-volume cartesiano:
+
+\rho_i c_{p,i} V_i \frac{dT_i}{dt} = \sum_j G_{ij}(T_j - T_i) + \dot{Q}_i V_i + Q_{\mathrm{borde},i}
+
+No se utilizará Kratos, ANSYS, OpenSees u otro solver como sustituto del núcleo numérico.
+
+La especificación ICH incluye el método de Schmidt, un método simplificado de diferencias finitas, y señala que puede extenderse a 1D, 2D y 3D e incorporar geometría, secuencia constructiva, aislación e interacción con otros materiales. Esto hace especialmente apropiado el enfoque del curso.
+
+6. Física mínima
+El modelo final debe considerar como mínimo:
+
+conducción térmica;
+
+propiedades \rho , c_{p}, k ;
+
+calor de hidratación como fuente volumétrica;
+
+temperatura de colocación;
+
+activación temporal de vertidas;
+
+interfaces térmicas entre vertidas;
+
+convección hacia el ambiente;
+
+interacción térmica con el suelo;
+
+efecto térmico de moldaje y/o aislación;
+
+retiro de moldaje/aislación;
+
+temperatura ambiente variable.
+
+La radiación solar y radiación térmica de onda larga pueden incluirse cuando el grupo demuestre que son relevantes y modele correctamente las unidades y condiciones de borde.
+
+7. BIM / IFC
+El BIM representa la información del proyecto y de la construcción, no el campo numérico de temperatura.
+
+Cada vertida debe ser identificable en el IFC y contener, directamente o mediante property sets, información equivalente a:
+
+VertidaID
+TipoHormigon
+InicioPlanificado
+TemperaturaColocacion_C
+Moldaje
+Aislacion
+RetiroMoldaje_h
+La arquitectura debe ser:
+
+Bonsai / Blender
+      ↓
+     IFC
+      ↓
+IfcOpenShell
+      ↓
+geometría + propiedades
+      ↓
+voxelización
+      ↓
+solver
+El solver no debe depender del estado interno de Blender.
+
+8. Clima real y evolución del forecast
+El proyecto debe trabajar con clima real.
+
+Desde que se implemente el módulo meteorológico se deben conservar snapshots de pronóstico con:
+
+fuente
+modelo meteorológico
+fecha/hora de descarga
+coordenadas del proyecto
+unidades
+horizonte disponible
+variables
+Nunca se debe reemplazar silenciosamente un forecast anterior.
+
+Antes de la fecha de construcción, el horizonte de un pronóstico puede no cubrir todavía los 14 días posteriores a la fecha final del proyecto. El equipo debe explicitar cómo completa el horizonte faltante, por ejemplo mediante:
+
+climatología/histórico;
+
+ensemble de mayor alcance;
+
+continuación estocástica;
+
+otro método justificado.
+
+En la fecha final (TBD) se debe utilizar la información meteorológica más reciente disponible para el horizonte final.
+
+9. Sitio de construcción
+Cada grupo trabajará con la misma fundación y el mismo problema estructural, pero con un emplazamiento distinto en Chile.
+
+Los nueve sitios se asignan a partir de parques eólicos on-shore existentes, aprobados o en evaluación/proyección. El objetivo es que los equipos enfrenten condiciones meteorológicas distintas sin cambiar el núcleo físico del problema.
+
+La ubicación asignada determina:
+
+coordenadas de consulta meteorológica;
+
+temperatura ambiente;
+
+viento;
+
+radiación solar, cuando se utilice;
+
+historia meteorológica y forecast;
+
+incertidumbre meteorológica.
+
+Los sitios y coordenadas de referencia se encuentran en:
+
+03_SITIOS_POR_GRUPO.md
+
+sitios.yaml
+
+Las coordenadas son puntos de referencia climática para el curso. Cuando el proyecto real dispone de un punto representativo oficial del SEIA se utiliza ese punto; en otros casos se utiliza un punto documentado del parque o de su sector inmediato. No debe interpretarse que cada coordenada corresponde exactamente al centro de una fundación real de aerogenerador.
+
+10. Incertidumbre y confiabilidad
+El proyecto debe distinguir entre:
+
+incertidumbre del material;
+
+incertidumbre de ejecución;
+
+incertidumbre meteorológica;
+
+incertidumbre del modelo cuando sea pertinente.
+
+No se permite justificar todas las variables con distribuciones normales arbitrarias.
+
+El análisis debe entregar como mínimo:
+P(Tmax mayor a 70°C)
+y
+
+P(Delta Tmax mayor a 20°C)
+
+El equipo debe reportar además la incertidumbre estadística de sus estimaciones.
+
+11. HPC
+Las realizaciones de Monte Carlo son independientes y deben poder ejecutarse en el cluster.
+
+Se espera un workflow equivalente a:
+
+sample
+  ↓
+simulate
+  ↓
+extract metrics
+  ↓
+classify failure
+  ↓
+aggregate
+La paralelización puede utilizar Slurm arrays o batching.
+
+El objetivo no es demostrar sofisticación de MPI, sino utilizar HPC donde existe una necesidad ingenieril real.
+
+12. Visualización
+Para 3D se utilizará preferentemente:
+
+PyVista;
+
+VTK;
+
+ParaView.
+
+Se espera visualizar:
+
+geometría BIM;
+
+voxelización;
+
+vertidas;
+
+campo T(x,y,z,t);
+
+cortes;
+
+evolución temporal;
+
+zonas críticas;
+
+probabilidad espacial de excedencia cuando corresponda.
+
+Matplotlib sigue siendo la herramienta adecuada para curvas, convergencia, histogramas y análisis estadístico.
+
+13. Plan de Control de Temperatura final
+La entrega final escrita tendrá formato de un Plan de Control de Temperatura inspirado en la especificación ICH.
+
+Debe incluir, al menos:
+
+mezcla/materiales y parámetros térmicos;
+
+curva o modelo de aumento adiabático;
+
+temperatura máxima de colocación;
+
+temperatura máxima prevista;
+
+diferencial máximo previsto;
+
+procedimiento de vertidas;
+
+moldaje y aislación;
+
+monitoreo;
+
+ubicación propuesta de sensores;
+
+frecuencia de registro;
+
+desmolde/retiro de protecciones;
+
+acciones de contingencia;
+
+análisis de confiabilidad.
+
+El ICH propone como instrumentación mínima sensores redundantes en núcleo y a 25 mm de la superficie, además de temperatura ambiente. También propone intervalos de medición de 30 min o menos durante las primeras 48 h y luego 1 h, por un mínimo de 7 días. Para este proyecto el plan debe ser compatible con un horizonte de análisis de 14 días.
+
+14. Repositorio y reproducibilidad
+Toda actividad se evalúa sobre un commit explícito:
+
+Repositorio:
+https://github.com/...
+​
+Commit evaluado:
+https://github.com/.../commit/<SHA>
+Una vez iniciada una revisión, ese SHA queda congelado para esa actividad.
+
+El repositorio debe permitir a un tercero:
+
+instalar dependencias;
+
+correr tests;
+
+cargar un caso;
+
+ejecutar una simulación;
+
+regenerar los resultados principales.
+
+15. Evaluación oral
+La evaluación oral es central.
+
+Los resultados comunes del grupo pueden compartirse, pero cada estudiante debe poder explicar:
+
+ecuaciones;
+
+condiciones de borde;
+
+código;
+
+decisiones de modelación;
+
+fuentes de datos;
+
+gráficos;
+
+incertidumbre;
+
+conclusiones.
+
+El uso de IA está permitido. No se otorgará crédito por código o análisis que el estudiante no pueda explicar.
+
+16. Resultado funcional esperado
+Al finalizar debe existir un flujo equivalente a:
+
+mcplan simulate plan.yaml
+mcplan reliability plan.yaml
+mcplan compare plan_A.yaml plan_B.yaml
+Los nombres exactos no son obligatorios.
+
+Sí es obligatorio que se pueda cambiar una decisión constructiva y volver a evaluar el riesgo sin reescribir el programa.

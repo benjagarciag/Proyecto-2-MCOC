@@ -1,0 +1,160 @@
+Caso base, criterios y referencias
+
+1. Paper geométrico y experimental principal
+Yuwen Ju y Honggang Lei (2019):
+
+Actual Temperature Evolution of Thick Raft Concrete Foundations and Cracking Risk Analysis Advances in Materials Science and Engineering, Article ID 7029671. DOI: https://doi.org/10.1155/2019/7029671Links to an external site.
+
+Datos relevantes del caso:
+
+fundación para turbina eólica;
+
+aproximadamente 18 m × 18 m;
+
+espesor 3,30 m;
+
+parte superior cilíndrica de aproximadamente 7 m de diámetro;
+
+sensores a distintas alturas;
+
+temperatura de núcleo máxima cercana a 73 °C;
+
+peak cercano a 4 días;
+
+diferencia núcleo-superficie cercana a 35 °C;
+
+se estudian medidas de control mediante vertidas por capas, aislación y monitoreo.
+
+El paper proporciona un caso físico real de referencia, pero no debe copiarse su modelo FE ni asumirse que cada parámetro aplica automáticamente al caso del curso.
+
+2. Especificación chilena principal
+Instituto del Cemento y del Hormigón de Chile:
+
+Especificación para Hormigón Masivo Estructural, Santiago, julio 2019.
+
+Página oficial:
+
+https://ich.cl/documentos-ich/especificacion-para-hormigon-masivo-estructural/Links to an external site.
+
+Aspectos utilizados en el curso:
+
+definición de hormigón masivo;
+
+clasificación de riesgo;
+
+temperaturas máximas;
+
+diferencial núcleo-superficie;
+
+Plan de Control de Temperatura;
+
+monitoreo;
+
+curado y protección;
+
+estimación de aumento adiabático;
+
+método de Schmidt como enfoque simplificado de diferencias finitas.
+
+3. Criterios numéricos del proyecto
+Temperatura máxima menor igual a 70°C
+ 
+
+El ACI indica actualmente para hormigón masivo un máximo de 70 °C después de la colocación:
+
+https://www.concrete.org/frequentlyaskedquestions/faqid/889.aspxLinks to an external site.
+
+La especificación chilena ICH posee una tabla más matizada según categoría y exposición. El curso adopta 70 °C como requisito único del caso docente.
+
+Diferencial térmico
+Delta Tmax menor igual a 20°C
+
+El ICH Tabla 4 usa:
+
+20 °C para resistencia real <10 MPa;
+
+25 °C para 10–25 MPa;
+
+30 °C para >25 MPa.
+
+La página técnica del ICH explica además que especificaciones antiguas utilizaban típicamente un límite único de 20 °C, mientras la especificación 2019 lo hace dependiente de la resistencia.
+
+Referencia:
+
+https://hormigonaldia.ich.cl/recomendaciones-tecnicas/especificacion-para-hormigon-masivo-estructural/Links to an external site.
+
+Para mantener el foco del proyecto en térmica + confiabilidad, se adopta 20 °C fijo durante los 14 días. Es más conservador que utilizar la resistencia creciente para relajar el límite.
+
+ACI 301 utiliza actualmente 35 °F ≈ 19 °C entre centro y superficie, por lo que el valor docente de 20 °C también es consistente con ese orden de magnitud.
+
+4. Método de Schmidt y enfoque del curso
+El Anexo 4 del ICH describe el método de Schmidt como un método simplificado de diferencias finitas y señala que es adaptable a 1D, 2D y 3D.
+
+El documento destaca explícitamente que puede considerar:
+
+geometría;
+
+propiedades térmicas;
+
+secuencia constructiva;
+
+interacción con fundación/relleno;
+
+gradientes;
+
+aislación;
+
+condiciones de borde.
+
+También advierte que las condiciones de borde pueden ser determinantes.
+
+Nuestro solver no debe reproducir literalmente el método de Schmidt, pero comparte su filosofía de discretización cartesiana y balance térmico.
+
+5. Pronósticos meteorológicos
+Fuente abierta recomendada:
+
+https://open-meteo.com/Links to an external site.
+
+Documentación:
+
+Forecast API: https://open-meteo.com/en/docsLinks to an external site.
+
+Ensemble API: https://open-meteo.com/en/docs/ensemble-apiLinks to an external site.
+
+Historical Forecast API: https://open-meteo.com/en/docs/historical-forecast-apiLinks to an external site.
+
+Previous Runs API: https://open-meteo.com/en/docs/previous-runs-apiLinks to an external site.
+
+Variables potencialmente útiles:
+
+temperatura a 2 m;
+
+viento a 10 m;
+
+radiación solar de onda corta;
+
+humedad si el modelo la requiere;
+
+temperatura de suelo, si se justifica y la fuente la provee.
+
+Los estudiantes pueden utilizar otra fuente, pero deben documentarla.
+
+6. BIM / IFC
+Referencias oficiales:
+
+buildingSMART — IFC: https://technical.buildingsmart.org/standards/IFC/Links to an external site.
+
+IfcOpenShell: https://docs.ifcopenshell.org/Links to an external site.
+
+Procesamiento geométrico: https://docs.ifcopenshell.org/ifcopenshell-python/geometry_processing.htmlLinks to an external site.
+
+Bonsai: https://docs.bonsaibim.org/Links to an external site.
+
+7. Visualización
+PyVista: https://docs.pyvista.org/getting-started/Links to an external site.
+
+PyVista tutorial: https://tutorial.pyvista.org/Links to an external site.
+
+ParaView: https://docs.paraview.org/en/latest/Links to an external site.
+
+ParaView tutorial: https://docs.paraview.org/en/latest/Tutorials/SelfDirectedTutorial/introduction.htmlLinks to an external site.

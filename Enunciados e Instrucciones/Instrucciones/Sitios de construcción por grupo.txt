@@ -1,0 +1,181 @@
+Sitios de construcción por grupo (Mi grupo es el 6)
+
+Propósito
+Todos los grupos resolverán esencialmente la misma fundación de hormigón masivo, pero cada uno la ubicará en un sitio distinto de Chile asociado a un parque eólico on-shore real, aprobado o proyectado.
+
+Esto permite que los resultados cambien por razones físicas reales:
+
+temperatura ambiente;
+
+amplitud térmica diaria;
+
+viento;
+
+radiación solar;
+
+nubosidad;
+
+eventos meteorológicos;
+
+incertidumbre del forecast.
+
+La geometría de la fundación y los criterios térmicos permanecen comunes.
+
+Asignación propuesta
+Grupo	Sitio de referencia	Región	Proyecto eólico de referencia	Estado/contexto	Latitud	Longitud
+G1	Taltal / Zona de Reserva Eólica	Antofagasta	Parque Eólico Wayra	proyectado / evaluado	-24.952830	-70.004838
+G2	Freirina / costa de Huasco	Atacama	Parque Eólico Sarco	parque on-shore real	-28.856102	-71.421831
+G3	Mantos de Hornillos / Ovalle	Coquimbo	Camarico – Ecos del Mar	ampliación/proyecto	-31.111500	-71.614700
+G4	Litueche	O'Higgins	Parque Eólico Manantiales / cluster eólico de Litueche	proyecto eólico del sector	-34.105457	-71.649539
+G5	Pahuil / Chanco	Maule	Viento Pacífico Verde	proyecto en evaluación	-35.644721	-72.568332
+G6	Los Ángeles	Biobío	Parque Eólico El Rosal	aprobado/proyectado	-37.277929	-72.368271
+G7	Renaico	La Araucanía	Parque Eólico Vergara	aprobado	-37.692100	-72.624000
+G8	Llanquihue	Los Lagos	Parque Eólico Cuatro Vientos	aprobado/evaluado recientemente	-41.222539	-73.295603
+G9	Punta Arenas / Tehuel Aike	Magallanes	Parque Eólico Faro del Sur	aprobado/proyectado	-52.821770	-70.896850
+Qué significa la coordenada
+La coordenada anterior es el punto meteorológico oficial del caso docente.
+
+Todos los scripts de clima del grupo deben usar exactamente su latitud/longitud asignada, salvo autorización explícita del profesor.
+
+Esto evita que distintos integrantes consulten puntos diferentes.
+
+Las coordenadas provienen de puntos representativos de proyectos, emplazamientos publicados o puntos meteorológicos/localidades documentadas del mismo sector. No deben presentarse como la coordenada exacta de una fundación real de aerogenerador.
+
+Diferencias que esperamos observar
+Estas descripciones son hipótesis de trabajo, no resultados que deban asumirse sin consultar datos reales.
+
+G1 — Taltal
+Caso norte desértico. Es razonable esperar:
+
+fuerte radiación;
+
+ambiente seco;
+
+amplitud térmica significativa;
+
+importancia de la hora de vertida y temperatura inicial.
+
+G2 — Freirina / costa de Atacama
+Caso norte costero.
+
+Puede diferir de Taltal por:
+
+influencia marítima;
+
+nubosidad costera;
+
+amplitud térmica distinta;
+
+viento costero.
+
+G3 — Ovalle / Mantos de Hornillos
+Caso semiárido de Coquimbo.
+
+Interesa comparar:
+
+máximas diurnas;
+
+radiación;
+
+noches relativamente más frías;
+
+sensibilidad al horario de vertida.
+
+G4 — Litueche
+Clima mediterráneo de transición con influencia costera.
+
+El equipo deberá determinar con datos reales si domina:
+
+calentamiento diurno;
+
+enfriamiento nocturno;
+
+viento;
+
+variabilidad sinóptica.
+
+G5 — Pahuil / Chanco
+Sitio costero del Maule.
+
+Existe una estación DMC denominada Dunas de Chanco (Pahuil) muy próxima al sector, lo que lo convierte en un caso particularmente atractivo para contrastar datos.
+
+G6 — Los Ángeles
+Caso interior de Biobío.
+
+Puede presentar una combinación interesante de:
+
+máximas diurnas;
+
+enfriamiento nocturno;
+
+cambios de masa de aire;
+
+menor moderación oceánica que los sitios costeros.
+
+G7 — Renaico
+Caso interior de La Araucanía.
+
+Permite estudiar un clima de transición centro-sur y comparar con Los Ángeles.
+
+G8 — Llanquihue
+Caso húmedo y más frío del sur.
+
+Puede hacer que el problema dominante deje de ser únicamente T_{\max} y pase a ser el enfriamiento superficial y el diferencial térmico.
+
+G9 — Punta Arenas
+Caso austral y muy ventoso.
+
+El problema puede ser completamente distinto del norte:
+
+alta pérdida convectiva;
+
+bajas temperaturas;
+
+potencial enfriamiento rápido de la superficie;
+
+fuerte relevancia de moldaje/aislación.
+
+Importante: no prejuzgar el resultado
+Un grupo no puede escribir:
+
+“Como estamos en Punta Arenas, el diferencial será crítico”.
+
+Debe demostrarlo con:
+
+datos meteorológicos;
+
+el modelo;
+
+análisis de sensibilidad/incertidumbre.
+
+La diversidad geográfica es deliberada para que los nueve grupos no lleguen necesariamente a la misma estrategia de construcción.
+
+Fuentes de referencia
+G1 — Wayra, Taltal
+SEA — Parque Eólico Wayra: https://infofirma.sea.gob.cl/DocumentosSEA/MostrarDocumento?docId=b6/3a/d2cc556e10c4845faba1868e1e97666a88feEnlaces a un sitio externo.
+
+G2 — Sarco, Freirina
+SEA — Parque Eólico Sarco: https://infofirma.sea.gob.cl/DocumentosSEA/MostrarDocumento?docId=0c/5c/a3fd4bfff2b7fe7db77512de935291d7af94Enlaces a un sitio externo.
+
+G3 — Ecos del Mar, Ovalle
+SEA / Comisión de Evaluación: https://www.sea.gob.cl/tce/tabla-comision-evaluacion-50Enlaces a un sitio externo.
+
+G4 — Litueche
+SEA — antecedentes de parques eólicos en Litueche: https://www.sea.gob.cl/tce/tabla-de-comision-de-evaluacion-175Enlaces a un sitio externo.
+
+G5 — Viento Pacífico Verde
+SEA: https://www.sea.gob.cl/portal-de-participacion-ciudadana-y-consulta-indigena/proyecto/parque-eolico-viento-pacifico-verdeEnlaces a un sitio externo.
+
+DMC — estación Dunas de Chanco (Pahuil): https://climatologia.meteochile.gob.cl/application/informacion/fichaDeEstacion/350040Enlaces a un sitio externo.
+
+G6 — El Rosal
+SEA: https://infofirma.sea.gob.cl/DocumentosSEA/MostrarDocumento?docId=2023/06/20/dff0-cb97-455f-b4ff-8be13edfd0d5Enlaces a un sitio externo.
+
+G7 — Vergara
+SEA: https://www.sea.gob.cl/tce/tabla-de-comision-evaluacion-1818Enlaces a un sitio externo.
+
+G8 — Cuatro Vientos
+SEA: https://infofirma.sea.gob.cl/DocumentosSEA/MostrarDocumento?docId=2024/01/22/fd1c-8b46-463f-9f6e-bcf05954dee9Enlaces a un sitio externo.
+
+G9 — Faro del Sur
+SEA: https://infofirma.sea.gob.cl/DocumentosSEA/MostrarDocumento?docId=f6/50/47b7978984bc16f81be9d8a4163f9c876c58Enlaces a un sitio externo.

@@ -1,0 +1,49 @@
+E02 — Semana 1 / jueves — Lab: round-trip IFC y demo 1D
+
+Objetivo
+Demostrar un flujo mínimo Bonsai→IFC→Python y un solver 1D funcionando.
+
+Antes de la actividad
+Tener:
+
+un IFC con al menos tres objetos identificables;
+
+script que lea el IFC;
+
+solver 1D ejecutable;
+
+al menos un test automatizado.
+
+Durante la actividad
+El ayudante solicitará:
+
+abrir el IFC en Bonsai;
+
+identificar los objetos;
+
+modificar geometría o una propiedad;
+
+guardar;
+
+demostrar que Python detecta la modificación;
+
+ejecutar el solver 1D;
+
+modificar \Delta x o \Delta t;
+
+explicar el efecto observado.
+
+La evaluación incluye preguntas individuales breves.
+
+Evidencia / entrega
+Canvas:
+
+Repositorio:
+Commit evaluado:
+No se requiere informe.
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado:
+
+Repositorio:
+Commit evaluado:

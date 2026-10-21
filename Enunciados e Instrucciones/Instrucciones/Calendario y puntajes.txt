@@ -1,0 +1,88 @@
+Calendario y puntajes
+Horario regular
+Miércoles 10:30–13:20: revisión técnica y evaluación oral grupo por grupo.
+
+Jueves 10:30–12:30: laboratorio, demo y evaluación oral breve con el ayudante.
+
+Viernes: entrega escrita/repo indicada en Canvas.
+
+Las clases regulares terminan el viernes 20 de noviembre de 2026.
+
+La entrega y defensa final se realizará en una fecha posterior:
+
+Fecha final: TBD
+
+El período entre el 21 de noviembre y la fecha final queda reservado para:
+
+cerrar funcionalidades pendientes;
+
+corregir observaciones recibidas hasta el 20 de noviembre;
+
+ejecutar corridas de producción;
+
+actualizar el forecast;
+
+preparar el Plan de Control de Temperatura;
+
+preparar la presentación y demo final.
+
+No se agregarán nuevos contenidos obligatorios durante ese período.
+
+Regla general
+Toda actividad evaluada debe declarar:
+
+Repositorio:
+Commit evaluado:
+El commit evaluado no se cambia una vez iniciada la evaluación.
+
+Calendario de clases y entregas semanales
+ID	Fecha	Actividad	Puntos
+E00	Jue 15 oct	Kickoff, asignación de sitio y registro de repositorio	0
+E01	Mié 21 oct	W1 — Revisión oral: BIM + difusión + solver 1D	3
+E02	Jue 22 oct	W1 — Lab: round-trip IFC + demo 1D	3
+E03	Vie 23 oct	W1 — Entrega: verificación 1D	2
+E04	Mié 28 oct	W2 — Revisión oral: 2D/3D + condiciones de borde	4
+E05	Jue 29 oct	W2 — Lab: batería de verificación térmica	3
+E06	Vie 30 oct	W2 — Entrega: dossier de verificación + BIM del caso	3
+E07	Mié 4 nov	W3 — Revisión oral: voxelización + vertidas + hidratación	4
+E08	Jue 5 nov	W3 — Lab: BIM→grid + activación de vertidas	3
+E09	Vie 6 nov	W3 — Entrega: baseline 3D con hidratación	3
+E10	Mié 11 nov	W4 — Revisión oral: entorno, moldaje, clima	4
+E11	Jue 12 nov	W4 — Lab: weather pipeline + visualización 3D	3
+E12	Vie 13 nov	W4 — Entrega: simulación determinista 14 días	3
+E13	Mié 18 nov	W5 — Revisión oral: incertidumbre y confiabilidad	5
+E14	Jue 19 nov	W5 — Lab: Monte Carlo + HPC	4
+E15	Vie 20 nov	W5 — Entrega: comparación de planes y recomendación provisional	3
+21 nov → final	Período de cierre; sin clases regulares	0
+F01	TBD	Plan de Control de Temperatura final	10
+F02	TBD	Defensa + demo + stress test + preguntas individuales + paper	40
+TOTAL	100
+Distribución
+Etapa	Puntos
+Semana 1	8
+Semana 2	10
+Semana 3	10
+Semana 4	10
+Semana 5	12
+Subtotal al terminar clases (20/11)	50
+Entrega final escrita	10
+Defensa final	40
+TOTAL	100
+Filosofía de evaluación
+La mitad del puntaje se obtiene durante el desarrollo y la otra mitad en la entrega final.
+
+La evaluación oral y las demostraciones tienen un peso deliberadamente alto.
+
+Las entregas textuales existen para:
+
+documentar;
+
+congelar evidencia;
+
+controlar trazabilidad;
+
+obligar a sintetizar;
+
+permitir auditoría posterior.
+
+No sustituyen la demostración de comprensión.

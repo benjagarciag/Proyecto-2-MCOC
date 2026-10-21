@@ -1,0 +1,13 @@
+{
+  "longitud_m": 1.0,
+  "n_intervalos": 100,
+  "difusividad_m2_s": 0.0001,
+  "tiempo_final_s": 4500.0,
+  "temperatura_izquierda_C": 0.0,
+  "temperatura_derecha_C": 10.0,
+  "temperatura_inicial_C": 20.0,
+  "amplitud_inicial_K": 0.0,
+  "perfil_inicial": "uniforme",
+  "fourier_objetivo": 0.45,
+  "paso_tiempo_s": null
+}

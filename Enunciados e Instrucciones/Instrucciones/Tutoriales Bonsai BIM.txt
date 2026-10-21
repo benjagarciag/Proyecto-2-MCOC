@@ -1,0 +1,9 @@
+Tutoriales Bonsai BIM
+Jugando con Bonsai:
+
+Primeros pasosLinks to an external site. 
+(Pronto, video modelando la geometría de la fundación)
+Estoy siguiendo los tutoriales del Prof Rino. estan buenos. ¡Hágalos cada uno! Sino se me van a perder en blender. 
+
+Bonsai BIM in Blender in 20 Minutes | Install + Quick TutorialLinks to an external site.
+Your first BIM drawing in 20 mins using Bonsai | Blender BIM and IFCLinks to an external site.
