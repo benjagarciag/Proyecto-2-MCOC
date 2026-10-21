@@ -25,11 +25,13 @@ h11==0.16.0
 httpcore==1.0.9
 httpx==0.28.1
 idna==3.20
+ifcopenshell==0.9.0.post1
 iniconfig==2.3.1
 ipykernel==7.4.0
 ipython==9.17.1
 ipython_pygments_lexers==1.1.1
 isoduration==20.11.0
+isodate==0.7.2
 jedi==0.20.1
 Jinja2==3.1.6
 json5==0.17.3
@@ -84,6 +86,7 @@ rfc3986-validator==0.1.1
 rfc3987-syntax==1.1.0
 rpds-py==2026.9.1
 Send2Trash==2.1.0
+shapely==2.2.0
 six==1.17.0
 soupsieve==3.0.3
 stack-data==0.6.3

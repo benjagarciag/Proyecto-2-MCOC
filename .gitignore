@@ -14,3 +14,6 @@ pytest-cache-files-*/
 
 # Archivos temporales de Office
 ~$*
+
+# Copias automáticas de Blender (conservar el .blend principal)
+*.blend[0-9]*

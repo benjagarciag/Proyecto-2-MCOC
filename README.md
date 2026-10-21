@@ -14,6 +14,7 @@ Coordenadas meteorológicas: `-37.277929`, `-72.368271`.
 | --- | --- |
 | Ejecutar los códigos 1D | [casos/1d/codigos/](casos/1d/codigos/README.md) |
 | Entender el código y la física con gráficos | [Notebook explicativo](documentacion/explicacion_solver_1d.ipynb) |
+| Agregar las propiedades de las vertidas al IFC | [Fundación: punto 23 de Bonsai](desarrollo/fundacion/README.md) |
 | Saber qué falta para esta entrega | [E01: requisitos y estado](entregas/E01/README.md) |
 
 ## Las seis carpetas del proyecto
@@ -95,8 +96,12 @@ Las cachés del notebook y los gráficos se guardan dentro de ese entorno.
 
 ## Estado actual
 
-Hay códigos 1D, explicación ejecutada y pruebas automatizadas. Para E01 quedan
-pendientes el primer modelo IFC/Bonsai y la preparación individual.
+Hay códigos 1D, explicación ejecutada, pruebas automatizadas y un primer
+[modelo IFC con propiedades de las cinco vertidas](desarrollo/fundacion/README.md).
+La lectura desde Python comprueba identidades, propiedades y triangulación.
+Para E01 queda la preparación individual y declarar el SHA evaluado.
+Para E02 sigue pendiente demostrar cambios Bonsai → IFC → Python y variar
+Delta x/Delta t en la demo 1D. La validación geométrica detallada sigue pendiente.
 El [seguimiento de E01](entregas/E01/README.md) concentra la evidencia actual.
 
 **SHA inicial E00:** `a901e91a5b4ce84cde37ba52c48251e97cffcc04`.

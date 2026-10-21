@@ -10,6 +10,7 @@ su explicación, usar [casos/](../casos/README.md) y
 | [mcplan/ejemplos_1d.py](mcplan/ejemplos_1d.py) | Cálculo de los ejemplos Neumann, Robin y calor interno, sin IO. |
 | [tests/](tests/README_TESTS.md) | Pruebas automatizadas del solver. |
 | [ejecutar_notebook.py](ejecutar_notebook.py) | Ejecutar y guardar todas las celdas del notebook. |
+| [fundacion/](fundacion/README.md) | Modelo IFC y script para agregar propiedades a las cinco vertidas (punto 23 de Bonsai). |
 
 Todos los comandos se ejecutan desde la raíz del proyecto:
 

@@ -9,7 +9,7 @@ Fuente: [enunciado oficial E01](../../Enunciados%20e%20Instrucciones/E01_Semana_
 - [x] README mínimo con instalación y organización del proyecto.
 - [x] Entorno inicial Python 3.12 con dependencias fijadas.
 - [x] Primeros tests automatizados (31 casos comprobados).
-- [ ] Primer modelo IFC/Bonsai.
+- [x] Primer modelo IFC/Bonsai con cinco vertidas y propiedades leídas desde Python, incluido en esta preentrega.
 - [x] Implementación inicial del solver 1D.
 - [ ] Preparación oral de cada integrante.
 
@@ -29,7 +29,7 @@ el equipo las haya leído.
 | Caso ejecutable | [casos/1d/](../../casos/1d/README.md) | Ejecuta los cuatro casos; JSON para Dirichlet |
 | Explicación para estudiar | [Notebook 1D](../../documentacion/explicacion_solver_1d.ipynb) | Cuatro scripts explicados y ejecutados: Dirichlet, Neumann, Robin y calor interno |
 | Tests | [desarrollo/tests/](../../desarrollo/tests/README_TESTS.md) | 31 casos pasan, incluida reproducción de los 20 perfiles del video |
-| BIM/IFC | Carpeta por crear al incorporar el primer modelo | Pendiente |
+| BIM/IFC | [Fundación IFC](../../desarrollo/fundacion/README.md) | IFC4, cinco IfcFooting con propiedades y geometrías trianguladas desde Python |
 | Caso base del video | `resultados/1d/base/` | Se genera al ejecutar; referencia previa del centro ≈ 5,22483 °C |
 | Verificación exacta | `resultados/1d/verificacion_seno/` | Se genera al ejecutar; referencia previa del error final ≈ 0,00235449 K |
 
@@ -41,6 +41,16 @@ $k$, $\rho$, $c_p$ y $\alpha$; balance de energía; condición inicial;
 Dirichlet, Neumann y Robin; discretización 1D y estabilidad explícita.
 
 ## Entrega en Canvas
+
+Esta preentrega incorpora los avances BIM y sus scripts en el commit
+`E01 - Pre entrega`. Para consultar su SHA completo, ejecutar `git rev-parse HEAD`
+desde ese commit. Declarar en Canvas el SHA de la versión que se evaluará.
+Las 31 pruebas volvieron a pasar el 21 de octubre.
+
+La demostración de modificar una pieza en Bonsai, guardar y detectar el cambio
+desde Python, junto con variar Delta x/Delta t en la demo 1D, se exige
+explícitamente en E02; sigue pendiente y conviene practicarla. E01 evalúa
+comprensión oral y navegación por código real.
 
 - Repositorio: https://github.com/benjagarciag/Proyecto-2-MCOC
 - Commit evaluado: **pendiente de definir al cerrar la entrega**.
