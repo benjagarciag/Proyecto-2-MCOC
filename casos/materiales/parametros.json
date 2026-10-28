@@ -1,0 +1,16 @@
+{
+  "nota": "Dos materiales didácticos, isotrópicos y constantes. No son parámetros calibrados de la fundación.",
+  "materiales": {
+    "eje": "x",
+    "interfaz_m": 0.5,
+    "materiales": [
+      {"conductividad_W_mK": 2.0, "densidad_kg_m3": 2400.0, "calor_especifico_J_kgK": 900.0},
+      {"conductividad_W_mK": 0.5, "densidad_kg_m3": 1600.0, "calor_especifico_J_kgK": 800.0}
+    ]
+  },
+  "celdas_2d": 24,
+  "celdas_3d": 16,
+  "tiempo_final_s": 86400.0,
+  "temperatura_izquierda_C": 60.0,
+  "temperatura_derecha_C": 20.0
+}

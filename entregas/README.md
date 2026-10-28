@@ -6,6 +6,7 @@ Cada evaluación tendrá una carpeta con su identificador oficial, por ejemplo
 | Evaluación | Fecha | Estado |
 | --- | --- | --- |
 | [E01: revisión oral BIM, difusión y solver 1D](E01/README.md) | 21 de octubre de 2026 | En preparación |
+| [E04: revisión oral 2D/3D y condiciones de borde](E04/README.md) | 28 de octubre de 2026 | Implementación y 251 pruebas; defensa oral por realizar |
 
 Crear las carpetas de las evaluaciones siguientes al empezar a trabajarlas.
 El calendario completo permanece en el material del profesor.

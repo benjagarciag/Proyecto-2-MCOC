@@ -1,0 +1,18 @@
+{
+  "descripcion": "Verificacion matematica 2D; propiedades didacticas, sin calibracion de hormigon",
+  "dominio": {
+    "longitud_x_m": 1.0,
+    "longitud_y_m": 1.0,
+    "espesor_m": 1.0,
+    "celdas_x": 30,
+    "celdas_y": 30,
+    "conductividad_W_mK": 2.0,
+    "densidad_kg_m3": 2400.0,
+    "calor_especifico_J_kgK": 900.0,
+    "tiempo_final_s": 86400.0,
+    "paso_tiempo_s": null,
+    "seguridad": 0.9
+  },
+  "temperatura_borde_C": 20.0,
+  "amplitud_inicial_K": 50.0
+}

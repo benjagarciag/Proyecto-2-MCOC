@@ -1,0 +1,64 @@
+{
+  "nota": "Generación constante didáctica, sin calibración ni cinética de hidratación. Lados de 1 m; espesor 2D de 1 m.",
+  "material": {"conductividad_W_mK": 2.0, "densidad_kg_m3": 2400.0, "calor_especifico_J_kgK": 900.0},
+  "temperatura_inicial_C": 20.0,
+  "tiempo_final_s": 86400.0,
+  "celdas_2d": 25,
+  "celdas_3d": 15,
+  "ejemplos": {
+    "uniforme": {
+      "fuente_2d": {"tipo": "uniforme", "valor_W_m3": 600.0},
+      "fuente_3d": {"tipo": "uniforme", "valor_W_m3": 600.0},
+      "bordes_2d": {
+        "x_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "x_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "y_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "y_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0}
+      },
+      "bordes_3d": {
+        "x_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "x_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "y_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "y_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "z_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "z_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0}
+      }
+    },
+    "localizada": {
+      "fuente_2d": {"tipo": "caja", "valor_W_m3": 2000.0, "limites_m": {"x": [0.25, 0.75], "y": [0.25, 0.75]}},
+      "fuente_3d": {"tipo": "caja", "valor_W_m3": 2000.0, "limites_m": {"x": [0.25, 0.75], "y": [0.25, 0.75], "z": [0.25, 0.75]}},
+      "bordes_2d": {
+        "x_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "x_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "y_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "y_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0}
+      },
+      "bordes_3d": {
+        "x_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "x_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "y_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "y_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "z_min": {"tipo": "neumann", "flujo_entrante_W_m2": 0},
+        "z_max": {"tipo": "neumann", "flujo_entrante_W_m2": 0}
+      }
+    },
+    "robin": {
+      "fuente_2d": {"tipo": "uniforme", "valor_W_m3": 600.0},
+      "fuente_3d": {"tipo": "uniforme", "valor_W_m3": 600.0},
+      "bordes_2d": {
+        "x_min": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0},
+        "x_max": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0},
+        "y_min": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0},
+        "y_max": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0}
+      },
+      "bordes_3d": {
+        "x_min": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0},
+        "x_max": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0},
+        "y_min": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0},
+        "y_max": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0},
+        "z_min": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0},
+        "z_max": {"tipo": "robin", "h_W_m2K": 10.0, "ambiente_C": 20.0}
+      }
+    }
+  }
+}

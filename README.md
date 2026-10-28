@@ -12,6 +12,7 @@ Coordenadas meteorológicas: `-37.277929`, `-72.368271`.
 
 | Quiero… | Abrir |
 | --- | --- |
+| Revisar E04: 2D/3D, bordes, fuentes y dos materiales | [E04: ejecución, pruebas y resultados](entregas/E04/README.md) |
 | Ejecutar los códigos 1D | [casos/1d/codigos/](casos/1d/codigos/README.md) |
 | Entender el código y la física con gráficos | [Notebook explicativo](documentacion/explicacion_solver_1d.ipynb) |
 | Agregar las propiedades de las vertidas al IFC | [Fundación: punto 23 de Bonsai](desarrollo/fundacion/README.md) |
@@ -21,16 +22,39 @@ Coordenadas meteorológicas: `-37.277929`, `-72.368271`.
 
 | Carpeta | Contenido |
 | --- | --- |
-| [casos/](casos/README.md) | Código y parámetros para ejecutar cada problema. El trabajo actual está en `1d/`. |
+| [casos/](casos/README.md) | Ejemplos 1D, 2D, 3D, bordes, fuentes y dos materiales. |
 | [documentacion/](documentacion/README.md) | Explicaciones físicas y notebook de estudio. |
 | [entregas/](entregas/README.md) | Requisitos, pendientes y enlaces de cada evaluación. |
 | [Enunciados e Instrucciones/](Enunciados%20e%20Instrucciones/README.md) | Enunciados, guías, calendario y archivos recibidos. |
-| `resultados/` | Carpeta vacía hasta ejecutar un caso. Allí se generan gráficos y datos. |
+| `resultados/` | Figuras de referencia de E04; los ejecutores actualizan las imágenes de su caso. |
 | [desarrollo/](desarrollo/README.md) | Solver reutilizable, pruebas y herramientas de mantenimiento. |
 
 Guardar cada archivo en su carpeta y enlazarlo desde las entregas que lo usen.
-Crear carpetas nuevas solo cuando exista contenido para ellas. Los futuros
-modelos BIM y datos meteorológicos se organizarán al empezar esas etapas.
+Crear carpetas nuevas solo cuando exista contenido para ellas. El BIM existente
+está en `desarrollo/fundacion/`; los ejemplos E04 son dominios didácticos independientes.
+
+## Ejecutar E04
+
+Con el entorno preparado según la sección de instalación, desde la raíz:
+
+```powershell
+.\.venv\Scripts\python.exe -B -m pytest -q -p no:cacheprovider
+.\.venv\Scripts\python.exe -B casos/2d/ejecutar.py
+.\.venv\Scripts\python.exe -B casos/3d/ejecutar.py
+.\.venv\Scripts\python.exe -B casos/bordes/ejecutar.py
+.\.venv\Scripts\python.exe -B casos/fuentes/ejecutar.py
+.\.venv\Scripts\python.exe -B casos/materiales/ejecutar.py
+```
+
+**251 pruebas aprobadas.** Los ejemplos guardan sus figuras en `resultados/`.
+El núcleo ampliado es `desarrollo/mcplan/difusion_bordes.py`; conserva los
+solvers iniciales e incorpora bordes mixtos, generación W/m³ y dos materiales
+opcionales con contacto perfecto. La interfaz material coincide con caras de
+la malla. No se necesita Blender para ejecutar estas simulaciones.
+
+La [guía E04](entregas/E04/README.md) enlaza las explicaciones y los 12 gráficos.
+Los casos son verificaciones matemáticas; no incluyen hidratación calibrada,
+clima, Monte Carlo ni una simulación de la fundación real.
 
 ## Ejecutar y estudiar el caso 1D
 
@@ -95,6 +119,11 @@ Las cachés del notebook y los gráficos se guardan dentro de ese entorno.
 | `AGENTS.md` | Instrucciones y contexto para trabajar con el asistente. |
 
 ## Estado actual
+
+La preparación E04 está publicada en la rama `e04-difusion-2d-3d`, desarrollada
+en la copia independiente `E04_pruebas_2d`. No integra la rama de compañeros ni
+modifica el BIM. Los documentos por etapa conservan su contexto histórico;
+el [índice E04](entregas/E04/README.md) describe el estado conjunto actual.
 
 Hay códigos 1D, explicación ejecutada, pruebas automatizadas y un primer
 [modelo IFC con propiedades de las cinco vertidas](desarrollo/fundacion/README.md).
