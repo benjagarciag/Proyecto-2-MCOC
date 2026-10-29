@@ -12,13 +12,15 @@ Coordenadas meteorológicas: `-37.277929`, `-72.368271`.
 
 | Quiero… | Abrir |
 | --- | --- |
+| Modificar y visualizar los casos térmicos en una sola ventana | [Visualizadores: ejecución y funciones](Visualizadores/README.md) |
 | Revisar E04: 2D/3D, bordes, fuentes y dos materiales | [E04: ejecución, pruebas y resultados](entregas/E04/README.md) |
+| Practicar E05 y cambiar parámetros de los tests | [E05: batería y guía de estudio](entregas/E05/README.md) |
 | Ejecutar los códigos 1D | [casos/1d/codigos/](casos/1d/codigos/README.md) |
 | Entender el código y la física con gráficos | [Notebook explicativo](documentacion/explicacion_solver_1d.ipynb) |
 | Agregar las propiedades de las vertidas al IFC | [Fundación: punto 23 de Bonsai](desarrollo/fundacion/README.md) |
 | Saber qué falta para esta entrega | [E01: requisitos y estado](entregas/E01/README.md) |
 
-## Las seis carpetas del proyecto
+## Carpetas del proyecto
 
 | Carpeta | Contenido |
 | --- | --- |
@@ -28,6 +30,7 @@ Coordenadas meteorológicas: `-37.277929`, `-72.368271`.
 | [Enunciados e Instrucciones/](Enunciados%20e%20Instrucciones/README.md) | Enunciados, guías, calendario y archivos recibidos. |
 | `resultados/` | Figuras de referencia de E04; los ejecutores actualizan las imágenes de su caso. |
 | [desarrollo/](desarrollo/README.md) | Solver reutilizable, pruebas y herramientas de mantenimiento. |
+| [Visualizadores/](Visualizadores/README.md) | Ventana unificada 1D/2D/3D, entradas editables y reproducción temporal. |
 
 Guardar cada archivo en su carpeta y enlazarlo desde las entregas que lo usen.
 Crear carpetas nuevas solo cuando exista contenido para ellas. El BIM existente
@@ -39,14 +42,17 @@ Con el entorno preparado según la sección de instalación, desde la raíz:
 
 ```powershell
 .\.venv\Scripts\python.exe -B -m pytest -q -p no:cacheprovider
-.\.venv\Scripts\python.exe -B casos/2d/ejecutar.py
-.\.venv\Scripts\python.exe -B casos/3d/ejecutar.py
-.\.venv\Scripts\python.exe -B casos/bordes/ejecutar.py
-.\.venv\Scripts\python.exe -B casos/fuentes/ejecutar.py
+.\.venv\Scripts\python.exe -B casos/2d/Ejecutar_2D.py
+.\.venv\Scripts\python.exe -B casos/3d/Ejecutar_3D.py
+.\.venv\Scripts\python.exe -B casos/bordes/Ejecutar_Bordes.py
+.\.venv\Scripts\python.exe -B casos/fuentes/Ejecutar_Fuentes.py
 .\.venv\Scripts\python.exe -B casos/materiales/ejecutar.py
 ```
 
-**251 pruebas aprobadas.** Los ejemplos guardan sus figuras en `resultados/`.
+**296 pruebas aprobadas en la última ejecución completa**, incluidas29 variantes
+de práctica para E05. La versión actual recopila320 tests; los nuevos casos
+del visualizador quedan para ejecución del usuario, por su preferencia de estudio.
+Los tests no generan figuras; los ejecutores de ejemplos guardan sus figuras en `resultados/`.
 El núcleo ampliado es `desarrollo/mcplan/difusion_bordes.py`; conserva los
 solvers iniciales e incorpora bordes mixtos, generación W/m³ y dos materiales
 opcionales con contacto perfecto. La interfaz material coincide con caras de

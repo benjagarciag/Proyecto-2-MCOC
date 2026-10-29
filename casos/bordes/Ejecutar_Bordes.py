@@ -1,6 +1,5 @@
 """Cuatro ejemplos de bordes, una figura fija por caso; sin fuentes internas."""
 import argparse
-import json
 import os
 from pathlib import Path
 import sys
@@ -17,6 +16,52 @@ from mcplan.bordes_termicos import Dirichlet, Neumann, Robin
 from mcplan.difusion_2d import Parametros2D
 from mcplan.difusion_3d import Parametros3D
 from mcplan.difusion_bordes import resolver_2d_bordes, resolver_3d_bordes
+
+
+# PARÁMETROS DE LOS EJEMPLOS: editar aquí. Lados de 1 m; propiedades didácticas.
+MATERIAL = {'conductividad_W_mK': 2.0, 'densidad_kg_m3': 2400.0, 'calor_especifico_J_kgK': 900.0}
+
+CASOS = {'2d_adiabatico': {'dimension': 2,
+                   'celdas': 25,
+                   'tiempo_final_s': 86400.0,
+                   'inicial': 'coseno',
+                   'temperatura_inicial_C': 40.0,
+                   'amplitud_K': 20.0,
+                   'bordes': {'x_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'x_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'y_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'y_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0}}},
+ '2d_robin': {'dimension': 2,
+              'celdas': 25,
+              'tiempo_final_s': 86400.0,
+              'inicial': 'uniforme',
+              'temperatura_inicial_C': 60.0,
+              'bordes': {'x_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'x_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'y_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'y_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0}}},
+ '3d_neumann': {'dimension': 3,
+                'celdas': 15,
+                'tiempo_final_s': 21600.0,
+                'inicial': 'uniforme',
+                'temperatura_inicial_C': 20.0,
+                'bordes': {'x_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 200.0},
+                           'x_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                           'y_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                           'y_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                           'z_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                           'z_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0}}},
+ '3d_robin': {'dimension': 3,
+              'celdas': 15,
+              'tiempo_final_s': 86400.0,
+              'inicial': 'uniforme',
+              'temperatura_inicial_C': 60.0,
+              'bordes': {'x_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'x_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'y_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'y_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'z_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'z_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0}}}}
 
 
 def leer_bordes(entrada):
@@ -101,18 +146,16 @@ def graficar(nombre, r, C):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--parametros', type=Path, default=Path(__file__).with_name('parametros.json'))
     parser.add_argument('--caso', choices=('todos', '2d_adiabatico', '2d_robin', '3d_neumann', '3d_robin'), default='todos')
     parser.add_argument('--dt', type=float, help='Paso propuesto [s]; se rechaza si excede el límite estable.')
     parser.add_argument('--celdas', type=int, help='Número de celdas por dirección.')
     args = parser.parse_args()
-    entrada = json.loads(args.parametros.read_text(encoding='utf-8'))
-    for nombre, config in entrada['casos'].items():
+    for nombre, config in CASOS.items():
         if args.caso != 'todos' and nombre != args.caso:
             continue
         dim, n = config['dimension'], args.celdas if args.celdas is not None else config['celdas']
         valores = dict(celdas_x=n, celdas_y=n, tiempo_final_s=config['tiempo_final_s'],
-                       paso_tiempo_s=args.dt, **entrada['material'])
+                       paso_tiempo_s=args.dt, **MATERIAL)
         if dim == 2:
             p, solver = Parametros2D(**valores), resolver_2d_bordes
             C = p.capacidad_celda_J_K

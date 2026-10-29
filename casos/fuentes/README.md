@@ -13,12 +13,12 @@ siguen funcionando. No se requieren aplicaciones o dependencias nuevas.
 En PowerShell:
 
 ```powershell
-.\.venv\Scripts\python.exe -B casos/fuentes/ejecutar.py
+.\.venv\Scripts\python.exe -B casos/fuentes/Ejecutar_Fuentes.py
 ```
 
 Se reutiliza el intérprete instalado sin modificar el entorno original.
 El código, la caché Matplotlib y los resultados se escriben en esta copia.
-También puedes abrir `ejecutar.py` en VS Code, seleccionar ese intérprete y
+También puedes abrir `Ejecutar_Fuentes.py` en VS Code, seleccionar ese intérprete y
 ejecutarlo. Las figuras se guardan sin abrir ventanas.
 
 Para un solo ejemplo, añadir `--caso uniforme`, `--caso localizada` o
@@ -35,20 +35,20 @@ temperatura es común a ambas filas de cada figura; varía entre ejemplos.
 
 ## Parámetros editables
 
-En [parametros.json](parametros.json) se declaran material, temperatura inicial,
+Al comienzo de [Ejecutar_Fuentes.py](Ejecutar_Fuentes.py) se declaran material, temperatura inicial,
 tiempo final, número de celdas, fuentes y todos los bordes de cada ejemplo.
 El ejecutor mantiene lados de 1 m y espesor 2D de 1 m. Para otras longitudes
 se usa la API Python con `Parametros2D/3D`; no están expuestas en este ejecutor.
 
 Fuente uniforme:
 
-```json
+```python
 {"tipo": "uniforme", "valor_W_m3": 600.0}
 ```
 
 Fuente localizada 2D (ocupa todo el espesor):
 
-```json
+```python
 {"tipo": "caja", "valor_W_m3": 2000.0,
  "limites_m": {"x": [0.25, 0.75], "y": [0.25, 0.75]}}
 ```
@@ -60,7 +60,7 @@ La fuente es constante en el tiempo, no negativa e independiente de T.
 No representa todavía una curva de hidratación calibrada.
 
 Cada cara sigue admitiendo Dirichlet, Neumann o Robin como en la etapa anterior.
-En los JSON se pueden elegir distintos tipos por cara. Robin usa media celda
+En los diccionarios de configuración se pueden elegir distintos tipos por cara. Robin usa media celda
 más película convectiva en serie; no cambió esa implementación.
 
 El ejecutor también admite `--celdas 30` y `--dt 100` (segundos). Al refinar

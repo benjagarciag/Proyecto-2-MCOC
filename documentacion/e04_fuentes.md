@@ -125,7 +125,7 @@ de hidratación no implementada. Los bordes siguen aportando sus H como antes.
   `ResultadoBordes` agrega `fuente_W_m3` y `potencia_generada_W` conservando los
   campos anteriores. `potencia_exterior_W` sigue midiendo SOLO fronteras.
 - `desarrollo/tests/test_fuentes_volumetricas.py` (nuevo): verificaciones.
-- `casos/fuentes/parametros.json`, `ejecutar.py` y `README.md` (nuevos): entradas,
+- `casos/fuentes/Ejecutar_Fuentes.py` y `README.md`: parámetros del ejemplo,
   ejecución y gráficos reproducibles. Los comandos anteriores no necesitan cambios.
 
 Ejemplo de API:

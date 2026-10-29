@@ -23,14 +23,17 @@ Resultado verificado: **251 pruebas aprobadas** (31 de 1D, 22 de 2D, 30 de 3D,
 73 de bordes, 51 de fuentes y 44 de materiales). Para ejecutar los ejemplos:
 
 ```powershell
-.\.venv\Scripts\python.exe -B casos/2d/ejecutar.py
-.\.venv\Scripts\python.exe -B casos/3d/ejecutar.py
-.\.venv\Scripts\python.exe -B casos/bordes/ejecutar.py
-.\.venv\Scripts\python.exe -B casos/fuentes/ejecutar.py
+.\.venv\Scripts\python.exe -B casos/2d/Ejecutar_2D.py
+.\.venv\Scripts\python.exe -B casos/3d/Ejecutar_3D.py
+.\.venv\Scripts\python.exe -B casos/bordes/Ejecutar_Bordes.py
+.\.venv\Scripts\python.exe -B casos/fuentes/Ejecutar_Fuentes.py
 .\.venv\Scripts\python.exe -B casos/materiales/ejecutar.py
 ```
 
-Cada caso tiene `parametros.json` editable y README con sus opciones. Los
+Los casos 2D y 3D se configuran al comienzo de `casos/2d/Ejecutar_2D.py`
+y `casos/3d/Ejecutar_3D.py`. Los bordes se configuran en `casos/bordes/Ejecutar_Bordes.py`.
+Las fuentes se configuran en `casos/fuentes/Ejecutar_Fuentes.py`.
+Materiales conserva su `parametros.json` editable. Cada README explica las opciones. Los
 comandos actualizan las figuras de su caso, sin exportar historias ni CSV.
 No ejecutar los módulos de `desarrollo/mcplan/` como scripts: se usan desde
 los ejecutores. En Linux/macOS usar `.venv/bin/python` en lugar de la ruta

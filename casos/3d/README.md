@@ -12,7 +12,7 @@ Desde la raíz de esta copia, en PowerShell:
 
 ```powershell
 $pythonE04 = ".\.venv\Scripts\python.exe"
-& $pythonE04 -B casos/3d/ejecutar.py
+& $pythonE04 -B casos/3d/Ejecutar_3D.py
 & $pythonE04 -B -m pytest -q -p no:cacheprovider
 ```
 
@@ -32,7 +32,8 @@ Incluye los tres cortes centrales XY, XZ y YZ al inicio y a las 24 h,
 la evolución central y el error final frente a la solución exacta. Los seis
 mapas de temperatura comparten límites de color; el error tiene escala propia.
 
-El JSON permite modificar dimensiones, propiedades del material, tamaño de
+El bloque de parámetros al comienzo de `Ejecutar_3D.py` permite modificar
+dimensiones, propiedades del material, tamaño de
 malla, duración, paso, temperatura de las caras y amplitud del ejemplo.
 También pueden usarse `--celdas 31` y `--dt 100`. Estas opciones reemplazan
 la figura del mismo caso. La API del solver admite seis temperaturas de cara

@@ -1,0 +1,42 @@
+E06 — Semana 2 / viernes — Dossier de verificación + BIM del caso
+
+Objetivo
+Congelar la evidencia de que el solver básico está verificado y completar el modelo BIM base de la fundación.
+
+Antes de la actividad
+Tener la batería de tests ejecutada y el modelo BIM del caso base en una versión coherente.
+
+Durante la actividad
+No hay actividad sincrónica.
+
+Evidencia / entrega
+Entregar Markdown, máximo 1200 palabras más figuras/tablas:
+
+repo + commit;
+
+matriz de verificación;
+
+convergencia espacial;
+
+convergencia temporal;
+
+test de energía;
+
+test de fuente;
+
+test de condición Robin;
+
+imagen y dimensiones del BIM base;
+
+lista explícita de simplificaciones geométricas.
+
+Tabla mínima:
+
+Test	Qué verifica	Error/métrica	Resultado
+El IFC utilizado debe estar versionado o descargable mediante instrucciones reproducibles.
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado:
+
+Repositorio:
+Commit evaluado:

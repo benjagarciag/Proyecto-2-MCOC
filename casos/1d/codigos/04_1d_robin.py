@@ -25,7 +25,7 @@ rho = 2400.0        # kg/m^3
 cp = 900.0          # J/(kg K)
 alpha = k/(rho*cp)
 
-h = 120.0                # W/(m^2 K)
+h = 40.0                # W/(m^2 K)
 Tini = 20.0             # °C: temperatura inicial de la losa
 Tinf_right = 20.0       # °C: aire del lado derecho
 Tinf_left_mean = 20.0   # °C: valor medio del aire del lado izquierdo
@@ -110,7 +110,7 @@ ax_history.axhline(Tinf_right, color="gray", linestyle=":", lw=1.3,
 ax_history.set_xlabel("tiempo [h]")
 ax_history.set_ylabel("T [°C]")
 ax_history.set_title("Historia temporal")
-# ax_history.legend(fontsize=8)
+ax_history.legend(fontsize=8, loc="best")
 ax_history.grid(True, alpha=0.35)
 
 # Perfiles dentro de la losa para varios instantes.
@@ -122,7 +122,8 @@ for step, hour, color in zip(snapshot_steps, snapshot_hours, colors):
 ax_profile.set_xlabel("x [m]")
 ax_profile.set_ylabel("T [°C]")
 ax_profile.set_title("Perfiles de temperatura en la losa")
-# ax_profile.legend(title="Perfil", fontsize=8, title_fontsize=9, ncol=2)
+ax_profile.legend(title="Tiempo del perfil", fontsize=8, title_fontsize=9, ncol=2,
+                  loc="best")
 ax_profile.grid(True, alpha=0.35)
 
 fig.suptitle(f"1D: Robin con ambiente oscilante ($h={h:.0f}$ W/(m² K))")

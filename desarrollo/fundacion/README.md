@@ -84,5 +84,20 @@ vertidas leídas y trianguladas correctamente, cada una con su GUID y propiedade
 | Conjunto | 18 × 18 × 4.30 | 0–4.30 |
 
 Esto reproduce la comprobación básica de los puntos 25–26. No comprueba solapes,
-estanqueidad, todas las cotas ni validez térmica. La demostración de modificar
-una pieza en Bonsai, guardar y detectar el cambio desde Python sigue pendiente.
+estanqueidad, todas las cotas ni validez térmica.
+
+## Práctica E02: cambio de propiedad detectado desde Python
+
+Demostración realizada el 21 de octubre de 2026 sobre `Vertida_01`:
+
+1. Python leyó `TemperaturaColocacion_C = 18.0` desde el IFC guardado.
+2. Se editó esa propiedad en el proyecto activo de Bonsai a `19.0`.
+3. Antes de guardar, Bonsai mostraba `19.0` y el archivo seguía conteniendo `18.0`.
+4. Se guardó mediante **Save IFC Project**.
+5. Otro proceso Python abrió el archivo y leyó `19.0`, con el mismo GUID
+   `31Auww6L95uPtdfMwkzuh4` y nombre `Vertida_01`.
+
+El IFC queda con **19 °C en Vertida_01** como dato de práctica, sin validación
+como temperatura definitiva del plan. Las otras vertidas conservan 18 °C.
+Para mostrar el valor guardado, ejecutar `verificar_ifc.py` con el comando anterior.
+Esto demuestra el flujo Bonsai → IFC → Python sin depender del estado de Blender.

@@ -1,7 +1,7 @@
 ISO-10303-21;
 HEADER;
 FILE_DESCRIPTION(('ViewDefinition[DesignTransferView]'),'2;1');
-FILE_NAME('fundacion.ifc','2026-10-21T11:31:20-03:00',(''),(''),'IfcOpenShell 0.9.0.post1','Bonsai 0.9.0-post1-py311','Nobody');
+FILE_NAME('fundacion.ifc','2026-10-22T12:05:28-03:00',(''),(''),'IfcOpenShell 0.9.0.post1','Bonsai 0.9.0-post1-py311','Nobody');
 FILE_SCHEMA(('IFC4'));
 ENDSEC;
 DATA;
@@ -197,7 +197,7 @@ DATA;
 #225=IFCRELDEFINESBYPROPERTIES('0Stk6bHuD91OhgGOenG1PV',$,$,$,(#76),#224);
 #226=IFCPROPERTYSINGLEVALUE('VertidaID',$,IFCINTEGER(1),$);
 #227=IFCPROPERTYSINGLEVALUE('Inicio_h',$,IFCREAL(0.),$);
-#228=IFCPROPERTYSINGLEVALUE('TemperaturaColocacion_C',$,IFCREAL(18.),$);
+#228=IFCPROPERTYSINGLEVALUE('TemperaturaColocacion_C',$,IFCREAL(19.),$);
 #229=IFCPROPERTYSINGLEVALUE('TipoHormigon',$,IFCLABEL('M1'),$);
 #230=IFCPROPERTYSINGLEVALUE('Moldaje',$,IFCLABEL('TBD'),$);
 #231=IFCPROPERTYSINGLEVALUE('Aislacion',$,IFCLABEL('TBD'),$);

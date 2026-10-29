@@ -11,6 +11,7 @@ El código que pueda reutilizarse entre problemas se guarda en `desarrollo/mcpla
 | [bordes/](bordes/README.md) | Neumann, aislamiento y Robin en 2D/3D. |
 | [fuentes/](fuentes/README.md) | Generación volumétrica uniforme/localizada y convección. |
 | [materiales/](materiales/README.md) | Dos materiales, contacto perfecto y comparación homogénea. |
+| [Visualizador unificado](../Visualizadores/README.md) | Ventana común para modificar parámetros, ejecutar tests y reproducir casos 1D/2D/3D. |
 
 Cada caso incluye README, parámetros y ejecutor. Las figuras se guardan en
 `resultados/`, en carpetas fijas que se actualizan al ejecutar. Para el recorrido

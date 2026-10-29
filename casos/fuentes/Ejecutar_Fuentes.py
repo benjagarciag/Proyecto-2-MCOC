@@ -1,6 +1,5 @@
 """Generación uniforme, localizada y con Robin: compara 2D y 3D."""
 import argparse
-import json
 import os
 from pathlib import Path
 import sys
@@ -20,7 +19,66 @@ from mcplan.difusion_bordes import resolver_2d_bordes, resolver_3d_bordes
 from mcplan.fuentes_volumetricas import fuente_desde_config
 
 
-def bordes_desde_json(entrada):
+# PARÁMETROS DE LOS EJEMPLOS: editar aquí. Lados de 1 m; espesor 2D de 1 m.
+# Generación constante didáctica, sin calibración de hidratación.
+MATERIAL = {'conductividad_W_mK': 2.0, 'densidad_kg_m3': 2400.0, 'calor_especifico_J_kgK': 900.0}
+
+TEMPERATURA_INICIAL_C = 20.0
+
+TIEMPO_FINAL_S = 86400.0
+
+CELDAS_2D = 25
+
+CELDAS_3D = 15
+
+EJEMPLOS = {'uniforme': {'fuente_2d': {'tipo': 'uniforme', 'valor_W_m3': 600.0},
+              'fuente_3d': {'tipo': 'uniforme', 'valor_W_m3': 600.0},
+              'bordes_2d': {'x_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                            'x_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                            'y_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                            'y_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0}},
+              'bordes_3d': {'x_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                            'x_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                            'y_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                            'y_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                            'z_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                            'z_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0}}},
+ 'localizada': {'fuente_2d': {'tipo': 'caja',
+                              'valor_W_m3': 2000.0,
+                              'limites_m': {'x': [0.25, 0.75], 'y': [0.25, 0.75]}},
+                'fuente_3d': {'tipo': 'caja',
+                              'valor_W_m3': 2000.0,
+                              'limites_m': {'x': [0.25, 0.75],
+                                            'y': [0.25, 0.75],
+                                            'z': [0.25, 0.75]}},
+                'bordes_2d': {'x_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'x_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'y_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'y_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0}},
+                'bordes_3d': {'x_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'x_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'y_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'y_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'z_min': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0},
+                              'z_max': {'tipo': 'neumann', 'flujo_entrante_W_m2': 0}}},
+ 'robin': {'fuente_2d': {'tipo': 'uniforme', 'valor_W_m3': 600.0},
+           'fuente_3d': {'tipo': 'uniforme', 'valor_W_m3': 600.0},
+           'bordes_2d': {'x_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'x_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'y_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'y_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0}},
+           'bordes_3d': {'x_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'x_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'y_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'y_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'z_min': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0},
+                         'z_max': {'tipo': 'robin', 'h_W_m2K': 10.0, 'ambiente_C': 20.0}}}}
+
+PASO_TIEMPO_S = None  # None: paso estable automático; --dt prevalece si se indica.
+INSTANTANEAS = 13     # Campos en memoria, incluidos inicio y final.
+
+
+def bordes_desde_config(entrada):
     clases = {'dirichlet': Dirichlet, 'neumann': Neumann, 'robin': Robin}
     return {cara: clases[b['tipo']](**{k: v for k, v in b.items() if k != 'tipo'})
             for cara, b in entrada.items()}
@@ -81,32 +139,30 @@ def dibujar_fila(ax, dim, r, limites_T):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--parametros', type=Path, default=Path(__file__).with_name('parametros.json'))
     parser.add_argument('--caso', choices=('todos', 'uniforme', 'localizada', 'robin'), default='todos')
     parser.add_argument('--celdas', type=int, help='Celdas por eje, en ambos solvers.')
     parser.add_argument('--dt', type=float, help='Paso propuesto [s].')
     args = parser.parse_args()
-    entrada = json.loads(args.parametros.read_text(encoding='utf-8'))
     titulos = {'uniforme': 'Fuente uniforme y superficies adiabáticas',
                'localizada': 'Fuente localizada y superficies adiabáticas',
                'robin': 'Fuente uniforme y convección Robin'}
-    for nombre, config in entrada['ejemplos'].items():
+    for nombre, config in EJEMPLOS.items():
         if args.caso != 'todos' and args.caso != nombre:
             continue
         fig, ax = plt.subplots(2, 4, figsize=(19, 9), layout='constrained')
         print(nombre)
         resultados = []
         for dim in (2, 3):
-            n = args.celdas if args.celdas is not None else entrada[f'celdas_{dim}d']
-            valores = dict(celdas_x=n, celdas_y=n, tiempo_final_s=entrada['tiempo_final_s'],
-                           paso_tiempo_s=args.dt, **entrada['material'])
+            n = args.celdas if args.celdas is not None else (CELDAS_2D if dim == 2 else CELDAS_3D)
+            valores = dict(celdas_x=n, celdas_y=n, tiempo_final_s=TIEMPO_FINAL_S,
+                           paso_tiempo_s=args.dt if args.dt is not None else PASO_TIEMPO_S, **MATERIAL)
             if dim == 2:
                 p, solver = Parametros2D(**valores), resolver_2d_bordes
             else:
                 p, solver = Parametros3D(celdas_z=n, **valores), resolver_3d_bordes
             fuente = fuente_desde_config(config[f'fuente_{dim}d'], p)
-            bordes = bordes_desde_json(config[f'bordes_{dim}d'])
-            r = solver(p, bordes, entrada['temperatura_inicial_C'], n_guardados=13, fuente_W_m3=fuente)
+            bordes = bordes_desde_config(config[f'bordes_{dim}d'])
+            r = solver(p, bordes, TEMPERATURA_INICIAL_C, n_guardados=INSTANTANEAS, fuente_W_m3=fuente)
             resultados.append(r)
         minimo = min(float(r.temperatura_C.min()) for r in resultados)
         maximo = max(float(r.temperatura_C.max()) for r in resultados)

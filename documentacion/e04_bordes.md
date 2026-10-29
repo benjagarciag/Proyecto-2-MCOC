@@ -144,7 +144,7 @@ el balance, aunque el cuerpo por sí solo sea un sistema abierto.
    `resolver_2d_bordes` y `resolver_3d_bordes`, con el mismo núcleo.
 3. `desarrollo/tests/test_bordes_termicos.py`: evidencia reproducible.
 4. `casos/bordes/parametros.json`: entradas editables y unidades.
-5. `casos/bordes/ejecutar.py`: lectura de entradas, ejecución y gráficos.
+5. `casos/bordes/Ejecutar_Bordes.py`: lectura de entradas, ejecución y gráficos.
 6. `casos/bordes/README.md`: comandos para este computador.
 
 Ejemplo de API 2D (cuatro caras explícitas; se admite mezcla de tipos):

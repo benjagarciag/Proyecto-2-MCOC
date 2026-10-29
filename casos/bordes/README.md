@@ -14,7 +14,7 @@ En PowerShell, abrir la copia y usar el Python ya instalado (sin activar ni
 instalar otro entorno):
 
 ```powershell
-.\.venv\Scripts\python.exe -B casos/bordes/ejecutar.py
+.\.venv\Scripts\python.exe -B casos/bordes/Ejecutar_Bordes.py
 ```
 
 La ruta del intérprete reutiliza las dependencias instaladas; las escrituras
@@ -29,33 +29,34 @@ También admite `--dt 200` (segundos) y `--celdas 20` (por dirección).
 Un paso que excede el límite se rechaza antes de simular.
 El paso efectivo puede ser algo menor para terminar exactamente en tf.
 
-En VS Code: abrir `casos/bordes/ejecutar.py`, seleccionar el intérprete de
+En VS Code: abrir `casos/bordes/Ejecutar_Bordes.py`, seleccionar el intérprete de
 `.venv` ya utilizado y ejecutar el archivo Python. No hay que abrir el código
 en Blender. Se guardan los gráficos; no se abre una ventana de Matplotlib.
 
 ## Editar los bordes
 
-En [parametros.json](parametros.json), cada caso declara todas sus caras:
+En el bloque `CASOS` al comienzo de [Ejecutar_Bordes.py](Ejecutar_Bordes.py),
+cada caso declara todas sus caras. Las propiedades comunes están en `MATERIAL`:
 
 - `x_min`: izquierda; `x_max`: derecha.
 - `y_min`: abajo; `y_max`: arriba en el plano XY.
 - En 3D también `z_min`: base y `z_max`: techo.
 
-Cada cara usa uno de estos objetos JSON:
+Cada cara usa uno de estos diccionarios de Python:
 
-```json
+```python
 {"tipo": "neumann", "flujo_entrante_W_m2": 0}
 ```
 
-```json
+```python
 {"tipo": "neumann", "flujo_entrante_W_m2": 200}
 ```
 
-```json
+```python
 {"tipo": "robin", "h_W_m2K": 10, "ambiente_C": 20}
 ```
 
-```json
+```python
 {"tipo": "dirichlet", "temperatura_C": 20}
 ```
 

@@ -1,0 +1,57 @@
+E04 — Semana 2 / miércoles — Revisión oral: 2D/3D, condiciones de borde y fuentes
+
+Objetivo
+Demostrar dominio del solver térmico general antes de introducir hidratación y clima real.
+
+Antes de la actividad
+El repo debe mostrar avance en:
+
+2D;
+
+3D;
+
+Dirichlet;
+
+Neumann;
+
+Robin;
+
+fuente volumétrica;
+
+modelo BIM del caso base.
+
+Leer la sección de método de Schmidt del Anexo 4 del ICH.
+
+Durante la actividad
+Se podrá pedir:
+
+escribir el balance de un voxel;
+
+derivar el criterio de estabilidad;
+
+explicar flujo y signos;
+
+identificar una superficie adiabática;
+
+implementar conceptualmente convección;
+
+distinguir fuente volumétrica de flujo superficial;
+
+explicar cómo tratar dos materiales;
+
+explicar por qué las condiciones de borde pueden dominar el resultado;
+
+mostrar el avance BIM de la fundación de referencia.
+
+Evidencia / entrega
+Canvas:
+
+Repositorio:
+Commit evaluado:
+Sin informe.
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado:
+
+Repositorio:
+Commit evaluado:

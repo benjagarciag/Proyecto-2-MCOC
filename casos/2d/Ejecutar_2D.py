@@ -1,7 +1,6 @@
 """Demo 2D: modo sinusoidal con solución exacta y cuatro caras a T fija."""
 import argparse
 from dataclasses import replace
-import json
 import os
 from pathlib import Path
 import sys
@@ -16,21 +15,36 @@ import numpy as np
 from mcplan.difusion_2d import Dirichlet2D, Parametros2D, resolver_2d
 
 
+# PARÁMETROS DEL EJEMPLO: editar aquí. Propiedades didácticas, sin calibración.
+PARAMETROS = Parametros2D(
+    longitud_x_m=1.0,
+    longitud_y_m=1.0,
+    espesor_m=1.0,
+    celdas_x=30,
+    celdas_y=30,
+    conductividad_W_mK=2.0,
+    densidad_kg_m3=2400.0,
+    calor_especifico_J_kgK=900.0,
+    tiempo_final_s=86400.0,  # 24 h
+    paso_tiempo_s=None,  # None: calcular automáticamente un paso estable.
+    seguridad=0.9,
+)
+TEMPERATURA_BORDE_C = 20.0
+AMPLITUD_INICIAL_K = 50.0
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--parametros', type=Path, default=Path(__file__).with_name('parametros.json'))
     parser.add_argument('--celdas', type=int, help='Número de celdas en cada eje')
     parser.add_argument('--dt', type=float, help='Paso temporal propuesto [s]')
     args = parser.parse_args()
-    entrada = json.loads(args.parametros.read_text(encoding='utf-8'))
-    p = Parametros2D(**entrada['dominio'])
     cambios = {}
     if args.celdas is not None:
         cambios.update(celdas_x=args.celdas, celdas_y=args.celdas)
     if args.dt is not None:
         cambios['paso_tiempo_s'] = args.dt
-    p = replace(p, **cambios)
-    base, amplitud = entrada['temperatura_borde_C'], entrada['amplitud_inicial_K']
+    p = replace(PARAMETROS, **cambios)
+    base, amplitud = TEMPERATURA_BORDE_C, AMPLITUD_INICIAL_K
     if not np.isfinite([base, amplitud]).all():
         raise ValueError('Temperatura de borde y amplitud deben ser finitas.')
     bordes = Dirichlet2D(base, base, base, base)
@@ -38,9 +52,11 @@ def main():
     r = resolver_2d(p, bordes, inicial)
     X, Y = np.meshgrid(r.x_m, r.y_m)
     forma = np.sin(np.pi*X/p.longitud_x_m)*np.sin(np.pi*Y/p.longitud_y_m)
-    tasa = p.alpha_m2_s*np.pi**2*(1/p.longitud_x_m**2 + 1/p.longitud_y_m**2)
+    lambda_2d = (np.pi/p.longitud_x_m)**2 + (np.pi/p.longitud_y_m)**2
+    tasa = p.alpha_m2_s*lambda_2d
     exacta = base + amplitud*forma*np.exp(-tasa*p.tiempo_final_s)
     error = r.temperatura_C[-1] - exacta
+
     fig, axs = plt.subplots(2, 2, figsize=(11, 8), layout='constrained')
     extent = (0, p.longitud_x_m, 0, p.longitud_y_m)
     for ax, campo, titulo in ((axs[0, 0], r.temperatura_C[0], 'Temperatura inicial'),
@@ -53,7 +69,6 @@ def main():
     im = axs[1, 0].imshow(error, origin='lower', extent=extent, cmap='RdBu_r', vmin=-limite, vmax=limite)
     axs[1, 0].set(title='Error numérico − exacto al final', xlabel='x [m]', ylabel='y [m]')
     fig.colorbar(im, ax=axs[1, 0], label='Diferencia [K]')
-    # Media de las dos columnas/filas centrales si el número de celdas es par.
     ix = sorted({(p.celdas_x-1)//2, p.celdas_x//2})
     iy = sorted({(p.celdas_y-1)//2, p.celdas_y//2})
     centro = r.temperatura_C[:, iy, :][:, :, ix].mean(axis=(1, 2))

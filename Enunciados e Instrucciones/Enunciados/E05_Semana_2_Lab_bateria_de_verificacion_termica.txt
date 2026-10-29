@@ -1,0 +1,63 @@
+E05 — Semana 2 / jueves — Lab: batería de verificación térmica
+
+Objetivo
+Ejecutar en vivo una batería de tests 1D/2D/3D y condiciones de borde.
+
+Antes de la actividad
+Tener tests automáticos para la mayoría de los siguientes casos:
+
+solución 1D exacta;
+
+solución 2D sinusoidal;
+
+solución 3D sinusoidal;
+
+conservación de energía adiabática;
+
+fuente uniforme;
+
+Neumann;
+
+Robin.
+
+Durante la actividad
+El ayudante seleccionará tests al azar y puede cambiar parámetros.
+
+Caso 2D
+ 
+T(x,y,t) = T_0 + A*sin(pi*x/L_x)*sin(pi*y/L_y)*e^(-alpha*lambda*t)
+
+con:
+
+lambda = (pi/L_x)^2 + (pi/L_y)^2 
+
+Caso 3D
+ 
+T(x,y,z,t) = T_0 + A*sin(pi*x/L_x)*sin(pi*y/L_y)*sin(pi*z/L_z)*e^(-alpha*lambda*t)
+
+con:
+
+lambda = (pi/L_x)^2 + (pi/L_y)^2 + (pi/L_z)^2 
+
+Fuente uniforme en dominio adiabático
+
+dT/dt = q_0/(rho*c_p) 
+
+También se revisará conservación de energía.
+
+Evidencia / entrega
+Canvas:
+
+Repositorio:
+Commit evaluado:
+No se requiere texto.
+
+Rúbrica
+Criterio	Puntos
+Batería de tests funcionando	1.2
+Conservación/fuente volumétrica	0.6
+Condiciones de borde	0.6
+Respuesta oral y capacidad de modificar casos	0.6
+Total	3
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado.
