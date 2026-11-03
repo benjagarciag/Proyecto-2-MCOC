@@ -1,0 +1,588 @@
+{
+  "caracter_parametros": "DIDÁCTICOS: ejemplo exponencial de DIFUSION_DE_CALOR_1D_2D_3D.md, secciones 23–25. No son mediciones ni calibración experimental de M1.",
+  "sha256_ifc": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+  "pasos_m": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "volumenes_voxelizados_m3": {
+    "1": 134.5,
+    "2": 134.5,
+    "3": 212.0,
+    "4": 122.5,
+    "5": 39.0
+  },
+  "ids_sin_voxeles": [],
+  "calendario": [
+    {
+      "vertida_id": 1,
+      "inicio_s": 0.0,
+      "temperatura_C": 19.0,
+      "material": "M1",
+      "volumen_ifc_m3": 147.62573781168035
+    },
+    {
+      "vertida_id": 2,
+      "inicio_s": 21600.0,
+      "temperatura_C": 18.0,
+      "material": "M1",
+      "volumen_ifc_m3": 147.62573781168035
+    },
+    {
+      "vertida_id": 3,
+      "inicio_s": 43200.0,
+      "temperatura_C": 18.0,
+      "material": "M1",
+      "volumen_ifc_m3": 214.22433789137642
+    },
+    {
+      "vertida_id": 4,
+      "inicio_s": 64800.0,
+      "temperatura_C": 18.0,
+      "material": "M1",
+      "volumen_ifc_m3": 88.92467899172959
+    },
+    {
+      "vertida_id": 5,
+      "inicio_s": 86400.0,
+      "temperatura_C": 18.0,
+      "material": "M1",
+      "volumen_ifc_m3": 38.37470018678084
+    }
+  ],
+  "curvas_por_material": {
+    "M1": {
+      "theta_infinito_K": 45.0,
+      "tau_s": 108000.0,
+      "densidad_kg_m3": 2400.0,
+      "calor_especifico_J_kgK": 900.0
+    }
+  },
+  "energia_asintotica_total_J": 62451000000.0,
+  "residuo_suma_intervalos_J": 0.0,
+  "reportes": [
+    {
+      "tiempo_h": 0.0,
+      "potencia_total_W": 121050.0,
+      "energia_total_J": 0.0,
+      "vertidas": [
+        {
+          "vertida_id": 1,
+          "edad_h": 0.0,
+          "q_W_m3": 900.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 121050.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 2,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 3,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 4,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 5,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        }
+      ]
+    },
+    {
+      "tiempo_h": 6.0,
+      "potencia_total_W": 220157.3576600897,
+      "energia_total_J": 2369805372.710312,
+      "vertidas": [
+        {
+          "vertida_id": 1,
+          "edad_h": 6.0,
+          "q_W_m3": 736.8576777701836,
+          "elevacion_adiabatica_K": 8.157116111490815,
+          "potencia_W": 99107.3576600897,
+          "energia_acumulada_J": 2369805372.710312
+        },
+        {
+          "vertida_id": 2,
+          "edad_h": 0.0,
+          "q_W_m3": 900.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 121050.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 3,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 4,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 5,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        }
+      ]
+    },
+    {
+      "tiempo_h": 12.0,
+      "potencia_total_W": 371049.59923270385,
+      "energia_total_J": 6679843282.867985,
+      "vertidas": [
+        {
+          "vertida_id": 1,
+          "edad_h": 12.0,
+          "q_W_m3": 603.2880414320754,
+          "elevacion_adiabatica_K": 14.835597928396231,
+          "potencia_W": 81142.24157261413,
+          "energia_acumulada_J": 4310037910.157672
+        },
+        {
+          "vertida_id": 2,
+          "edad_h": 6.0,
+          "q_W_m3": 736.8576777701836,
+          "elevacion_adiabatica_K": 8.157116111490815,
+          "potencia_W": 99107.3576600897,
+          "energia_acumulada_J": 2369805372.710312
+        },
+        {
+          "vertida_id": 3,
+          "edad_h": 0.0,
+          "q_W_m3": 900.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 190800.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 4,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 5,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        }
+      ]
+    },
+    {
+      "tiempo_h": 18.0,
+      "potencia_total_W": 414039.717809075,
+      "energia_total_J": 13943910476.6199,
+      "vertidas": [
+        {
+          "vertida_id": 1,
+          "edad_h": 18.0,
+          "q_W_m3": 493.93047248462386,
+          "elevacion_adiabatica_K": 20.303476375768806,
+          "potencia_W": 66433.6485491819,
+          "energia_acumulada_J": 5898565956.688354
+        },
+        {
+          "vertida_id": 2,
+          "edad_h": 12.0,
+          "q_W_m3": 603.2880414320754,
+          "elevacion_adiabatica_K": 14.835597928396231,
+          "potencia_W": 81142.24157261413,
+          "energia_acumulada_J": 4310037910.157672
+        },
+        {
+          "vertida_id": 3,
+          "edad_h": 6.0,
+          "q_W_m3": 736.8576777701836,
+          "elevacion_adiabatica_K": 8.157116111490815,
+          "potencia_W": 156213.8276872789,
+          "energia_acumulada_J": 3735306609.773875
+        },
+        {
+          "vertida_id": 4,
+          "edad_h": 0.0,
+          "q_W_m3": 900.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 110250.0,
+          "energia_acumulada_J": 0.0
+        },
+        {
+          "vertida_id": 5,
+          "edad_h": null,
+          "q_W_m3": 0.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 0.0,
+          "energia_acumulada_J": 0.0
+        }
+      ]
+    },
+    {
+      "tiempo_h": 24.0,
+      "potencia_total_W": 374087.0499660191,
+      "energia_total_J": 22049598603.66994,
+      "vertidas": [
+        {
+          "vertida_id": 1,
+          "edad_h": 24.0,
+          "q_W_m3": 404.39606770549943,
+          "elevacion_adiabatica_K": 24.78019661472503,
+          "potencia_W": 54391.271106389664,
+          "energia_acumulada_J": 7199142720.509914
+        },
+        {
+          "vertida_id": 2,
+          "edad_h": 18.0,
+          "q_W_m3": 493.93047248462386,
+          "elevacion_adiabatica_K": 20.303476375768806,
+          "potencia_W": 66433.6485491819,
+          "energia_acumulada_J": 5898565956.688354
+        },
+        {
+          "vertida_id": 3,
+          "edad_h": 12.0,
+          "q_W_m3": 603.2880414320754,
+          "elevacion_adiabatica_K": 14.835597928396231,
+          "potencia_W": 127897.06478359998,
+          "energia_acumulada_J": 6793517003.371201
+        },
+        {
+          "vertida_id": 4,
+          "edad_h": 6.0,
+          "q_W_m3": 736.8576777701836,
+          "elevacion_adiabatica_K": 8.157116111490815,
+          "potencia_W": 90265.0655268475,
+          "energia_acumulada_J": 2158372923.1004705
+        },
+        {
+          "vertida_id": 5,
+          "edad_h": 0.0,
+          "q_W_m3": 900.0,
+          "elevacion_adiabatica_K": 0.0,
+          "potencia_W": 35100.0,
+          "energia_acumulada_J": 0.0
+        }
+      ]
+    },
+    {
+      "tiempo_h": 48.0,
+      "potencia_total_W": 168088.14665089868,
+      "energia_total_J": 44297480161.70294,
+      "vertidas": [
+        {
+          "vertida_id": 1,
+          "edad_h": 48.0,
+          "q_W_m3": 181.70686619518983,
+          "elevacion_adiabatica_K": 35.914656690240506,
+          "potencia_W": 24439.573503253032,
+          "energia_acumulada_J": 10433926061.64867
+        },
+        {
+          "vertida_id": 2,
+          "edad_h": 42.0,
+          "q_W_m3": 221.93726754744583,
+          "elevacion_adiabatica_K": 33.903136622627706,
+          "potencia_W": 29850.562485131464,
+          "energia_acumulada_J": 9849539251.6058
+        },
+        {
+          "vertida_id": 3,
+          "edad_h": 36.0,
+          "q_W_m3": 271.0747907209819,
+          "elevacion_adiabatica_K": 31.4462604639509,
+          "potencia_W": 57467.855632848186,
+          "energia_acumulada_J": 14399871591.652401
+        },
+        {
+          "vertida_id": 4,
+          "edad_h": 30.0,
+          "q_W_m3": 331.0914970542981,
+          "elevacion_adiabatica_K": 28.445425147285096,
+          "potencia_W": 40558.70838915152,
+          "energia_acumulada_J": 7526659493.971638
+        },
+        {
+          "vertida_id": 5,
+          "edad_h": 24.0,
+          "q_W_m3": 404.39606770549943,
+          "elevacion_adiabatica_K": 24.78019661472503,
+          "potencia_W": 15771.446640514474,
+          "energia_acumulada_J": 2087483762.8244367
+        }
+      ]
+    },
+    {
+      "tiempo_h": 72.0,
+      "potencia_total_W": 75526.87281503194,
+      "energia_total_J": 54294097735.97655,
+      "vertidas": [
+        {
+          "vertida_id": 1,
+          "edad_h": 72.0,
+          "q_W_m3": 81.64615796047126,
+          "elevacion_adiabatica_K": 40.91769210197644,
+          "potencia_W": 10981.408245683386,
+          "energia_acumulada_J": 11887407909.466194
+        },
+        {
+          "vertida_id": 2,
+          "edad_h": 66.0,
+          "q_W_m3": 99.72284252610048,
+          "elevacion_adiabatica_K": 40.013857873694974,
+          "potencia_W": 13412.722319760516,
+          "energia_acumulada_J": 11624825989.465866
+        },
+        {
+          "vertida_id": 3,
+          "edad_h": 60.0,
+          "q_W_m3": 121.80175491295144,
+          "elevacion_adiabatica_K": 38.90991225435243,
+          "potencia_W": 25821.972041545712,
+          "energia_acumulada_J": 17817627019.513065
+        },
+        {
+          "vertida_id": 4,
+          "edad_h": 54.0,
+          "q_W_m3": 148.76899939942788,
+          "elevacion_adiabatica_K": 37.561550030028606,
+          "potencia_W": 18224.20242642991,
+          "energia_acumulada_J": 9938786137.94557
+        },
+        {
+          "vertida_id": 5,
+          "edad_h": 48.0,
+          "q_W_m3": 181.70686619518983,
+          "elevacion_adiabatica_K": 35.914656690240506,
+          "potencia_W": 7086.567781612403,
+          "energia_acumulada_J": 3025450679.5858603
+        }
+      ]
+    },
+    {
+      "tiempo_h": 168.0,
+      "potencia_total_W": 3078.641795534453,
+      "energia_total_J": 62118506686.08228,
+      "vertidas": [
+        {
+          "vertida_id": 1,
+          "edad_h": 168.0,
+          "q_W_m3": 3.328077344834639,
+          "elevacion_adiabatica_K": 44.83359613275827,
+          "potencia_W": 447.626402880259,
+          "energia_acumulada_J": 13025056348.48893
+        },
+        {
+          "vertida_id": 2,
+          "edad_h": 162.0,
+          "q_W_m3": 4.064922848351399,
+          "elevacion_adiabatica_K": 44.79675385758243,
+          "potencia_W": 546.7321231032633,
+          "energia_acumulada_J": 13014352930.70485
+        },
+        {
+          "vertida_id": 3,
+          "edad_h": 156.0,
+          "q_W_m3": 4.964907978684694,
+          "elevacion_adiabatica_K": 44.75175460106576,
+          "potencia_W": 1052.5604914811552,
+          "energia_acumulada_J": 20492723466.920036
+        },
+        {
+          "vertida_id": 4,
+          "edad_h": 150.0,
+          "q_W_m3": 6.064152299176921,
+          "elevacion_adiabatica_K": 44.69679238504116,
+          "potencia_W": 742.8586566491729,
+          "energia_acumulada_J": 11826771265.08189
+        },
+        {
+          "vertida_id": 5,
+          "edad_h": 144.0,
+          "q_W_m3": 7.4067723441180275,
+          "elevacion_adiabatica_K": 44.6296613827941,
+          "potencia_W": 288.86412142060306,
+          "energia_acumulada_J": 3759602674.8865747
+        }
+      ]
+    },
+    {
+      "tiempo_h": 336.0,
+      "potencia_total_W": 11.384397791754717,
+      "energia_total_J": 62449770485.03849,
+      "vertidas": [
+        {
+          "vertida_id": 1,
+          "edad_h": 336.0,
+          "q_W_m3": 0.012306776459112868,
+          "elevacion_adiabatica_K": 44.99938466117705,
+          "potencia_W": 1.6552614337506806,
+          "energia_acumulada_J": 13073221231.765152
+        },
+        {
+          "vertida_id": 2,
+          "edad_h": 330.0,
+          "q_W_m3": 0.015031530711221094,
+          "elevacion_adiabatica_K": 44.99924842346444,
+          "potencia_W": 2.0217408806592374,
+          "energia_acumulada_J": 13073181651.984888
+        },
+        {
+          "vertida_id": 3,
+          "edad_h": 324.0,
+          "q_W_m3": 0.01835955307005473,
+          "elevacion_adiabatica_K": 44.9990820223465,
+          "potencia_W": 3.8922252508516033,
+          "energia_acumulada_J": 20605979639.672913
+        },
+        {
+          "vertida_id": 4,
+          "edad_h": 318.0,
+          "q_W_m3": 0.022424408758352884,
+          "elevacion_adiabatica_K": 44.998878779562084,
+          "potencia_W": 2.746990072898228,
+          "energia_acumulada_J": 11906703325.072128
+        },
+        {
+          "vertida_id": 5,
+          "edad_h": 312.0,
+          "q_W_m3": 0.027389234707563263,
+          "elevacion_adiabatica_K": 44.99863053826462,
+          "potencia_W": 1.0681801535949673,
+          "energia_acumulada_J": 3790684636.543412
+        }
+      ]
+    }
+  ],
+  "intervalos": [
+    {
+      "inicio_h": 0.0,
+      "fin_h": 6.0,
+      "energia_total_J": 2369805372.710312,
+      "energia_por_vertida_J": {
+        "1": 2369805372.710312,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      }
+    },
+    {
+      "inicio_h": 6.0,
+      "fin_h": 12.0,
+      "energia_total_J": 4310037910.157673,
+      "energia_por_vertida_J": {
+        "1": 1940232537.447361,
+        "2": 2369805372.710312,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      }
+    },
+    {
+      "inicio_h": 12.0,
+      "fin_h": 18.0,
+      "energia_total_J": 7264067193.751917,
+      "energia_por_vertida_J": {
+        "1": 1588528046.5306814,
+        "2": 1940232537.447361,
+        "3": 3735306609.773875,
+        "4": 0.0,
+        "5": 0.0
+      }
+    },
+    {
+      "inicio_h": 18.0,
+      "fin_h": 24.0,
+      "energia_total_J": 8105688127.050038,
+      "energia_por_vertida_J": {
+        "1": 1300576763.8215604,
+        "2": 1588528046.5306814,
+        "3": 3058210393.597328,
+        "4": 2158372923.1004705,
+        "5": 0.0
+      }
+    },
+    {
+      "inicio_h": 24.0,
+      "fin_h": 48.0,
+      "energia_total_J": 22247881558.033005,
+      "energia_por_vertida_J": {
+        "1": 3234783341.1387568,
+        "2": 3950973294.917448,
+        "3": 7606354588.281197,
+        "4": 5368286570.871165,
+        "5": 2087483762.8244367
+      }
+    },
+    {
+      "inicio_h": 48.0,
+      "fin_h": 72.0,
+      "energia_total_J": 9996617574.273607,
+      "energia_por_vertida_J": {
+        "1": 1453481847.8175223,
+        "2": 1775286737.8600626,
+        "3": 3417755427.8606653,
+        "4": 2412126643.9739327,
+        "5": 937966916.7614241
+      }
+    },
+    {
+      "inicio_h": 72.0,
+      "fin_h": 168.0,
+      "energia_total_J": 7824408950.105726,
+      "energia_por_vertida_J": {
+        "1": 1137648439.022738,
+        "2": 1389526941.2389832,
+        "3": 2675096447.4069705,
+        "4": 1887985127.13632,
+        "5": 734151995.3007145
+      }
+    },
+    {
+      "inicio_h": 168.0,
+      "fin_h": 336.0,
+      "energia_total_J": 331263798.95621145,
+      "energia_por_vertida_J": {
+        "1": 48164883.2762229,
+        "2": 58828721.280041225,
+        "3": 113256172.75287282,
+        "4": 79932059.99023762,
+        "5": 31081961.65683688
+      }
+    }
+  ],
+  "alcance": "Solo curva adiabática y generación. No son temperaturas simuladas de la fundación ni resultados calibrados de M1."
+}

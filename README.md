@@ -1,144 +1,112 @@
-# Proyecto 2 - MCOC
+# Proyecto 2 — Métodos Computacionales de Obras Civiles
 
 **Grupo 6:** Benjamín García, Luis Noriega y Matias Stierling.
 
-**Repositorio:** https://github.com/benjagarciag/Proyecto-2-MCOC
+Planificación de vertidas de hormigón masivo mediante modelación BIM y cálculo
+térmico. Sitio: **Los Ángeles, Biobío, Parque Eólico El Rosal**.
+Coordenadas del caso: `-37.277929`, `-72.368271`.
 
-Planificación de vertidas de hormigón masivo mediante simulación térmica y
-confiabilidad. Sitio: Los Ángeles, Biobío, Parque Eólico El Rosal.
-Coordenadas meteorológicas: `-37.277929`, `-72.368271`.
+[Repositorio oficial](https://github.com/benjagarciag/Proyecto-2-MCOC) ·
+[Entrega E07 y verificación](entregas/E07/README.md) ·
+[Ejecutores E07](casos/e07/README.md)
 
-## Empieza aquí
+## Estado hasta E07
 
-| Quiero… | Abrir |
+**528 pruebas aprobadas, 0 fallidas:** 320 de la base E04/E05/E06 y 208 E07.
+La rama `e07-voxelizacion-vertidas-hidratacion` incorpora geometría IFC,
+voxelización, IDs y volúmenes por vertida, superficies, activación e hidratación
+por edad. Los solvers publicados y el BIM se conservan.
+
+E04 aporta difusión 2D/3D, bordes, fuentes y materiales; E05, su batería de
+verificación; el [dossier E06](Reportes/E06.md) conserva su evidencia histórica.
+E07 diseña y verifica una fuente de hidratación, **todavía sin acoplarla a la
+conducción y bordes de la fundación**. No hay clima real ni predicción de sus
+máximas temperaturas. Los recuentos de documentos antiguos son históricos.
+
+## Organización y código
+
+Se conservan las rutas e importaciones de la arquitectura existente.
+
+| Carpeta / archivo | Contenido |
 | --- | --- |
-| Modificar y visualizar los casos térmicos en una sola ventana | [Visualizadores: ejecución y funciones](Visualizadores/README.md) |
-| Revisar E04: 2D/3D, bordes, fuentes y dos materiales | [E04: ejecución, pruebas y resultados](entregas/E04/README.md) |
-| Practicar E05 y cambiar parámetros de los tests | [E05: batería y guía de estudio](entregas/E05/README.md) |
-| Ejecutar los códigos 1D | [casos/1d/codigos/](casos/1d/codigos/README.md) |
-| Entender el código y la física con gráficos | [Notebook explicativo](documentacion/explicacion_solver_1d.ipynb) |
-| Agregar las propiedades de las vertidas al IFC | [Fundación: punto 23 de Bonsai](desarrollo/fundacion/README.md) |
-| Saber qué falta para esta entrega | [E01: requisitos y estado](entregas/E01/README.md) |
+| `desarrollo/mcplan/difusion_*.py`, `bordes_termicos.py`, `materiales_termicos.py` | Solvers y balances térmicos anteriores. |
+| [bim.py](desarrollo/mcplan/bim.py) | Lectura de cinco IfcFooting, propiedades y mallas SI. |
+| [voxel.py](desarrollo/mcplan/voxel.py) | Grilla, centros y máscara geométrica de ocupación. |
+| [vertidas_voxel.py](desarrollo/mcplan/vertidas_voxel.py) | IDs únicos, conflictos y comparación de volúmenes. |
+| [superficies_voxel.py](desarrollo/mcplan/superficies_voxel.py) | Caras exteriores, internas e interfaces orientadas. |
+| [construccion.py](desarrollo/mcplan/construccion.py) | Calendario IFC, actividad, T de colocación y edades. |
+| [hidratacion.py](desarrollo/mcplan/hidratacion.py) | Curva adiabática, W/m³ y energía por intervalo. |
+| `desarrollo/tests/` | Pruebas automatizadas. |
+| `casos/` | Ejecutores y configuraciones JSON, separados del núcleo. |
+| `resultados/` | PNG y datos producidos por los casos. |
+| `documentacion/`, `entregas/`, `Reportes/` | Métodos, instrucciones y evidencias por entrega. |
+| `desarrollo/fundacion/` | BIM e IFC existentes; no contienen el campo térmico. |
+| `Enunciados e Instrucciones/` | Material docente de referencia. |
+| [Visualizadores/](Visualizadores/README.md) | Herramientas anteriores de práctica térmica. |
 
-## Carpetas del proyecto
+## Programas y dependencias
 
-| Carpeta | Contenido |
-| --- | --- |
-| [casos/](casos/README.md) | Ejemplos 1D, 2D, 3D, bordes, fuentes y dos materiales. |
-| [documentacion/](documentacion/README.md) | Explicaciones físicas y notebook de estudio. |
-| [entregas/](entregas/README.md) | Requisitos, pendientes y enlaces de cada evaluación. |
-| [Enunciados e Instrucciones/](Enunciados%20e%20Instrucciones/README.md) | Enunciados, guías, calendario y archivos recibidos. |
-| `resultados/` | Figuras de referencia de E04; los ejecutores actualizan las imágenes de su caso. |
-| [desarrollo/](desarrollo/README.md) | Solver reutilizable, pruebas y herramientas de mantenimiento. |
-| [Visualizadores/](Visualizadores/README.md) | Ventana unificada 1D/2D/3D, entradas editables y reproducción temporal. |
+Python **3.12**, NumPy, Matplotlib, pytest e IfcOpenShell permiten ejecutar E07;
+las versiones y dependencias están declaradas en [requirements.txt](requirements.txt).
+VS Code es el editor recomendado. Blender/Bonsai se usa para editar el BIM,
+pero no necesita estar abierto para leer el IFC ni ejecutar los cálculos.
 
-Guardar cada archivo en su carpeta y enlazarlo desde las entregas que lo usen.
-Crear carpetas nuevas solo cuando exista contenido para ellas. El BIM existente
-está en `desarrollo/fundacion/`; los ejemplos E04 son dominios didácticos independientes.
+Usar una terminal con el entorno del proyecto activado, o seleccionar ese
+intérprete en VS Code. En este computador se reutiliza el entorno numérico
+existente; no se instalaron paquetes. En otro equipo se prepara su entorno
+Python 3.12 y se instalan las dependencias declaradas antes de ejecutar.
 
-## Ejecutar E04
+Los componentes opcionales Jupyter/notebooks del entorno completo no están
+instalados aquí ni se verificaron en esta entrega; las pruebas y casos E07 sí.
+[Detalle del entorno comprobado](entregas/E07/README.md#dependencias-y-entorno).
 
-Con el entorno preparado según la sección de instalación, desde la raíz:
+## Ejecutar pruebas y ejemplos
 
-```powershell
-.\.venv\Scripts\python.exe -B -m pytest -q -p no:cacheprovider
-.\.venv\Scripts\python.exe -B casos/2d/Ejecutar_2D.py
-.\.venv\Scripts\python.exe -B casos/3d/Ejecutar_3D.py
-.\.venv\Scripts\python.exe -B casos/bordes/Ejecutar_Bordes.py
-.\.venv\Scripts\python.exe -B casos/fuentes/Ejecutar_Fuentes.py
-.\.venv\Scripts\python.exe -B casos/materiales/ejecutar.py
-```
-
-**296 pruebas aprobadas en la última ejecución completa**, incluidas29 variantes
-de práctica para E05. La versión actual recopila320 tests; los nuevos casos
-del visualizador quedan para ejecución del usuario, por su preferencia de estudio.
-Los tests no generan figuras; los ejecutores de ejemplos guardan sus figuras en `resultados/`.
-El núcleo ampliado es `desarrollo/mcplan/difusion_bordes.py`; conserva los
-solvers iniciales e incorpora bordes mixtos, generación W/m³ y dos materiales
-opcionales con contacto perfecto. La interfaz material coincide con caras de
-la malla. No se necesita Blender para ejecutar estas simulaciones.
-
-La [guía E04](entregas/E04/README.md) enlaza las explicaciones y los 12 gráficos.
-Los casos son verificaciones matemáticas; no incluyen hidratación calibrada,
-clima, Monte Carlo ni una simulación de la fundación real.
-
-## Ejecutar y estudiar el caso 1D
-
-Abrir PowerShell en la raíz del proyecto.
-
-Para abrir el gráfico del primer código:
+Desde la raíz del repositorio, con el entorno correcto activado:
 
 ```powershell
-.\.venv\Scripts\python.exe casos/1d/codigos/01_1d_dirichlet_verification.py
+python -B -m pytest -q -p no:cacheprovider --basetemp=.venv/cache/pytest_revision
+python -B casos/e07/extraer_ifc.py
+python -B casos/e07/voxelizar_ifc.py
+python -B casos/e07/identificar_vertidas.py
+python -B casos/e07/clasificar_superficies.py
+python -B casos/e07/activar_vertidas.py
+python -B casos/e07/hidratar_vertidas.py
 ```
 
-Para abrir la explicación de los cuatro códigos:
+[Casos E07](casos/e07/README.md) explica entradas, opciones y unidades. Los JSON
+junto a los scripts configuran resolución y parámetros; horarios y temperaturas
+de colocación se leen del IFC. Los scripts no escriben ni modifican ese IFC.
 
-```powershell
-.\.venv\Scripts\python.exe -m jupyterlab documentacion/explicacion_solver_1d.ipynb
-```
+Para los ejemplos anteriores: [1D](casos/1d/codigos/README.md),
+[E04](entregas/E04/README.md) y [E05](entregas/E05/README.md).
 
-En Jupyter, seleccionar **Python 3.12 (Proyecto 2)**. Reiniciar el kernel y
-ejecutar todas las celdas para repetir los cálculos y gráficos.
+## Gráficos y limitaciones
 
-Para guardar únicamente las imágenes de perfiles de temperatura:
+`resultados/e07/` conserva **13 PNG y tres JSON**, agrupados en `extraccion_ifc`,
+`voxelizacion`, `vertidas_volumenes`, `superficies`, `activacion_temporal` e
+`hidratacion`. Los ejecutores regeneran sus salidas fijas. Se pueden abrir
+los gráficos y el código directamente desde el explorador de VS Code.
 
-```powershell
-.\.venv\Scripts\python.exe casos/1d/ejecutar.py
-```
+| Paso de voxel | Error global de volumen | Problema local |
+| --- | ---: | --- |
+| 1 m | 5,775 % | V02 desaparece; contacto 01–03 artificial. |
+| 0,5 m | 0,899 % | V04: 37,757 % de error. |
+| 0,25 m | 0,534 % | V03: 16,029 % de error. |
 
-Los archivos de `resultados/1d/base/` se actualizan al repetir la ejecución.
-El comando sin opciones también genera las imágenes de perfiles de Neumann, Robin
-y calor interno en `resultados/1d/neumann/`, `robin/` y `calor_interno/`.
-Se guardan las mismas figuras de `casos/1d/codigos/`, incluida la figura de Robin
-con sus dos paneles. Ejecutar directamente uno de esos scripts también guarda
-su imagen y la muestra en una ventana.
-Para uno solo, añadir por ejemplo `--caso robin`.
-El caso sinusoidal usa `resultados/1d/verificacion_seno/`. No se crean carpetas
-nuevas por cada ejecución.
+**Ninguna resolución está validada para el cálculo térmico definitivo.** El
+error global oculta compensaciones por vertida. Las áreas cartesianas escalonadas
+no son áreas CAD exactas. [Estudio de volumen](documentacion/e07_vertidas_volumenes.md).
 
-Los resultados anteriores fueron eliminados. La primera ejecución crea la
-carpeta fija del caso; las siguientes actualizan sus archivos.
+Los 636,775193 m³ de referencia proceden de las mallas del IFC. Por separado,
+la hidratación de M1 usa valores **didácticos, sin calibración experimental**:
+ρ=2400 kg/m³, cp=900 J/(kg·K), θ∞=45 K y τ=30 h, del ejemplo de la guía.
+[Modelo y unidades](documentacion/e07_hidratacion.md).
 
-## Instalar en otro computador
+Quedan pendientes justificar la malla, calibrar M1 y acoplar conducción,
+hidratación y bordes de la fundación. Clima, suelo, incertidumbre y confiabilidad
+se desarrollarán en entregas posteriores. Las curvas adiabáticas no son
+resultados de temperatura real de la fundación.
 
-Usar **Python 3.12**. Desde la raíz:
-
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m ipykernel install --prefix .venv --name python3 --display-name "Python 3.12 (Proyecto 2)"
-```
-
-No es necesario activar el entorno para usar estos comandos.
-`.venv/` contiene las dependencias y debe conservarse. Está oculta en el
-Explorador de Windows para mantener limpia la vista; no se sube a Git.
-Las cachés del notebook y los gráficos se guardan dentro de ese entorno.
-
-## Archivos de configuración en la raíz
-
-| Archivo | Para qué sirve |
-| --- | --- |
-| `requirements.txt` | Instalar las versiones de las dependencias. |
-| `pytest.ini` | Encontrar y ejecutar las pruebas en `desarrollo/tests/`. |
-| `.gitignore` | Evitar subir entornos y temporales a Git. |
-| `AGENTS.md` | Instrucciones y contexto para trabajar con el asistente. |
-
-## Estado actual
-
-La preparación E04 está publicada en la rama `e04-difusion-2d-3d`, desarrollada
-en la copia independiente `E04_pruebas_2d`. No integra la rama de compañeros ni
-modifica el BIM. Los documentos por etapa conservan su contexto histórico;
-el [índice E04](entregas/E04/README.md) describe el estado conjunto actual.
-
-Hay códigos 1D, explicación ejecutada, pruebas automatizadas y un primer
-[modelo IFC con propiedades de las cinco vertidas](desarrollo/fundacion/README.md).
-La lectura desde Python comprueba identidades, propiedades y triangulación.
-Para E01 queda la preparación individual y declarar el SHA evaluado.
-Para E02 sigue pendiente demostrar cambios Bonsai → IFC → Python y variar
-Delta x/Delta t en la demo 1D. La validación geométrica detallada sigue pendiente.
-El [seguimiento de E01](entregas/E01/README.md) concentra la evidencia actual.
-
-**SHA inicial E00:** `a901e91a5b4ce84cde37ba52c48251e97cffcc04`.
-Cada evaluación declara su propio commit; el SHA inicial no identifica las
-entregas posteriores.
+Cada entrega identifica un commit explícito. El SHA inicial E00
+`a901e91a5b4ce84cde37ba52c48251e97cffcc04` es histórico y no identifica E07.

@@ -1,0 +1,7 @@
+{
+  "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
+  "pasos_m": [0.5, 0.5, 0.5],
+  "origen_m": null,
+  "tolerancia_m": 0.0000001,
+  "max_celdas": 2000000
+}

@@ -1,0 +1,317 @@
+{
+  "sha256_ifc": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+  "pasos_m": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "ids_sin_voxeles": [],
+  "calendario": [
+    {
+      "vertida_id": 1,
+      "inicio_s": 0.0,
+      "temperatura_C": 19.0,
+      "material": "M1",
+      "volumen_ifc_m3": 147.62573781168035
+    },
+    {
+      "vertida_id": 2,
+      "inicio_s": 21600.0,
+      "temperatura_C": 18.0,
+      "material": "M1",
+      "volumen_ifc_m3": 147.62573781168035
+    },
+    {
+      "vertida_id": 3,
+      "inicio_s": 43200.0,
+      "temperatura_C": 18.0,
+      "material": "M1",
+      "volumen_ifc_m3": 214.22433789137642
+    },
+    {
+      "vertida_id": 4,
+      "inicio_s": 64800.0,
+      "temperatura_C": 18.0,
+      "material": "M1",
+      "volumen_ifc_m3": 88.92467899172959
+    },
+    {
+      "vertida_id": 5,
+      "inicio_s": 86400.0,
+      "temperatura_C": 18.0,
+      "material": "M1",
+      "volumen_ifc_m3": 38.37470018678084
+    }
+  ],
+  "nota": "Solo activación y geometría. Temperaturas de colocación inicializadas, sin evolución térmica. M1 es etiqueta IFC.",
+  "estados": [
+    {
+      "tiempo_h": -0.0002777777777777778,
+      "ids_activos": [],
+      "voxeles_activos": 0,
+      "voxeles_nuevos_desde_estado_anterior": 0,
+      "volumen_construido_m3": 0.0,
+      "caras": {
+        "exteriores": {
+          "cantidad": 0,
+          "area_m2": 0.0
+        },
+        "internas": {
+          "cantidad": 0,
+          "area_m2": 0.0
+        },
+        "interfaces": {
+          "cantidad": 0,
+          "area_m2": 0.0
+        }
+      },
+      "area_expuesta_hacia_no_colocado_m2": 0.0,
+      "contactos": [],
+      "edad_vertidas_h": {}
+    },
+    {
+      "tiempo_h": 0,
+      "ids_activos": [
+        1
+      ],
+      "voxeles_activos": 1076,
+      "voxeles_nuevos_desde_estado_anterior": 1076,
+      "volumen_construido_m3": 134.5,
+      "caras": {
+        "exteriores": {
+          "cantidad": 2296,
+          "area_m2": 574.0
+        },
+        "internas": {
+          "cantidad": 2080,
+          "area_m2": 520.0
+        },
+        "interfaces": {
+          "cantidad": 0,
+          "area_m2": 0.0
+        }
+      },
+      "area_expuesta_hacia_no_colocado_m2": 269.0,
+      "contactos": [],
+      "edad_vertidas_h": {
+        "1": 0.0
+      }
+    },
+    {
+      "tiempo_h": 6,
+      "ids_activos": [
+        1,
+        2
+      ],
+      "voxeles_activos": 2152,
+      "voxeles_nuevos_desde_estado_anterior": 1076,
+      "volumen_construido_m3": 269.0,
+      "caras": {
+        "exteriores": {
+          "cantidad": 2440,
+          "area_m2": 610.0
+        },
+        "internas": {
+          "cantidad": 4160,
+          "area_m2": 1040.0
+        },
+        "interfaces": {
+          "cantidad": 1076,
+          "area_m2": 269.0
+        }
+      },
+      "area_expuesta_hacia_no_colocado_m2": 244.0,
+      "contactos": [
+        {
+          "par": [
+            1,
+            2
+          ],
+          "cantidad_caras": 1076,
+          "area_m2": 269.0
+        }
+      ],
+      "edad_vertidas_h": {
+        "1": 6.0,
+        "2": 0.0
+      }
+    },
+    {
+      "tiempo_h": 12,
+      "ids_activos": [
+        1,
+        2,
+        3
+      ],
+      "voxeles_activos": 3848,
+      "voxeles_nuevos_desde_estado_anterior": 1696,
+      "volumen_construido_m3": 481.0,
+      "caras": {
+        "exteriores": {
+          "cantidad": 2696,
+          "area_m2": 674.0
+        },
+        "internas": {
+          "cantidad": 8144,
+          "area_m2": 2036.0
+        },
+        "interfaces": {
+          "cantidad": 2052,
+          "area_m2": 513.0
+        }
+      },
+      "area_expuesta_hacia_no_colocado_m2": 123.0,
+      "contactos": [
+        {
+          "par": [
+            1,
+            2
+          ],
+          "cantidad_caras": 1076,
+          "area_m2": 269.0
+        },
+        {
+          "par": [
+            2,
+            3
+          ],
+          "cantidad_caras": 976,
+          "area_m2": 244.0
+        }
+      ],
+      "edad_vertidas_h": {
+        "1": 12.0,
+        "2": 6.0,
+        "3": 0.0
+      }
+    },
+    {
+      "tiempo_h": 18,
+      "ids_activos": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "voxeles_activos": 4828,
+      "voxeles_nuevos_desde_estado_anterior": 980,
+      "volumen_construido_m3": 603.5,
+      "caras": {
+        "exteriores": {
+          "cantidad": 2928,
+          "area_m2": 732.0
+        },
+        "internas": {
+          "cantidad": 10476,
+          "area_m2": 2619.0
+        },
+        "interfaces": {
+          "cantidad": 2544,
+          "area_m2": 636.0
+        }
+      },
+      "area_expuesta_hacia_no_colocado_m2": 39.0,
+      "contactos": [
+        {
+          "par": [
+            1,
+            2
+          ],
+          "cantidad_caras": 1076,
+          "area_m2": 269.0
+        },
+        {
+          "par": [
+            2,
+            3
+          ],
+          "cantidad_caras": 976,
+          "area_m2": 244.0
+        },
+        {
+          "par": [
+            3,
+            4
+          ],
+          "cantidad_caras": 492,
+          "area_m2": 123.0
+        }
+      ],
+      "edad_vertidas_h": {
+        "1": 18.0,
+        "2": 12.0,
+        "3": 6.0,
+        "4": 0.0
+      }
+    },
+    {
+      "tiempo_h": 24,
+      "ids_activos": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "voxeles_activos": 5140,
+      "voxeles_nuevos_desde_estado_anterior": 312,
+      "volumen_construido_m3": 642.5,
+      "caras": {
+        "exteriores": {
+          "cantidad": 3040,
+          "area_m2": 760.0
+        },
+        "internas": {
+          "cantidad": 11200,
+          "area_m2": 2800.0
+        },
+        "interfaces": {
+          "cantidad": 2700,
+          "area_m2": 675.0
+        }
+      },
+      "area_expuesta_hacia_no_colocado_m2": 0.0,
+      "contactos": [
+        {
+          "par": [
+            1,
+            2
+          ],
+          "cantidad_caras": 1076,
+          "area_m2": 269.0
+        },
+        {
+          "par": [
+            2,
+            3
+          ],
+          "cantidad_caras": 976,
+          "area_m2": 244.0
+        },
+        {
+          "par": [
+            3,
+            4
+          ],
+          "cantidad_caras": 492,
+          "area_m2": 123.0
+        },
+        {
+          "par": [
+            4,
+            5
+          ],
+          "cantidad_caras": 156,
+          "area_m2": 39.0
+        }
+      ],
+      "edad_vertidas_h": {
+        "1": 24.0,
+        "2": 18.0,
+        "3": 12.0,
+        "4": 6.0,
+        "5": 0.0
+      }
+    }
+  ]
+}

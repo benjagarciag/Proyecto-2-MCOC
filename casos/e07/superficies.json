@@ -1,0 +1,9 @@
+{
+  "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
+  "resoluciones_m": [1.0, 0.5, 0.25],
+  "resolucion_vista_m": 0.5,
+  "origen_m": null,
+  "tolerancia_m": 1e-7,
+  "max_celdas": 2000000,
+  "contactos_ifc_esperados": [[1, 2], [2, 3], [3, 4], [4, 5]]
+}

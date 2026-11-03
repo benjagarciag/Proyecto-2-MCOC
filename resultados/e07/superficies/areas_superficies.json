@@ -1,0 +1,281 @@
+{
+  "sha256_ifc": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+  "referencia_contactos_explicita": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "nota": "Áreas de caras de voxel; no superficies CAD exactas ni exposición temporal.",
+  "resoluciones": [
+    {
+      "h_m": 1.0,
+      "voxeles_ocupados": 600,
+      "categorias": {
+        "exteriores": {
+          "caras": 728,
+          "area_m2": 728.0
+        },
+        "internas": {
+          "caras": 1100,
+          "area_m2": 1100.0
+        },
+        "interfaces": {
+          "caras": 336,
+          "area_m2": 336.0
+        }
+      },
+      "exterior_por_direccion": {
+        "x_min": [
+          50,
+          50.0
+        ],
+        "x_max": [
+          50,
+          50.0
+        ],
+        "y_min": [
+          50,
+          50.0
+        ],
+        "y_max": [
+          50,
+          50.0
+        ],
+        "z_min": [
+          264,
+          264.0
+        ],
+        "z_max": [
+          264,
+          264.0
+        ]
+      },
+      "contactos": [
+        {
+          "par": [
+            1,
+            3
+          ],
+          "cantidad_caras": 216,
+          "area_m2": 216.0
+        },
+        {
+          "par": [
+            3,
+            4
+          ],
+          "cantidad_caras": 88,
+          "area_m2": 88.0
+        },
+        {
+          "par": [
+            4,
+            5
+          ],
+          "cantidad_caras": 32,
+          "area_m2": 32.0
+        }
+      ],
+      "diagnostico": {
+        "ids_sin_voxeles": [
+          2
+        ],
+        "contactos_esperados_ausentes": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "contactos_no_esperados": [
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "h_m": 0.5,
+      "voxeles_ocupados": 5140,
+      "categorias": {
+        "exteriores": {
+          "caras": 3040,
+          "area_m2": 760.0
+        },
+        "internas": {
+          "caras": 11200,
+          "area_m2": 2800.0
+        },
+        "interfaces": {
+          "caras": 2700,
+          "area_m2": 675.0
+        }
+      },
+      "exterior_por_direccion": {
+        "x_min": [
+          222,
+          55.5
+        ],
+        "x_max": [
+          222,
+          55.5
+        ],
+        "y_min": [
+          222,
+          55.5
+        ],
+        "y_max": [
+          222,
+          55.5
+        ],
+        "z_min": [
+          1076,
+          269.0
+        ],
+        "z_max": [
+          1076,
+          269.0
+        ]
+      },
+      "contactos": [
+        {
+          "par": [
+            1,
+            2
+          ],
+          "cantidad_caras": 1076,
+          "area_m2": 269.0
+        },
+        {
+          "par": [
+            2,
+            3
+          ],
+          "cantidad_caras": 976,
+          "area_m2": 244.0
+        },
+        {
+          "par": [
+            3,
+            4
+          ],
+          "cantidad_caras": 492,
+          "area_m2": 123.0
+        },
+        {
+          "par": [
+            4,
+            5
+          ],
+          "cantidad_caras": 156,
+          "area_m2": 39.0
+        }
+      ],
+      "diagnostico": {
+        "ids_sin_voxeles": [],
+        "contactos_esperados_ausentes": [],
+        "contactos_no_esperados": []
+      }
+    },
+    {
+      "h_m": 0.25,
+      "voxeles_ocupados": 40536,
+      "categorias": {
+        "exteriores": {
+          "caras": 11976,
+          "area_m2": 748.5
+        },
+        "internas": {
+          "caras": 104732,
+          "area_m2": 6545.75
+        },
+        "interfaces": {
+          "caras": 10888,
+          "area_m2": 680.5
+        }
+      },
+      "exterior_por_direccion": {
+        "x_min": [
+          864,
+          54.0
+        ],
+        "x_max": [
+          864,
+          54.0
+        ],
+        "y_min": [
+          864,
+          54.0
+        ],
+        "y_max": [
+          864,
+          54.0
+        ],
+        "z_min": [
+          4260,
+          266.25
+        ],
+        "z_max": [
+          4260,
+          266.25
+        ]
+      },
+      "contactos": [
+        {
+          "par": [
+            1,
+            2
+          ],
+          "cantidad_caras": 4260,
+          "area_m2": 266.25
+        },
+        {
+          "par": [
+            2,
+            3
+          ],
+          "cantidad_caras": 4260,
+          "area_m2": 266.25
+        },
+        {
+          "par": [
+            3,
+            4
+          ],
+          "cantidad_caras": 1752,
+          "area_m2": 109.5
+        },
+        {
+          "par": [
+            4,
+            5
+          ],
+          "cantidad_caras": 616,
+          "area_m2": 38.5
+        }
+      ],
+      "diagnostico": {
+        "ids_sin_voxeles": [],
+        "contactos_esperados_ausentes": [],
+        "contactos_no_esperados": []
+      }
+    }
+  ]
+}
