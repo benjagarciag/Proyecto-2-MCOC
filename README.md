@@ -8,11 +8,12 @@ Coordenadas del caso: `-37.277929`, `-72.368271`.
 
 [Repositorio oficial](https://github.com/benjagarciag/Proyecto-2-MCOC) ·
 [Entrega E07 y verificación](entregas/E07/README.md) ·
-[Ejecutores E07](casos/e07/README.md)
+[Ejecutores E07](casos/e07/README.md) ·
+[Visualizador HTML](Visualizadores/E07.html)
 
 ## Estado hasta E07
 
-**528 pruebas aprobadas, 0 fallidas:** 320 de la base E04/E05/E06 y 208 E07.
+**Integración Python anterior: 528 pruebas aprobadas, 0 fallidas:** 320 de la base E04/E05/E06 y 208 E07.
 La rama `e07-voxelizacion-vertidas-hidratacion` incorpora geometría IFC,
 voxelización, IDs y volúmenes por vertida, superficies, activación e hidratación
 por edad. Los solvers publicados y el BIM se conservan.
@@ -22,6 +23,20 @@ verificación; el [dossier E06](Reportes/E06.md) conserva su evidencia históric
 E07 diseña y verifica una fuente de hidratación, **todavía sin acoplarla a la
 conducción y bordes de la fundación**. No hay clima real ni predicción de sus
 máximas temperaturas. Los recuentos de documentos antiguos son históricos.
+
+## Visualizador HTML: geometría y ecuación de calor
+
+Abrir **[Visualizadores/E07.html](Visualizadores/E07.html)** con doble clic en
+Chrome o Edge. Permite explorar los voxeles del IFC, errores por vertida,
+contactos, construcción, temperaturas y condiciones Dirichlet/Neumann/Robin.
+El cálculo térmico es propio, bajo botón, con una fuente interna ingresada en
+W/m³ y parámetros didácticos editables. La conversión desde curva adiabática
+no se presenta en el HTML, por indicación docente. No es una predicción calibrada.
+
+La pestaña **Ecuación de calor** muestra máximas/mínimas por instante y de toda
+la corrida, curvas temporales y aportes de conducción, borde y calor interno.
+Se conserva la base Python de la rama E07; el laboratorio del navegador no
+acopla su módulo previo de hidratación. [Uso, método y comprobaciones](Visualizadores/README.md#laboratorio-html-de-e07).
 
 ## Organización y código
 

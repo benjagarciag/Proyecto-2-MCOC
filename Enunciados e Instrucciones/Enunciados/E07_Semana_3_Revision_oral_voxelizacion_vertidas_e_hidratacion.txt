@@ -1,0 +1,53 @@
+E07 — Semana 3 / miércoles — Revisión oral: voxelización, vertidas e hidratación
+
+Objetivo
+Conectar el BIM real con la grilla térmica y formular la construcción por vertidas.
+
+Antes de la actividad
+El repo debe incluir:
+
+extracción de geometría IFC;
+
+primer voxelizador;
+
+vertida_id;
+
+estimación de volumen;
+
+diseño del modelo de hidratación;
+
+estructura para activación temporal.
+
+Durante la actividad
+Preguntas/demos posibles:
+
+¿cómo decide el código si un voxel pertenece al sólido?;
+
+¿qué error produce la frontera staircase?;
+
+¿cómo cambia el error de volumen con \Delta x?;
+
+¿cómo identifica una superficie exterior?;
+
+¿qué ocurre en una interfaz entre dos vertidas?;
+
+¿cómo se inicializa una vertida nueva?;
+
+¿qué unidades tiene \dot Q_h?;
+
+¿cómo se relaciona una curva adiabática con generación volumétrica de calor?;
+
+¿cómo influye la temperatura en la hidratación si el modelo la considera?
+
+Evidencia / entrega
+Canvas:
+
+Repositorio:
+Commit evaluado:
+Sin informe.
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado:
+
+Repositorio:
+Commit evaluado

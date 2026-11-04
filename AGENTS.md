@@ -1,5 +1,19 @@
 # Contexto del repositorio
 
+- E07 HTML actualizado por solicitud del usuario: `Visualizadores/E07.html` es
+  autónomo; fuentes `e07_plantilla.html`, `e07_termico.js` y `exportar_e07.py`.
+  El profesor aún no explicó la conversión de curva adiabática a fuente: no
+  volver a exponer esa derivación en el HTML. El calor interno se ingresa
+  directamente en W/m³. El navegador resuelve conducción cartesiana sobre la
+  máscara IFC bajo botón, con activaciones y bordes D/N/R por orientación,
+  Tmax/Tmin de centros+caras y balance conservativo. Parámetros didácticos;
+  no afirmar predicción real, validación de malla, S25 o confiabilidad.
+  Reproducción hasta 336 h, ×10 más rápida después de 30 h. Los cambios de
+  parámetros invalidan resultados. Pruebas opcionales propias en
+  `desarrollo/tests/test_e07_termico_web.cjs`; se verificaron en esta tarea,
+  sin volver a ejecutar pytest ni modificar solvers/BIM/IFC anteriores.
+  El usuario autorizó publicar en main con commit `E07 entrega`.
+
 - Unificación solicitada tras mostrar el caso al ayudante: la única entrada del visualizador está ahora en `Visualizadores/visualizador.py` (carpeta raíz pedida explícitamente por el usuario, fuera de E05). Contiene los once casos existentes. Se trasladaron sin cambios los parámetros a `Visualizadores/parametros.json`, documentación detallada a `Visualizadores/BARRA_3D.md` y se escribió `Visualizadores/README.md`. Se retiró el lanzador duplicado y la carpeta `casos/e05` (solo quedaba caché); no recrearla. Núcleo renombrado a `desarrollo/mcplan/visualizador_termico.py` y `barra_fuente_3d.py`, imports/tests/índices actualizados. Futuras movies solo bajo botón a `resultados/visualizadores/<caso>/evolucion.mp4`; resultadosanteriores conservados. Abrir no calcula nada. No ejecutar pruebas/casos por el usuario; solo validación de sintaxis/importación/controles en esta reorganización. Las referencias anteriores a las rutas E05 son históricas y quedan reemplazadas por esta nota. Ventanas antiguas deben cerrarse y reabrirse en nueva ruta para evitar guardar en la ubicación retirada.
 
 - Entradas vectoriales solicitadas: GUI E05 agrupa dimensiones(x,y,z), malla(Nx,Ny,Nz), centrofuente, tamañofuente y observación en un campo porvector; tablaParámetros también agrupada. Ejemplos(0,0,0), (1,1,1), (15,15,31), decimales conpunto. Parserast.literal_eval exige3números finitos y mallaentera. ClavescomponentesdelJSON/solver conservadas. Solo se verificó parser/GUI con datos de entrada, no simulaciones.

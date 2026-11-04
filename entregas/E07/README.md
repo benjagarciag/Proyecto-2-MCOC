@@ -2,11 +2,34 @@
 
 Grupo 6. Evaluación: miércoles 4 de noviembre de 2026.
 
-Base: `main` publicado en `e281ec4bc6d96f8e3481d08112cc94dcfff5f51c`
-(Entrega E06). La entrega se prepara en `E07_integracion` y se publica en la rama
-`e07-voxelizacion-vertidas-hidratacion`, conservando main y los archivos de los
-compañeros. El SHA base no contiene E07: para Canvas se utiliza el commit de
-esta rama publicado en su historial. El PR queda pendiente de autorización para fusionar.
+Base Python: entrega E06 `e281ec4bc6d96f8e3481d08112cc94dcfff5f51c` y aporte
+E07 `1ea01d4a9872a656b7d2cc4733ca360c37505547`. El usuario autorizó integrar esa
+rama en `main` y publicar el laboratorio HTML con el commit **E07 entrega**.
+Para Canvas, declarar el SHA exacto de ese commit en el historial de `main`.
+La actividad no exige informe.
+
+## Laboratorio HTML actualizado
+
+Abrir [Visualizadores/E07.html](../../Visualizadores/E07.html). Contiene las
+mismas tres grillas IFC, volúmenes, superficies y colocaciones. Añade un ensayo
+didáctico de conducción 3D sobre voxeles activos, calor interno directo y bordes
+Dirichlet, Neumann y Robin. Calcula Tmin/Tmax por instante y de toda la corrida,
+curvas de temperaturas, contribuciones a dT/dt y balance de energía.
+
+La conversión de curva adiabática a fuente se retiró de la presentación HTML,
+según indicación docente. Los módulos y resultados Python anteriores se conservan
+como antecedentes; no se usan para construir la fuente del ensayo interactivo.
+Los valores térmicos y bordes del HTML son editables y no están calibrados.
+No se presenta cumplimiento de límites, S25, clima ni confiabilidad.
+
+Comprobaciones nuevas: `node desarrollo/tests/test_e07_termico_web.cjs`, sin npm.
+Incluyen soluciones analíticas simples, conservación y máscara, colocaciones,
+las tres grillas geométricas, ensayo de 336 h en 0,5 m y de 48 h en 0,25 m.
+El ejemplo inicial (Robin ambiente 10 °C, h=5, q=500 W/m³ durante 12 h por
+vertida) da Tmax≈28,392172 °C a 30 h y Tmin≈10,190694 °C a 336 h. Son resultados
+del ensayo didáctico, no una predicción experimental. Se verificaron también
+los controles del navegador. El recuento de 528 pruebas Python corresponde a
+la integración anterior, no a una nueva ejecución de esa batería.
 
 ## Alcance preparado
 
@@ -121,12 +144,11 @@ Quedan fuera del paquete: `.git/`, `.venv/`, cachés, logs de verificación,
 scripts auxiliares temporales, videos y copias completas del proyecto. No se incorporan interfaces web. No se copian ni reemplazan BIM, IFC, Reportes/E06,
 solvers o archivos de compañeros.
 
-## Publicación y revisión de main
+## Publicación en main
 
-La rama de entrega se publica con autorización del equipo. El historial de
-GitHub proporciona el SHA exacto para Canvas. El PR permite revisar los cambios
-sin modificar main. No se realiza force push ni fusión automática.
-
-Antes de una futura incorporación a main se debe comprobar si cambió desde la
-base, revisar únicamente estos archivos, repetir verificaciones y obtener
-la autorización correspondiente. Las rutas y solvers existentes se conservan.
+La integración fue solicitada por el usuario con el mensaje de commit
+`E07 entrega`. La rama E07 anterior se incorpora por avance rápido, conservando
+su historial. La publicación añade el laboratorio HTML, sus fuentes y pruebas,
+el enunciado E07 y estas instrucciones. No incluye los enunciados E08/E09 aún
+pendientes, ni entornos, cachés, capturas de revisión o archivos temporales.
+No se modifica el BIM ni el IFC y no se utiliza force push.
