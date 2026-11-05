@@ -47,3 +47,27 @@ for(const id of ['k','rho','cp','q','tau','duration','horizon','dtCap']){const i
 ctx.scenario={version:1,sha256_ifc:data.sha256_ifc,h:.5,p:{...p,observe:[0,0,1.5]}};assert.equal(vm.runInContext('validateScenario(scenario)',ctx),1);
 ctx.scenario.p.horizon=NaN;assert.throws(()=>vm.runInContext('validateScenario(scenario)',ctx),/Parámetro/);
 console.log('OK HTML: sintaxis, secuencia aplicada, invalidación, rechazo de entradas, visibilidad independiente y validación JSON.');
+
+// Maxima por vertida: fuente localizada, tiempos independientes y caras fisicas.
+const pours={g:{ids:[1,0,2],forma:[1,1,3],h:1,origen:[0,0,0]},vertidas:[{id:1,inicio:0,temperatura:20},{id:2,inicio:.5,temperatura:30},{id:3,inicio:0,temperatura:15},{id:4,inicio:10,temperatura:40}]};
+const pp={...p,sourceMode:'pulse',q:600,duration:1,horizon:2,dtCap:900,sourceId:1};
+const result=solveVoxelHeat({...pours,p:pp});
+const peaks=result.vertidaPeaks;
+near(peaks[0].value,21);near(peaks[0].t,1);
+near(peaks[1].value,30);near(peaks[1].t,.5);
+assert.equal(peaks[2].value,null);assert.equal(peaks[2].t,null);
+assert.equal(peaks[3].value,null);assert.equal(peaks[3].t,null);
+near(Math.max(...peaks.filter(x=>x.value!==null).map(x=>x.value)),result.peak.value);
+const face=solveVoxelHeat({...pours,p:{...pp,q:0,bc:Array.from({length:6},()=>({type:'D',value:100,h:0}))}});
+near(face.vertidaPeaks[0].value,100);near(face.vertidaPeaks[0].t,0);
+near(face.vertidaPeaks[1].value,100);near(face.vertidaPeaks[1].t,.5);
+console.log('OK Tmax por vertida: maximos y tiempos propios, IDs sin voxeles/inactivos y caras Dirichlet incluidas.');
+// La tabla distingue el instante actual del maximo de toda la corrida.
+const tableContext=vm.createContext({DATA:{vertidas:pours.vertidas.map(v=>({...v,nombre:'V'+v.id}))},state:{thermal:result,time:.25},thermalDense:{},grid:()=>({filas:[{vertida_id:1,numero_voxeles:1},{vertida_id:2,numero_voxeles:1},{vertida_id:4,numero_voxeles:1}]}),$:el,dot:()=>'',fmt:(n)=>Number(n).toFixed(2),Number,Math});
+const tableStart=script.indexOf('function renderPourTemperatures('),tableEnd=script.indexOf('\nfunction ',tableStart+1);
+vm.runInContext(script.slice(tableStart,tableEnd),tableContext);
+tableContext.current=new Map([[1,20.25]]);vm.runInContext('renderPourTemperatures(current)',tableContext);
+const rows=el('pourTemperatureRows').innerHTML;
+assert(rows.includes('20.25'));assert(rows.includes('21.00'));assert(rows.includes('No colocada'));assert(rows.includes('Sin voxeles'));assert(rows.includes('No colocada en la corrida'));
+tableContext.state.thermal=null;vm.runInContext('renderPourTemperatures(new Map())',tableContext);assert(el('pourTemperatureRows').innerHTML.includes('Sin cálculo'));
+console.log('OK tabla Tmax: estado actual, maximo de corrida y limpieza al invalidar.');

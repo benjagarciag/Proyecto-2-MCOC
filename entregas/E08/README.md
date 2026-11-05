@@ -88,3 +88,15 @@ El SHA base registrado dentro del HTML identifica la base de la exportación;
 no sustituye al commit que contenga estos cambios. Publicar y declarar ese
 commit antes de la revisión. El mensaje solicitado para esta entrega es
 `Entrega E08`; consultar su SHA exacto con `git log -1 --format=%H`.
+
+## Tmax por vertida
+
+Después de calcular, la tabla **Tmax por vertida** debajo de las tarjetas
+globales muestra la máxima de cada vertida al tiempo actual, su máximo de
+toda la corrida, el tiempo global de ese máximo y la edad desde su colocación.
+Incluye centros y caras exteriores reconstruidas con el mismo criterio global.
+El máximo de corrida se evalúa en todos los pasos, con el primer tiempo en caso
+de empate; el valor actual puede provenir de interpolación visual. Las vertidas
+sin voxeles o no colocadas se identifican explícitamente. Ocultar/seleccionar
+vertidas no cambia estas cifras. Cambiar parámetros invalida toda la tabla.
+Esta incorporación es posterior al commit congelado `Entrega E08`.

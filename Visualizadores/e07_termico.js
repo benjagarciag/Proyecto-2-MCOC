@@ -46,13 +46,17 @@ function solveVoxelHeat(input, onProgress = () => {}) {
   const fields=new Float32Array(snapshotTimes.length*N).fill(NaN),history=[];
   let t=0,steps=0,snapshot=0,event=0,dtLimit=Infinity,dtMin=Infinity,dtMax=0,energyIn=0,energySource=0,energyBoundary=0;
   let peak={value:-Infinity,t:0},trough={value:Infinity,t:0},peakField=null,troughField=null,lastProgress=-1;
+  const vertidaPeaks=vertidas.map(v=>({id:v.id,value:null,t:null}));
+  const peakById=new Map(vertidaPeaks.map(v=>[v.id,v]));
   const sourceAt=(i,time)=>p.q&&(p.sourceId===0||ids[i]===p.sourceId)&&time>=starts[i]&&(p.sourceMode!=='pulse'||time<starts[i]+p.duration*3600)?p.q*V*(p.sourceMode==='hydration'?Math.exp(-(time-starts[i])/(p.tau*3600)):1):0;
   function activate(){let added=false;for(let i=0;i<N;i++)if(!active[i]&&starts[i]<=t+1e-7){active[i]=1;T[i]=initials[i];energyIn+=C*T[i];added=true;}return added;}
   function operator(){let maxDiagonal=0;for(let i=0;i<N;i++)if(active[i]){let h=0,b=0,diag=0;for(let d=0;d<6;d++){const j=neighbors[i*6+d];if(j>=0&&active[j])diag+=G;else{h+=H[d];b+=B[d];diag+=H[d];}}extH[i]=h;extB[i]=b;maxDiagonal=Math.max(maxDiagonal,diag);}dtLimit=maxDiagonal?C/maxDiagonal:Infinity;}
-  function record(){let min=Infinity,max=-Infinity,sum=0,count=0,energy=0,ps=0,pb=0,obsCond=null,obsBorder=null,obsSource=null;
-    for(let i=0;i<N;i++)if(active[i]){const ti=T[i];if(!Number.isFinite(ti))throw Error('Temperatura no finita; revisa parámetros y estabilidad.');min=Math.min(min,ti);max=Math.max(max,ti);sum+=ti;count++;energy+=C*ti;ps+=sourceAt(i,t);pb+=extB[i]-extH[i]*ti;
-      for(let d=0;d<6;d++){const j=neighbors[i*6+d];if(j<0||!active[j]){const bc=p.bc[d];const face=bc.type==='D'?bc.value:ti+(B[d]-H[d]*ti)*g.h/(2*p.k*A);min=Math.min(min,face);max=Math.max(max,face);}}
+  function record(){const maxima=new Map();let min=Infinity,max=-Infinity,sum=0,count=0,energy=0,ps=0,pb=0,obsCond=null,obsBorder=null,obsSource=null;
+    for(let i=0;i<N;i++)if(active[i]){const ti=T[i];if(!Number.isFinite(ti))throw Error('Temperatura no finita; revisa parámetros y estabilidad.');min=Math.min(min,ti);max=Math.max(max,ti);sum+=ti;count++;energy+=C*ti;ps+=sourceAt(i,t);pb+=extB[i]-extH[i]*ti;let cellMax=ti;
+      for(let d=0;d<6;d++){const j=neighbors[i*6+d];if(j<0||!active[j]){const bc=p.bc[d];const face=bc.type==='D'?bc.value:ti+(B[d]-H[d]*ti)*g.h/(2*p.k*A);min=Math.min(min,face);max=Math.max(max,face);cellMax=Math.max(cellMax,face);}}
+      maxima.set(ids[i],Math.max(maxima.get(ids[i])??-Infinity,cellMax));
       if(i===observation){let cond=0;for(let d=0;d<6;d++){const j=neighbors[i*6+d];if(j>=0&&active[j])cond+=G*(T[j]-ti);}obsCond=cond/C*3600;obsBorder=(extB[i]-extH[i]*ti)/C*3600;obsSource=sourceAt(i,t)/C*3600;}}
+    for(const [id,value] of maxima){const p=peakById.get(id);if(p.value===null||value>p.value){p.value=value;p.t=t/3600;}}
     if(count){if(max>peak.value){peak={value:max,t:t/3600};peakField=new Float32Array(T);}if(min<trough.value){trough={value:min,t:t/3600};troughField=new Float32Array(T);}}
     history.push({t:t/3600,min:count?min:null,max:count?max:null,mean:count?sum/count:null,energy,source:ps,boundary:pb,
       obsT:observation>=0&&active[observation]?T[observation]:null,cond:obsCond,border:obsBorder,internal:obsSource,
@@ -81,7 +85,7 @@ function solveVoxelHeat(input, onProgress = () => {}) {
   }
   if(!peakField||!troughField)throw Error('No hay hormigón colocado dentro del horizonte elegido.');
   const last=history[history.length-1],balance=last.energy-energyIn-energySource-energyBoundary;
-  return {indices,fields,times:snapshotTimes.map(t=>t/3600),history,peak,trough,peakField,troughField,p,steps,dtMin,dtMax,dtLimit:dtLimit===Infinity?null:dtLimit,
+  return {indices,fields,times:snapshotTimes.map(t=>t/3600),history,peak,trough,vertidaPeaks,peakField,troughField,p,steps,dtMin,dtMax,dtLimit:dtLimit===Infinity?null:dtLimit,
     energyIn,energySource,energyBoundary,balance,observation,N,h:g.h,
     scale:[trough.value,peak.value]};
 }

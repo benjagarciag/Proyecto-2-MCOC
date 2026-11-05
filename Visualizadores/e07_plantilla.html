@@ -29,6 +29,7 @@
 <div class="stat"><div class="stat-label">Máxima alcanzada · corrida</div><div id="tempPeak" class="stat-value">—</div><small id="tempPeakNote">Se calcula con los parámetros elegidos</small></div>
 <div class="stat"><div class="stat-label">Mínima alcanzada · corrida</div><div id="tempTrough" class="stat-value">—</div><small id="tempTroughNote">Se calcula con los bordes seleccionados</small></div>
 </div><p class="bottom-note" style="margin:-4px 0 14px">Temperaturas de un ensayo didáctico. <button id="openThermal" style="font-size:11px;padding:3px 8px">Configurar y calcular</button></p>
+<div class="panel" id="pourTemperaturePanel"><div class="panel-head"><div><h2>Tmax por vertida</h2><p>Se muestran todas las vertidas, aunque estén ocultas o se seleccione una en la vista.</p></div></div><div class="table-scroll"><table><thead><tr><th>Vertida</th><th>Tmax actual [°C]</th><th>Tmax corrida [°C]</th><th>Tiempo del máximo [h]</th><th>Edad al máximo [h]</th></tr></thead><tbody id="pourTemperatureRows"></tbody></table></div><div class="panel-content"><p class="small muted">Incluye centros y caras exteriores físicas. El valor actual sigue el tiempo de reproducción y puede ser interpolado. El máximo de la corrida se evalúa en cada paso calculado; el tiempo se mide desde t = 0 y la edad desde la colocación de esa vertida.</p></div></div>
 <section id="geometry" class="tab-panel">
 <div class="panel"><div class="panel-head"><div><h2>La fundación, celda a celda</h2><p id="sceneCaption"></p></div><div class="tools"><button id="cameraIso">Isométrica</button><button id="cameraFront">Frontal</button><button id="cameraTop">Planta</button></div></div><div class="viewport"><canvas id="scene" aria-label="Vista tridimensional interactiva de la fundación" tabindex="0"></canvas><div id="sceneNote" class="viewport-note"></div><div class="axis-note">X / Y horizontal · Z vertical · metros</div><div id="glError" class="empty">Tu navegador no ofrece WebGL. El corte 2D y las tablas siguen disponibles.</div></div><div id="colorLegend" class="slice-info">Los colores identifican vertidas; no representan temperaturas.</div></div>
 <div class="two"><div class="panel"><div class="panel-head"><div><h2>Mirar dentro</h2><p>Una sección de celdas y sus centros.</p></div></div><div class="mini-controls inline"><label class="label-mini" for="slicePlane">Plano</label><select id="slicePlane"><option value="XZ">XZ · altura</option><option value="YZ">YZ · altura</option><option value="XY">XY · planta</option></select><input id="sliceIndex" type="range" min="0" max="36" value="18" aria-label="Posición de la sección"><span id="sliceCoord" class="small"></span></div><div class="slice-wrap"><canvas id="slice" aria-label="Corte de voxeles; pasa el cursor para inspeccionar una celda"></canvas></div><div id="inspect" class="slice-info" aria-live="polite">Pasa el cursor por el corte para consultar una celda y sus seis vecinos.</div></div>
@@ -213,13 +214,25 @@ function refreshThermalFrame(){const r=state.thermal,g=grid();thermalDense=null;
  const f=lo===hi?0:(state.time-ts[lo])/(ts[hi]-ts[lo]);thermalDense=new Float32Array(g.ids.length).fill(NaN);
  for(let n=0;n<r.N;n++){const flat=r.indices[n],id=g.ids[flat];if(state.time<DATA.vertidas[id-1].inicio)continue;const a=r.fields[lo*r.N+n],b=r.fields[hi*r.N+n];thermalDense[flat]=Number.isFinite(a)&&Number.isFinite(b)?a+f*(b-a):Number.isFinite(a)?a:NaN;}
 }
-function renderThermalCards(){const r=state.thermal;let min=Infinity,max=-Infinity;
- if(thermalDense&&r)for(const flat of r.indices){if(!Number.isFinite(thermalDense[flat]))continue;const a=cellThermalTerms(flat);min=Math.min(min,a.min);max=Math.max(max,a.max);}
+function renderThermalCards(){const r=state.thermal,currentMax=new Map();let min=Infinity,max=-Infinity;
+ if(thermalDense&&r)for(const flat of r.indices){if(!Number.isFinite(thermalDense[flat]))continue;const a=cellThermalTerms(flat);min=Math.min(min,a.min);max=Math.max(max,a.max);const id=grid().ids[flat];currentMax.set(id,Math.max(currentMax.get(id)??-Infinity,a.max));}
  $('tempMax').innerHTML=Number.isFinite(max)?`${fmt(max,2)} <span>°C</span>`:'—';$('tempMin').innerHTML=Number.isFinite(min)?`${fmt(min,2)} <span>°C</span>`:'—';
  $('tempPeak').innerHTML=r?`${fmt(r.peak.value,2)} <span>°C</span>`:'—';$('tempTrough').innerHTML=r?`${fmt(r.trough.value,2)} <span>°C</span>`:'—';
  $('tempNowNote').textContent=r?'A '+fmt(state.time,2)+' h · centros + caras':'Pulsa Calcular temperaturas';$('tempMinNote').textContent=r?'A '+fmt(state.time,2)+' h · centros + caras':'Sin cálculo térmico';
  $('tempPeakNote').textContent=r?'Máximo de toda la corrida · t = '+fmt(r.peak.t,2)+' h':'No se estima a partir de la geometría';$('tempTroughNote').textContent=r?'Mínimo de toda la corrida · t = '+fmt(r.trough.t,2)+' h':'Se calcula con los bordes seleccionados';
  if(r&&!thermalDense)$('tempNowNote').textContent='Instante fuera del horizonte calculado';
+ renderPourTemperatures(currentMax);
+
+}
+function renderPourTemperatures(currentMax){
+ const r=state.thermal,g=grid();
+ $('pourTemperatureRows').innerHTML=DATA.vertidas.map(v=>{
+  const n=g.filas.find(f=>f.vertida_id===v.id)?.numero_voxeles??0;
+  const p=r?.vertidaPeaks.find(p=>p.id===v.id),now=currentMax.get(v.id);
+  const empty=!n?'Sin voxeles':!r?'Sin cálculo':!thermalDense?'Fuera del horizonte':state.time<v.inicio?'No colocada':'—';
+  const peak=p?.value;
+  return `<tr><td>${dot(v.id)}${v.nombre}</td><td>${Number.isFinite(now)?fmt(now,2):empty}</td><td>${Number.isFinite(peak)?fmt(peak,2):!n?'Sin voxeles':r?'No colocada en la corrida':'Sin cálculo'}</td><td>${Number.isFinite(peak)?fmt(p.t,2):'—'}</td><td>${Number.isFinite(peak)?fmt(Math.max(0,p.t-v.inicio),2):'—'}</td></tr>`;
+ }).join('');
 }
 function downsample(history,keys){const step=Math.max(1,Math.ceil(history.length/1000)),chosen=new Set([0,history.length-1]);for(let i=0;i<history.length;i+=step)chosen.add(i);for(const k of keys){let min=Infinity,max=-Infinity,imin=0,imax=0;history.forEach((h,i)=>{if(h[k]!==null&&Number.isFinite(h[k])){if(h[k]<min){min=h[k];imin=i;}if(h[k]>max){max=h[k];imax=i;}}});chosen.add(imin);chosen.add(imax);}return [...chosen].sort((a,b)=>a-b).map(i=>history[i]);}
 function drawThermalCharts(){const r=state.thermal;if(!r)return;const h=downsample(r.history,['min','max','mean','obsT','cond','border','internal','rate']),p=r.p;
