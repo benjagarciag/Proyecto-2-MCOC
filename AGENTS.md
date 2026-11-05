@@ -1,5 +1,19 @@
 # Contexto del repositorio
 
+- E08 implementada el 5 de noviembre de 2026 en la entrada existente
+  `Visualizadores/E07.html` (encabezado E08). La plantilla y el motor compartidos
+  conservan sus nombres e07. Tabla de secuencia editable con Aplicar/Restaurar IFC,
+  visibilidad individual solo gráfica y guardar/cargar escenarios JSON.
+  Fuente de hidratación exponencial directa q0 [W/m³], tau [h], integrada
+  exactamente por paso y acoplada a conducción/bordes del navegador. Default900/30
+  equivalente al ejemplo Python; no volver a presentar derivación adiabática,
+  calibración ni cinética dependiente de T. IFC/BIM y solvers Python conservados.
+  Pruebas JS E07/E08 aprobadas, incluida corrida IFC 0,5m/336h con hidratación;
+  Tmax61,778214 didáctica. No pytest completo ni revisión visual de navegador:
+  su política bloqueó archivos locales. Guía en entregas/E08/README.md.
+  El usuario autorizo publicar en main con el mensaje de commit `Entrega E08`.
+  Identificar el SHA con git log; no confundir SHA base del HTML con entrega.
+
 - E07 HTML actualizado por solicitud del usuario: `Visualizadores/E07.html` es
   autónomo; fuentes `e07_plantilla.html`, `e07_termico.js` y `exportar_e07.py`.
   El profesor aún no explicó la conversión de curva adiabática a fuente: no

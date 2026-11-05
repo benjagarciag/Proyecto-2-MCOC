@@ -4,7 +4,9 @@ Una sola ventana para configurar, verificar y observar la evolución de
 temperatura de los casos 1D, 2D y 3D del proyecto. Reúne el visualizador de
 estudio y la barra 3D con fuente localizada; no depende de una entrega E05.
 
-## Laboratorio HTML de E07
+<a id="laboratorio-html-de-e07"></a>
+
+## Laboratorio HTML de E08 (entrada E07.html)
 
 Abrir `Visualizadores/E07.html` con doble clic en Chrome o Edge. El HTML es
 autónomo y no necesita internet, servidor, Blender abierto ni paquetes npm.
@@ -12,13 +14,16 @@ autónomo y no necesita internet, servidor, Blender abierto ni paquetes npm.
 - Modelo 3D giratorio, centros, cortes XY/XZ/YZ e inspección de vecinos.
 - Grillas reales exportadas del IFC de 1, 0,5 y 0,25 m; volúmenes, errores,
   áreas y contactos entre vertidas. Los filtros no alteran las métricas físicas.
-- Activación a 0/6/12/18/24 h y temperaturas de colocación leídas del IFC.
+- Activación y temperaturas iniciales leídas del IFC; editables en Construcción.
+- Mostrar/ocultar cada vertida conserva el cálculo físico.
+- Guardar/cargar entradas JSON permite repetir un escenario aplicado.
 - Reproducción hasta 336 h: 1,8 h/s hasta las 30 h y luego 18 h/s (×10).
 - **Ecuación de calor**: cálculo propio de volumen finito cartesiano y Euler
   explícito, bajo botón, ejecutado en un Worker para mantener la interfaz activa.
 - Dirichlet, Neumann o Robin por normal X±/Y±/Z±. Las caras frente a futuras
   vertidas quedan expuestas hasta que ambas celdas están activas.
-- Calor interno directo en W/m³: constante o pulso desde cada colocación;
+- Calor interno directo en W/m³: hidratación exponencial por edad, constante
+  o pulso desde cada colocación;
   puede aplicarse a todo el hormigón o a una vertida. Es una fuente volumétrica,
   no un borde. La conversión de curva adiabática a fuente se retiró del HTML
   por indicación docente; los módulos Python anteriores permanecen conservados.
@@ -33,8 +38,8 @@ no recalcula: interpola solo los campos visuales. Los extremos globales se
 registran en cada paso y se guardan sus campos exactos para mostrarlos.
 Cambiar parámetros o resolución invalida el resultado y requiere recalcular.
 
-Los valores iniciales k=2 W/(m·K), ρ=2400 kg/m³, cp=900 J/(kg·K), q=500 W/m³
-por 12 h, ambiente 10 °C y h=5 W/(m²·K) son **didácticos, editables y no
+Los valores iniciales k=2 W/(m·K), ρ=2400 kg/m³, cp=900 J/(kg·K), q₀=900 W/m³
+y τ=30 h, en modo hidratación exponencial, ambiente 10 °C y β=5 W/(m²·K) son **didácticos, editables y no
 calibrados**. No son una predicción de la fundación real. La grilla aún tiene
 los errores geométricos documentados. No se calcula S25, riesgo ni confiabilidad.
 
@@ -44,7 +49,8 @@ aísla. Cada intercambio interior es conservativo, con contacto perfecto.
 La capacidad es ρcpV; la energía de hormigón nuevo se agrega al colocarlo.
 El paso se limita a min(Δt tope, 0,8 C/max(ΣG+H)) y se corta en eventos.
 Se rechazan corridas que superen 20.000 pasos interactivos. El cálculo se
-puede cancelar. No escribe parámetros, resultados ni IFC desde el navegador.
+puede cancelar. No modifica el IFC ni escribe resultados automáticamente. Guardar entradas JSON
+descarga el escenario aplicado a petición del usuario.
 
 Para regenerar el HTML después de cambiar el IFC o sus propiedades:
 
@@ -68,7 +74,11 @@ relajación analítica Dirichlet/Robin, aislamiento, difusión entre dos celdas,
 activación y máscara sin conducción a través de vacíos. Contrasta las áreas
 exportadas con el navegador y ejecuta casos didácticos de 14 días con 0,5 m y
 48 h con 0,25 m. No sustituye la validación física ni la convergencia de malla.
-No se volvió a ejecutar la batería Python histórica como parte de este cambio.
+E08 añade `node desarrollo/tests/test_e08_termico_web.cjs`: solución
+adiabática con integral exacta de fuente, edades distintas, entradas editables,
+controladores y corrida de hidratación sobre IFC durante 14 días. Ambas
+comprobaciones JavaScript se ejecutaron y aprobaron; no se volvió a ejecutar
+la batería Python histórica. Ver [recorrido E08](../entregas/E08/README.md).
 
 ## Abrir
 

@@ -7,11 +7,21 @@ térmico. Sitio: **Los Ángeles, Biobío, Parque Eólico El Rosal**.
 Coordenadas del caso: `-37.277929`, `-72.368271`.
 
 [Repositorio oficial](https://github.com/benjagarciag/Proyecto-2-MCOC) ·
-[Entrega E07 y verificación](entregas/E07/README.md) ·
+[Entrega E08 y demo](entregas/E08/README.md) ·
+[Antecedentes E07](entregas/E07/README.md) ·
 [Ejecutores E07](casos/e07/README.md) ·
 [Visualizador HTML](Visualizadores/E07.html)
 
-## Estado hasta E07
+## Actualización E08
+
+El HTML existente `Visualizadores/E07.html` incorpora controles de E08:
+inicios y temperaturas de colocación editables, visibilidad individual y
+escenarios JSON. La hidratación exponencial por edad, ingresada directamente
+como q₀ [W/m³] y τ [h], está acoplada a conducción y bordes en el navegador.
+No modifica el IFC; la integración Python anterior permanece separada.
+Ver [demo, comprobaciones y limitaciones](entregas/E08/README.md).
+
+## Base Python hasta E07
 
 **Integración Python anterior: 528 pruebas aprobadas, 0 fallidas:** 320 de la base E04/E05/E06 y 208 E07.
 La rama `e07-voxelizacion-vertidas-hidratacion` incorpora geometría IFC,
@@ -30,13 +40,13 @@ Abrir **[Visualizadores/E07.html](Visualizadores/E07.html)** con doble clic en
 Chrome o Edge. Permite explorar los voxeles del IFC, errores por vertida,
 contactos, construcción, temperaturas y condiciones Dirichlet/Neumann/Robin.
 El cálculo térmico es propio, bajo botón, con una fuente interna ingresada en
-W/m³ y parámetros didácticos editables. La conversión desde curva adiabática
+W/m³ (exponencial por edad, constante o pulso) y parámetros didácticos editables. La conversión desde curva adiabática
 no se presenta en el HTML, por indicación docente. No es una predicción calibrada.
 
 La pestaña **Ecuación de calor** muestra máximas/mínimas por instante y de toda
 la corrida, curvas temporales y aportes de conducción, borde y calor interno.
-Se conserva la base Python de la rama E07; el laboratorio del navegador no
-acopla su módulo previo de hidratación. [Uso, método y comprobaciones](Visualizadores/README.md#laboratorio-html-de-e07).
+Se conserva la base Python de la rama E07; el laboratorio del navegador incorpora ahora una fuente exponencial por edad
+equivalente al ejemplo didáctico Python, sin depender de ese módulo en ejecución. [Uso, método y comprobaciones](Visualizadores/README.md#laboratorio-html-de-e07).
 
 ## Organización y código
 
@@ -118,8 +128,9 @@ la hidratación de M1 usa valores **didácticos, sin calibración experimental**
 ρ=2400 kg/m³, cp=900 J/(kg·K), θ∞=45 K y τ=30 h, del ejemplo de la guía.
 [Modelo y unidades](documentacion/e07_hidratacion.md).
 
-Quedan pendientes justificar la malla, calibrar M1 y acoplar conducción,
-hidratación y bordes de la fundación. Clima, suelo, incertidumbre y confiabilidad
+Quedan pendientes justificar la malla, calibrar M1 y completar la integración
+del caso en Python. El HTML E08 ya acopla conducción, hidratación y bordes
+con parámetros didácticos. Clima, suelo, incertidumbre y confiabilidad
 se desarrollarán en entregas posteriores. Las curvas adiabáticas no son
 resultados de temperatura real de la fundación.
 

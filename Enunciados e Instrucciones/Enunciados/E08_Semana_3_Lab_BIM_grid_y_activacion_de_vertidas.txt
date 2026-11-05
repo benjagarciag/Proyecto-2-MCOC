@@ -1,0 +1,48 @@
+E08 — Semana 3 / jueves — Lab: BIM→grid y activación de vertidas
+
+Objetivo
+Demostrar el pipeline completo desde IFC hasta una simulación térmica por etapas.
+
+Antes de la actividad
+Tener:
+
+IFC;
+
+extracción;
+
+voxelización;
+
+visualización 3D;
+
+al menos dos vertidas con tiempos de activación distintos;
+
+fuente de hidratación funcional.
+
+Durante la actividad
+El ayudante solicitará:
+
+cambiar \Delta x;
+
+reportar error de volumen;
+
+ocultar/mostrar una vertida;
+
+cambiar hora de inicio;
+
+cambiar temperatura de colocación;
+
+ejecutar;
+
+visualizar el efecto.
+
+Debe quedar claro que la secuencia está en los inputs, no hardcodeada dentro del solver.
+
+Evidencia / entrega
+Canvas:
+
+Repositorio:
+Commit evaluado:
+Sin texto adicional.
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado:

@@ -1,4 +1,4 @@
-/* Balance cartesiano explícito sobre la máscara IFC. Sin curva adiabática.
+/* Balance cartesiano explícito sobre la máscara IFC. Fuente directa o hidratación exponencial por edad; integral exacta por paso.
  * Convenciones idénticas a mcplan.bordes_termicos.coeficientes_cara:
  * G=kA/d, Dirichlet H=2kA/d; Robin H=A/(d/(2k)+1/h);
  * Neumann positivo entrante. P_cara=B-H*T. Interfaces: contacto perfecto.
@@ -10,7 +10,8 @@ function solveVoxelHeat(input, onProgress = () => {}) {
   for(const k of ['k','rho','cp','q','duration','horizon','dtCap'])finite(k,p[k]);
   if(p.k<=0||p.rho<=0||p.cp<=0||p.q<0||p.duration<=0||p.horizon<=0||p.horizon>336||p.dtCap<=0)
     throw Error('k, ρ, cₚ, duración y Δt deben ser positivos; fuente ≥ 0 y horizonte entre 0 y 336 h.');
-  if(!['pulse','constant'].includes(p.sourceMode))throw Error('Modo de fuente inválido.');
+  if(!['pulse','constant','hydration'].includes(p.sourceMode))throw Error('Modo de fuente inválido.');
+  if(p.sourceMode==='hydration'&&(!Number.isFinite(p.tau)||p.tau<=0))throw Error('τ debe ser positivo y finito.');
   if(!Number.isInteger(p.sourceId)||p.sourceId<0||p.sourceId>5)throw Error('ID de fuente inválido.');
   if(!Array.isArray(p.bc)||p.bc.length!==6)throw Error('Se requieren seis condiciones de borde.');
   const [nz,ny,nx]=g.forma;
@@ -31,7 +32,7 @@ function solveVoxelHeat(input, onProgress = () => {}) {
   for(let d=0;d<6;d++){const bc=p.bc[d];finite('Valor de borde',bc.value);
     if(bc.type==='D'){H[d]=2*G;B[d]=H[d]*bc.value;}
     else if(bc.type==='N'){H[d]=0;B[d]=bc.value*A;}
-    else if(bc.type==='R'){finite('h Robin',bc.h);if(bc.h<0)throw Error('h Robin no puede ser negativo.');H[d]=bc.h?A/(g.h/(2*p.k)+1/bc.h):0;B[d]=H[d]*bc.value;}
+    else if(bc.type==='R'){finite('β Robin',bc.h);if(bc.h<0)throw Error('β Robin no puede ser negativo.');H[d]=bc.h?A/(g.h/(2*p.k)+1/bc.h):0;B[d]=H[d]*bc.value;}
     else throw Error('Borde desconocido.');}
   let observation=-1;
   if(p.observe){const xyz=p.observe.map((v,d)=>Math.floor((v-g.origen[d])/g.h));
@@ -45,7 +46,7 @@ function solveVoxelHeat(input, onProgress = () => {}) {
   const fields=new Float32Array(snapshotTimes.length*N).fill(NaN),history=[];
   let t=0,steps=0,snapshot=0,event=0,dtLimit=Infinity,dtMin=Infinity,dtMax=0,energyIn=0,energySource=0,energyBoundary=0;
   let peak={value:-Infinity,t:0},trough={value:Infinity,t:0},peakField=null,troughField=null,lastProgress=-1;
-  const sourceAt=(i,time)=>p.q&&(p.sourceId===0||ids[i]===p.sourceId)&&time>=starts[i]&&(p.sourceMode==='constant'||time<starts[i]+p.duration*3600)?p.q*V:0;
+  const sourceAt=(i,time)=>p.q&&(p.sourceId===0||ids[i]===p.sourceId)&&time>=starts[i]&&(p.sourceMode!=='pulse'||time<starts[i]+p.duration*3600)?p.q*V*(p.sourceMode==='hydration'?Math.exp(-(time-starts[i])/(p.tau*3600)):1):0;
   function activate(){let added=false;for(let i=0;i<N;i++)if(!active[i]&&starts[i]<=t+1e-7){active[i]=1;T[i]=initials[i];energyIn+=C*T[i];added=true;}return added;}
   function operator(){let maxDiagonal=0;for(let i=0;i<N;i++)if(active[i]){let h=0,b=0,diag=0;for(let d=0;d<6;d++){const j=neighbors[i*6+d];if(j>=0&&active[j])diag+=G;else{h+=H[d];b+=B[d];diag+=H[d];}}extH[i]=h;extB[i]=b;maxDiagonal=Math.max(maxDiagonal,diag);}dtLimit=maxDiagonal?C/maxDiagonal:Infinity;}
   function record(){let min=Infinity,max=-Infinity,sum=0,count=0,energy=0,ps=0,pb=0,obsCond=null,obsBorder=null,obsSource=null;
@@ -69,7 +70,7 @@ function solveVoxelHeat(input, onProgress = () => {}) {
     let qStep=0,bStep=0;
     for(let i=0;i<N;i++)if(active[i]){const ti=T[i];let conduction=0;
       for(let d=0;d<6;d++){const j=neighbors[i*6+d];if(j>=0&&active[j])conduction+=G*(T[j]-ti);}
-      const boundary=extB[i]-extH[i]*ti,source=sourceAt(i,t);
+      const boundary=extB[i]-extH[i]*ti,source=sourceAt(i,t)*(p.sourceMode==='hydration'?-Math.expm1(-dt/(p.tau*3600))/(dt/(p.tau*3600)):1);
       next[i]=ti+dt*(conduction+boundary+source)/C;qStep+=source;bStep+=boundary;
     }else next[i]=NaN;
     [T,next]=[next,T];energySource+=qStep*dt;energyBoundary+=bStep*dt;t+=dt;
