@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "sha256_ifc": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+  "h": 0.25,
+  "vertidas": [
+    {
+      "id": 1,
+      "inicio": 0,
+      "temperatura": 19
+    },
+    {
+      "id": 2,
+      "inicio": 6,
+      "temperatura": 18
+    },
+    {
+      "id": 3,
+      "inicio": 12,
+      "temperatura": 18
+    },
+    {
+      "id": 4,
+      "inicio": 18,
+      "temperatura": 18
+    },
+    {
+      "id": 5,
+      "inicio": 24,
+      "temperatura": 18
+    }
+  ],
+  "p": {
+    "k": 2,
+    "rho": 2400,
+    "cp": 900,
+    "q": 900,
+    "tau": 30,
+    "duration": 12,
+    "horizon": 336,
+    "dtCap": 900,
+    "sourceMode": "hydration",
+    "sourceId": 0,
+    "observe": [
+      0.125,
+      0.125,
+      2.125
+    ],
+    "bc": [
+      {
+        "type": "R",
+        "value": 10,
+        "h": 5
+      },
+      {
+        "type": "R",
+        "value": 10,
+        "h": 5
+      },
+      {
+        "type": "R",
+        "value": 10,
+        "h": 5
+      },
+      {
+        "type": "R",
+        "value": 10,
+        "h": 5
+      },
+      {
+        "type": "R",
+        "value": 10,
+        "h": 5
+      },
+      {
+        "type": "R",
+        "value": 10,
+        "h": 5
+      }
+    ]
+  }
+}
