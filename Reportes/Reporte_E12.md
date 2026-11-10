@@ -2,7 +2,7 @@
 
 **Repositorio** [benjagarciag/Proyecto-2-MCOC](https://github.com/benjagarciag/Proyecto-2-MCOC)
 
-**Código simulado** `238dede6c987259e2283faa2b77dba3f76f9dd3f`. El resumen registra este SHA y los parámetros efectivos. El SHA del paquete final se declara en Canvas mediante `git rev-parse HEAD`.
+**Código simulado** `5b6aebfc3143f7a62fdb2efbaf95bdb9457ee91a`. El resumen registra este SHA y los parámetros efectivos. El SHA del paquete final se declara en Canvas mediante `git rev-parse HEAD`.
 
 ## Clima y cobertura
 

@@ -96,3 +96,30 @@ exportación no pueda alterar las temperaturas del solver. La batería tiene
 objetos DOM/WebGL de prueba y verifica campos, activaciones, cortes, clipping,
 reproducción y gráficos en E11 y E12. La comprobación visual en Chrome quedó
 detenida porque Computer Use no pudo identificar la URL con suficiente certeza.
+
+
+## Corrección de pestañas y selección de resolución
+
+Código 5b6aebfc3143f7a62fdb2efbaf95bdb9457ee91a. Se corrigió un atributo
+hidden mal formado en Construcción. La navegación usa enlaces con fragmento y
+oculta el resumen general al entrar a otras secciones para que su contenido
+aparezca inmediatamente.
+
+El HTML principal incorpora las mallas de 1, 0,50 y 0,25 m. Las dos últimas
+tienen corridas Python independientes, con sus respectivos campos, máximos,
+diagnósticos y trazabilidad. La de 1 m sirve para geometría y volúmenes y
+permanece sin resultado térmico por la pérdida de V02.
+
+Una regresión con jsdom pulsa las cinco pestañas, verifica que solo una sección
+quede visible y cambia entre las tres mallas. Se ejecutó para los HTML finales
+de E11 y E12. La prueba previa de campos, cortes, clipping, reproducción y
+activación también pasó. Los campos de cada malla coinciden con sus VTI.
+
+En E11 se guardan 49 campos visuales para 0,50 m y 15 para 0,25 m. En E12 son
+337 y 91, respectivamente. La malla fina alternativa usa salida visual cada
+cuatro horas y eventos para limitar el tamaño del archivo. Sus extremos y
+diagnósticos se evalúan en cada paso. Los resultados de la corrida de referencia
+de 0,50 m permanecen idénticos a la versión anterior.
+
+La inspección automatizada de Chrome volvió a detenerse por la identificación
+de la URL. La comprobación de pestañas se realizó con un DOM real.

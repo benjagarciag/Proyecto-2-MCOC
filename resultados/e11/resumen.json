@@ -1,8 +1,8 @@
 {
-  "codigo_commit": "238dede6c987259e2283faa2b77dba3f76f9dd3f",
+  "codigo_commit": "5b6aebfc3143f7a62fdb2efbaf95bdb9457ee91a",
   "codigo_modificado": false,
   "cambios_codigo": [],
-  "ejecutado_utc": "2026-11-10T23:33:35.685018+00:00",
+  "ejecutado_utc": "2026-11-10T23:51:01.360163+00:00",
   "parametros_sha256": "055be9af6277f580ce84ae6e536539a6a6ccce3fa633997875cb68976d1da495",
   "parametros_efectivos": {
     "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
