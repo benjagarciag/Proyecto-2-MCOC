@@ -1,0 +1,37 @@
+E10 — Semana 4 / miércoles — Revisión oral: entorno, moldaje y clima
+Objetivo
+Demostrar cómo el ambientea real entra a la física y cómo se obtendrán pronósticos trazables.
+
+Antes de la actividad
+El repo debe tener:
+
+módulo de condiciones de borde;
+tratamiento de suelo;
+moldaje/aislación;
+primer cliente o loader meteorológico;
+esquema de snapshots de forecast.
+Durante la actividad
+Preguntas posibles:
+
+¿qué término usa temperatura ambiente?;
+¿cómo entra el viento si el modelo lo considera?;
+¿cómo modelar una resistencia térmica de moldaje?;
+¿qué cambia al desmoldar?;
+¿qué es un flujo solar?;
+¿cómo evitar doble-contar radiación y convección?;
+¿qué diferencia existe entre forecast, reanalysis y observación?;
+¿qué ocurre si el forecast no cubre aún los 14 días posteriores al 27?;
+¿por qué se deben conservar forecasts antiguos?
+Evidencia / entrega
+Canvas:
+
+Repositorio:
+Commit evaluado:
+Sin informe.
+
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado:
+
+Repositorio:
+Commit evaluado:

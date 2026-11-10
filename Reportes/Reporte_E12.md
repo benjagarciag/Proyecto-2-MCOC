@@ -8,7 +8,8 @@
 
 El caso representa el Parque Eólico El Rosal (Los Ángeles, Biobío,
 **−37,277929; −72,368271**). El inicio del escenario es el **27 de noviembre
-de 2026 a las 10:00**, hora de Chile. El
+de 2026 a las 10:00**, hora de Chile, como hipótesis provisional para
+esta corrida. La fecha final de obra requiere confirmación docente. El
 [pronóstico GFS archivado](../datos/clima/forecasts/20261110T190042897941Z_44b1a950.json),
 descargado el **10-11-2026 a las 19:00:42 UTC**, termina el 25 de noviembre a
 las 23:00 UTC y cubre **0 de 336 horas** del escenario.
@@ -38,9 +39,9 @@ hidratación comienza a esa edad sin reinicializar el hormigón previo.
 | Vertida_05 | 24 | 18 |
 
 Para M1 se adoptó k = 2 W/(m·K), ρ = 2400 kg/m³ y cₚ = 900 J/(kg·K).
-La curva adiabática exponencial tiene alza asintótica de 45 K y constante
-de tiempo de 30 h. La fuente volumétrica es ρcₚ por la derivada temporal
-de esa curva. Se integra por intervalo con la edad de cada vertida.
+La hidratación usa una fuente directa q(a) = q₀ exp(−a/τ), con
+q₀ = 900 W/m³ y τ = 30 h. Se integra exactamente por intervalo con la
+edad de cada vertida. Conserva la misma fuente del E09.
 
 | Región | Condición de borde |
 | --- | --- |

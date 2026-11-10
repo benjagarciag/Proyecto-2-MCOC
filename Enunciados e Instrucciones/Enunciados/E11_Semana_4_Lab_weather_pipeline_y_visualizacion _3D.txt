@@ -1,0 +1,33 @@
+E11 — Semana 4 / jueves — Lab: weather pipeline y visualización 3D
+
+Objetivo
+Conectar datos meteorológicos reales con las condiciones de borde y producir resultados 3D inspeccionables.
+
+Antes de la actividad
+Tener un snapshot real de pronóstico/histórico con metadata y una exportación VTK/PyVista.
+
+Durante la actividad
+El ayudante pedirá:
+
+mostrar el archivo meteorológico;
+mostrar metadata;
+graficar al menos temperatura ambiente;
+alimentar una BC con esa serie;
+ejecutar una simulación corta;
+abrir resultados 3D;
+hacer un slice o clipping;
+identificar núcleo y superficie.
+Si se usa viento o radiación, el estudiante debe señalar la ecuación exacta donde entra.
+
+Evidencia / entrega
+Canvas:
+
+Repositorio:
+Commit evaluado:
+Sin informe.
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado:
+
+Repositorio:
+Commit evaluado:

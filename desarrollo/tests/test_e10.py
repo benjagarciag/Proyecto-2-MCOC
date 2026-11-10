@@ -82,3 +82,27 @@ def test_suelo_resistencias_serie_y_signo():
                         contacto_m2K_W=.1)
     assert suelo.potencia_entrante_W(35) == pytest.approx(.25*(15-35)/(.125+.5+.1))
     assert suelo.potencia_entrante_W(10) > 0
+
+
+@pytest.mark.parametrize("campo,valor", [
+    ("modelo_solicitado", "era5"),
+    ("unidades", {}),
+    ("muestras_horarias", 999),
+    ("ultima_marca_utc", "2026-12-31T00:00:00+00:00"),
+    ("descargado_utc", "2026-11-10T10:00:00"),
+])
+def test_rechaza_metadata_inconsistente(tmp_path, campo, valor):
+    import json
+    ruta = guardar_snapshot(tmp_path, respuesta(), url_pronostico(), INICIO)
+    snapshot = json.loads(ruta.read_text(encoding="utf-8"))
+    snapshot["metadata"][campo] = valor
+    ruta.write_text(json.dumps(snapshot), encoding="utf-8")
+    with pytest.raises(ValueError):
+        cargar_snapshot(ruta)
+
+
+def test_snapshot_incompleto_tiene_error_descriptivo(tmp_path):
+    ruta = tmp_path / "incompleto.json"
+    ruta.write_text('{"version": 1}', encoding="utf-8")
+    with pytest.raises(ValueError, match="incompleto"):
+        cargar_snapshot(ruta)

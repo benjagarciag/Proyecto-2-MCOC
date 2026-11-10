@@ -1,0 +1,40 @@
+E12 — Semana 4 / viernes — Simulación determinista de 14 días
+
+Objetivo
+Ejecutar por primera vez un caso completo de 14 días y diagnosticar su desempeño térmico.
+
+Antes de la actividad
+Tener el solver integrado con:
+
+geometría;
+vertidas;
+hidratación;
+suelo;
+moldaje/aislación;
+clima;
+visualización.
+Durante la actividad
+No hay actividad sincrónica.
+
+Evidencia / entrega
+Markdown máximo 1400 palabras:
+
+repo + commit;
+forecast/dataset usado y timestamp;
+tratamiento del horizonte no cubierto por forecast;
+tabla de condiciones de borde;
+plan de vertidas actual;
+(T_{\max});
+(\Delta T_{\max}) usando el criterio de 20 °C;
+tiempo y ubicación de ambos máximos;
+curvas núcleo/superficie;
+visualización 3D;
+conclusión:
+¿El plan cumple determinísticamente? ¿Qué mecanismo controla el resultado?
+
+
+Regla del commit
+Toda evidencia de código se evalúa sobre el SHA declarado:
+
+Repositorio:
+Commit evaluado:

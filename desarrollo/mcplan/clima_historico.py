@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
 
-from .clima import SITIO, UNIDADES, _utc, leer_respuesta
+from .clima import SITIO, UNIDADES, _utc, leer_respuesta, validar_snapshot
 
 
 def descargar_era5(carpeta, fecha_inicio, fecha_fin):
@@ -30,22 +30,17 @@ def descargar_era5(carpeta, fecha_inicio, fecha_fin):
     carpeta = Path(carpeta)
     carpeta.mkdir(parents=True, exist_ok=True)
     ruta = carpeta / f"era5_{fecha_inicio}_{fecha_fin}_{instante:%Y%m%dT%H%M%S%fZ}.json"
+    contenido = json.dumps(dict(version=1, metadata=metadata, respuesta=respuesta),
+                           ensure_ascii=False, indent=2, allow_nan=False) + "\n"
     with ruta.open("x", encoding="utf-8") as archivo:
-        json.dump(dict(version=1, metadata=metadata, respuesta=respuesta), archivo,
-                  ensure_ascii=False, indent=2, allow_nan=False)
-        archivo.write("\n")
+        archivo.write(contenido)
     return ruta
 
 
 def cargar_era5(ruta):
     with Path(ruta).open(encoding="utf-8") as archivo:
         contenido = json.load(archivo)
-    meta = contenido["metadata"]
-    if (contenido.get("version") != 1 or meta.get("tipo") != "reanalisis"
-            or meta.get("modelo_solicitado") != "era5"
-            or meta.get("coordenadas_solicitadas") != SITIO):
-        raise ValueError("Se esperaba el reanálisis ERA5 de El Rosal.")
-    return meta, leer_respuesta(contenido["respuesta"])
+    return validar_snapshot(contenido, "reanalisis", "era5")
 
 
 def serie_aire(pronostico, inicio, horizonte_h):

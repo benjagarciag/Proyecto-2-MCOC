@@ -66,3 +66,31 @@ def test_conduccion_interna_conserva_y_no_cruza_vacio():
             assert T[0, 0, 0] == pytest.approx(20+3600*2*10/(2400*900))
         else:
             assert T[0, 0, 0] == 20 and np.isnan(T[0, 0, 1]) and T[0, 0, 2] == 30
+
+
+def test_suelo_solo_en_la_base_y_no_en_caras_inferiores_elevadas():
+    ids = np.array([[[1]], [[0]], [[2]]])
+    e = EntornoFundacion(2, 0, 5, .5, 1, (), 0, 900)
+    r = simular(ids, [0, 0, 0], 1, {1: (0, 20), 2: (0, 20)},
+                curva(), e, [10, 10], [.5, .5, .5])
+    assert r.campos["final"].temperatura_C[2, 0, 0] == 20
+    assert r.campos["final"].temperatura_C[0, 0, 0] < 20
+    assert r.balance_J["aire"] == 0
+    assert r.balance_J["suelo"] < 0
+    assert r.balance_J["residuo"] == pytest.approx(0, abs=1e-6)
+
+
+def test_retiro_fraccionario_cambia_resistencia_exactamente_en_el_evento():
+    from mcplan.entorno_termico import Capa
+    e = EntornoFundacion(2, 5, 15, .5, 1.2, (Capa(.2, .1, .5),), -1, 3600)
+    r = simular(np.ones((1, 1, 1), dtype=int), [0, 0, 0], 1, {1: (0, 30)},
+                curva(), e, [10, 10], [.5, .5, .5])
+    capacidad = 2400*900
+    H_capa = 1/(.25 + 2 + .2)
+    H_libre = 1/(.25 + .2)
+    esperado_retiro = 30 + 1800*(4*H_capa+2*H_libre)*(10-30)/capacidad
+    esperado_final = esperado_retiro + 1800*6*H_libre*(10-esperado_retiro)/capacidad
+    np.testing.assert_allclose([x["nucleo_C"] for x in r.historia],
+                               [30, esperado_retiro, esperado_final])
+    assert [x["tiempo_h"] for x in r.historia] == [0, .5, 1]
+    assert r.balance_J["residuo"] == pytest.approx(0, abs=1e-6)

@@ -24,12 +24,15 @@ def main():
     limites = (float(malla["T_C"].min()), float(malla["T_C"].max()))
     opts = dict(scalars="T_C", cmap="turbo", clim=limites, scalar_bar_args={"title": "T [°C]"})
     if a.captura:
-        plot.add_mesh(malla.slice(normal=a.eje, origin=sonda), **opts)
+        vista = (malla.slice(normal=a.eje, origin=sonda) if a.modo == "corte"
+                 else malla.clip(normal=a.eje, origin=sonda))
+        plot.add_mesh(vista, **opts)
     elif a.modo == "corte":
         plot.add_mesh_slice(malla, normal=a.eje, origin=sonda, **opts)
     else:
         plot.add_mesh_clip_plane(malla, normal=a.eje, origin=sonda, **opts)
-    plot.add_text(f"Fundación | {t:.2f} h | {a.vti.stem}", color="#172a37", font_size=12)
+    fase = str(datos.field_data["fase"][0]) if "fase" in datos.field_data else "sin metadata de fase"
+    plot.add_text(f"Fundación | {t:.2f} h | {a.vti.stem} | {fase}", color="#172a37", font_size=12)
     plot.add_point_labels(np.array([sonda]), ["Sonda interior"], text_color="#172a37",
                           point_color="black", always_visible=True, font_size=11)
     if a.vti.stem == "diferencial":

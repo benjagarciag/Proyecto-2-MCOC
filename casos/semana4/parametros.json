@@ -28,10 +28,10 @@
     ]
   },
   "hidratacion": {
-    "theta_infinito_K": 45,
     "tau_s": 108000,
     "densidad_kg_m3": 2400,
-    "calor_especifico_J_kgK": 900
+    "calor_especifico_J_kgK": 900,
+    "q0_W_m3": 900
   },
   "e11": {
     "tipo": "forecast",

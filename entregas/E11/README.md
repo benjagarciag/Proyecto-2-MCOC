@@ -45,12 +45,20 @@ python casos/semana4/ejecutar.py e11
 python casos/semana4/ver_3d.py resultados/e11/diferencial.vti
 ~~~
 
-En el equipo de la demo, desde la carpeta Semana 4 en Ubuntu, ya están las
-dependencias. Usar este comando para abrir directamente los resultados:
+En Windows se puede usar el Python del entorno del proyecto con las
+dependencias instaladas. En esta copia de revisión, ejecutar en PowerShell:
 
-~~~sh
-PYTHONPATH=.venv/cache/visualizacion /home/luis/Proyecto-2-MCOC/.venv/bin/python casos/semana4/ver_3d.py resultados/e11/diferencial.vti
+~~~powershell
+$env:PYTHONPATH = Join-Path (Get-Location).Path '.venv/cache/visualizacion'
+$python = '../Proyecto2/.venv/Scripts/python.exe'
+& $python casos/semana4/ver_3d.py resultados/e11/diferencial.vti
 ~~~
+
+Para guardar una comprobación del corte sin abrir ventana, agregar
+`--captura resultados/e11/corte.png`. Para guardar una corrida alternativa,
+usar `ejecutar.py e12 --lado 0.25 --salida resultados/e12_malla025`.
+El resumen identifica commit, modificaciones locales de código, parámetros
+efectivos, plan de vertidas y hashes de entradas.
 
 [Corte guardado](../../resultados/e11/corte.png) ·
 [Curvas de la corrida](../../resultados/e11/temperaturas.png)

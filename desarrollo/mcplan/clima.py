@@ -110,11 +110,11 @@ def guardar_snapshot(carpeta, respuesta, url, descargado_en):
     carpeta = Path(carpeta)
     carpeta.mkdir(parents=True, exist_ok=True)
     ruta = carpeta / f"{instante:%Y%m%dT%H%M%S%fZ}_{uuid4().hex[:8]}.json"
+    contenido = json.dumps({"version": 1, "metadata": meta, "respuesta": respuesta},
+                           ensure_ascii=False, indent=2, allow_nan=False) + "\n"
     # Creación exclusiva: nunca reemplaza una descarga previa.
     with ruta.open("x", encoding="utf-8") as archivo:
-        json.dump({"version": 1, "metadata": meta, "respuesta": respuesta},
-                  archivo, ensure_ascii=False, indent=2, allow_nan=False)
-        archivo.write("\n")
+        archivo.write(contenido)
     return ruta
 
 
@@ -125,11 +125,28 @@ def descargar(carpeta, dias=16):
     return guardar_snapshot(carpeta, respuesta, url, datetime.now(timezone.utc))
 
 
+def validar_snapshot(snapshot, tipo, modelo):
+    try:
+        meta = snapshot["metadata"]
+        clima = leer_respuesta(snapshot["respuesta"])
+        _utc(datetime.fromisoformat(meta["descargado_utc"]))
+        if (snapshot.get("version") != 1 or meta.get("tipo") != tipo
+                or meta.get("modelo_solicitado") != modelo
+                or meta.get("coordenadas_solicitadas") != SITIO
+                or meta.get("zona_horaria") != "UTC"
+                or meta.get("unidades") != UNIDADES
+                or meta.get("variables") != list(UNIDADES)
+                or meta.get("muestras_horarias") != len(clima.horas)
+                or meta.get("primera_marca_utc") != clima.horas[0].tiempo_utc.isoformat()
+                or meta.get("ultima_marca_utc") != clima.horas[-1].tiempo_utc.isoformat()
+                or not meta.get("fuente") or not meta.get("url")):
+            raise ValueError("Metadata meteorológica inconsistente con la respuesta.")
+        return meta, clima
+    except (KeyError, TypeError, AttributeError) as exc:
+        raise ValueError("Snapshot meteorológico incompleto.") from exc
+
+
 def cargar_snapshot(ruta):
     with Path(ruta).open(encoding="utf-8") as archivo:
         snapshot = json.load(archivo)
-    meta = snapshot.get("metadata", {})
-    if (snapshot.get("version") != 1 or meta.get("tipo") != "forecast"
-            or meta.get("coordenadas_solicitadas") != SITIO):
-        raise ValueError("No es un snapshot forecast v1 del Parque El Rosal.")
-    return meta, leer_respuesta(snapshot["respuesta"])
+    return validar_snapshot(snapshot, "forecast", MODELO)

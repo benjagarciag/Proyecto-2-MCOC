@@ -1,11 +1,12 @@
 """E11: 48 h de forecast. E12: 336 h de escenario análogo ERA5."""
 import argparse
-from datetime import datetime
+from datetime import datetime, timezone
 from hashlib import sha256
 import json
 import os
 from pathlib import Path
 import sys
+import subprocess
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ / "desarrollo"))
@@ -42,6 +43,9 @@ def exportar(r, ids, origen, lado, salida, resumen, clima):
         malla.cell_data["superficie"] = campo.superficie.ravel()
         malla.cell_data["T_S25_min_C"] = campo.s25_min_C.ravel()
         malla.field_data["tiempo_h"] = [campo.tiempo_s/3600]
+        malla.field_data["fase"] = [campo.fase]
+        malla.field_data["codigo_commit"] = [resumen["codigo_commit"]]
+        malla.field_data["snapshot_sha256"] = [resumen["snapshot_sha256"]]
         malla.field_data["nucleo_xyz_m"] = np.array([r.nucleo_xyz_m])
         malla.save(salida / f"{nombre}.vti")
     (salida / "resumen.json").write_text(json.dumps(resumen, indent=2, ensure_ascii=False,
@@ -79,10 +83,20 @@ def main():
     ap.add_argument("--parametros", type=Path, default=Path(__file__).with_name("parametros.json"))
     ap.add_argument("--lado", type=float, help="Tamaño cúbico en metros.")
     ap.add_argument("--paso-max", type=float, help="Tope temporal en segundos.")
+    ap.add_argument("--salida", type=Path, help="Directorio de resultados alternativo.")
     ap.add_argument("--sin-exportar", action="store_true", help="Solo imprime el resumen, sin cambiar figuras ni VTK.")
     a = ap.parse_args()
     config = json.loads(a.parametros.read_text(encoding="utf-8"))
     escenario = config[a.caso]
+    if escenario["tipo"] not in ("forecast", "reanalisis"):
+        raise ValueError("Tipo meteorológico desconocido.")
+    hidratacion = dict(config["hidratacion"])
+    if "q0_W_m3" in hidratacion:
+        # Adaptación a la representación existente, con fuente directa como entrada.
+        q0 = hidratacion.pop("q0_W_m3")
+        capacidad = hidratacion["densidad_kg_m3"] * hidratacion["calor_especifico_J_kgK"]
+        hidratacion["theta_infinito_K"] = q0 * hidratacion["tau_s"] / capacidad
+    curva = CurvaAdiabatica(**hidratacion)
     ruta = RAIZ / escenario["snapshot"]
     meta, clima = (cargar_snapshot if escenario["tipo"] == "forecast" else cargar_era5)(ruta)
     inicio = datetime.fromisoformat(escenario["inicio_serie"])
@@ -105,8 +119,20 @@ def main():
     entorno = EntornoFundacion(**datos)
     r = simular(ids, v.grilla.origen_m, lado,
                 {c.vertida_id: (c.inicio_s, c.temperatura_C) for c in programa.colocaciones},
-                CurvaAdiabatica(**config["hidratacion"]), entorno, aire, config["nucleo_xyz_m"])
+                curva, entorno, aire, config["nucleo_xyz_m"])
+    commit = subprocess.check_output(["git", "-C", str(RAIZ), "rev-parse", "HEAD"], text=True).strip()
+    cambios = subprocess.check_output(
+        ["git", "-C", str(RAIZ), "status", "--porcelain", "--untracked-files=no",
+         "--", "desarrollo", "casos", "requirements.txt"], text=True).splitlines()
     resumen = dict(
+        codigo_commit=commit, codigo_modificado=bool(cambios), cambios_codigo=cambios,
+        ejecutado_utc=datetime.now(timezone.utc).isoformat(),
+        parametros_sha256=sha256(a.parametros.read_bytes()).hexdigest(),
+        parametros_efectivos={**config, "lado_m": lado, "entorno": {
+            **config["entorno"], "dt_tope_s": entorno.dt_tope_s}},
+        plan_vertidas=[dict(id=c.vertida_id, inicio_h=c.inicio_s/3600,
+                            temperatura_C=c.temperatura_C, material=c.material)
+                       for c in programa.colocaciones],
         caso=a.caso, clima=meta, snapshot=escenario["snapshot"],
         snapshot_sha256=sha256(ruta.read_bytes()).hexdigest(),
         inicio_serie=inicio.isoformat(), inicio_escenario=escenario.get("inicio_escenario", inicio.isoformat()),
@@ -117,7 +143,7 @@ def main():
         cumple_70_ensayo=r.pico["valor"] <= 70, cumple_20_ensayo=r.diferencial["valor"] <= 20,
         S25_profundidad_m=.025, S25_reconstruida=True)
     if not a.sin_exportar:
-        salida = RAIZ / "resultados" / a.caso
+        salida = a.salida if a.salida is not None else RAIZ / "resultados" / a.caso
         exportar(r, ids, v.grilla.origen_m, lado, salida, resumen, aire)
         print(f"Resultados: {salida}")
     print(json.dumps(resumen, ensure_ascii=False, indent=2, allow_nan=False))
