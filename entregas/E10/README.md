@@ -95,5 +95,5 @@ La demo usa propiedades y capas didácticas y calcula la potencia de una cara
 con los datos del pronóstico. [E11](../E11/README.md) conecta la serie
 meteorológica y los cambios de contorno al solver 3D de la fundación.
 
-Comprobación: **537 pruebas Python aprobadas**, nueve nuevas de E10. También se
+Comprobación: **550 pruebas Python aprobadas** en la revisión, incluidas 15 de E10 y siete del solver integrado de Semana 4. También se
 ejecutó el caso sintético y se descargó y releyó el snapshot real sin errores.

@@ -2,7 +2,7 @@
 
 **Repositorio** [benjagarciag/Proyecto-2-MCOC](https://github.com/benjagarciag/Proyecto-2-MCOC)
 
-**Commit evaluado** SHA completo declarado en Canvas. Para verificarlo desde la versión evaluada, ejecutar `git rev-parse HEAD`.
+**Código simulado** `195b797331c1ae0e50bebb1ac09a1561fa87008d`. El resumen registra este SHA y los parámetros efectivos. El SHA del paquete final se declara en Canvas mediante `git rev-parse HEAD`.
 
 ## Clima y cobertura
 

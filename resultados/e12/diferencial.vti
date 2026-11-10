@@ -5,6 +5,15 @@
       <DataArray type="Float64" Name="tiempo_h" NumberOfTuples="1" format="binary" RangeMin="213" RangeMax="213">
         AQAAAACAAAAIAAAADgAAAA==eF5jYACCBVkOAAL8AUs=
       </DataArray>
+      <Array type="String" Name="fase" NumberOfTuples="1" format="binary">
+        AQAAAACAAAAHAAAADwAAAA==eF4rKEoty8xnAAALrQKW
+      </Array>
+      <Array type="String" Name="codigo_commit" NumberOfTuples="1" format="binary">
+        AQAAAACAAAApAAAALgAAAA==eF4FwYENACAIAzBP2kIQOGco/n+CLcs7Ksx4qME4erqpgxJ98ykDyLs+5uEK3Q==
+      </Array>
+      <Array type="String" Name="snapshot_sha256" NumberOfTuples="1" format="binary">
+        AQAAAACAAABBAAAAOgAAAA==eF4FwQkBwDAIBLBJKv+Qc0DxL6EJZP7VYAp4x6puwstmz4DE2NUKjeyrOSzaBUGNxIkho/s9YNQSNA==
+      </Array>
       <DataArray type="Float64" Name="nucleo_xyz_m" NumberOfComponents="3" NumberOfTuples="1" format="binary" RangeMin="1.2990377854859108" RangeMax="1.2990377854859108">
         AQAAAACAAAAYAAAAFgAAAA==eF5jKO5h/fn/vD0DjAaDL/YAgbcJSA==
         <InformationKey name="L2_NORM_RANGE" location="vtkDataArray" length="2">

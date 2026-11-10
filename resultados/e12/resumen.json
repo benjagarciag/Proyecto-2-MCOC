@@ -1,4 +1,90 @@
 {
+  "codigo_commit": "195b797331c1ae0e50bebb1ac09a1561fa87008d",
+  "codigo_modificado": false,
+  "cambios_codigo": [],
+  "ejecutado_utc": "2026-11-10T21:52:32.399144+00:00",
+  "parametros_sha256": "055be9af6277f580ce84ae6e536539a6a6ccce3fa633997875cb68976d1da495",
+  "parametros_efectivos": {
+    "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
+    "lado_m": 0.5,
+    "nucleo_xyz_m": [
+      0,
+      0,
+      1.5
+    ],
+    "entorno": {
+      "k_W_mK": 2,
+      "h_aire_W_m2K": 5,
+      "suelo_C": 15,
+      "profundidad_suelo_m": 0.5,
+      "k_suelo_W_mK": 1.2,
+      "plano_suelo_z_m": 0,
+      "dt_tope_s": 900,
+      "capas_laterales": [
+        {
+          "espesor_m": 0.02,
+          "k_W_mK": 0.13,
+          "retiro_edad_h": 72
+        },
+        {
+          "espesor_m": 0.03,
+          "k_W_mK": 0.04,
+          "retiro_edad_h": 96
+        }
+      ]
+    },
+    "hidratacion": {
+      "tau_s": 108000,
+      "densidad_kg_m3": 2400,
+      "calor_especifico_J_kgK": 900,
+      "q0_W_m3": 900
+    },
+    "e11": {
+      "tipo": "forecast",
+      "snapshot": "datos/clima/forecasts/20261110T190042897941Z_44b1a950.json",
+      "inicio_serie": "2026-11-10T17:00:00-03:00",
+      "horizonte_h": 48
+    },
+    "e12": {
+      "tipo": "reanalisis",
+      "snapshot": "datos/clima/reanalisis/era5_2025-11-27_2025-12-11_20261110T204052478858Z.json",
+      "inicio_serie": "2025-11-27T10:00:00-03:00",
+      "inicio_escenario": "2026-11-27T10:00:00-03:00",
+      "horizonte_h": 336
+    }
+  },
+  "plan_vertidas": [
+    {
+      "id": 1,
+      "inicio_h": 0.0,
+      "temperatura_C": 19.0,
+      "material": "M1"
+    },
+    {
+      "id": 2,
+      "inicio_h": 6.0,
+      "temperatura_C": 18.0,
+      "material": "M1"
+    },
+    {
+      "id": 3,
+      "inicio_h": 12.0,
+      "temperatura_C": 18.0,
+      "material": "M1"
+    },
+    {
+      "id": 4,
+      "inicio_h": 18.0,
+      "temperatura_C": 18.0,
+      "material": "M1"
+    },
+    {
+      "id": 5,
+      "inicio_h": 24.0,
+      "temperatura_C": 18.0,
+      "material": "M1"
+    }
+  ],
   "caso": "e12",
   "clima": {
     "tipo": "reanalisis",
@@ -26,10 +112,10 @@
     "ultima_marca_utc": "2025-12-11T23:00:00+00:00"
   },
   "snapshot": "datos/clima/reanalisis/era5_2025-11-27_2025-12-11_20261110T204052478858Z.json",
-  "snapshot_sha256": "1479911401a52a360bfa1aafd91cd9698689f616c913d7c7f2a3397b54db7846",
+  "snapshot_sha256": "a3d8f47217a6c7f44f9a6b5df0da1352645baca9ce49d234cba3abd3707d151e",
   "inicio_serie": "2025-11-27T10:00:00-03:00",
   "inicio_escenario": "2026-11-27T10:00:00-03:00",
-  "sha256_ifc": "07026711c637e1446bc5f2972b4477960e777ed036f9ed5404001cf8a691fe97",
+  "sha256_ifc": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
   "horizonte_h": 336,
   "lado_m": 0.5,
   "pasos": 1344,
