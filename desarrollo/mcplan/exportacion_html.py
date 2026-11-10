@@ -80,9 +80,22 @@ def exportar_html(raiz, fundacion, asignacion, corrida, fotogramas, resumen, sal
             temperaturas=_float32(np.stack([t for _, t in fotogramas])),
             especiales=especiales, minimo=corrida.minimo, picos_vertidas=corrida.picos_vertidas,
             fuente=dict(q0_W_m3=q0, tau_h=fuente["tau_s"]/3600)))
+    datos["grilla_inicial"] = 0
+    datos["resultados_python"] = [datos["resultado_python"]]
+    datos["resultado_python"] = dict(resumen=resumen)
+    _escribir_html(raiz, datos, salida)
+
+
+def _escribir_html(raiz, datos, salida):
+    resumen = datos["resultado_python"]["resumen"]
+    for resultado in datos["resultados_python"]:
+        if resultado is not None:
+            resultado["paneles"] = dict(
+                heat=_seccion_resultados(resultado["resumen"]),
+                study=_seccion_modelo(resultado["resumen"]))
     plantilla = (raiz / "Visualizadores/e07_plantilla.html").read_text(encoding="utf-8")
     adaptador = (raiz / "Visualizadores/semana4_resultados.js").read_text(encoding="utf-8-sig")
-    contenido = _adaptar_plantilla(plantilla, adaptador, resumen)
+    contenido = _adaptar_plantilla(plantilla, adaptador, resumen, datos["grillas"])
     serializado = json.dumps(datos, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
     contenido = _reemplazar(contenido, "__DATOS_E07__", serializado.replace("</", "<\\/"))
     salida.parent.mkdir(parents=True, exist_ok=True)
@@ -91,7 +104,7 @@ def exportar_html(raiz, fundacion, asignacion, corrida, fotogramas, resumen, sal
     temporal.replace(salida)
 
 
-def _adaptar_plantilla(t, adaptador, resumen):
+def _adaptar_plantilla(t, adaptador, resumen, grillas):
     caso = resumen["caso"].upper()
     t = t.replace("E08 · Laboratorio de vertidas", caso + " · Fundación térmica")
     t = t.replace("MCOC · Grupo 6 · E08", "MCOC · Grupo 6 · Semana 4")
@@ -100,10 +113,12 @@ def _adaptar_plantilla(t, adaptador, resumen):
                   "Resultados de Python · " + caso + " · " + str(resumen["horizonte_h"]) + " horas")
     inicio = t.index('<div id="resolutions"')
     fin = t.index('</div>', inicio)+6
-    t = t[:inicio] + ('<div id="resolutions" class="seg"><button data-grid="0" class="active" disabled>'
-                     + str(resumen["lado_m"]) + ' m</button></div>') + t[fin:]
+    botones = ''.join(
+        '<button data-grid="' + str(i) + '">' + str(g["h"]).replace(".", ",")
+        + ' m</button>' for i, g in enumerate(grillas))
+    t = t[:inicio] + '<div id="resolutions" class="seg">' + botones + '</div>' + t[fin:]
     for anterior, nuevo in {
-        "Resolución del voxel":"Malla de esta corrida",
+        "Resolución del voxel":"Resolución del voxel",
         'data-tab="heat">Ecuación de calor':'data-tab="heat">Resultados y entorno',
         'data-tab="study">Repaso E07':'data-tab="study">Modelo y supuestos',
         "Mínima alcanzada · corrida":"Diferencial máximo · corrida",
@@ -113,7 +128,7 @@ def _adaptar_plantilla(t, adaptador, resumen):
         "Tmax actual [°C]":"Tmax centros actual [°C]",
         'id="ifc" checked':'id="ifc"',
         'id="edges" checked':'id="edges"',
-        'grid:1,selected:0,time:24,temporal:false':'grid:0,selected:0,time:0,temporal:true',
+        'grid:1,selected:0,time:24,temporal:false':'grid:DATA.grilla_inicial,selected:0,time:0,temporal:true',
         "function setTime(t){state.time=t;":"function setTime(t){state.pythonSpecial=null;state.time=t;",
         "Math.min(336,elapsed":"Math.min(DATA.resultado_python.resumen.horizonte_h,elapsed",
         "state.time>=336":"state.time>=DATA.resultado_python.resumen.horizonte_h",
@@ -121,8 +136,8 @@ def _adaptar_plantilla(t, adaptador, resumen):
         "[0,...DATA.vertidas.map(v=>v.inicio),72,336]":"[0,...DATA.vertidas.map(v=>v.inicio),DATA.resultado_python.resumen.horizonte_h]",
         "['source','temperature'].includes":"['source','temperature','bc'].includes",
         "__MOTOR_TERMICO__":"",
-        "Error global al refinar":"Error global de esta malla",
-        "Comparación de resoluciones":"Resolución calculada",
+        "Error global al refinar":"Error global por resolución",
+        "Comparación de resoluciones":"Resoluciones disponibles",
     }.items():
         t = t.replace(anterior, nuevo)
     t = t.replace("Incluye centros y caras exteriores físicas. El valor actual sigue el tiempo de reproducción y puede ser interpolado. El máximo de la corrida se evalúa en cada paso calculado; el tiempo se mide desde t = 0 y la edad desde la colocación de esa vertida.",
@@ -134,6 +149,33 @@ def _adaptar_plantilla(t, adaptador, resumen):
     t = t.replace(
         "function activeIds(g,t,temporal){return temporal?",
         "function activeIds(g,t,temporal){if(state.pythonSpecial&&state.thermal.specials[state.pythonSpecial].phase==='previo')t-=1e-9;return temporal?")
+    t = t.replace(
+        '<button class="active" data-tab="geometry">Modelo y cortes</button>',
+        '<a class="active" href="#geometry" data-tab="geometry">Modelo y cortes</a>')
+    import re
+    t = re.sub(r'<button data-tab="([^"]+)">([^<]+)</button>',
+               r'<a href="#\1" data-tab="\1">\2</a>', t)
+    t = t.replace(".tabs button", ".tabs :is(button,a)")
+    t = t.replace("</style>", """
+.tabs{position:sticky;top:0;z-index:5;background:var(--paper)}
+.tabs a{text-decoration:none}
+.tab-panel{scroll-margin-top:60px}
+.tab-panel:target{display:block!important}
+body:has(.tab-panel:target) #geometry:not(:target){display:none}
+body:has(.tab-panel:target:not(#geometry)) #overviewPython{display:none}
+</style>""")
+    inicio = t.index('<div class="stats"><div class="stat"><div class="stat-label">Volumen voxelizado')
+    fin = t.index('<section id="geometry"', inicio)
+    t = t[:inicio] + '<div id="overviewPython">' + t[inicio:fin] + '</div>' + t[fin:]
+    t = t.replace(
+        "document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));",
+        "document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=e=>{e.preventDefault();setTab(b.dataset.tab);});")
+    t = t.replace(
+        "function setTab(name){state.tab=name;",
+        "function setTab(name){state.tab=name;if(window.location)window.location.hash=name;$('overviewPython').hidden=name!=='geometry';")
+    t = t.replace(
+        "if(name==='heat')drawThermalCharts();}",
+        "if(name==='heat')drawThermalCharts();}")
     t = t.replace("l+i*78", "l+i*(w-l-r)/series.length")
     inicio = t.index("let thermalWorker=null")
     fin = t.index("// Renderizador WebGL", inicio)
@@ -152,11 +194,11 @@ def _adaptar_plantilla(t, adaptador, resumen):
     t = t[:inicio] + ("if(terms)$('inspect').textContent+=' · T centro '+fmt(terms.T,3)+' °C'"
                      "+(Number.isFinite(terms.s25)?' · S25 mínima de celda '+fmt(terms.s25,3)+' °C':'');") + t[fin:]
     t = t.replace("xmax:2,ylabel:'Error [%]',xticks:[[0,'1 m'],[1,'0,5 m'],[2,'0,25 m']]",
-                  "xmax:1,ylabel:'Error [%]',xticks:[[0,fmt(grid().h,2)+' m']]")
+                  "xmax:Math.max(1,DATA.grillas.length-1),ylabel:'Error [%]',xticks:DATA.grillas.map((g,i)=>[i,fmt(g.h,2)+' m'])")
     t = t.replace("Ninguna de estas tres grillas está validada para el cálculo térmico definitivo.",
                   "La precisión espacial requiere verificación por vertida.")
     marcadores = """
- if($('probeMarkers').checked){
+ if($('probeMarkers').checked&&state.thermal){
    const probes=[{xyz:SUMMARY.nucleo_xyz_m,color:[.9,.1,.1]}];
    if(state.pythonSpecial==='diferencial')probes.push({xyz:SUMMARY.DeltaTmax.xyz_S25_m,color:[.1,.25,.95]});
    for(const probe of probes){
@@ -170,7 +212,7 @@ def _adaptar_plantilla(t, adaptador, resumen):
     t = _reemplazar(t, " upload('tri',tri);", marcadores + "\n upload('tri',tri);")
     inicio = t.index('<section id="build"')
     contenido = t.index('<div class="panel"><div class="panel-head"><div><h2>Una vertida nueva', inicio)
-    t = t[:inicio] + ('<section id="build" class="tab-panel" hidden">'
+    t = t[:inicio] + ('<section id="build" class="tab-panel" hidden>'
                      + _panel("Plan de la corrida", "<p>Inicios y temperaturas leídos del IFC y utilizados por Python. Para cambiar el plan se requiere ejecutar otra corrida.</p>")) + t[contenido:]
     for identificador, seccion in [
             ("heat", _seccion_resultados(resumen)),
@@ -282,3 +324,45 @@ def _seccion_modelo(resumen):
             + _panel("Modelo térmico", p + parametros) + _panel("Datos de la corrida", trazabilidad)
             + _panel("Preparar otra corrida", nueva) + '</section>')
 
+
+def combinar_resoluciones(raiz, fundacion, archivos, salida):
+    """Une corridas independientes y una malla geométrica de 1 m."""
+    import re
+    from .voxel import voxelizar_fundacion
+    from .vertidas_voxel import asignar_vertidas
+    versiones = []
+    for archivo in archivos:
+        html = archivo.read_text(encoding="utf-8")
+        coincidencia = re.search(
+            r'<script id="e07-data" type="application/json">([\s\S]*?)</script>', html)
+        if coincidencia is None:
+            raise ValueError("El archivo no contiene una corrida Python.")
+        versiones.append(json.loads(coincidencia.group(1)))
+    datos = versiones[0]
+    contactos = datos["contactos_esperados"]
+    asignacion = asignar_vertidas(fundacion, voxelizar_fundacion(fundacion, (1.,)*3))
+    ids = asignacion.vertida_id
+    superficies = clasificar_caras(asignacion)
+    geometria = dict(
+        h=1., forma=list(ids.shape),
+        origen=asignacion.voxelizacion.grilla.origen_m.tolist(),
+        rle=[[int(v), sum(1 for _ in grupo)] for v, grupo in groupby(ids.ravel())],
+        ocupados=int(np.count_nonzero(ids)), volumen=float(np.count_nonzero(ids)),
+        filas=[asdict(f) for f in comparar_volumenes(fundacion, asignacion)],
+        diagnostico=asdict(diagnosticar_contactos(superficies, [1, 2, 3, 4, 5], contactos)))
+    corridas = {}
+    referencia = datos["resultado_python"]["resumen"]
+    for version in versiones:
+        resumen = version["resultado_python"]["resumen"]
+        if (version["sha256_ifc"] != datos["sha256_ifc"]
+                or any(resumen[campo] != referencia[campo] for campo in (
+                    "snapshot_sha256", "inicio_serie", "inicio_escenario", "horizonte_h", "plan_vertidas"))):
+            raise ValueError("Las resoluciones deben compartir IFC, clima, horizonte y plan.")
+        for grilla, resultado in zip(version["grillas"], version["resultados_python"]):
+            if resultado is not None:
+                corridas[grilla["h"]] = (grilla, resultado)
+    datos["grillas"] = [geometria] + [corridas[h][0] for h in sorted(corridas, reverse=True)]
+    datos["resultados_python"] = [None] + [corridas[h][1] for h in sorted(corridas, reverse=True)]
+    datos["grilla_inicial"] = next(i for i, g in enumerate(datos["grillas"])
+                                  if g["h"] == datos["resultado_python"]["resumen"]["lado_m"])
+    _escribir_html(raiz, datos, salida)

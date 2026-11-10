@@ -98,3 +98,24 @@ ejecuta otra corrida en Python. La exportación VTI sigue disponible para E11.
 & $python -X utf8 -B casos/semana4/ejecutar.py e12 --intervalo-html 1
 Start-Process 'resultados/e12/visualizador.html'
 ~~~
+
+
+### Selector de resolución
+
+La ejecución normal genera corridas Python de 0,50 y 0,25 m y las reúne en el
+HTML principal. El selector cambia los campos, diagnósticos y tablas a la
+corrida correspondiente. La opción de 1 m permite explorar geometría y
+volúmenes. Esa malla pierde V02 y se presenta sin resultados térmicos.
+
+La malla de 0,50 m conserva la salida visual horaria. Para limitar el tamaño del
+archivo combinado, la corrida alternativa de 0,25 m guarda campos visuales cada
+cuatro horas y en los eventos de construcción. Su solver mantiene el mismo paso
+y calcula diagnósticos y extremos en cada paso. La metadata de cada malla
+identifica el intervalo utilizado.
+
+Una ejecución con --lado 0.25 genera solamente esa resolución y permite elegir
+otro intervalo mediante --intervalo-html. Los VTI de la malla alternativa
+se guardan bajo resultados/e11/malla_025 o resultados/e12/malla_025.
+
+Las pestañas son enlaces de sección. Al cambiar de pestaña se ocultan los
+resúmenes generales para mostrar directamente el contenido seleccionado.

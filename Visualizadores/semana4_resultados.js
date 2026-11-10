@@ -1,6 +1,7 @@
 // Resultados de Python sobre la interfaz y el renderizador del visualizador E07/E08.
-const RUN = DATA.resultado_python;
-const SUMMARY = RUN.resumen;
+let RUN = DATA.resultados_python[DATA.grilla_inicial];
+let SUMMARY = RUN.resumen;
+const decodedRuns = new Map();
 
 function decodeFloat32(encoded, expected) {
   const binary = atob(encoded);
@@ -101,6 +102,14 @@ function selectPythonField(name) {
 }
 
 function renderThermalCards() {
+  if (!state.thermal) {
+    for (const id of ['tempMax','tempMin','tempPeak','tempTrough']) $(id).textContent = '—';
+    for (const id of ['tempNowNote','tempMinNote','tempPeakNote','tempTroughNote']) {
+      $(id).textContent = 'Solo geometría · esta malla pierde la vertida V02';
+    }
+    renderPourTemperatures(new Map());
+    return;
+  }
   const r = state.thermal, maxima = new Map(), row = historyAt(Math.max(0, state.time));
   const special = state.pythonSpecial && r.specials[state.pythonSpecial];
   const metrics = special ? special.metrics : row;
@@ -127,12 +136,15 @@ function renderThermalCards() {
 
 function renderPourTemperatures(currentMax) {
   $('pourTemperatureRows').innerHTML = DATA.vertidas.map(v => {
-    const p = RUN.picos_vertidas.find(p => p.id === v.id), now = currentMax.get(v.id);
+    const p = state.thermal ? RUN.picos_vertidas.find(p => p.id === v.id) : null;
+    const now = currentMax.get(v.id);
+    const count = grid().filas.find(f => f.vertida_id === v.id).numero_voxeles;
+    const empty = !count ? 'Sin voxeles' : !state.thermal ? 'Sin resultados' : state.time < v.inicio ? 'No colocada' : '—';
     return '<tr><td>' + dot(v.id) + v.nombre + '</td><td>'
-      + (Number.isFinite(now) ? fmt(now) : state.time < v.inicio ? 'No colocada' : '—')
-      + '</td><td>' + (p.value === null ? '—' : fmt(p.value))
-      + '</td><td>' + (p.t === null ? '—' : fmt(p.t))
-      + '</td><td>' + (p.t === null ? '—' : fmt(p.t - v.inicio)) + '</td></tr>';
+      + (Number.isFinite(now) ? fmt(now) : empty)
+      + '</td><td>' + (p && p.value !== null ? fmt(p.value) : empty)
+      + '</td><td>' + (p && p.t !== null ? fmt(p.t) : '—')
+      + '</td><td>' + (p && p.t !== null ? fmt(p.t - v.inicio) : '—') + '</td></tr>';
   }).join('');
 }
 
@@ -165,6 +177,7 @@ function boundaryColorPython(axis, sign, z, id) {
 }
 
 function drawThermalCharts() {
+  if (!state.thermal) return;
   const rows = RUN.historia, horizon = SUMMARY.horizonte_h;
   const options = label => ({
     ylabel: label, xmax: horizon,
@@ -202,52 +215,89 @@ function drawThermalCharts() {
     + ' GJ · suelo ' + fmt(b.suelo / 1e9, 3) + ' GJ · residuo ' + b.residuo.toExponential(3) + ' J.';
 }
 
-function initializePythonResult() {
-  const g = grid(), indices = new Int32Array(g.ocupados);
-  let n = 0;
-  for (let flat = 0; flat < g.ids.length; flat++) if (g.ids[flat]) indices[n++] = flat;
-  if (n !== RUN.numero_voxeles) throw Error('Los resultados no corresponden a la grilla.');
-  const specials = {};
-  for (const [name, field] of Object.entries(RUN.especiales)) {
-    specials[name] = {
-      ...field, values:decodeFloat32(field.values, n), s25:decodeFloat32(field.s25, n)
-    };
-  }
-  state.thermal = {
-    gridIndex:0, N:n, indices, times:RUN.tiempos_h,
-    fields:decodeFloat32(RUN.temperaturas, n * RUN.tiempos_h.length),
-    specials, scale:[RUN.minimo.valor, SUMMARY.Tmax.valor],
-    p:{horizon:SUMMARY.horizonte_h}, peak:{value:SUMMARY.Tmax.valor, t:SUMMARY.Tmax.tiempo_h}
-  };
+function initializePythonResult(index = DATA.grilla_inicial) {
+  stopPlay();
+  const previousTime = state.time, previousSpecial = state.pythonSpecial, tab = state.tab;
+  state.grid = index;
+  const available = DATA.resultados_python[index];
+  RUN = available || DATA.resultados_python[DATA.grilla_inicial];
+  SUMMARY = RUN.resumen;
   state.settings = {q:RUN.fuente.q0_W_m3};
+  thermalDense = null;
+  pythonS25 = null;
+  document.querySelectorAll('[data-grid]').forEach(button => {
+    button.classList.toggle('active', +button.dataset.grid === index);
+  });
+  if (!available) {
+    state.thermal = null;
+    state.pythonSpecial = null;
+    state.time = Math.min(previousTime, SUMMARY.horizonte_h);
+    const note = '<div class="panel"><div class="panel-head"><h2>Malla de 1 m · exploración geométrica</h2></div>'
+      + '<div class="panel-content"><p>La vertida V02 desaparece con esta resolución. '
+      + 'Selecciona 0,50 o 0,25 m para ver una corrida térmica Python con las cinco vertidas.</p></div></div>';
+    $('heat').innerHTML = note;
+    $('study').innerHTML = note;
+    $('viewMode').value = 'volume';
+  } else {
+    const g = grid();
+    if (!decodedRuns.has(index)) {
+      const indices = new Int32Array(g.ocupados);
+      let n = 0;
+      for (let flat = 0; flat < g.ids.length; flat++) if (g.ids[flat]) indices[n++] = flat;
+      if (n !== RUN.numero_voxeles) throw Error('Los resultados no corresponden a la grilla.');
+      const specials = {};
+      for (const [name, field] of Object.entries(RUN.especiales)) {
+        specials[name] = {...field, values:decodeFloat32(field.values,n), s25:decodeFloat32(field.s25,n)};
+      }
+      decodedRuns.set(index, {
+        gridIndex:index, N:n, indices, times:RUN.tiempos_h,
+        fields:decodeFloat32(RUN.temperaturas,n*RUN.tiempos_h.length),
+        specials, scale:[RUN.minimo.valor,SUMMARY.Tmax.valor],
+        p:{horizon:SUMMARY.horizonte_h}, peak:{value:SUMMARY.Tmax.valor,t:SUMMARY.Tmax.tiempo_h}
+      });
+    }
+    state.thermal = decodedRuns.get(index);
+    $('heat').innerHTML = RUN.paneles.heat.replace(/^<section[^>]*>|<\/section>$/g,'');
+    $('study').innerHTML = RUN.paneles.study.replace(/^<section[^>]*>|<\/section>$/g,'');
+    $('viewMode').value = 'temperature';
+    $('peakPython').onclick = () => selectPythonField('pico');
+    $('deltaPython').onclick = () => selectPythonField('diferencial');
+    $('finalPython').onclick = () => selectPythonField('final');
+    $('showBoundaries').onclick = () => {
+      $('viewMode').value = 'bc';
+      setTab('geometry');
+      rebuildMesh();
+      drawSlice();
+    };
+    $('downloadParameters').onclick = () => {
+      const url = URL.createObjectURL(new Blob([
+        JSON.stringify(SUMMARY.parametros_efectivos,null,2)
+      ],{type:'application/json'}));
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'parametros-' + SUMMARY.caso + '.json';
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url),1000);
+    };
+    const special = previousSpecial && state.thermal.specials[previousSpecial] ? previousSpecial : 'pico';
+    state.pythonSpecial = special;
+    state.time = state.thermal.specials[special].time;
+  }
   state.temporal = true;
   $('construction').checked = true;
   $('construction').disabled = true;
   $('time').max = SUMMARY.horizonte_h;
-  $('viewMode').value = 'temperature';
-  $('peakPython').onclick = () => selectPythonField('pico');
-  $('deltaPython').onclick = () => selectPythonField('diferencial');
-  $('finalPython').onclick = () => selectPythonField('final');
-  $('openThermal').onclick = () => setTab('heat');
-  $('downloadParameters').onclick = () => {
-    const url = URL.createObjectURL(new Blob([
-      JSON.stringify(SUMMARY.parametros_efectivos,null,2)
-    ], {type:'application/json'}));
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'parametros-' + SUMMARY.caso + '.json';
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url),1000);
-  };
-  $('showBoundaries').onclick = () => {
-    $('viewMode').value = 'bc';
-    setTab('geometry');
-    rebuildMesh();
-    drawSlice();
-  };
-  $('probeMarkers').onchange = () => {rebuildMesh();drawSlice();};
-  state.pythonSpecial = 'pico';
-  state.time = SUMMARY.Tmax.tiempo_h;
   $('time').value = state.time;
+  $('openThermal').onclick = () => setTab('heat');
+  $('probeMarkers').onchange = () => {rebuildMesh();drawSlice();};
+  $('resolutions').onclick = event => {
+    const button = event.target.closest('[data-grid]');
+    if (button && +button.dataset.grid !== state.grid) initializePythonResult(+button.dataset.grid);
+  };
+  lastEventKey = '';
+  window.e07VolumeKey = null;
+  setupSlice();
+  setupClip();
+  update(true);
+  setTab(tab);
 }
-

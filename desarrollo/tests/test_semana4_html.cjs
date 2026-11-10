@@ -52,7 +52,7 @@ const context = vm.createContext({
 vm.runInContext(script,context);
 const evaluate = code => vm.runInContext(code,context);
 for (let i = 0; i < 4 && frames.length; i++) frames.shift()(0);
-const run = data.resultado_python, summary = run.resumen;
+const run = data.resultados_python[data.grilla_inicial], summary = run.resumen;
 assert.equal(evaluate('state.thermal.N'), run.numero_voxeles);
 assert.equal(evaluate('state.time'), summary.Tmax.tiempo_h);
 assert.equal(evaluate('state.pythonSpecial'), 'pico');

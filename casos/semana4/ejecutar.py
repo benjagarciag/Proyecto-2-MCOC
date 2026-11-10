@@ -156,6 +156,22 @@ def main():
         from mcplan.exportacion_html import exportar_html
         exportar_html(RAIZ, f, asignacion, r, fotogramas, resumen,
                       salida / "visualizador.html")
+        if a.lado is None and lado in (.5, .25):
+            lado_alternativo = .25 if lado == .5 else .5
+            carpeta_alternativa = salida / ("malla_025" if lado_alternativo == .25 else "malla_050")
+            # La malla fina conserva los pasos del solver. Solo se espacian sus campos visuales.
+            intervalo_alternativo = max(a.intervalo_html, 4.) if lado_alternativo == .25 else a.intervalo_html
+            comando = [sys.executable, "-X", "utf8", "-B", str(Path(__file__).resolve()),
+                       a.caso, "--parametros", str(a.parametros.resolve()),
+                       "--lado", str(lado_alternativo), "--salida", str(carpeta_alternativa),
+                       "--intervalo-html", str(intervalo_alternativo)]
+            if a.paso_max is not None:
+                comando.extend(["--paso-max", str(a.paso_max)])
+            subprocess.run(comando, check=True, stdout=subprocess.PIPE, text=True, encoding="utf-8")
+            from mcplan.exportacion_html import combinar_resoluciones
+            combinar_resoluciones(RAIZ, f,
+                                  [salida / "visualizador.html", carpeta_alternativa / "visualizador.html"],
+                                  salida / "visualizador.html")
         print(f"Resultados: {salida}")
     print(json.dumps(resumen, ensure_ascii=False, indent=2, allow_nan=False))
 
