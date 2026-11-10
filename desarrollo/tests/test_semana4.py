@@ -94,3 +94,35 @@ def test_retiro_fraccionario_cambia_resistencia_exactamente_en_el_evento():
                                [30, esperado_retiro, esperado_final])
     assert [x["tiempo_h"] for x in r.historia] == [0, .5, 1]
     assert r.balance_J["residuo"] == pytest.approx(0, abs=1e-6)
+
+
+def test_exportacion_temporal_observa_sin_cambiar_calculo_y_respeta_eventos():
+    from mcplan.entorno_termico import Capa
+    ids = np.array([[[1, 2]]])
+    e = EntornoFundacion(2, 5, 15, .5, 1.2, (Capa(.2, .1, .375),), -1, 450)
+    programa = {1: (0, 20), 2: (2250, 30)}
+    args = (ids, [0, 0, 0], 1, programa, curva(10), e, [10, 20, 10], [.5, .5, .5])
+    base = simular(*args)
+    campos = []
+    def guardar(t, temperatura):
+        campos.append((t, temperatura.copy()))
+        temperatura[:] = -999
+    exportada = simular(*args, al_guardar=guardar, intervalo_salida_s=3600)
+    np.testing.assert_array_equal(base.campos["final"].temperatura_C,
+                                  exportada.campos["final"].temperatura_C)
+    assert base.pico == exportada.pico and base.diferencial == exportada.diferencial
+    assert base.balance_J == exportada.balance_J and base.pasos == exportada.pasos
+    tiempos = [t for t, _ in campos]
+    assert tiempos == sorted(set(tiempos))
+    assert {0, 1350, 2250, 3600, 7200}.issubset(tiempos)
+    assert np.isnan(campos[0][1][1])
+    assert next(t for s, t in campos if s == 2250)[1] == 30
+    assert exportada.historia[0]["nucleo_C"] == 20
+    assert all("aire_W" in h and "fuente_W" in h for h in exportada.historia)
+
+
+@pytest.mark.parametrize("intervalo", [0, -1, float("inf")])
+def test_rechaza_intervalo_html_invalido(intervalo):
+    with pytest.raises(ValueError, match="intervalo de salida"):
+        simular(np.ones((1, 1, 1), dtype=int), [0, 0, 0], 1, {1: (0, 20)},
+                curva(), entorno(), [10, 10], [.5, .5, .5], intervalo_salida_s=intervalo)

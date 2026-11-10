@@ -46,6 +46,8 @@ class Corrida:
     balance_J: dict
     pasos: int
     nucleo_xyz_m: tuple
+    minimo: dict
+    picos_vertidas: list[dict]
 
 
 def _vecindad(ids, ocupados):
@@ -64,8 +66,12 @@ def _vecindad(ids, ocupados):
 
 
 def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
-            nucleo_xyz_m, *, profundidad_s25_m=.025):
+            nucleo_xyz_m, *, profundidad_s25_m=.025, al_guardar=None, intervalo_salida_s=3600.):
     """programa: ID → (inicio [s], colocación [°C]); aire: marcas cada hora, incluido tf."""
+    if not isfinite(intervalo_salida_s) or intervalo_salida_s <= 0:
+        raise ValueError("El intervalo de salida debe ser finito y positivo.")
+    if al_guardar is not None and not callable(al_guardar):
+        raise ValueError("al_guardar debe ser una función.")
     ids = np.asarray(ids)
     origen = np.asarray(origen_xyz_m, dtype=float)
     aire = np.asarray(aire_horario_C, dtype=float)
@@ -115,6 +121,12 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
     pico, diferencial = {"valor": -np.inf}, {"valor": -np.inf}
     e_colocada = e_suelo = e_aire = e_hidratacion = 0.
     pasos = 0
+    proxima_salida = 0.
+    minimo = {"valor": np.inf, "tiempo_h": 0.}
+    picos_vertidas = {vid: dict(id=int(vid), value=None, t=None) for vid in programa}
+    eventos_construccion = {0., tf, *comienzos.tolist(),
+        *[inicio+c.retiro_edad_h*3600 for inicio, _ in programa.values()
+          for c in entorno.capas_laterales if c.retiro_edad_h is not None]}
 
     def preparar(t):
         activos = comienzos <= t
@@ -174,7 +186,7 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
         return p.tolist()
 
     def medir(t, op, fase, registrar=True):
-        nonlocal pico, diferencial
+        nonlocal pico, diferencial, minimo, proxima_salida
         ia, _, i, d, _, _, _ = op
         P = potencia_borde(op, t)
         cara = T[i] + P*distancia/(k*A)
@@ -199,10 +211,40 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
                            "xyz_S25_m": punto_cara(i[m], d[m], distancia-profundidad_s25_m),
                            "vertida_S25": int(propietarios[i[m]])}
             campos["diferencial"] = guardar(t, fase, i, s25)
+        minimo_actual = float(min(T[ia].min(), cara.min()))
+        if minimo_actual < minimo["valor"]:
+            minimo = dict(valor=minimo_actual, tiempo_h=t/3600)
+        max_por_celda = T.copy()
+        np.maximum.at(max_por_celda, i, cara)
+        for vid, registro in picos_vertidas.items():
+            seleccion = ia[propietarios[ia] == vid]
+            if len(seleccion):
+                valor = float(max_por_celda[seleccion].max())
+                if registro["value"] is None or valor > registro["value"]:
+                    registro.update(value=valor, t=t/3600)
         if registrar:
+            nucleo_activo = np.isfinite(T[i_nucleo])
+            vecinos_nucleo = vecinos[i_nucleo]
+            vecinos_nucleo = vecinos_nucleo[vecinos_nucleo >= 0]
+            vecinos_nucleo = vecinos_nucleo[np.isfinite(T[vecinos_nucleo])]
+            conduccion = float(G*(T[vecinos_nucleo]-T[i_nucleo]).sum()) if nucleo_activo else None
+            borde = float(P[i == i_nucleo].sum()) if nucleo_activo else None
+            fuente = float(V*curva.valor(t-comienzos[i_nucleo])) if nucleo_activo else None
+            potencia_fuente = float(V*curva.valor(t-comienzos[ia]).sum())
             historia.append(dict(tiempo_h=t/3600, aire_C=aire_en(t), Tmax_C=Tmax,
+                                 Tmin_C=minimo_actual, media_C=float(T[ia].mean()),
                                  Tmin_S25_C=Tmin, DeltaT_K=Tmax-Tmin,
-                                 nucleo_C=float(T[i_nucleo]), voxeles_activos=len(ia)))
+                                 nucleo_C=float(T[i_nucleo]) if nucleo_activo else None,
+                                 conduccion_nucleo_K_h=conduccion/C*3600 if nucleo_activo else None,
+                                 borde_nucleo_K_h=borde/C*3600 if nucleo_activo else None,
+                                 fuente_nucleo_K_h=fuente/C*3600 if nucleo_activo else None,
+                                 fuente_W=potencia_fuente, aire_W=float(P[~op[4]].sum()),
+                                 suelo_W=float(P[op[4]].sum()), voxeles_activos=len(ia)))
+            if al_guardar is not None and (t >= proxima_salida-1e-7 or t in eventos_construccion):
+                # Copia independiente para que la exportación no pueda modificar el solver.
+                al_guardar(t, T.copy())
+                if t >= proxima_salida-1e-7:
+                    proxima_salida = (int(t/intervalo_salida_s)+1)*intervalo_salida_s
         if t == tf and registrar:
             campos["final"] = guardar(t, fase, i, s25)
 
@@ -243,4 +285,5 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
     e_final = float(C*np.nansum(T))
     balance = dict(colocacion=e_colocada, hidratacion=e_hidratacion, aire=e_aire, suelo=e_suelo,
                    final=e_final, residuo=e_final-e_colocada-e_hidratacion-e_aire-e_suelo)
-    return Corrida(historia, pico, diferencial, campos, balance, pasos, tuple(centros[i_nucleo]))
+    return Corrida(historia, pico, diferencial, campos, balance, pasos, tuple(centros[i_nucleo]),
+                   minimo, list(picos_vertidas.values()))

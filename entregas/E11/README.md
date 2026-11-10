@@ -65,3 +65,36 @@ efectivos, plan de vertidas y hashes de entradas.
 
 Para Canvas se declara el repositorio y el SHA del commit que contiene el
 snapshot, el código y la evidencia de la demo.
+
+
+## Visualizador HTML con resultados Python
+
+El ejecutor genera también resultados/e11/visualizador.html y
+resultados/e12/visualizador.html. Cada archivo es autónomo y se puede abrir con
+doble clic, sin conexión ni servidor. Reutiliza la interfaz y el renderizador
+del laboratorio E07/E08.
+
+Python resuelve la física y exporta campos temporales, diagnósticos por paso y
+estados de máximos. El HTML permite reproducción, cortes XY/XZ/YZ, clipping por
+eje, consulta de celdas, visibilidad por vertida y colores de bordes según suelo,
+aire y capas. Incluye clima, retiros, curvas de núcleo/S25, diferencial y balance.
+
+El intervalo se configura con --intervalo-html 1 en horas. Se guarda el primer
+paso calculado que alcanza cada intervalo, además de eventos de construcción y
+el final. La exportación observa la corrida sin cambiar su paso. Los extremos
+se calculan en todos los pasos. Los colores entre campos se interpolan solo
+para reproducción y respetan las activaciones.
+
+Los botones de máximos abren campos guardados con su fase previa o posterior
+al evento. La tabla por vertida distingue el máximo actual de centros y el máximo
+de toda la corrida, que incluye caras. La marca roja corresponde a la sonda
+interior. La azul aparece al seleccionar el máximo diferencial y corresponde
+al punto S25 de ese estado.
+
+Para cambiar parámetros se descarga el JSON desde Modelo y supuestos y se
+ejecuta otra corrida en Python. La exportación VTI sigue disponible para E11.
+
+~~~powershell
+& $python -X utf8 -B casos/semana4/ejecutar.py e12 --intervalo-html 1
+Start-Process 'resultados/e12/visualizador.html'
+~~~

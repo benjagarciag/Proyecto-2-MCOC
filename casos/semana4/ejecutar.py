@@ -83,8 +83,10 @@ def main():
     ap.add_argument("--parametros", type=Path, default=Path(__file__).with_name("parametros.json"))
     ap.add_argument("--lado", type=float, help="Tamaño cúbico en metros.")
     ap.add_argument("--paso-max", type=float, help="Tope temporal en segundos.")
+    ap.add_argument("--intervalo-html", type=float, default=1.,
+                    help="Intervalo entre campos del HTML, en horas (por defecto 1).")
     ap.add_argument("--salida", type=Path, help="Directorio de resultados alternativo.")
-    ap.add_argument("--sin-exportar", action="store_true", help="Solo imprime el resumen, sin cambiar figuras ni VTK.")
+    ap.add_argument("--sin-exportar", action="store_true", help="Solo imprime el resumen, sin modificar resultados ni generar HTML.")
     a = ap.parse_args()
     config = json.loads(a.parametros.read_text(encoding="utf-8"))
     escenario = config[a.caso]
@@ -117,13 +119,18 @@ def main():
         datos["dt_tope_s"] = a.paso_max
     datos["capas_laterales"] = tuple(Capa(**c) for c in datos["capas_laterales"])
     entorno = EntornoFundacion(**datos)
+    fotogramas = []
+    def guardar_fotograma(t, temperatura):
+        fotogramas.append((t/3600, temperatura.astype("<f4")))
     r = simular(ids, v.grilla.origen_m, lado,
                 {c.vertida_id: (c.inicio_s, c.temperatura_C) for c in programa.colocaciones},
-                curva, entorno, aire, config["nucleo_xyz_m"])
+                curva, entorno, aire, config["nucleo_xyz_m"],
+                al_guardar=None if a.sin_exportar else guardar_fotograma,
+                intervalo_salida_s=a.intervalo_html*3600)
     commit = subprocess.check_output(["git", "-C", str(RAIZ), "rev-parse", "HEAD"], text=True).strip()
     cambios = subprocess.check_output(
         ["git", "-C", str(RAIZ), "status", "--porcelain", "--untracked-files=no",
-         "--", "desarrollo", "casos", "requirements.txt"], text=True).splitlines()
+         "--", "desarrollo", "casos", "Visualizadores", "requirements.txt"], text=True).splitlines()
     resumen = dict(
         codigo_commit=commit, codigo_modificado=bool(cambios), cambios_codigo=cambios,
         ejecutado_utc=datetime.now(timezone.utc).isoformat(),
@@ -141,10 +148,14 @@ def main():
         error_por_vertida_pct={str(x.vertida_id): x.error_relativo_pct for x in comparar_volumenes(f, asignacion)},
         nucleo_xyz_m=r.nucleo_xyz_m, Tmax=r.pico, DeltaTmax=r.diferencial, balance_J=r.balance_J,
         cumple_70_ensayo=r.pico["valor"] <= 70, cumple_20_ensayo=r.diferencial["valor"] <= 20,
-        S25_profundidad_m=.025, S25_reconstruida=True)
+        S25_profundidad_m=.025, S25_reconstruida=True,
+        intervalo_html_h=a.intervalo_html, campos_html=len(fotogramas))
     if not a.sin_exportar:
         salida = a.salida if a.salida is not None else RAIZ / "resultados" / a.caso
         exportar(r, ids, v.grilla.origen_m, lado, salida, resumen, aire)
+        from mcplan.exportacion_html import exportar_html
+        exportar_html(RAIZ, f, asignacion, r, fotogramas, resumen,
+                      salida / "visualizador.html")
         print(f"Resultados: {salida}")
     print(json.dumps(resumen, ensure_ascii=False, indent=2, allow_nan=False))
 
