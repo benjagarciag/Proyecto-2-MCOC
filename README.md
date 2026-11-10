@@ -7,6 +7,9 @@ térmico. Sitio: **Los Ángeles, Biobío, Parque Eólico El Rosal**.
 Coordenadas del caso: `-37.277929`, `-72.368271`.
 
 [Repositorio oficial](https://github.com/benjagarciag/Proyecto-2-MCOC) ·
+[Preparación E10](entregas/E10/README.md) ·
+[Demo E11](entregas/E11/README.md) ·
+[Informe E12](Reportes/Reporte_E12.md) ·
 [Entrega E08 y demo](entregas/E08/README.md) ·
 [Antecedentes E07](entregas/E07/README.md) ·
 [Ejecutores E07](casos/e07/README.md) ·

@@ -1,0 +1,59 @@
+# E11 — Weather pipeline y visualización 3D
+
+La demo usa 48 horas del pronóstico GFS guardado para el Parque Eólico El
+Rosal. Empieza el 10 de noviembre de 2026 a las 17:00 (hora de Chile). El
+mismo programa también ejecuta [el caso de 14 días de E12](../../Reportes/Reporte_E12.md).
+
+## Demo
+
+1. Abrir el [snapshot GFS](../../datos/clima/forecasts/20261110T190042897941Z_44b1a950.json).
+   En `respuesta.hourly` están las marcas UTC y la serie `temperature_2m`.
+2. Mostrar `metadata`: fuente, modelo, descarga **2026-11-10 19:00:42 UTC**,
+   coordenadas pedidas **−37,277929; −72,368271**, unidades y horizonte. El
+   JSON conserva también las coordenadas devueltas por el modelo.
+3. Abrir [aire.png](../../resultados/e11/aire.png) y señalar el intervalo
+   de 0 a 48 h y sus unidades en °C.
+4. Mostrar [la entrada al solver](../../casos/semana4/ejecutar.py) y
+   [el balance](../../desarrollo/mcplan/termica_fundacion.py).
+   Se interpola la temperatura del aire entre marcas horarias. Para una cara
+   expuesta, la potencia que entra a la celda es
+   `P = H · (T_aire − T_celda)`, en W, con
+   `H = A / (Δx/(2k) + Σ(e/k_capa) + 1/h)`, en W/K. El valor
+   `h = 5 W/(m²·K)` es fijo. Viento y radiación están guardados en el
+   snapshot y quedan fuera del cálculo.
+5. Ejecutar el caso `e11`. La corrida de referencia tiene 192 pasos. El
+   [resumen](../../resultados/e11/resumen.json) registra 50,67 °C de máximo a
+   las 48 h.
+6. Abrir [diferencial.vti](../../resultados/e11/diferencial.vti) con el
+   visualizador. La escala de color es la temperatura de las celdas activas.
+7. Arrastrar el plano con el mouse para mover el corte. Para clipping,
+   agregar `--modo recorte`. En ParaView se puede aplicar **Threshold** con
+   `activo = 1`, después **Slice** o **Clip**, y colorear por `T_C`.
+8. Señalar la sonda de núcleo en `(0,25; 0,25; 1,25) m` y el punto
+   **S25 mínima**, reconstruido a 25 mm bajo una cara exterior. El campo
+   `superficie` identifica las celdas exteriores. `T_S25_min_C` indica la
+   menor temperatura S25 de las caras exteriores de cada celda.
+
+## Comandos desde la raíz
+
+Instalar primero las dependencias de Python del proyecto y las de la vista 3D
+en el mismo entorno, si todavía no están instaladas.
+
+~~~sh
+python -m pip install -r requirements.txt -r casos/semana4/requirements-vista.txt
+python casos/semana4/ejecutar.py e11
+python casos/semana4/ver_3d.py resultados/e11/diferencial.vti
+~~~
+
+En el equipo de la demo, desde la carpeta Semana 4 en Ubuntu, ya están las
+dependencias. Usar este comando para abrir directamente los resultados:
+
+~~~sh
+PYTHONPATH=.venv/cache/visualizacion /home/luis/Proyecto-2-MCOC/.venv/bin/python casos/semana4/ver_3d.py resultados/e11/diferencial.vti
+~~~
+
+[Corte guardado](../../resultados/e11/corte.png) ·
+[Curvas de la corrida](../../resultados/e11/temperaturas.png)
+
+Para Canvas se declara el repositorio y el SHA del commit que contiene el
+snapshot, el código y la evidencia de la demo.

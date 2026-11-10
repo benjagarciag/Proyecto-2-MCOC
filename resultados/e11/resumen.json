@@ -1,0 +1,95 @@
+{
+  "caso": "e11",
+  "clima": {
+    "tipo": "forecast",
+    "fuente": "Open-Meteo",
+    "modelo_solicitado": "gfs_global",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=-37.277929&longitude=-72.368271&models=gfs_global&forecast_days=16&hourly=temperature_2m%2Cwind_speed_10m%2Cshortwave_radiation&wind_speed_unit=ms&temperature_unit=celsius&timeformat=unixtime&timezone=GMT",
+    "descargado_utc": "2026-11-10T19:00:42.897941+00:00",
+    "coordenadas_solicitadas": {
+      "latitud": -37.277929,
+      "longitud": -72.368271
+    },
+    "zona_horaria": "UTC",
+    "variables": [
+      "temperature_2m",
+      "wind_speed_10m",
+      "shortwave_radiation"
+    ],
+    "unidades": {
+      "temperature_2m": "°C",
+      "wind_speed_10m": "m/s",
+      "shortwave_radiation": "W/m²"
+    },
+    "primera_marca_utc": "2026-11-10T00:00:00+00:00",
+    "ultima_marca_utc": "2026-11-25T23:00:00+00:00",
+    "muestras_horarias": 384
+  },
+  "snapshot": "datos/clima/forecasts/20261110T190042897941Z_44b1a950.json",
+  "snapshot_sha256": "6b5d8245a6ac5e16b2a3fc9edea71d4c15607ba08516f6949b48c5e31f371594",
+  "inicio_serie": "2026-11-10T17:00:00-03:00",
+  "inicio_escenario": "2026-11-10T17:00:00-03:00",
+  "sha256_ifc": "07026711c637e1446bc5f2972b4477960e777ed036f9ed5404001cf8a691fe97",
+  "horizonte_h": 48,
+  "lado_m": 0.5,
+  "pasos": 192,
+  "volumen_ifc_m3": 636.7751926932476,
+  "volumen_vox_m3": 642.5,
+  "error_por_vertida_pct": {
+    "1": 8.891225883947335,
+    "2": 8.891225883947335,
+    "3": 1.0383217487194587,
+    "4": 37.757033692967354,
+    "5": 1.6294584978531208
+  },
+  "nucleo_xyz_m": [
+    0.24999916811875522,
+    0.24999916811875522,
+    1.25
+  ],
+  "Tmax": {
+    "tiempo_h": 48.0,
+    "fase": "previo",
+    "Tmax_C": 50.66815064812454,
+    "xyz_Tmax_m": [
+      -1.7500008318812448,
+      -3.250000831881245,
+      0.75
+    ],
+    "lugar_Tmax": "centro",
+    "vertida_Tmax": 2,
+    "valor": 50.66815064812454
+  },
+  "DeltaTmax": {
+    "tiempo_h": 38.0,
+    "fase": "previo",
+    "Tmax_C": 46.752012114584794,
+    "xyz_Tmax_m": [
+      -2.750000831881245,
+      -5.750000831881245,
+      0.75
+    ],
+    "lugar_Tmax": "centro",
+    "vertida_Tmax": 2,
+    "valor": 21.512215379007152,
+    "Tmin_S25_C": 25.23979673557764,
+    "xyz_S25_m": [
+      -1.2500008318812448,
+      -3.250000831881245,
+      4.475
+    ],
+    "vertida_S25": 5
+  },
+  "balance_J": {
+    "colocacion": 25270920000.0,
+    "hidratacion": 44297480161.70295,
+    "aire": -2013671266.0483682,
+    "suelo": -1944056303.7988257,
+    "final": 65610672591.85575,
+    "residuo": -4.5299530029296875e-06
+  },
+  "cumple_70_ensayo": true,
+  "cumple_20_ensayo": false,
+  "S25_profundidad_m": 0.025,
+  "S25_reconstruida": true
+}
