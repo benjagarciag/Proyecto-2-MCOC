@@ -1,8 +1,8 @@
 {
-  "codigo_commit": "195b797331c1ae0e50bebb1ac09a1561fa87008d",
+  "codigo_commit": "238dede6c987259e2283faa2b77dba3f76f9dd3f",
   "codigo_modificado": false,
   "cambios_codigo": [],
-  "ejecutado_utc": "2026-11-10T21:52:25.472277+00:00",
+  "ejecutado_utc": "2026-11-10T23:33:35.685018+00:00",
   "parametros_sha256": "055be9af6277f580ce84ae6e536539a6a6ccce3fa633997875cb68976d1da495",
   "parametros_efectivos": {
     "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
@@ -177,5 +177,7 @@
   "cumple_70_ensayo": true,
   "cumple_20_ensayo": false,
   "S25_profundidad_m": 0.025,
-  "S25_reconstruida": true
+  "S25_reconstruida": true,
+  "intervalo_html_h": 1.0,
+  "campos_html": 49
 }

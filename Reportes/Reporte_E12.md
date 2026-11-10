@@ -2,7 +2,7 @@
 
 **Repositorio** [benjagarciag/Proyecto-2-MCOC](https://github.com/benjagarciag/Proyecto-2-MCOC)
 
-**Código simulado** `195b797331c1ae0e50bebb1ac09a1561fa87008d`. El resumen registra este SHA y los parámetros efectivos. El SHA del paquete final se declara en Canvas mediante `git rev-parse HEAD`.
+**Código simulado** `238dede6c987259e2283faa2b77dba3f76f9dd3f`. El resumen registra este SHA y los parámetros efectivos. El SHA del paquete final se declara en Canvas mediante `git rev-parse HEAD`.
 
 ## Clima y cobertura
 
@@ -80,6 +80,7 @@ escalonada de 500 mm. Con malla de 250 mm se obtuvo 61,82 °C y 43,18 °C
 
 ![Corte 3D al alcanzar el diferencial máximo](../resultados/e12/corte.png)
 
+[Visualizador HTML autónomo](../resultados/e12/visualizador.html) ·
 [VTK del pico](../resultados/e12/pico.vti) ·
 [VTK del diferencial](../resultados/e12/diferencial.vti) ·
 [Resumen numérico](../resultados/e12/resumen.json)

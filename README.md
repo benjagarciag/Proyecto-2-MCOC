@@ -9,6 +9,8 @@ Coordenadas del caso: `-37.277929`, `-72.368271`.
 [Repositorio oficial](https://github.com/benjagarciag/Proyecto-2-MCOC) ·
 [Preparación E10](entregas/E10/README.md) ·
 [Demo E11](entregas/E11/README.md) ·
+[HTML E11](resultados/e11/visualizador.html) ·
+[HTML E12](resultados/e12/visualizador.html) ·
 [Informe E12](Reportes/Reporte_E12.md) ·
 [Entrega E08 y demo](entregas/E08/README.md) ·
 [Antecedentes E07](entregas/E07/README.md) ·
@@ -131,11 +133,13 @@ la hidratación de M1 usa valores **didácticos, sin calibración experimental**
 ρ=2400 kg/m³, cp=900 J/(kg·K), θ∞=45 K y τ=30 h, del ejemplo de la guía.
 [Modelo y unidades](documentacion/e07_hidratacion.md).
 
-Quedan pendientes justificar la malla, calibrar M1 y completar la integración
-del caso en Python. El HTML E08 ya acopla conducción, hidratación y bordes
-con parámetros didácticos. Clima, suelo, incertidumbre y confiabilidad
-se desarrollarán en entregas posteriores. Las curvas adiabáticas no son
-resultados de temperatura real de la fundación.
+El ejecutor de Semana 4 integra IFC, vertidas, hidratación, suelo, capas y
+clima en Python. Genera un HTML autónomo por corrida que reutiliza la interfaz
+E07/E08 para reproducción, cortes, clipping, curvas y consulta de máximos.
+Los VTI se exportan desde la misma corrida. Uso en entregas/E11/README.md.
+
+Quedan pendientes justificar la malla y los parámetros térmicos del caso real.
+La incertidumbre y la confiabilidad corresponden a etapas posteriores.
 
 Cada entrega identifica un commit explícito. El SHA inicial E00
 `a901e91a5b4ce84cde37ba52c48251e97cffcc04` es histórico y no identifica E07.

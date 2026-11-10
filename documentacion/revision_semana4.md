@@ -74,3 +74,25 @@ $env:PYTHONPATH = Join-Path (Get-Location).Path '.venv/cache/visualizacion'
 
 Las dependencias portables están en `requirements.txt` y `casos/semana4/requirements-vista.txt`.
 
+
+
+## Integración Python y HTML
+
+La implementación posterior usa el código
+238dede6c987259e2283faa2b77dba3f76f9dd3f. El ejecutor de E11/E12 genera
+visualizador.html en la misma carpeta que sus VTI. La interfaz reutiliza el
+renderizador E07/E08 y presenta exclusivamente resultados de la corrida Python.
+
+Se añaden campos temporales, curvas de núcleo/S25/aire/suelo, tasas del núcleo,
+potencias, balance, estados de capas por vertida, ubicación de máximos, descarga
+de parámetros y trazabilidad. Los campos se guardan en precisión float32 para
+visualización. Los diagnósticos y máximos conservan la precisión del solver.
+Cambiar parámetros requiere ejecutar de nuevo Python.
+
+La prueba sintética confirma igualdad de campos finales, extremos, balance y
+pasos con y sin exportación temporal. También verifica que una función de
+exportación no pueda alterar las temperaturas del solver. La batería tiene
+554 pruebas Python aprobadas. Una prueba Node ejecuta el HTML generado con
+objetos DOM/WebGL de prueba y verifica campos, activaciones, cortes, clipping,
+reproducción y gráficos en E11 y E12. La comprobación visual en Chrome quedó
+detenida porque Computer Use no pudo identificar la URL con suficiente certeza.
