@@ -123,3 +123,26 @@ de 0,50 m permanecen idénticos a la versión anterior.
 
 La inspección automatizada de Chrome volvió a detenerse por la identificación
 de la URL. La comprobación de pestañas se realizó con un DOM real.
+
+
+## Presentación y explicación de los resultados — 11 de noviembre
+
+Se reorganizaron las fichas de clima y trazabilidad, se clasificaron las
+condiciones de borde y se añadieron explicaciones breves para capas, extremos
+y gráficos. Las leyendas ahora usan filas flexibles fuera del SVG y las
+ecuaciones se presentan en MathML nativo.
+
+Se añadió la fuente volumétrica en la sonda interior a partir de los
+diagnósticos del solver. Una comparación opcional muestra un pulso cosenoidal
+de 12 h, normalizado al pico inicial de la fuente. La comparación no modifica
+los resultados científicos de las corridas.
+
+Se verificaron los paneles, las fórmulas y el gráfico comparativo en el
+navegador integrado usando una copia servida localmente. El servidor temporal
+se cerró al terminar. Las pruebas de DOM y campos pasaron para E11 y E12,
+incluidos cambios de sección y resolución. Se comprobó que la curva real
+reproduce el valor inicial y su decaimiento a una constante de tiempo, y que
+activar la referencia conserva el resumen de la simulación.
+
+La regeneración de los cuatro HTML conservó idénticos los campos térmicos,
+los diagnósticos, los máximos y la metadata de las corridas originales.

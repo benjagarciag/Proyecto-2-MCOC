@@ -1,0 +1,27 @@
+.run-facts{display:grid;grid-template-columns:minmax(145px,.7fr) minmax(0,1.3fr);gap:0;margin:0}
+.run-facts dt,.run-facts dd{margin:0;padding:10px 0;border-bottom:1px solid #e8eee7}
+.run-facts dt{font-size:12px;color:var(--muted);padding-right:14px}
+.run-facts dd{font-size:13px;overflow-wrap:anywhere}
+.run-facts dt:last-of-type,.run-facts dd:last-child{border-bottom:0}
+.run-facts code,.fingerprint{font:11px/1.6 Consolas,monospace;overflow-wrap:anywhere}
+.readable-table{font-size:12px}
+.readable-table td,.readable-table th{text-align:left;white-space:normal;vertical-align:top}
+.readable-table th{letter-spacing:.2px}
+.panel-intro{color:#536965;margin-bottom:15px;font-size:13px;line-height:1.65}
+.chart-description{font-size:12px;color:#536965;line-height:1.65;margin-bottom:14px}
+.chart-legend{display:flex;flex-wrap:wrap;gap:10px 22px;padding:7px 9px 2px}
+.chart-legend-item{display:inline-flex;align-items:center;gap:8px;color:#405b55;font-size:12px;line-height:1.5}
+.chart-legend-swatch{display:inline-block;width:24px;flex:0 0 24px;border-top:3px solid var(--series-color)}
+.chart-legend-swatch.dashed{border-top-style:dashed}
+.chart-frame{min-width:0}
+.math-block{margin:16px 0;padding:15px 18px;background:#f2f6ef;border:1px solid var(--line);border-radius:8px;overflow-x:auto}
+.math-block figcaption{font:12px/1.5 'Segoe UI',system-ui,sans-serif;color:#536965;margin-bottom:10px}
+.math-block math{font-family:'Cambria Math','STIX Two Math',serif;font-size:21px;min-width:max-content;margin:7px auto}
+.math-block mtext{font-family:'Segoe UI',system-ui,sans-serif;font-size:14px}
+.inline-math{font-family:'Cambria Math','STIX Two Math',serif;font-size:17px}
+.layer-state{display:block;font-weight:600}
+.layer-resistance{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+.case-badge{display:inline-block;padding:4px 9px;border-radius:5px;background:#e8f2eb;color:#24634f;font-size:12px;font-weight:650;margin-bottom:10px}
+.data-purpose{background:#f2f6ef;padding:13px 15px;border-radius:7px;color:#405b55;font-size:13px;margin-bottom:15px}
+@media(max-width:720px){.run-facts{grid-template-columns:1fr}.run-facts dt{padding:9px 0 0;border-bottom:0}.run-facts dd{padding:3px 0 10px}.math-block{padding:12px}.math-block math{font-size:18px}.chart-legend{gap:8px 15px}}
+

@@ -152,12 +152,13 @@ function renderLayerStatus() {
   const layers = RUN.entorno.capas_laterales;
   $('layerRows').innerHTML = DATA.vertidas.map(v => {
     const age = state.time - v.inicio;
-    const states = layers.map((layer, index) => {
+    const states = layers.map(layer => {
       const retired = layer.retiro_edad_h !== null && age >= layer.retiro_edad_h;
       const before = state.pythonSpecial && state.thermal.specials[state.pythonSpecial].phase === 'previo';
       const active = age >= 0 && (!retired || (before && Math.abs(age - layer.retiro_edad_h) < 1e-7));
       const label = age < 0 ? 'Pendiente' : active ? 'Presente' : 'Retirada';
-      return '<td>' + label + ' · R ' + fmt(active ? layer.espesor_m / layer.k_W_mK : 0, 3) + '</td>';
+      return '<td><span class="layer-state">' + label + '</span><span class="layer-resistance">'
+        + fmt(active ? layer.espesor_m/layer.k_W_mK : 0,3) + ' m²·K/W</span></td>';
     }).join('');
     return '<tr><td>' + dot(v.id) + v.nombre + '</td><td>' + (age < 0 ? '—' : fmt(age)) + '</td>' + states + '</tr>';
   }).join('');
@@ -176,6 +177,55 @@ function boundaryColorPython(axis, sign, z, id) {
   return '#9873bd';
 }
 
+function chart(series, options = {}) {
+  const width = 760, height = 285, left = 68, right = 24, top = 30, bottom = 56;
+  const xmax = options.xmax || 336;
+  const values = series.flatMap(line => line.points.filter(point => Number.isFinite(point[1])).map(point => point[1]));
+  let ymin = options.ymin ?? Math.min(0, ...values);
+  let ymax = options.ymax ?? Math.max(0, ...values);
+  const margin = Math.max((ymax - ymin) * .08, .1);
+  if (ymin < 0) ymin -= margin;
+  ymax += margin;
+  const x = value => left + value / xmax * (width - left - right);
+  const y = value => height - bottom - (value - ymin) / (ymax - ymin) * (height - bottom - top);
+  let svg = '<svg class="chart" viewBox="0 0 ' + width + ' ' + height
+    + '" role="img" aria-label="' + (options.ylabel || 'Gráfico') + '">';
+  svg += '<text x="' + left + '" y="15" class="plot-label">' + (options.ylabel || '') + '</text>';
+  for (let tick = 0; tick <= 4; tick++) {
+    const value = ymin + (ymax - ymin) * tick / 4;
+    svg += '<line class="grid" x1="' + left + '" x2="' + (width-right)
+      + '" y1="' + y(value) + '" y2="' + y(value) + '"/>';
+    svg += '<text x="' + (left-10) + '" y="' + (y(value)+4) + '" text-anchor="end">'
+      + fmt(value,Math.abs(value)<10 ? 1 : 0) + '</text>';
+  }
+  for (const [value,label] of options.xticks || [[0,'0'],[xmax,'Final']]) {
+    svg += '<text x="' + x(value) + '" y="' + (height-bottom+23)
+      + '" text-anchor="middle">' + label + '</text>';
+  }
+  for (const line of series) {
+    const points = line.points.filter(point => point[1] !== null && Number.isFinite(point[1]));
+    svg += '<polyline fill="none" stroke="' + line.color + '" stroke-width="2.5" stroke-linejoin="round"'
+      + (line.dash ? ' stroke-dasharray="' + line.dash + '"' : '')
+      + ' points="' + points.map(point => x(point[0]).toFixed(2)+','+y(point[1]).toFixed(2)).join(' ') + '"/>';
+    if (options.dots) for (const point of points) {
+      svg += '<circle cx="' + x(point[0]) + '" cy="' + y(point[1]) + '" r="4" fill="' + line.color + '"/>';
+    }
+  }
+  if (options.cursor !== undefined && options.cursor >= 0 && options.cursor <= xmax) {
+    svg += '<line x1="' + x(options.cursor) + '" x2="' + x(options.cursor)
+      + '" y1="' + top + '" y2="' + (height-bottom) + '" stroke="#6c8173" stroke-dasharray="4 4"/>';
+  }
+  svg += '<text x="' + ((left+width-right)/2) + '" y="' + (height-9)
+    + '" text-anchor="middle">' + (options.xlabel || (options.dots ? 'Resolución del voxel' : 'Tiempo desde la primera vertida [h]')) + '</text></svg>';
+  const legend = '<div class="chart-legend" role="list" aria-label="Series del gráfico">'
+    + series.map(line => '<span class="chart-legend-item" role="listitem">'
+      + '<span class="chart-legend-swatch' + (line.dash ? ' dashed' : '')
+      + '" style="--series-color:' + line.color + '" aria-hidden="true"></span><span>'
+      + line.label + '</span></span>').join('') + '</div>';
+  return svg + legend;
+}
+
+
 function drawThermalCharts() {
   if (!state.thermal) return;
   const rows = RUN.historia, horizon = SUMMARY.horizonte_h;
@@ -187,18 +237,38 @@ function drawThermalCharts() {
   const line = (key, label, color, factor = 1) => ({
     label, color, points: rows.map(row => [row.tiempo_h, row[key] === null ? null : row[key] * factor])
   });
-  const limit = (value, label) => ({label, color:'#a84032', points:[[0,value],[horizon,value]]});
+  const limit = (value, label) => ({label, color:'#a84032', dash:'6 4', points:[[0,value],[horizon,value]]});
   $('temperatureChart').innerHTML = chart([
-    line('Tmax_C','Máxima','#b44a36'), line('nucleo_C','Núcleo','#23806b'),
-    line('Tmin_S25_C','Mínimo S25','#3677b0'), limit(70,'Límite 70')
+    line('Tmax_C','Máximo de la fundación','#b44a36'), line('nucleo_C','Sonda interior','#23806b'),
+    line('Tmin_S25_C','Mínimo S25','#3677b0'), limit(70,'Límite de 70 °C')
   ], options('Temperatura [°C]'));
   $('observerChart').innerHTML = chart([
     line('aire_C','Aire','#177c7a'),
     {label:'Suelo',color:'#916d41',points:[[0,RUN.entorno.suelo_C],[horizon,RUN.entorno.suelo_C]]}
   ], options('Temperatura del entorno [°C]'));
   $('deltaChart').innerHTML = chart([
-    line('DeltaT_K','Tmax − Tmin S25','#7960a9'), limit(20,'Límite 20')
+    line('DeltaT_K','Diferencial térmico','#7960a9'), limit(20,'Límite de 20 K')
   ], options('Diferencial [K]'));
+  const material = SUMMARY.parametros_efectivos.hidratacion;
+  const capacity = material.densidad_kg_m3 * material.calor_especifico_J_kgK;
+  const sourcePoints = rows.map(row => [
+    row.tiempo_h, row.fuente_nucleo_K_h === null ? 0 : row.fuente_nucleo_K_h * capacity / 3600
+  ]);
+  const activation = rows.find(row => row.fuente_nucleo_K_h !== null)?.tiempo_h ?? Infinity;
+  const start = sourcePoints.findIndex(point => point[0] === activation);
+  if (start >= 0) sourcePoints.splice(start,0,[activation,0]);
+  const sources = [{label:'Hidratación de la corrida',color:'#c48928',points:sourcePoints}];
+  if ($('cosineReference').checked) {
+    sources.push({
+      label:'Pulso cosenoidal de referencia (12 h)',color:'#7960a9',dash:'6 4',
+      points:rows.map(row => {
+        const age = row.tiempo_h - activation;
+        return [row.tiempo_h, age >= 0 && age <= 12
+          ? RUN.fuente.q0_W_m3 / 2 * (1-Math.cos(2*Math.PI*age/12)) : 0];
+      })
+    });
+  }
+  $('sourceChart').innerHTML = chart(sources,options('q‴ en la sonda [W/m³]'));
   $('rateChart').innerHTML = chart([
     line('conduccion_nucleo_K_h','Vecinos','#4383ad'),
     line('borde_nucleo_K_h','Bordes','#9873bd'),
@@ -210,9 +280,17 @@ function drawThermalCharts() {
     line('suelo_W','Suelo','#916d41',.001)
   ], options('Potencia entrante [kW]'));
   const b = SUMMARY.balance_J;
-  $('thermalBalance').textContent = int(SUMMARY.pasos) + ' pasos · energía de hidratación '
-    + fmt(b.hidratacion / 1e9, 3) + ' GJ · aire ' + fmt(b.aire / 1e9, 3)
-    + ' GJ · suelo ' + fmt(b.suelo / 1e9, 3) + ' GJ · residuo ' + b.residuo.toExponential(3) + ' J.';
+  const entries = [
+    ['Pasos de cálculo',int(SUMMARY.pasos)],
+    ['Energía sensible incorporada al colocar',fmt(b.colocacion/1e9,3)+' GJ'],
+    ['Energía liberada por hidratación',fmt(b.hidratacion/1e9,3)+' GJ'],
+    ['Intercambio acumulado con el aire',fmt(b.aire/1e9,3)+' GJ'],
+    ['Intercambio acumulado con el suelo',fmt(b.suelo/1e9,3)+' GJ'],
+    ['Energía sensible final',fmt(b.final/1e9,3)+' GJ'],
+    ['Residuo del balance',b.residuo.toExponential(3)+' J']
+  ];
+  $('thermalBalance').innerHTML = '<p class="panel-intro">Compara la energía final con la energía incorporada y los intercambios acumulados.<br>Un residuo cercano a cero comprueba la conservación numérica de energía.</p>'
+    + '<dl class="run-facts">' + entries.map(([label,value]) => '<dt>'+label+'</dt><dd>'+value+'</dd>').join('') + '</dl>';
 }
 
 function initializePythonResult(index = DATA.grilla_inicial) {
@@ -263,6 +341,7 @@ function initializePythonResult(index = DATA.grilla_inicial) {
     $('peakPython').onclick = () => selectPythonField('pico');
     $('deltaPython').onclick = () => selectPythonField('diferencial');
     $('finalPython').onclick = () => selectPythonField('final');
+    $('cosineReference').onchange = drawThermalCharts;
     $('showBoundaries').onclick = () => {
       $('viewMode').value = 'bc';
       setTab('geometry');

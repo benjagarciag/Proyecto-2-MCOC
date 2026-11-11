@@ -119,3 +119,28 @@ se guardan bajo resultados/e11/malla_025 o resultados/e12/malla_025.
 
 Las pestañas son enlaces de sección. Al cambiar de pestaña se ocultan los
 resúmenes generales para mostrar directamente el contenido seleccionado.
+
+
+### Lectura de resultados y presentación
+
+La ficha de clima separa el origen de los datos, el momento de descarga, el
+período meteorológico usado y el calendario del escenario. Los horarios se
+presentan en hora de Chile continental. La tabla de bordes identifica Robin
+convectiva, Robin con capas, la condición conductiva equivalente del suelo
+y la continuidad térmica de las interfaces.
+
+Los extremos localizan los estados más exigentes de toda la corrida y permiten
+revisar los criterios de 70 °C y 20 K. Las explicaciones de cada gráfico se
+limitan a dos líneas y sus leyendas se presentan fuera del área de trazado.
+Las ecuaciones se renderizan con MathML nativo, disponible sin conexión.
+
+El gráfico de generación volumétrica usa la fuente en la sonda interior,
+obtenida de los diagnósticos de Python. La casilla de comparación agrega un
+pulso cosenoidal de referencia con duración de 12 h y pico igual a la fuente
+inicial de la corrida. Esa comparación es didáctica. Las corridas existentes
+conservan su fuente de hidratación exponencial.
+
+Datos de la corrida explica la función de cada entrada y agrupa los
+identificadores de integridad en un detalle desplegable. El JSON descargable
+contiene los parámetros efectivos; el identificador SHA-256 corresponde al
+archivo original de parámetros usado al calcular.

@@ -85,7 +85,7 @@ const tick = frames.pop();
 tick(100000);
 assert(evaluate('state.time') <= summary.horizonte_h,'La reproducción respeta el horizonte');
 evaluate("stopPlay(); setTab('heat')");
-for (const id of ['temperatureChart','observerChart','deltaChart','rateChart','powerChart']) {
+for (const id of ['temperatureChart','observerChart','deltaChart','sourceChart','rateChart','powerChart']) {
   assert(node(id).innerHTML.includes('<svg'),id);
 }
 evaluate("$('viewMode').value='bc';setTime(0);rebuildMesh()");
