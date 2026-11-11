@@ -1,146 +1,131 @@
 # E11 — Weather pipeline y visualización 3D
 
-La demo usa 48 horas del pronóstico GFS guardado para el Parque Eólico El
-Rosal. Empieza el 10 de noviembre de 2026 a las 17:00 (hora de Chile). El
-mismo programa también ejecuta [el caso de 14 días de E12](../../Reportes/Reporte_E12.md).
+Avance para el laboratorio del 12 de noviembre de 2026. La referencia usa 48 h
+del pronóstico GFS archivado para El Rosal, desde el 10 de noviembre de 2026
+a las 17 h de Chile. En Canvas se declara repositorio y SHA evaluado.
 
-## Demo
+## Abrir los resultados
+
+- [Visualizador E11](../../resultados/e11/visualizador.html).
+- [Visualizador E12](../../resultados/e12/visualizador.html).
+- [Reporte determinista de E12](../../Reportes/Reporte_E12.md).
+
+Descarga el repositorio y abre el HTML con doble clic en Chrome o Edge.
+Cada archivo incorpora sus datos y funciona sin conexión. Recarga con Ctrl+F5
+después de regenerarlo.
+
+| Actividad | Objetivo | Caso implementado |
+| --- | --- | --- |
+| E10 | Explicar bordes, suelo, capas y trazabilidad | Demo oral y cliente meteorológico |
+| E11 | Demostrar clima conectado al solver e inspección 3D | 48 h con GFS, HTML y VTI |
+| E12 | Evaluar el plan durante 14 días | 336 h con ERA5 histórico y Markdown |
+
+## Recorrido de la demo
 
 1. Abrir el [snapshot GFS](../../datos/clima/forecasts/20261110T190042897941Z_44b1a950.json).
-   En `respuesta.hourly` están las marcas UTC y la serie `temperature_2m`.
-2. Mostrar `metadata`: fuente, modelo, descarga **2026-11-10 19:00:42 UTC**,
-   coordenadas pedidas **−37,277929; −72,368271**, unidades y horizonte. El
-   JSON conserva también las coordenadas devueltas por el modelo.
-3. Abrir [aire.png](../../resultados/e11/aire.png) y señalar el intervalo
-   de 0 a 48 h y sus unidades en °C.
-4. Mostrar [la entrada al solver](../../casos/semana4/ejecutar.py) y
-   [el balance](../../desarrollo/mcplan/termica_fundacion.py).
-   Se interpola la temperatura del aire entre marcas horarias. Para una cara
-   expuesta, la potencia que entra a la celda es
-   `P = H · (T_aire − T_celda)`, en W, con
-   `H = A / (Δx/(2k) + Σ(e/k_capa) + 1/h)`, en W/K. El valor
-   `h = 5 W/(m²·K)` es fijo. Viento y radiación están guardados en el
-   snapshot y quedan fuera del cálculo.
-5. Ejecutar el caso `e11`. La corrida de referencia tiene 192 pasos. El
-   [resumen](../../resultados/e11/resumen.json) registra 50,67 °C de máximo a
-   las 48 h.
-6. Abrir [diferencial.vti](../../resultados/e11/diferencial.vti) con el
-   visualizador. La escala de color es la temperatura de las celdas activas.
-7. Arrastrar el plano con el mouse para mover el corte. Para clipping,
-   agregar `--modo recorte`. En ParaView se puede aplicar **Threshold** con
-   `activo = 1`, después **Slice** o **Clip**, y colorear por `T_C`.
-8. Señalar la sonda de núcleo en `(0,25; 0,25; 1,25) m` y el punto
-   **S25 mínima**, reconstruido a 25 mm bajo una cara exterior. El campo
-   `superficie` identifica las celdas exteriores. `T_S25_min_C` indica la
-   menor temperatura S25 de las caras exteriores de cada celda.
+   Mostrar fuente, modelo, coordenadas, unidades y descarga del 10 de noviembre
+   de 2026 a las 19:00:42 UTC, junto con la respuesta horaria.
+2. Abrir Resultados y entorno en el HTML. La ficha separa los datos meteorológicos
+   utilizados del calendario de la simulación y muestra hora de Chile.
+3. Mostrar cómo el aire horario alimenta las condiciones de borde.
+   [El solver](../../desarrollo/mcplan/termica_fundacion.py) interpola la serie.
+   El coeficiente convectivo h permanece fijo en 5 W/(m²·K).
+4. Ejecutar la corrida corta si el ayudante lo solicita. Con 0,50 m tiene
+   192 pasos y alcanza 50,67 °C a las 48 h.
+5. En Modelo y cortes, mover el slice XY/XZ/YZ o el clipping y consultar una celda.
+   La marca roja es la sonda interior. Al abrir el máximo diferencial aparece
+   la marca azul del punto S25.
+6. Mostrar los VTI de esa misma corrida y abrir uno con PyVista para la evidencia
+   VTK/PyVista.
 
-## Comandos desde la raíz
+Viento y radiación se conservan en el snapshot. El cálculo integrado utiliza
+temperatura del aire. La demo E10 incluye un ejemplo separado de balance solar.
 
-Instalar primero las dependencias de Python del proyecto y las de la vista 3D
-en el mismo entorno, si todavía no están instaladas.
+## Reproducir
 
-~~~sh
+Desde la raíz, con un entorno Python 3.12 preparado y activado,
+
+~~~powershell
 python -m pip install -r requirements.txt -r casos/semana4/requirements-vista.txt
-python casos/semana4/ejecutar.py e11
-python casos/semana4/ver_3d.py resultados/e11/diferencial.vti
+python -X utf8 -B casos/semana4/ejecutar.py e11
+python -X utf8 -B casos/semana4/ejecutar.py e12
 ~~~
 
-En Windows se puede usar el Python del entorno del proyecto con las
-dependencias instaladas. En esta copia de revisión, ejecutar en PowerShell:
+En esta copia local de Windows se puede reutilizar el entorno existente,
 
 ~~~powershell
-$env:PYTHONPATH = Join-Path (Get-Location).Path '.venv/cache/visualizacion'
 $python = '../Proyecto2/.venv/Scripts/python.exe'
-& $python casos/semana4/ver_3d.py resultados/e11/diferencial.vti
+$env:PYTHONPATH = Join-Path (Get-Location).Path '.venv/cache/visualizacion'
+& $python -X utf8 -B casos/semana4/ejecutar.py e11
 ~~~
 
-Para guardar una comprobación del corte sin abrir ventana, agregar
-`--captura resultados/e11/corte.png`. Para guardar una corrida alternativa,
-usar `ejecutar.py e12 --lado 0.25 --salida resultados/e12_malla025`.
-El resumen identifica commit, modificaciones locales de código, parámetros
-efectivos, plan de vertidas y hashes de entradas.
+La ejecución normal genera corridas independientes de 0,50 y 0,25 m y las reúne
+en el HTML principal. El selector cambia los campos, diagnósticos y tablas a
+la corrida elegida. La opción de 1 m sirve para geometría y volúmenes y queda
+sin resultados térmicos porque pierde V02.
 
-[Corte guardado](../../resultados/e11/corte.png) ·
-[Curvas de la corrida](../../resultados/e11/temperaturas.png)
+La malla de 0,50 m guarda campos visuales cada hora y la alternativa de 0,25 m
+cada cuatro horas, además de eventos. Los extremos se evalúan en cada paso.
+Entre campos se interpolan los colores para reproducción.
 
-Para Canvas se declara el repositorio y el SHA del commit que contiene el
-snapshot, el código y la evidencia de la demo.
-
-
-## Visualizador HTML con resultados Python
-
-El ejecutor genera también resultados/e11/visualizador.html y
-resultados/e12/visualizador.html. Cada archivo es autónomo y se puede abrir con
-doble clic, sin conexión ni servidor. Reutiliza la interfaz y el renderizador
-del laboratorio E07/E08.
-
-Python resuelve la física y exporta campos temporales, diagnósticos por paso y
-estados de máximos. El HTML permite reproducción, cortes XY/XZ/YZ, clipping por
-eje, consulta de celdas, visibilidad por vertida y colores de bordes según suelo,
-aire y capas. Incluye clima, retiros, curvas de núcleo/S25, diferencial y balance.
-
-El intervalo se configura con --intervalo-html 1 en horas. Se guarda el primer
-paso calculado que alcanza cada intervalo, además de eventos de construcción y
-el final. La exportación observa la corrida sin cambiar su paso. Los extremos
-se calculan en todos los pasos. Los colores entre campos se interpolan solo
-para reproducción y respetan las activaciones.
-
-Los botones de máximos abren campos guardados con su fase previa o posterior
-al evento. La tabla por vertida distingue el máximo actual de centros y el máximo
-de toda la corrida, que incluye caras. La marca roja corresponde a la sonda
-interior. La azul aparece al seleccionar el máximo diferencial y corresponde
-al punto S25 de ese estado.
-
-Para cambiar parámetros se descarga el JSON desde Modelo y supuestos y se
-ejecuta otra corrida en Python. La exportación VTI sigue disponible para E11.
+Para una sola resolución o un intervalo de salida diferente,
 
 ~~~powershell
-& $python -X utf8 -B casos/semana4/ejecutar.py e12 --intervalo-html 1
-Start-Process 'resultados/e12/visualizador.html'
+python -X utf8 -B casos/semana4/ejecutar.py e12 --lado 0.25 --intervalo-html 1 --salida resultados/e12_malla025
+python -X utf8 -B casos/semana4/ejecutar.py e12 --paso-max 450 --sin-exportar
 ~~~
 
+La opción --sin-exportar imprime el resumen sin modificar resultados.
 
-### Selector de resolución
+## Archivos 3D y PyVista
 
-La ejecución normal genera corridas Python de 0,50 y 0,25 m y las reúne en el
-HTML principal. El selector cambia los campos, diagnósticos y tablas a la
-corrida correspondiente. La opción de 1 m permite explorar geometría y
-volúmenes. Esa malla pierde V02 y se presenta sin resultados térmicos.
+Cada corrida exporta pico.vti, diferencial.vti y final.vti. Contienen temperatura,
+ID de vertida, máscara activa, identificación de superficie y S25 reconstruida.
+La malla alternativa se guarda en la subcarpeta malla_025.
 
-La malla de 0,50 m conserva la salida visual horaria. Para limitar el tamaño del
-archivo combinado, la corrida alternativa de 0,25 m guarda campos visuales cada
-cuatro horas y en los eventos de construcción. Su solver mantiene el mismo paso
-y calcula diagnósticos y extremos en cada paso. La metadata de cada malla
-identifica el intervalo utilizado.
+~~~powershell
+python -X utf8 -B casos/semana4/ver_3d.py resultados/e11/diferencial.vti
+python -X utf8 -B casos/semana4/ver_3d.py resultados/e11/diferencial.vti --modo recorte
+~~~
 
-Una ejecución con --lado 0.25 genera solamente esa resolución y permite elegir
-otro intervalo mediante --intervalo-html. Los VTI de la malla alternativa
-se guardan bajo resultados/e11/malla_025 o resultados/e12/malla_025.
+Para una captura fija se agrega --captura resultados/e11/corte.png.
+En ParaView se puede seleccionar activo mediante Threshold y aplicar Slice o Clip.
 
-Las pestañas son enlaces de sección. Al cambiar de pestaña se ocultan los
-resúmenes generales para mostrar directamente el contenido seleccionado.
+## Leer el HTML
 
+- Los extremos localizan los estados más exigentes para evaluar 70 °C y 20 K.
+- Los bordes identifican Robin convectiva, Robin con capas, la condición
+  conductiva equivalente del suelo y la continuidad térmica de las interfaces.
+- La tabla de capas muestra presencia y resistencia activa según la edad de cada vertida.
+- Las curvas muestran temperaturas, entorno, diferencial, generación, tasas y potencias.
+  Cada gráfico tiene una explicación breve y una leyenda independiente.
+- El cosenoidal es una referencia de 12 h con pico igual a la fuente inicial.
+  La corrida conserva su hidratación exponencial por edad.
+- Modelo y supuestos presenta ecuaciones MathML y trazabilidad. El JSON descargable
+  contiene los parámetros efectivos.
 
-### Lectura de resultados y presentación
+Cambiar parámetros físicos requiere descargar el JSON y ejecutar otra corrida
+en Python. Los controles del HTML recorren los resultados guardados.
 
-La ficha de clima separa el origen de los datos, el momento de descarga, el
-período meteorológico usado y el calendario del escenario. Los horarios se
-presentan en hora de Chile continental. La tabla de bordes identifica Robin
-convectiva, Robin con capas, la condición conductiva equivalente del suelo
-y la continuidad térmica de las interfaces.
+## Hipótesis y comprobaciones
 
-Los extremos localizan los estados más exigentes de toda la corrida y permiten
-revisar los criterios de 70 °C y 20 K. Las explicaciones de cada gráfico se
-limitan a dos líneas y sus leyendas se presentan fuera del área de trazado.
-Las ecuaciones se renderizan con MathML nativo, disponible sin conexión.
+Suelo, capas, retiros y propiedades son supuestos docentes. S25 se reconstruye
+a 25 mm de las caras de una malla escalonada. E12 usa ERA5 de 2025 asignado por
+hora relativa a una fecha hipotética de 2026.
 
-El gráfico de generación volumétrica usa la fuente en la sonda interior,
-obtenida de los diagnósticos de Python. La casilla de comparación agrega un
-pulso cosenoidal de referencia con duración de 12 h y pico igual a la fuente
-inicial de la corrida. Esa comparación es didáctica. Las corridas existentes
-conservan su fuente de hidratación exponencial.
+La batería registrada tiene 554 pruebas Python aprobadas. Las pruebas Node
+verifican campos, activaciones, gráficos, cortes, clipping y navegación con un
+DOM real. Se revisó visualmente la presentación en el navegador integrado.
 
-Datos de la corrida explica la función de cada entrada y agrupa los
-identificadores de integridad en un detalle desplegable. El JSON descargable
-contiene los parámetros efectivos; el identificador SHA-256 corresponde al
-archivo original de parámetros usado al calcular.
+~~~powershell
+node desarrollo/tests/test_semana4_html.cjs resultados/e11/visualizador.html
+node desarrollo/tests/test_semana4_dom.cjs resultados/e11/visualizador.html
+~~~
+
+La regresión DOM requiere jsdom como dependencia de pruebas. Se puede instalar
+con npm install --no-save --package-lock=false --prefix .venv/cache/html-dom jsdom.
+El HTML autónomo se abre sin Node ni jsdom.
+
+Para Canvas se declara el SHA del commit con el mensaje
+Entrega E10 - avances de E11 y E12. Los resúmenes registran el commit del
+código que calculó los campos y los hashes de las entradas.

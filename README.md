@@ -15,9 +15,43 @@ Coordenadas del caso: `-37.277929`, `-72.368271`.
 [Entrega E08 y demo](entregas/E08/README.md) ·
 [Antecedentes E07](entregas/E07/README.md) ·
 [Ejecutores E07](casos/e07/README.md) ·
-[Visualizador HTML](Visualizadores/E07.html)
+[Laboratorio E07/E08](Visualizadores/E07.html)
 
-## Actualización E08
+## Entrega E10 y avances de E11 y E12
+
+Estado actualizado el 11 de noviembre de 2026.
+
+| Actividad | Estado técnico | Evidencia |
+| --- | --- | --- |
+| E10 | Bordes, suelo, capas y retiros, cliente meteorológico y snapshots implementados | Demo y guía oral |
+| E11 | Corrida de 48 h con aire horario y exportación 3D | HTML autónomo y VTI |
+| E12 | Corrida determinista provisional de 336 h | HTML, VTI, curvas, máximos y Markdown |
+
+El flujo actual es IFC → voxelización → solver Python → HTML y VTK.
+El HTML reúne corridas independientes de 0,50 y 0,25 m, con reproducción,
+cortes, clipping, clima, capas y gráficos. La opción de 1 m permite explorar
+geometría y volúmenes; pierde V02 y queda sin resultados térmicos.
+
+Descarga el repositorio y abre resultados/e11/visualizador.html o
+resultados/e12/visualizador.html con doble clic en Chrome o Edge.
+Cada archivo funciona sin conexión.
+
+E12 con 0,50 m alcanza 62,17 °C y un diferencial máximo de 43,29 K.
+Queda bajo 70 °C y supera el criterio de 20 K. La decisión se mantiene a 0,25 m.
+Las propiedades, el suelo, las capas y los retiros son supuestos docentes.
+E12 usa ERA5 de 2025 asignado por hora relativa al escenario hipotético
+del 27 de noviembre de 2026.
+
+La fuente real es exponencial por edad, con q₀ = 900 W/m³ y τ = 30 h.
+El gráfico cosenoidal es una referencia didáctica opcional.
+Uso y reproducción en la guía de E11. La revisión detallada está en
+[documentacion/revision_semana4.md](documentacion/revision_semana4.md).
+
+El commit de publicación lleva el mensaje Entrega E10 - avances de E11 y E12.
+Su SHA completo se declara en Canvas. Los resúmenes conservan el commit del
+código que calculó los campos y los hashes de las entradas.
+
+## Laboratorio anterior E08
 
 El HTML existente `Visualizadores/E07.html` incorpora controles de E08:
 inicios y temperaturas de colocación editables, visibilidad individual y
@@ -34,12 +68,12 @@ voxelización, IDs y volúmenes por vertida, superficies, activación e hidratac
 por edad. Los solvers publicados y el BIM se conservan.
 
 E04 aporta difusión 2D/3D, bordes, fuentes y materiales; E05, su batería de
-verificación; el [dossier E06](Reportes/E06.md) conserva su evidencia histórica.
-E07 diseña y verifica una fuente de hidratación, **todavía sin acoplarla a la
-conducción y bordes de la fundación**. No hay clima real ni predicción de sus
-máximas temperaturas. Los recuentos de documentos antiguos son históricos.
+verificación; el [dossier E06](Reportes/Reporte_E06.md) conserva su evidencia histórica.
+En aquella base E07 la fuente de hidratación se verificaba por separado.
+La integración actual con conducción, bordes y clima corresponde a Semana 4.
+Los recuentos y resultados de entregas anteriores se conservan como históricos.
 
-## Visualizador HTML: geometría y ecuación de calor
+## Laboratorio anterior E07/E08
 
 Abrir **[Visualizadores/E07.html](Visualizadores/E07.html)** con doble clic en
 Chrome o Edge. Permite explorar los voxeles del IFC, errores por vertida,
@@ -66,6 +100,10 @@ Se conservan las rutas e importaciones de la arquitectura existente.
 | [superficies_voxel.py](desarrollo/mcplan/superficies_voxel.py) | Caras exteriores, internas e interfaces orientadas. |
 | [construccion.py](desarrollo/mcplan/construccion.py) | Calendario IFC, actividad, T de colocación y edades. |
 | [hidratacion.py](desarrollo/mcplan/hidratacion.py) | Curva adiabática, W/m³ y energía por intervalo. |
+| [entorno_termico.py](desarrollo/mcplan/entorno_termico.py) | Aire, capas, retiros y suelo equivalente. |
+| [clima.py](desarrollo/mcplan/clima.py) | Cliente GFS, validación y snapshots. |
+| [termica_fundacion.py](desarrollo/mcplan/termica_fundacion.py) | Solver integrado de la fundación. |
+| [exportacion_html.py](desarrollo/mcplan/exportacion_html.py) | Exportación HTML y combinación de mallas. |
 | `desarrollo/tests/` | Pruebas automatizadas. |
 | `casos/` | Ejecutores y configuraciones JSON, separados del núcleo. |
 | `resultados/` | PNG y datos producidos por los casos. |
@@ -76,19 +114,22 @@ Se conservan las rutas e importaciones de la arquitectura existente.
 
 ## Programas y dependencias
 
-Python **3.12**, NumPy, Matplotlib, pytest e IfcOpenShell permiten ejecutar E07;
-las versiones y dependencias están declaradas en [requirements.txt](requirements.txt).
-VS Code es el editor recomendado. Blender/Bonsai se usa para editar el BIM,
-pero no necesita estar abierto para leer el IFC ni ejecutar los cálculos.
+Python **3.12**, NumPy, Matplotlib, pytest e IfcOpenShell permiten leer el IFC y
+ejecutar el cálculo. La exportación VTK usa PyVista y VTK. Las versiones están
+en requirements.txt y casos/semana4/requirements-vista.txt.
 
-Usar una terminal con el entorno del proyecto activado, o seleccionar ese
-intérprete en VS Code. En este computador se reutiliza el entorno numérico
-existente; no se instalaron paquetes. En otro equipo se prepara su entorno
-Python 3.12 y se instalan las dependencias declaradas antes de ejecutar.
+Con un entorno Python 3.12 preparado y activado, desde la raíz,
 
-Los componentes opcionales Jupyter/notebooks del entorno completo no están
-instalados aquí ni se verificaron en esta entrega; las pruebas y casos E07 sí.
-[Detalle del entorno comprobado](entregas/E07/README.md#dependencias-y-entorno).
+~~~powershell
+python -m pip install -r requirements.txt -r casos/semana4/requirements-vista.txt
+python -X utf8 -B casos/e10/ejecutar.py --demo
+python -X utf8 -B casos/semana4/ejecutar.py e11
+python -X utf8 -B casos/semana4/ejecutar.py e12
+~~~
+
+La guía de E11 incluye la alternativa para reutilizar el entorno de la copia
+local de Windows. Blender/Bonsai permite editar el BIM. El cálculo lee el IFC
+guardado y se ejecuta de forma independiente.
 
 ## Ejecutar pruebas y ejemplos
 
@@ -134,7 +175,7 @@ la hidratación de M1 usa valores **didácticos, sin calibración experimental**
 [Modelo y unidades](documentacion/e07_hidratacion.md).
 
 El ejecutor de Semana 4 integra IFC, vertidas, hidratación, suelo, capas y
-clima en Python. Genera un HTML autónomo por corrida que reutiliza la interfaz
+clima en Python. Genera un HTML por caso con las resoluciones calculadas y reutiliza la interfaz
 E07/E08 para reproducción, cortes, clipping, curvas y consulta de máximos.
 Los VTI se exportan desde la misma corrida. Uso en entregas/E11/README.md.
 

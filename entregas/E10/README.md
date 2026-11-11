@@ -9,8 +9,8 @@ preparar la demo, no es un informe para subir.
 Desde la raíz de la rama Semana 4, con el entorno Python del proyecto activado:
 
 ~~~bash
-python -B casos/e10/ejecutar.py --demo
-python -B casos/e10/ejecutar.py --snapshot datos/clima/forecasts/20261110T190042897941Z_44b1a950.json --inicio 2026-11-27T10:00:00-03:00
+python -X utf8 -B casos/e10/ejecutar.py --demo
+python -X utf8 -B casos/e10/ejecutar.py --snapshot datos/clima/forecasts/20261110T190042897941Z_44b1a950.json --inicio 2026-11-27T10:00:00-03:00
 ~~~
 
 La primera ejecución compara la misma celda y el mismo aire antes y después de
@@ -95,5 +95,27 @@ La demo usa propiedades y capas didácticas y calcula la potencia de una cara
 con los datos del pronóstico. [E11](../E11/README.md) conecta la serie
 meteorológica y los cambios de contorno al solver 3D de la fundación.
 
-Comprobación: **550 pruebas Python aprobadas** en la revisión, incluidas 15 de E10 y siete del solver integrado de Semana 4. También se
+Comprobación: **554 pruebas Python aprobadas** en la batería registrada, incluidas 15 de E10 y 11 del solver integrado de Semana 4. También se
 ejecutó el caso sintético y se descargó y releyó el snapshot real sin errores.
+
+
+## Versión para publicar y explorar
+
+E10 se publica en main con el mensaje Entrega E10 - avances de E11 y E12.
+Para obtener el SHA completo desde Git,
+
+~~~powershell
+git log -1 --format=%H --fixed-strings --grep="Entrega E10 - avances de E11 y E12" main
+~~~
+
+En Canvas se declara ese SHA junto con el repositorio. E10 tiene revisión oral
+y se entrega sin informe. La guía de E11 describe los avances posteriores.
+
+Los visualizadores [E11](../../resultados/e11/visualizador.html) y
+[E12](../../resultados/e12/visualizador.html) muestran los bordes, el clima,
+el estado de las capas por edad y los resultados calculados. La demo de este
+README permite explicar las potencias de una cara por separado.
+
+Suelo, materiales de las capas, espesores y retiros son hipótesis docentes.
+Su selección física para la obra requiere respaldo. El suelo es una resistencia
+hacia una temperatura prescrita y el aire usa h fijo.

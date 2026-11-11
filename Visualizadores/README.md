@@ -1,8 +1,29 @@
-# Visualizador térmico unificado
+# Visualizadores térmicos
 
 Una sola ventana para configurar, verificar y observar la evolución de
 temperatura de los casos 1D, 2D y 3D del proyecto. Reúne el visualizador de
 estudio y la barra 3D con fuente localizada; no depende de una entrega E05.
+
+## Entradas de Semana 4
+
+- [E11 con resultados Python](../resultados/e11/visualizador.html).
+- [E12 con resultados Python](../resultados/e12/visualizador.html).
+- [Guía de ejecución y demo](../entregas/E11/README.md).
+
+Estos HTML incorporan resultados calculados por Python. Permiten seleccionar
+0,50 o 0,25 m, reproducir temperaturas, hacer cortes y clipping, consultar clima,
+capas, máximos y curvas. La opción de 1 m se destina a geometría porque pierde V02.
+Cada archivo es autónomo y se abre con doble clic en Chrome o Edge.
+
+El ejecutor casos/semana4/ejecutar.py los genera junto a los VTI.
+La presentación usa semana4_resultados.js y semana4_estilos.css.
+El exportador desarrollo/mcplan/exportacion_html.py reutiliza la plantilla
+y el renderizador del laboratorio E07/E08.
+
+Los gráficos tienen leyendas separadas y explicaciones breves. Las fórmulas
+usan MathML nativo. El cosenoidal es una referencia opcional de 12 h.
+La fuente de la corrida es exponencial por edad. Modificar parámetros físicos
+requiere una nueva ejecución Python.
 
 <a id="laboratorio-html-de-e07"></a>
 
