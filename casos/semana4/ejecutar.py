@@ -5,11 +5,17 @@ from hashlib import sha256
 import json
 import os
 from pathlib import Path
+import site
 import sys
 import subprocess
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ / "desarrollo"))
+# Dependencias de visualización ya instaladas en esta copia local.
+# addsitedir conserva la prioridad de los paquetes del intérprete seleccionado.
+VISTA_LOCAL = RAIZ / ".venv/cache/visualizacion"
+if VISTA_LOCAL.is_dir():
+    site.addsitedir(str(VISTA_LOCAL))
 os.environ.setdefault("MPLCONFIGDIR", str(RAIZ / ".venv/cache/matplotlib"))
 import numpy as np
 
@@ -31,7 +37,9 @@ def exportar(r, ids, origen, lado, salida, resumen, clima):
     try:
         import pyvista as pv
     except ImportError as exc:
-        raise SystemExit("Para exportar VTK instala PyVista (instrucciones en entregas/E11/README.md).") from exc
+        raise SystemExit(f"No se pudo importar PyVista con {sys.executable}: {exc}. "
+                         "Instala las dependencias de casos/semana4/requirements-vista.txt "
+                         "en ese intérprete.") from exc
 
     salida.mkdir(parents=True, exist_ok=True)
     for nombre, campo in r.campos.items():
@@ -77,9 +85,22 @@ def exportar(r, ids, origen, lado, salida, resumen, clima):
     plt.close(fig)
 
 
+def elegir_en_terminal(titulo, opciones):
+    """Devuelve el valor de una opción; vuelve a preguntar ante entradas inválidas."""
+    print(f"\n{titulo}")
+    for numero, (etiqueta, _) in enumerate(opciones, 1):
+        print(f"  {numero}. {etiqueta}")
+    while True:
+        respuesta = input(f"Elige una opción [1-{len(opciones)}]: ").strip()
+        if respuesta in {str(i) for i in range(1, len(opciones)+1)}:
+            return opciones[int(respuesta)-1][1]
+        print("Opción inválida. Escribe el número de una de las opciones.")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("caso", choices=["e11", "e12"])
+    ap.add_argument("caso", nargs="?", choices=["e11", "e12"],
+                    help="Caso a ejecutar; si se omite, pregunta caso y malla en la terminal.")
     ap.add_argument("--parametros", type=Path, default=Path(__file__).with_name("parametros.json"))
     ap.add_argument("--lado", type=float, help="Tamaño cúbico en metros.")
     ap.add_argument("--paso-max", type=float, help="Tope temporal en segundos.")
@@ -88,6 +109,22 @@ def main():
     ap.add_argument("--salida", type=Path, help="Directorio de resultados alternativo.")
     ap.add_argument("--sin-exportar", action="store_true", help="Solo imprime el resumen, sin modificar resultados ni generar HTML.")
     a = ap.parse_args()
+    if a.caso is None:
+        try:
+            a.caso = elegir_en_terminal("¿Qué caso quieres ejecutar?", [
+                ("E11 — pronóstico, 48 horas", "e11"),
+                ("E12 — escenario histórico, 14 días", "e12"),
+            ])
+            if a.lado is None:
+                a.lado = elegir_en_terminal("¿Qué malla quieres usar?", [
+                    ("0,50 m — más rápida", .5),
+                    ("0,25 m — más fina, mayor tiempo de cálculo", .25),
+                    ("Ambas — HTML con selector de resolución", None),
+                ])
+        except (EOFError, KeyboardInterrupt):
+            raise SystemExit("\nSelección cancelada; no se ejecutó ninguna simulación.") from None
+        print(f"\nCaso: {a.caso.upper()} · malla: "
+              + (f"{a.lado:g} m" if a.lado is not None else "ambas (0,50 y 0,25 m)"))
     config = json.loads(a.parametros.read_text(encoding="utf-8"))
     escenario = config[a.caso]
     if escenario["tipo"] not in ("forecast", "reanalisis"):

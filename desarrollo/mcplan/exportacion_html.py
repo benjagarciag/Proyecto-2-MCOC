@@ -392,7 +392,7 @@ def _seccion_resultados(resumen):
     s += _panel("Moldaje y aislación por edad", estado + detalle + tabla)
     for titulo, identificador, explicacion in [
         ("Temperaturas de la fundación", "temperatureChart",
-         "Compara el máximo de la fundación, la sonda interior y el mínimo a 25 mm de la superficie.<br>Permite observar la separación térmica entre el interior y las zonas exteriores."),
+         "Compara el máximo de la fundación, la sonda interior y el mínimo a 25 mm de la superficie.<br>Permite observar la separación térmica entre el interior y las zonas exteriores.<br>La línea verde (sonda interior) comienza a las 12 h porque ese punto pertenece a la Vertida_03, colocada en ese instante a 18 °C. Antes de su colocación, la celda no está activa y no se le asigna temperatura. Las horas se cuentan desde la primera vertida: a las 12 h globales, la Vertida_03 tiene edad cero."),
         ("Temperatura del entorno", "observerChart",
          "Muestra el aire horario que alimenta el modelo y la temperatura fija adoptada para el suelo.<br>Ayuda a relacionar el calentamiento y enfriamiento con el entorno."),
         ("Diferencial térmico", "deltaChart",

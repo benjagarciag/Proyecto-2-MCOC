@@ -1,0 +1,49 @@
+{
+  "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
+  "lado_m": 0.5,
+  "nucleo_xyz_m": [
+    0,
+    0,
+    1.5
+  ],
+  "entorno": {
+    "k_W_mK": 2,
+    "h_aire_W_m2K": 5,
+    "suelo_C": 15,
+    "profundidad_suelo_m": 0.5,
+    "k_suelo_W_mK": 1.2,
+    "plano_suelo_z_m": 0,
+    "dt_tope_s": 900,
+    "capas_laterales": [
+      {
+        "espesor_m": 0.02,
+        "k_W_mK": 0.13,
+        "retiro_edad_h": 72
+      },
+      {
+        "espesor_m": 0.03,
+        "k_W_mK": 0.04,
+        "retiro_edad_h": 96
+      }
+    ]
+  },
+  "hidratacion": {
+    "tau_s": 108000,
+    "densidad_kg_m3": 2400,
+    "calor_especifico_J_kgK": 900,
+    "q0_W_m3": 450
+  },
+  "e11": {
+    "tipo": "forecast",
+    "snapshot": "datos/clima/forecasts/20261110T190042897941Z_44b1a950.json",
+    "inicio_serie": "2026-11-10T17:00:00-03:00",
+    "horizonte_h": 48
+  },
+  "e12": {
+    "tipo": "reanalisis",
+    "snapshot": "datos/clima/reanalisis/era5_2025-11-27_2025-12-11_20261110T204052478858Z.json",
+    "inicio_serie": "2025-11-27T10:00:00-03:00",
+    "inicio_escenario": "2026-11-27T10:00:00-03:00",
+    "horizonte_h": 336
+  }
+}

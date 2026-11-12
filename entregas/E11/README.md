@@ -43,6 +43,11 @@ temperatura del aire. La demo E10 incluye un ejemplo separado de balance solar.
 
 ## Reproducir
 
+En VS Code, **Run Python File** sobre `casos/semana4/ejecutar.py` pregunta
+el caso (E11/E12) y la malla (0,50 m, 0,25 m o ambas). Al terminar, actualiza
+los resultados del caso elegido; recargar el HTML con Ctrl+F5.
+Una sola malla genera un HTML con esa resolución térmica; ambas reúne las dos.
+
 Desde la raíz, con un entorno Python 3.12 preparado y activado,
 
 ~~~powershell
@@ -78,6 +83,12 @@ python -X utf8 -B casos/semana4/ejecutar.py e12 --paso-max 450 --sin-exportar
 La opción --sin-exportar imprime el resumen sin modificar resultados.
 
 ## Archivos 3D y PyVista
+
+Con **Run Python File** sobre `casos/semana4/ver_3d.py`, elegir en la terminal
+primero el caso, luego la malla y finalmente el resultado. El visor ofrece
+solo archivos existentes y no recalcula la física. Ambos scripts reconocen
+automáticamente las dependencias locales de `.venv/cache/visualizacion`
+si esa carpeta existe.
 
 Cada corrida exporta pico.vti, diferencial.vti y final.vti. Contienen temperatura,
 ID de vertida, máscara activa, identificación de superficie y S25 reconstruida.
@@ -127,5 +138,7 @@ con npm install --no-save --package-lock=false --prefix .venv/cache/html-dom jsd
 El HTML autónomo se abre sin Node ni jsdom.
 
 Para Canvas se declara el SHA del commit con el mensaje
-Entrega E10 - avances de E11 y E12. Los resúmenes registran el commit del
-código que calculó los campos y los hashes de las entradas.
+Entrega E11. Identificar su SHA completo con `git log -1 --format=%H --grep="^Entrega E11$"`.
+Los resúmenes conservan la procedencia real de cada corrida: commit base,
+modificaciones locales al ejecutar y hashes de entradas. El commit evaluado
+incluye los archivos guardados, aunque su cálculo sea anterior a ese commit.

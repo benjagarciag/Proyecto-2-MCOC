@@ -1,8 +1,12 @@
 {
-  "codigo_commit": "5b6aebfc3143f7a62fdb2efbaf95bdb9457ee91a",
-  "codigo_modificado": false,
-  "cambios_codigo": [],
-  "ejecutado_utc": "2026-11-10T23:51:01.360163+00:00",
+  "codigo_commit": "b5235bbcfb810e1311a4dca48f73351664b28968",
+  "codigo_modificado": true,
+  "cambios_codigo": [
+    " M casos/semana4/ejecutar.py",
+    " M casos/semana4/ver_3d.py",
+    " M desarrollo/mcplan/exportacion_html.py"
+  ],
+  "ejecutado_utc": "2026-11-12T11:25:15.267099+00:00",
   "parametros_sha256": "055be9af6277f580ce84ae6e536539a6a6ccce3fa633997875cb68976d1da495",
   "parametros_efectivos": {
     "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
