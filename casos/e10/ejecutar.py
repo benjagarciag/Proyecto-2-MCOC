@@ -1,5 +1,6 @@
 """Descarga o reabre un snapshot, e ilustra cómo su T de aire entra al borde."""
 import argparse
+import json
 from datetime import datetime
 from pathlib import Path
 import sys
@@ -14,10 +15,17 @@ def comparar_bordes(hora):
     # Ejemplo docente: celda de 0,5 m; propiedades elegidas solo para mostrar el efecto.
     geometria = dict(area_m2=.25, distancia_m=.25, k_W_mK=2.)
     T = 35.
-    capas = (Capa(.020, .13, retiro_edad_h=72), Capa(.030, .040, retiro_edad_h=96))
+    config = json.loads((RAIZ / "casos/semana4/parametros.json").read_text(encoding="utf-8"))
+    capas = tuple(Capa(**c) for c in config["entorno"]["capas_laterales"])
+    for referencia, capa in zip(config.get("documentacion_capas_laterales", []), capas):
+        print(f"{referencia['nombre']}: {capa.espesor_m*1000:g} mm; "
+              f"k={capa.k_W_mK:g} W/(m·K); R={capa.espesor_m/capa.k_W_mK:.3f} m²·K/W.")
+        print(f"  Referencia: {referencia['fuente']}")
     print(f"Aire: {hora.aire_C:.2f} °C; celda: {T:g} °C; h convectivo: 5 W/(m²·K).")
     print("Potencias entrantes por cara (negativo = el hormigón pierde calor):")
-    for edad in (71.999, 72, 96):
+    retiros = sorted({c.retiro_edad_h for c in capas if c.retiro_edad_h is not None})
+    edades = sorted({0., *retiros, *[max(0., edad-.001) for edad in retiros]})
+    for edad in edades:
         aire = borde_aire(**geometria, aire_C=hora.aire_C, h_W_m2K=5, edad_h=edad, capas=capas)
         print(f"  Edad {edad:6.3f} h: aire, P = {aire.potencia_entrante_W(T):+.3f} W")
     suelo = borde_suelo(**geometria, suelo_C=15, profundidad_m=.50, k_suelo_W_mK=1.2)
@@ -28,7 +36,9 @@ def comparar_bordes(hora):
             solar_incidente_W_m2=hora.solar_media_hora_previa_W_m2, absortancia=.6)
         print(f"  Cara superior sin capas: aporte solar a la celda = {superior.solar_hacia_celda_W:.3f} W "
               "(irradiancia de la hora previa; ejemplo de coeficientes, no avance temporal).")
-    print("Suelo, h, capas, horarios, absortancia y T de celda son valores docentes.")
+    print("Espesores y conductividades: referencias documentadas para estudio, "
+          "sin validación del montaje en obra. Suelo, h, retiros, absortancia "
+          "y T de celda siguen siendo supuestos docentes.")
 
 
 def main():

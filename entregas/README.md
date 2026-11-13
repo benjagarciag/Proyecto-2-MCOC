@@ -9,7 +9,7 @@ Cada evaluación tendrá una carpeta con su identificador oficial, por ejemplo
 | [E04: revisión oral 2D/3D y condiciones de borde](E04/README.md) | 28 de octubre de 2026 | Implementación y 251 pruebas; defensa oral por realizar |
 | [E10: entorno, moldaje y clima](E10/README.md) | 11 de noviembre de 2026 | Preparada para revisión oral con bordes, suelo, capas y snapshot real |
 | [E11: weather pipeline y 3D](E11/README.md) | 12 de noviembre de 2026 | Avance de 48 h, HTML multirresolución y VTI |
-| [E12: simulación determinista de 14 días](../Reportes/Reporte_E12.md) | 13 de noviembre de 2026 | Avance de 336 h con escenario histórico, HTML, VTI y Markdown |
+| [E12: simulación determinista de 14 días](../Reportes/Reporte_E12.md) | 13 de noviembre de 2026 | Reporte actualizado, 336 h con madera 18 mm y lana 40 mm, dos mallas, capturas y VTI |
 
 Crear las carpetas de las evaluaciones siguientes al empezar a trabajarlas.
 El calendario completo permanece en el material del profesor.
@@ -26,3 +26,7 @@ El README de E10 indica cómo identificar el SHA exacto de esa publicación.
 Los resúmenes identifican además el código que ejecutó la simulación y los
 archivos de entrada. E12 es un escenario provisional y supera el diferencial
 de 20 K con las dos mallas térmicas verificadas.
+
+El cierre E12 se publica con el mensaje **Entrega E12**. Su SHA se obtiene con
+`git log -1 --format=%H --grep="^Entrega E12$"`; el SHA base registrado en los
+resúmenes de cálculo no debe confundirse con ese commit evaluado.

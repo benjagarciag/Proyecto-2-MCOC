@@ -30,6 +30,15 @@ original, cambia `python` por `../Proyecto-2-MCOC/.venv/bin/python`.
 
 ## Qué explicar
 
+Actualización posterior a «Entrega E11»: la demo E10 lee las capas de
+`casos/semana4/parametros.json`, igual que el solver integrado. Se propone
+ARAUCOPLY de 18 mm con k=0,158 W/(m·K) como referencia de familia y
+Aislanglass Rollo Libre de 40 mm con k=0,042 W/(m·K).
+[Fuentes, alcance y pendientes](../../documentacion/e10_seleccion_moldaje_aislacion.md).
+Los retiros de 72/96 h se mantienen como hipótesis del escenario, no como
+prescripciones de fabricantes. La aislación posterior al desmolde requiere
+soporte independiente, asumido ideal en el cálculo.
+
 - **¿Dónde entra el aire?** En Robin. Con signo positivo hacia el hormigón:
   `P = H (T_aire - T_celda)`. El solver cartesiano recibe potencias en W,
   no temperaturas del aire impuestas al centro de la celda. Para aire frío,
@@ -44,8 +53,8 @@ original, cambia `python` por `../Proyecto-2-MCOC/.venv/bin/python`.
 - **¿Qué cambia al desmoldar?** Se quita solo la resistencia de la capa retirada.
   Si queda aislación, su resistencia sigue. Con la misma diferencia térmica,
   el flujo aumenta en magnitud; si el aire está frío, aumenta la pérdida.
-  En la demo, a **71,999 / 72 / 96 h** de edad, la potencia de aire pasa de
-  **−5,086 → −5,814 → −19,231 W** por cara. Las edades 72 y 96 son supuestos
+  La demo imprime las potencias antes y después de las edades de retiro
+  configuradas, usando las capas actuales del JSON. Las edades 72 y 96 son supuestos
   didácticos desde la colocación de cada vertida; no se interpretó ni cambió
   `RetiroMoldaje_h` del IFC.
 - **¿Cómo entra el suelo?** En la base se usa conducción hasta un reservorio de

@@ -4,6 +4,8 @@ from dataclasses import asdict
 from html import escape
 from itertools import groupby
 import json
+from tempfile import NamedTemporaryFile
+from time import sleep
 
 import numpy as np
 
@@ -86,6 +88,25 @@ def exportar_html(raiz, fundacion, asignacion, corrida, fotogramas, resumen, sal
     _escribir_html(raiz, datos, salida)
 
 
+def _publicar_html(temporal, salida):
+    """Reintenta bloqueos temporales de Windows sin truncar el HTML anterior."""
+    esperas = (0., .1, .25, .5, 1., 2.)
+    for intento, espera in enumerate(esperas):
+        if espera:
+            sleep(espera)
+        try:
+            temporal.replace(salida)
+            return
+        except PermissionError as exc:
+            if intento == len(esperas)-1:
+                raise PermissionError(
+                    f"No se pudo reemplazar {salida}. El HTML completo se conserva en {temporal}. "
+                    "Los resultados calculados no se han perdido. Cierra cualquier programa que "
+                    "bloquee el archivo y vuelve a publicar ese temporal; no hace falta repetir "
+                    "la simulación."
+                ) from exc
+
+
 def _escribir_html(raiz, datos, salida):
     resumen = datos["resultado_python"]["resumen"]
     for resultado in datos["resultados_python"]:
@@ -101,9 +122,13 @@ def _escribir_html(raiz, datos, salida):
     serializado = json.dumps(datos, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
     contenido = _reemplazar(contenido, "__DATOS_E07__", serializado.replace("</", "<\\/"))
     salida.parent.mkdir(parents=True, exist_ok=True)
-    temporal = salida.with_suffix(".html.tmp")
-    temporal.write_text(contenido, encoding="utf-8")
-    temporal.replace(salida)
+    # Nombre exclusivo para evitar que dos exportaciones compartan el mismo temporal.
+    # Cerrar antes de reemplazar: Windows no permite renombrar un temporal abierto.
+    with NamedTemporaryFile(mode="w", encoding="utf-8", dir=salida.parent,
+                            prefix=salida.stem + "_", suffix=".html.tmp", delete=False) as archivo:
+        archivo.write(contenido)
+        temporal = salida.parent / archivo.name
+    _publicar_html(temporal, salida)
 
 
 def _adaptar_plantilla(t, adaptador, resumen, grillas):
@@ -296,6 +321,107 @@ def _ecuacion(nombre, contenido):
             + escape(nombre, quote=True) + '"><mrow>' + contenido + '</mrow></math></figure>')
 
 
+def _guia_ecuaciones_modelo():
+    """Definiciones junto a cada ecuación: símbolo, unidad y lectura física."""
+    return {
+        "Balance de energía de un voxel": (
+            "La energía que acumula la celda es la que recibe de la hidratación, los vecinos y el contorno durante el paso.", [
+                ("ρ", "kg/m³", "Densidad del hormigón: masa por unidad de volumen."),
+                ("cₚ", "J/(kg·K)", "Calor específico: energía necesaria para aumentar un grado la temperatura de un kilogramo."),
+                ("V", "m³", "Volumen de una celda; en nuestra grilla cúbica es Δx³."),
+                ("ΔTᵢ", "K o °C de diferencia", "Cambio de temperatura de la celda i durante este paso: temperatura nueva menos anterior."),
+                ("ρ cₚ V ΔTᵢ", "J", "Cambio de energía sensible almacenada en la celda."),
+                ("Ehid,i", "J", "Energía de hidratación liberada dentro de esa celda durante el paso; se integra exactamente en el tiempo."),
+                ("Δt", "s", "Duración de un paso del solver; no es el horizonte completo ni el intervalo entre cuadros del HTML."),
+                ("Pcond,i", "W", "Potencia neta recibida por conducción desde las celdas vecinas activas."),
+                ("Pborde,i", "W", "Suma de las potencias de las caras de contorno de la celda: aire o suelo según corresponda."),
+            ]),
+        "Condición de Robin hacia el aire": (
+            "Esta ecuación expresa flujo positivo hacia fuera. Las potencias del balance usan el signo contrario: positivo hacia el hormigón. Con capas, la convección ocurre en la superficie exterior de la última capa.", [
+                ("k꜀", "W/(m·K)", "Conductividad térmica del hormigón."),
+                ("n", "—", "Dirección normal exterior: apunta desde el hormigón hacia fuera."),
+                ("∂T/∂n", "K/m", "Variación espacial de temperatura en la dirección normal; no es una variación con el tiempo."),
+                ("−k꜀ ∂T/∂n", "W/m²", "Flujo conductivo saliente del hormigón por unidad de área."),
+                ("h", "W/(m²·K)", "Coeficiente de convección con el aire; en estas corridas es constante."),
+                ("Tₛ", "°C", "Temperatura de la superficie en contacto con el aire: cara del hormigón sin capas, o cara exterior de la última capa si hay moldaje/aislación."),
+                ("Taire", "°C", "Temperatura ambiente obtenida de la serie meteorológica."),
+            ]),
+        "Intercambio por una cara hacia el aire": (
+            "La diferencia de temperatura impulsa el intercambio. El denominador suma las resistencias por unidad de área: media celda, capas presentes y convección. Las capas se consideran sin almacenamiento de calor.", [
+                ("Paire", "W", "Potencia por esta cara: positiva si el aire entrega calor al hormigón, negativa si lo extrae."),
+                ("A", "m²", "Área de la cara del voxel; en la grilla cúbica es Δx²."),
+                ("Taire − T꜀", "K o °C de diferencia", "Diferencia entre el aire y el centro de la celda; determina el signo de la potencia."),
+                ("T꜀", "°C", "Temperatura calculada en el centro de la celda; puede diferir de la temperatura de su cara."),
+                ("δ = Δx/2", "m", "Distancia del centro a la cara para una celda cúbica."),
+                ("δ/k꜀", "m²·K/W", "Resistencia conductiva de la media celda de hormigón."),
+                ("eⱼ", "m", "Espesor de la capa j: moldaje o aislación."),
+                ("kⱼ", "W/(m·K)", "Conductividad térmica de esa capa."),
+                ("Σⱼ eⱼ/kⱼ", "m²·K/W", "Suma de las resistencias de las capas que siguen presentes. Una capa retirada deja de contribuir."),
+                ("1/h", "m²·K/W", "Resistencia del intercambio convectivo con el aire. La expresión con 1/h supone h positivo; el código trata h=0 como ausencia de intercambio convectivo."),
+            ]),
+        "Intercambio por una cara en contacto con el suelo": (
+            "Se representa la base conectada a un reservorio de suelo a temperatura fija. No se resuelve un campo térmico dentro del suelo ni se agrega una película de aire en esa cara.", [
+                ("Psuelo", "W", "Potencia por una cara basal; positiva si entra calor desde el suelo."),
+                ("A", "m²", "Área de la cara basal de la celda."),
+                ("Tsuelo", "°C", "Temperatura de referencia del reservorio; no impone esa temperatura directamente al hormigón."),
+                ("T꜀", "°C", "Temperatura del centro de la celda de hormigón."),
+                ("δ/k꜀", "m²·K/W", "Resistencia desde el centro del hormigón hasta su cara."),
+                ("Lsuelo", "m", "Distancia efectiva de conducción en el suelo adoptada en el modelo."),
+                ("ksuelo", "W/(m·K)", "Conductividad térmica asignada al suelo."),
+                ("Lsuelo/ksuelo", "m²·K/W", "Resistencia equivalente del suelo. La corrida no agrega resistencia de contacto adicional."),
+            ]),
+        "Hidratación por edad de cada vertida": (
+            "Cada vertida comienza su fuente al colocarse y tiene su propio reloj. La fuente exponencial disminuye con la edad; no depende de la temperatura calculada.", [
+                ("q‴ᵢ(t)", "W/m³", "Potencia de hidratación por unidad de volumen de la vertida i. Los tres trazos indican que es volumétrica."),
+                ("q₀", "W/m³", "Intensidad inicial de la fuente, ingresada directamente al modelo."),
+                ("t", "s en el solver", "Tiempo global desde la primera colocación."),
+                ("tᵢ", "s en el solver", "Tiempo global de colocación de la vertida i."),
+                ("t − tᵢ", "s", "Edad de esa vertida; antes de colocarla no hay una celda activa con temperatura asignada."),
+                ("τ", "s en la ecuación", "Tiempo característico: a edad τ, la fuente vale q₀/e, aproximadamente 36,8 % de su valor inicial."),
+                ("e^(−(t−tᵢ)/τ)", "Sin unidad", "Factor exponencial de reducción. Esta e es el número matemático de la exponencial, no el espesor eⱼ."),
+            ]),
+        "Fuente volumétrica en una posición de la fundación": (
+            "La posición determina a qué vertida pertenece una celda; esa vertida determina la edad usada en su fuente.", [
+                ("x, y, z", "m", "Coordenadas de la posición dentro de la fundación."),
+                ("q‴(x,y,z,t)", "W/m³", "Fuente volumétrica en esa posición y ese instante."),
+                ("Ωᵢ", "—", "Región de hormigón asignada a la vertida i."),
+                ("∈", "—", "Significa pertenece a: la posición está dentro de la región indicada."),
+                ("q‴ᵢ(t)", "W/m³", "Fuente correspondiente a la edad de esa vertida; no se aplica como fuente de otra vertida."),
+            ]),
+        "Resistencia de cada capa y retiro": (
+            "Antes del retiro, la capa limita el intercambio. Al retirarla se elimina solo su resistencia; si otra capa permanece, sigue aislando.", [
+                ("Rⱼ(aᵢ)", "m²·K/W", "Resistencia por unidad de área de la capa j a la edad de la vertida i."),
+                ("eⱼ/kⱼ", "m²·K/W", "Espesor dividido por conductividad de la capa presente."),
+                ("aᵢ = t − tᵢ", "h en el control de capas", "Edad desde la colocación de la vertida, no desde el inicio global. Convertir los tiempos a la misma unidad antes de restar."),
+                ("aretiro,j", "h en los parámetros", "Edad a la que se retira esa capa; es una hipótesis de ejecución, no una propiedad térmica del material."),
+                ("Rⱼ = 0 tras el retiro", "m²·K/W", "La capa desaparece del circuito térmico. No significa que la temperatura o el intercambio pasen a cero."),
+            ]),
+        "Diferencial térmico en cada instante": (
+            "Se restan temperaturas del mismo instante. El máximo y el mínimo pueden estar en lugares y vertidas diferentes.", [
+                ("ΔT(t)", "K o °C de diferencia", "Diferencial térmico instantáneo; el criterio docente es no superar 20 °C de diferencia."),
+                ("Ω", "—", "Dominio de hormigón colocado y activo en ese instante."),
+                ("Tmax,Ω(t)", "°C", "Mayor temperatura del dominio activo, incluyendo las caras reconstruidas."),
+                ("S₂₅", "—", "Puntos reconstruidos aproximadamente a 25 mm bajo las caras exteriores de la geometría discreta."),
+                ("Tmin,S₂₅(t)", "°C", "Menor temperatura sobre S25; no es la del aire ni el mínimo de todo el volumen."),
+            ]),
+        "Máximos evaluados durante toda la corrida": (
+            "Se busca el valor más alto a lo largo del tiempo. El máximo de temperatura y el de diferencial no tienen por qué ocurrir juntos.", [
+                ("tꜰ", "s en el solver", "Tiempo final: 48 h en E11 o 336 h en E12, convertido a segundos para calcular."),
+                ("max sobre 0 ≤ t ≤ tꜰ", "—", "Búsqueda del mayor valor entre el inicio y el final de la simulación."),
+                ("Tmax", "°C", "Mayor temperatura de toda la corrida; se compara con 70 °C."),
+                ("ΔTmax", "K o °C de diferencia", "Mayor diferencial simultáneo de toda la corrida; se compara con 20 °C de diferencia."),
+            ]),
+        "Pulso cosenoidal de referencia": (
+            "Esta curva es solo una referencia didáctica para comparar formas de fuente. No sustituye la hidratación exponencial de la corrida.", [
+                ("q‴ref(a)", "W/m³", "Fuente volumétrica del pulso de comparación a la edad a."),
+                ("a", "h si D está en h", "Edad desde la colocación de la vertida de la sonda."),
+                ("q₀", "W/m³", "Pico del pulso de referencia, igual a la fuente inicial exponencial."),
+                ("D", "h", "Duración del pulso; esta referencia usa 12 h."),
+                ("π, cos y 2πa/D", "—", "π es una constante y cos es la función coseno; su argumento es adimensional, expresado en radianes."),
+            ]),
+    }
+
+
 def _seccion_resultados(resumen):
     e, c = resumen["parametros_efectivos"]["entorno"], resumen["clima"]
     historico = c["tipo"] == "reanalisis"
@@ -347,6 +473,19 @@ def _seccion_resultados(resumen):
           _numero(c["k_W_mK"]) + " W/(m·K)",
           _numero(c["retiro_edad_h"]) + " h" if c["retiro_edad_h"] is not None else "Sin retiro"]
          for nombre, c in zip(nombres, capas)])
+    referencias = resumen["parametros_efectivos"].get("documentacion_capas_laterales", [])
+    if referencias:
+        detalle += '<div class="bottom-note"><strong>Materiales de referencia</strong><ul>'
+        for referencia in referencias:
+            detalle += ('<li><a href="' + escape(referencia["fuente"], quote=True)
+                        + '" target="_blank" rel="noopener noreferrer">'
+                        + escape(referencia["nombre"]) + '</a>: '
+                        + escape(referencia["alcance"]) + '</li>')
+        detalle += ('</ul><p>Las capas se aplican solo a laterales expuestos; la cara superior '
+                    'permanece sin capas. Los retiros a 72/96 h desde cada colocación son '
+                    'supuestos docentes, no recomendaciones de los fabricantes. Tras retirar '
+                    'el moldaje se supone que la aislación restante conserva su continuidad '
+                    'y espesor mediante soporte independiente.</p></div>')
     estado = ('<p class="panel-intro">Indica qué capas siguen presentes en cada vertida y su resistencia térmica activa.<br>'
               'Al alcanzar la edad de retiro, la resistencia de esa capa pasa a cero.</p>')
     tabla = ('<div class="table-scroll"><table><thead><tr><th>Vertida</th><th>Edad [h]</th>'
@@ -413,6 +552,15 @@ def _seccion_resultados(resumen):
 
 
 def _seccion_modelo(resumen):
+    guia = _guia_ecuaciones_modelo()
+
+    def ecuacion(titulo, expresion):
+        lectura, filas = guia[titulo]
+        return (_ecuacion(titulo, expresion)
+                + '<p class="bottom-note">' + escape(lectura) + '</p>'
+                + _tabla(["Término", "Unidad", "Qué significa"],
+                         [[escape(celda) for celda in fila] for fila in filas]))
+
     fuente = resumen["parametros_efectivos"]["hidratacion"]
     e = resumen["parametros_efectivos"]["entorno"]
     q0 = fuente.get("q0_W_m3")
@@ -420,47 +568,47 @@ def _seccion_modelo(resumen):
         q0 = (fuente["theta_infinito_K"] * fuente["densidad_kg_m3"]
               * fuente["calor_especifico_J_kgK"] / fuente["tau_s"])
     ecuaciones = '<p class="panel-intro">El solver aplica conservación de energía a cada voxel activo y actualiza su temperatura con Euler explícito.<br>Las potencias de borde son positivas cuando entra calor al hormigón.</p>'
-    ecuaciones += _ecuacion("Balance de energía de un voxel",
+    ecuaciones += ecuacion("Balance de energía de un voxel",
         '<mi>ρ</mi><msub><mi>c</mi><mi>p</mi></msub><mi>V</mi><mi>Δ</mi><msub><mi>T</mi><mi>i</mi></msub>'
         '<mo>=</mo><msub><mi>E</mi><mrow><mtext>hid</mtext><mo>,</mo><mi>i</mi></mrow></msub>'
         '<mo>+</mo><mi>Δ</mi><mi>t</mi><mo>(</mo>'
         '<msub><mi>P</mi><mrow><mtext>cond</mtext><mo>,</mo><mi>i</mi></mrow></msub><mo>+</mo>'
         '<msub><mi>P</mi><mrow><mtext>borde</mtext><mo>,</mo><mi>i</mi></mrow></msub><mo>)</mo>')
-    ecuaciones += _ecuacion("Condición de Robin hacia el aire",
+    ecuaciones += ecuacion("Condición de Robin hacia el aire",
         '<mo>−</mo><msub><mi>k</mi><mi>c</mi></msub><mfrac><mrow><mo>∂</mo><mi>T</mi></mrow>'
         '<mrow><mo>∂</mo><mi>n</mi></mrow></mfrac><mo>=</mo><mi>h</mi><mo>(</mo>'
         '<msub><mi>T</mi><mi>s</mi></msub><mo>−</mo><msub><mi>T</mi><mtext>aire</mtext></msub><mo>)</mo>')
-    ecuaciones += _ecuacion("Intercambio por una cara hacia el aire",
+    ecuaciones += ecuacion("Intercambio por una cara hacia el aire",
         '<msub><mi>P</mi><mtext>aire</mtext></msub><mo>=</mo><mfrac>'
         '<mrow><mi>A</mi><mo>(</mo><msub><mi>T</mi><mtext>aire</mtext></msub><mo>−</mo><msub><mi>T</mi><mi>c</mi></msub><mo>)</mo></mrow>'
         '<mrow><mfrac><mi>δ</mi><msub><mi>k</mi><mi>c</mi></msub></mfrac><mo>+</mo>'
         '<munder><mo>∑</mo><mi>j</mi></munder><mfrac><msub><mi>e</mi><mi>j</mi></msub><msub><mi>k</mi><mi>j</mi></msub></mfrac>'
         '<mo>+</mo><mfrac><mn>1</mn><mi>h</mi></mfrac></mrow></mfrac>')
-    ecuaciones += _ecuacion("Intercambio por una cara en contacto con el suelo",
+    ecuaciones += ecuacion("Intercambio por una cara en contacto con el suelo",
         '<msub><mi>P</mi><mtext>suelo</mtext></msub><mo>=</mo><mfrac>'
         '<mrow><mi>A</mi><mo>(</mo><msub><mi>T</mi><mtext>suelo</mtext></msub><mo>−</mo><msub><mi>T</mi><mi>c</mi></msub><mo>)</mo></mrow>'
         '<mrow><mfrac><mi>δ</mi><msub><mi>k</mi><mi>c</mi></msub></mfrac><mo>+</mo>'
         '<mfrac><msub><mi>L</mi><mtext>suelo</mtext></msub><msub><mi>k</mi><mtext>suelo</mtext></msub></mfrac></mrow></mfrac>')
-    ecuaciones += _ecuacion("Hidratación por edad de cada vertida",
+    ecuaciones += ecuacion("Hidratación por edad de cada vertida",
         '<msubsup><mi>q</mi><mi>i</mi><mo>‴</mo></msubsup><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo>'
         '<mo stretchy="true">{</mo><mtable columnalign="left" rowspacing="0.5em">'
         '<mtr><mtd><mn>0</mn></mtd><mtd><mi>t</mi><mo>&lt;</mo><msub><mi>t</mi><mi>i</mi></msub></mtd></mtr>'
         '<mtr><mtd><msub><mi>q</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>t</mi><mo>−</mo><msub><mi>t</mi><mi>i</mi></msub></mrow><mi>τ</mi></mfrac></mrow></msup></mtd>'
         '<mtd><mi>t</mi><mo>≥</mo><msub><mi>t</mi><mi>i</mi></msub></mtd></mtr></mtable>')
-    ecuaciones += _ecuacion("Fuente volumétrica en una posición de la fundación",
+    ecuaciones += ecuacion("Fuente volumétrica en una posición de la fundación",
         '<msup><mi>q</mi><mo>‴</mo></msup><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>,</mo><mi>t</mi><mo>)</mo><mo>=</mo>'
         '<msubsup><mi>q</mi><mi>i</mi><mo>‴</mo></msubsup><mo>(</mo><mi>t</mi><mo>)</mo><mo>,</mo><mspace width="1em"/>'
         '<mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>)</mo><mo>∈</mo><msub><mi>Ω</mi><mi>i</mi></msub>')
-    ecuaciones += _ecuacion("Resistencia de cada capa y retiro",
+    ecuaciones += ecuacion("Resistencia de cada capa y retiro",
         '<msub><mi>R</mi><mi>j</mi></msub><mo>(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><mo stretchy="true">{</mo>'
         '<mtable columnalign="left" rowspacing="0.5em"><mtr><mtd><mfrac><msub><mi>e</mi><mi>j</mi></msub><msub><mi>k</mi><mi>j</mi></msub></mfrac></mtd>'
         '<mtd><msub><mi>a</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mrow><mtext>retiro</mtext><mo>,</mo><mi>j</mi></mrow></msub></mtd></mtr>'
         '<mtr><mtd><mn>0</mn></mtd><mtd><msub><mi>a</mi><mi>i</mi></msub><mo>≥</mo><msub><mi>a</mi><mrow><mtext>retiro</mtext><mo>,</mo><mi>j</mi></mrow></msub></mtd></mtr></mtable>')
-    ecuaciones += _ecuacion("Diferencial térmico en cada instante",
+    ecuaciones += ecuacion("Diferencial térmico en cada instante",
         '<mi>Δ</mi><mi>T</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo>'
         '<msub><mi>T</mi><mrow><mtext>max</mtext><mo>,</mo><mi>Ω</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo><mo>−</mo>'
         '<msub><mi>T</mi><mrow><mtext>min</mtext><mo>,</mo><msub><mi>S</mi><mn>25</mn></msub></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo>')
-    ecuaciones += _ecuacion("Máximos evaluados durante toda la corrida",
+    ecuaciones += ecuacion("Máximos evaluados durante toda la corrida",
         '<msub><mi>T</mi><mtext>max</mtext></msub><mo>=</mo>'
         '<munder><mo>max</mo><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><msub><mi>t</mi><mi>f</mi></msub></mrow></munder>'
         '<msub><mi>T</mi><mrow><mtext>max</mtext><mo>,</mo><mi>Ω</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo>'
@@ -468,7 +616,9 @@ def _seccion_modelo(resumen):
         '<munder><mo>max</mo><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><msub><mi>t</mi><mi>f</mi></msub></mrow></munder>'
         '<mi>Δ</mi><mi>T</mi><mo>(</mo><mi>t</mi><mo>)</mo>')
     ecuaciones += ('<p class="bottom-note">S25 representa puntos reconstruidos a 25 mm bajo las caras exteriores. '
-                   'Los parámetros térmicos, el suelo y las capas son supuestos docentes pendientes de justificación para la obra.</p>')
+                   'Las propiedades del hormigón, el suelo y las condiciones de ejecución requieren justificación para la obra. '
+                   'Cuando se declaran materiales de referencia para las capas, sus fuentes y límites de aplicación '
+                   'se muestran en Moldaje y aislación por edad; no constituyen una validación constructiva.</p>')
     parametros = _ficha([
         ("Conductividad del hormigón", _numero(e["k_W_mK"]) + " W/(m·K)"),
         ("Densidad del hormigón", _numero(fuente["densidad_kg_m3"]) + " kg/m³"),
@@ -477,18 +627,11 @@ def _seccion_modelo(resumen):
         ("Tiempo característico", _numero(fuente["tau_s"]/3600) + " h"),
         ("Paso temporal máximo", _numero(e["dt_tope_s"]) + " s")
     ])
-    simbolos = _tabla(["Símbolo", "Significado"], [
-        ["<math class='inline-math'><mi>A</mi></math>", "Área de una cara del voxel."],
-        ["<math class='inline-math'><mi>δ</mi><mo>=</mo><mfrac><mi>Δx</mi><mn>2</mn></mfrac></math>",
-         "Distancia del centro del voxel a su cara."],
-        ["<math class='inline-math'><msub><mi>T</mi><mi>c</mi></msub></math>", "Temperatura en el centro del voxel."],
-        ["<math class='inline-math'><msub><mi>e</mi><mi>j</mi></msub><mo>,</mo><msub><mi>k</mi><mi>j</mi></msub></math>",
-         "Espesor y conductividad de la capa j."],
-        ["<math class='inline-math'><mi>h</mi></math>", "Coeficiente convectivo del aire."],
-        ["<math class='inline-math'><msub><mi>a</mi><mi>i</mi></msub><mo>=</mo><mi>t</mi><mo>−</mo><msub><mi>t</mi><mi>i</mi></msub></math>",
-         "Edad desde la colocación de la vertida i."]
-    ])
-    referencia = _ecuacion("Pulso cosenoidal de referencia",
+    simbolos = ('<p class="bottom-note">Notación: i identifica una celda en el balance y una vertida en la fuente por edad; '
+                'j identifica una capa. En el solver los tiempos se convierten a segundos; el HTML muestra horas. '
+                'Una diferencia de 1 °C equivale a 1 K. Las resistencias e/k están expresadas por unidad de área '
+                '(m²·K/W); la resistencia de una cara completa se obtiene dividiendo por su área A.</p>')
+    referencia = ecuacion("Pulso cosenoidal de referencia",
         '<msubsup><mi>q</mi><mtext>ref</mtext><mo>‴</mo></msubsup><mo>(</mo><mi>a</mi><mo>)</mo><mo>=</mo>'
         '<mo stretchy="true">{</mo><mtable columnalign="left" rowspacing="0.5em"><mtr><mtd>'
         '<mfrac><msub><mi>q</mi><mn>0</mn></msub><mn>2</mn></mfrac><mo>[</mo><mn>1</mn><mo>−</mo><mi>cos</mi><mo>(</mo>'

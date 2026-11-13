@@ -1,0 +1,61 @@
+{
+  "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
+  "lado_m": 0.5,
+  "nucleo_xyz_m": [
+    0,
+    0,
+    1.5
+  ],
+  "entorno": {
+    "k_W_mK": 2,
+    "h_aire_W_m2K": 5,
+    "suelo_C": 15,
+    "profundidad_suelo_m": 0.5,
+    "k_suelo_W_mK": 1.2,
+    "plano_suelo_z_m": 0,
+    "dt_tope_s": 900,
+    "capas_laterales": [
+      {
+        "espesor_m": 0.018,
+        "k_W_mK": 0.158,
+        "retiro_edad_h": 72
+      },
+      {
+        "espesor_m": 0.04,
+        "k_W_mK": 0.042,
+        "retiro_edad_h": 96
+      }
+    ]
+  },
+  "hidratacion": {
+    "tau_s": 108000,
+    "densidad_kg_m3": 2400,
+    "calor_especifico_J_kgK": 900,
+    "q0_W_m3": 900
+  },
+  "e11": {
+    "tipo": "forecast",
+    "snapshot": "datos/clima/forecasts/20261110T190042897941Z_44b1a950.json",
+    "inicio_serie": "2026-11-10T17:00:00-03:00",
+    "horizonte_h": 48
+  },
+  "e12": {
+    "tipo": "reanalisis",
+    "snapshot": "datos/clima/reanalisis/era5_2025-11-27_2025-12-11_20261110T204052478858Z.json",
+    "inicio_serie": "2025-11-27T10:00:00-03:00",
+    "inicio_escenario": "2026-11-27T10:00:00-03:00",
+    "horizonte_h": 336
+  },
+  "documentacion_capas_laterales": [
+    {
+      "nombre": "Moldaje de madera: ARAUCOPLY 18 mm",
+      "fuente": "https://arauco.com/aus-nz/wp-content/uploads/sites/16/2018/02/Product-Catalog-Australia-NZ-1.pdf",
+      "alcance": "k=0,158 W/(m·K), catálogo AraucoPly Australia/Nueva Zelanda, p. 22, tabla 11. Referencia de familia; correspondencia con el grado chileno y condiciones de uso pendiente de confirmar."
+    },
+    {
+      "nombre": "Aislación: Aislanglass Rollo Libre 40 mm",
+      "fuente": "https://volcan.cl/wp-content/uploads/2022/05/lana_de_vidrio_ces.pdf",
+      "alcance": "k=0.042 W/(m·K), ficha Volcán, p. 1. Capa exterior protegida propuesta para estudio; montaje temporal, temperatura de servicio y exposición a humedad pendientes de confirmar."
+    }
+  ]
+}

@@ -120,7 +120,20 @@ en Python. Los controles del HTML recorren los resultados guardados.
 
 ## Hipótesis y comprobaciones
 
-Suelo, capas, retiros y propiedades son supuestos docentes. S25 se reconstruye
+Los parámetros de entrada posteriores a «Entrega E11» usan moldaje de madera
+de 18 mm (k=0,158 W/(m·K), referencia de familia AraucoPly) y aislación
+Aislanglass de 40 mm (k=0,042 W/(m·K)).
+[Fuentes y alcance](../../documentacion/e10_seleccion_moldaje_aislacion.md).
+Se conserva la cobertura solo lateral y los retiros docentes de 72/96 h.
+Las corridas E12 del 12 de noviembre ya incorporan esas capas en ambas mallas;
+el [reporte E12](../../Reportes/Reporte_E12.md) y sus figuras describen los
+resultados actualizados. Los valores de referencia de 48 h de esta guía
+proceden de la corrida indicada en cada resumen; comprobar los parámetros
+efectivos antes de comparar ejecuciones. Los resúmenes conservan lo que se
+usó al calcular, aunque cambien después las entradas.
+
+Suelo, retiros y propiedades del hormigón son supuestos docentes; las nuevas
+capas usan referencias documentadas con aplicabilidad pendiente. S25 se reconstruye
 a 25 mm de las caras de una malla escalonada. E12 usa ERA5 de 2025 asignado por
 hora relativa a una fecha hipotética de 2026.
 

@@ -1,5 +1,23 @@
 # Contexto del repositorio
 
+- E12 cerrada el 13 de noviembre de 2026 en `Reportes/Reporte_E12.md`, bajo
+  1400 palabras, con figuras leídas de resultados existentes (sin nuevas
+  simulaciones del agente). Corridas del usuario del 12/11: 336 h, mallas
+  0,50/0,25 m; madera 18 mm/k0,158 (referencia de familia AraucoPly) y lana
+  Aislanglass 40 mm/k0,042, capas solo laterales, retiros por edad 72/96 h
+  aún docentes. Tmax62,167/61,821 °C, DeltaTmax43,264/43,156 °C: no satisface
+  diferencial. Clima ERA5 2025 por hora relativa a escenario hipotético 2026;
+  no es forecast de obra. Comparación 50 mm guardada separada, no elegida.
+  Scripts Semana4 con menú Run Python File; visor PyVista pregunta caso,
+  malla y estado. Generador HTML añade definiciones por ecuación y guardado
+  con reintentos de bloqueos Windows, conservando temporal si persisten.
+  `figuras_reporte_e12.py` regenera curvas/capturas sin solver. Vista previa
+  `Reportes/Reporte_E12.html` eliminada por solicitud; no recrearla.
+  Usuario autorizó publicar main con mensaje `Entrega E12`; identificar SHA
+  con git log, no usar el SHA base de los resúmenes. Apuntes personales de
+  `Estudio_entregas/` siguen excluidos. Mantener preferencia del usuario de
+  ejecutar personalmente variantes numéricas.
+
 - E08 implementada el 5 de noviembre de 2026 en la entrada existente
   `Visualizadores/E07.html` (encabezado E08). La plantilla y el motor compartidos
   conservan sus nombres e07. Tabla de secuencia editable con Aplicar/Restaurar IFC,

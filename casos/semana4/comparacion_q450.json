@@ -16,13 +16,13 @@
     "dt_tope_s": 900,
     "capas_laterales": [
       {
-        "espesor_m": 0.02,
-        "k_W_mK": 0.13,
+        "espesor_m": 0.018,
+        "k_W_mK": 0.158,
         "retiro_edad_h": 72
       },
       {
-        "espesor_m": 0.03,
-        "k_W_mK": 0.04,
+        "espesor_m": 0.04,
+        "k_W_mK": 0.042,
         "retiro_edad_h": 96
       }
     ]
@@ -45,5 +45,17 @@
     "inicio_serie": "2025-11-27T10:00:00-03:00",
     "inicio_escenario": "2026-11-27T10:00:00-03:00",
     "horizonte_h": 336
-  }
+  },
+  "documentacion_capas_laterales": [
+    {
+      "nombre": "Moldaje de madera: ARAUCOPLY 18 mm",
+      "fuente": "https://arauco.com/aus-nz/wp-content/uploads/sites/16/2018/02/Product-Catalog-Australia-NZ-1.pdf",
+      "alcance": "k=0,158 W/(m·K), catálogo AraucoPly Australia/Nueva Zelanda, p. 22, tabla 11. Referencia de familia; correspondencia con el grado chileno y condiciones de uso pendiente de confirmar."
+    },
+    {
+      "nombre": "Aislación: Aislanglass Rollo Libre 40 mm",
+      "fuente": "https://volcan.cl/wp-content/uploads/2022/05/lana_de_vidrio_ces.pdf",
+      "alcance": "k=0,042 W/(m·K), ficha Volcán, p. 1. Capa exterior protegida propuesta para estudio; montaje temporal, temperatura de servicio y exposición a humedad pendientes de confirmar."
+    }
+  ]
 }

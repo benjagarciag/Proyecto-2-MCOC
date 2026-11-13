@@ -1,0 +1,201 @@
+{
+  "codigo_commit": "0b295a64847936ebde900e99c2369555ffc37329",
+  "codigo_modificado": true,
+  "cambios_codigo": [
+    " M casos/e10/ejecutar.py",
+    " M casos/semana4/comparacion_q450.json",
+    " M casos/semana4/comparacion_q900.json",
+    " M casos/semana4/parametros.json",
+    " M desarrollo/mcplan/exportacion_html.py"
+  ],
+  "ejecutado_utc": "2026-11-12T14:03:03.197943+00:00",
+  "parametros_sha256": "b15111911e6b6ec4e960e9a866ea37eae6069d19a32f9e3d493e1acdae94dfbb",
+  "parametros_efectivos": {
+    "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
+    "lado_m": 0.5,
+    "nucleo_xyz_m": [
+      0,
+      0,
+      1.5
+    ],
+    "entorno": {
+      "k_W_mK": 2,
+      "h_aire_W_m2K": 5,
+      "suelo_C": 15,
+      "profundidad_suelo_m": 0.5,
+      "k_suelo_W_mK": 1.2,
+      "plano_suelo_z_m": 0,
+      "dt_tope_s": 900,
+      "capas_laterales": [
+        {
+          "espesor_m": 0.018,
+          "k_W_mK": 0.158,
+          "retiro_edad_h": 72
+        },
+        {
+          "espesor_m": 0.04,
+          "k_W_mK": 0.042,
+          "retiro_edad_h": 96
+        }
+      ]
+    },
+    "hidratacion": {
+      "tau_s": 108000,
+      "densidad_kg_m3": 2400,
+      "calor_especifico_J_kgK": 900,
+      "q0_W_m3": 900
+    },
+    "e11": {
+      "tipo": "forecast",
+      "snapshot": "datos/clima/forecasts/20261110T190042897941Z_44b1a950.json",
+      "inicio_serie": "2026-11-10T17:00:00-03:00",
+      "horizonte_h": 48
+    },
+    "e12": {
+      "tipo": "reanalisis",
+      "snapshot": "datos/clima/reanalisis/era5_2025-11-27_2025-12-11_20261110T204052478858Z.json",
+      "inicio_serie": "2025-11-27T10:00:00-03:00",
+      "inicio_escenario": "2026-11-27T10:00:00-03:00",
+      "horizonte_h": 336
+    },
+    "documentacion_capas_laterales": [
+      {
+        "nombre": "Moldaje de madera: ARAUCOPLY 18 mm",
+        "fuente": "https://arauco.com/aus-nz/wp-content/uploads/sites/16/2018/02/Product-Catalog-Australia-NZ-1.pdf",
+        "alcance": "k=0,158 W/(m·K), catálogo AraucoPly Australia/Nueva Zelanda, p. 22, tabla 11. Referencia de familia; correspondencia con el grado chileno y condiciones de uso pendiente de confirmar."
+      },
+      {
+        "nombre": "Aislación: Aislanglass Rollo Libre 40 mm",
+        "fuente": "https://volcan.cl/wp-content/uploads/2022/05/lana_de_vidrio_ces.pdf",
+        "alcance": "k=0.042 W/(m·K), ficha Volcán, p. 1. Capa exterior protegida propuesta para estudio; montaje temporal, temperatura de servicio y exposición a humedad pendientes de confirmar."
+      }
+    ]
+  },
+  "plan_vertidas": [
+    {
+      "id": 1,
+      "inicio_h": 0.0,
+      "temperatura_C": 19.0,
+      "material": "M1"
+    },
+    {
+      "id": 2,
+      "inicio_h": 6.0,
+      "temperatura_C": 18.0,
+      "material": "M1"
+    },
+    {
+      "id": 3,
+      "inicio_h": 12.0,
+      "temperatura_C": 18.0,
+      "material": "M1"
+    },
+    {
+      "id": 4,
+      "inicio_h": 18.0,
+      "temperatura_C": 18.0,
+      "material": "M1"
+    },
+    {
+      "id": 5,
+      "inicio_h": 24.0,
+      "temperatura_C": 18.0,
+      "material": "M1"
+    }
+  ],
+  "caso": "e12",
+  "clima": {
+    "tipo": "reanalisis",
+    "fuente": "Open-Meteo Historical Weather API",
+    "modelo_solicitado": "era5",
+    "descargado_utc": "2026-11-10T20:40:52.478858+00:00",
+    "coordenadas_solicitadas": {
+      "latitud": -37.277929,
+      "longitud": -72.368271
+    },
+    "unidades": {
+      "temperature_2m": "°C",
+      "wind_speed_10m": "m/s",
+      "shortwave_radiation": "W/m²"
+    },
+    "variables": [
+      "temperature_2m",
+      "wind_speed_10m",
+      "shortwave_radiation"
+    ],
+    "zona_horaria": "UTC",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=-37.277929&longitude=-72.368271&models=era5&start_date=2025-11-27&end_date=2025-12-11&hourly=temperature_2m%2Cwind_speed_10m%2Cshortwave_radiation&wind_speed_unit=ms&temperature_unit=celsius&timeformat=unixtime&timezone=GMT",
+    "muestras_horarias": 360,
+    "primera_marca_utc": "2025-11-27T00:00:00+00:00",
+    "ultima_marca_utc": "2025-12-11T23:00:00+00:00"
+  },
+  "snapshot": "datos/clima/reanalisis/era5_2025-11-27_2025-12-11_20261110T204052478858Z.json",
+  "snapshot_sha256": "a3d8f47217a6c7f44f9a6b5df0da1352645baca9ce49d234cba3abd3707d151e",
+  "inicio_serie": "2025-11-27T10:00:00-03:00",
+  "inicio_escenario": "2026-11-27T10:00:00-03:00",
+  "sha256_ifc": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+  "horizonte_h": 336,
+  "lado_m": 0.5,
+  "pasos": 1344,
+  "volumen_ifc_m3": 636.7751926932476,
+  "volumen_vox_m3": 642.5,
+  "error_por_vertida_pct": {
+    "1": 8.891225883947335,
+    "2": 8.891225883947335,
+    "3": 1.0383217487194587,
+    "4": 37.757033692967354,
+    "5": 1.6294584978531208
+  },
+  "nucleo_xyz_m": [
+    0.24999916811875522,
+    0.24999916811875522,
+    1.25
+  ],
+  "Tmax": {
+    "tiempo_h": 154.0,
+    "fase": "previo",
+    "Tmax_C": 62.16738628148176,
+    "xyz_Tmax_m": [
+      -0.2500008318812448,
+      -0.2500008318812448,
+      2.25
+    ],
+    "lugar_Tmax": "centro",
+    "vertida_Tmax": 4,
+    "valor": 62.16738628148176
+  },
+  "DeltaTmax": {
+    "tiempo_h": 213.0,
+    "fase": "previo",
+    "Tmax_C": 61.38731882750323,
+    "xyz_Tmax_m": [
+      -0.2500008318812448,
+      -0.2500008318812448,
+      2.25
+    ],
+    "lugar_Tmax": "centro",
+    "vertida_Tmax": 4,
+    "valor": 43.264090404768524,
+    "Tmin_S25_C": 18.12322842273471,
+    "xyz_S25_m": [
+      -3.750000831881245,
+      -8.750000831881245,
+      0.975
+    ],
+    "vertida_S25": 2
+  },
+  "balance_J": {
+    "colocacion": 25270920000.0,
+    "hidratacion": 62449770485.03849,
+    "aire": -22825963463.343666,
+    "suelo": -14590988396.21881,
+    "final": 50303738625.47603,
+    "residuo": 1.33514404296875e-05
+  },
+  "cumple_70_ensayo": true,
+  "cumple_20_ensayo": false,
+  "S25_profundidad_m": 0.025,
+  "S25_reconstruida": true,
+  "intervalo_html_h": 1.0,
+  "campos_html": 337
+}

@@ -1,9 +1,15 @@
 {
-  "codigo_commit": "5b6aebfc3143f7a62fdb2efbaf95bdb9457ee91a",
-  "codigo_modificado": false,
-  "cambios_codigo": [],
-  "ejecutado_utc": "2026-11-10T23:51:27.306175+00:00",
-  "parametros_sha256": "055be9af6277f580ce84ae6e536539a6a6ccce3fa633997875cb68976d1da495",
+  "codigo_commit": "0b295a64847936ebde900e99c2369555ffc37329",
+  "codigo_modificado": true,
+  "cambios_codigo": [
+    " M casos/e10/ejecutar.py",
+    " M casos/semana4/comparacion_q450.json",
+    " M casos/semana4/comparacion_q900.json",
+    " M casos/semana4/parametros.json",
+    " M desarrollo/mcplan/exportacion_html.py"
+  ],
+  "ejecutado_utc": "2026-11-12T14:18:11.316506+00:00",
+  "parametros_sha256": "0c06761fdaa9f3dd2a87764dab204bc29e020d8c3c3ed36f7966a7f7827e75cb",
   "parametros_efectivos": {
     "archivo_ifc": "desarrollo/fundacion/fundacion.ifc",
     "lado_m": 0.25,
@@ -22,13 +28,13 @@
       "dt_tope_s": 900,
       "capas_laterales": [
         {
-          "espesor_m": 0.02,
-          "k_W_mK": 0.13,
+          "espesor_m": 0.018,
+          "k_W_mK": 0.158,
           "retiro_edad_h": 72
         },
         {
-          "espesor_m": 0.03,
-          "k_W_mK": 0.04,
+          "espesor_m": 0.04,
+          "k_W_mK": 0.042,
           "retiro_edad_h": 96
         }
       ]
@@ -51,7 +57,19 @@
       "inicio_serie": "2025-11-27T10:00:00-03:00",
       "inicio_escenario": "2026-11-27T10:00:00-03:00",
       "horizonte_h": 336
-    }
+    },
+    "documentacion_capas_laterales": [
+      {
+        "nombre": "Moldaje de madera: ARAUCOPLY 18 mm",
+        "fuente": "https://arauco.com/aus-nz/wp-content/uploads/sites/16/2018/02/Product-Catalog-Australia-NZ-1.pdf",
+        "alcance": "k=0,158 W/(m·K), catálogo AraucoPly Australia/Nueva Zelanda, p. 22, tabla 11. Referencia de familia; correspondencia con el grado chileno y condiciones de uso pendiente de confirmar."
+      },
+      {
+        "nombre": "Aislación: Aislanglass Rollo Libre 40 mm",
+        "fuente": "https://volcan.cl/wp-content/uploads/2022/05/lana_de_vidrio_ces.pdf",
+        "alcance": "k=0,042 W/(m·K), ficha Volcán, p. 1. Capa exterior protegida propuesta para estudio; montaje temporal, temperatura de servicio y exposición a humedad pendientes de confirmar."
+      }
+    ]
   },
   "plan_vertidas": [
     {
@@ -136,7 +154,7 @@
   "Tmax": {
     "tiempo_h": 154.5,
     "fase": "paso",
-    "Tmax_C": 61.82086304820221,
+    "Tmax_C": 61.82091122146671,
     "xyz_Tmax_m": [
       -0.12500083188124478,
       -0.12500083188124478,
@@ -144,12 +162,12 @@
     ],
     "lugar_Tmax": "centro",
     "vertida_Tmax": 3,
-    "valor": 61.82086304820221
+    "valor": 61.82091122146671
   },
   "DeltaTmax": {
     "tiempo_h": 213.0,
     "fase": "previo",
-    "Tmax_C": 60.90586942219146,
+    "Tmax_C": 60.906665361476314,
     "xyz_Tmax_m": [
       -0.12500083188124478,
       -0.12500083188124478,
@@ -157,8 +175,8 @@
     ],
     "lugar_Tmax": "centro",
     "vertida_Tmax": 3,
-    "valor": 43.17728939864129,
-    "Tmin_S25_C": 17.728580023550165,
+    "valor": 43.15589559872323,
+    "Tmin_S25_C": 17.750769762753087,
     "xyz_S25_m": [
       -3.625000831881245,
       -8.875000831881245,
@@ -169,10 +187,10 @@
   "balance_J": {
     "colocacion": 24913170000.0,
     "hidratacion": 61562856303.18204,
-    "aire": -22768650189.557484,
-    "suelo": -14764403154.697527,
-    "final": 48942972958.92702,
-    "residuo": -9.5367431640625e-06
+    "aire": -22720807871.916092,
+    "suelo": -14785861305.636438,
+    "final": 48969357125.62951,
+    "residuo": 1.9073486328125e-06
   },
   "cumple_70_ensayo": true,
   "cumple_20_ensayo": false,
