@@ -6,6 +6,7 @@ import numpy as np
 
 from .entorno_termico import Capa, borde_aire, borde_suelo
 from .hidratacion import CurvaAdiabatica
+from .hidratacion_tabular import CurvaTabular
 
 
 @dataclass(frozen=True)
@@ -81,7 +82,7 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
         raise ValueError("Grilla inválida o S25 más profunda que media celda.")
     if aire.ndim != 1 or len(aire) < 2 or not np.isfinite(aire).all():
         raise ValueError("Se requiere aire horario completo, incluida la última marca.")
-    if not isinstance(curva, CurvaAdiabatica):
+    if not isinstance(curva, (CurvaAdiabatica, CurvaTabular)):
         raise ValueError("Se requiere una curva de hidratación común al hormigón.")
     ocupados = np.flatnonzero(ids)
     propietarios = ids.ravel()[ocupados]

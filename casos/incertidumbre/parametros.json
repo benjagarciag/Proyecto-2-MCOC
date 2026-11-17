@@ -1,0 +1,18 @@
+{
+  "base": "casos/semana4/parametros.json",
+  "inicio": "2026-11-19T10:00:00-03:00",
+  "horizonte_h": 336,
+  "extension_max_h": 672,
+  "capacidad_m3_h": 60,
+  "espera_min_h": 0,
+  "recursos_confirmados": false,
+  "paso_inicios_h": 3,
+  "intervalos_h": [3, 6, 9],
+  "inicio_tardio_edad_min_h": 168,
+  "forecast": "datos/clima/forecasts/20261117T013705171975Z_269ca9d8.json",
+  "historias": [
+    {"id": "ERA5-2023", "inicio": "2023-11-19T10:00:00-03:00", "peso": 0.3333333333333333, "snapshot": "datos/clima/reanalisis/era5_2023-11-19_2023-12-17_20261117T013707875952Z.json"},
+    {"id": "ERA5-2024", "inicio": "2024-11-19T10:00:00-03:00", "peso": 0.3333333333333333, "snapshot": "datos/clima/reanalisis/era5_2024-11-19_2024-12-17_20261117T013706897091Z.json"},
+    {"id": "ERA5-2025", "inicio": "2025-11-19T10:00:00-03:00", "peso": 0.3333333333333333, "snapshot": "datos/clima/reanalisis/era5_2025-11-19_2025-12-17_20261117T013707614450Z.json"}
+  ]
+}
