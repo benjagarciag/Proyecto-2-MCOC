@@ -47,6 +47,8 @@ def nucleo_refrigerable(ids, lado):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("variante", choices=VARIANTES)
+    p.add_argument("--plan", choices=("unica", "separacion_3h", "separacion_6h"),
+                   default="separacion_6h", help="Cronograma evaluado con las mismas condiciones térmicas.")
     p.add_argument("--lado", type=float, default=.5)
     p.add_argument("--paso-max", type=float, default=900)
     p.add_argument("--cercanos", action="store_true",
@@ -54,11 +56,15 @@ def main():
     p.add_argument("--enfriamiento", nargs=2, type=float, metavar=("U_W_M3K", "TOPE_KW"),
                    help="Extracción equivalente interior, con consigna 18 °C.")
     p.add_argument("--cribado", action="store_true", help="Solo M4_SS y M1_22A; sin pesos agregados.")
+    p.add_argument("--enfriar-tras-colocacion", action="store_true",
+                   help="Para vertida única, iniciar la extracción al término físico.")
     args = p.parse_args()
     if args.cribado and args.cercanos:
         p.error("Elegir cribado o sensibilidad, no ambos.")
     if args.enfriamiento and args.variante != "retiro_escalonado":
         p.error("El ensayo de enfriamiento parte de la variante con retiro escalonado.")
+    if args.enfriar_tras_colocacion and (args.plan != "unica" or not args.enfriamiento):
+        p.error("El inicio al término físico requiere vertida única con enfriamiento.")
     nombre = args.variante
     ajuste, espesor, retiros = VARIANTES[nombre]
     ruta_config = RAIZ / "casos/incertidumbre/parametros.json"
@@ -78,7 +84,10 @@ def main():
     vox = voxelizar_fundacion(geometria, pasos_m=(args.lado,)*3)
     asignacion = asignar_vertidas(geometria, vox)
     programa = preparar_construccion(geometria, asignacion)
-    plan = construir_planes(programa.colocaciones, cfg)["separacion_6h"]
+    plan = construir_planes(programa.colocaciones, cfg)[args.plan]
+    ids = asignacion.vertida_id
+    if args.plan == "unica":
+        ids = (ids > 0).astype(ids.dtype)
     plan = [{**v, "colocacion_C": v["colocacion_C"]+ajuste} for v in plan]
     calendario = {v["id"]: (v["inicio_h"]*3600, v["colocacion_C"]) for v in plan}
     datos = dict(base["entorno"])
@@ -92,9 +101,14 @@ def main():
     enfriamiento = None
     if args.enfriamiento:
         u, tope = args.enfriamiento
-        enfriamiento = EnfriamientoInterior(nucleo_refrigerable(asignacion.vertida_id, args.lado),
-                                            u, 18., tope*1000, 6., 432.)
+        edad_inicio = fin_colocacion if args.enfriar_tras_colocacion else 6.
+        enfriamiento = EnfriamientoInterior(nucleo_refrigerable(ids, args.lado),
+                                            u, 18., tope*1000, edad_inicio, 432.)
         raiz = RAIZ / "resultados/incertidumbre/enfriamiento" / f"u{u:g}_tope{tope:g}"
+    if args.plan != "separacion_6h":
+        raiz = raiz / args.plan
+    if args.enfriar_tras_colocacion:
+        raiz = raiz / "tras_colocacion"
     salida = raiz
     if args.cercanos:
         salida = raiz / f"sensibilidad_{args.lado:g}m_{args.paso_max:g}s"
@@ -119,7 +133,7 @@ def main():
             continue
         tic = perf_counter()
         def resolver(horas):
-            return simular(asignacion.vertida_id, vox.grilla.origen_m, args.lado, calendario,
+            return simular(ids, vox.grilla.origen_m, args.lado, calendario,
                            f["curva"], entorno, h["aire"][:horas+1], base["nucleo_xyz_m"],
                            enfriamiento=enfriamiento)
 
@@ -145,7 +159,7 @@ def main():
         print(f"{nombre}, {f['id']}, {h['id']}: {r.pico['valor']:.2f} °C / "
               f"{r.diferencial['valor']:.2f} K a {horas} h", flush=True)
     agregado = riesgo(filas) if seleccionados is None and not args.cribado else None
-    resumen = dict(variante=nombre, D_h=fin_colocacion, t0=cfg["inicio"], plan=plan,
+    resumen = dict(variante=nombre, plan_id=args.plan, D_h=fin_colocacion, t0=cfg["inicio"], plan=plan,
                    lado_m=args.lado, dt_tope_s=args.paso_max, cambio_colocacion_K=ajuste,
                    espesor_capa_m=espesor, retiros_edad_h=retiros,
                    base_sha256=huella(ruta_base), config_sha256=huella(ruta_config),

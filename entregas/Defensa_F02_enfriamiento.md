@@ -8,6 +8,9 @@ la extracción solo en celdas interiores de la geometría final, dejando
 aproximadamente 0,50 m de espesor sin sumidero junto a las caras exteriores.
 La máscara enfriada ocupa **366 m³** en la malla de 0,50 m.
 
+La [comparación posterior de cronogramas con 12 kW](Defensa_F02_cronogramas_12kW.md)
+incluye la vertida única y la variante rápida.
+
 ## Resultado en los 24 escenarios
 
 | Variante | Peor temperatura máxima [°C] | Peor diferencial [K] | Excedencias conjuntas | Peso de excedencia |
