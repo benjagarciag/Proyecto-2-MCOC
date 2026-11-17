@@ -58,6 +58,8 @@ def main():
     p.add_argument("--cribado", action="store_true", help="Solo M4_SS y M1_22A; sin pesos agregados.")
     p.add_argument("--enfriar-tras-colocacion", action="store_true",
                    help="Para vertida única, iniciar la extracción al término físico.")
+    p.add_argument("--visor", action="store_true",
+                   help="Reproduce el escenario crítico guardado y exporta el complemento HTML.")
     args = p.parse_args()
     if args.cribado and args.cercanos:
         p.error("Elegir cribado o sensibilidad, no ambos.")
@@ -65,6 +67,9 @@ def main():
         p.error("El ensayo de enfriamiento parte de la variante con retiro escalonado.")
     if args.enfriar_tras_colocacion and (args.plan != "unica" or not args.enfriamiento):
         p.error("El inicio al término físico requiere vertida única con enfriamiento.")
+    if args.visor and (not args.enfriar_tras_colocacion or args.cribado or args.cercanos
+                       or args.lado != .5 or args.paso_max != 900 or args.enfriamiento != [5., 12.]):
+        p.error("El complemento requiere vertida única a 12 kW tras colocación, malla 0,50 m y paso 900 s.")
     nombre = args.variante
     ajuste, espesor, retiros = VARIANTES[nombre]
     ruta_config = RAIZ / "casos/incertidumbre/parametros.json"
@@ -125,6 +130,19 @@ def main():
         seleccionados = {(x["curva"], x["clima"]) for x in sorted(
             anteriores, key=lambda x: abs(max(x["Tmax"]["valor"]-70, x["DeltaTmax"]["valor"]-20)),
         )[:3]}
+    if args.visor:
+        registro = leer_json(salida / "resumen.json")
+        critico = max(registro["corridas"], key=lambda fila: fila["DeltaTmax"]["valor"])
+        fuente = next(f for f in fuentes if f["id"] == critico["curva"])
+        clima = next(h for h in climas if h["id"] == critico["clima"])
+        corrida = simular(ids, vox.grilla.origen_m, args.lado, calendario, fuente["curva"],
+                          entorno, clima["aire"][:critico["horizonte_h"]+1], base["nucleo_xyz_m"],
+                          enfriamiento=enfriamiento)
+        if corrida.diferencial != critico["DeltaTmax"] or corrida.pico != critico["Tmax"]:
+            raise ValueError("La corrida reproducida difiere de la evidencia guardada.")
+        from visor_cronograma import exportar_complemento
+        exportar_complemento(RAIZ, salida, registro, critico, corrida, vox.grilla.origen_m)
+        return
     filas = []
     for f, h in product(fuentes, climas):
         if args.cribado and f["id"] not in ("M4_SS", "M1_22A"):

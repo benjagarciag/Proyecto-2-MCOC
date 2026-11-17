@@ -54,6 +54,18 @@ la extracción equivalente. Las corridas no detallan la secuencia
 del frente de colocación en obra ni modelan los gradientes locales
 cerca de las tuberías.
 
+## Complemento HTML
+
+El [complemento de vertida única](../resultados/incertidumbre/enfriamiento/u5_tope12/unica/tras_colocacion/visualizador.html)
+presenta el corte de la hora 428 y los 24 escenarios. También se accede
+desde **Vertida única · 12 kW** en el visor E12. Abre el archivo con Chrome
+o Edge y usa **Ir al punto caliente** e **Ir al S25 frío** para saltar al
+plano que contiene cada punto.
+
+Para regenerar el complemento y el acceso de E12, agregar el argumento
+--visor al comando de vertida única con --enfriar-tras-colocacion.
+Se requiere PyVista para exportar la vista 3D. Abrir el HTML funciona sin internet.
+
 ## Reproducción
 
 ~~~sh

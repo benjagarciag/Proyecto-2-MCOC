@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El Rosal · Vertida única con 12 kW</title>
+<style>
+:root {color-scheme:light;--fondo:#edf3f5;--papel:#fff;--tinta:#152f3a;--sub:#45606b;--linea:#cfdee3;--verde:#075c53;--ambar:#a43617}
+* {box-sizing:border-box}
+body {margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.5 system-ui,sans-serif}
+main {max-width:1260px;margin:auto;padding:32px clamp(18px,4vw,54px) 54px}
+header {background:#183846;color:#fff;padding:clamp(24px,4vw,48px);border-radius:20px}
+header p {color:#cde0e5;margin:0}
+header h1 {font-size:clamp(2rem,5vw,4rem);line-height:1.04;letter-spacing:-.045em;margin:.32em 0}
+nav {display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+a {color:var(--verde);text-underline-offset:3px}
+nav a {color:white;border:1px solid #77959e;border-radius:8px;padding:6px 12px;text-decoration:none}
+nav a:hover {background:#294d5b}
+.metricas {display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0 22px}
+.metrica,section {background:var(--papel);border:1px solid var(--linea);border-radius:16px}
+.metrica {padding:13px 16px}
+.metrica strong {display:block;font-size:clamp(1.35rem,3vw,2.3rem);line-height:1.2;letter-spacing:-.035em;color:var(--verde)}
+.metrica span,.nota,figcaption {color:var(--sub)}
+section {padding:clamp(16px,3vw,28px);margin:0 0 14px;scroll-margin:20px}
+h2 {margin:0 0 .3em;letter-spacing:-.025em}
+h3 {margin:0 0 .55em}
+p {margin:.3em 0 .8em}
+.grid {display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+figure {margin:0}
+figure img,canvas {display:block;width:100%;border:1px solid var(--linea);border-radius:10px;background:var(--fondo)}
+canvas {height:auto;aspect-ratio:1.52}
+figcaption {font-size:.91rem;margin-top:8px}
+.controles {display:flex;flex-wrap:wrap;align-items:center;gap:7px 10px;margin-top:8px}
+.controles input {flex:1;min-width:110px}
+.controles output {font-weight:600;min-width:75px}
+button,select {background:#f3f7f7;border:1px solid #8ca9ae;padding:.42rem .65rem;border-radius:7px;color:var(--tinta);font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {outline:3px solid #a64e12;outline-offset:3px}
+.escala {display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--sub);font-size:.87rem;margin-top:10px}
+.escala i {flex:1;height:8px;background:linear-gradient(90deg,#440154,#3b528b,#21918c,#5ec962,#fde725);border-radius:8px}
+.puntos {display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--sub);margin-top:8px;font-size:.92rem}
+.puntos b {color:var(--tinta)}
+.punto {display:inline-block;width:.67em;height:.67em;border:1px solid #29404a;border-radius:50%;margin-right:4px;background:#ff632f}
+.punto.frio {background:#42e0ff}
+table {border-collapse:collapse;width:100%;white-space:nowrap;font-variant-numeric:tabular-nums}
+th,td {padding:.5rem .8rem;border-bottom:1px solid var(--linea);text-align:left}
+thead {background:#e7f0f1;color:#284753}
+tbody th {font-weight:550}
+.critico {background:#edf8f2;box-shadow:inset 4px 0 #17806b}
+td:last-child {color:var(--verde);font-weight:600}
+.desplazar {overflow:auto;margin-top:.75rem}
+footer {font-size:.9rem;color:var(--sub);padding-top:4px}
+@media(max-width:850px){.grid {grid-template-columns:1fr}.metricas{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p>Proyecto 2 MCOC · Grupo 6 · El Rosal, Los Ángeles</p>
+<h1>Vertida única con 12 kW</h1>
+<p>Un corte térmico del escenario crítico y la evidencia de los {{cantidad}} escenarios del plan.</p>
+<nav aria-label="Navegación">
+<a href="#corte">Corte térmico</a><a href="#escenarios">Escenarios</a>
+<a href="../../../../../e12/visualizador.html">Volver al visor E12</a>
+</nav>
+</header>
+<div class="metricas" aria-label="Resumen de la evaluación">
+<div class="metrica"><strong>{{duracion}} h</strong><span>Colocación de {{volumen}} m³</span></div>
+<div class="metrica"><strong>{{delta}} K</strong><span>Peor diferencial · límite 20 K</span></div>
+<div class="metrica"><strong>{{tmax}} °C</strong><span>Mayor temperatura · límite 70 °C</span></div>
+<div class="metrica"><strong>{{fallas}} de {{cantidad}}</strong><span>Excedencias conjuntas · {{riesgo}} %</span></div>
+</div>
+<section id="corte">
+<h2>El mayor diferencial ocurre a las {{hora}} h</h2>
+<p>{{curva}} × {{clima}}. En ese instante, el interior llega a <b>{{caliente}} °C</b> y el punto S25 más frío a <b>{{frio}} °C</b>. Su diferencia es <b>{{delta}} K</b>.</p>
+<div class="grid">
+<figure>
+<h3>Corte de la fundación en 3D</h3>
+<img src="{{imagen}}" alt="Vista isométrica de la fundación semitransparente y corte de temperatura a través del punto más caliente.">
+<figcaption>El plano vertical atraviesa el punto caliente, marcado en naranjo.</figcaption>
+</figure>
+<figure>
+<h3>Explora el campo calculado</h3>
+<canvas id="corteTermico" width="760" height="500" tabindex="0" aria-label="Temperatura por voxel en el plano seleccionado"></canvas>
+<div class="controles"><label for="plano">Plano</label><select id="plano"><option value="y">XZ</option><option value="x">YZ</option><option value="z">XY</option></select>
+<label for="posicion">Posición</label><input id="posicion" type="range" min="0" max="1" value="0"><output id="coord" for="posicion"></output></div>
+<div class="controles"><button id="interior">Ir al punto caliente</button><button id="s25">Ir al S25 frío</button></div>
+<div class="escala"><span id="minimo"></span><i aria-hidden="true"></i><span id="maximo"></span></div>
+<figcaption id="lectura">Mueve el plano o señala un voxel para ver su temperatura.</figcaption>
+<p class="nota">La escala muestra temperaturas en los centros de voxel. El S25 se calcula aparte a partir del flujo de la cara.</p>
+<div class="puntos"><span><i class="punto"></i> <b>{{caliente}} °C</b> punto caliente</span><span><i class="punto frio"></i> <b>{{frio}} °C</b> S25, a 25 mm bajo la cara</span></div>
+</figure>
+</div>
+</section>
+<section id="escenarios">
+<h2>Los {{cantidad}} escenarios</h2>
+<p>Ocho fuentes de hidratación por tres historias climáticas, con el mismo peso. Una corrida excede si supera 70 °C de temperatura máxima o 20 K de diferencial. El cuadro está ordenado por diferencial máximo.</p>
+<div class="desplazar"><table>
+<thead><tr><th>Curva</th><th>Clima</th><th>Máx. [°C]</th><th>Diferencial [K]</th><th>Hora del diferencial</th><th>Evaluación</th></tr></thead>
+<tbody>{{tabla}}</tbody>
+</table></div>
+</section>
+<section>
+<h2>Cómo se hizo la corrida</h2>
+<p>Colocación continua a {{colocacion}} °C y enfriamiento equivalente de 12 kW desde el término físico de la colocación. El modelo activa térmicamente la vertida al inicio, emplea voxeles de 0,50 m y conserva {{horizonte}} h de simulación. S25 se estima con el flujo por la cara exterior.</p>
+<p class="nota">La capacidad del circuito y el ritmo continuo de colocación deben verificarse para obra. El cumplimiento se refiere a los escenarios simulados.</p>
+<a href="escenarios.csv">Abrir tabla CSV</a> · <a href="../../../../../../entregas/Defensa_F02_cronogramas_12kW.md">Abrir informe de comparación</a>
+</section>
+<footer>Complemento de la revisión de incertidumbre · Proyecto 2 MCOC</footer>
+</main>
+<script id="campo-datos" type="application/json">{{datos}}</script>
+<script>
+(() => {
+  'use strict';
+  const datos = JSON.parse(document.getElementById('campo-datos').textContent);
+  const canvas = document.getElementById('corteTermico');
+  const ctx = canvas.getContext('2d');
+  const plano = document.getElementById('plano');
+  const posicion = document.getElementById('posicion');
+  const coord = document.getElementById('coord');
+  const lectura = document.getElementById('lectura');
+  const [nz, ny, nx] = datos.forma;
+  const dimensiones = [nx, ny, nz];
+  const ejes = {x:[0,1,2], y:[1,0,2], z:[2,0,1]};
+  const nombres = ['X','Y','Z'];
+  const paleta = [[68,1,84],[59,82,139],[33,145,140],[94,201,98],[253,231,37]];
+  const formato = (v, dec = 2) => v.toLocaleString('es-CL',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+  const temperatura = (x,y,z) => datos.campo[(z*ny+y)*nx+x];
+  let dibujo;
+  function color(t) {
+    const u = Math.max(0,Math.min(4,(t-datos.extremos[0])/(datos.extremos[1]-datos.extremos[0])*4));
+    const a = Math.min(3,Math.floor(u));
+    const rgb = paleta[a].map((v,i) => Math.round(v+(paleta[a+1][i]-v)*(u-a)));
+    return 'rgb('+rgb.join(',')+')';
+  }
+  function indice(p,eje) {
+    return Math.max(0, Math.min(dimensiones[eje]-1, Math.floor((p[eje]-datos.origen[eje])/datos.paso)));
+  }
+  function render() {
+    const [eje,h,v] = ejes[plano.value];
+    const n = Number(posicion.value);
+    const paso = Math.min((canvas.width-90)/dimensiones[h],(canvas.height-84)/dimensiones[v]);
+    const x0 = (canvas.width - paso*dimensiones[h])/2;
+    const y0 = (canvas.height - paso*dimensiones[v])/2;
+    dibujo = {eje,h,v,n,paso,x0,y0};
+    ctx.fillStyle='#edf3f5';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    for (let j=0;j<dimensiones[v];j++) {
+      for (let i=0;i<dimensiones[h];i++) {
+        const xyz = [0,0,0];
+        xyz[eje]=n; xyz[h]=i; xyz[v]=j;
+        const valor=temperatura(...xyz);
+        if (valor === null) continue;
+        ctx.fillStyle=color(valor);
+        ctx.fillRect(x0+i*paso,y0+(dimensiones[v]-1-j)*paso,paso+.5,paso+.5);
+      }
+    }
+    datos.puntos.forEach((p,i) => {
+      if (indice(p,eje) !== n) return;
+      const x=x0+(p[h]-datos.origen[h])/datos.paso*paso;
+      const y=y0+(dimensiones[v]-(p[v]-datos.origen[v])/datos.paso)*paso;
+      ctx.beginPath();
+      ctx.arc(x,y,7,0,2*Math.PI);
+      ctx.fillStyle=i===0?'#ff632f':'#42e0ff';
+      ctx.fill(); ctx.strokeStyle='#172c35'; ctx.lineWidth=2; ctx.stroke();
+    });
+    ctx.fillStyle='#203a45';
+    ctx.font='18px system-ui';
+    ctx.fillText(nombres[h]+' →',65,canvas.height-21);
+    ctx.fillText(nombres[v]+' ↑',65,30);
+    coord.value=formato(datos.origen[eje]+(n+.5)*datos.paso)+' m';
+  }
+  function elegir(p) {
+    const eje=ejes[plano.value][0];
+    posicion.max=dimensiones[eje]-1;
+    posicion.value=indice(p,eje);
+    render();
+  }
+  plano.addEventListener('change',()=>elegir(datos.puntos[0]));
+  posicion.addEventListener('input',render);
+  document.getElementById('interior').onclick=()=>elegir(datos.puntos[0]);
+  document.getElementById('s25').onclick=()=>elegir(datos.puntos[1]);
+  canvas.addEventListener('pointermove',e=>{
+    const {eje,h,v,n,paso,x0,y0}=dibujo;
+    const box=canvas.getBoundingClientRect();
+    const i=Math.floor(((e.clientX-box.left)*canvas.width/box.width-x0)/paso);
+    const j=dimensiones[v]-1-Math.floor(((e.clientY-box.top)*canvas.height/box.height-y0)/paso);
+    if(i<0||j<0||i>=dimensiones[h]||j>=dimensiones[v]) return;
+    const xyz=[0,0,0]; xyz[eje]=n; xyz[h]=i; xyz[v]=j;
+    const valor=temperatura(...xyz);
+    lectura.textContent=valor===null?'Fuera del hormigón.':
+      'Centro del voxel: '+formato(valor)+' °C · '+xyz.map((k,a)=>formato(datos.origen[a]+(k+.5)*datos.paso,2)).join(' / ')+' m';
+  });
+  document.getElementById('minimo').textContent=formato(datos.extremos[0],1)+' °C';
+  document.getElementById('maximo').textContent=formato(datos.extremos[1],1)+' °C';
+  elegir(datos.puntos[0]);
+})();
+</script>
+</body>
+</html>
