@@ -1,0 +1,19 @@
+{
+  "commit_base": "3e56e69913e5c398bed1acea8a14d4b3be337d81",
+  "commit_mascara_E12": "178ac5b236b603b9ec797daa18157aa4d1bc22e2",
+  "experimentos": {
+    "lenta_12kw": {"plan": "separacion_9h", "edad_inicio_h": 6},
+    "unica_estratos_retrasado": {"plan": "unica", "estratos": true, "edad_inicio_h": "duracion"},
+    "unica_estratos_6h": {"plan": "unica", "estratos": true, "edad_inicio_h": 6},
+    "rapida_estratos_6h": {"plan": "separacion_3h", "estratos": true, "edad_inicio_h": 6},
+    "unica_16c": {"plan": "unica", "edad_inicio_h": "duracion", "temperatura_C": 16},
+    "unica_18c": {"plan": "unica", "edad_inicio_h": "duracion", "temperatura_C": 18},
+    "unica_10kw": {"plan": "unica", "edad_inicio_h": "duracion", "tope_W": 10000},
+    "unica_16c_10kw": {"plan": "unica", "edad_inicio_h": "duracion", "temperatura_C": 16, "tope_W": 10000},
+    "unica_apagado_360h": {"plan": "unica", "edad_inicio_h": "duracion", "fin_h": 360},
+    "publicada_unica": {"plan": "unica", "edad_inicio_h": 6},
+    "publicada_rapida": {"plan": "separacion_3h", "edad_inicio_h": 6},
+    "publicada_referencia": {"plan": "separacion_6h", "edad_inicio_h": 6},
+    "publicada_tras_colocacion": {"plan": "unica", "edad_inicio_h": "duracion"}
+  }
+}
