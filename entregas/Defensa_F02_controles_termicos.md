@@ -12,6 +12,9 @@ aire alimenta Robin con h = 5 W/(m²·K). Se conservan el IFC, el suelo
 equivalente a 15 °C y las curvas de hidratación por edad. Se usó malla
 de 0,50 m, tope temporal de 900 s y S25 a 25 mm.
 
+El [ensayo posterior de extracción interior](Defensa_F02_enfriamiento.md)
+usa el retiro escalonado como punto de partida y queda documentado por separado.
+
 ## Medidas y resultados
 
 | Variante | Colocación [°C] | Aislación y retiro por edad | Peor Tmax [°C] | Rango de ΔTmáx [K] | Excedencias conjuntas | P_f |

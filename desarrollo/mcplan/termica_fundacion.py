@@ -30,6 +30,24 @@ class EntornoFundacion:
             raise ValueError("Datos de aire o suelo inválidos.")
 
 
+@dataclass(frozen=True)
+class EnfriamientoInterior:
+    """Sumidero volumétrico equivalente con límite global de potencia."""
+    mascara: np.ndarray
+    u_W_m3K: float
+    referencia_C: float
+    tope_W: float
+    edad_inicio_h: float
+    fin_h: float
+
+    def __post_init__(self):
+        if not (all(isfinite(v) for v in (self.u_W_m3K, self.referencia_C, self.tope_W,
+                                          self.edad_inicio_h, self.fin_h))
+                and self.u_W_m3K > 0 and self.tope_W > 0
+                and 0 <= self.edad_inicio_h < self.fin_h):
+            raise ValueError("Parámetros de enfriamiento no válidos.")
+
+
 @dataclass
 class Campo:
     tiempo_s: float
@@ -68,8 +86,9 @@ def _vecindad(ids, ocupados):
 
 
 def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
-            nucleo_xyz_m, *, profundidad_s25_m=.025, al_guardar=None, intervalo_salida_s=3600.):
-    """programa: ID → (inicio [s], colocación [°C]); aire: marcas cada hora, incluido tf."""
+            nucleo_xyz_m, *, profundidad_s25_m=.025, al_guardar=None,
+            intervalo_salida_s=3600., enfriamiento=None):
+    """programa: ID → (inicio [s], colocación [°C]); aire: marcas horarias."""
     if not isfinite(intervalo_salida_s) or intervalo_salida_s <= 0:
         raise ValueError("El intervalo de salida debe ser finito y positivo.")
     if al_guardar is not None and not callable(al_guardar):
@@ -106,6 +125,15 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
         raise ValueError("El punto de núcleo no cae en una celda de hormigón.")
 
     A, V = h_m**2, h_m**3
+    if enfriamiento is not None:
+        mascara = np.asarray(enfriamiento.mascara)
+        if (mascara.shape != ids.shape or mascara.dtype.kind != "b"
+                or not mascara.any() or np.any(mascara & (ids == 0))):
+            raise ValueError("Máscara de enfriamiento incompatible con la grilla.")
+        refrigerables = np.flatnonzero(mascara.ravel()[ocupados])
+        inicio_frio = comienzos + enfriamiento.edad_inicio_h * 3600.
+        fin_frio = enfriamiento.fin_h * 3600.
+        G_frio = enfriamiento.u_W_m3K * V
     k, distancia = entorno.k_W_mK, h_m/2
     C, G = curva.capacidad_volumetrica_J_m3K * V, k*A/h_m
     geom = dict(area_m2=A, distancia_m=distancia, k_W_mK=k)
@@ -119,7 +147,11 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
                       *[inicio+c.retiro_edad_h*3600 for inicio, _ in programa.values()
                         for c in capas if c.retiro_edad_h is not None
                         and inicio+c.retiro_edad_h*3600 < tf]})
+    if enfriamiento is not None:
+        eventos = sorted(set(eventos) | {s for s in (fin_frio, *inicio_frio[refrigerables])
+                                        if 0 < s < tf})
     T = np.full(len(ocupados), np.nan)
+    e_extraida = potencia_frio_max = 0.
     historia, campos = [], {}
     pico, diferencial = {"valor": -np.inf}, {"valor": -np.inf}
     e_colocada = e_suelo = e_aire = e_hidratacion = 0.
@@ -162,15 +194,19 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
                     H[caras] = borde_aire(**geom, aire_C=0, h_W_m2K=entorno.h_aire_W_m2K,
                                           edad_h=(t-inicio)/3600, capas=capas_cara).H_W_K
         suma += np.bincount(i, weights=H, minlength=len(T))
+        enfriados = np.empty(0, dtype=np.intp)
+        if enfriamiento is not None and t < fin_frio:
+            enfriados = refrigerables[inicio_frio[refrigerables] <= t]
+            suma[enfriados] += G_frio
         dt = min(entorno.dt_tope_s, .8*C/suma.max()) if suma.max() > 0 else entorno.dt_tope_s
-        return ia, pares, i, d, es_suelo, H, dt
+        return ia, pares, i, d, es_suelo, H, dt, enfriados
 
     def aire_en(t):
         j = min(int(t//3600), len(aire)-2)
         return float(aire[j] + (aire[j+1]-aire[j])*(t/3600-j))
 
     def potencia_borde(op, t):
-        _, _, i, _, suelo_mask, H, _ = op
+        _, _, i, _, suelo_mask, H, _, _ = op
         return H*(np.where(suelo_mask, entorno.suelo_C, aire_en(t))-T[i])
 
     def guardar(t, fase, i, s25):
@@ -193,7 +229,7 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
 
     def medir(t, op, fase, registrar=True):
         nonlocal pico, diferencial, minimo, proxima_salida
-        ia, _, i, d, _, _, _ = op
+        ia, _, i, d, _, _, _, _ = op
         P = potencia_borde(op, t)
         cara = T[i] + P*distancia/(k*A)
         s25 = T[i] + P*(distancia-profundidad_s25_m)/(k*A)
@@ -263,7 +299,7 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
     activar(0.)
     for inicio, fin in zip(eventos, eventos[1:]):
         op = preparar(inicio)
-        ia, pares, i, _, suelo_mask, _, dt_max = op
+        ia, pares, i, _, suelo_mask, _, dt_max, enfriados = op
         t = inicio
         medir(t, op, "posterior")
         while t < fin:
@@ -275,6 +311,15 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
                 flujo = G*(T[b]-T[a])
                 potencia[a] += flujo
                 potencia[b] -= flujo
+            if len(enfriados):
+                extraccion = G_frio * np.maximum(T[enfriados] - enfriamiento.referencia_C, 0.)
+                total = float(extraccion.sum())
+                if total > enfriamiento.tope_W:
+                    extraccion *= enfriamiento.tope_W / total
+                    total = enfriamiento.tope_W
+                potencia[enfriados] -= extraccion
+                e_extraida += dt * total
+                potencia_frio_max = max(potencia_frio_max, total)
             energia = V*curva.energia_intervalo_J_m3(t-comienzos[ia], siguiente-comienzos[ia])
             T[ia] += (dt*potencia[ia] + energia)/C
             e_hidratacion += float(energia.sum())
@@ -291,5 +336,8 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
     e_final = float(C*np.nansum(T))
     balance = dict(colocacion=e_colocada, hidratacion=e_hidratacion, aire=e_aire, suelo=e_suelo,
                    final=e_final, residuo=e_final-e_colocada-e_hidratacion-e_aire-e_suelo)
+    if enfriamiento is not None:
+        balance.update(enfriamiento=-e_extraida, enfriamiento_pico_W=potencia_frio_max)
+        balance["residuo"] += e_extraida
     return Corrida(historia, pico, diferencial, campos, balance, pasos, tuple(centros[i_nucleo]),
                    minimo, list(picos_vertidas.values()))

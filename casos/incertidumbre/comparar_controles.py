@@ -7,11 +7,15 @@ from itertools import product
 from pathlib import Path
 from time import perf_counter
 import json
+from math import ceil
+
+import numpy as np
 
 from ejecutar import (RAIZ, Capa, EntornoFundacion, alertas_cola, asignar_vertidas,
                       cargar_era5, construir_planes, extraer_fundacion_ifc, huella,
                       leer_json, materiales, metricas, preparar_construccion, riesgo,
                       serie_aire, simular, voxelizar_fundacion)
+from mcplan.termica_fundacion import EnfriamientoInterior
 
 
 # Cambio de T de colocación [K], espesor de lana [m], edades de retiro por capa [h].
@@ -24,6 +28,22 @@ VARIANTES = {
 }
 
 
+def nucleo_refrigerable(ids, lado):
+    """Retira capas de voxeles que lindan con aire o suelo en el dominio final."""
+    interior = ids > 0
+    forma = interior.shape
+    for _ in range(ceil(.5/lado)):
+        exterior = np.pad(interior, 1)
+        siguiente = interior.copy()
+        for eje in range(3):
+            for desplazamiento in (0, 2):
+                corte = [slice(1, -1)]*3
+                corte[eje] = slice(desplazamiento, desplazamiento+forma[eje])
+                siguiente &= exterior[tuple(corte)]
+        interior = siguiente
+    return interior
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("variante", choices=VARIANTES)
@@ -31,7 +51,14 @@ def main():
     p.add_argument("--paso-max", type=float, default=900)
     p.add_argument("--cercanos", action="store_true",
                    help="Repita los tres escenarios de referencia más cercanos a los límites.")
+    p.add_argument("--enfriamiento", nargs=2, type=float, metavar=("U_W_M3K", "TOPE_KW"),
+                   help="Extracción equivalente interior, con consigna 18 °C.")
+    p.add_argument("--cribado", action="store_true", help="Solo M4_SS y M1_22A; sin pesos agregados.")
     args = p.parse_args()
+    if args.cribado and args.cercanos:
+        p.error("Elegir cribado o sensibilidad, no ambos.")
+    if args.enfriamiento and args.variante != "retiro_escalonado":
+        p.error("El ensayo de enfriamiento parte de la variante con retiro escalonado.")
     nombre = args.variante
     ajuste, espesor, retiros = VARIANTES[nombre]
     ruta_config = RAIZ / "casos/incertidumbre/parametros.json"
@@ -62,7 +89,21 @@ def main():
     entorno = replace(entorno, dt_tope_s=args.paso_max)
     fin_colocacion = max(v["fin_h"] for v in plan)
     raiz = RAIZ / "resultados/incertidumbre/controles" / nombre
-    salida = raiz if not args.cercanos else raiz / f"sensibilidad_{args.lado:g}m_{args.paso_max:g}s"
+    enfriamiento = None
+    if args.enfriamiento:
+        u, tope = args.enfriamiento
+        enfriamiento = EnfriamientoInterior(nucleo_refrigerable(asignacion.vertida_id, args.lado),
+                                            u, 18., tope*1000, 6., 432.)
+        raiz = RAIZ / "resultados/incertidumbre/enfriamiento" / f"u{u:g}_tope{tope:g}"
+    salida = raiz
+    if args.cercanos:
+        salida = raiz / f"sensibilidad_{args.lado:g}m_{args.paso_max:g}s"
+    elif args.cribado:
+        salida = raiz / "cribado"
+        if args.lado != .5 or args.paso_max != 900:
+            salida = salida / f"{args.lado:g}m_{args.paso_max:g}s"
+    elif args.lado != .5 or args.paso_max != 900:
+        salida = raiz / f"completo_{args.lado:g}m_{args.paso_max:g}s"
     salida.mkdir(parents=True, exist_ok=True)
     seleccionados = None
     if args.cercanos:
@@ -72,21 +113,25 @@ def main():
         )[:3]}
     filas = []
     for f, h in product(fuentes, climas):
+        if args.cribado and f["id"] not in ("M4_SS", "M1_22A"):
+            continue
         if seleccionados is not None and (f["id"], h["id"]) not in seleccionados:
             continue
         tic = perf_counter()
         def resolver(horas):
             return simular(asignacion.vertida_id, vox.grilla.origen_m, args.lado, calendario,
-                           f["curva"], entorno, h["aire"][:horas+1], base["nucleo_xyz_m"])
+                           f["curva"], entorno, h["aire"][:horas+1], base["nucleo_xyz_m"],
+                           enfriamiento=enfriamiento)
 
         inicial = cfg["horizonte_h"]
         r0 = resolver(inicial)
         horas = inicial
         r = r0
         ultima_retiro = max(v["inicio_h"]+max(retiros) for v in plan) if retiros else 0
-        if retiros:
-            # Cubrir retiro y al menos siete días posteriores dentro de los archivos congelados.
-            horas = min(max(horas, int(ultima_retiro)+168), cfg["extension_max_h"])
+        ultimo_evento = max(ultima_retiro, enfriamiento.fin_h if enfriamiento else 0)
+        if ultimo_evento:
+            # Cubrir retiro y apagado, más siete días posteriores.
+            horas = min(max(horas, ceil(ultimo_evento)+168), cfg["extension_max_h"])
         if horas > inicial:
             r = resolver(horas)
         while (alertas_cola(r, horas, fin_colocacion, cfg["inicio_tardio_edad_min_h"])
@@ -99,7 +144,7 @@ def main():
                                                        cfg["inicio_tardio_edad_min_h"])))
         print(f"{nombre}, {f['id']}, {h['id']}: {r.pico['valor']:.2f} °C / "
               f"{r.diferencial['valor']:.2f} K a {horas} h", flush=True)
-    agregado = riesgo(filas) if seleccionados is None else None
+    agregado = riesgo(filas) if seleccionados is None and not args.cribado else None
     resumen = dict(variante=nombre, D_h=fin_colocacion, t0=cfg["inicio"], plan=plan,
                    lado_m=args.lado, dt_tope_s=args.paso_max, cambio_colocacion_K=ajuste,
                    espesor_capa_m=espesor, retiros_edad_h=retiros,
@@ -108,6 +153,10 @@ def main():
                    manifiesto_sha256=huella(manifest),
                    clima_sha256={h["id"]: h["sha256"] for h in climas},
                    agregado=agregado, corridas=filas)
+    if enfriamiento is not None:
+        resumen["enfriamiento"] = dict(u_W_m3K=enfriamiento.u_W_m3K, tope_W=enfriamiento.tope_W,
+            referencia_C=enfriamiento.referencia_C, edad_inicio_h=enfriamiento.edad_inicio_h,
+            fin_h=enfriamiento.fin_h, volumen_m3=float(enfriamiento.mascara.sum()*args.lado**3))
     (salida/"resumen.json").write_text(json.dumps(resumen, ensure_ascii=False, indent=2)+"\n",
                                       encoding="utf-8")
     with (salida/"escenarios.csv").open("w", encoding="utf-8", newline="") as archivo:
