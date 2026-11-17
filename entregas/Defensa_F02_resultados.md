@@ -25,6 +25,9 @@ resultado también supera el criterio en todos los planes. La duración de la
 vertida única es el límite inferior del cronograma con la capacidad supuesta,
 pero esa alternativa también excede 20 K.
 
+La [comparación de controles térmicos](Defensa_F02_controles_termicos.md)
+prueba preenfriamiento, mantas y retiro escalonado con el plan de cinco vertidas.
+
 ## Probetas y procesamiento
 
 Se conservaron las ocho fuentes del [archivo original](../datos/hidratacion/source_terms.txt).

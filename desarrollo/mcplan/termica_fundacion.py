@@ -19,6 +19,7 @@ class EntornoFundacion:
     capas_laterales: tuple[Capa, ...]
     plano_suelo_z_m: float
     dt_tope_s: float = 900.
+    capas_superiores: tuple[Capa, ...] = ()
 
     def __post_init__(self):
         if not all(isfinite(x) and x > 0 for x in (
@@ -112,10 +113,11 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
                         profundidad_m=entorno.profundidad_suelo_m,
                         k_suelo_W_mK=entorno.k_suelo_W_mK)
     tf = (len(aire)-1)*3600.
+    capas = entorno.capas_laterales + entorno.capas_superiores
     eventos = sorted({0., tf, *[float(x) for x in range(3600, int(tf), 3600)],
                       *[inicio for inicio, _ in programa.values() if inicio < tf],
                       *[inicio+c.retiro_edad_h*3600 for inicio, _ in programa.values()
-                        for c in entorno.capas_laterales if c.retiro_edad_h is not None
+                        for c in capas if c.retiro_edad_h is not None
                         and inicio+c.retiro_edad_h*3600 < tf]})
     T = np.full(len(ocupados), np.nan)
     historia, campos = [], {}
@@ -127,7 +129,7 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
     picos_vertidas = {vid: dict(id=int(vid), value=None, t=None) for vid in programa}
     eventos_construccion = {0., tf, *comienzos.tolist(),
         *[inicio+c.retiro_edad_h*3600 for inicio, _ in programa.values()
-          for c in entorno.capas_laterales if c.retiro_edad_h is not None]}
+          for c in capas if c.retiro_edad_h is not None]}
 
     def preparar(t):
         activos = comienzos <= t
@@ -152,10 +154,13 @@ def simular(ids, origen_xyz_m, h_m, programa, curva, entorno, aire_horario_C,
         H[~es_suelo] = borde_aire(**geom, aire_C=0, h_W_m2K=entorno.h_aire_W_m2K,
                                   edad_h=0).H_W_K
         for vid, (inicio, _) in programa.items():
-            caras = (~es_suelo) & (d >= 2) & (propietarios[i] == vid)
-            if caras.any():
-                H[caras] = borde_aire(**geom, aire_C=0, h_W_m2K=entorno.h_aire_W_m2K,
-                                      edad_h=(t-inicio)/3600, capas=entorno.capas_laterales).H_W_K
+            es_vertida = propietarios[i] == vid
+            for capas_cara, orientacion in ((entorno.capas_laterales, d >= 2),
+                                            (entorno.capas_superiores, d == 1)):
+                caras = es_vertida & orientacion
+                if capas_cara and caras.any():
+                    H[caras] = borde_aire(**geom, aire_C=0, h_W_m2K=entorno.h_aire_W_m2K,
+                                          edad_h=(t-inicio)/3600, capas=capas_cara).H_W_K
         suma += np.bincount(i, weights=H, minlength=len(T))
         dt = min(entorno.dt_tope_s, .8*C/suma.max()) if suma.max() > 0 else entorno.dt_tope_s
         return ia, pares, i, d, es_suelo, H, dt
