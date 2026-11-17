@@ -1,8 +1,8 @@
 # Revisión del 18 de noviembre — planes e incertidumbre
 
-Evidencia local sobre la Entrega E12 (`178ac5b`). La comparación preliminar
-usa una sola ley de hidratación M1 y recursos provisionales. El cálculo
-ponderado queda listo para recibir las ocho curvas del profesor.
+Evidencia local sobre la Entrega E12 (`178ac5b`). Esta hoja conserva el piloto con la ley exponencial de E12. Las corridas con
+las ocho probetas/campañas están en [Resultados F02](Defensa_F02_resultados.md).
+La capacidad y espera siguen siendo supuestos provisionales.
 
 ## Decisión y recursos comunes
 

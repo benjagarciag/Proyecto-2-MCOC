@@ -1,0 +1,94 @@
+{
+  "mezcla": "Hormigón del proyecto, correspondencia de dosificaciones por confirmar",
+  "justificacion_comparabilidad_y_pesos": "M1–M4 identifican probetas. Las ocho fuentes son escenarios de modelo con igual peso inicial; comparabilidad de recetas y réplicas independientes sin verificar. Sensibilidad sin 22A por menor calidad de ajuste documentada.",
+  "curvas": [
+    {
+      "id": "M1_SS",
+      "peso": 0.125,
+      "original": "source_terms.txt",
+      "csv": "M1_SS.csv",
+      "unidad": "J/m3_hormigon",
+      "rho_kg_m3": 2476,
+      "cp_J_kgK": 1023,
+      "nota_ensayo_y_procesamiento": "Fuente volumétrica de probeta obtenida por inversión. Origen de ventana como proxy de edad térmica cero; sin reconstruir las dos horas descartadas del registro. Paso 600 s; integración trapezoidal previa al solver.",
+      "justificacion_cola_cero": "Se conserva el calor integrado hasta 240.333 h. Después se adopta fuente nula como hipótesis; última muestra 1.57 W/m³. No se interpretan NaN como mediciones."
+    },
+    {
+      "id": "M2_SS",
+      "peso": 0.125,
+      "original": "source_terms.txt",
+      "csv": "M2_SS.csv",
+      "unidad": "J/m3_hormigon",
+      "rho_kg_m3": 2476,
+      "cp_J_kgK": 1023,
+      "nota_ensayo_y_procesamiento": "Fuente volumétrica de probeta obtenida por inversión. Origen de ventana como proxy de edad térmica cero; sin reconstruir las dos horas descartadas del registro. Paso 600 s; integración trapezoidal previa al solver.",
+      "justificacion_cola_cero": "Se conserva el calor integrado hasta 240.333 h. Después se adopta fuente nula como hipótesis; última muestra 0.00 W/m³. No se interpretan NaN como mediciones."
+    },
+    {
+      "id": "M3_SS",
+      "peso": 0.125,
+      "original": "source_terms.txt",
+      "csv": "M3_SS.csv",
+      "unidad": "J/m3_hormigon",
+      "rho_kg_m3": 2476,
+      "cp_J_kgK": 1023,
+      "nota_ensayo_y_procesamiento": "Fuente volumétrica de probeta obtenida por inversión. Origen de ventana como proxy de edad térmica cero; sin reconstruir las dos horas descartadas del registro. Paso 600 s; integración trapezoidal previa al solver.",
+      "justificacion_cola_cero": "Se conserva el calor integrado hasta 240.333 h. Después se adopta fuente nula como hipótesis; última muestra 0.00 W/m³. No se interpretan NaN como mediciones."
+    },
+    {
+      "id": "M4_SS",
+      "peso": 0.125,
+      "original": "source_terms.txt",
+      "csv": "M4_SS.csv",
+      "unidad": "J/m3_hormigon",
+      "rho_kg_m3": 2476,
+      "cp_J_kgK": 1023,
+      "nota_ensayo_y_procesamiento": "Fuente volumétrica de probeta obtenida por inversión. Origen de ventana como proxy de edad térmica cero; sin reconstruir las dos horas descartadas del registro. Paso 600 s; integración trapezoidal previa al solver.",
+      "justificacion_cola_cero": "Se conserva el calor integrado hasta 240.333 h. Después se adopta fuente nula como hipótesis; última muestra 0.00 W/m³. No se interpretan NaN como mediciones."
+    },
+    {
+      "id": "M1_22A",
+      "peso": 0.125,
+      "original": "source_terms.txt",
+      "csv": "M1_22A.csv",
+      "unidad": "J/m3_hormigon",
+      "rho_kg_m3": 2476,
+      "cp_J_kgK": 1023,
+      "nota_ensayo_y_procesamiento": "Fuente volumétrica de probeta obtenida por inversión. Origen de ventana como proxy de edad térmica cero; sin reconstruir las dos horas descartadas del registro. Paso 600 s; integración trapezoidal previa al solver.",
+      "justificacion_cola_cero": "Se conserva el calor integrado hasta 163.000 h. Después se adopta fuente nula como hipótesis; última muestra 0.00 W/m³. No se interpretan NaN como mediciones."
+    },
+    {
+      "id": "M2_22A",
+      "peso": 0.125,
+      "original": "source_terms.txt",
+      "csv": "M2_22A.csv",
+      "unidad": "J/m3_hormigon",
+      "rho_kg_m3": 2476,
+      "cp_J_kgK": 1023,
+      "nota_ensayo_y_procesamiento": "Fuente volumétrica de probeta obtenida por inversión. Origen de ventana como proxy de edad térmica cero; sin reconstruir las dos horas descartadas del registro. Paso 600 s; integración trapezoidal previa al solver.",
+      "justificacion_cola_cero": "Se conserva el calor integrado hasta 163.000 h. Después se adopta fuente nula como hipótesis; última muestra 0.00 W/m³. No se interpretan NaN como mediciones."
+    },
+    {
+      "id": "M3_22A",
+      "peso": 0.125,
+      "original": "source_terms.txt",
+      "csv": "M3_22A.csv",
+      "unidad": "J/m3_hormigon",
+      "rho_kg_m3": 2476,
+      "cp_J_kgK": 1023,
+      "nota_ensayo_y_procesamiento": "Fuente volumétrica de probeta obtenida por inversión. Origen de ventana como proxy de edad térmica cero; sin reconstruir las dos horas descartadas del registro. Paso 600 s; integración trapezoidal previa al solver.",
+      "justificacion_cola_cero": "Se conserva el calor integrado hasta 163.000 h. Después se adopta fuente nula como hipótesis; última muestra 0.00 W/m³. No se interpretan NaN como mediciones."
+    },
+    {
+      "id": "M4_22A",
+      "peso": 0.125,
+      "original": "source_terms.txt",
+      "csv": "M4_22A.csv",
+      "unidad": "J/m3_hormigon",
+      "rho_kg_m3": 2476,
+      "cp_J_kgK": 1023,
+      "nota_ensayo_y_procesamiento": "Fuente volumétrica de probeta obtenida por inversión. Origen de ventana como proxy de edad térmica cero; sin reconstruir las dos horas descartadas del registro. Paso 600 s; integración trapezoidal previa al solver.",
+      "justificacion_cola_cero": "Se conserva el calor integrado hasta 163.000 h. Después se adopta fuente nula como hipótesis; última muestra 0.00 W/m³. No se interpretan NaN como mediciones."
+    }
+  ]
+}

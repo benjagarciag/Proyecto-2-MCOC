@@ -75,10 +75,12 @@ def materiales(base, manifiesto):
             "cp_J_kgK", datos["calor_especifico_J_kgK"])
         if e["unidad"] == "K_adiabatico":
             factor = cap
+        elif e["unidad"] == "J/m3_hormigon":
+            factor = 1.
         elif e["unidad"] in ("J/kg_cementante", "J/g_cementante"):
             factor = e["cementante_kg_m3"] * (1000 if e["unidad"] == "J/g_cementante" else 1)
         else:
-            raise ValueError("Se requiere incremento adiabático o calor acumulado por masa.")
+            raise ValueError("Unidad de incremento adiabático o de energía acumulada no admitida.")
         if not isfinite(factor) or factor <= 0:
             raise ValueError("Factor de conversión física inválido.")
         curva = CurvaTabular(edad, factor * valores, cap)
@@ -305,6 +307,7 @@ def main():
         cola = any(f["pico_no_resuelto"] for f in filas)
         tabla.append(dict(plan=nombre, D_h=D, vertidas=plan, **calculo,
                           sensibilidad_doble_peso={h["id"]: riesgo(filas, h["id"]) for h in climas},
+                          sensibilidad_solo_SS=riesgo([f for f in filas if f["material"].endswith("_SS")]) if any(f["material"].endswith("_SS") for f in filas) else None,
                           estado=("indeterminado" if cola and calculo["P_union"] <= .05 else
                                   "cumple" if calculo["P_union"] <= .05 else "excede")))
         corridas.extend(filas)
