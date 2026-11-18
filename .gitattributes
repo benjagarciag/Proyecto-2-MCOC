@@ -7,3 +7,50 @@ resultados/sensibilidad_k/**/*.json -text
 resultados/sensibilidad_suelo/**/*.json -text
 resultados/controles_obra/**/*.json -text
 resultados/controles_12c/**/*.json -text
+resultados/sin_extraccion_12c/**/*.json -text
+resultados/retiros_sin_extraccion/**/*.json -text
+resultados/planes_sin_extraccion/**/*.json -text
+resultados/controles_pasivos/**/*.json -text
+resultados/suelo_transitorio/**/*.json -text
+resultados/circuitos_histeresis/**/*.json -text
+resultados/diseno_circuitos_colocacion/**/*.json -text
+resultados/circuitos_confirmacion/**/*.json -text
+entregas/F02/CONFIGURACION_BENJAMIN.json -text
+resultados/comparacion_circuitos/**/*.json -text
+entregas/F02/insumos_equipo.json -text
+datos/clima/radiacion/*.json -text
+resultados/sensibilidad_radiacion/**/*.json -text
+entregas/F02/MODELO_VIGENTE.json -text
+resultados/familia_radiacion_336h/**/*.json -text
+resultados/proteccion_postdesmolde/**/*.json -text
+resultados/cierre_f02/**/*.json -text
+
+# Artefactos binarios y manifiestos de la preentrega: conservar bytes.
+*.pdf -text
+*.pptx -text
+*.png -text
+*.npz -text
+entregas/F02/**/*.json -text
+
+# Insumos heredados con hash: publicar exactamente los bytes usados por el modelo.
+datos/clima/reanalisis/era5_2023-11-19_2023-12-17_20261117T013707875952Z.json -text
+datos/clima/reanalisis/era5_2024-11-19_2024-12-17_20261117T013706897091Z.json -text
+datos/clima/reanalisis/era5_2025-11-19_2025-12-17_20261117T013707614450Z.json -text
+datos/hidratacion/M1_22A.csv -text
+datos/hidratacion/M1_SS.csv -text
+datos/hidratacion/M2_22A.csv -text
+datos/hidratacion/M2_SS.csv -text
+datos/hidratacion/M3_22A.csv -text
+datos/hidratacion/M3_SS.csv -text
+datos/hidratacion/M4_22A.csv -text
+datos/hidratacion/M4_SS.csv -text
+datos/hidratacion/manifiesto.json -text
+datos/hidratacion/source_terms.txt -text
+desarrollo/fundacion/fundacion.ifc -text
+entregas/F02/cierre_revision_final/BALANCES_144_FILAS.csv -text
+entregas/F02/cierre_revision_final/COMPARACION_PLANES.csv -text
+entregas/F02/cierre_revision_final/METRICAS_144_FILAS.csv -text
+entregas/F02/cierre_revision_final/OCHO_FUENTES_VERIFICADAS.csv -text
+entregas/F02/cierre_revision_final/PARAMETROS_FINAL.csv -text
+entregas/F02/cierre_revision_final/SENSIBILIDAD_ESPACIAL_24_PARES.csv -text
+requirements.txt -text

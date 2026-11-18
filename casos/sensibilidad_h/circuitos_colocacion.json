@@ -1,0 +1,21 @@
+{
+  "agua_C": 18,
+  "caudal_circuito_L_min": 18,
+  "diametro_interior_calculo_m": 0.025,
+  "material_tuberia": "Metálica; diámetro exterior, espesor y clase comercial pendientes de selección",
+  "separacion_ramas_m": 1,
+  "margen_horizontal_eje_m": 0.5,
+  "niveles": [
+    {"z_m": 0.5, "circuitos": 3},
+    {"z_m": 1.5, "circuitos": 3},
+    {"z_m": 2.5, "circuitos": 2},
+    {"z_m": 3.8, "circuitos": 1}
+  ],
+  "espesor_max_capa_m": 0.4,
+  "caudal_hormigon_total_m3_h": 60,
+  "frentes": 2,
+  "temperatura_colocacion_C": 12,
+  "potencia_equivalente_tope_W": 15000,
+  "U_equivalente_W_m3K": 5,
+  "nota": "Propuesta geométrica para estudio. No modifica IFC, máscara de366m³ ni resultados anteriores. Caudal hidráulico no calibra U ni demuestra15kW. Habilitación, regulación y apagado se definirán posteriormente."
+}

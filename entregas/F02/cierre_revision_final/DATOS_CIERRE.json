@@ -1,0 +1,339 @@
+{
+  "resumen": {
+    "estado": "APROBADA",
+    "matrices": [
+      {
+        "q": 60,
+        "h": 0.4,
+        "paso_max_s": 300,
+        "D_h": 10.612919248110561,
+        "horizonte_h": 672,
+        "Tmax": 47.49406559838667,
+        "Delta": 16.530593021038257,
+        "riesgo": {
+          "P_T": 0.0,
+          "P_delta": 0.0,
+          "P_union": 0.0
+        },
+        "riesgo_336": {
+          "P_T": 0.0,
+          "P_delta": 0.0,
+          "P_union": 0.0
+        },
+        "pesos_solo_SS": {
+          "P_T": 0.0,
+          "P_delta": 0.0,
+          "P_union": 0.0
+        },
+        "pesos_doble_anio": {
+          "ERA5-2023": {
+            "P_T": 0.0,
+            "P_delta": 0.0,
+            "P_union": 0.0
+          },
+          "ERA5-2024": {
+            "P_T": 0.0,
+            "P_delta": 0.0,
+            "P_union": 0.0
+          },
+          "ERA5-2025": {
+            "P_T": 0.0,
+            "P_delta": 0.0,
+            "P_union": 0.0
+          }
+        },
+        "alertas": 0
+      },
+      {
+        "q": 55,
+        "h": 0.4,
+        "paso_max_s": 300,
+        "D_h": 11.577730088847884,
+        "horizonte_h": 672,
+        "Tmax": 47.51282485779133,
+        "Delta": 16.601130745655787,
+        "riesgo": {
+          "P_T": 0.0,
+          "P_delta": 0.0,
+          "P_union": 0.0
+        },
+        "riesgo_336": {
+          "P_T": 0.0,
+          "P_delta": 0.0,
+          "P_union": 0.0
+        },
+        "pesos_solo_SS": {
+          "P_T": 0.0,
+          "P_delta": 0.0,
+          "P_union": 0.0
+        },
+        "pesos_doble_anio": {
+          "ERA5-2023": {
+            "P_T": 0.0,
+            "P_delta": 0.0,
+            "P_union": 0.0
+          },
+          "ERA5-2024": {
+            "P_T": 0.0,
+            "P_delta": 0.0,
+            "P_union": 0.0
+          },
+          "ERA5-2025": {
+            "P_T": 0.0,
+            "P_delta": 0.0,
+            "P_union": 0.0
+          }
+        },
+        "alertas": 0
+      },
+      {
+        "q": 60,
+        "h": 0.2,
+        "paso_max_s": 300,
+        "D_h": 10.612919248110561,
+        "horizonte_h": 672,
+        "Tmax": 47.032242297543014,
+        "Delta": 15.720232680005257,
+        "riesgo": {
+          "P_T": 0.0,
+          "P_delta": 0.0,
+          "P_union": 0.0
+        },
+        "riesgo_336": {
+          "P_T": 0.0,
+          "P_delta": 0.0,
+          "P_union": 0.0
+        },
+        "pesos_solo_SS": {
+          "P_T": 0.0,
+          "P_delta": 0.0,
+          "P_union": 0.0
+        },
+        "pesos_doble_anio": {
+          "ERA5-2023": {
+            "P_T": 0.0,
+            "P_delta": 0.0,
+            "P_union": 0.0
+          },
+          "ERA5-2024": {
+            "P_T": 0.0,
+            "P_delta": 0.0,
+            "P_union": 0.0
+          },
+          "ERA5-2025": {
+            "P_T": 0.0,
+            "P_delta": 0.0,
+            "P_union": 0.0
+          }
+        },
+        "alertas": 0
+      }
+    ],
+    "piezas": 72,
+    "reutilizadas": 26,
+    "transiciones": 2045,
+    "cambios_espaciales": [
+      {
+        "curva": "M1_22A",
+        "clima": "ERA5-2023",
+        "Tmax": -0.1504705222221574,
+        "Delta": -0.025307626671455807
+      },
+      {
+        "curva": "M1_22A",
+        "clima": "ERA5-2024",
+        "Tmax": -0.4651142547829039,
+        "Delta": 0.19810654642263437
+      },
+      {
+        "curva": "M1_22A",
+        "clima": "ERA5-2025",
+        "Tmax": -0.558524008428904,
+        "Delta": 0.1628569609526913
+      },
+      {
+        "curva": "M1_SS",
+        "clima": "ERA5-2023",
+        "Tmax": -0.6694590911219649,
+        "Delta": -0.08719032104739632
+      },
+      {
+        "curva": "M1_SS",
+        "clima": "ERA5-2024",
+        "Tmax": -0.22455376416817074,
+        "Delta": -0.8728636140491535
+      },
+      {
+        "curva": "M1_SS",
+        "clima": "ERA5-2025",
+        "Tmax": -0.46053903839376886,
+        "Delta": -0.7738817963901532
+      },
+      {
+        "curva": "M2_22A",
+        "clima": "ERA5-2023",
+        "Tmax": -0.10631239688417793,
+        "Delta": -0.053876860085747325
+      },
+      {
+        "curva": "M2_22A",
+        "clima": "ERA5-2024",
+        "Tmax": -0.30508704855071045,
+        "Delta": -0.7754026895867305
+      },
+      {
+        "curva": "M2_22A",
+        "clima": "ERA5-2025",
+        "Tmax": -0.274999334581544,
+        "Delta": -0.6231373262072424
+      },
+      {
+        "curva": "M2_SS",
+        "clima": "ERA5-2023",
+        "Tmax": -0.6604449048269885,
+        "Delta": -0.7185346654785079
+      },
+      {
+        "curva": "M2_SS",
+        "clima": "ERA5-2024",
+        "Tmax": -0.12449348785712289,
+        "Delta": -0.8423887327305621
+      },
+      {
+        "curva": "M2_SS",
+        "clima": "ERA5-2025",
+        "Tmax": -0.4577228628454648,
+        "Delta": -0.702580264103208
+      },
+      {
+        "curva": "M3_22A",
+        "clima": "ERA5-2023",
+        "Tmax": -0.1408379548114027,
+        "Delta": -0.04834679157174193
+      },
+      {
+        "curva": "M3_22A",
+        "clima": "ERA5-2024",
+        "Tmax": -0.3787894437864665,
+        "Delta": -0.03555393396042028
+      },
+      {
+        "curva": "M3_22A",
+        "clima": "ERA5-2025",
+        "Tmax": -0.316978972022639,
+        "Delta": -0.20846320948591135
+      },
+      {
+        "curva": "M3_SS",
+        "clima": "ERA5-2023",
+        "Tmax": -0.668752950626363,
+        "Delta": -0.587978754863661
+      },
+      {
+        "curva": "M3_SS",
+        "clima": "ERA5-2024",
+        "Tmax": -0.15606689910557492,
+        "Delta": -0.8817120295158496
+      },
+      {
+        "curva": "M3_SS",
+        "clima": "ERA5-2025",
+        "Tmax": -0.4641484590218141,
+        "Delta": -0.7813418783330306
+      },
+      {
+        "curva": "M4_22A",
+        "clima": "ERA5-2023",
+        "Tmax": -0.13825555374726406,
+        "Delta": -0.04891976814270471
+      },
+      {
+        "curva": "M4_22A",
+        "clima": "ERA5-2024",
+        "Tmax": -0.3812459120784766,
+        "Delta": -0.06094525347853086
+      },
+      {
+        "curva": "M4_22A",
+        "clima": "ERA5-2025",
+        "Tmax": -0.3157236513143289,
+        "Delta": -0.24325238462937904
+      },
+      {
+        "curva": "M4_SS",
+        "clima": "ERA5-2023",
+        "Tmax": -0.6609459854602235,
+        "Delta": -0.5241185946886944
+      },
+      {
+        "curva": "M4_SS",
+        "clima": "ERA5-2024",
+        "Tmax": -0.11772608378981886,
+        "Delta": -0.8118663220143709
+      },
+      {
+        "curva": "M4_SS",
+        "clima": "ERA5-2025",
+        "Tmax": -0.46182330084365475,
+        "Delta": -0.8006581373210011
+      }
+    ],
+    "max_cambio_espacial_Tmax": 0.6694590911219649,
+    "max_cambio_espacial_Delta": 0.8817120295158496,
+    "max_residuo_J": 0.000247955322265625,
+    "max_residuo_relativo": 2.3908162687086816e-15,
+    "auditor_sha256": "2ce29ea371051178a14993708b119251431a2febf565befff616e489eb8a8f52"
+  },
+  "planes": [
+    {
+      "plan": "60m3h_malla0.4",
+      "q_m3_h": 60,
+      "malla_m": 0.4,
+      "D_h": 10.612919248110561,
+      "horizonte_h": 672,
+      "Tmax_C": 47.49406559838667,
+      "DeltaT_K": 16.530593021038257,
+      "P_T": 0.0,
+      "P_delta": 0.0,
+      "P_union": 0.0,
+      "cumple": true,
+      "alertas": 0
+    },
+    {
+      "plan": "55m3h_malla0.4",
+      "q_m3_h": 55,
+      "malla_m": 0.4,
+      "D_h": 11.577730088847884,
+      "horizonte_h": 672,
+      "Tmax_C": 47.51282485779133,
+      "DeltaT_K": 16.601130745655787,
+      "P_T": 0.0,
+      "P_delta": 0.0,
+      "P_union": 0.0,
+      "cumple": true,
+      "alertas": 0
+    },
+    {
+      "plan": "60m3h_malla0.2",
+      "q_m3_h": 60,
+      "malla_m": 0.2,
+      "D_h": 10.612919248110561,
+      "horizonte_h": 672,
+      "Tmax_C": 47.032242297543014,
+      "DeltaT_K": 15.720232680005257,
+      "P_T": 0.0,
+      "P_delta": 0.0,
+      "P_union": 0.0,
+      "cumple": true,
+      "alertas": 0
+    }
+  ],
+  "verificacion": {
+    "caso": "seno1D exacto",
+    "error_max_K": 0.002571424628428076,
+    "tests_difusion_1d": 24,
+    "observacion": "Verifica el componente difusivo1D; no valida experimentalmente la fundacion3D.",
+    "balance_max_residuo_J": 0.000247955322265625,
+    "balance_max_residuo_relativo": 2.3908162687086816e-15
+  }
+}

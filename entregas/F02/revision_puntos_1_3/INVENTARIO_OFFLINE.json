@@ -1,0 +1,840 @@
+{
+  "alcance": "Inventario local comprobado; no copia a equipo de exposición ni SHA final de entrega.",
+  "archivos": [
+    {
+      "ruta": ".venv\\cache\\f02_sensibilidad_h\\casos\\incertidumbre\\parametros.json",
+      "bytes": 970,
+      "sha256": "99158d89e393062f427a865d593a3bfee801ec8e94f35181eb82dc16904737ef"
+    },
+    {
+      "ruta": "entregas\\F02\\BRIEF_DIAPOSITIVAS_F02.md",
+      "bytes": 17068,
+      "sha256": "ff72e894cfe32601dd7b2613b2500ffc863bd03e72951c623497148aad96eddf"
+    },
+    {
+      "ruta": "entregas\\F02\\CONFIGURACION_BENJAMIN.json",
+      "bytes": 15777,
+      "sha256": "ea8f97eedaa738d938683d6f5aa5695d7050d14c5903df7d0e2cbeeaeef5174a"
+    },
+    {
+      "ruta": "entregas\\F02\\GUION_ORAL_F02.md",
+      "bytes": 21312,
+      "sha256": "a7e5467ed98d3fefa3a1d670630f3e54bfce64ec18801391baef3384778b0006"
+    },
+    {
+      "ruta": "entregas\\F02\\MODELO_VIGENTE.json",
+      "bytes": 5512,
+      "sha256": "c5a2dc412596967772a1860fbb415343a54b9500254e8efa40a7574ef143f57b"
+    },
+    {
+      "ruta": "entregas\\F02\\presentacion\\F02_Grupo6_radiacion_actualizada.pdf",
+      "bytes": 4181983,
+      "sha256": "c9ed622582e4cfb42d9d6cc12e26e84d544d6d116ebd2bb442092ee49e3569df"
+    },
+    {
+      "ruta": "entregas\\F02\\presentacion\\F02_Grupo6_radiacion_actualizada.pptx",
+      "bytes": 1762729,
+      "sha256": "231caa06d70967cae3c39f6780f55e9b9b5c31a504e4109dd16b83dece8865ed"
+    },
+    {
+      "ruta": "resultados\\diseno_circuitos_colocacion\\esquema.json",
+      "bytes": 23771,
+      "sha256": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.2_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 2943618,
+      "sha256": "3c4c1ce5761099c23e0112f8265658c347519616dbba99b98c8651c9a1e6bb62"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.2_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 2943947,
+      "sha256": "12edc55f5f01cd14c003ed0c4f0759b6afef29436a1b9a6e5258fc998219574d"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "bytes": 2896653,
+      "sha256": "db5d810b9f173973ff3fceab9313a9f410c259acb5b824c11142f9b9246f9fda"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "bytes": 2894831,
+      "sha256": "075bf7c44a05cff5c2ada9afc22d1b97aa8c028649672e7ecd6db9e3f19f1c58"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "bytes": 2895351,
+      "sha256": "9d0680bf86392d8b9b59baa9878fcaec25d919b528a6718a958d1dd482ef0309"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "bytes": 2945940,
+      "sha256": "4411bbf0db5f894a16c9823f0bd1db956e144c248c274250fd8ede03c361d677"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "bytes": 2944834,
+      "sha256": "0b11906778bf50032acf5799c7bf9b6cd4b45edb6ee21630c23120bed9d6efc8"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "bytes": 2944865,
+      "sha256": "be906c85c79b10872ae50bf1be8154fc9baafbae97c3353713ff156c4cc36ddf"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "bytes": 2890078,
+      "sha256": "02a9571338f93cc618c29edb01908bd4d5ef7fccbed361b0c7f39b8a23107baf"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "bytes": 2888816,
+      "sha256": "44a8bed4d8c34c2886330f677efa7589df9e63f5c99caf9d59a939fa33b48d25"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "bytes": 2888751,
+      "sha256": "34a1b7b155a21619902b81c040e1b640359b7e0a81cf5d9cb7cb1d400f024742"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "bytes": 2937454,
+      "sha256": "de5e25078bc8811933b92a4d4d86edab37526caed92090682a4c32325620f3ce"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "bytes": 2936624,
+      "sha256": "fd3c432ab338bcc30faa8dbe5aa1cd3e44c9c69a87cc16e412b3b84c57878b96"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "bytes": 2936538,
+      "sha256": "817bf1fae8459da2953253d5c9e2fd35efec5dc17969a07e641801ba5150e355"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "bytes": 2892255,
+      "sha256": "abd75091b394be8ddd0be2fcafdde8096af60cb0d8a804be78aed816fe77d821"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "bytes": 2890455,
+      "sha256": "e4b2216fc08afa026b56e787a3052281798e918c54e3badcb4c70c3282f149ec"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "bytes": 2890915,
+      "sha256": "018de14ed92f4b80a95ecf81fdd10100f1c8db37c67aeda17e3d7a46d9719a27"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "bytes": 2943456,
+      "sha256": "1e024502597d602cc5310b1888dfa9489d0ac4de920c7db812b82cb98942fc51"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "bytes": 2943006,
+      "sha256": "85417017ff63dc3cae1c6b8b2912d2a1fb1c46ccaac7824c927446ce3112f815"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "bytes": 2942956,
+      "sha256": "9c7787c87bec3f06155536d29080d0d972cc8e706c944616f5170b8b74b02dfb"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "bytes": 2891808,
+      "sha256": "ac7b55e791542eccf6eb7b6e5c58d24d615da135b8876b43a8879b62f16541ec"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "bytes": 2890493,
+      "sha256": "ba1649af8758c9afd2b47fb392268e2b5f9a585f165836d4cee2910cf20e6c6f"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "bytes": 2890831,
+      "sha256": "e8a7d980178376ab8f518bee1546fa5decbab77a01ffd744dedc48b45dfd457a"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "bytes": 2943457,
+      "sha256": "710d22480d1bc7dce087ae9505a2d1091cfda605fed4111b69a821dfb32971e8"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 2943246,
+      "sha256": "a3092dccdabdffb22f7bd97fe47694d30357ea1dad9eeacf7d9f76f10867f2e9"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 2943025,
+      "sha256": "1d042bb3e288f2c8dc43c37d8d8d4f23e6379d233e774699ab290a79deb9a729"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q45\\malla_0.4_paso300\\matriz.json",
+      "bytes": 69302,
+      "sha256": "8d4b7b6e2c70f72cc83d2b106dcbdbfd3d49cdb03315fb7e1111d1a8e92fbe7e"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.2_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 2938235,
+      "sha256": "2bc491c709ce8d98869b3ce5dfdf2cb83a9f2299a67c2c1f2470769ab2000a1e"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.2_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 2937823,
+      "sha256": "90bdf5dc77a93cc24b59571dca4316fdc9b485f04ff4d2f6ba5bfc120a6eef2b"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "bytes": 2890718,
+      "sha256": "b303018e698a1e0b0919bd77cc1e745dc114bd46ad921a5f876c967edab02f36"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "bytes": 2889901,
+      "sha256": "47c04141d2286f8b0692ebde69b43880b413f53dd14221406242d0db2d12ce32"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "bytes": 2890131,
+      "sha256": "50023c52c616ff0634f9773c112990b5e0798ddd37679d175a7f4475802ab4c0"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "bytes": 2940543,
+      "sha256": "c00d0f427d2ee799aa92d9ab5e5a44d9cc36b5a9e1ab424bcab25c656680dee5"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "bytes": 2939561,
+      "sha256": "11d2657376ddb4c7b5dad1b84aced63250b6d554d701bd936d05c92a04af4677"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "bytes": 2940018,
+      "sha256": "fd108ea05569d281109df710cc05997cb1541c64723d9cb5249504dd9a0699cc"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "bytes": 2884376,
+      "sha256": "d55b4cc89d97619cac0868342249a8acb982022ff0188b311285c60b42bc9a46"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "bytes": 2883286,
+      "sha256": "efa66b4952ef8d67e0c9a77efed6eac7a15aaf1a5da3e814b9bfc9c7251ae472"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "bytes": 2883675,
+      "sha256": "7f8d7779d3a744d40e92bdda845b64d56f843464511d7a6f9023884ea018164f"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "bytes": 2932435,
+      "sha256": "4343e959ca2879310aeadf45aae687a36a2315ec1f4a15a86401ed3d094dda22"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "bytes": 2931684,
+      "sha256": "a44f1afc8e85f772fccae24eb421b7d3f842ca59996af36f6e9ddcaa3df832af"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "bytes": 2931509,
+      "sha256": "344adb9a6c2ed2017e95299e9bc613d48be15a84d76c34b1549e74697876fd4d"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "bytes": 2886681,
+      "sha256": "07477dc86046def2168a391a2187610b4a977c82c845959d5ea2a6e148700052"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "bytes": 2885222,
+      "sha256": "f738adc5e8dd60c83c53e68746eff5578dcb8253d5e9feeac81fe6d7e1cc876c"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "bytes": 2885241,
+      "sha256": "1dab0e6423cc0f0c2fa8237695cbd2d62167fedc1b0315024cd8bfafc5cc597f"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "bytes": 2938137,
+      "sha256": "601a8bd0a571973793b7fb5c4b5bad9b50530b9901ebffb6dace6590c3180b30"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "bytes": 2937609,
+      "sha256": "0bcf3093f4e3ccdb85481e4a1c9e44fb7c1d75608a9aebe1e94744bf24841dd8"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "bytes": 2937455,
+      "sha256": "a252cd8bea3855ace93e72d30d4a3f48d1867af10fa12df724fe72e09a3ff9a6"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "bytes": 2885774,
+      "sha256": "dc3946b3d1e0f40f22ee81009e340e1ebf17e3eaa25128aedd5adba4a1209c8c"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "bytes": 2885409,
+      "sha256": "9e31fcf629955e21bf1050caa2d4f92fb5506a7ac8624ce2e086e5a0a4d02c10"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "bytes": 2885068,
+      "sha256": "cd77d61c673b81feed9ea833f5524d5317841d0e10a737027991513315990518"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "bytes": 2938532,
+      "sha256": "6fa2a73e5937bf932e9397652166a5b2d12192e57a430dc01992053286bf5737"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 2938099,
+      "sha256": "6168ad6e8711fb9093ac75bb877b71b3ce6c3be77a242b1755a8c5906dcfddda"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 2937370,
+      "sha256": "bf24eeab92534105ac594e95ee00aeba6f7206141e2437dca33c1433f5899d23"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q50\\malla_0.4_paso300\\matriz.json",
+      "bytes": 69389,
+      "sha256": "4ede52be0c7c4abe164a35fac712a17b29148757df2ed7184963c814b8cc4743"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.2_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 2941371,
+      "sha256": "038aa3290bdf0fa84191cc54a740fd7076de0adf6b0cefd04665738321a2ed3f"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.2_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 2941761,
+      "sha256": "ee30aeb0562330cf91b7cef7a20890eefc65322965cfabe62595045d6cd5367a"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "bytes": 2894818,
+      "sha256": "bc566ae0e0ed9dae0ecfa85328147ad824458d1adf962272b6e76f2c939ea3d5"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "bytes": 2893893,
+      "sha256": "18533e0181172f659e2887804268369bf3284057f63eac65259a9b45fffa4abf"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "bytes": 2893734,
+      "sha256": "a627989c42e9a3e39f0f0b88ea857cb440efde09964274cc0d56a562a7588883"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "bytes": 2943990,
+      "sha256": "754469e7185527789da3703b6effe4040b21f8726c23a52e2e3fd88eaa2099e8"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "bytes": 2943189,
+      "sha256": "55b948d0c78e1331a0a502880cb7d195ab333a097e8feb0d4972369b371b7c88"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "bytes": 2942590,
+      "sha256": "551608bca78c8eedce1f38a5d3245c24c560ccd5153aac705919c8b6c545123c"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "bytes": 2888368,
+      "sha256": "f778dd85d6d6b91d1c105871073e0f6bfe6b7e34b87e1325eb41db804f73f95b"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "bytes": 2887264,
+      "sha256": "815cda73e5a936fdfa365b5a1bf5d633e235d6cc26e6e0ffc4170b189bffae04"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "bytes": 2886636,
+      "sha256": "60d4a6de3d521a0af55ef8c889a44c1842c6320277350deec52880eaa7516345"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "bytes": 2935985,
+      "sha256": "f6d1a8aa9c21feb51028106f7ea30f26e64fefa262a277f7feab89c3da7bfe79"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "bytes": 2935534,
+      "sha256": "d2664b306f570ed8d7156ea9009a969c7b887d1adc7abe12eff2223d0d575473"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "bytes": 2934486,
+      "sha256": "2371b82c52851b5990bffbd7f3e7aee85eee770052fceb799ae8fa18e2038258"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "bytes": 2889571,
+      "sha256": "c02e517562bd890b94c070d82b632179b58fab65f0508c0e981d1ca83b7b96da"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "bytes": 2888819,
+      "sha256": "0a4d71a3f301a54a95322c489346c4bbaefb82f92c0c1a4baf4a34051b5fd395"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "bytes": 2889455,
+      "sha256": "6b790b203a2e14dc59493f31211eefcc49ebb77c1e835be5690299bd61fc4902"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "bytes": 2941493,
+      "sha256": "ba3ee450e166cded58a6973917a1d280ba50c258c280706f62752cdef12742b6"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "bytes": 2941309,
+      "sha256": "0255cd307b6853cc9e8a6f0c373c30fd76837ff612f4c75e6ae3da91a03b5d5d"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "bytes": 2940045,
+      "sha256": "5b9f670eca5edc66133364a60f8d9384ba921c040f2052809f0785b1f7bfea63"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "bytes": 2890072,
+      "sha256": "8192f15860be3db75a73f2202abae35bbc0a176bc0c896de9aa223471f1d9130"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "bytes": 2889050,
+      "sha256": "29e130af053801ef09fae492b844eaa2c42794aae9cd8a6cb8058d5933e44a2c"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "bytes": 2888343,
+      "sha256": "53ad76ac9dd8729ec8d40b0a219af0dd8168324abd905c4ffa26c57eeaf37f35"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "bytes": 2942231,
+      "sha256": "b85a76be2f703166c9e7ca251504014bb151038778f690ddd4be39a0183b45f7"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 2941375,
+      "sha256": "e4138079b97938f1d9f2bb917104ef638f3ad776c5cb1f838f26d26f3e38db2f"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 2941976,
+      "sha256": "9ec9ffcb8284b2115495540bfb326ef2deb254a8eff9cf98fb0d8ee4d3b78767"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q55\\malla_0.4_paso300\\matriz.json",
+      "bytes": 69339,
+      "sha256": "2d36695ea10580cb8d378fc578e9c69ef3524c4b9f1b02ce5cc03cfa66d26401"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2023.json",
+      "bytes": 2890438,
+      "sha256": "a56e0ccd0e34119154ddf04fd2da383c58c99bb8d76bf87294ca65dc80a66354"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2024.json",
+      "bytes": 2889589,
+      "sha256": "fae163020c6c6ff02e77e393d137adc45e47a7d2e4676ebe9cb5d7c214ac598a"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2025.json",
+      "bytes": 2889141,
+      "sha256": "fe0055b98d7915eb615af592c5787ae7ae0f638a3fef831eb6964428e1075a58"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2023.json",
+      "bytes": 2939979,
+      "sha256": "042b238805f8a8da76c7a9a46fe57d01f5e968e137c22f3ead1e0e606b989bcd"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2024.json",
+      "bytes": 2939251,
+      "sha256": "97e749be1f6d9158d206e5c27206c7998b310423db161f67dace5af20a4557f2"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2025.json",
+      "bytes": 2938586,
+      "sha256": "2e6b9915ecebb83462e378621372b093d841a2c42c555ce9939b75ad76f47465"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2023.json",
+      "bytes": 2883341,
+      "sha256": "cce4e48699beae4b37884400be68deb9cbf66c84e5a29b1a5ee97f56f3f7bee8"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2024.json",
+      "bytes": 2882797,
+      "sha256": "10b3e6f68c8f88a489d59f9d2dac2478dcda09f930baf1f41cee891d89b53a12"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2025.json",
+      "bytes": 2883039,
+      "sha256": "758cb8f97a7d75432f1e20d009be463c62b2fd77be08b166e1c0da485e4a6ae0"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2023.json",
+      "bytes": 2930890,
+      "sha256": "d51dadadf42229e2ba015dfdacca8838dae3ef6b229ffa39df57a41668645b9a"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2024.json",
+      "bytes": 2930644,
+      "sha256": "a074e7e5348254110b020600a4f7b5ed702f69edb25947d9ac3b7f1bc397b859"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2025.json",
+      "bytes": 2930271,
+      "sha256": "b3135571d7f0e9463957b14c7c27b70c0d9d3ff171398d45fd082b7c6109acc1"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2023.json",
+      "bytes": 2884800,
+      "sha256": "c481382fb56820e84f3b5592b4f0e67e64b1e9484b10d57d5d2dc43e7e52f659"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2024.json",
+      "bytes": 2884525,
+      "sha256": "86ca9becae8ef5686f759e69f5ef567033d8348527606b3c24823cee84683989"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2025.json",
+      "bytes": 2883914,
+      "sha256": "fdf40367ea88a38fbc33193a1e14e3c95a239fb56ecb7388ee21e0017c1ee133"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2023.json",
+      "bytes": 2937768,
+      "sha256": "21aa1f78e0f3b2ceca16a83ed062eef65a9483e3870925e8e267c2af9aa2c26c"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2024.json",
+      "bytes": 2937670,
+      "sha256": "3380d26153c830488ecdcb2d9a0f5614d89d2d11d5a29074c3bc11311328ba61"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2025.json",
+      "bytes": 2936003,
+      "sha256": "584b24ecc96d333c8b864a12d26572182cea0e1254bd86767a7307fe3112030c"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2023.json",
+      "bytes": 2885273,
+      "sha256": "6d5e99e6b70ae4c622eb7b497511a84f81f073d66e925531d9a7023d165135aa"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2024.json",
+      "bytes": 2885133,
+      "sha256": "01c48772d9c63398be5e436b03797b08d98474ae1b456f9ac7e67b9a030e7295"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2025.json",
+      "bytes": 2884255,
+      "sha256": "5da4cf8519f75e267440cac6dffad0985213d551a84a4a1f705296237b9e02b2"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M4_SS_ERA5-2023.json",
+      "bytes": 2937678,
+      "sha256": "e1e9f1811152afeb90db9ffa46949ff994126896f0519aff6ed0bd2e5d3d7920"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 2935385,
+      "sha256": "de4b49094724ebaa06999cbd68a5dcebba3df6704f3a02588b66d80943fa8a98"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 2936862,
+      "sha256": "2e722f77834ec30be06be9322fc593ee9255d1a53312592fb152981b0d6f22d8"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.2_paso300\\matriz.json",
+      "bytes": 70486,
+      "sha256": "0477f9f563c433e0b246846c7ad0f86ef9c3c2b9bd742fad3f4b3681a8271972"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso150\\M2_SS_ERA5-2024.json",
+      "bytes": 5833698,
+      "sha256": "7aa7e16eb0f435dcd50507e145b6f55b158c3c472550bd3c41dfcef68414374a"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso150\\M4_SS_ERA5-2024.json",
+      "bytes": 5844237,
+      "sha256": "7f51636759b3f61b29c7c9b429e508f80e8b473663ceb09ca488abd02bf7769b"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso150\\M4_SS_ERA5-2025.json",
+      "bytes": 5843892,
+      "sha256": "2520273c65449d291e3cd5e471000dbc3de53701c423c1270e697712aaf2f7df"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "bytes": 2888716,
+      "sha256": "de632269efaa9a413067c80266afda13041f96bf984a4ffc525eb55afcf6010b"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "bytes": 2887777,
+      "sha256": "03a2885c18624bfb00b97d5f3f3dd86def5742dac3a102dbc658b982abeb78a0"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "bytes": 2887601,
+      "sha256": "bfa6542586e587e6c66d0ccf9b1e106cf194907d8a91eeae98472579fecbd7bd"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "bytes": 2938097,
+      "sha256": "e2c0387bca5ab93d0a765d7f1f3ef7c2851b691c2253220c877310f33ab5fcec"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "bytes": 2937082,
+      "sha256": "34a427d2088f0a44c66885cc647dbf922bac434f8edea509852a9f39c0d1682d"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "bytes": 2936414,
+      "sha256": "e9f5d5c3140f24e5d124e692b6d147ad83d48643355fed2568e6cddbb90b247c"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "bytes": 2881332,
+      "sha256": "35ffbba39a422f69c27700d1b3f4bda0b9903dc0ef1b226a4e24c2c00f0dadb0"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "bytes": 2880345,
+      "sha256": "e823058aa3b0592c064e3090af43d3da736a833db3e9fc71b04a96ed2a23c0f0"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "bytes": 2880180,
+      "sha256": "124684d2d266af5d0689d2b99ad443201da99019053e812ba3826986f45b4fb0"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "bytes": 2929042,
+      "sha256": "8bc5d9c855e6fb8a658399dc83e38b1e16b7ac3441809b3b4cfe9a0f6d762ba3"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "bytes": 2928390,
+      "sha256": "947e54563ccbd9918cf236d7a974e8466a0b2cb2f66168667db8858d48fd34a8"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "bytes": 2929178,
+      "sha256": "ed8809acc7b6354ebe71c7e4517554d778ef873aa1c3e807d9c6cb636b380a6e"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "bytes": 2882748,
+      "sha256": "d5cfe0d3dab16d506ad54d49ce6b17db3806b0a512db4aea065684a1da1fa702"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "bytes": 2882784,
+      "sha256": "f02511a7478523efdca994708c5a70ca8ef2200a0fcd50a58cc0be9e59d0695f"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "bytes": 2882645,
+      "sha256": "b064230827e0d95afaafd81255e3531b352a0bdd6a06f3781cbeaf9fe70be800"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "bytes": 2935459,
+      "sha256": "0e3e14fd21af945b3ec24548cd86c5ce162e54235ef75878212755a6522d8a00"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "bytes": 2935505,
+      "sha256": "8e62adb68f822a3a154b79658810a310557d7485ca37f1dc7acfd67496b3e360"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "bytes": 2934673,
+      "sha256": "d12c303ab48920e03b6e63e848a592267c0510e6ac550e010faad068c7234767"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "bytes": 2882776,
+      "sha256": "f45bd22e86a05f452496dc30422479dda46a2eba9312c63af56dfe748c08e364"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "bytes": 2883074,
+      "sha256": "59f62842c2ec964359be7ea0d87187afd230fdf3b1c7cce1365b5e0ba2649852"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "bytes": 2881858,
+      "sha256": "ceae7b4626d06f1a29fb92781405018581967a7cf5ffa8d2c96f1b3586c39d10"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "bytes": 2935255,
+      "sha256": "fed8a0bf826ee2bb75acd50ccc14c93e3fb43b11adc3242ec587c1c60be3fd3c"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 2937321,
+      "sha256": "f7a515b494ad282317f509f27fc13f97661daba46805076509f9cf153344ed35"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 2934890,
+      "sha256": "7173aeac7088955200c30824a496d99ee554d74ce385e3c5aa16f6fb47f5e2dc"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\q60\\malla_0.4_paso300\\matriz.json",
+      "bytes": 69195,
+      "sha256": "db442370e3cbeb8aa11d3f07114e1843b417b1939e7a2b8b6bd7d83c9fb0a68e"
+    },
+    {
+      "ruta": "resultados\\familia_radiacion_336h\\resumen.json",
+      "bytes": 7228,
+      "sha256": "8fa699730fa198d1e4121d467c3c766c5b22048fb3f8a09da2e661cd99877661"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "bytes": 5755460,
+      "sha256": "32ed12b2ddc86d5b1aedcdd3dc21e13319bd170fa299af771284ac5a137a0b67"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "bytes": 5762734,
+      "sha256": "0e508f6be53b954ef08fc91a61cd2ac333883c2455058cc75678ddae53bc7a67"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "bytes": 5752258,
+      "sha256": "002d523d2e6a53384ef26f50435ceebc805c5a7120b23c1474b1843507d80e08"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "bytes": 5804981,
+      "sha256": "01c52490573cde19702f199987b32d42559dc34aaa08b4c2a8a46664de6c1013"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "bytes": 5803188,
+      "sha256": "c130120646b91819166b4f8a327c0a52068fbadced1dffcf574facaa451858fe"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "bytes": 5798024,
+      "sha256": "eedf9c221ed1cb572605fef0eb0514b3465d7ddfcc29acee210dc2a57f73cad8"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "bytes": 5750497,
+      "sha256": "8277a62122e6a9a3c81b046d532fdfc53c0a7097ca77b1fb05d389ea07a23225"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "bytes": 5750653,
+      "sha256": "466d283d18b41bfa9871a9fb550e3cc9e091c1fa82164c9afe60819e387360dc"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "bytes": 5743188,
+      "sha256": "1fddafce4039d9f8fee1cbacf78a9ab8660944123b7f580f1cc414a92c34e99d"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "bytes": 5792188,
+      "sha256": "9195ad6cd638ba4108de5f6e8067fab0dfd3e617342c5513eda961094f8dd3c0"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "bytes": 5791056,
+      "sha256": "eba980c94ea0020b6cee12e82504a7f5cf66af217b923d2eb140f0e8771d6a79"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "bytes": 5786825,
+      "sha256": "bd858688dfea22dc93e4c11f89ef3b25bd79110a57fee2c53b081c3d3b2d0fa5"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "bytes": 5751666,
+      "sha256": "ffc173f8e069b448bde7e077b446cd65c9120d67b7a8b30e8f3e4cc563f10dcc"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "bytes": 5756848,
+      "sha256": "67393b17079b3a1587e816a3a808bb68477453b96fa25967fce10964aca2789f"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "bytes": 5747205,
+      "sha256": "6ebe685b45150e69a1b72817e5e6e3dbd923f2efe6cdeb7c1214779d22e966d8"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "bytes": 5799853,
+      "sha256": "6dc0d2132b0d6833fe614f2301053cefb731d694650af573d70a13551fc9748b"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "bytes": 5799478,
+      "sha256": "0627f406b564d4073c5d600ed5913de2d428b410842256130f1e4eced5c9df14"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "bytes": 5793357,
+      "sha256": "ac60994c16262a06b22b2b5f24db9b36bf03826a547e460641fb1815ffef2a73"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "bytes": 5751833,
+      "sha256": "5c72bd8af28635bf1b05d7bbfd8e8c50af027489770ac94b6bdbccbacfd35a61"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "bytes": 5757163,
+      "sha256": "123913620b86052e9efb4b6587dbd01f7a6bfe6fb27e72719a16e21929552c87"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "bytes": 5746564,
+      "sha256": "4c92f9360c4b33ef7b22817692a666bccd67a502d904429e66d3ba1981a7bfcd"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "bytes": 5796865,
+      "sha256": "1a70a075609e6b9c5de91207a7544fed39b9bae769c91e614c1c41e5054414cf"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 5796410,
+      "sha256": "0fbe3b1d4348c3b52582bb6624b77f920d2ef939938c034cc8271c5842f9810d"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 5790400,
+      "sha256": "fc8d060cde826f32930e056e8d5b66fb1abd31fa7d3696050b78d0046a73a222"
+    }
+  ]
+}

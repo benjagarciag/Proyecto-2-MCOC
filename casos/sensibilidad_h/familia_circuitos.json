@@ -1,0 +1,16 @@
+{
+  "planes_m3_h": [60, 55, 50, 45],
+  "capacidad_maxima_m3_h": 60,
+  "temperatura_colocacion_C": 12,
+  "espesor_maximo_capa_m": 0.4,
+  "ventana_union_condicion_min": 150,
+  "paso_busqueda_m3_h": 5,
+  "malla_base_m": 0.4,
+  "paso_max_base_s": 300,
+  "malla_fina_m": 0.2,
+  "paso_max_fino_s": 300,
+  "regla_refino_alternativas": "Pares con DeltaTmax >=19 K en base, sin asumir cota rigurosa del error",
+  "recursos_comunes": "Dos frentes; cada uno recibe la mitad del caudal. Misma mezcla-modelo, geometría, 11capas, frío, mantas, t0, clima y pesos. Cambia solo el ritmo y los tiempos que determina.",
+  "exclusiones": "q>60 excede capacidad adoptada. q<45 queda fuera de la vecindad discreta; no puede mejorar la cota D minima. No afirmar falla térmica de tasas no calculadas.",
+  "agua": "18°C uniforme ideal, nueve ramales18L/min cada uno con bypass, umbrales19/18, cobertura previa, sin corte global432h"
+}

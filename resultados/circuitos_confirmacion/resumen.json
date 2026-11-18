@@ -1,0 +1,1823 @@
+{
+  "casos": [
+    {
+      "procedencia": {
+        "commit_congelado": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+        "ifc_sha256": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+        "solver_adaptado_sha256": "65ee89ec60f1e75609d055c70cbf56678f24767be3144370520a559305e834c3",
+        "archivos_sha256": {
+          "casos\\sensibilidad_h\\simular_circuitos.py": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d",
+          "casos/sensibilidad_h/control_circuitos.py": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba",
+          "esquema_circuitos": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9",
+          "config_base": "0c06761fdaa9f3dd2a87764dab204bc29e020d8c3c3ed36f7966a7f7827e75cb",
+          "manifiesto_fuentes": "14a4b27f6906dd67267cf69d30a366afe4a00c57c772ce56e626919c585937e5"
+        },
+        "modelo_viento": {
+          "commit_fuentes": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+          "fuente_correlacion": "https://energyplus.readthedocs.io/en/stable/guides/engineering-reference/3.5-outside-surface-heat-balance.html",
+          "correlacion": "h=5.7+3.8*v_local (SI)",
+          "altura_referencia_viento_m": 10,
+          "altura_representativa_m": 2.0,
+          "exponente_perfil": 0.14,
+          "terreno": "campo abierto supuesto; mismo perfil en ambas alturas",
+          "h_constante_media_600h_W_m2K": 17.08623874768515,
+          "clima_sha256": {
+            "ERA5-2023": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+            "ERA5-2024": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+            "ERA5-2025": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b"
+          },
+          "discretizacion_h": "constante por intervalo horario, valor de su marca inicial",
+          "hipotesis": "Mismo h en caras expuestas; sin apantallamiento, dirección ni rugosidad de superficie.",
+          "radiacion": "No incorporada; h representa convección, con componente natural de la correlación."
+        },
+        "agua_C": 18,
+        "apertura_C": 19,
+        "cierre_C": 18,
+        "caudal_ramal_L_min": 18,
+        "caudal_total_con_bypass_L_min": 162,
+        "U_W_m3K": 5,
+        "tope_global_W": 15000,
+        "lado_m": 0.4,
+        "paso_max_s": 300,
+        "regla": "histeresis por circuito, cubierto antes de abrir; sin apagado global fijo",
+        "temperatura_colocacion_C": 12,
+        "capacidad_m3_h": 60,
+        "retiros_aislacion_edad_h": [
+          240,
+          360
+        ],
+        "retiro_madera_edad_h": 72,
+        "D_h": 10.612919248110561,
+        "volumen_ifc_m3": 636.7751926932476,
+        "volumen_voxel_m3": 640.7040000000002,
+        "error_muestreo_max_m": 0.28478696501867906,
+        "volumen_refrigerable_m3": 414.0160000000001,
+        "celdas_monitor_por_circuito": [
+          617,
+          797,
+          623,
+          477,
+          613,
+          479,
+          319,
+          317,
+          134
+        ],
+        "cubierto_desde_h": [
+          3.578805563872491,
+          3.578805563872491,
+          3.578805563872491,
+          6.861333082922136,
+          6.861333082922136,
+          6.861333082922136,
+          9.49987241516605,
+          9.49987241516605,
+          10.421045787548861
+        ],
+        "confirmacion": {
+          "variante": "temporal",
+          "lado_m": 0.4,
+          "paso_max_s": 150,
+          "script_sha256": "eb5f0667ae25611105fd95df7ff3372202a7bdb93547c4252376e2a783e5854d",
+          "volumen_voxel_m3": 640.7040000000002,
+          "volumen_refrigerable_m3": 414.0160000000001,
+          "regla_zona": "Pertenencia al voxel refrigerable de referencia 0.4m",
+          "capas_fisicas": "Mismas 11 capas y tiempos IFC; subceldas comparten inicio de su capa"
+        }
+      },
+      "variante": "temporal",
+      "curva": "M4_SS",
+      "clima": "ERA5-2024",
+      "base_336h": {
+        "horizonte_h": 336,
+        "Tmax": {
+          "tiempo_h": 127.08333333333333,
+          "fase": "paso",
+          "Tmax_C": 45.74444968028408,
+          "xyz_Tmax_m": [
+            -8.318812447782875e-07,
+            -8.318812447782875e-07,
+            4.2
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 45.74444968028408
+        },
+        "DeltaTmax": {
+          "tiempo_h": 215.95833333333334,
+          "fase": "paso",
+          "Tmax_C": 42.28752902569662,
+          "xyz_Tmax_m": [
+            -8.318812447782875e-07,
+            -8.318812447782875e-07,
+            4.2
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 14.9137549111649,
+          "Tmin_S25_C": 27.37377411453172,
+          "xyz_S25_m": [
+            -3.6000008318812444,
+            -8.800000831881245,
+            0.024999999999999994
+          ],
+          "vertida_S25": 1
+        },
+        "excede_70": false,
+        "excede_20": false,
+        "pasos": 8085,
+        "balance_J": {
+          "colocacion": 19474438984.704002,
+          "hidratacion": 64176832467.07212,
+          "aire": -6662514150.938614,
+          "suelo": -10757941783.806612,
+          "final": 49215848069.276596,
+          "residuo": -0.0001125335693359375,
+          "enfriamiento": -17014967447.754189,
+          "enfriamiento_pico_W": 15000.000000000007
+        },
+        "picos_vertidas": [
+          {
+            "id": 1,
+            "value": 39.464965684778385,
+            "t": 92.5
+          },
+          {
+            "id": 2,
+            "value": 42.9076967266692,
+            "t": 99.125
+          },
+          {
+            "id": 3,
+            "value": 44.39052814028211,
+            "t": 105.08333333333333
+          },
+          {
+            "id": 4,
+            "value": 45.088166592449284,
+            "t": 108.20833333333333
+          },
+          {
+            "id": 5,
+            "value": 45.44801848131734,
+            "t": 111.04166666666667
+          },
+          {
+            "id": 6,
+            "value": 45.32921407395664,
+            "t": 112.54166666666667
+          },
+          {
+            "id": 7,
+            "value": 45.474548385184946,
+            "t": 114.70833333333333
+          },
+          {
+            "id": 8,
+            "value": 45.32520190459825,
+            "t": 119.83333333333333
+          },
+          {
+            "id": 9,
+            "value": 45.46579233413338,
+            "t": 124.0
+          },
+          {
+            "id": 10,
+            "value": 45.440815752725314,
+            "t": 122.66666666666667
+          },
+          {
+            "id": 11,
+            "value": 45.74444968028408,
+            "t": 127.08333333333333
+          }
+        ]
+      },
+      "horizonte_h": 600,
+      "Tmax": {
+        "tiempo_h": 127.08333333333333,
+        "fase": "paso",
+        "Tmax_C": 45.74444968028408,
+        "xyz_Tmax_m": [
+          -8.318812447782875e-07,
+          -8.318812447782875e-07,
+          4.2
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 11,
+        "valor": 45.74444968028408
+      },
+      "DeltaTmax": {
+        "tiempo_h": 428.0,
+        "fase": "previo",
+        "Tmax_C": 28.702019189906846,
+        "xyz_Tmax_m": [
+          -8.318812447782875e-07,
+          -8.318812447782875e-07,
+          2.6
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 7,
+        "valor": 19.361781869151233,
+        "Tmin_S25_C": 9.340237320755612,
+        "xyz_S25_m": [
+          -3.6000008318812444,
+          -8.800000831881245,
+          1.175
+        ],
+        "vertida_S25": 3
+      },
+      "excede_70": false,
+      "excede_20": false,
+      "pasos": 14428,
+      "balance_J": {
+        "colocacion": 19474438984.704002,
+        "hidratacion": 64176832467.07212,
+        "aire": -13911527580.671558,
+        "suelo": -14023861027.964027,
+        "final": 32789803692.25763,
+        "residuo": -0.000148773193359375,
+        "enfriamiento": -22926079150.882763,
+        "enfriamiento_pico_W": 15000.000000000007
+      },
+      "picos_vertidas": [
+        {
+          "id": 1,
+          "value": 39.464965684778385,
+          "t": 92.5
+        },
+        {
+          "id": 2,
+          "value": 42.9076967266692,
+          "t": 99.125
+        },
+        {
+          "id": 3,
+          "value": 44.39052814028211,
+          "t": 105.08333333333333
+        },
+        {
+          "id": 4,
+          "value": 45.088166592449284,
+          "t": 108.20833333333333
+        },
+        {
+          "id": 5,
+          "value": 45.44801848131734,
+          "t": 111.04166666666667
+        },
+        {
+          "id": 6,
+          "value": 45.32921407395664,
+          "t": 112.54166666666667
+        },
+        {
+          "id": 7,
+          "value": 45.474548385184946,
+          "t": 114.70833333333333
+        },
+        {
+          "id": 8,
+          "value": 45.32520190459825,
+          "t": 119.83333333333333
+        },
+        {
+          "id": 9,
+          "value": 45.46579233413338,
+          "t": 124.0
+        },
+        {
+          "id": 10,
+          "value": 45.440815752725314,
+          "t": 122.66666666666667
+        },
+        {
+          "id": 11,
+          "value": 45.74444968028408,
+          "t": 127.08333333333333
+        }
+      ],
+      "cambio_Tmax_K": -0.000906774413671485,
+      "cambio_DeltaTmax_K": 0.0037310531674776826,
+      "pico_no_resuelto": false,
+      "segundos": 34.20922410000276
+    },
+    {
+      "procedencia": {
+        "commit_congelado": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+        "ifc_sha256": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+        "solver_adaptado_sha256": "65ee89ec60f1e75609d055c70cbf56678f24767be3144370520a559305e834c3",
+        "archivos_sha256": {
+          "casos\\sensibilidad_h\\simular_circuitos.py": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d",
+          "casos/sensibilidad_h/control_circuitos.py": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba",
+          "esquema_circuitos": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9",
+          "config_base": "0c06761fdaa9f3dd2a87764dab204bc29e020d8c3c3ed36f7966a7f7827e75cb",
+          "manifiesto_fuentes": "14a4b27f6906dd67267cf69d30a366afe4a00c57c772ce56e626919c585937e5"
+        },
+        "modelo_viento": {
+          "commit_fuentes": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+          "fuente_correlacion": "https://energyplus.readthedocs.io/en/stable/guides/engineering-reference/3.5-outside-surface-heat-balance.html",
+          "correlacion": "h=5.7+3.8*v_local (SI)",
+          "altura_referencia_viento_m": 10,
+          "altura_representativa_m": 2.0,
+          "exponente_perfil": 0.14,
+          "terreno": "campo abierto supuesto; mismo perfil en ambas alturas",
+          "h_constante_media_600h_W_m2K": 17.08623874768515,
+          "clima_sha256": {
+            "ERA5-2023": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+            "ERA5-2024": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+            "ERA5-2025": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b"
+          },
+          "discretizacion_h": "constante por intervalo horario, valor de su marca inicial",
+          "hipotesis": "Mismo h en caras expuestas; sin apantallamiento, dirección ni rugosidad de superficie.",
+          "radiacion": "No incorporada; h representa convección, con componente natural de la correlación."
+        },
+        "agua_C": 18,
+        "apertura_C": 19,
+        "cierre_C": 18,
+        "caudal_ramal_L_min": 18,
+        "caudal_total_con_bypass_L_min": 162,
+        "U_W_m3K": 5,
+        "tope_global_W": 15000,
+        "lado_m": 0.4,
+        "paso_max_s": 300,
+        "regla": "histeresis por circuito, cubierto antes de abrir; sin apagado global fijo",
+        "temperatura_colocacion_C": 12,
+        "capacidad_m3_h": 60,
+        "retiros_aislacion_edad_h": [
+          240,
+          360
+        ],
+        "retiro_madera_edad_h": 72,
+        "D_h": 10.612919248110561,
+        "volumen_ifc_m3": 636.7751926932476,
+        "volumen_voxel_m3": 640.7040000000002,
+        "error_muestreo_max_m": 0.28478696501867906,
+        "volumen_refrigerable_m3": 414.0160000000001,
+        "celdas_monitor_por_circuito": [
+          617,
+          797,
+          623,
+          477,
+          613,
+          479,
+          319,
+          317,
+          134
+        ],
+        "cubierto_desde_h": [
+          3.578805563872491,
+          3.578805563872491,
+          3.578805563872491,
+          6.861333082922136,
+          6.861333082922136,
+          6.861333082922136,
+          9.49987241516605,
+          9.49987241516605,
+          10.421045787548861
+        ],
+        "confirmacion": {
+          "variante": "temporal",
+          "lado_m": 0.4,
+          "paso_max_s": 150,
+          "script_sha256": "eb5f0667ae25611105fd95df7ff3372202a7bdb93547c4252376e2a783e5854d",
+          "volumen_voxel_m3": 640.7040000000002,
+          "volumen_refrigerable_m3": 414.0160000000001,
+          "regla_zona": "Pertenencia al voxel refrigerable de referencia 0.4m",
+          "capas_fisicas": "Mismas 11 capas y tiempos IFC; subceldas comparten inicio de su capa"
+        }
+      },
+      "variante": "temporal",
+      "curva": "M4_SS",
+      "clima": "ERA5-2025",
+      "base_336h": {
+        "horizonte_h": 336,
+        "Tmax": {
+          "tiempo_h": 129.33333333333334,
+          "fase": "paso",
+          "Tmax_C": 46.044504714754744,
+          "xyz_Tmax_m": [
+            -8.318812447782875e-07,
+            0.7999991681187559,
+            4.2
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 46.044504714754744
+        },
+        "DeltaTmax": {
+          "tiempo_h": 217.08333333333334,
+          "fase": "paso",
+          "Tmax_C": 42.65932565742162,
+          "xyz_Tmax_m": [
+            -8.318812447782875e-07,
+            -8.318812447782875e-07,
+            4.2
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 14.81165804483652,
+          "Tmin_S25_C": 27.8476676125851,
+          "xyz_S25_m": [
+            -3.6000008318812444,
+            -8.800000831881245,
+            0.024999999999999994
+          ],
+          "vertida_S25": 1
+        },
+        "excede_70": false,
+        "excede_20": false,
+        "pasos": 8085,
+        "balance_J": {
+          "colocacion": 19474438984.704002,
+          "hidratacion": 64176832467.07212,
+          "aire": -6003906860.65163,
+          "suelo": -10808269488.731895,
+          "final": 49823114881.30216,
+          "residuo": -6.29425048828125e-05,
+          "enfriamiento": -17015980221.090372,
+          "enfriamiento_pico_W": 15000.000000000005
+        },
+        "picos_vertidas": [
+          {
+            "id": 1,
+            "value": 39.500167971971464,
+            "t": 92.66666666666667
+          },
+          {
+            "id": 2,
+            "value": 43.0941405219241,
+            "t": 103.45833333333333
+          },
+          {
+            "id": 3,
+            "value": 44.694068911205136,
+            "t": 106.41666666666667
+          },
+          {
+            "id": 4,
+            "value": 45.38865196620746,
+            "t": 108.66666666666667
+          },
+          {
+            "id": 5,
+            "value": 45.701199962760384,
+            "t": 111.5
+          },
+          {
+            "id": 6,
+            "value": 45.62920789565167,
+            "t": 112.20833333333333
+          },
+          {
+            "id": 7,
+            "value": 45.7207844593797,
+            "t": 114.20833333333333
+          },
+          {
+            "id": 8,
+            "value": 45.52799207084103,
+            "t": 126.83333333333333
+          },
+          {
+            "id": 9,
+            "value": 45.73791751352612,
+            "t": 128.41666666666666
+          },
+          {
+            "id": 10,
+            "value": 45.674613756411276,
+            "t": 128.5
+          },
+          {
+            "id": 11,
+            "value": 46.044504714754744,
+            "t": 129.33333333333334
+          }
+        ]
+      },
+      "horizonte_h": 600,
+      "Tmax": {
+        "tiempo_h": 129.33333333333334,
+        "fase": "paso",
+        "Tmax_C": 46.044504714754744,
+        "xyz_Tmax_m": [
+          -8.318812447782875e-07,
+          0.7999991681187559,
+          4.2
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 11,
+        "valor": 46.044504714754744
+      },
+      "DeltaTmax": {
+        "tiempo_h": 380.0,
+        "fase": "previo",
+        "Tmax_C": 32.046409319472204,
+        "xyz_Tmax_m": [
+          -8.318812447782875e-07,
+          -8.318812447782875e-07,
+          3.8000000000000003
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 10,
+        "valor": 18.37697398698437,
+        "Tmin_S25_C": 13.669435332487833,
+        "xyz_S25_m": [
+          -3.6000008318812444,
+          -8.800000831881245,
+          1.175
+        ],
+        "vertida_S25": 3
+      },
+      "excede_70": false,
+      "excede_20": false,
+      "pasos": 14428,
+      "balance_J": {
+        "colocacion": 19474438984.704002,
+        "hidratacion": 64176832467.07212,
+        "aire": -11720954223.513626,
+        "suelo": -14173161854.16273,
+        "final": 30829975633.081165,
+        "residuo": -1.52587890625e-05,
+        "enfriamiento": -26927179741.018593,
+        "enfriamiento_pico_W": 15000.000000000005
+      },
+      "picos_vertidas": [
+        {
+          "id": 1,
+          "value": 39.500167971971464,
+          "t": 92.66666666666667
+        },
+        {
+          "id": 2,
+          "value": 43.0941405219241,
+          "t": 103.45833333333333
+        },
+        {
+          "id": 3,
+          "value": 44.694068911205136,
+          "t": 106.41666666666667
+        },
+        {
+          "id": 4,
+          "value": 45.38865196620746,
+          "t": 108.66666666666667
+        },
+        {
+          "id": 5,
+          "value": 45.701199962760384,
+          "t": 111.5
+        },
+        {
+          "id": 6,
+          "value": 45.62920789565167,
+          "t": 112.20833333333333
+        },
+        {
+          "id": 7,
+          "value": 45.7207844593797,
+          "t": 114.20833333333333
+        },
+        {
+          "id": 8,
+          "value": 45.52799207084103,
+          "t": 126.83333333333333
+        },
+        {
+          "id": 9,
+          "value": 45.73791751352612,
+          "t": 128.41666666666666
+        },
+        {
+          "id": 10,
+          "value": 45.674613756411276,
+          "t": 128.5
+        },
+        {
+          "id": 11,
+          "value": 46.044504714754744,
+          "t": 129.33333333333334
+        }
+      ],
+      "cambio_Tmax_K": -0.0009259458613115612,
+      "cambio_DeltaTmax_K": -8.266090690156602e-05,
+      "pico_no_resuelto": false,
+      "segundos": 32.73639309999999
+    },
+    {
+      "procedencia": {
+        "commit_congelado": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+        "ifc_sha256": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+        "solver_adaptado_sha256": "65ee89ec60f1e75609d055c70cbf56678f24767be3144370520a559305e834c3",
+        "archivos_sha256": {
+          "casos\\sensibilidad_h\\simular_circuitos.py": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d",
+          "casos/sensibilidad_h/control_circuitos.py": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba",
+          "esquema_circuitos": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9",
+          "config_base": "0c06761fdaa9f3dd2a87764dab204bc29e020d8c3c3ed36f7966a7f7827e75cb",
+          "manifiesto_fuentes": "14a4b27f6906dd67267cf69d30a366afe4a00c57c772ce56e626919c585937e5"
+        },
+        "modelo_viento": {
+          "commit_fuentes": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+          "fuente_correlacion": "https://energyplus.readthedocs.io/en/stable/guides/engineering-reference/3.5-outside-surface-heat-balance.html",
+          "correlacion": "h=5.7+3.8*v_local (SI)",
+          "altura_referencia_viento_m": 10,
+          "altura_representativa_m": 2.0,
+          "exponente_perfil": 0.14,
+          "terreno": "campo abierto supuesto; mismo perfil en ambas alturas",
+          "h_constante_media_600h_W_m2K": 17.08623874768515,
+          "clima_sha256": {
+            "ERA5-2023": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+            "ERA5-2024": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+            "ERA5-2025": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b"
+          },
+          "discretizacion_h": "constante por intervalo horario, valor de su marca inicial",
+          "hipotesis": "Mismo h en caras expuestas; sin apantallamiento, dirección ni rugosidad de superficie.",
+          "radiacion": "No incorporada; h representa convección, con componente natural de la correlación."
+        },
+        "agua_C": 18,
+        "apertura_C": 19,
+        "cierre_C": 18,
+        "caudal_ramal_L_min": 18,
+        "caudal_total_con_bypass_L_min": 162,
+        "U_W_m3K": 5,
+        "tope_global_W": 15000,
+        "lado_m": 0.4,
+        "paso_max_s": 300,
+        "regla": "histeresis por circuito, cubierto antes de abrir; sin apagado global fijo",
+        "temperatura_colocacion_C": 12,
+        "capacidad_m3_h": 60,
+        "retiros_aislacion_edad_h": [
+          240,
+          360
+        ],
+        "retiro_madera_edad_h": 72,
+        "D_h": 10.612919248110561,
+        "volumen_ifc_m3": 636.7751926932476,
+        "volumen_voxel_m3": 640.7040000000002,
+        "error_muestreo_max_m": 0.28478696501867906,
+        "volumen_refrigerable_m3": 414.0160000000001,
+        "celdas_monitor_por_circuito": [
+          617,
+          797,
+          623,
+          477,
+          613,
+          479,
+          319,
+          317,
+          134
+        ],
+        "cubierto_desde_h": [
+          3.578805563872491,
+          3.578805563872491,
+          3.578805563872491,
+          6.861333082922136,
+          6.861333082922136,
+          6.861333082922136,
+          9.49987241516605,
+          9.49987241516605,
+          10.421045787548861
+        ],
+        "confirmacion": {
+          "variante": "temporal",
+          "lado_m": 0.4,
+          "paso_max_s": 150,
+          "script_sha256": "eb5f0667ae25611105fd95df7ff3372202a7bdb93547c4252376e2a783e5854d",
+          "volumen_voxel_m3": 640.7040000000002,
+          "volumen_refrigerable_m3": 414.0160000000001,
+          "regla_zona": "Pertenencia al voxel refrigerable de referencia 0.4m",
+          "capas_fisicas": "Mismas 11 capas y tiempos IFC; subceldas comparten inicio de su capa"
+        }
+      },
+      "variante": "temporal",
+      "curva": "M2_SS",
+      "clima": "ERA5-2024",
+      "base_336h": {
+        "horizonte_h": 336,
+        "Tmax": {
+          "tiempo_h": 127.25,
+          "fase": "paso",
+          "Tmax_C": 44.67044200163516,
+          "xyz_Tmax_m": [
+            -8.318812447782875e-07,
+            -8.318812447782875e-07,
+            4.2
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 44.67044200163516
+        },
+        "DeltaTmax": {
+          "tiempo_h": 214.41666666666666,
+          "fase": "paso",
+          "Tmax_C": 40.8838423545069,
+          "xyz_Tmax_m": [
+            -8.318812447782875e-07,
+            -8.318812447782875e-07,
+            4.2
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 14.133726645588403,
+          "Tmin_S25_C": 26.7501157089185,
+          "xyz_S25_m": [
+            -3.6000008318812444,
+            -8.800000831881245,
+            0.024999999999999994
+          ],
+          "vertida_S25": 1
+        },
+        "excede_70": false,
+        "excede_20": false,
+        "pasos": 8085,
+        "balance_J": {
+          "colocacion": 19474438984.704002,
+          "hidratacion": 61325129440.51194,
+          "aire": -6299357565.138296,
+          "suelo": -10212636460.281652,
+          "final": 47332579968.63232,
+          "residuo": 0.0001163482666015625,
+          "enfriamiento": -16954994431.163792,
+          "enfriamiento_pico_W": 15000.000000000005
+        },
+        "picos_vertidas": [
+          {
+            "id": 1,
+            "value": 38.55753632840911,
+            "t": 95.5
+          },
+          {
+            "id": 2,
+            "value": 41.88057057865015,
+            "t": 102.45833333333333
+          },
+          {
+            "id": 3,
+            "value": 43.361267215159096,
+            "t": 106.375
+          },
+          {
+            "id": 4,
+            "value": 44.012233448181895,
+            "t": 109.20833333333333
+          },
+          {
+            "id": 5,
+            "value": 44.3495465293869,
+            "t": 113.16666666666667
+          },
+          {
+            "id": 6,
+            "value": 44.24089636854819,
+            "t": 113.83333333333333
+          },
+          {
+            "id": 7,
+            "value": 44.37613289971294,
+            "t": 116.375
+          },
+          {
+            "id": 8,
+            "value": 44.20411797582213,
+            "t": 122.0
+          },
+          {
+            "id": 9,
+            "value": 44.388002328213695,
+            "t": 124.70833333333333
+          },
+          {
+            "id": 10,
+            "value": 44.30788781913535,
+            "t": 123.16666666666667
+          },
+          {
+            "id": 11,
+            "value": 44.67044200163516,
+            "t": 127.25
+          }
+        ]
+      },
+      "horizonte_h": 600,
+      "Tmax": {
+        "tiempo_h": 127.25,
+        "fase": "paso",
+        "Tmax_C": 44.67044200163516,
+        "xyz_Tmax_m": [
+          -8.318812447782875e-07,
+          -8.318812447782875e-07,
+          4.2
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 11,
+        "valor": 44.67044200163516
+      },
+      "DeltaTmax": {
+        "tiempo_h": 428.0,
+        "fase": "previo",
+        "Tmax_C": 27.543629030403803,
+        "xyz_Tmax_m": [
+          -8.318812447782875e-07,
+          -8.318812447782875e-07,
+          2.6
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 7,
+        "valor": 18.23211997431538,
+        "Tmin_S25_C": 9.311509056088422,
+        "xyz_S25_m": [
+          -3.6000008318812444,
+          -8.800000831881245,
+          1.175
+        ],
+        "vertida_S25": 3
+      },
+      "excede_70": false,
+      "excede_20": false,
+      "pasos": 14428,
+      "balance_J": {
+        "colocacion": 19474438984.704002,
+        "hidratacion": 61325129440.51194,
+        "aire": -12942646680.616076,
+        "suelo": -13247859914.584496,
+        "final": 32461655608.11526,
+        "residuo": 0.000152587890625,
+        "enfriamiento": -22147406221.90026,
+        "enfriamiento_pico_W": 15000.000000000005
+      },
+      "picos_vertidas": [
+        {
+          "id": 1,
+          "value": 38.55753632840911,
+          "t": 95.5
+        },
+        {
+          "id": 2,
+          "value": 41.88057057865015,
+          "t": 102.45833333333333
+        },
+        {
+          "id": 3,
+          "value": 43.361267215159096,
+          "t": 106.375
+        },
+        {
+          "id": 4,
+          "value": 44.012233448181895,
+          "t": 109.20833333333333
+        },
+        {
+          "id": 5,
+          "value": 44.3495465293869,
+          "t": 113.16666666666667
+        },
+        {
+          "id": 6,
+          "value": 44.24089636854819,
+          "t": 113.83333333333333
+        },
+        {
+          "id": 7,
+          "value": 44.37613289971294,
+          "t": 116.375
+        },
+        {
+          "id": 8,
+          "value": 44.20411797582213,
+          "t": 122.0
+        },
+        {
+          "id": 9,
+          "value": 44.388002328213695,
+          "t": 124.70833333333333
+        },
+        {
+          "id": 10,
+          "value": 44.30788781913535,
+          "t": 123.16666666666667
+        },
+        {
+          "id": 11,
+          "value": 44.67044200163516,
+          "t": 127.25
+        }
+      ],
+      "cambio_Tmax_K": -0.0008752208537643469,
+      "cambio_DeltaTmax_K": 0.0035302274082837926,
+      "pico_no_resuelto": false,
+      "segundos": 31.715991799999756
+    },
+    {
+      "procedencia": {
+        "commit_congelado": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+        "ifc_sha256": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+        "solver_adaptado_sha256": "65ee89ec60f1e75609d055c70cbf56678f24767be3144370520a559305e834c3",
+        "archivos_sha256": {
+          "casos\\sensibilidad_h\\simular_circuitos.py": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d",
+          "casos/sensibilidad_h/control_circuitos.py": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba",
+          "esquema_circuitos": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9",
+          "config_base": "0c06761fdaa9f3dd2a87764dab204bc29e020d8c3c3ed36f7966a7f7827e75cb",
+          "manifiesto_fuentes": "14a4b27f6906dd67267cf69d30a366afe4a00c57c772ce56e626919c585937e5"
+        },
+        "modelo_viento": {
+          "commit_fuentes": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+          "fuente_correlacion": "https://energyplus.readthedocs.io/en/stable/guides/engineering-reference/3.5-outside-surface-heat-balance.html",
+          "correlacion": "h=5.7+3.8*v_local (SI)",
+          "altura_referencia_viento_m": 10,
+          "altura_representativa_m": 2.0,
+          "exponente_perfil": 0.14,
+          "terreno": "campo abierto supuesto; mismo perfil en ambas alturas",
+          "h_constante_media_600h_W_m2K": 17.08623874768515,
+          "clima_sha256": {
+            "ERA5-2023": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+            "ERA5-2024": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+            "ERA5-2025": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b"
+          },
+          "discretizacion_h": "constante por intervalo horario, valor de su marca inicial",
+          "hipotesis": "Mismo h en caras expuestas; sin apantallamiento, dirección ni rugosidad de superficie.",
+          "radiacion": "No incorporada; h representa convección, con componente natural de la correlación."
+        },
+        "agua_C": 18,
+        "apertura_C": 19,
+        "cierre_C": 18,
+        "caudal_ramal_L_min": 18,
+        "caudal_total_con_bypass_L_min": 162,
+        "U_W_m3K": 5,
+        "tope_global_W": 15000,
+        "lado_m": 0.4,
+        "paso_max_s": 300,
+        "regla": "histeresis por circuito, cubierto antes de abrir; sin apagado global fijo",
+        "temperatura_colocacion_C": 12,
+        "capacidad_m3_h": 60,
+        "retiros_aislacion_edad_h": [
+          240,
+          360
+        ],
+        "retiro_madera_edad_h": 72,
+        "D_h": 10.612919248110561,
+        "volumen_ifc_m3": 636.7751926932476,
+        "volumen_voxel_m3": 640.7040000000002,
+        "error_muestreo_max_m": 0.28478696501867906,
+        "volumen_refrigerable_m3": 414.0160000000001,
+        "celdas_monitor_por_circuito": [
+          617,
+          797,
+          623,
+          477,
+          613,
+          479,
+          319,
+          317,
+          134
+        ],
+        "cubierto_desde_h": [
+          3.578805563872491,
+          3.578805563872491,
+          3.578805563872491,
+          6.861333082922136,
+          6.861333082922136,
+          6.861333082922136,
+          9.49987241516605,
+          9.49987241516605,
+          10.421045787548861
+        ],
+        "confirmacion": {
+          "variante": "espacial",
+          "lado_m": 0.2,
+          "paso_max_s": 300,
+          "script_sha256": "eb5f0667ae25611105fd95df7ff3372202a7bdb93547c4252376e2a783e5854d",
+          "volumen_voxel_m3": 638.9440000000002,
+          "volumen_refrigerable_m3": 414.0160000000001,
+          "regla_zona": "Pertenencia al voxel refrigerable de referencia 0.4m",
+          "capas_fisicas": "Mismas 11 capas y tiempos IFC; subceldas comparten inicio de su capa"
+        }
+      },
+      "variante": "espacial",
+      "curva": "M4_SS",
+      "clima": "ERA5-2024",
+      "base_336h": {
+        "horizonte_h": 336,
+        "Tmax": {
+          "tiempo_h": 121.25,
+          "fase": "paso",
+          "Tmax_C": 45.80001062710466,
+          "xyz_Tmax_m": [
+            1.6999991681187563,
+            0.09999916811875487,
+            4.1000000000000005
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 45.80001062710466
+        },
+        "DeltaTmax": {
+          "tiempo_h": 214.58333333333334,
+          "fase": "paso",
+          "Tmax_C": 42.398736617612826,
+          "xyz_Tmax_m": [
+            0.09999916811875487,
+            0.09999916811875487,
+            4.1000000000000005
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 15.300746308258532,
+          "Tmin_S25_C": 27.097990309354294,
+          "xyz_S25_m": [
+            -3.700000831881244,
+            -8.900000831881245,
+            0.024999999999999994
+          ],
+          "vertida_S25": 1
+        },
+        "excede_70": false,
+        "excede_20": false,
+        "pasos": 4056,
+        "balance_J": {
+          "colocacion": 19420943122.944004,
+          "hidratacion": 64000540099.391945,
+          "aire": -6681795004.324128,
+          "suelo": -10965073902.419872,
+          "final": 48754015779.359795,
+          "residuo": 6.67572021484375e-05,
+          "enfriamiento": -17020598536.232218,
+          "enfriamiento_pico_W": 15000.000000000005
+        },
+        "picos_vertidas": [
+          {
+            "id": 1,
+            "value": 40.658091543831404,
+            "t": 93.83333333333333
+          },
+          {
+            "id": 2,
+            "value": 43.7621513134311,
+            "t": 101.33333333333333
+          },
+          {
+            "id": 3,
+            "value": 44.88873965551596,
+            "t": 107.58333333333333
+          },
+          {
+            "id": 4,
+            "value": 45.193395618239215,
+            "t": 110.66666666666667
+          },
+          {
+            "id": 5,
+            "value": 45.446506347062254,
+            "t": 114.0
+          },
+          {
+            "id": 6,
+            "value": 45.344300069642465,
+            "t": 118.25
+          },
+          {
+            "id": 7,
+            "value": 45.494499316431735,
+            "t": 116.83333333333333
+          },
+          {
+            "id": 8,
+            "value": 45.38413090715864,
+            "t": 118.16666666666667
+          },
+          {
+            "id": 9,
+            "value": 45.627686641714526,
+            "t": 118.41666666666667
+          },
+          {
+            "id": 10,
+            "value": 45.63890755703613,
+            "t": 122.16666666666667
+          },
+          {
+            "id": 11,
+            "value": 45.80001062710466,
+            "t": 121.25
+          }
+        ]
+      },
+      "horizonte_h": 600,
+      "Tmax": {
+        "tiempo_h": 121.25,
+        "fase": "paso",
+        "Tmax_C": 45.80001062710466,
+        "xyz_Tmax_m": [
+          1.6999991681187563,
+          0.09999916811875487,
+          4.1000000000000005
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 11,
+        "valor": 45.80001062710466
+      },
+      "DeltaTmax": {
+        "tiempo_h": 428.9166666666667,
+        "fase": "paso",
+        "Tmax_C": 28.137129916009144,
+        "xyz_Tmax_m": [
+          -0.10000083188124442,
+          0.09999916811875487,
+          2.9000000000000004
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 8,
+        "valor": 19.173102285270687,
+        "Tmin_S25_C": 8.964027630738459,
+        "xyz_S25_m": [
+          -3.700000831881244,
+          -8.900000831881245,
+          1.175
+        ],
+        "vertida_S25": 3
+      },
+      "excede_70": false,
+      "excede_20": false,
+      "pasos": 7232,
+      "balance_J": {
+        "colocacion": 19420943122.944004,
+        "hidratacion": 64000540099.391945,
+        "aire": -13725058619.065798,
+        "suelo": -14156029556.292751,
+        "final": 31512004563.996494,
+        "residuo": 3.4332275390625e-05,
+        "enfriamiento": -24028390482.98094,
+        "enfriamiento_pico_W": 15000.000000000005
+      },
+      "picos_vertidas": [
+        {
+          "id": 1,
+          "value": 40.658091543831404,
+          "t": 93.83333333333333
+        },
+        {
+          "id": 2,
+          "value": 43.7621513134311,
+          "t": 101.33333333333333
+        },
+        {
+          "id": 3,
+          "value": 44.88873965551596,
+          "t": 107.58333333333333
+        },
+        {
+          "id": 4,
+          "value": 45.193395618239215,
+          "t": 110.66666666666667
+        },
+        {
+          "id": 5,
+          "value": 45.446506347062254,
+          "t": 114.0
+        },
+        {
+          "id": 6,
+          "value": 45.344300069642465,
+          "t": 118.25
+        },
+        {
+          "id": 7,
+          "value": 45.494499316431735,
+          "t": 116.83333333333333
+        },
+        {
+          "id": 8,
+          "value": 45.38413090715864,
+          "t": 118.16666666666667
+        },
+        {
+          "id": 9,
+          "value": 45.627686641714526,
+          "t": 118.41666666666667
+        },
+        {
+          "id": 10,
+          "value": 45.63890755703613,
+          "t": 122.16666666666667
+        },
+        {
+          "id": 11,
+          "value": 45.80001062710466,
+          "t": 121.25
+        }
+      ],
+      "cambio_Tmax_K": 0.05465417240691295,
+      "cambio_DeltaTmax_K": -0.1849485307130685,
+      "pico_no_resuelto": false,
+      "segundos": 126.06650160000208
+    },
+    {
+      "procedencia": {
+        "commit_congelado": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+        "ifc_sha256": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+        "solver_adaptado_sha256": "65ee89ec60f1e75609d055c70cbf56678f24767be3144370520a559305e834c3",
+        "archivos_sha256": {
+          "casos\\sensibilidad_h\\simular_circuitos.py": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d",
+          "casos/sensibilidad_h/control_circuitos.py": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba",
+          "esquema_circuitos": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9",
+          "config_base": "0c06761fdaa9f3dd2a87764dab204bc29e020d8c3c3ed36f7966a7f7827e75cb",
+          "manifiesto_fuentes": "14a4b27f6906dd67267cf69d30a366afe4a00c57c772ce56e626919c585937e5"
+        },
+        "modelo_viento": {
+          "commit_fuentes": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+          "fuente_correlacion": "https://energyplus.readthedocs.io/en/stable/guides/engineering-reference/3.5-outside-surface-heat-balance.html",
+          "correlacion": "h=5.7+3.8*v_local (SI)",
+          "altura_referencia_viento_m": 10,
+          "altura_representativa_m": 2.0,
+          "exponente_perfil": 0.14,
+          "terreno": "campo abierto supuesto; mismo perfil en ambas alturas",
+          "h_constante_media_600h_W_m2K": 17.08623874768515,
+          "clima_sha256": {
+            "ERA5-2023": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+            "ERA5-2024": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+            "ERA5-2025": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b"
+          },
+          "discretizacion_h": "constante por intervalo horario, valor de su marca inicial",
+          "hipotesis": "Mismo h en caras expuestas; sin apantallamiento, dirección ni rugosidad de superficie.",
+          "radiacion": "No incorporada; h representa convección, con componente natural de la correlación."
+        },
+        "agua_C": 18,
+        "apertura_C": 19,
+        "cierre_C": 18,
+        "caudal_ramal_L_min": 18,
+        "caudal_total_con_bypass_L_min": 162,
+        "U_W_m3K": 5,
+        "tope_global_W": 15000,
+        "lado_m": 0.4,
+        "paso_max_s": 300,
+        "regla": "histeresis por circuito, cubierto antes de abrir; sin apagado global fijo",
+        "temperatura_colocacion_C": 12,
+        "capacidad_m3_h": 60,
+        "retiros_aislacion_edad_h": [
+          240,
+          360
+        ],
+        "retiro_madera_edad_h": 72,
+        "D_h": 10.612919248110561,
+        "volumen_ifc_m3": 636.7751926932476,
+        "volumen_voxel_m3": 640.7040000000002,
+        "error_muestreo_max_m": 0.28478696501867906,
+        "volumen_refrigerable_m3": 414.0160000000001,
+        "celdas_monitor_por_circuito": [
+          617,
+          797,
+          623,
+          477,
+          613,
+          479,
+          319,
+          317,
+          134
+        ],
+        "cubierto_desde_h": [
+          3.578805563872491,
+          3.578805563872491,
+          3.578805563872491,
+          6.861333082922136,
+          6.861333082922136,
+          6.861333082922136,
+          9.49987241516605,
+          9.49987241516605,
+          10.421045787548861
+        ],
+        "confirmacion": {
+          "variante": "espacial",
+          "lado_m": 0.2,
+          "paso_max_s": 300,
+          "script_sha256": "eb5f0667ae25611105fd95df7ff3372202a7bdb93547c4252376e2a783e5854d",
+          "volumen_voxel_m3": 638.9440000000002,
+          "volumen_refrigerable_m3": 414.0160000000001,
+          "regla_zona": "Pertenencia al voxel refrigerable de referencia 0.4m",
+          "capas_fisicas": "Mismas 11 capas y tiempos IFC; subceldas comparten inicio de su capa"
+        }
+      },
+      "variante": "espacial",
+      "curva": "M4_SS",
+      "clima": "ERA5-2025",
+      "base_336h": {
+        "horizonte_h": 336,
+        "Tmax": {
+          "tiempo_h": 121.58333333333333,
+          "fase": "paso",
+          "Tmax_C": 46.01921297140036,
+          "xyz_Tmax_m": [
+            2.0999991681187566,
+            0.09999916811875487,
+            4.1000000000000005
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 46.01921297140036
+        },
+        "DeltaTmax": {
+          "tiempo_h": 261.0,
+          "fase": "previo",
+          "Tmax_C": 40.193105342584104,
+          "xyz_Tmax_m": [
+            0.09999916811875487,
+            0.09999916811875487,
+            4.1000000000000005
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 15.139692499684454,
+          "Tmin_S25_C": 25.05341284289965,
+          "xyz_S25_m": [
+            -3.700000831881244,
+            -8.900000831881245,
+            0.024999999999999994
+          ],
+          "vertida_S25": 1
+        },
+        "excede_70": false,
+        "excede_20": false,
+        "pasos": 4056,
+        "balance_J": {
+          "colocacion": 19420943122.944004,
+          "hidratacion": 64000540099.391945,
+          "aire": -6016003122.267883,
+          "suelo": -11015888728.973154,
+          "final": 49367696945.8863,
+          "residuo": 0.000102996826171875,
+          "enfriamiento": -17021894425.208715,
+          "enfriamiento_pico_W": 15000.000000000005
+        },
+        "picos_vertidas": [
+          {
+            "id": 1,
+            "value": 40.722011734641235,
+            "t": 94.33333333333333
+          },
+          {
+            "id": 2,
+            "value": 43.940975321422265,
+            "t": 100.83333333333333
+          },
+          {
+            "id": 3,
+            "value": 45.17868071641288,
+            "t": 109.0
+          },
+          {
+            "id": 4,
+            "value": 45.39849364475602,
+            "t": 111.91666666666667
+          },
+          {
+            "id": 5,
+            "value": 45.66434387916114,
+            "t": 113.91666666666667
+          },
+          {
+            "id": 6,
+            "value": 45.55292702432833,
+            "t": 115.75
+          },
+          {
+            "id": 7,
+            "value": 45.69286211398337,
+            "t": 117.66666666666667
+          },
+          {
+            "id": 8,
+            "value": 45.55383680649326,
+            "t": 117.83333333333333
+          },
+          {
+            "id": 9,
+            "value": 45.84616140853138,
+            "t": 119.08333333333333
+          },
+          {
+            "id": 10,
+            "value": 45.866146366323655,
+            "t": 118.66666666666667
+          },
+          {
+            "id": 11,
+            "value": 46.01921297140036,
+            "t": 121.58333333333333
+          }
+        ]
+      },
+      "horizonte_h": 600,
+      "Tmax": {
+        "tiempo_h": 121.58333333333333,
+        "fase": "paso",
+        "Tmax_C": 46.01921297140036,
+        "xyz_Tmax_m": [
+          2.0999991681187566,
+          0.09999916811875487,
+          4.1000000000000005
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 11,
+        "valor": 46.01921297140036
+      },
+      "DeltaTmax": {
+        "tiempo_h": 380.0,
+        "fase": "previo",
+        "Tmax_C": 32.14848913139797,
+        "xyz_Tmax_m": [
+          0.09999916811875487,
+          0.09999916811875487,
+          3.7
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 10,
+        "valor": 19.1377748899068,
+        "Tmin_S25_C": 13.010714241491172,
+        "xyz_S25_m": [
+          -3.700000831881244,
+          -8.900000831881245,
+          1.175
+        ],
+        "vertida_S25": 3
+      },
+      "excede_70": false,
+      "excede_20": false,
+      "pasos": 7232,
+      "balance_J": {
+        "colocacion": 19420943122.944004,
+        "hidratacion": 64000540099.391945,
+        "aire": -11733085724.328526,
+        "suelo": -14389555039.467186,
+        "final": 30378672250.262802,
+        "residuo": 0.00012969970703125,
+        "enfriamiento": -26920170208.277573,
+        "enfriamiento_pico_W": 15000.000000000005
+      },
+      "picos_vertidas": [
+        {
+          "id": 1,
+          "value": 40.722011734641235,
+          "t": 94.33333333333333
+        },
+        {
+          "id": 2,
+          "value": 43.940975321422265,
+          "t": 100.83333333333333
+        },
+        {
+          "id": 3,
+          "value": 45.17868071641288,
+          "t": 109.0
+        },
+        {
+          "id": 4,
+          "value": 45.39849364475602,
+          "t": 111.91666666666667
+        },
+        {
+          "id": 5,
+          "value": 45.66434387916114,
+          "t": 113.91666666666667
+        },
+        {
+          "id": 6,
+          "value": 45.55292702432833,
+          "t": 115.75
+        },
+        {
+          "id": 7,
+          "value": 45.69286211398337,
+          "t": 117.66666666666667
+        },
+        {
+          "id": 8,
+          "value": 45.55383680649326,
+          "t": 117.83333333333333
+        },
+        {
+          "id": 9,
+          "value": 45.84616140853138,
+          "t": 119.08333333333333
+        },
+        {
+          "id": 10,
+          "value": 45.866146366323655,
+          "t": 118.66666666666667
+        },
+        {
+          "id": 11,
+          "value": 46.01921297140036,
+          "t": 121.58333333333333
+        }
+      ],
+      "cambio_Tmax_K": -0.02621768921569867,
+      "cambio_DeltaTmax_K": 0.7607182420155283,
+      "pico_no_resuelto": false,
+      "segundos": 135.71337160000257
+    },
+    {
+      "procedencia": {
+        "commit_congelado": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+        "ifc_sha256": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+        "solver_adaptado_sha256": "65ee89ec60f1e75609d055c70cbf56678f24767be3144370520a559305e834c3",
+        "archivos_sha256": {
+          "casos\\sensibilidad_h\\simular_circuitos.py": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d",
+          "casos/sensibilidad_h/control_circuitos.py": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba",
+          "esquema_circuitos": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9",
+          "config_base": "0c06761fdaa9f3dd2a87764dab204bc29e020d8c3c3ed36f7966a7f7827e75cb",
+          "manifiesto_fuentes": "14a4b27f6906dd67267cf69d30a366afe4a00c57c772ce56e626919c585937e5"
+        },
+        "modelo_viento": {
+          "commit_fuentes": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+          "fuente_correlacion": "https://energyplus.readthedocs.io/en/stable/guides/engineering-reference/3.5-outside-surface-heat-balance.html",
+          "correlacion": "h=5.7+3.8*v_local (SI)",
+          "altura_referencia_viento_m": 10,
+          "altura_representativa_m": 2.0,
+          "exponente_perfil": 0.14,
+          "terreno": "campo abierto supuesto; mismo perfil en ambas alturas",
+          "h_constante_media_600h_W_m2K": 17.08623874768515,
+          "clima_sha256": {
+            "ERA5-2023": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+            "ERA5-2024": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+            "ERA5-2025": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b"
+          },
+          "discretizacion_h": "constante por intervalo horario, valor de su marca inicial",
+          "hipotesis": "Mismo h en caras expuestas; sin apantallamiento, dirección ni rugosidad de superficie.",
+          "radiacion": "No incorporada; h representa convección, con componente natural de la correlación."
+        },
+        "agua_C": 18,
+        "apertura_C": 19,
+        "cierre_C": 18,
+        "caudal_ramal_L_min": 18,
+        "caudal_total_con_bypass_L_min": 162,
+        "U_W_m3K": 5,
+        "tope_global_W": 15000,
+        "lado_m": 0.4,
+        "paso_max_s": 300,
+        "regla": "histeresis por circuito, cubierto antes de abrir; sin apagado global fijo",
+        "temperatura_colocacion_C": 12,
+        "capacidad_m3_h": 60,
+        "retiros_aislacion_edad_h": [
+          240,
+          360
+        ],
+        "retiro_madera_edad_h": 72,
+        "D_h": 10.612919248110561,
+        "volumen_ifc_m3": 636.7751926932476,
+        "volumen_voxel_m3": 640.7040000000002,
+        "error_muestreo_max_m": 0.28478696501867906,
+        "volumen_refrigerable_m3": 414.0160000000001,
+        "celdas_monitor_por_circuito": [
+          617,
+          797,
+          623,
+          477,
+          613,
+          479,
+          319,
+          317,
+          134
+        ],
+        "cubierto_desde_h": [
+          3.578805563872491,
+          3.578805563872491,
+          3.578805563872491,
+          6.861333082922136,
+          6.861333082922136,
+          6.861333082922136,
+          9.49987241516605,
+          9.49987241516605,
+          10.421045787548861
+        ],
+        "confirmacion": {
+          "variante": "espacial",
+          "lado_m": 0.2,
+          "paso_max_s": 300,
+          "script_sha256": "eb5f0667ae25611105fd95df7ff3372202a7bdb93547c4252376e2a783e5854d",
+          "volumen_voxel_m3": 638.9440000000002,
+          "volumen_refrigerable_m3": 414.0160000000001,
+          "regla_zona": "Pertenencia al voxel refrigerable de referencia 0.4m",
+          "capas_fisicas": "Mismas 11 capas y tiempos IFC; subceldas comparten inicio de su capa"
+        }
+      },
+      "variante": "espacial",
+      "curva": "M2_SS",
+      "clima": "ERA5-2024",
+      "base_336h": {
+        "horizonte_h": 336,
+        "Tmax": {
+          "tiempo_h": 122.58333333333333,
+          "fase": "paso",
+          "Tmax_C": 44.705038748081996,
+          "xyz_Tmax_m": [
+            1.8999991681187556,
+            0.09999916811875487,
+            4.1000000000000005
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 44.705038748081996
+        },
+        "DeltaTmax": {
+          "tiempo_h": 190.66666666666666,
+          "fase": "paso",
+          "Tmax_C": 42.125522217364214,
+          "xyz_Tmax_m": [
+            0.09999916811875487,
+            0.09999916811875487,
+            4.1000000000000005
+          ],
+          "lugar_Tmax": "centro",
+          "vertida_Tmax": 11,
+          "valor": 14.496481718925839,
+          "Tmin_S25_C": 27.629040498438375,
+          "xyz_S25_m": [
+            -3.700000831881244,
+            -8.900000831881245,
+            0.024999999999999994
+          ],
+          "vertida_S25": 1
+        },
+        "excede_70": false,
+        "excede_20": false,
+        "pasos": 4056,
+        "balance_J": {
+          "colocacion": 19420943122.944004,
+          "hidratacion": 61156670639.23181,
+          "aire": -6316157728.94554,
+          "suelo": -10409294332.685537,
+          "final": 46891592418.909256,
+          "residuo": 0.0001621246337890625,
+          "enfriamiento": -16960569281.635643,
+          "enfriamiento_pico_W": 15000.000000000005
+        },
+        "picos_vertidas": [
+          {
+            "id": 1,
+            "value": 39.71000898593709,
+            "t": 96.83333333333333
+          },
+          {
+            "id": 2,
+            "value": 42.71507122235027,
+            "t": 103.25
+          },
+          {
+            "id": 3,
+            "value": 43.84547072054955,
+            "t": 109.16666666666667
+          },
+          {
+            "id": 4,
+            "value": 44.108256299322164,
+            "t": 112.33333333333333
+          },
+          {
+            "id": 5,
+            "value": 44.34321081263717,
+            "t": 115.33333333333333
+          },
+          {
+            "id": 6,
+            "value": 44.23033502282204,
+            "t": 116.08333333333333
+          },
+          {
+            "id": 7,
+            "value": 44.38678925185888,
+            "t": 118.08333333333333
+          },
+          {
+            "id": 8,
+            "value": 44.26758217664375,
+            "t": 119.33333333333333
+          },
+          {
+            "id": 9,
+            "value": 44.52996730698079,
+            "t": 120.25
+          },
+          {
+            "id": 10,
+            "value": 44.52020248385818,
+            "t": 119.5
+          },
+          {
+            "id": 11,
+            "value": 44.705038748081996,
+            "t": 122.58333333333333
+          }
+        ]
+      },
+      "horizonte_h": 600,
+      "Tmax": {
+        "tiempo_h": 122.58333333333333,
+        "fase": "paso",
+        "Tmax_C": 44.705038748081996,
+        "xyz_Tmax_m": [
+          1.8999991681187556,
+          0.09999916811875487,
+          4.1000000000000005
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 11,
+        "valor": 44.705038748081996
+      },
+      "DeltaTmax": {
+        "tiempo_h": 428.9166666666667,
+        "fase": "paso",
+        "Tmax_C": 26.763204274048753,
+        "xyz_Tmax_m": [
+          -0.10000083188124442,
+          0.09999916811875487,
+          2.9000000000000004
+        ],
+        "lugar_Tmax": "centro",
+        "vertida_Tmax": 8,
+        "valor": 17.81513482355686,
+        "Tmin_S25_C": 8.948069450491893,
+        "xyz_S25_m": [
+          -3.700000831881244,
+          -8.900000831881245,
+          1.175
+        ],
+        "vertida_S25": 3
+      },
+      "excede_70": false,
+      "excede_20": false,
+      "pasos": 7232,
+      "balance_J": {
+        "colocacion": 19420943122.944004,
+        "hidratacion": 61156670639.23181,
+        "aire": -12771186811.163763,
+        "suelo": -13373131378.263103,
+        "final": 31363605418.344948,
+        "residuo": 8.0108642578125e-05,
+        "enfriamiento": -23069690154.404083,
+        "enfriamiento_pico_W": 15000.000000000005
+      },
+      "picos_vertidas": [
+        {
+          "id": 1,
+          "value": 39.71000898593709,
+          "t": 96.83333333333333
+        },
+        {
+          "id": 2,
+          "value": 42.71507122235027,
+          "t": 103.25
+        },
+        {
+          "id": 3,
+          "value": 43.84547072054955,
+          "t": 109.16666666666667
+        },
+        {
+          "id": 4,
+          "value": 44.108256299322164,
+          "t": 112.33333333333333
+        },
+        {
+          "id": 5,
+          "value": 44.34321081263717,
+          "t": 115.33333333333333
+        },
+        {
+          "id": 6,
+          "value": 44.23033502282204,
+          "t": 116.08333333333333
+        },
+        {
+          "id": 7,
+          "value": 44.38678925185888,
+          "t": 118.08333333333333
+        },
+        {
+          "id": 8,
+          "value": 44.26758217664375,
+          "t": 119.33333333333333
+        },
+        {
+          "id": 9,
+          "value": 44.52996730698079,
+          "t": 120.25
+        },
+        {
+          "id": 10,
+          "value": 44.52020248385818,
+          "t": 119.5
+        },
+        {
+          "id": 11,
+          "value": 44.705038748081996,
+          "t": 122.58333333333333
+        }
+      ],
+      "cambio_Tmax_K": 0.033721525593072954,
+      "cambio_DeltaTmax_K": -0.4134549233502369,
+      "pico_no_resuelto": false,
+      "segundos": 124.2220262999981
+    }
+  ],
+  "alcance": "Tres pares decisivos por variante; no matriz completa ni estimación de riesgo fino."
+}

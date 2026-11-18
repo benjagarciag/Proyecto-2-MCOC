@@ -1,0 +1,671 @@
+{
+  "alcance": "Inventario de evidencia principal; no copia de entorno ni SHA final de defensa.",
+  "solver_base_git": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+  "archivos": [
+    {
+      "ruta": "casos\\sensibilidad_h\\auditar_cierre_f02.py",
+      "bytes": 6427,
+      "sha256": "2ce29ea371051178a14993708b119251431a2febf565befff616e489eb8a8f52"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\cache_geometria_circuitos.py",
+      "bytes": 1734,
+      "sha256": "0707d8f9762b1115ba0bc2dd4d4b45c5c705471674cac9abc0efa87264a73852"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\cierre_f02.json",
+      "bytes": 588,
+      "sha256": "1984db7a969000c999763fa6d23c9fbb6592e6b4402c632c702ddd415bd825cf"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\cierre_f02.py",
+      "bytes": 5532,
+      "sha256": "037727a05f5704ad0a2f3f980a948f9dc55ec8cc24ae08a0d5b88035bd995d9f"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\comparar_circuitos.py",
+      "bytes": 10605,
+      "sha256": "aaab33e928b7cdcc8575a45fcbe21b48a4d7e8ba7188368001a471d888d2150f"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\control_circuitos.py",
+      "bytes": 7035,
+      "sha256": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\documentar_cierre_f02.py",
+      "bytes": 14765,
+      "sha256": "d61b9182159d4e5bc3c1ca1fc35c8198252805f883b8da3de4c36ff3fc3b15bb"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\ejecutar.py",
+      "bytes": 8749,
+      "sha256": "94358f478c424b7e44133acb798d333f007f6394131bdcda936abf497cf44230"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\ejecutar_cierre_f02.py",
+      "bytes": 1519,
+      "sha256": "73e7a71c643e7561b65ec968f2542831d76a84ab93d353d16604f99b8cf75f55"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\proteccion_postdesmolde.json",
+      "bytes": 1387,
+      "sha256": "c7636c86a98fb848b715153b7d8db76f1f60c2ebe04348a017115133e43611b7"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\proteccion_postdesmolde.py",
+      "bytes": 8498,
+      "sha256": "f7e7c23481b54c46102d2d7a4a4805cb202bc79c37b0788372d25835a1e32234"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\radiacion_borde.py",
+      "bytes": 7220,
+      "sha256": "42135c816b006c94b014cfbae58187b6e4dd3434215b2cb6a9263dccdaf10e40"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\radiacion_config.json",
+      "bytes": 2290,
+      "sha256": "dacb2166995c2acad76964d328f74344c3b3342ffd1b658b4fea2e62d2cfc506"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\sensibilidad_radiacion.py",
+      "bytes": 8404,
+      "sha256": "5680102f881b36b37de182cedad7a858064a920f0ef9dfe54baab40367470a0c"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\simular_circuitos.py",
+      "bytes": 10423,
+      "sha256": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d"
+    },
+    {
+      "ruta": "casos\\sensibilidad_h\\viento.py",
+      "bytes": 16552,
+      "sha256": "29a14c3f9c6d2455a9516ab7bd70000833e5e5517a22359f1b7336b5098f6e00"
+    },
+    {
+      "ruta": "datos\\clima\\radiacion\\era5_radiacion_2023_20261118T200251Z.json",
+      "bytes": 97976,
+      "sha256": "6a701002fe8ea852d4f50085af82a12748c95a44708bbbccbca8abef05a739a6"
+    },
+    {
+      "ruta": "datos\\clima\\radiacion\\era5_radiacion_2024_20261118T200253Z.json",
+      "bytes": 97900,
+      "sha256": "a99cfdc84788a4197218cf8d45f1f61f1f9811465a897122c267d0457de0438d"
+    },
+    {
+      "ruta": "datos\\clima\\radiacion\\era5_radiacion_2025_20261118T200254Z.json",
+      "bytes": 98341,
+      "sha256": "51aa757df951a36cf1b648f303362106fd62a712c648049c23c9d09233f4f1b0"
+    },
+    {
+      "ruta": "datos\\clima\\radiacion\\manifiesto.json",
+      "bytes": 1616,
+      "sha256": "a9b191602e6e5176aed7b1a658dfaf66c2b5b93c208888ec9bce026ac5de9297"
+    },
+    {
+      "ruta": "datos\\clima\\reanalisis\\era5_2023-11-19_2023-12-17_20261117T013707875952Z.json",
+      "bytes": 47482,
+      "sha256": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd"
+    },
+    {
+      "ruta": "datos\\clima\\reanalisis\\era5_2024-11-19_2024-12-17_20261117T013706897091Z.json",
+      "bytes": 47527,
+      "sha256": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b"
+    },
+    {
+      "ruta": "datos\\clima\\reanalisis\\era5_2025-11-19_2025-12-17_20261117T013707614450Z.json",
+      "bytes": 47557,
+      "sha256": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b"
+    },
+    {
+      "ruta": "datos\\hidratacion\\M1_22A.csv",
+      "bytes": 25596,
+      "sha256": "9934f1a9805492e27155735d974fb9400396cfcc85ce2a55b14f6479d8027978"
+    },
+    {
+      "ruta": "datos\\hidratacion\\M1_SS.csv",
+      "bytes": 38022,
+      "sha256": "601abc72a4bf304333860bc14026175ae74880f3fb73f4f9f92801b80a4a1818"
+    },
+    {
+      "ruta": "datos\\hidratacion\\M2_22A.csv",
+      "bytes": 25624,
+      "sha256": "0bfbc392dba46f9ccac9d8026db270f31d9db6b4b0b9df593692504ca0e23980"
+    },
+    {
+      "ruta": "datos\\hidratacion\\M2_SS.csv",
+      "bytes": 38030,
+      "sha256": "273c15287da8dadbc4fb9104a88ccee41b4d6acf4865f50f54fff9072e730ada"
+    },
+    {
+      "ruta": "datos\\hidratacion\\M3_22A.csv",
+      "bytes": 25613,
+      "sha256": "bfa92b335980bef9eb9ae536ae0b29acdc585634776483542a5331190dc04fa9"
+    },
+    {
+      "ruta": "datos\\hidratacion\\M3_SS.csv",
+      "bytes": 38034,
+      "sha256": "e48b3ae517de7ac808e5e94390f78d2202ea8f25ceba72f8c4faec47d31fff1b"
+    },
+    {
+      "ruta": "datos\\hidratacion\\M4_22A.csv",
+      "bytes": 25623,
+      "sha256": "a12017588d3210fbfad7ed69b2df3b7c628cc152b90e9dd7db2387bec07a4fa2"
+    },
+    {
+      "ruta": "datos\\hidratacion\\M4_SS.csv",
+      "bytes": 38268,
+      "sha256": "55ee95ff1d8a94deff55fecc01c902ec7391b05ca4e7400599aa4f563b0b5937"
+    },
+    {
+      "ruta": "datos\\hidratacion\\manifiesto.json",
+      "bytes": 5745,
+      "sha256": "14a4b27f6906dd67267cf69d30a366afe4a00c57c772ce56e626919c585937e5"
+    },
+    {
+      "ruta": "datos\\hidratacion\\source_terms.txt",
+      "bytes": 131836,
+      "sha256": "e5e9a8ba9a5a3a5bb082fc7b0eff0240d0e35fdf2f465e038c0a313aedc28829"
+    },
+    {
+      "ruta": "desarrollo\\fundacion\\fundacion.ifc",
+      "bytes": 20501,
+      "sha256": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0"
+    },
+    {
+      "ruta": "entregas\\F02\\CIERRE_PUNTOS_RESTANTES.md",
+      "bytes": 19416,
+      "sha256": "6a7bad9494a45e7240bef0cabd1bfffb770622dd434ad41386c3e2e7f0c3f5ab"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\01_D_VS_PROBABILIDAD.png",
+      "bytes": 63195,
+      "sha256": "e6a5c6fe0fb46a344f5eaa148183465344a6bc31880adbfda91ff3bb126c52a5"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\02_CRONOGRAMAS.png",
+      "bytes": 40871,
+      "sha256": "dc589c17d4c477f57ac5f42fd2db24ef7d0ee3ae57b63ddf8f6421cdcffbe176"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\03_CURVAS_COMPARABLES.png",
+      "bytes": 300599,
+      "sha256": "376d7d88fb7a34850fda4019c8a47bd2ceaa0585c64be764ceed77d438cdeb1e"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\04_CORTES_COMPARABLES_672H.png",
+      "bytes": 82219,
+      "sha256": "2337b6e6ca448664f1e91a54ce71163a4babe2b8c5999af6330a320508588131"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\05_SENSIBILIDAD_24_PARES.png",
+      "bytes": 94009,
+      "sha256": "d0bac3b2cd4a27725a03c1d62eb5a67aa58cea3241576ea79276aacdb8761ba0"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\06_OCHO_FUENTES_Y_CALOR.png",
+      "bytes": 170818,
+      "sha256": "82ca83ed23674718be5493c94f1de4cb567610b2ffa3a01cabddd989b976ea1d"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\07_CLIMA_672H.png",
+      "bytes": 698213,
+      "sha256": "9e525c1477d818a9d1e85d8e84e65913700dab10db0fb670f270742bdcd97cb5"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\BALANCES_144_FILAS.csv",
+      "bytes": 23511,
+      "sha256": "19125e49e905242db6708564a21ec3d5c212cd863aaafafc732a3c44e268d07f"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\COMPARACION_PLANES.csv",
+      "bytes": 398,
+      "sha256": "a0c3acea006e42d0309193d17a21724a89a40b0650bbb1dafcce19a50beff07b"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\CONFIGURACION_FINAL_REVISADA.json",
+      "bytes": 4540,
+      "sha256": "9dbb91ccee5c234246b6d4d70f85a4d774730de7d253d72cb63036fb1087884f"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\DATOS_CIERRE.json",
+      "bytes": 8524,
+      "sha256": "bcb4cfc395d3c4150eefc571472accdc2b9ba968a81f3556b98a91841ae4412d"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\METRICAS_144_FILAS.csv",
+      "bytes": 58821,
+      "sha256": "bd172459408b37e49e06745d70cf9679818848d75c33d2a51ef115c3db75688f"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\OCHO_FUENTES_VERIFICADAS.csv",
+      "bytes": 400,
+      "sha256": "d47c0709c011bff64691ff3833fc498bad20e064a0a48efdc9fef891c7fc1745"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\PARAMETROS_FINAL.csv",
+      "bytes": 12441,
+      "sha256": "2a27804131f5772f8026ec16b5d5db87cec60b6155109f2347e5f299d2f753aa"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\RESULTADOS_CIERRE.md",
+      "bytes": 7009,
+      "sha256": "0c1d4ea1b643e99e5a49e3de17065e6dc9b755c83bd606e7ec8100ebc18512a0"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\SENSIBILIDAD_ESPACIAL_24_PARES.csv",
+      "bytes": 1420,
+      "sha256": "5183e63cd3ffedd9f540f5054d7dc2797ed21d05645a13364192ac710455368e"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\VERIFICACION.json",
+      "bytes": 310,
+      "sha256": "abe62debd2311d76661ce5cb90bbedbe5227272555ca4764f99f53e60104caf0"
+    },
+    {
+      "ruta": "entregas\\F02\\cierre_revision_final\\VERIFICACIONES_EJECUTADAS.txt",
+      "bytes": 1148,
+      "sha256": "abe16f834fc9dc2cef6268f07f6a5b2263f1e58afed088686d389685defc44ba"
+    },
+    {
+      "ruta": "requirements.txt",
+      "bytes": 2056,
+      "sha256": "413c735d6f89410301e02e16f91065653669505fc783d80350b8fe13cb39ae30"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "bytes": 5734640,
+      "sha256": "73cbd60e7ae812c80cf098b708ad34f30d8795cc27649fcdaa266dd2d17339a0"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "bytes": 5734058,
+      "sha256": "92daf1ca65cf7fa59e4aa663aa2a3fec02c53308edb9965f72f8c8389ac6d532"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "bytes": 5741652,
+      "sha256": "2c9850e4ddf5f113afa1e50ba2ca12dc42d10dcee801b0c348c2e1356d4d3e27"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "bytes": 5783588,
+      "sha256": "5f531e1b06589bc9fe06adb957ded6be6d7badc2179d57bdccde11305cab2afa"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "bytes": 5793464,
+      "sha256": "35b2e3f9377f14ff696951bab875a51997f616159c6e498f659b0f913f3063f4"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "bytes": 5786075,
+      "sha256": "723111cee9a192778a79cf0718c6832b20b90d79751aae259d4e73a3e12b4b28"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "bytes": 5730097,
+      "sha256": "613305196a987243b92d4c4994985491812e8334a39a7097aa06bdccbba44017"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "bytes": 5729420,
+      "sha256": "0d22af3d977099cebba242ba9d126d3357ed237307c649cfbce27101a00f303e"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "bytes": 5731981,
+      "sha256": "3097899f9f75eb2355ba9241bb82edef29b66fce1e43bfa23a6ac55fe24a2361"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "bytes": 5773827,
+      "sha256": "c0a0aa3b1edaeea937e749c4b6e66a56db1f9b1ecae6e675ae3e47935157f9d7"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "bytes": 5789397,
+      "sha256": "0f49eaab62fa27df16f4bb53e005bd74660a13d3737b7852780fcb9d751dd587"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "bytes": 5775975,
+      "sha256": "84d61f7276bd4ace96303d25e81cdf4f7cf6d1a8f8f7818142b7d7b49a9cc5b6"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "bytes": 5730156,
+      "sha256": "a8df7e5c2986ca33005ea2deccf962de1207cc9cbbd75947055e24a5b22cc451"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "bytes": 5729339,
+      "sha256": "137231d05b32b1b570cb619bbcfbe18b0e986f0c1c5e047107cf8c77cfa19546"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "bytes": 5737630,
+      "sha256": "9428322729d3b89ac2a2d95f7423c95d17dd50bb17976b5ededf6a97c0a98ebc"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "bytes": 5779483,
+      "sha256": "f3def8bfe51566bce98eedcba4e949914df009f1cf43b2ff5a5fbccc12a2597e"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "bytes": 5796071,
+      "sha256": "da3f8fff1dc0d6beedf35cdc836b6648fb73b7f5832067bcbfbd5ad6146eb0a2"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "bytes": 5781865,
+      "sha256": "ee5354bc8a36f8e4d0bea985b721570f707baaf04581514fc70aa12a635c60e9"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "bytes": 5730387,
+      "sha256": "40ff97fbebafb83e3ef6602e808a50e23475d07f2e49a3c7fb1776e924b9b4b6"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "bytes": 5729435,
+      "sha256": "c0919b1f16ba1b1196e357e97d5dc69649655a4539dfee893b6913308b5d0fbd"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "bytes": 5736677,
+      "sha256": "66c3044da9362fc7ff3f4089febfc37567947c685253e60babd1bc2ebe54acff"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "bytes": 5779810,
+      "sha256": "b14363eb963b8005d5a069f90cf6d0f8e6f616547d34d13439676b3d0cb3a752"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 5795439,
+      "sha256": "ee373969fe9fcb78b14b85827e199f09d585e129c463a9b5c035c390b0b535b8"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2024.npz",
+      "bytes": 295255,
+      "sha256": "f2ce595e9bfdb5bc967be3a8ea932c183b591b2b280abf07a83491fa2f4e8dfb"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 5783269,
+      "sha256": "413195f494bb1659c6e4586dcfc2bb032e998e1f6cbb3bb53fa047ca7de2f50e"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\matriz.json",
+      "bytes": 69754,
+      "sha256": "311016e21e0417544aa823e865edc7738482b31f393819820811ba5668fd3ffa"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2023.json",
+      "bytes": 5730181,
+      "sha256": "8e8dcc670f9a040ebcebadb40f8f7bfb53dc92954fb88151fd5c0f860e5cff58"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2024.json",
+      "bytes": 5729082,
+      "sha256": "1fbbcf6462cecdc2157a1729eb0799e39f2f22efc97a79a4a44596f0ccb1761d"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2025.json",
+      "bytes": 5735189,
+      "sha256": "ae968540ac8248e361c3e13844bf80e29b03d35039502b0f3734de4daa1ca85b"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2023.json",
+      "bytes": 5781417,
+      "sha256": "bff698ccaf246cb28ef714228e0f7b12d4d8ecda133485a380d633c99b494c00"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2024.json",
+      "bytes": 5783253,
+      "sha256": "1fd7ea1ad20d7f20a2449db6e5e1a783f903f6d34bc8cc6743e440c6f5de5bce"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2025.json",
+      "bytes": 5783630,
+      "sha256": "f69711647156d989e4f4b4af7c189e527a2055b040f95f155796616c313c3808"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2023.json",
+      "bytes": 5725651,
+      "sha256": "7202c42189eea5b970f7b74093d7b5a02e55bff71a4640209a88cf628fba245d"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2024.json",
+      "bytes": 5725080,
+      "sha256": "ac7e830bcbf6fea9f8ef0b3a59a3cda0ed92ad2666b6d47605fb2bcd8824445a"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2025.json",
+      "bytes": 5729844,
+      "sha256": "6fadf8bf3a94c1848534ec74d153f231adab0cff73e1f2ba1d0607ea24b3d6fa"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2023.json",
+      "bytes": 5771035,
+      "sha256": "14f4a191fa79d59d518ff9e342594dbe09814ed4bc1f9736862bdbe68595da59"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2024.json",
+      "bytes": 5785307,
+      "sha256": "1e0847cad1c2902a1aed5ee5da544d8dec9524978532d34179044da80bff0fb1"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2025.json",
+      "bytes": 5774083,
+      "sha256": "65ca7866474aec30d1f9500bf57d7f0fcd76d7f9db1e84f9881b5442ac124c8e"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2023.json",
+      "bytes": 5728224,
+      "sha256": "0f4905b2e31d3a4778e518fc71491362cc7d0beadded16d153debb1b13405b0c"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2024.json",
+      "bytes": 5726963,
+      "sha256": "262b152abbc3af4b90471608050a1a3679e4dd5941a0475ef3e04c9a76b49af7"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2025.json",
+      "bytes": 5730494,
+      "sha256": "a4cd21a0ef27c683f0484883c7109a0c268ba79bdbd831c9fc8f665e5e6e0a2c"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2023.json",
+      "bytes": 5778324,
+      "sha256": "78ed387cc3478f4fa7b2e773db565ddc0fc7d2675b767bdc193aafffa9a16da7"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2024.json",
+      "bytes": 5792419,
+      "sha256": "00e82a443e768e270d271f5abfe2c8188a8d403b9249135bced079e1095deb02"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2025.json",
+      "bytes": 5779607,
+      "sha256": "3040102fafc62e913cf19d14159900da92c807abec0805a0545be1d790cf41c9"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2023.json",
+      "bytes": 5728625,
+      "sha256": "0ceb9658ff73f7849678d3aa6fe28549d82d3ae6ce213256c7dd9cca9c570a47"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2024.json",
+      "bytes": 5727670,
+      "sha256": "16ed830cff284c1483e55b414b57cf8b9fe0a11461025af6f4f2ffac46ac42d6"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2025.json",
+      "bytes": 5731375,
+      "sha256": "4aa0708ada0e62323d1ee400ff700413db51bab8eca1c82c61f5be32dd3b1188"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_SS_ERA5-2023.json",
+      "bytes": 5777250,
+      "sha256": "c64c1eee1535afb504694307808ac2e27967af311cb30298647a6969f5e61d2c"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 5790291,
+      "sha256": "ab3eef94a9695e085a3fb77d95a8345193686cc4b16a1fe26aab3b4d92f3d0fc"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 5780976,
+      "sha256": "99e37c36fc39015e75648619978a82ca53fea1649c0cea83e254bfdaf6e3c9db"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\matriz.json",
+      "bytes": 70678,
+      "sha256": "b3098eb1637932328b9e5fad869628e8987114d1a058fff281a2857ece80a958"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "bytes": 5729091,
+      "sha256": "d0daef3e3b1ed7c86cf8e8eeecbf94429b797faf98a6c0a5dde5936b8137d6c6"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "bytes": 5727133,
+      "sha256": "2137535f59dd35c9018eca4068a094146a580609443f9f320653a3dc4b3de519"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "bytes": 5736035,
+      "sha256": "26c35462a38ad2ebcb4417c79025e56cd753aecfd9ae0f70853704d6e2ff3aa1"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "bytes": 5778413,
+      "sha256": "420bcfe53c6cb3b948bf502053f31a7d935e38cf3a2f2c7690d66eecf2b34e4b"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "bytes": 5787943,
+      "sha256": "388dd27ec3403ecf6e1985cbc9a530ba3265ed001be1106f3e27ab9f5b69dc0e"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "bytes": 5781301,
+      "sha256": "0e3a2e80c94d567f7fbe302d5003289dfbc1ed7d62269d02ec2e57e86814b1d2"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "bytes": 5723701,
+      "sha256": "ec92e43fbb6fb13305e0672beca038482d79e9f33c8293914c9c3c265e3f790a"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "bytes": 5723150,
+      "sha256": "f361525b1a8274e7d1652585a4fd662e770fa4b7d4ee0cf74f6dc000abc755a5"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "bytes": 5726327,
+      "sha256": "e510daecbf08a6901e37d6f6d6eb451f9ebc4e1f6fd49fc85529da42d9118ec2"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "bytes": 5767829,
+      "sha256": "18b5e8aefdc77f942b9f128ca0084adaa851a12f53c40fc3979e8cb0deb258c3"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "bytes": 5782974,
+      "sha256": "06dae3b523473f827c08910d31f30943d9d48523254de00d5c530f9c5b4d880f"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "bytes": 5771213,
+      "sha256": "7850b903b4bd753fd11a9d2169fa20b9dca428a6796b0ac79f2770aaa23e5471"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "bytes": 5723914,
+      "sha256": "5a673c87dec075eeabe53011ce1fd72e5e42d20af663916afaae35e1491b53e5"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "bytes": 5723876,
+      "sha256": "568df2761091bbdd7e665eafd417a2225fcd3a62db9cd76e1dd0a1651fd04b2c"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "bytes": 5731267,
+      "sha256": "2bdce1fa37316786d338eaacffa32ee8ad8aa6f5095998c7672381d2599db820"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "bytes": 5774249,
+      "sha256": "d083803aa32a28e3d5181fae6e7a57a24ddeba367387b8a1e111f0197d33d1fc"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "bytes": 5790520,
+      "sha256": "9bcbae44e6ce2e8a1615b3f36b46bae45714c47a61bb1e22f21b2e7c6fa943b0"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "bytes": 5777274,
+      "sha256": "d33e1f18bd6abc6ee097a26ee8955678bbf7ccc21a94b39f78abfe41e81b2867"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "bytes": 5723979,
+      "sha256": "0afe5031bd33dbc87cd0cdaeba0fd9c61ae338a491b817677bff4f96a7f11da4"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "bytes": 5724028,
+      "sha256": "943732503d93e1e3113d00f07fd716b55ad06b7103cdfc7d80468641b0ec7758"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "bytes": 5730538,
+      "sha256": "6a716edfa06672c0ade3b26dde1bfe49463f178714054d66f4cd9f6e57a31aa9"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "bytes": 5773478,
+      "sha256": "522d0b4b6eb290ee9da6cdf4b6af9b0e117d873d0937b3b94c7380fffc62632b"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "bytes": 5790265,
+      "sha256": "539dd4d1ecc3e60e1c178911600297fab9507684f5d0aa91090bc272e65fd05e"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2024.npz",
+      "bytes": 295275,
+      "sha256": "cd916f2cc99745c54d1caf9e37196cb2ee4cf5e08b211f6c6dd24f23f4bdeca7"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "bytes": 5776515,
+      "sha256": "dbdda9a78b229ae62b18dcef2e1f776c9dce0774b8add92dab768e89087372fe"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\matriz.json",
+      "bytes": 69630,
+      "sha256": "6df8f82c34a876eb790e8adb12e5625172e07f9aedb7ccd2deb9c491def781ce"
+    },
+    {
+      "ruta": "resultados\\cierre_f02\\resumen.json",
+      "bytes": 6565,
+      "sha256": "f89179778ba6bee5f549f81491b0d36944391a78cc2b3b631df6729554132296"
+    },
+    {
+      "ruta": "resultados\\diseno_circuitos_colocacion\\esquema.json",
+      "bytes": 23771,
+      "sha256": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9"
+    }
+  ]
+}

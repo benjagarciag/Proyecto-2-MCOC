@@ -1,0 +1,105 @@
+﻿parametro,valor,procedencia_o_estado
+version,"""F02-cierre504h-sombra90""",Configuracion final del proyecto
+alcance,"""Modelo docente idealizado, condicionado al catalogo. Verificar matrices completas en resultados/cierre_f02/resumen.json.""",Configuracion final del proyecto
+entrada,"""casos/sensibilidad_h/ejecutar_cierre_f02.py""",Configuracion final del proyecto
+familia.caudales_m3_h,"[55, 60]",Supuesto docente de capacidad y familia de decision declarada
+familia.paso_m3_h,5,Supuesto docente de capacidad y familia de decision declarada
+familia.maximo_admisible_m3_h,60,Supuesto docente de capacidad y familia de decision declarada
+familia.propuesta_m3_h,60,Supuesto docente de capacidad y familia de decision declarada
+familia.dos_frentes_maximos_m3_h,"[30, 30]",Supuesto docente de capacidad y familia de decision declarada
+familia.esperas_h,0,Supuesto docente de capacidad y familia de decision declarada
+familia.retraso_inicial_h,0,Supuesto docente de capacidad y familia de decision declarada
+tiempo.t0,"""2026-11-19T10:00:00-03:00""",F02 y configuracion de inicio; duracion calculada por volumen/caudal
+tiempo.zona,"""America/Santiago""",F02 y configuracion de inicio; duracion calculada por volumen/caudal
+tiempo.evaluacion_obligatoria_h,336,F02 y configuracion de inicio; duracion calculada por volumen/caudal
+tiempo.seguimiento_comun_h,672,F02 y configuracion de inicio; duracion calculada por volumen/caudal
+tiempo.D_propuesta_h,10.612919248110561,F02 y configuracion de inicio; duracion calculada por volumen/caudal
+tiempo.D_vecina55_h,11.577730088847884,F02 y configuracion de inicio; duracion calculada por volumen/caudal
+geometria.IFC,"""desarrollo/fundacion/fundacion.ifc""","IFC/IfcOpenShell, esquema de capas y aproximacion de activacion"
+geometria.objetos_IFC,5,"IFC/IfcOpenShell, esquema de capas y aproximacion de activacion"
+geometria.capas_termicas,11,"IFC/IfcOpenShell, esquema de capas y aproximacion de activacion"
+geometria.espesor_maximo_m,0.4,"IFC/IfcOpenShell, esquema de capas y aproximacion de activacion"
+geometria.espesor_ultima_m,0.3,"IFC/IfcOpenShell, esquema de capas y aproximacion de activacion"
+geometria.volumen_fisico_capas_m3,636.7751548866337,"IFC/IfcOpenShell, esquema de capas y aproximacion de activacion"
+geometria.volumen_malla_triangular_IFC_m3,636.7751926932476,"IFC/IfcOpenShell, esquema de capas y aproximacion de activacion"
+geometria.temperatura_colocacion_C,12,"IFC/IfcOpenShell, esquema de capas y aproximacion de activacion"
+geometria.activacion,"""Capa completa al inicio numerico; duracion fisica conservada en D; sin frente horizontal resuelto""","IFC/IfcOpenShell, esquema de capas y aproximacion de activacion"
+hormigon.rho_kg_m3,2476,rho/cp del archivo del profesor; k=2 supuesto no calibrado
+hormigon.cp_J_kg_K,1023,rho/cp del archivo del profesor; k=2 supuesto no calibrado
+hormigon.k_W_m_K,2,rho/cp del archivo del profesor; k=2 supuesto no calibrado
+hormigon.contacto_entre_capas,"""perfecto; vecino activo reemplaza borde exterior""",rho/cp del archivo del profesor; k=2 supuesto no calibrado
+protecciones.madera.espesor_m,0.018,Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.madera.k_W_m_K,0.158,Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.madera.retiro_edad_h,72,Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.manta1.espesor_m,0.04,Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.manta1.k_W_m_K,0.042,Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.manta1.retiro_edad_h,240,Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.manta2.espesor_m,0.04,Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.manta2.k_W_m_K,0.042,Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.manta2.retiro_edad_h,504,Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.coronacion,"""dos mantas, sin madera""",Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.laterales,"""madera y dos mantas; sin relleno""",Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.entre_capas_hormigon,"""sin protecciones""",Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+protecciones.condicion_retiro,"""resistencia, monitoreo y prediccion; fechas no son autorizaciones automaticas""",Espesores/conductividades de referencia docente; retiros son decisiones ensayadas
+sombra.activacion,"""despues del retiro de ultima manta por edad local""",Hipotesis de ensayo; no producto o montaje acreditados
+sombra.transmitancia_solar,0.1,Hipotesis de ensayo; no producto o montaje acreditados
+sombra.caras,"""todas las caras exteriores al aire de cada capa""",Hipotesis de ensayo; no producto o montaje acreditados
+sombra.h_y_onda_larga,"""conservados respecto del modelo sin cubierta""",Hipotesis de ensayo; no producto o montaje acreditados
+sombra.retiro,"""no simulado; permanece hasta672h""",Hipotesis de ensayo; no producto o montaje acreditados
+sombra.acreditacion_real,"""pendiente; porcentaje comercial de sombreo no acredita transmision solar total ni montaje""",Hipotesis de ensayo; no producto o montaje acreditados
+ambiente.latitud_solicitada,-37.277929,Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.longitud_solicitada,-72.368271,Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.historias,"[""ERA5-2023"", ""ERA5-2024"", ""ERA5-2025""]",Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.modelo,"""ERA5 via Open-Meteo; historico, no pronostico2026""",Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.viento,"""v2=v10*(2/10)^0.14""",Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.conveccion,"""h(t)=5.7+3.8*v2(t)""",Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.alpha_solar,0.6,Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.emisividad,0.9,Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.albedo_suelo,0.2,Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.orientacion,"""+xEste,+yNorte""",Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.cielo,"""estimado con rocio/nubes; sin medicion infrarroja""",Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+ambiente.sombras_geometricas,"""no resueltas""",Snapshots ERA5/Open-Meteo; correlacion h y restantes hipotesis radiativas declaradas
+suelo.temperatura_C,15,"Reservorio equivalente supuesto, sin inercia ni medicion de sitio"
+suelo.longitud_equivalente_m,0.5,"Reservorio equivalente supuesto, sin inercia ni medicion de sitio"
+suelo.k_W_m_K,1.2,"Reservorio equivalente supuesto, sin inercia ni medicion de sitio"
+suelo.inercia,"""no resuelta""","Reservorio equivalente supuesto, sin inercia ni medicion de sitio"
+frio.circuitos,9,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.agua_C_uniforme,18,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.Uv_W_m3_K,5,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.tope_global_W,15000,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.volumen_refrigerable_m3,414.016,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.caudal_abierto_por_ramal_L_min,18,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.caudal_total_con_bypass_L_min,162,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.abre_minima_monitoreada_C,19,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.cierra_algun_tramo_C,18,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.cobertura_previa,true,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.corte_global,"""ninguno""","Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.pared_tubo_contacto_agua_axial,"""no resueltos; caudal no determina Uv""","Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.diametro_interior_calculo_m,0.025,"Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.cotas_m,"[0.5, 1.5, 2.5, 3.8]","Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+frio.ramales_por_cota,"[3, 3, 2, 1]","Anteproyecto y transferencia equivalente idealizados, no dimensionamiento real"
+fuentes.manifiesto,"""datos/hidratacion/manifiesto.json""",Ocho fuentes completas del profesor y procesamiento tabular conservativo
+fuentes.curvas,"[""M1_SS"", ""M2_SS"", ""M3_SS"", ""M4_SS"", ""M1_22A"", ""M2_22A"", ""M3_22A"", ""M4_22A""]",Ocho fuentes completas del profesor y procesamiento tabular conservativo
+fuentes.entrada_original,"""Q_W_m3""",Ocho fuentes completas del profesor y procesamiento tabular conservativo
+fuentes.integracion,"""trapecios600s a acumulado; interpolacion lineal del acumulado e incremento exacto por paso""",Ocho fuentes completas del profesor y procesamiento tabular conservativo
+fuentes.misma_curva_por_realizacion,true,Ocho fuentes completas del profesor y procesamiento tabular conservativo
+fuentes.cola,"""cero tras registro240.333hSS o163h22A, como hipotesis""",Ocho fuentes completas del profesor y procesamiento tabular conservativo
+fuentes.cinetica_dependiente_T,false,Ocho fuentes completas del profesor y procesamiento tabular conservativo
+fuentes.comparabilidad_dosificaciones,"""no confirmada; escenarios de modelo""",Ocho fuentes completas del profesor y procesamiento tabular conservativo
+probabilidad.peso_curva,0.125,Hipotesis de escenarios/pesos y criterios docentes de F02
+probabilidad.peso_clima,0.3333333333333333,Hipotesis de escenarios/pesos y criterios docentes de F02
+probabilidad.peso_conjunto,0.041666666666666664,Hipotesis de escenarios/pesos y criterios docentes de F02
+probabilidad.independencia,"""material-clima supuesta""",Hipotesis de escenarios/pesos y criterios docentes de F02
+probabilidad.evento,"""Tmax>70C o DeltaTmax>20K, sin doble conteo""",Hipotesis de escenarios/pesos y criterios docentes de F02
+probabilidad.limite,0.05,Hipotesis de escenarios/pesos y criterios docentes de F02
+probabilidad.garantia_riesgo_real,false,Hipotesis de escenarios/pesos y criterios docentes de F02
+numerico.propio,true,"Balance propio, limites del esquema y sensibilidad numerica"
+numerico.esquema,"""balance cartesiano conservativo, Euler explicito""","Balance propio, limites del esquema y sensibilidad numerica"
+numerico.malla_base_m,0.4,"Balance propio, limites del esquema y sensibilidad numerica"
+numerico.malla_final_m,0.2,"Balance propio, limites del esquema y sensibilidad numerica"
+numerico.paso_max_s,300,"Balance propio, limites del esquema y sensibilidad numerica"
+numerico.contraste_temporal_malla_m,0.4,"Balance propio, limites del esquema y sensibilidad numerica"
+numerico.contraste_temporal_paso_s,150,"Balance propio, limites del esquema y sensibilidad numerica"
+numerico.profundidad_S25_m,0.025,"Balance propio, limites del esquema y sensibilidad numerica"
+numerico.S25,"""reconstruccion lineal centro-cara de hormigon en contorno activo; no temperatura exterior de manta""","Balance propio, limites del esquema y sensibilidad numerica"
+limitaciones,"[""agua y transferencia de tubos equivalentes"", ""cubierta idealizada"", ""suelo sin inercia"", ""fuente por edad con cola supuesta"", ""activacion instantanea por capa"", ""sin validacion experimental de fundacion"", ""sin analisis mecanico de fisuracion"", ""sin fecha definitiva de apagado o desmontaje de sombra""]",Alcance declarado del modelo

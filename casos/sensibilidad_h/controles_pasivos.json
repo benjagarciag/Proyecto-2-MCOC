@@ -1,0 +1,9 @@
+{
+  "casos": {
+    "t10_dos_capas": {"temperatura_C": 10, "retiros_h": [240, 480]},
+    "t12_tres_capas": {"temperatura_C": 12, "retiros_h": [240, 360, 480]},
+    "t10_tres_capas": {"temperatura_C": 10, "retiros_h": [240, 360, 480]}
+  },
+  "espesor_por_capa_m": 0.04,
+  "nota": "Única progresiva sin extracción; tres capas es alternativa exploratoria, no montaje validado. Madera lateral18 mm hasta72 h; base/suelo conservados."
+}

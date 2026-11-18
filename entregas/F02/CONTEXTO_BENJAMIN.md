@@ -1,4 +1,22 @@
+> Actualizacion con radiacion: [comparacion vigente](COMPARACION_CIRCUITOS_FINAL.md), cinco matrices completas en336h y presentacion actualizada. Este documento conserva el contexto de reparto o integracion anterior.
+
 # Contexto para Benjamín y su agente
+
+**Comparación y evidencia vigentes:**
+[COMPARACION_CIRCUITOS_FINAL.md](COMPARACION_CIRCUITOS_FINAL.md). Se
+cerraron cuatro planes60/55/50/45m³h con24 pares cada uno, candidata
+fina completa y refinos alternativos, con gráficos y conclusión actual.
+No repetir la preparación de evidencia que el reparto histórico enumera.
+
+**Actualización que prevalece sobre los pendientes históricos siguientes:**
+el usuario pidió cerrar B1–B7 conservando los nueve circuitos. La propuesta
+consolidada está en [CIERRE_BENJAMIN.md](CIERRE_BENJAMIN.md), con tabla
+de parámetros, configuración, montaje, monitoreo y contingencias. Mantener
+agua idealizada18°C,18L/min por ramal,162L/min con bypass, cobertura previa
+y control19/18 sin corte432h. No sustituirlo por tres sectores/43Lmin.
+Las condiciones de trabajabilidad, resistencia y equipo son requisitos
+para obra, no verificaciones experimentales realizadas. Ver allí alcance
+de las comprobaciones numéricas y coordinación pendiente del equipo.
 
 ## Encargo
 

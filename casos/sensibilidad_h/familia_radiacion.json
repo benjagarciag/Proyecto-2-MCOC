@@ -1,0 +1,13 @@
+{
+  "planes_m3_h": [60, 55, 50, 45],
+  "horizonte_h": 336,
+  "variante_radiacion": "ambas",
+  "malla_base_m": 0.4,
+  "malla_fina_m": 0.2,
+  "paso_max_s": 300,
+  "paso_temporal_s": 150,
+  "pares_temporales": [["M4_SS", "ERA5-2024"], ["M4_SS", "ERA5-2025"], ["M2_SS", "ERA5-2024"]],
+  "pares_alternativas_finas": [["M4_SS", "ERA5-2024"], ["M4_SS", "ERA5-2025"]],
+  "alcance": "Comparación homogénea a14 días. Los seguimientos600–672h anteriores son diagnóstico adicional, no esta función objetivo.",
+  "refrigeracion": "Sumidero volumétrico equivalente U5, agua uniforme18°C, tope15kW; sin resistencia de pared, convección interior o balance axial del agua. El caudal no determina U."
+}

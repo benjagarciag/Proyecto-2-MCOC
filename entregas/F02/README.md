@@ -1,124 +1,34 @@
-# F02 — estado integrado y siguiente trabajo
+# F02: cierre revisado con manta504h y sombra90%
 
-Grupo 6: Benjamín García, Luis Noriega y Matías Stierling. Actualizado el
-18-11-2026. [Pendientes y reparto entre los tres](PENDIENTES_EQUIPO.md).
-[Pauta oficial F02](../../Enunciados%20e%20Instrucciones/Enunciados/F02_DEFENSA_FINAL.txt)
-· [Pauta E13](../../Enunciados%20e%20Instrucciones/Enunciados/E13_W5_MIERCOLES_INCERTIDUMBRE.txt).
+**Preentrega F02:** [PPT/PDF](presentacion/README.md) y [guion](GUION_ORAL_F02.md) actualizados con el cierre. Ocho principales, índice yB01–B15;24láminas.
+**Resultado técnico de cierre:** [matrices, resultados y reproducción](cierre_revision_final/RESULTADOS_CIERRE.md). La propuesta60m³/h/12°C tiene24pares completos0,20m/300s hasta672h: Tmax47,0322°C,ΔT15,7202K,Punión0 y sin alertas. La matriz gruesa60 y su vecina55 usan la misma protección y también cumplen. Auditoría72piezas/2045transiciones aprobada;se conservan336h y seguimiento672h. Entrada nueva`casos/sensibilidad_h/ejecutar_cierre_f02.py`,sin simulación por defecto. Configuración[final revisada](cierre_revision_final/CONFIGURACION_FINAL_REVISADA.json),[desarrollo de puntos5–6](CIERRE_PUNTOS_RESTANTES.md). Siete figuras,parámetros y144filas de métricas/balance disponibles en`cierre_revision_final/`. PPT/PDF y guion integrados en la preentrega: [presentación vigente](presentacion/README.md). Se conserva la estructura personalizada de6:25.
 
-## Qué se incorporó
+## Antecedentes de la revisión
 
-Se integró la rama `f02-verificaciones-complementarias`, hasta
-`6718163118123c4b05667b91ad5b4d50124dcf2d`, conservando sus verificaciones,
-resultados y documentos. Encima se incorporaron las sensibilidades y decisiones
-de la revisión conjunta. La [evidencia del compañero](../../casos/f02_verificaciones/README.md)
-describe su configuración original, con h constante y tope 12 kW.
-No reemplaza las comprobaciones pendientes del nuevo caso.
+Los textos siguientes conservan la evolución anterior. En particular,`modelo_f02.py`y`MODELO_VIGENTE.json`corresponden a la configuración anterior360h sin sombra;para reproducir el cierre revisado usar la entrada nueva y su configuración indicadas arriba.
 
-Publicación de este avance: mensaje **Avance miercoles entrega final**.
-Identificar su SHA con:
+**Nuevo ensayo de protección posterior:** [tres alternativas simuladas](proteccion_postdesmolde/RESULTADO_TRES_ALTERNATIVAS.md). La combinación última manta hasta504h de edad local+sombra solar90% posterior cumple24pares gruesos a672h, Tmax47,4941°C/ΔT16,5306K/Punión0 y sin alarmas. Tres confirmaciones finas y dos temporales también cumplen, selectivas. Las medidas por separado no cumplen. Estudio79piezas/2787transiciones auditado; no sustituye automáticamente configuración vigente ni actualiza aún PPT/guion. La sombra es idealizada y permanece hasta672h; no se acredita su retiro ni instalación real.
 
-```powershell
-git log -1 --format=%H --grep="^Avance miercoles entrega final$"
-```
+**Revisión en curso de la pauta:** [desarrollo de apartados1–3.3](revision_puntos_1_3/DESARROLLO_PUNTOS_1_A_3_3.md). Incluye t₀, cronograma completo, dominio/S25 e indicadores y compara24pares a336/672h. El cumplimiento336h no acredita el plan extendido:24/24excedenΔT y16conservan alarma de cola. La recomendación completa requiere revisar protección/control. PPT y guion se actualizarán después de revisar el resto deF02, según instrucción del usuario.
 
-Ese SHA identifica el avance integrado, no una defensa terminada.
+Se incorporan solar y onda larga, con el enfriamiento equivalente de nueve circuitos. Entrada: `casos/sensibilidad_h/modelo_f02.py`. Sin opciones consulta el estado sin simular. `--ejecutar` resuelve o reutiliza los24 pares de la candidata. `--comparar-planes --ejecutar` incluye60/55/50/45m3/h. `--malla 0.2 --ejecutar` reproduce la matriz fina de la candidata. `--auditar` revisa la evidencia.
 
-## Candidata actual y alcance
+- [Comparacion completa y resultados](COMPARACION_CIRCUITOS_FINAL.md).
+- [Ecuaciones del modelo](ECUACIONES_MODELO_VIGENTE.md).
+- [Interaccion real y equivalente de tuberias](INTERCAMBIO_TUBERIAS.md).
+- [Guion oral actualizado](GUION_ORAL_F02.md).
+- [Brief detallado de diapositivas](BRIEF_DIAPOSITIVAS_F02.md).
+- [Presentacion y reproduccion](presentacion/README.md).
+- [Configuracion y hashes vigentes](MODELO_VIGENTE.json).
 
-Una operación continua; **12 °C de colocación en todo el hormigón**;
-enfriamiento volumétrico equivalente U=5 W/(m³ K), referencia 18 °C,
-tope 15 kW, activación desde 6 h de edad y apagado global a 432 h.
-Se conserva k=2 W/(m K), suelo a 15 °C con resistencia equivalente,
-protecciones y retiros descritos en los documentos físicos.
-Se usa h horario calculado del viento; su media 17,09 W/(m² K) es una
-referencia y no sustituye la historia horaria en esta candidata.
+## Evidencia actual
 
-| Resolución / catálogo | Peor Tmax | Peor ΔT | P_T / P_Δ / P_f | Horizonte |
-| --- | ---: | ---: | --- | --- |
-| 0,50 m / paso máximo 900 s; 8 curvas × 3 climas, pesos 1/24 | 46,2843 °C | 17,3681 K | 0 / 0 / 0 % | 600 h, sin alertas |
+Ventana comun0-336h desde la primera colocacion. Cuatro matrices gruesas de24 pares a0,40m/300s y matriz fina completa de la candidata a0,20m/300s. Todas sin excedencias en14dias bajo el catalogo discreto. Candidata fina: Tmax47,0322C y diferencial15,7202K. Seis contrastes finos de alternativas y tres temporales son selectivos. Auditoria5matrices/129piezas/1161registros aprobada.
 
-[Matriz de la candidata](../../resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c.json).
-El peor diferencial ocurre en M4_SS × ERA5-2025 a 380 h, después de las
-336 h iniciales; no truncar ahí la evaluación. Cumple el modelo discreto en
-esta resolución. **Faltan confirmación numérica de esta configuración,
-constructibilidad del control y comparación final con condiciones comunes.**
-No implica riesgo real cero ni ausencia demostrada de fisuras.
+La refrigeracion usa Uvol5W/(m3K), agua uniforme18C, tope global15kW y control19/18 con cobertura. No resuelve pared de tubo, pelicula interior o agua axial. El caudal operativo18L/min por ramal no determina la extraccion del solver. Los resultados no acreditan una instalacion real ni riesgo real <=5%.
 
-Inicio común: 19-11-2026 a las 10:00, America/Santiago (UTC−03).
-ERA5 2023/24/25 se alinea por hora relativa; son historias del sitio,
-no pronósticos de la obra. Pesos y admisibilidad de las fuentes siguen
-siendo hipótesis que se deben defender.
+Seguimiento posterior con radiacion600-672h:24 excedencias del diferencial y16picos pendientes. No confundir ese diagnostico con el requisito14dias ni autorizar retiros posteriores por cumplirlo. La ultima manta se retira nominalmente a360h de edad local.
 
-## Qué significan las 10,61 horas
+Resultados vigentes: `resultados/familia_radiacion_336h/`. Tablas y siete figuras: `evidencia_f02_radiacion/`. La sensibilidad inicial se conserva en [su informe](SENSIBILIDAD_RADIACION.md). Matrices sin radiacion y sus figuras permanecen como antecedentes en `resultados/comparacion_circuitos/` y `evidencia_circuitos/`.
 
-El volumen geométrico IFC es 636,775 m³. Con capacidad total efectiva de
-60 m³/h y sin interrupciones, **toda la fundación tarda 10,613 h** si se
-ejecuta como una sola operación continua. No son 10,61 h por vertida ni
-el tiempo de enfriamiento posterior. La capacidad de suministro es un
-supuesto constructivo pendiente de confirmación.
-
-| Plan | Inicios relativos [h] | Fin de colocación D [h] |
-| --- | --- | ---: |
-| Única | 0 | 10,613 |
-| Rápida | 0 / 3 / 6 / 12 / 15 | 15,640 |
-| Referencia | 0 / 6 / 12 / 18 / 24 | 24,640 |
-| Lenta | 0 / 9 / 18 / 27 / 36 | 36,640 |
-
-En los planes de cinco vertidas, las duraciones V/60 son aproximadamente
-2,460 / 2,460 / 3,570 / 1,482 / 0,640 h. D incluye los intervalos
-entre inicios. El solver activa bloques instantáneamente en la candidata
-actual; se debe contrastar con la activación progresiva ya disponible.
-
-## Documentos y evidencias de revisión
-
-| Tema | Documento | Resultados guardados |
-| --- | --- | --- |
-| h y refinamiento previo | [Diseño y comandos](../../casos/sensibilidad_h/README.md) | [Sensibilidad h](../../resultados/sensibilidad_h/) |
-| Viento y h horario | [Fundamento](../../casos/sensibilidad_h/VIENTO.md) | [Comparación](../../resultados/sensibilidad_h/viento/) |
-| k y propiedades | [Conductividad](../../casos/sensibilidad_h/CONDUCTIVIDAD.md) | [Sensibilidad k](../../resultados/sensibilidad_k/) |
-| Modelo físico | [Balance e hipótesis](../../casos/sensibilidad_h/MODELO_FISICO.md) | — |
-| Suelo y protecciones | [Revisión](../../casos/sensibilidad_h/SUELO_PROTECCIONES.md), [sensibilidad](../../casos/sensibilidad_h/SENSIBILIDAD_SUELO.md) | [Suelo](../../resultados/sensibilidad_suelo/), [contraste ERA5](../../resultados/revision_suelo_protecciones/) |
-| 15 kW y 12 °C | [Controles de obra](../../casos/sensibilidad_h/CONTROLES_OBRA.md) | [15 kW previo](../../resultados/controles_obra/), [12 °C exactos](../../resultados/controles_12c/) |
-
-Los estudios anteriores conservan 12 kW o temperatura 12,231833 °C en la
-única, según su procedencia. No trasladar sus riesgos/refinamientos a la
-candidata nueva. Los cuatro planes a 12 °C/15 kW están configurados;
-solo la única ha sido ejecutada en esa familia.
-
-## Reproducción desde la raíz
-
-Usar un clon Git con historial y las dependencias de `requirements.txt`.
-Los estudios reconstruyen automáticamente su base congelada mediante
-`git archive 6718163` en `.venv/cache/f02_sensibilidad_h`; no hay que compartir
-la caché personal. El solver original y las propiedades IFC no se sobrescriben.
-La adaptación horaria, parámetros y hashes se registran junto a los resultados.
-`.gitattributes` conserva los bytes de scripts y JSON de estos estudios:
-la conversión automática de finales de línea invalidaría los hashes de reanudación.
-
-Lectura/verificación sin simulaciones:
-
-```powershell
-.\.venv\Scripts\python.exe -X utf8 -B casos/f02_verificaciones/verificar.py
-.\.venv\Scripts\python.exe -X utf8 -B casos/sensibilidad_h/colocacion_12c.py --comprobar-insumos
-.\.venv\Scripts\python.exe -X utf8 -B casos/sensibilidad_h/colocacion_12c.py
-```
-
-Ejecución explícita de un plan (24 escenarios; conserva resultados compatibles):
-
-```powershell
-.\.venv\Scripts\python.exe -X utf8 -B casos/sensibilidad_h/colocacion_12c.py --ejecutar --casos unica_15kw_12c
-```
-
-Comparación de los cuatro planes con los mismos 12 °C/15 kW:
-
-```powershell
-.\.venv\Scripts\python.exe -X utf8 -B casos/sensibilidad_h/colocacion_12c.py --ejecutar
-```
-
-La tabla generada usa como referencia histórica la única de 12 kW a
-12,231833 °C: los cambios respecto de ella pueden incluir temperatura,
-control y cronograma. Para comparar planes nuevos, usar sus columnas
-absolutas y sus configuraciones, sin atribuir todo el cambio a una sola causa.
-Los comandos de ejecución se dejan al equipo; la integración no requiere
-nuevas corridas. El [reparto](PENDIENTES_EQUIPO.md) contiene los cierres
-que faltan para preparar la defensa del 19 de noviembre, 10:30–12:30.
+El grupo prepara conjuntamente el informe y debe ensayar la defensa. La publicacion/SHA final y ensayo oral no forman parte de esta actualizacion. No se altero el IFC ni se fusionaron ramas nuevas.

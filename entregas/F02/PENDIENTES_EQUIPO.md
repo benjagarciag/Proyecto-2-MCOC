@@ -1,10 +1,39 @@
+> Actualizacion con radiacion: [comparacion vigente](COMPARACION_CIRCUITOS_FINAL.md), cinco matrices completas en336h y presentacion actualizada. Este documento conserva el contexto de reparto o integracion anterior.
+
 # Pendientes y distribución del equipo — F02
+
+**Comparación común completada posteriormente:**
+[COMPARACION_CIRCUITOS_FINAL.md](COMPARACION_CIRCUITOS_FINAL.md) integra
+los fundamentos de Luis/Matías, cuatro planes de nueve circuitos,
+catálogos completos, confirmación espacial completa de la candidata,
+contrastes de alternativas y ocho figuras actuales. El reparto siguiente
+es histórico; no presenta esos puntos como aún pendientes. Se mantiene
+fuera de esta tarea el cierre de presentación/respaldo, SHA y ensayo.
+
+**Cierre posterior de Benjamín:** [propuesta consolidada](CIERRE_BENJAMIN.md)
+resuelve decisiones B1–B7 para el ejercicio idealizado. Se conservan nuestros
+nueve ramales y control19/18, sin corte432h. No sustituir por los tres
+sectores ni la propuesta43Lmin de Luis. Tabla y reglas vigentes en ese
+documento; los cuadros siguientes son el reparto original. Luis y Matías
+deben usar esta configuración al cerrar evidencia, comparación y defensa.
 
 **Corte: 18 de noviembre de 2026.** Responsables propuestos: Benjamín García,
 Luis Noriega y Matías Stierling. El informe/artículo lo redactan los tres y
 queda fuera de esta distribución. La presentación y sus respaldos sí se incluyen.
 
 ## Contexto para compartir con los agentes
+
+**Actualización posterior:** el usuario descartó tuberías interiores.
+**Estado más reciente:** el usuario informó autorización docente y retomó
+la alternativa con tuberías. Consultar primero la
+[lista actualizada de pendientes](PENDIENTES_ACTUALIZADOS.md).
+El párrafo siguiente conserva el cambio anterior como contexto histórico.
+La propuesta conserva12 °C, pero debe eliminar el sumidero de15 kW.
+Ver [cambio de estrategia y responsabilidades](../../casos/sensibilidad_h/SIN_TUBERIAS.md).
+Las tareas de circuito B2 y encendido L1 quedan sustituidas por preparar
+y comprobar un caso realmente sin extracción interior. Las guías por
+persona conservan contexto histórico: aplicar esta decisión por encima
+de las referencias a una propuesta con15 kW.
 
 Cada guía es independiente: incluye estado de partida, lista de lo que falta
 determinar y por qué, archivos de evidencia, entregables y coordinación.

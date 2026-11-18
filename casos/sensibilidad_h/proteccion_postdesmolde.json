@@ -1,0 +1,19 @@
+{
+  "horizonte_h": 672,
+  "malla_m": 0.4,
+  "paso_max_s": 300,
+  "variantes": {
+    "retiro_504": {"retiro_ultima_manta_edad_h": 504, "transmitancia_solar_postretiro": 1.0},
+    "sombra_90": {"retiro_ultima_manta_edad_h": 360, "transmitancia_solar_postretiro": 0.1},
+    "combinada_504_sombra_90": {"retiro_ultima_manta_edad_h": 504, "transmitancia_solar_postretiro": 0.1}
+  },
+  "pilotos": [["M4_SS", "ERA5-2024"], ["M1_22A", "ERA5-2024"], ["M4_SS", "ERA5-2025"]],
+  "hipotesis": [
+    "Se conservan 60m3/h,12C,11capas,nueve circuitos,agua18C,Uv5,tope15kW,control19/18 y cobertura previa; sin apagado global.",
+    "Madera hasta72h y primera manta hasta240h, edades locales desde activacion. Solo cambia ultima manta y sombra posterior.",
+    "Sombra ideal sobre todas las caras expuestas al aire tras retirar ultima manta de su capa: multiplica irradiancia solar incidente por0.1; mantiene alpha0.6,epsilon0.9,h y cielo originales.",
+    "No se resuelven temperatura/emision infrarroja de cubierta, alteracion del viento, geometria de sombra ni cargas de montaje. Transmitancia efectiva supuesta, no producto comercial acreditado.",
+    "La cubierta de sombra permanece durante seguimiento; no se acredita su retiro a672h ni cumplimiento perpetuo.",
+    "672h corresponde a ventana climatica completa conservada; alarmas de cola se informan sin inventar meteorologia posterior."
+  ]
+}

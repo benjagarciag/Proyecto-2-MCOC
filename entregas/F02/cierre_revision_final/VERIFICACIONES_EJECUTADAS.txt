@@ -1,0 +1,23 @@
+Verificaciones ejecutadas durante cierre de F02, 18/11/2026.
+
+Comando:
+.\.venv\Scripts\python.exe -X utf8 -B -m pytest -q -p no:cacheprovider desarrollo/tests/test_difusion_1d.py
+Salida: 24 passed in 1.29s.
+
+Comando:
+.\.venv\Scripts\python.exe -X utf8 -B casos/sensibilidad_h/modelo_f02.py --verificar
+Salida de las comprobaciones:
+Aprobadas: histéresis, cierre por cualquier tramo, cobertura, reapertura,
+tope global y balance contra Euler independiente.
+Aprobados: sol-aire analítica, aislación exterior, equilibrioLW, Newton
+contra bisección, vector solar y balance de celda.
+
+El estado nominal que imprime esa entrada corresponde al modelo anterior
+de protección. Las verificaciones anteriores comprueban componentes que
+comparte el motor final; no sustituyen las matrices con protección504h y sombra.
+La auditoría final de esas matrices se guarda por separado en
+resultados/cierre_f02/resumen.json una vez completadas.
+
+El error numérico del caso sinusoidal y el máximo residuo de energía
+se guardan cuantitativamente en VERIFICACION.json al generar el informe.
+No se afirma validación experimental de fundación, tubos o cubierta.

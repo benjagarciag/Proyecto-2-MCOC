@@ -1,0 +1,92 @@
+{
+  "version": "f02-radiacion-comparacion-completa-336h-2026-11-18",
+  "estado": "Modelo vigente para el escenario nominal; alcance docente idealizado",
+  "entrada": "casos/sensibilidad_h/modelo_f02.py",
+  "variante": "ambas",
+  "configuracion_radiacion": "casos/sensibilidad_h/radiacion_config.json",
+  "radiacion": {
+    "alpha": 0.6,
+    "eps": 0.9,
+    "cielo": "nubes",
+    "yaw": 0
+  },
+  "albedo_suelo": 0.2,
+  "configuracion_constructiva_previa": "entregas/F02/CONFIGURACION_BENJAMIN.json",
+  "parametros_conservados": {
+    "colocacion_C": 12,
+    "caudal_m3_h": 60,
+    "circuitos": 9,
+    "agua_C": 18,
+    "caudal_ramal_L_min": 18,
+    "caudal_total_con_bypass_L_min": 162,
+    "U_W_m3K": 5,
+    "tope_W": 15000,
+    "abre_min_C": 19,
+    "cierra_min_C": 18,
+    "capas": 11,
+    "retiros_edad_h": [
+      72,
+      240,
+      360
+    ]
+  },
+  "numerica": {
+    "malla_nominal_m": 0.4,
+    "paso_max_nominal_s": 300,
+    "horizonte_docente_h": 336,
+    "seguimiento_adicional_h": [
+      600,
+      672
+    ],
+    "confirmacion_fina": "24 pares completos de la candidata60 a0.20m/300s; otras tasas solo seis contrastes finos"
+  },
+  "evidencia": {
+    "matriz_nominal": "resultados/familia_radiacion_336h/q60/malla_0.4_paso300/matriz.json",
+    "confirmacion_espacial": "resultados/familia_radiacion_336h/q60/malla_0.2_paso300/matriz.json",
+    "confirmacion_temporal": "resultados/familia_radiacion_336h/resumen.json",
+    "auditoria": "resultados/familia_radiacion_336h/resumen.json",
+    "informe": "entregas/F02/SENSIBILIDAD_RADIACION.md",
+    "ecuaciones": "entregas/F02/ECUACIONES_MODELO_VIGENTE.md",
+    "matriz_fina": "resultados/familia_radiacion_336h/q60/malla_0.2_paso300/matriz.json",
+    "comparacion": "entregas/F02/COMPARACION_CIRCUITOS_FINAL.md",
+    "intercambio_tuberias": "entregas/F02/INTERCAMBIO_TUBERIAS.md",
+    "matrices_gruesas": [
+      "resultados/familia_radiacion_336h/q60/malla_0.4_paso300/matriz.json",
+      "resultados/familia_radiacion_336h/q55/malla_0.4_paso300/matriz.json",
+      "resultados/familia_radiacion_336h/q50/malla_0.4_paso300/matriz.json",
+      "resultados/familia_radiacion_336h/q45/malla_0.4_paso300/matriz.json"
+    ]
+  },
+  "implementacion_sha256": {
+    "casos/sensibilidad_h/modelo_f02.py": "64e09392be0bdaee346989979834ef3282ff0b570d9f9df0d6dc956e9ac3a3e7",
+    "casos/sensibilidad_h/radiacion_borde.py": "42135c816b006c94b014cfbae58187b6e4dd3434215b2cb6a9263dccdaf10e40",
+    "casos/sensibilidad_h/sensibilidad_radiacion.py": "5680102f881b36b37de182cedad7a858064a920f0ef9dfe54baab40367470a0c",
+    "casos/sensibilidad_h/radiacion_config.json": "dacb2166995c2acad76964d328f74344c3b3342ffd1b658b4fea2e62d2cfc506",
+    "casos/sensibilidad_h/simular_circuitos.py": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d",
+    "casos/sensibilidad_h/control_circuitos.py": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba",
+    "casos/sensibilidad_h/comparar_circuitos.py": "aaab33e928b7cdcc8575a45fcbe21b48a4d7e8ba7188368001a471d888d2150f",
+    "casos/sensibilidad_h/viento.py": "29a14c3f9c6d2455a9516ab7bd70000833e5e5517a22359f1b7336b5098f6e00",
+    "casos/sensibilidad_h/conductividad.py": "8aa11b8dcd60c3b97205e1ca3eb9e6c97e55337207caee4f004a9559316404a4",
+    "casos/sensibilidad_h/agregar_radiacion.py": "eed4de779934e2dfcc74cf954a145691ff306b176f7d49770e1aec90885460a9",
+    "datos/clima/radiacion/manifiesto.json": "a9b191602e6e5176aed7b1a658dfaf66c2b5b93c208888ec9bce026ac5de9297",
+    "casos/incertidumbre/parametros.json": "99158d89e393062f427a865d593a3bfee801ec8e94f35181eb82dc16904737ef",
+    "resultados/diseno_circuitos_colocacion/esquema.json": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9",
+    "datos/clima/radiacion/era5_radiacion_2023_20261118T200251Z.json": "6a701002fe8ea852d4f50085af82a12748c95a44708bbbccbca8abef05a739a6",
+    "datos/clima/reanalisis/era5_2023-11-19_2023-12-17_20261117T013707875952Z.json": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+    "datos/clima/radiacion/era5_radiacion_2024_20261118T200253Z.json": "a99cfdc84788a4197218cf8d45f1f61f1f9811465a897122c267d0457de0438d",
+    "datos/clima/reanalisis/era5_2024-11-19_2024-12-17_20261117T013706897091Z.json": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+    "datos/clima/radiacion/era5_radiacion_2025_20261118T200254Z.json": "51aa757df951a36cf1b648f303362106fd62a712c648049c23c9d09233f4f1b0",
+    "datos/clima/reanalisis/era5_2025-11-19_2025-12-17_20261117T013707614450Z.json": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b",
+    "casos/sensibilidad_h/familia_radiacion.py": "25bdc88b1f9cb3c0964d39c2fb5187077bcfb072323b6edb3195288d2353f69f",
+    "casos/sensibilidad_h/familia_radiacion.json": "b634e93bc827c2ba7807bdf4e968022adde4fe891effa0ef47c5a54da9ac93cc"
+  },
+  "limites": [
+    "Absortancia y emisividad supuestas, no medidas",
+    "Sin sombras; cielo radiativo estimado con punto de rocio y nubosidad",
+    "24 pares nominales sin excedencias a336h solo bajo catalogo discreto",
+    "Excedencias posteriores y16 alertas; no maximos definitivos fuera de14d",
+    "Seis refinos de alternativas y tres temporales son selectivos; no matrices finas de otras tasas"
+  ],
+  "presentacion_vigente": "entregas/F02/presentacion/F02_Grupo6_radiacion_actualizada.pptx",
+  "pdf_vigente": "entregas/F02/presentacion/F02_Grupo6_radiacion_actualizada.pdf"
+}

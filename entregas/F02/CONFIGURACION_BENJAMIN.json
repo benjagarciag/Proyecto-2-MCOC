@@ -1,0 +1,442 @@
+{
+  "version": "benjamin-nueve-circuitos-2026-11-18",
+  "alcance": "Docente idealizado; no proyecto ejecutivo",
+  "parametros": [
+    {
+      "parametro": "Volumen IFC",
+      "valor": 636.7751926932476,
+      "unidad": "m3",
+      "fuente": "IFC y esquema geométrico",
+      "estado": "Dato geométrico del modelo",
+      "alcance": "Geometría oficial no completada"
+    },
+    {
+      "parametro": "Caudal total hormigón",
+      "valor": 60,
+      "unidad": "m3/h",
+      "fuente": "Supuesto docente autorizado",
+      "estado": "Adoptado; dos frentes30",
+      "alcance": "No rendimiento medido"
+    },
+    {
+      "parametro": "Temperatura colocación",
+      "valor": 12,
+      "unidad": "°C",
+      "fuente": "Decisión del proyecto",
+      "estado": "Condición nominal exacta",
+      "alcance": "Desviaciones requieren actualización"
+    },
+    {
+      "parametro": "Duración colocación",
+      "valor": 10.612919248110561,
+      "unidad": "h",
+      "fuente": "Integración de capas IFC /60",
+      "estado": "Calculada",
+      "alcance": "Toda la fundación; no incluye control posterior"
+    },
+    {
+      "parametro": "Capas físicas",
+      "valor": 11,
+      "unidad": "capas",
+      "fuente": "Esquema IFC",
+      "estado": "10x0.40m y última0.30m",
+      "alcance": "No son juntas frías"
+    },
+    {
+      "parametro": "Espesor máximo capa",
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "Decisión constructiva",
+      "estado": "Adoptado",
+      "alcance": "Compatibilidad con vibrador y armadura"
+    },
+    {
+      "parametro": "Ventana local unión",
+      "valor": 150,
+      "unidad": "min",
+      "fuente": "Condición propuesta de aceptación",
+      "estado": "Hipótesis a comprobar con mezcla",
+      "alcance": "No ensayo ni fraguado medido"
+    },
+    {
+      "parametro": "Sitio",
+      "valor": "-37.277929 / -72.368271",
+      "unidad": "latitud / longitud",
+      "fuente": "Sitios del grupo6",
+      "estado": "Coordenadas exigidas",
+      "alcance": "El Rosal; no sustituir por centro de ciudad"
+    },
+    {
+      "parametro": "Climas",
+      "valor": "ERA5 2023 / 2024 / 2025",
+      "unidad": "historias horarias",
+      "fuente": "Snapshots conservados",
+      "estado": "Alineación por hora relativa",
+      "alcance": "No pronóstico de obra2026"
+    },
+    {
+      "parametro": "Densidad",
+      "valor": 2476,
+      "unidad": "kg/m3",
+      "fuente": "Fuente docente de hidratación",
+      "estado": "Conservada",
+      "alcance": "No calibrada en obra"
+    },
+    {
+      "parametro": "Calor específico",
+      "valor": 1023,
+      "unidad": "J/(kg K)",
+      "fuente": "Fuente docente de hidratación",
+      "estado": "Conservado",
+      "alcance": "Constante"
+    },
+    {
+      "parametro": "Conductividad hormigón",
+      "valor": 2,
+      "unidad": "W/(m K)",
+      "fuente": "Supuesto con sensibilidad histórica",
+      "estado": "Conservada",
+      "alcance": "No k óptimo ni calibrado"
+    },
+    {
+      "parametro": "Convección",
+      "valor": "5.7+3.8*v2",
+      "unidad": "W/(m2 K)",
+      "fuente": "Correlación documentada en VIENTO.md",
+      "estado": "Historia horaria",
+      "alcance": "No radiación explícita ni apantallamiento"
+    },
+    {
+      "parametro": "Transformación viento",
+      "valor": "v2=v10*(2/10)^0.14",
+      "unidad": "m/s",
+      "fuente": "Perfil de exposición supuesto",
+      "estado": "Conservado",
+      "alcance": "Campo abierto; altura2m representativa"
+    },
+    {
+      "parametro": "Temperatura suelo",
+      "valor": 15,
+      "unidad": "°C",
+      "fuente": "Borde equivalente",
+      "estado": "Supuesto",
+      "alcance": "Sin inercia ni medición local"
+    },
+    {
+      "parametro": "Conductividad suelo",
+      "valor": 1.2,
+      "unidad": "W/(m K)",
+      "fuente": "Borde equivalente",
+      "estado": "Supuesto",
+      "alcance": "No estudio geotécnico térmico"
+    },
+    {
+      "parametro": "Longitud suelo",
+      "valor": 0.5,
+      "unidad": "m",
+      "fuente": "Resistencia equivalente L/k",
+      "estado": "Supuesto",
+      "alcance": "No profundidad de dominio simulado"
+    },
+    {
+      "parametro": "Exposición",
+      "valor": "Base a suelo; laterales abiertos sin relleno",
+      "unidad": "—",
+      "fuente": "Hipótesis declarada",
+      "estado": "Conservada",
+      "alcance": "Cambio de relleno exige nuevos bordes"
+    },
+    {
+      "parametro": "Madera",
+      "valor": 0.018,
+      "unidad": "m",
+      "fuente": "Familia AraucoPly referencia previa",
+      "estado": "Adoptada",
+      "alcance": "k0.158 W/(mK); resistencia mecánica aparte"
+    },
+    {
+      "parametro": "Aislación",
+      "valor": "2x0.040",
+      "unidad": "m",
+      "fuente": "Familia Aislanglass referencia previa",
+      "estado": "Adoptada",
+      "alcance": "k0.042 W/(mK); seca y continua"
+    },
+    {
+      "parametro": "Retiro madera",
+      "valor": 72,
+      "unidad": "h de edad local",
+      "fuente": "Calendario nominal",
+      "estado": "Condicionado a resistencia y revisión térmica",
+      "alcance": "No certificado de desmolde"
+    },
+    {
+      "parametro": "Retiros mantas",
+      "valor": "240 / 360",
+      "unidad": "h de edad local",
+      "fuente": "Calendario nominal simulado",
+      "estado": "Condicionados a monitoreo y predicción",
+      "alcance": "No retiro automático"
+    },
+    {
+      "parametro": "Circuitos",
+      "valor": 9,
+      "unidad": "ramales paralelos",
+      "fuente": "Esquema geométrico",
+      "estado": "Adoptados",
+      "alcance": "3/3/2/1 en cotas0.5/1.5/2.5/3.8m"
+    },
+    {
+      "parametro": "Diámetro interior cálculo",
+      "valor": 0.025,
+      "unidad": "m",
+      "fuente": "Decisión del proyecto",
+      "estado": "Idealización geométrica",
+      "alcance": "Clase exterior/espesor no dimensionados"
+    },
+    {
+      "parametro": "Longitud interna",
+      "valor": 638.8479433717251,
+      "unidad": "m",
+      "fuente": "Esquema de serpentines",
+      "estado": "Calculada",
+      "alcance": "Sin acometidas ni colectores"
+    },
+    {
+      "parametro": "Caudal ramal abierto",
+      "valor": 18,
+      "unidad": "L/min",
+      "fuente": "Decisión del proyecto",
+      "estado": "Constante",
+      "alcance": "No calibra transferencia"
+    },
+    {
+      "parametro": "Caudal sistema con bypass",
+      "valor": 162,
+      "unidad": "L/min",
+      "fuente": "9x18",
+      "estado": "Nominal constante",
+      "alcance": "Embebido18*N; resto bypass"
+    },
+    {
+      "parametro": "Agua",
+      "valor": 18,
+      "unidad": "°C uniforme",
+      "fuente": "Idealización autorizada",
+      "estado": "Conservada",
+      "alcance": "No balance axial real"
+    },
+    {
+      "parametro": "U equivalente",
+      "valor": 5,
+      "unidad": "W/(m3 K)",
+      "fuente": "Sumidero volumétrico",
+      "estado": "Hipótesis",
+      "alcance": "No coeficiente pared ni calibración de tubo"
+    },
+    {
+      "parametro": "Tope extracción global",
+      "valor": 15,
+      "unidad": "kW térmicos",
+      "fuente": "Control equivalente",
+      "estado": "Adoptado",
+      "alcance": "No potencia constante ni eléctrica"
+    },
+    {
+      "parametro": "Zona refrigerable base",
+      "valor": 414.016,
+      "unidad": "m3",
+      "fuente": "Máscara0.40m excluye contorno",
+      "estado": "Representación equivalente",
+      "alcance": "No antigua máscara366m3"
+    },
+    {
+      "parametro": "Apertura",
+      "valor": 19,
+      "unidad": "°C mínima de tramos",
+      "fuente": "Histéresis propuesta y simulada",
+      "estado": "Solo con cobertura",
+      "alcance": "Cierre<=18; banda mantiene estado"
+    },
+    {
+      "parametro": "Apagado final",
+      "valor": "Sin hora fija",
+      "unidad": "—",
+      "fuente": "Decisión actual",
+      "estado": "Criterio de liberación en documento",
+      "alcance": "No se adopta432h"
+    },
+    {
+      "parametro": "Advertencia",
+      "valor": "65 / 18",
+      "unidad": "°C Tmax / K Delta",
+      "fuente": "Decisión operativa propuesta",
+      "estado": "No umbral normativo",
+      "alcance": "No optimizado"
+    },
+    {
+      "parametro": "Intervención",
+      "valor": "68 / 19",
+      "unidad": "°C Tmax / K Delta",
+      "fuente": "Decisión operativa propuesta",
+      "estado": "No umbral normativo",
+      "alcance": "No optimizado"
+    },
+    {
+      "parametro": "Límites docentes",
+      "valor": "70 / 20",
+      "unidad": "°C Tmax / K Delta",
+      "fuente": "Pauta curso",
+      "estado": "Max temporal con resta simultánea",
+      "alcance": "No garantía de ausencia de fisuración"
+    },
+    {
+      "parametro": "Registro",
+      "valor": "1 / <=5",
+      "unidad": "min adquisición / archivo",
+      "fuente": "Plan propuesto",
+      "estado": "Durante todo control",
+      "alcance": "Brutos y extremos conservados"
+    },
+    {
+      "parametro": "Catálogo",
+      "valor": "8x3; peso1/24",
+      "unidad": "—",
+      "fuente": "Fuentes completas y ERA5 congelado",
+      "estado": "Modelo discreto explícito",
+      "alcance": "No ensayos iid; curva común; independencia supuesta"
+    },
+    {
+      "parametro": "Horizontes",
+      "valor": "336 / 600",
+      "unidad": "h desde primera colocación",
+      "fuente": "Docente / diagnóstico",
+      "estado": "Resultados separados",
+      "alcance": "Extensión si alertas; no fecha de liberación"
+    },
+    {
+      "parametro": "Malla base",
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "Cálculo de nueve circuitos",
+      "estado": "Malla de comparación",
+      "alcance": "Confirmación0.20m: candidata completa; alternativas selectivas"
+    },
+    {
+      "parametro": "Paso máximo base",
+      "valor": 300,
+      "unidad": "s",
+      "fuente": "Cálculo de nueve circuitos",
+      "estado": "Sujeto a estabilidad y eventos",
+      "alcance": "Confirmación temporal150s en tres pares"
+    }
+  ],
+  "insumos_sha256": {
+    "resultados/diseno_circuitos_colocacion/esquema.json": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9",
+    "resultados/circuitos_histeresis/matriz.json": "7694bf3f63931c80c71132afe4ebc75df088f0869756059335730f3b23a877d2",
+    "casos/sensibilidad_h/simular_circuitos.py": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d",
+    "casos/sensibilidad_h/control_circuitos.py": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba",
+    "resultados/circuitos_confirmacion/resumen.json": "80ab2c795b99e447481995dcee9b4d150c2e31e5dc78c85e0eb561375c73e742",
+    "resultados/comparacion_circuitos/q60/malla_0.4/matriz.json": "26014a7f41a1e5fe5dd1995e6b0db0810d52420cb4de91984bb2c9554760595e",
+    "resultados/comparacion_circuitos/q55/malla_0.4/matriz.json": "f89dbf36e97e09385ee957adc7bd3244dc75034c5ff4ec338d83e48de1b6ca6a",
+    "resultados/comparacion_circuitos/q50/malla_0.4/matriz.json": "03547d1cd5b102ef9c8fc5012abe169f3d50fe03e7a70ef43947650cd2d32f97",
+    "resultados/comparacion_circuitos/q45/malla_0.4/matriz.json": "2671360e0c6061e994a7123ee4e275e607e81ca0e6249998ea15a8eae007df55",
+    "resultados/comparacion_circuitos/q60/malla_0.2/matriz.json": "27fda78fdfee731b36e89502b892a378a643609ab08f4abcdc56a34486580c7d"
+  },
+  "procedencia_simulacion": {
+    "commit_congelado": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+    "ifc_sha256": "eba180b5cab9fe46a652c854fd8983f7b5d1175567762cf947b31b4bd1bb34e0",
+    "solver_adaptado_sha256": "65ee89ec60f1e75609d055c70cbf56678f24767be3144370520a559305e834c3",
+    "archivos_sha256": {
+      "casos\\sensibilidad_h\\simular_circuitos.py": "da4442812e47b30e3520c0bd41d243ea5b3ccde4b3400f887472181b63e7b83d",
+      "casos/sensibilidad_h/control_circuitos.py": "8c81a318c853d0c822c990df7ca49b8cae12622aedd27b87b114b5dc84cb9cba",
+      "esquema_circuitos": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9",
+      "config_base": "0c06761fdaa9f3dd2a87764dab204bc29e020d8c3c3ed36f7966a7f7827e75cb",
+      "manifiesto_fuentes": "14a4b27f6906dd67267cf69d30a366afe4a00c57c772ce56e626919c585937e5"
+    },
+    "modelo_viento": {
+      "commit_fuentes": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+      "fuente_correlacion": "https://energyplus.readthedocs.io/en/stable/guides/engineering-reference/3.5-outside-surface-heat-balance.html",
+      "correlacion": "h=5.7+3.8*v_local (SI)",
+      "altura_referencia_viento_m": 10,
+      "altura_representativa_m": 2.0,
+      "exponente_perfil": 0.14,
+      "terreno": "campo abierto supuesto; mismo perfil en ambas alturas",
+      "h_constante_media_600h_W_m2K": 17.08623874768515,
+      "clima_sha256": {
+        "ERA5-2023": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+        "ERA5-2024": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+        "ERA5-2025": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b"
+      },
+      "discretizacion_h": "constante por intervalo horario, valor de su marca inicial",
+      "hipotesis": "Mismo h en caras expuestas; sin apantallamiento, dirección ni rugosidad de superficie.",
+      "radiacion": "No incorporada; h representa convección, con componente natural de la correlación."
+    },
+    "agua_C": 18,
+    "apertura_C": 19,
+    "cierre_C": 18,
+    "caudal_ramal_L_min": 18,
+    "caudal_total_con_bypass_L_min": 162,
+    "U_W_m3K": 5,
+    "tope_global_W": 15000,
+    "lado_m": 0.4,
+    "paso_max_s": 300,
+    "regla": "histeresis por circuito, cubierto antes de abrir; sin apagado global fijo",
+    "temperatura_colocacion_C": 12,
+    "capacidad_m3_h": 60,
+    "retiros_aislacion_edad_h": [
+      240,
+      360
+    ],
+    "retiro_madera_edad_h": 72,
+    "D_h": 10.612919248110561,
+    "volumen_ifc_m3": 636.7751926932476,
+    "volumen_voxel_m3": 640.7040000000002,
+    "error_muestreo_max_m": 0.28478696501867906,
+    "volumen_refrigerable_m3": 414.0160000000001,
+    "celdas_monitor_por_circuito": [
+      617,
+      797,
+      623,
+      477,
+      613,
+      479,
+      319,
+      317,
+      134
+    ],
+    "cubierto_desde_h": [
+      3.578805563872491,
+      3.578805563872491,
+      3.578805563872491,
+      6.861333082922136,
+      6.861333082922136,
+      6.861333082922136,
+      9.49987241516605,
+      9.49987241516605,
+      10.421045787548861
+    ]
+  },
+  "control": {
+    "cobertura_previa": true,
+    "abre_min_C": 19,
+    "cierra_min_C": 18,
+    "agua_uniforme_C": 18,
+    "apagado_global_fijo": false,
+    "falla_medicion": "cerrar ramal; actualizar predicción"
+  },
+  "medidas_operativas": "Propuestas; no incorporadas automáticamente a la matriz nominal",
+  "comparacion_homogenea": "entregas/F02/COMPARACION_CIRCUITOS_FINAL.md",
+  "simulacion_base_historico_sin_radiacion": "resultados/circuitos_histeresis/matriz.json",
+  "confirmacion_selectiva_historico_sin_radiacion": "resultados/circuitos_confirmacion/resumen.json",
+  "confirmacion_espacial_completa_historico_sin_radiacion": "resultados/comparacion_circuitos/q60/malla_0.2/matriz.json",
+  "modelo_vigente": "entregas/F02/MODELO_VIGENTE.json",
+  "resultados_vigentes": "resultados/familia_radiacion_336h/resumen.json",
+  "radiacion_activa": {
+    "alpha": 0.6,
+    "eps": 0.9,
+    "albedo": 0.2,
+    "cielo": "Estimado con rocio/nubes, sin sombras"
+  },
+  "intercambio_tuberias": "Equivalente Uvol; caudal no calibra transferencia, sin pared o agua axial resueltas"
+}

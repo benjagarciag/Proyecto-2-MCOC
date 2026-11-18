@@ -1,5 +1,6 @@
 # Proyecto 2 — Métodos Computacionales de Obras Civiles
 
+**Preentrega F02:** [PPT y PDF](entregas/F02/presentacion/README.md), [guion de6:25](entregas/F02/GUION_ORAL_F02.md).
 **Grupo 6:** Benjamín García, Luis Noriega y Matias Stierling.
 
 Planificación de vertidas de hormigón masivo mediante modelación BIM y cálculo
@@ -22,13 +23,7 @@ Coordenadas del caso: `-37.277929`, `-72.368271`.
 [Estado actual, resultados y comandos](entregas/F02/README.md) ·
 [Pendientes repartidos: Benjamín, Luis y Matías](entregas/F02/PENDIENTES_EQUIPO.md).
 
-Se incorporó la rama del compañero hasta `6718163` y la revisión posterior
-de viento, materiales, suelo y controles. La candidata única con 12 °C
-uniformes y extracción equivalente limitada a 15 kW obtiene Tmax=46,2843 °C,
-ΔTmax=17,3681 K y 0/24 excedencias en 0,50 m/900 s, hasta 600 h.
-Faltan confirmación numérica de esta configuración, fundamento constructivo
-del control y comparación final. Los resultados históricos conservan sus
-parámetros; no representan todos esta candidata. El informe se hace entre los tres.
+La entrada del cierre revisado es`casos/sensibilidad_h/ejecutar_cierre_f02.py`,con radiación solar y onda larga, última manta hasta504h de edad local y sombra solar90%posterior. Conserva12°C,60m³/h y nueve circuitos de agua ideal18°C,Uv5/tope15kW/control19–18. La propuesta tiene24pares finos completos0,20m/300s hasta672h: Tmax47,0322°C yΔT15,7202K,Punión0 y sin alertas. Las matrices gruesas55/60 usan la misma protección. Ver[resultado y alcance](entregas/F02/cierre_revision_final/RESULTADOS_CIERRE.md) y[configuración revisada](entregas/F02/cierre_revision_final/CONFIGURACION_FINAL_REVISADA.json). El retiro de la sombra y su instalación real no están validados. PPT/PDF/guion quedan pendientes de integrar este cierre. Los ejecutores y resultados anteriores conservan sus parámetros;las excedencias del retiro360h sin sombra no corresponden a esta alternativa revisada. El informe se hace entre los tres.
 
 La publicación lleva el mensaje `Avance miercoles entrega final`;
 su SHA se obtiene con `git log -1 --format=%H --grep="^Avance miercoles entrega final$"`.

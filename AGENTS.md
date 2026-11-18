@@ -1,5 +1,232 @@
 # Contexto del repositorio
 
+- Preentrega F02 integrada por petición del usuario: `presentacion/F02_Grupo6_Pre_entrega.pptx/.pdf` son vigentes (24láminas:8principales+índice+15respaldos). Guion conserva intervalos personales0:00–6:25, reparto y clics;577palabras frente a597. Notas1–8 idénticas al guion. Ocho árboles de animación originales idénticos (247efectos);9gráficos nativos/libros. Se actualizaron504h+sombra90%,336/672h,60/55,0,882K espacial y0,0014K temporal selectivo. `VERIFICACION_PRE_ENTREGA.json` registra checks;24renders inspeccionados, sin ensayo oral ni reproducción de animaciones enPowerPoint. Usuario autorizó publicar main con commit `Pre-entrega F02`. Identificar SHA real con git log, sin inventarlo en el PPT.
+
+- Cierre de §§5–6 completado por petición «finalicemos puntos restantes».
+  `cierre_f02.py/.json` congelados; no editarlos para reanudar piezas.
+  Familia final q55/60, mismos504h+sombra90%,672h,24pares por tasa.
+  Propuesta60:24pares finos completos0.20m/300s, Tmax47.0322/Delta15.7202,
+  Punion0 y0alertas; base60:47.4941/16.5306/D10.6129; base55:
+  47.5128/16.6011/D11.5777;ambasPunion0 y0alertas. Salidas
+  `resultados/cierre_f02/`, todas las sesiones finalizaron. Auditor
+  `auditar_cierre_f02.py`:72piezas(26reutilizadas/46nuevas),3matrices,
+  2045transiciones aprobadas. Cambio espacial maxDelta672h0.881712K,
+  distinto de1.174621K anterior336h. Residuo max0.000247955J/rel2.39e-15.
+  Documentador`documentar_cierre_f02.py`:7figuras revisadas,144filas de
+  métricas y balance con fases/posiciones,CSVparámetros/fuentes exactas.
+  Principal`entregas/F02/cierre_revision_final/RESULTADOS_CIERRE.md`;
+  teoría/contenido`CIERRE_PUNTOS_RESTANTES.md`;config completa
+  `cierre_revision_final/CONFIGURACION_FINAL_REVISADA.json`. Entrada nueva
+  `ejecutar_cierre_f02.py`consulta sin simular;caso individual M4_SS2024
+  fino comprobado por reutilización. No se modificaron PPT/PDF/guion
+  personalizado durante este cierre técnico;integración queda pendiente.
+  Se ejecutaron24tests1D,error seno0.00257143K,y verificaciones físicas.
+  El caso único continuo coincide con propuesto;no hay opción más rápida
+  admisible por cotaV/60. q<55 no puede mejorarD; q>60 viola recursos.
+
+- Estudio autorizado de las tres medidas postdesmolde completado: nuevas
+  salidas `resultados/proteccion_postdesmolde/`, ejecutor/config
+  `casos/sensibilidad_h/proteccion_postdesmolde.py/.json`, auditor
+  `auditar_proteccion_postdesmolde.py`. No editar estos hashes para reanudar.
+  Mantiene60m³/h,12°C,9circuitos,18°C,Uv5/tope15kW,19/18,414.016m³.
+  Tres matrices completas24pares0.40m/300s a672h: solo última manta504h,
+  Tmax49.9166/Delta33.0081/Punion100%/16alertas; sombra sola tras360h,
+  Tmax47.4941/Delta23.4772/Punion20.8333%(5/24)/0alertas; combinación
+  manta504h+sombra90%, Tmax47.4941/Delta16.5306/Punion0/0alertas.
+  Sombra ideal: tauSW0.10 en TODAS caras de aire tras retiro por edad local;
+  h y cielo/LW se conservan; no se resuelve cubierta real ni su desmontaje.
+  Combinación:3paresM4_SS×2023/24/25 finos0.20m/300s, maxDelta15.7202,
+  Tmax47.0322;2temporales0.40m/150s cambioDelta≤0.0013651; todos sinalertas.
+  Sombra sola2pares finos siguen excediendo(22.9890,21.7710):peso fallido
+  mínimo8.3333% en fina, sin matriz fina completa. Auditoría79piezas,
+  3matrices/2787transiciones, balances y coincidencia anterior336h aprobados.
+  Informe/CSV/figuras `entregas/F02/proteccion_postdesmolde/`.
+  No se cambió entrada vigente, IFC, PPT/PDF, guion o brief; usuario pide
+  incorporarlo al finalizar revisión de todaF02.504h es edad probada, no
+  mínimo retiro optimizado.55/50/45 no recalculados con estas protecciones.
+  Cubierta permanece hasta672h; no afirmar riesgo real≤5%, instalación
+  validada o cumplimiento ilimitado después de retirar sombra.
+
+- Diálogo F02 reescrito 18/11 a pedido: tono conversacional y marcas
+  «▶ CLIC n» (qué aparece y en qué frase avanzar) en `GUION_ORAL_F02.md`
+  (sección «Cómo usar este guion» + S1–S8, 597 palabras ≈6:25 a ritmo lento de 110 ppm, margen ~35 s) y en las notas
+  S1–S8 de `F02_Grupo6_radiacion_actualizada.pptx` (editado en sitio;
+  láminas, 246 efectos y PDF sin cambios). Cifras con radiación conservadas.
+  No re-ejecutar los generadores de documentación/postproceso de radiación
+  sin reincorporar este diálogo, porque lo sobrescriben. Sin ensayo cronometrado.
+
+- Revisión F02 §§1–3.3 posterior al material de presentación: usuario pide
+  desarrollar pendientes ahora y modificar PPT solo después de revisar TODA
+  la pauta. Desarrollo vigente en `entregas/F02/revision_puntos_1_3/`:
+  documento `DESARROLLO_PUNTOS_1_A_3_3.md`, cronograma44filas, métricas24pares
+  a336/672h, gráfico e inventario167archivos con hash. Ejecutor documental
+  `casos/sensibilidad_h/desarrollar_revision_f02.py`, sin solver. t0 recuperado
+  2026-11-19T10:00:00-03:00, America/Santiago. Todas24piezas nominales gruesas
+  con radiación llegan672h: Tmax50.1885/Delta33.0074/Punion1;24ya tienen
+  muestra fallida antes600h;16alertas conservadoras no acreditan máximos
+  definitivos. No tratar extensión como irrelevante: pauta exige máximos
+  relevantes cuando corresponde extender. Cota10.6129h de colocación y
+  cumplimiento336h siguen válidos, pero programación de protección/control
+  no es solución final factible acreditada para seguimiento. Requiere revisión
+  física antes de afirmar cierre total. No se alteró PPT/PDF/guion/brief,
+  scripts congelados, IFC ni resultados. Ensayo/traslado equipo siguen humanos.
+
+- Actualización integral F02 con radiación pedida18/11: comparación vigente
+  `entregas/F02/COMPARACION_CIRCUITOS_FINAL.md`, diálogo y brief reescritos,
+  intercambio equivalente en `INTERCAMBIO_TUBERIAS.md`. Familia homogénea
+  SOLO0–336h en `familia_radiacion.py/.json`; resultados separados en
+  `resultados/familia_radiacion_336h/`. NO editar fuentes/config con hash.
+  4planes60/55/50/45m3h ×24pares a0.40m/300s: peoresDelta
+  16.530593/16.601131/16.690937/16.804644; Tmax47.494066/47.512825/
+  47.534313/47.558226. Candidata60 completa24pares0.20m/300s:
+  Tmax47.032242,Delta15.720233,0fallas14d bajo catálogo. Temporal3pares:
+  cambioDelta máximo0.001365K; espacial24pares1.174621K. Seis refinos
+  alternativos pasan14d, sin Pf fino completo de otras tasas.
+  Auditor `auditar_familia_radiacion.py`:5matrices/129piezas/1161registros;
+  25reutilizan métricas336h exactas previas con hash;104casos nuevos336h.
+  No inventar energía por ramal336h no guardada. Figuras/tablas en
+  `evidencia_f02_radiacion/` (7figuras), generadores `figuras_f02_radiacion.py`
+  y `actualizar_documentacion_f02_radiacion.py`. Entrada `modelo_f02.py` y
+  `MODELO_VIGENTE.json` usan la familia nueva. Seguimiento previo600–672h
+  con24excedenciasDelta/16picos pendientes sigue diagnóstico posterior.
+  Tubos: Uvol5/tope15kW, sin pared/contacto/película interior ni agua axial
+  resueltas.18Lmin no determina transferencia numérica. Solar/LW acopladas
+  simultáneamente al campo y control. Cielo/alpha/eps siguen supuestos.
+  Presentación nueva `F02_Grupo6_radiacion_actualizada.pptx/.pdf` en
+  `entregas/F02/presentacion/`,21láminas (8+índice+12), notas actualizadas,
+  animaciones originales, tablas y9gráficos editables con libros sincronizados.
+  Validación estructural/datos y renders, sin ensayo oral o ejecución de
+  efectos en PowerPoint. PDF estático de renders2x con vínculos internos.
+  Originales sin radiación conservados. No hubo push/fusión/cambioIFC/SHAfinal.
+
+- Incorporación solicitada por usuario18/11: solar+LW adoptadas por defecto
+  en nueva entrada `casos/sensibilidad_h/modelo_f02.py`. Selección operativa y
+  hashes en `entregas/F02/MODELO_VIGENTE.json`, ecuaciones completas y comandos
+  en `ECUACIONES_MODELO_VIGENTE.md`. Reutiliza exactamente motor/adaptador y
+  resultados verificados de sensibilidad, variante ambas alpha0.6/eps0.9,
+  albedo0.2; no modifica fuentes históricas con hash ni recalcula piezas idénticas.
+  Sin opciones solo estado; --ejecutar nominal24; --escenario CURVA CLIMA,
+  --malla0.4/0.2 y --paso-max300/150 permiten casos explícitos; --verificar
+  acoplamiento pequeño, --auditar evidencia. Entrada F02 vigente en ambos
+  README; las entradas anteriores siguen históricas, no todas ganaron radiación.
+  No interpretar incorporación como matriz fina completa nueva, comparación
+  nueva de cuatro rendimientos o actualización de PPTX/PDF.
+
+- Sensibilidad a radiación solicitada y ejecutada por el usuario el18/11:
+  `entregas/F02/SENSIBILIDAD_RADIACION.md` y `PROTOCOLO_RADIACION.md` son
+  actualización física posterior a la comparación sin radiación. Conservados
+  nueve circuitos,12°C/60m3h,U5/15kW,agua18,control19/18,protecciones72/240/360.
+  Solar+LW no lineal en exterior de protecciones; alpha0.6,eps0.9 nominales
+  supuestos,contrastesalpha0.2/0.9,cielo despejado,giro90. ERA5 complementario
+  DNI/DHI/rocío/nubes en `datos/clima/radiacion/`; aire/viento/GHI idénticos.
+  24 pares nominales0.40m/300s: Tmax336h47.4941,Delta336h16.5306,0fallas14d;
+  seguimiento600–672h Tmax50.1885,Delta33.0074,24excedenciasDelta,16alertas
+  de pico pendiente: máximos posteriores observados, no definitivos. No confundir
+  falla posterior con requisito14d. M4_SS×2024 confirmado0.20m/300s:
+  Tmax336h46.5397,Delta336h15.7187,Delta672h29.1367; aumentoDelta14d0.4180K
+  frente al mismo par fino sin radiación. Temporal0.40m/150s Delta336h16.5292,
+  Delta672h32.0649. Confirmación selectiva, NO matriz fina24 con radiación.
+  M4_SS×2024 alpha0.2/0.9 Delta14d15.0048/18.3322. Efecto posterior fuerte
+  tras última manta360h de edad. No declarar radiación despreciable ni riesgo
+  real<=5%. Auditoría43piezas/2207registros aprobada (2piezas reutilizadas).
+  Nuevos scripts `radiacion_*.py`, `sensibilidad_radiacion.py`,
+  `agregar_radiacion.py`, `auditar_radiacion.py`, `figuras_radiacion.py`,
+  `redactar_radiacion.py`; resultados separados `resultados/sensibilidad_radiacion/`.
+  No editar runner/borde/config con hashes. Agregador separado corrige campo
+  clima omitido en agregado336h interno; usarlo y excluir matriz.json al glob
+  M*.json en Windows. Cuatro rendimientos NO reevaluados con radiación.
+  Advertencias en README, comparación, modelo, cierre, guion, brief y README
+  de presentación; PPTX/PDF binarios no actualizados en esta prueba.
+
+- Presentación F02 construida 18/11 en `entregas/F02/presentacion/`: PPTX
+  animado (8 principales, índice, B01–B12, 246 efectos, ecuaciones OMML,
+  notas con diálogo) y PDF estático, elegidos por el usuario: PowerPoint,
+  estilo mixto oscuro/claro, texto mínimo, ecuaciones en formato matemático.
+  Gráficos desde datos existentes; sin nuevas simulaciones. Abierto y
+  exportado con PowerPoint vía COM; no se revisó en modo presentación ni se ensayó.
+
+- Preparación oral/diseño solicitada18/11: dos archivos vigentes en
+  `entregas/F02/GUION_ORAL_F02.md` y `BRIEF_DIAPOSITIVAS_F02.md`.
+  Guion≈820 palabras,8principales/420s: BenjamínS1–S3(140s), LuisS4–S5(135s),
+  MatíasS6–S8(145s), dos relevos;35preguntas con énfasis físico y supuestos.
+  Brief para otra IA:8principales+12consultas, estilo/maquetación/texto,
+  animaciones causales por clic, notas, fuentes actuales, honestidad de
+  malla/horizonte/escenario y PDF estático completo. No se creóPPTX/PDF,
+  no se implementaron animaciones ni se ensayó oralmente. No correr
+  nuevas simulaciones para este material. Reparto expositivo no implica
+  autoría exclusiva ni que cada uno pueda ignorar los otros bloques.
+
+- Comparación homogénea F02 cerrada18/11 por solicitud explícita del usuario,
+  excluyendo respaldo final/SHA/ensayo. Conservar nuestros9circuitos18°C,
+ 18L/min por ramal,162L/min con bypass, U5/tope15kW, control19/18 y cobertura,
+  sin corte432h. `COMPARACION_CIRCUITOS_FINAL.md` en `entregas/F02/` es
+  evidencia vigente:4planes60/55/50/45m³h ×24pares a0.40m/300s, todos0fallas.
+  D10.6129/11.5777/12.7355/14.1506h; peoresDelta19.3581/19.3692/19.3759/19.3750.
+  Candidata60 con24pares completos0.20m/300s: Tmax46.0192,Delta336h15.3013,
+  Delta600h19.1731, Pf0 bajo catálogo,sin alertas; mayor cambio pareadoTmax0.0785,
+  Delta0.7607. Temporal0.40m/150s sigue selectivo3pares, cambioDelta≤0.0038.
+ 6contrastes finos de alternativas, todos bajo20 (máx19.4666), NO Pf fino
+  completo para otras tasas. Auditoría5matrices/4.700transiciones aprobada.
+  Resultados `resultados/comparacion_circuitos/`, ejecutor `comparar_circuitos.py`,
+  config `familia_circuitos.json`, auditor `auditar_familia_circuitos.py`;
+  no editar scripts/config con hash para reanudar. Figuras/tables en
+  `entregas/F02/evidencia_circuitos/`, modelo en `MODELO_NUEVE_CIRCUITOS.md`.
+  Luis07d6c035 yMatías ed866323 consultados por GitHub y capturados en
+  `insumos_equipo.json`; integración documental, sin fusión/publicación de ramas.
+  No volver a pedir matrices ya calculadas ni presentar las antiguas como
+  actuales. IFC no alterado;12°C/cronograma son overrides externos del plan,
+  IDs térmicos1..11 son capas, no11objetosIFC. Mantener alcance idealizado
+  y sin validación de transferencia real, mezcla o riesgo real≤5%.
+
+- Usuario eligió conservar nuestros nueve circuitos y autorizó cerrar todos
+  los puntos de su parte, incluidas simulaciones necesarias. Propuesta vigente
+  en `entregas/F02/CIERRE_BENJAMIN.md`, tabla `PARAMETROS_BENJAMIN.csv`,
+  `CONFIGURACION_BENJAMIN.json` y croquis `PROTECCIONES_BENJAMIN.png`.
+  B1–B7 documentados para alcance docente:60m3/h/12°C,11capas, ventana de
+  unión150min como condición de aceptación NO ensayada, retiros72/240/360h
+  sujetos a resistencia/monitoreo/predicción, sensores/contingencias y
+  criterios de liberación sin fecha no calculada. Agua uniforme18°C ideal,
+  U5/tope15kW no dimensionan instalación real. No reemplazar por3sectores,
+ 43Lmin ni corte432h propuestos en rama de Luis. Ramas de compañeros
+  revisadas vía GitHub; no fusionadas en esta tarea. Confirmación selectiva
+  espacial0.20m/300s y temporal0.40m/150s en `confirmar_circuitos.py`;
+  preserva zona refrigerable414.016m3 por pertenencia al voxel0.40m y
+  tiempos físicos11capas. Resultados separados bajo `circuitos_confirmacion`.
+  No interpretar subconjunto refinado como matriz completa o riesgo fino.
+  Completadas seis corridas de confirmación, sin alertas:Delta máximo
+ 19.3618K temporal,19.1731K espacial. Mayor cambio temporal0.0038K,
+  espacial absoluto0.7607K (otro par sigue bajo20). Auditoría268 cambios
+  de estado aprobada. Tabla `entregas/F02/CONFIRMACION_CIRCUITOS.md`.
+
+- Control por circuito ejecutado explícitamente a petición del usuario el
+  18/11/2026: `casos/sensibilidad_h/simular_circuitos.py` y
+  `control_circuitos.py`, resultados `resultados/circuitos_histeresis/`.
+  Nueve circuitos: cobertura previa, abre mínima muestreada≥19°C, cierra≤18°C,
+  agua18°C,18L/min por ramal abierto,162L/min total con bypass; sin apagado
+  global432h. Colocación12°C/60m³h,11capas, malla0.40m/dtmax300s,
+  máscara refrigerable414.016m³ distinta de366m³ anterior, U5/tope15kW.
+  24 pares completos600h sin alertas: Tmax46.0454,Delta336h14.9147,
+  Delta600h19.3581; margen extendido0.6419K pendiente de refinamiento.
+  Auditoría aprobada941 transiciones. P_f0 solo bajo catálogo discreto,
+  no garantía estadística real≤5% ni validación física de tubos/caudal/U.
+  Detalles en `casos/sensibilidad_h/CIRCUITOS_HISTERESIS.md` y figura
+  `resultados/circuitos_histeresis/control_y_temperaturas.png`.
+  La autorización fue para estas corridas; mantener preferencia general
+  del usuario por ejecutar personalmente variantes futuras.
+
+- Decisiones posteriores F02: profesor permite tubos y escenario ideal
+  de60 m³/h (dos frentes30), según usuario. Retomada candidata12°C/15kW;
+  los estudios sin extracción son alternativas, no propuesta vigente.
+  Usuario permite agua idealizada18°C y pidió definir caudal/circuitos/capas,
+  dejando habilitación/regulación/apagado para después. Anteproyecto en
+  `entregas/F02/CIRCUITOS_Y_CAPAS_ADOPTADOS.md`:9 ramales paralelos18L/min
+  cada uno, total162L/min nominal, diámetro interior de cálculo25mm,
+  cotas0.5/1.5/2.5/3.8m con3/3/2/1 circuitos; capas físicas≤0.40m.
+  Esquema leído delIFC,≈639m internos,11capas,10.613h a60. No modifica
+  IFC ni solver; no calibraU5/máscara366m³ ni acredita15kW reales. Debe
+  revisarse montaje, hidráulica, trabajabilidad y adaptar activación de capas.
+  No confundirlo con estratos0.50m ni atribuir cumplimiento antiguo al diseño.
+
 - Avance integrado F02 del 18/11/2026: main incorpora por fast-forward la
   rama `f02-verificaciones-complementarias` hasta `6718163`. El usuario
   autorizó publicar main con mensaje `Avance miercoles entrega final`.

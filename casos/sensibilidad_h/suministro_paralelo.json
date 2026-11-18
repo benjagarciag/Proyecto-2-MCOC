@@ -1,0 +1,19 @@
+{
+  "volumen_m3": 636.7751926932476,
+  "carga_mixer_m3": 7.5,
+  "ciclo_completo_h": 2,
+  "camiones_activos": 16,
+  "camiones_reserva": 2,
+  "capacidad_planta_asignable_m3_h": 60,
+  "capacidad_planta_es_hipotesis": true,
+  "capacidad_bombeo_efectiva_por_frente_m3_h": 30,
+  "capacidad_compactacion_por_frente_m3_h": 30,
+  "temperatura_recepcion_C": 12,
+  "casos": {
+    "un_frente_objetivo": {"frentes": 1, "atencion_mixer_min": 15},
+    "dos_frentes_prudente": {"frentes": 2, "atencion_mixer_min": 20},
+    "dos_frentes_objetivo": {"frentes": 2, "atencion_mixer_min": 15},
+    "dos_frentes_ciclo_largo": {"frentes": 2, "atencion_mixer_min": 15, "ciclo_completo_h": 2.5}
+  },
+  "advertencia": "Modelo condicional, no rendimiento medido. Dos frentes requieren dos líneas de bombeo independientes y cuadrillas; dos camiones en una tolva no se cuentan como dos bombas. Tiempo de atención incluye descarga y cambio de camión; ciclo completo ya lo incluye. Reserva no produce adicionalmente. Capacidades de planta, bombeo y compactación son requisitos propuestos sin confirmar."
+}

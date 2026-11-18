@@ -1,0 +1,45 @@
+﻿parametro,valor,unidad,fuente,estado,alcance
+Volumen IFC,636.7751926932476,m3,IFC y esquema geométrico,Dato geométrico del modelo,Geometría oficial no completada
+Caudal total hormigón,60,m3/h,Supuesto docente autorizado,Adoptado; dos frentes30,No rendimiento medido
+Temperatura colocación,12,°C,Decisión del proyecto,Condición nominal exacta,Desviaciones requieren actualización
+Duración colocación,10.612919248110561,h,Integración de capas IFC /60,Calculada,Toda la fundación; no incluye control posterior
+Capas físicas,11,capas,Esquema IFC,10x0.40m y última0.30m,No son juntas frías
+Espesor máximo capa,0.4,m,Decisión constructiva,Adoptado,Compatibilidad con vibrador y armadura
+Ventana local unión,150,min,Condición propuesta de aceptación,Hipótesis a comprobar con mezcla,No ensayo ni fraguado medido
+Sitio,-37.277929 / -72.368271,latitud / longitud,Sitios del grupo6,Coordenadas exigidas,El Rosal; no sustituir por centro de ciudad
+Climas,ERA5 2023 / 2024 / 2025,historias horarias,Snapshots conservados,Alineación por hora relativa,No pronóstico de obra2026
+Densidad,2476,kg/m3,Fuente docente de hidratación,Conservada,No calibrada en obra
+Calor específico,1023,J/(kg K),Fuente docente de hidratación,Conservado,Constante
+Conductividad hormigón,2,W/(m K),Supuesto con sensibilidad histórica,Conservada,No k óptimo ni calibrado
+Convección,5.7+3.8*v2,W/(m2 K),Correlación documentada en VIENTO.md,Historia horaria,Solo conveccion; solar y onda larga explicitas por separado
+Transformación viento,v2=v10*(2/10)^0.14,m/s,Perfil de exposición supuesto,Conservado,Campo abierto; altura2m representativa
+Temperatura suelo,15,°C,Borde equivalente,Supuesto,Sin inercia ni medición local
+Conductividad suelo,1.2,W/(m K),Borde equivalente,Supuesto,No estudio geotécnico térmico
+Longitud suelo,0.5,m,Resistencia equivalente L/k,Supuesto,No profundidad de dominio simulado
+Exposición,Base a suelo; laterales abiertos sin relleno,—,Hipótesis declarada,Conservada,Cambio de relleno exige nuevos bordes
+Madera,0.018,m,Familia AraucoPly referencia previa,Adoptada,k0.158 W/(mK); resistencia mecánica aparte
+Aislación,2x0.040,m,Familia Aislanglass referencia previa,Adoptada,k0.042 W/(mK); seca y continua
+Retiro madera,72,h de edad local,Calendario nominal,Condicionado a resistencia y revisión térmica,No certificado de desmolde
+Retiros mantas,240 / 360,h de edad local,Calendario nominal simulado,Condicionados a monitoreo y predicción,No retiro automático
+Circuitos,9,ramales paralelos,Esquema geométrico,Adoptados,3/3/2/1 en cotas0.5/1.5/2.5/3.8m
+Diámetro interior cálculo,0.025,m,Decisión del proyecto,Idealización geométrica,Clase exterior/espesor no dimensionados
+Longitud interna,638.8479433717251,m,Esquema de serpentines,Calculada,Sin acometidas ni colectores
+Caudal ramal abierto,18,L/min,Decisión del proyecto,Constante,No calibra transferencia
+Caudal sistema con bypass,162,L/min,9x18,Nominal constante,Embebido18*N; resto bypass
+Agua,18,°C uniforme,Idealización autorizada,Conservada,No balance axial real
+U equivalente,5,W/(m3 K),Sumidero volumétrico,Hipótesis,No coeficiente pared ni calibración de tubo
+Tope extracción global,15,kW térmicos,Control equivalente,Adoptado,No potencia constante ni eléctrica
+Zona refrigerable base,414.016,m3,Máscara0.40m excluye contorno,Representación equivalente,No antigua máscara366m3
+Apertura,19,°C mínima de tramos,Histéresis propuesta y simulada,Solo con cobertura,Cierre<=18; banda mantiene estado
+Apagado final,Sin hora fija,—,Decisión actual,Criterio de liberación en documento,No se adopta432h
+Advertencia,65 / 18,°C Tmax / K Delta,Decisión operativa propuesta,No umbral normativo,No optimizado
+Intervención,68 / 19,°C Tmax / K Delta,Decisión operativa propuesta,No umbral normativo,No optimizado
+Límites docentes,70 / 20,°C Tmax / K Delta,Pauta curso,Max temporal con resta simultánea,No garantía de ausencia de fisuración
+Registro,1 / <=5,min adquisición / archivo,Plan propuesto,Durante todo control,Brutos y extremos conservados
+Catálogo,8x3; peso1/24,—,Fuentes completas y ERA5 congelado,Modelo discreto explícito,No ensayos iid; curva común; independencia supuesta
+Horizontes,336 / 600-672,h desde primera colocación,Docente / diagnóstico,336h comparacion; seguimiento adicional separado,Excedencias posteriores; no fecha de liberacion
+Malla base,0.4,m,Cálculo de nueve circuitos,Malla de comparación,Confirmación0.20m: candidata completa; alternativas selectivas
+Paso máximo base,300,s,Cálculo de nueve circuitos,Sujeto a estabilidad y eventos,Confirmación temporal150s en tres pares
+Absortancia solar,0.6,1,Modelo radiativo nominal,Supuesto del acabado equivalente,No medida; contraste0.2/0.9
+Emisividad superficial,0.9,1,Modelo radiativo nominal,Supuesto,Cielo estimado; sin sombras
+Albedo terreno,0.2,1,Modelo radiativo nominal,Supuesto,Reflexion difusa isotropica

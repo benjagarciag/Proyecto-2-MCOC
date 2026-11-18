@@ -1,0 +1,13 @@
+{
+  "familia_m3_h": [55, 60],
+  "paso_busqueda_m3_h": 5,
+  "capacidad_maxima_m3_h": 60,
+  "horizonte_h": 672,
+  "propuesta_m3_h": 60,
+  "malla_base_m": 0.4,
+  "malla_final_m": 0.2,
+  "paso_max_s": 300,
+  "proteccion": "combinada_504_sombra_90",
+  "exclusiones": "q>60 no admisible por recursos; q<55 no puede mejorar D=V/60. Tasas50/45 anteriores conservadas como antecedentes336h, no filas extendidas de esta nueva familia.",
+  "hipotesis": "Mismos parametros y sombras del estudio postdesmolde; cubierta permanece hasta672h. No se optimiza edad de retiro ni se valida cubierta real."
+}

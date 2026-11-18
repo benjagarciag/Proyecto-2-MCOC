@@ -1,0 +1,10 @@
+{
+  "hipotesis": "Sin mediciones geotécnicas; capacidad volumétrica exploratoria, no calibrada. T inicial y fondo15°C, k1.2 conservados. Sin difusión horizontal.",
+  "variantes": {
+    "nominal": {"dz_m": 0.25, "profundidad_m": 4, "capacidad_J_m3K": 1800000},
+    "capacidad_baja": {"dz_m": 0.25, "profundidad_m": 4, "capacidad_J_m3K": 1200000},
+    "capacidad_alta": {"dz_m": 0.25, "profundidad_m": 4, "capacidad_J_m3K": 2400000},
+    "malla_suelo_fina": {"dz_m": 0.125, "profundidad_m": 4, "capacidad_J_m3K": 1800000},
+    "dominio_profundo": {"dz_m": 0.25, "profundidad_m": 8, "capacidad_J_m3K": 1800000}
+  }
+}

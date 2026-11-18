@@ -1,0 +1,8 @@
+{
+  "caso": "seno1D exacto",
+  "error_max_K": 0.002571424628428076,
+  "tests_difusion_1d": 24,
+  "observacion": "Verifica el componente difusivo1D; no valida experimentalmente la fundacion3D.",
+  "balance_max_residuo_J": 0.000247955322265625,
+  "balance_max_residuo_relativo": 2.3908162687086816e-15
+}

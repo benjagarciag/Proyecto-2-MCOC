@@ -1,0 +1,32 @@
+{
+  "capacidad_m3_h": 60,
+  "malla_base_m": 0.4,
+  "paso_base_s": 300,
+  "albedo_suelo": 0.2,
+  "orientacion_modelo_grados": 0,
+  "referencias": {
+    "balance": "https://energyplus.readthedocs.io/en/stable/guides/engineering-reference/3.5-outside-surface-heat-balance.html",
+    "cielo": "https://energyplus.readthedocs.io/en/stable/auxiliary-programs/auxiliary-programs.html#field-horizontal-infrared-radiation-intensity",
+    "solar": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF",
+    "datos": "https://open-meteo.com/en/docs/historical-weather-api"
+  },
+  "variantes": {
+    "sin_radiacion": {"alpha": 0.0, "eps": 0.0, "cielo": "nubes", "yaw": 0},
+    "solar": {"alpha": 0.6, "eps": 0.0, "cielo": "nubes", "yaw": 0},
+    "larga": {"alpha": 0.0, "eps": 0.9, "cielo": "nubes", "yaw": 0},
+    "ambas": {"alpha": 0.6, "eps": 0.9, "cielo": "nubes", "yaw": 0},
+    "clara": {"alpha": 0.2, "eps": 0.9, "cielo": "nubes", "yaw": 0},
+    "oscura": {"alpha": 0.9, "eps": 0.9, "cielo": "nubes", "yaw": 0},
+    "despejado": {"alpha": 0.6, "eps": 0.9, "cielo": "despejado", "yaw": 0},
+    "giro90": {"alpha": 0.6, "eps": 0.9, "cielo": "nubes", "yaw": 90}
+  },
+  "hipotesis": [
+    "Absortancia solar y emisividad constantes de la cara exterior equivalente, no mediciones de madera/mantas/hormigón. Rango de sensibilidad, sin pesos probabilísticos.",
+    "Cielo Clark-Allen/expresión Walton con punto de rocío y nubosidad totalERA5 como proxy de nubosidad opaca. No observación infrarroja.",
+    "Vista al cielo1 en horizontales superiores,0.5 en verticales,0 en inferiores; resto ve entorno aTaire. Sin apantallamiento ni sombras entre caras.",
+    "Difusa isotrópica, reflexión de terreno albedo0.2 y directa proyectada segúnNOAA al medio de cada hora histórica; eje+xEste,+yNorte salvogiro90.",
+    "Radiación absorbida/emisión en exterior de última protección; balance superficial no lineal sin almacenamiento propio de madera/mantas, como resistencia original.",
+    "Se conservanTaire,viento,GHI originales y sus marcas; radiación media de la hora precedente se aplica al intervalo que realmente representa.",
+    "Nueve circuitos,11capas,12°C,U5,tope15kW,protecciones72/240/360 y todos los parámetros originales intactos. No se cambia estrategia para hacer cumplir."
+  ]
+}

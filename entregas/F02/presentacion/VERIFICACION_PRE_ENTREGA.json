@@ -1,0 +1,75 @@
+{
+  "pptx_sha256": "18cb17b23af7230005037d5a9f09734d408c3eb9333ff7cf2fb2c4558eea3357",
+  "pdf_pages": 24,
+  "slides": 24,
+  "animations_exact": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "notes_match": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "effects_preserved": 247,
+  "native_charts": 9,
+  "conservacion_guion": {
+    "intervalos": [
+      "0:00–0:43",
+      "0:43–1:46",
+      "1:46–2:43",
+      "2:43–3:36",
+      "3:36–4:39",
+      "4:39–5:18",
+      "5:18–5:52",
+      "5:52–6:25"
+    ],
+    "palabras": {
+      "S1": {
+        "antes": 68,
+        "despues": 62
+      },
+      "S2": {
+        "antes": 101,
+        "despues": 101
+      },
+      "S3": {
+        "antes": 90,
+        "despues": 83
+      },
+      "S4": {
+        "antes": 83,
+        "despues": 78
+      },
+      "S5": {
+        "antes": 100,
+        "despues": 94
+      },
+      "S6": {
+        "antes": 57,
+        "despues": 57
+      },
+      "S7": {
+        "antes": 48,
+        "despues": 49
+      },
+      "S8": {
+        "antes": 50,
+        "despues": 53
+      }
+    }
+  },
+  "estado": "APROBADA",
+  "revision_visual": "24láminas inspeccionadas; ajustes de portada, tablas y ejes revisados. Sin ensayo oral ni reproducción nativa de animaciones."
+}

@@ -1,0 +1,127 @@
+{
+  "t0": "2026-11-19T10:00:00-03:00",
+  "zona": "America/Santiago; UTC−03:00 en el inicio adoptado",
+  "cronograma_filas": 44,
+  "pares": 24,
+  "horizonte_comun_h": 672,
+  "Tmax_336_C": 47.49406559838667,
+  "Delta_336_K": 16.530593021038257,
+  "Tmax_672_C": 50.188511375489945,
+  "Delta_672_K": 33.00743863749973,
+  "P_T_336": 0.0,
+  "P_Delta_336": 0.0,
+  "P_union_336": 0.0,
+  "P_T_672": 0.0,
+  "P_Delta_672": 1.0,
+  "P_union_672": 1.0,
+  "alertas_cola": 16,
+  "todos_exceden_antes_600": true,
+  "estado": "Cumple catálogo336h; incumple catálogo672h. Máximos definitivos no acreditados.",
+  "nota600": "Solo prueba de excedencia en muestras guardadas; no máximos exactos a600h.",
+  "entradas": [
+    {
+      "ruta": "resultados\\diseno_circuitos_colocacion\\esquema.json",
+      "sha256": "82da8cdfcc7e592052db25508511509eb8f27fde590647286003992141ff5aa9"
+    },
+    {
+      "ruta": ".venv\\cache\\f02_sensibilidad_h\\casos\\incertidumbre\\parametros.json",
+      "sha256": "99158d89e393062f427a865d593a3bfee801ec8e94f35181eb82dc16904737ef"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "sha256": "32ed12b2ddc86d5b1aedcdd3dc21e13319bd170fa299af771284ac5a137a0b67"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "sha256": "0e508f6be53b954ef08fc91a61cd2ac333883c2455058cc75678ddae53bc7a67"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "sha256": "002d523d2e6a53384ef26f50435ceebc805c5a7120b23c1474b1843507d80e08"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "sha256": "01c52490573cde19702f199987b32d42559dc34aaa08b4c2a8a46664de6c1013"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "sha256": "c130120646b91819166b4f8a327c0a52068fbadced1dffcf574facaa451858fe"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "sha256": "eedf9c221ed1cb572605fef0eb0514b3465d7ddfcc29acee210dc2a57f73cad8"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "sha256": "8277a62122e6a9a3c81b046d532fdfc53c0a7097ca77b1fb05d389ea07a23225"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "sha256": "466d283d18b41bfa9871a9fb550e3cc9e091c1fa82164c9afe60819e387360dc"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "sha256": "1fddafce4039d9f8fee1cbacf78a9ab8660944123b7f580f1cc414a92c34e99d"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "sha256": "9195ad6cd638ba4108de5f6e8067fab0dfd3e617342c5513eda961094f8dd3c0"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "sha256": "eba980c94ea0020b6cee12e82504a7f5cf66af217b923d2eb140f0e8771d6a79"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "sha256": "bd858688dfea22dc93e4c11f89ef3b25bd79110a57fee2c53b081c3d3b2d0fa5"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "sha256": "ffc173f8e069b448bde7e077b446cd65c9120d67b7a8b30e8f3e4cc563f10dcc"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "sha256": "67393b17079b3a1587e816a3a808bb68477453b96fa25967fce10964aca2789f"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "sha256": "6ebe685b45150e69a1b72817e5e6e3dbd923f2efe6cdeb7c1214779d22e966d8"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "sha256": "6dc0d2132b0d6833fe614f2301053cefb731d694650af573d70a13551fc9748b"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "sha256": "0627f406b564d4073c5d600ed5913de2d428b410842256130f1e4eced5c9df14"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "sha256": "ac60994c16262a06b22b2b5f24db9b36bf03826a547e460641fb1815ffef2a73"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "sha256": "5c72bd8af28635bf1b05d7bbfd8e8c50af027489770ac94b6bdbccbacfd35a61"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "sha256": "123913620b86052e9efb4b6587dbd01f7a6bfe6fb27e72719a16e21929552c87"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "sha256": "4c92f9360c4b33ef7b22817692a666bccd67a502d904429e66d3ba1981a7bfcd"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "sha256": "1a70a075609e6b9c5de91207a7544fed39b9bae769c91e614c1c41e5054414cf"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "sha256": "0fbe3b1d4348c3b52582bb6624b77f920d2ef939938c034cc8271c5842f9810d"
+    },
+    {
+      "ruta": "resultados\\sensibilidad_radiacion\\ambas\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "sha256": "fc8d060cde826f32930e056e8d5b66fb1abd31fa7d3696050b78d0046a73a222"
+    }
+  ]
+}

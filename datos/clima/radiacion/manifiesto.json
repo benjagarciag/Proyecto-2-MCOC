@@ -1,0 +1,35 @@
+{
+  "ERA5-2023": {
+    "snapshot": "datos\\clima\\radiacion\\era5_radiacion_2023_20261118T200251Z.json",
+    "sha256": "6a701002fe8ea852d4f50085af82a12748c95a44708bbbccbca8abef05a739a6",
+    "snapshot_original": "datos/clima/reanalisis/era5_2023-11-19_2023-12-17_20261117T013707875952Z.json",
+    "original_sha256": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+    "max_diferencia_variables_comunes": {
+      "temperature_2m": 0.0,
+      "wind_speed_10m": 0.0,
+      "shortwave_radiation": 0.0
+    }
+  },
+  "ERA5-2024": {
+    "snapshot": "datos\\clima\\radiacion\\era5_radiacion_2024_20261118T200253Z.json",
+    "sha256": "a99cfdc84788a4197218cf8d45f1f61f1f9811465a897122c267d0457de0438d",
+    "snapshot_original": "datos/clima/reanalisis/era5_2024-11-19_2024-12-17_20261117T013706897091Z.json",
+    "original_sha256": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+    "max_diferencia_variables_comunes": {
+      "temperature_2m": 0.0,
+      "wind_speed_10m": 0.0,
+      "shortwave_radiation": 0.0
+    }
+  },
+  "ERA5-2025": {
+    "snapshot": "datos\\clima\\radiacion\\era5_radiacion_2025_20261118T200254Z.json",
+    "sha256": "51aa757df951a36cf1b648f303362106fd62a712c648049c23c9d09233f4f1b0",
+    "snapshot_original": "datos/clima/reanalisis/era5_2025-11-19_2025-12-17_20261117T013707614450Z.json",
+    "original_sha256": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b",
+    "max_diferencia_variables_comunes": {
+      "temperature_2m": 0.0,
+      "wind_speed_10m": 0.0,
+      "shortwave_radiation": 0.0
+    }
+  }
+}

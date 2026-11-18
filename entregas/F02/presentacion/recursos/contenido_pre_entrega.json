@@ -1,0 +1,32 @@
+{
+  "tiempos": [
+    "0:00–0:43",
+    "0:43–1:46",
+    "1:46–2:43",
+    "2:43–3:36",
+    "3:36–4:39",
+    "4:39–5:18",
+    "5:18–5:52",
+    "5:52–6:25"
+  ],
+  "habla": {
+    "S1": "Buenos días. Somos el grupo 6 y les mostraremos cómo colocar la fundación de El Rosal.\n\n> **▶ CLIC 1** — aparece: 10,61 h y «60 m³/h · 12 °C · 9 circuitos». *Cuándo:* apenas termines el saludo.\n\nProponemos hacerla de una sola vez: 60 metros cúbicos por hora, hormigón a 12 grados y nueve circuitos de refrigeración. Eso toma 10,61 horas.\n\n> **▶ CLIC 2** — aparece: «0 / 24 excedencias» y los límites. *Cuándo:* después de decir «10,61 horas».\n\nRevisamos 24 escenarios con radiación: ninguno supera los límites en los 14 días ni hasta los 28 simulados. Les contamos los supuestos.",
+    "S2": "El problema es que el hormigón se calienta solo.\n\n> **▶ CLIC 1** — aparece: mancha naranja «hidratación Q(a)». *Cuándo:* justo después de «se calienta solo».\n\nLa hidratación del cemento libera calor dentro de la masa, y en una fundación tan gruesa ese calor tarda en salir.\n\n> **▶ CLIC 2** — aparece: punto caliente, punto S25 y la ecuación de ΔT. *Cuándo:* cuando digas «el interior conserva calor».\n\nAsí, el interior conserva calor mientras el borde se enfría. Por eso medimos la diferencia entre el punto más caliente y el más frío de S25, en el mismo instante. S25 es hormigón a 25 milímetros de la superficie, no el suelo.\n\n> **▶ CLIC 3** — aparece: flechas de borde, viento, sol, mantas y suelo. *Cuándo:* al decir «en los bordes».\n\nEn los bordes actúan el viento, el sol de día y el cielo frío de noche. Las mantas frenan ese intercambio, y el suelo lo representamos a 15 grados.",
+    "S3": "> **▶ CLIC 1** — aparece: las 11 capas suben una por una y aparecen los dos frentes. *Cuándo:* al empezar a hablar.\n\nColocamos once capas de hasta 40 centímetros, con dos frentes de 30 metros cúbicos por hora, sin esperar que endurezcan entre capas.\n\n> **▶ CLIC 2** — aparece: los 4 niveles de tubos, el agua circulando y las cifras de la derecha. *Cuándo:* cuando digas «dentro van nueve circuitos».\n\nDentro van nueve circuitos en cuatro alturas, a 18 litros por minuto por ramal. El cálculo usa un tope equivalente de 15 kilowatts.\n\n> **▶ CLIC 3** — aparece: gráfico de la regla 19/18 °C y protección 504 h + sombra 90 %. *Cuándo:* al decir «cada circuito abre».\n\nCada circuito abre cubierto y con mínima de 19 grados; cierra a 18, con agua ideal a 18. La última manta queda hasta 504 horas de edad local; después, sombra del 90 %. Luis sigue con el cálculo.",
+    "S4": "> **▶ CLIC 1** — aparece: IFC → malla → una celda con sus flechas. *Cuándo:* después de «gracias, Benjamín».\n\nGracias, Benjamín. Convertimos el IFC en cubos de 40 centímetros y en cada uno hacemos un balance de energía: conducción, hidratación, bordes y tubos.\n\n> **▶ CLIC 2** — aparece: la ecuación del balance y los dos ✓. *Cuándo:* cuando digas «esta es la ecuación».\n\nEsta es la ecuación. Comprobamos que conserva la energía y que reproduce un caso conocido.\n\n> **▶ CLIC 3** — aparece: tabla de sensibilidad espacio/tiempo. *Cuándo:* al decir «después afinamos la malla».\n\nDespués afinamos por separado la malla a 20 centímetros y el paso de tiempo a la mitad. El diferencial cambió como máximo 0,88 grados con la malla y 0,0014 con el paso. Mantiene el cumplimiento, sin calibrar los tubos.",
+    "S5": "Este es un escenario completo: fuente M4 y clima 2024.\n\n> **▶ CLIC 1** — aparece: gráfico de arriba (Tmax y S25) y el rótulo del pico. *Cuándo:* al terminar de presentar el escenario.\n\nEn rojo, la máxima del hormigón; en azul, la mínima de S25. El pico llega a 46,7 grados cerca de las 128 horas.\n\n> **▶ CLIC 2** — aparece: gráfico de ΔT con el límite de 20 K y la marca de 14 días. *Cuándo:* cuando digas «abajo está la diferencia».\n\nAbajo está la diferencia entre ambas. No sigue al pico: crece después, cuando el borde ya se enfrió.\n\n> **▶ CLIC 3** — aparece: corte a 267 h, la resta 42,12 − 25,59 y el resultado fino. *Cuándo:* al decir «el peor momento».\n\nEl peor momento es a las 267 horas: 42,12 menos 25,59, o sea 16,53 grados. Con malla fina, el peor del catálogo es 15,72. Con manta hasta 504 horas y sombra posterior, también cumple hasta el día 28. Matías sigue con el riesgo.",
+    "S6": "> **▶ CLIC 1** — aparece: las 8 curvas de calor de hidratación. *Cuándo:* después de «gracias, Luis».\n\nGracias, Luis. Usamos las ocho curvas de calor del profesor, sin promediarlas.\n\n> **▶ CLIC 2** — aparece: los 3 climas y la matriz 8 × 3. *Cuándo:* cuando digas «con tres climas».\n\nLas combinamos con tres climas de El Rosal, de 2023, 2024 y 2025: 24 escenarios con el mismo peso.\n\n> **▶ CLIC 3** — aparece: las ecuaciones de falla y P_f = 0 %. *Cuándo:* al decir «un escenario falla».\n\nUn escenario falla si supera cualquiera de los dos límites. Sumando los pesos de las fallas, da cero: cero en este catálogo, no riesgo real cero.",
+    "S7": "> **▶ CLIC 1** — aparece: tabla de los dos ritmos y la exclusión por capacidad. *Cuándo:* al empezar a hablar.\n\nComparamos 60 y 55 metros cúbicos por hora con la misma protección. Ambos cumplen.\n\n> **▶ CLIC 2** — aparece: cronogramas de 11 capas y gráfico D–P_f con la meta del 5 %. *Cuándo:* cuando digas «la diferencia es el tiempo».\n\nLa diferencia es el tiempo: a 55 tardamos 11,58 horas, unos 58 minutos más.\n\n> **▶ CLIC 3** — aparece: la cota D ≥ V/Q y el recuadro en la fila de 60. *Cuándo:* al decir «y más rápido no se puede».\n\nY más rápido, con estos recursos, no se puede: 636,775 metros cúbicos divididos por 60, nuestra capacidad máxima, da 10,61 horas.",
+    "S8": "Recomendamos 60 metros cúbicos por hora, 12 grados y nueve circuitos, con manta hasta 21 días y sombra posterior. El control continúa.\n\n> **▶ CLIC 1** — aparece: monitoreo propuesto y la condición de recalcular. *Cuándo:* cuando digas «proponemos medir».\n\nProponemos medir núcleo, S25 y circuitos antes de retirar mantas, y recalcular si cambia el clima o el frío.\n\n> **▶ CLIC 2** — aparece: recuadro de limitación. *Cuándo:* al decir «la limitación».\n\nLa limitación: refrigeración y sombra idealizadas; falta validarlas en obra. Muchas gracias."
+  },
+  "responsables": [
+    "Benjamín",
+    "Benjamín",
+    "Benjamín",
+    "Luis",
+    "Luis",
+    "Matías",
+    "Matías",
+    "Matías"
+  ]
+}
