@@ -58,6 +58,53 @@ y definir con Benjamín el criterio medible de obra. Los rangos son
 exploraciones, pendientes de validación. Para ver casos, horas y residuos,
 abrir el [resumen numérico](../../resultados/f02_luis/resumen.csv).
 
+## Sensibilidad de la última manta
+
+Se compararon cuatro edades con 24 pares por edad, manteniendo la vertida
+única activada por estratos, la colocación a 12 °C, el tope de enfriamiento
+de 15 kW con encendido tardío y el h horario. Se conservó el retiro de la
+madera a 72 h y el de la primera manta a 240 h. Solo varió el retiro de
+la segunda manta en coronación y laterales. Las edades se cuentan desde
+la activación de cada estrato. Las horas de los picos se cuentan desde
+el inicio de la vertida. Las corridas alcanzaron las 600 h sin alertas de
+picos pendientes. Se reutilizó la matriz de 360 h y se hicieron 72
+corridas nuevas a 0,50 m / 900 s.
+
+| Edad de retiro [h] | Mayor Tmáx [°C] | Peor ΔT [K] | Escenario y hora del peor ΔT | Excedencias de 20 K | Peor ΔT refinado [K] |
+| ---: | ---: | ---: | --- | ---: | ---: |
+| 324 | 46,46 | 25,01 | M4_SS × ERA5-2023, 332 h | 8/24 (33,33 %) | 24,34 (3 pares) |
+| 336 | 46,46 | 20,73 | M4_SS × ERA5-2023, 356 h | 1/24 (4,17 %) | 20,82 (4 pares) |
+| 348 | 46,46 | 21,51 | M4_SS × ERA5-2023, 356 h | 2/24 (8,33 %) | 20,47 (4 pares) |
+| 360 | 46,46 | 18,02 | M4_SS × ERA5-2025, 380 h | 0/24 (0,00 %) | 18,27 (2 pares) |
+
+El refinamiento a 0,25 m / 450 s se hizo en un subconjunto que incluye
+el par dominante de cada edad. El porcentaje de excedencias se calcula
+con los 24 pares de la malla base y sus pesos iguales.
+
+**Retiro recomendado a 360 h de edad (15 días).** Fue la única opción
+sin excedencias en los 24 escenarios. El margen bajo 20 K fue de 1,98 K
+en la matriz base y de 1,73 K en el peor par refinado. A las 336 h, el
+4,17 % queda dentro de la meta ponderada del 5 % en la malla base, con
+una excedencia individual. A las 348 h, el 8,33 % supera esa meta.
+En la malla base, el horario relativo al clima explica que adelantar
+12 h, de 348 a 336 h, reduzca el máximo. En ERA5-2023 el aire bajó de
+15,5 °C a la hora 348 a 7,7 °C a la hora 356. En esa última hora, con
+retiro a 348 h el hormigón alcanzaba 33,74 °C frente a 32,54 °C con
+retiro a 336 h. El S25 mínimo era 12,23 y 11,82 °C, respectivamente.
+El refinamiento invirtió el orden de estas dos opciones, y ambas
+conservaron al menos un caso por sobre 20 K. El resultado respalda el cronograma simulado. En obra,
+la decisión de retiro se condiciona al monitoreo térmico y al pronóstico.
+
+[Corridas y refinamientos nuevos](../../resultados/f02_luis/retiro_mantas/)
+y [matriz de referencia a 360 h](../../resultados/f02_luis/estratos_tardio.json).
+
+~~~sh
+python -X utf8 -B casos/sensibilidad_h/verificacion_luis.py --activacion estratos-tardio --retiro-final-h 348 --salida salida_f02/retiro_348h.json
+~~~
+
+Para una corrida refinada, agregar `--lado 0.25 --paso-max 450` y seleccionar
+el par con `--escenario M4_SS ERA5-2023`.
+
 ## Comparación provisional de planes (L5)
 
 Todos los planes de esta tabla tienen 12 °C uniformes, 15 kW, h horario,

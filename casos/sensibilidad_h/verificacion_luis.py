@@ -64,8 +64,10 @@ def modelo(fisica):
     return insumos, motor, solver, meta, hashes, referencia
 
 
-def aplicar_fisica(insumos, fisica):
-    if not FISICA[fisica] and fisica != "retiro_312":
+def aplicar_fisica(insumos, fisica, retiro_final_h=None):
+    if fisica == "retiro_312":
+        retiro_final_h = 312
+    if not FISICA[fisica] and retiro_final_h is None:
         return
     importar = insumos.importar_solver
 
@@ -75,9 +77,9 @@ def aplicar_fisica(insumos, fisica):
 
         def simulacion(ids, origen, lado, programa, curva, entorno, *args, **opciones):
             entorno = replace(entorno, **FISICA[fisica])
-            if fisica == "retiro_312":
+            if retiro_final_h is not None:
                 def anticipar(capas):
-                    return tuple(replace(c, retiro_edad_h=312) if c.retiro_edad_h == 360 else c
+                    return tuple(replace(c, retiro_edad_h=retiro_final_h) if c.retiro_edad_h == 360 else c
                                  for c in capas)
                 entorno = replace(entorno, capas_laterales=anticipar(entorno.capas_laterales),
                                   capas_superiores=anticipar(entorno.capas_superiores))
@@ -120,6 +122,8 @@ def main():
     p.add_argument("--paso-max", type=int, choices=(900, 450), default=900)
     p.add_argument("--activacion", choices=("bloque", "estratos", "estratos-tardio"), default="bloque")
     p.add_argument("--fisica", choices=FISICA, default="base")
+    p.add_argument("--retiro-final-h", type=int, choices=(312, 324, 336, 348, 360),
+                   help="Edad de retiro de la última manta en coronación y laterales.")
     p.add_argument("--escenario", nargs=2, action="append", metavar=("CURVA", "CLIMA"))
     p.add_argument("--geometria", choices=("exportada", "ifc"), default="exportada")
     p.add_argument("--comprobar", action="store_true", help="Solo insumos y verificaciones de una celda.")
@@ -129,6 +133,8 @@ def main():
         p.error("Indicar una salida nueva con --salida.")
     if a.fisica != "base" and not a.escenario:
         p.error("Las sensibilidades físicas requieren pares explícitos; no se les asigna riesgo.")
+    if a.fisica == "retiro_312" and a.retiro_final_h is not None:
+        p.error("Elegir el retiro final con una sola opción.")
     if a.salida is not None and a.salida.exists():
         p.error("La salida ya existe. Elegir otra ruta.")
     insumos, motor, solver, meta, hashes, referencia = modelo(a.fisica)
@@ -145,7 +151,7 @@ def main():
             np.testing.assert_allclose(origen, origen_guardado, atol=1e-7, rtol=0)
             print(f"IFC y máscaras coinciden: {lado} m, {np.count_nonzero(ids)} celdas.")
         return
-    aplicar_fisica(insumos, a.fisica)
+    aplicar_fisica(insumos, a.fisica, a.retiro_final_h)
     caso = deepcopy(planes[a.caso])
     caso["estratos"] = a.activacion != "bloque"
     if a.activacion == "estratos-tardio":
@@ -192,6 +198,8 @@ def main():
                                              for f in filas]) if completo else None,
                   horizontes_h=sorted({f["horizonte_h"] for f in filas}),
                   duracion_auditoria_s=sum(f["cpu_s"] for f in filas), corridas=filas)
+    if a.retiro_final_h is not None:
+        salida["retiro_final_edad_h"] = a.retiro_final_h
     if traza_critica is not None:
         salida["traza_critica"] = traza_critica
     a.salida.parent.mkdir(parents=True,exist_ok=True)
