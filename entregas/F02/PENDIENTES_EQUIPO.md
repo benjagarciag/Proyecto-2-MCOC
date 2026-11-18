@@ -4,6 +4,20 @@
 Luis Noriega y Matías Stierling. El informe/artículo lo redactan los tres y
 queda fuera de esta distribución. La presentación y sus respaldos sí se incluyen.
 
+## Contexto para compartir con los agentes
+
+Cada guía es independiente: incluye estado de partida, lista de lo que falta
+determinar y por qué, archivos de evidencia, entregables y coordinación.
+Compartir la guía correspondiente junto con acceso al repositorio actualizado:
+
+- [Benjamín y su agente: física y obra](CONTEXTO_BENJAMIN.md).
+- [Luis y su agente: implementación y verificación](CONTEXTO_LUIS.md).
+- [Matías y su agente: escenarios, comparación y defensa](CONTEXTO_MATIAS.md).
+
+Son encargos para trabajar en paralelo, no tareas ya resueltas. Los agentes
+deben leer la evidencia y preservar la diferencia entre supuestos, resultados
+anteriores y comprobaciones pendientes de la candidata actual.
+
 Se revisaron la [pauta F02](../../Enunciados%20e%20Instrucciones/Enunciados/F02_DEFENSA_FINAL.txt)
 y las instrucciones generales. F02 permite enumeración discreta local sin
 Monte Carlo ni HPC adicionales; no agregar esos trabajos como requisito de
