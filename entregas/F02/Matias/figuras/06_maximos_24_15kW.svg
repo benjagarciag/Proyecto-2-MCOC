@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="55" font-family="Arial, sans-serif" font-weight="700" font-size="29" text-anchor="start" fill="#172a41">Máximos térmicos de los 24 escenarios de la única</text>
+<text x="55" y="85" font-family="Arial, sans-serif" font-weight="400" font-size="16" text-anchor="start" fill="#47566b">12 °C / tope 15 kW · h horario · 0,50 m / 900 s · máximo por escenario hasta 600 h</text>
+<line x1="110" y1="120" x2="137" y2="120" stroke="#175b83" stroke-width="3"/>
+<text x="145" y="125" font-family="Arial, sans-serif" font-weight="400" font-size="15" text-anchor="start" fill="#172a41">ERA5-2023</text>
+<line x1="275" y1="120" x2="302" y2="120" stroke="#ad5721" stroke-width="3"/>
+<text x="310" y="125" font-family="Arial, sans-serif" font-weight="400" font-size="15" text-anchor="start" fill="#172a41">ERA5-2024</text>
+<line x1="440" y1="120" x2="467" y2="120" stroke="#22806c" stroke-width="3"/>
+<text x="475" y="125" font-family="Arial, sans-serif" font-weight="400" font-size="15" text-anchor="start" fill="#172a41">ERA5-2025</text>
+<line x1="110.0" y1="170" x2="110.0" y2="405" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="240.43478260869566" y1="170" x2="240.43478260869566" y2="405" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="370.8695652173913" y1="170" x2="370.8695652173913" y2="405" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="501.30434782608694" y1="170" x2="501.30434782608694" y2="405" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="631.7391304347826" y1="170" x2="631.7391304347826" y2="405" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="762.1739130434783" y1="170" x2="762.1739130434783" y2="405" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="892.6086956521739" y1="170" x2="892.6086956521739" y2="405" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="1023.0434782608696" y1="170" x2="1023.0434782608696" y2="405" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="1110.0" y1="170" x2="1110.0" y2="405" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="110" y1="405.0" x2="1110" y2="405.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="409.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">0</text>
+<line x1="110" y1="375.625" x2="1110" y2="375.625" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="379.625" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">10</text>
+<line x1="110" y1="346.25" x2="1110" y2="346.25" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="350.25" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">20</text>
+<line x1="110" y1="316.875" x2="1110" y2="316.875" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="320.875" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">30</text>
+<line x1="110" y1="287.5" x2="1110" y2="287.5" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="291.5" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">40</text>
+<line x1="110" y1="258.125" x2="1110" y2="258.125" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="262.125" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">50</text>
+<line x1="110" y1="228.75" x2="1110" y2="228.75" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="232.75" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">60</text>
+<line x1="110" y1="199.375" x2="1110" y2="199.375" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="203.375" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">70</text>
+<line x1="110" y1="170.0" x2="1110" y2="170.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="174.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">80</text>
+<text x="110" y="157" font-family="Arial, sans-serif" font-weight="700" font-size="15" text-anchor="start" fill="#172a41">Tmax [°C]</text>
+<text x="610.0" y="449" font-family="Arial, sans-serif" font-weight="400" font-size="14" text-anchor="middle" fill="#172a41"></text>
+<line x1="110.0" y1="199.375" x2="1110.0" y2="199.375" stroke="#ae3d3d" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="1110.0" y="190.375" font-family="Arial, sans-serif" font-weight="700" font-size="14" text-anchor="end" fill="#ae3d3d">Límite 70 °C</text>
+<circle cx="110.0" cy="303.7104507853873" r="5.5" fill="#175b83"/>
+<circle cx="153.47826086956522" cy="303.26188621762236" r="5.5" fill="#ad5721"/>
+<circle cx="196.95652173913044" cy="302.75684392633633" r="5.5" fill="#22806c"/>
+<circle cx="240.43478260869566" cy="282.3268307086567" r="5.5" fill="#175b83"/>
+<circle cx="283.9130434782609" cy="281.64989872606395" r="5.5" fill="#ad5721"/>
+<circle cx="327.3913043478261" cy="280.85815501436974" r="5.5" fill="#22806c"/>
+<circle cx="370.8695652173913" cy="280.59562324983324" r="5.5" fill="#175b83"/>
+<circle cx="414.3478260869565" cy="280.1539753993393" r="5.5" fill="#ad5721"/>
+<circle cx="457.82608695652175" cy="279.7172376192084" r="5.5" fill="#22806c"/>
+<circle cx="501.30434782608694" cy="273.64674444656384" r="5.5" fill="#175b83"/>
+<circle cx="544.7826086956522" cy="272.9717999360031" r="5.5" fill="#ad5721"/>
+<circle cx="588.2608695652174" cy="272.2114872736564" r="5.5" fill="#22806c"/>
+<circle cx="631.7391304347826" cy="290.65795654779726" r="5.5" fill="#175b83"/>
+<circle cx="675.2173913043479" cy="290.22412186726723" r="5.5" fill="#ad5721"/>
+<circle cx="718.695652173913" cy="289.7894266739367" r="5.5" fill="#22806c"/>
+<circle cx="762.1739130434783" cy="276.34766476803645" r="5.5" fill="#175b83"/>
+<circle cx="805.6521739130435" cy="275.6683529665107" r="5.5" fill="#ad5721"/>
+<circle cx="849.1304347826087" cy="274.90793502208317" r="5.5" fill="#22806c"/>
+<circle cx="892.6086956521739" cy="290.3199035570698" r="5.5" fill="#175b83"/>
+<circle cx="936.0869565217391" cy="289.886300540237" r="5.5" fill="#ad5721"/>
+<circle cx="979.5652173913044" cy="289.4516253507261" r="5.5" fill="#22806c"/>
+<circle cx="1023.0434782608696" cy="270.4703542419277" r="5.5" fill="#175b83"/>
+<circle cx="1066.5217391304348" cy="269.7887736939584" r="5.5" fill="#ad5721"/>
+<circle cx="1110.0" cy="269.0398745818328" r="5.5" fill="#22806c"/>
+<text x="153.47826086956522" y="432.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M1_22A</text>
+<text x="283.9130434782609" y="432.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M1_SS</text>
+<text x="414.3478260869565" y="432.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M2_22A</text>
+<text x="544.7826086956522" y="432.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M2_SS</text>
+<text x="675.2173913043479" y="432.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M3_22A</text>
+<text x="805.6521739130435" y="432.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M3_SS</text>
+<text x="936.0869565217391" y="432.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M4_22A</text>
+<text x="1066.5217391304348" y="432.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M4_SS</text>
+<line x1="110.0" y1="488" x2="110.0" y2="723" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="240.43478260869566" y1="488" x2="240.43478260869566" y2="723" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="370.8695652173913" y1="488" x2="370.8695652173913" y2="723" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="501.30434782608694" y1="488" x2="501.30434782608694" y2="723" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="631.7391304347826" y1="488" x2="631.7391304347826" y2="723" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="762.1739130434783" y1="488" x2="762.1739130434783" y2="723" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="892.6086956521739" y1="488" x2="892.6086956521739" y2="723" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="1023.0434782608696" y1="488" x2="1023.0434782608696" y2="723" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="1110.0" y1="488" x2="1110.0" y2="723" stroke="#dbe4ec" stroke-width="1"/>
+<line x1="110" y1="723.0" x2="1110" y2="723.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="727.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">0</text>
+<line x1="110" y1="683.8333333333334" x2="1110" y2="683.8333333333334" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="687.8333333333334" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">4</text>
+<line x1="110" y1="644.6666666666666" x2="1110" y2="644.6666666666666" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="648.6666666666666" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">8</text>
+<line x1="110" y1="605.5" x2="1110" y2="605.5" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="609.5" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">12</text>
+<line x1="110" y1="566.3333333333334" x2="1110" y2="566.3333333333334" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="570.3333333333334" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">16</text>
+<line x1="110" y1="527.1666666666666" x2="1110" y2="527.1666666666666" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="531.1666666666666" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">20</text>
+<line x1="110" y1="488.0" x2="1110" y2="488.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="98" y="492.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">24</text>
+<text x="110" y="475" font-family="Arial, sans-serif" font-weight="700" font-size="15" text-anchor="start" fill="#172a41">ΔTmax [K]</text>
+<text x="610.0" y="767" font-family="Arial, sans-serif" font-weight="400" font-size="14" text-anchor="middle" fill="#172a41"></text>
+<line x1="110.0" y1="527.1666666666666" x2="1110.0" y2="527.1666666666666" stroke="#ae3d3d" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="1110.0" y="518.1666666666666" font-family="Arial, sans-serif" font-weight="700" font-size="14" text-anchor="end" fill="#ae3d3d">Límite 20 K</text>
+<circle cx="110.0" cy="625.515901802431" r="5.5" fill="#175b83"/>
+<circle cx="153.47826086956522" cy="615.1626282353471" r="5.5" fill="#ad5721"/>
+<circle cx="196.95652173913044" cy="625.3406236121106" r="5.5" fill="#22806c"/>
+<circle cx="240.43478260869566" cy="601.5626276835648" r="5.5" fill="#175b83"/>
+<circle cx="283.9130434782609" cy="581.6749417476415" r="5.5" fill="#ad5721"/>
+<circle cx="327.3913043478261" cy="585.2972126963257" r="5.5" fill="#22806c"/>
+<circle cx="370.8695652173913" cy="607.7572915423137" r="5.5" fill="#175b83"/>
+<circle cx="414.3478260869565" cy="592.7757687160104" r="5.5" fill="#ad5721"/>
+<circle cx="457.82608695652175" cy="599.0505255057467" r="5.5" fill="#22806c"/>
+<circle cx="501.30434782608694" cy="585.9853915117127" r="5.5" fill="#175b83"/>
+<circle cx="544.7826086956522" cy="566.3591125695561" r="5.5" fill="#ad5721"/>
+<circle cx="588.2608695652174" cy="566.2205198574287" r="5.5" fill="#22806c"/>
+<circle cx="631.7391304347826" cy="624.760843120035" r="5.5" fill="#175b83"/>
+<circle cx="675.2173913043479" cy="604.4637330409712" r="5.5" fill="#ad5721"/>
+<circle cx="718.695652173913" cy="614.7151416548104" r="5.5" fill="#22806c"/>
+<circle cx="762.1739130434783" cy="589.6763903828721" r="5.5" fill="#175b83"/>
+<circle cx="805.6521739130435" cy="570.1334397424989" r="5.5" fill="#ad5721"/>
+<circle cx="849.1304347826087" cy="571.2052966726859" r="5.5" fill="#22806c"/>
+<circle cx="892.6086956521739" cy="624.175775731447" r="5.5" fill="#175b83"/>
+<circle cx="936.0869565217391" cy="604.1428567008134" r="5.5" fill="#ad5721"/>
+<circle cx="979.5652173913044" cy="614.2640621626053" r="5.5" fill="#22806c"/>
+<circle cx="1023.0434782608696" cy="576.2753695994911" r="5.5" fill="#175b83"/>
+<circle cx="1066.5217391304348" cy="555.4726533080352" r="5.5" fill="#ad5721"/>
+<circle cx="1110.0" cy="552.9369581128354" r="5.5" fill="#22806c"/>
+<text x="153.47826086956522" y="750.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M1_22A</text>
+<text x="283.9130434782609" y="750.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M1_SS</text>
+<text x="414.3478260869565" y="750.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M2_22A</text>
+<text x="544.7826086956522" y="750.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M2_SS</text>
+<text x="675.2173913043479" y="750.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M3_22A</text>
+<text x="805.6521739130435" y="750.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M3_SS</text>
+<text x="936.0869565217391" y="750.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M4_22A</text>
+<text x="1066.5217391304348" y="750.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">M4_SS</text>
+<text x="55" y="828" font-family="Arial, sans-serif" font-weight="400" font-size="14" text-anchor="start" fill="#47566b">F02 · corte 18-11-2026 · GitHub 496dafa · cada grupo de tres puntos corresponde a una curva de hidratación.</text>
+</svg>

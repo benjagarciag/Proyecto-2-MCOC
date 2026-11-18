@@ -1,0 +1,1771 @@
+{
+  "commit_auditado": "496dafa470afc9815d0451ee412d0a3e1fbb8dcd",
+  "repositorio": "https://github.com/benjagarciag/Proyecto-2-MCOC",
+  "adjunto_sha256": "182b4a500dd02060b89dc452f007a379c7ab6cdc569e67de59a04c00d3497956",
+  "archivos": [
+    {
+      "ruta": "AGENTS.md",
+      "sha256": "8e2d1fa6b22ff101f044b3d246cbbe0ac0f1234afa94e1e20879b3231a66a29b",
+      "bytes": 26761,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/AGENTS.md"
+    },
+    {
+      "ruta": "Enunciados e Instrucciones/Dudas_profesor_pre_evaluacion.txt",
+      "sha256": "d3cf4a14653b35f84d3bee614162279fc94140be00f1d378e25c72e5abdb14de",
+      "bytes": 404,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/Enunciados%20e%20Instrucciones/Dudas_profesor_pre_evaluacion.txt"
+    },
+    {
+      "ruta": "Enunciados e Instrucciones/Enunciados/F02_DEFENSA_FINAL.txt",
+      "sha256": "e2f4a0180ab501c5fab036b137acf1efe4467ec56ce5fc5190dfc6215d876fe9",
+      "bytes": 26352,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/Enunciados%20e%20Instrucciones/Enunciados/F02_DEFENSA_FINAL.txt"
+    },
+    {
+      "ruta": "Enunciados e Instrucciones/source_terms.txt",
+      "sha256": "182b4a500dd02060b89dc452f007a379c7ab6cdc569e67de59a04c00d3497956",
+      "bytes": 130366,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/Enunciados%20e%20Instrucciones/source_terms.txt"
+    },
+    {
+      "ruta": "README.md",
+      "sha256": "e0b9de212b4003a152890a29d56f9b708bcc68fd8c81962e2c01efe4a61d75cd",
+      "bytes": 10904,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/README.md"
+    },
+    {
+      "ruta": "casos/f02_verificaciones/README.md",
+      "sha256": "bb6ffeeb2ec8309e5d98793f284ae7a4b468c734dc933d5e4bb7cb5fc56e5f79",
+      "bytes": 10052,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/f02_verificaciones/README.md"
+    },
+    {
+      "ruta": "casos/f02_verificaciones/configuraciones.json",
+      "sha256": "ab91397e72bc4e028ffa78bc20e72caf3e4433c608323ab65bfc8b1f12c9632e",
+      "bytes": 1232,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/f02_verificaciones/configuraciones.json"
+    },
+    {
+      "ruta": "casos/f02_verificaciones/ejecutar.py",
+      "sha256": "2a2da72416b98f32b18de9ed0d4c8cdd2d38a3b3f7ba4f6d080b3e4e40d89217",
+      "bytes": 11927,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/f02_verificaciones/ejecutar.py"
+    },
+    {
+      "ruta": "casos/f02_verificaciones/insumos.py",
+      "sha256": "68e26b8782a800cfe4f8efdfee0c108c7069c720f920329280cec58a7b5de532",
+      "bytes": 4076,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/f02_verificaciones/insumos.py"
+    },
+    {
+      "ruta": "casos/f02_verificaciones/verificar.py",
+      "sha256": "c45ee674d3b2fe190adde8f52266a7ddac9492948c96984b32b881711efa706a",
+      "bytes": 7994,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/f02_verificaciones/verificar.py"
+    },
+    {
+      "ruta": "casos/incertidumbre/comparar_controles.py",
+      "sha256": "615e1c6cd39a658c2310dbc43d3934440af088799c8b133150492d5eff69ef52",
+      "bytes": 10976,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/incertidumbre/comparar_controles.py"
+    },
+    {
+      "ruta": "casos/incertidumbre/ejecutar.py",
+      "sha256": "3f2500e10dfa7a1788519b0ebe7dcfb16e0d36931b7948800f4b3a90f1dff16d",
+      "bytes": 17372,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/incertidumbre/ejecutar.py"
+    },
+    {
+      "ruta": "casos/incertidumbre/parametros.json",
+      "sha256": "ef7dce2677a9d9509623dfa06d2815097615e462cf97108dfef87d5ceb28ca6c",
+      "bytes": 952,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/incertidumbre/parametros.json"
+    },
+    {
+      "ruta": "casos/incertidumbre/preparar_fuentes.py",
+      "sha256": "e86bc5f66d35b1733f091de3fa3244f9bd6725327c6943c838468885ca362ee3",
+      "bytes": 1255,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/incertidumbre/preparar_fuentes.py"
+    },
+    {
+      "ruta": "casos/incertidumbre/visor_cronograma.py",
+      "sha256": "025ba68be9325df28de71801244453eaa7ddf168087957da12eb14e8b74553e9",
+      "bytes": 4918,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/incertidumbre/visor_cronograma.py"
+    },
+    {
+      "ruta": "casos/semana4/parametros.json",
+      "sha256": "1d1487f0e89eba0e860746081bdc0ed8cc2c2cb26e6c0612021a52aae0cfd5ca",
+      "bytes": 1897,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/semana4/parametros.json"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/CONDUCTIVIDAD.md",
+      "sha256": "f8b22cb23822f3d5923a83da5a513085109cd015e7edf11a01c6c48a85d06e93",
+      "bytes": 6445,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/CONDUCTIVIDAD.md"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/CONTROLES_OBRA.md",
+      "sha256": "8a559346efa2e5d264d777e91663e97c6d386fd0a24aa26c1305326842862dad",
+      "bytes": 9548,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/CONTROLES_OBRA.md"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/MODELO_FISICO.md",
+      "sha256": "8eb801edad9557e36d1dc4fe24173f87af7eb953b70116b1e1a3cb91bf416365",
+      "bytes": 9430,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/MODELO_FISICO.md"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/README.md",
+      "sha256": "adcb9908f811dd8aaf8a591122a6c0a46097e1edfb04e64e01d06f41ea7a1e05",
+      "bytes": 11634,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/README.md"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/SENSIBILIDAD_SUELO.md",
+      "sha256": "ee6d356fb32622cc39905d08e334599ec0cd742055e2840cd0fa64dc735a700f",
+      "bytes": 7152,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/SENSIBILIDAD_SUELO.md"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/SUELO_PROTECCIONES.md",
+      "sha256": "7a4712e8e101b1ee414bdf6413cb83f74730d3776d5a951ca79f05ee15a435b6",
+      "bytes": 6762,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/SUELO_PROTECCIONES.md"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/VIENTO.md",
+      "sha256": "ec72f0bc45bdb216c331876f1396c48e892491758fdc92b31bd15d3ce3a971cd",
+      "bytes": 10963,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/VIENTO.md"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/colocacion_12c.json",
+      "sha256": "3e6599ed934b8193e495ed8c622b6e0919152720e31052a25049b849b61d9f5a",
+      "bytes": 731,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/colocacion_12c.json"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/colocacion_12c.py",
+      "sha256": "172eebe7fc612ced22793832f1b18c42bbcf1f857cc048cfe2db0e779a9108bc",
+      "bytes": 3166,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/colocacion_12c.py"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/conductividad.py",
+      "sha256": "8aa11b8dcd60c3b97205e1ca3eb9e6c97e55337207caee4f004a9559316404a4",
+      "bytes": 9089,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/conductividad.py"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/controles_obra.py",
+      "sha256": "f81dc31df98ed985dcad58c2e2fa53e3c07f06f4278f571e3135e70c3434fb85",
+      "bytes": 8786,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/controles_obra.py"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/ejecutar.py",
+      "sha256": "94358f478c424b7e44133acb798d333f007f6394131bdcda936abf497cf44230",
+      "bytes": 8749,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/ejecutar.py"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/graficar_refinamiento.py",
+      "sha256": "842e9ff190531ab0be493f13b1e3f61a829f76b6b5c68e0edc55fc8e40a33cb1",
+      "bytes": 4168,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/graficar_refinamiento.py"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/graficar_suelo.py",
+      "sha256": "ed73564109e9973a9da9d68a8c67b6e44773150a83052f18f5ff5fdb689222fe",
+      "bytes": 2692,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/graficar_suelo.py"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/refinar.py",
+      "sha256": "c476d807b4eb5876807aba31d9d51eb45cf1779eff1264e1b45ff51768a120d6",
+      "bytes": 7813,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/refinar.py"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/suelo.py",
+      "sha256": "fe4478814cf8ade874daacb010cef55eb0654cf162424bfa6355db679b88691e",
+      "bytes": 9210,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/suelo.py"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/suelo_datos.py",
+      "sha256": "ae1042ecc7cc06b5f9604f7ab04ab39733ec2b1f94fb8eb48504ed9088b7c36b",
+      "bytes": 3641,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/suelo_datos.py"
+    },
+    {
+      "ruta": "casos/sensibilidad_h/viento.py",
+      "sha256": "29a14c3f9c6d2455a9516ab7bd70000833e5e5517a22359f1b7336b5098f6e00",
+      "bytes": 16552,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/casos/sensibilidad_h/viento.py"
+    },
+    {
+      "ruta": "datos/clima/reanalisis/era5_2023-11-19_2023-12-17_20261117T013707875952Z.json",
+      "sha256": "282696e13704fc5e6a6d3066b099ccbbefa56aaea2b4b8d15ee1d955fbc02e19",
+      "bytes": 44645,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/clima/reanalisis/era5_2023-11-19_2023-12-17_20261117T013707875952Z.json"
+    },
+    {
+      "ruta": "datos/clima/reanalisis/era5_2024-11-19_2024-12-17_20261117T013706897091Z.json",
+      "sha256": "de0ed9e1f0322db28a930cd8ffd3bea4b4d433b2270a2c3d7927b6a1d8d09cfd",
+      "bytes": 44690,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/clima/reanalisis/era5_2024-11-19_2024-12-17_20261117T013706897091Z.json"
+    },
+    {
+      "ruta": "datos/clima/reanalisis/era5_2025-11-19_2025-12-17_20261117T013707614450Z.json",
+      "sha256": "c28b3a500465ec946e01ce2a711b0b8a877698726963bf3e6558b09dc35b1c86",
+      "bytes": 44720,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/clima/reanalisis/era5_2025-11-19_2025-12-17_20261117T013707614450Z.json"
+    },
+    {
+      "ruta": "datos/hidratacion/M1_22A.csv",
+      "sha256": "0bc0be180374f0e866a2f20f205e6980b33821db7d3afd2758fdae26e71c8f28",
+      "bytes": 24616,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/M1_22A.csv"
+    },
+    {
+      "ruta": "datos/hidratacion/M1_SS.csv",
+      "sha256": "5398404ab91e1dae35ddf2e3577c21a13629981063044443f7c16b1c292af73e",
+      "bytes": 36578,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/M1_SS.csv"
+    },
+    {
+      "ruta": "datos/hidratacion/M2_22A.csv",
+      "sha256": "a85e66c90f4470e3d8be28a5ab822741ad8f7aafefabd419e4440312edf986a0",
+      "bytes": 24644,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/M2_22A.csv"
+    },
+    {
+      "ruta": "datos/hidratacion/M2_SS.csv",
+      "sha256": "79ee50229ba55d55fa95fd53e4e844a55217afd6fdce3fd885bc1680c9cd26cb",
+      "bytes": 36586,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/M2_SS.csv"
+    },
+    {
+      "ruta": "datos/hidratacion/M3_22A.csv",
+      "sha256": "1652d78fc4e52bd250b5ad10c5c8cda5952abcb489890a8177cfd7d6f7d8e7ab",
+      "bytes": 24633,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/M3_22A.csv"
+    },
+    {
+      "ruta": "datos/hidratacion/M3_SS.csv",
+      "sha256": "a49b87aea452d281730eddbd6c30ffe84201cd7299b3c7a328f8749b0566e0ff",
+      "bytes": 36590,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/M3_SS.csv"
+    },
+    {
+      "ruta": "datos/hidratacion/M4_22A.csv",
+      "sha256": "b380de90dab4d1728ad9528f11f25b7b112cf5fedd8ccfe3bc15a8b02ee9a274",
+      "bytes": 24643,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/M4_22A.csv"
+    },
+    {
+      "ruta": "datos/hidratacion/M4_SS.csv",
+      "sha256": "72b2414e3e6fb958de98b57fef7e2472c65627a52cdfc61832e1cdd52e5e837a",
+      "bytes": 36824,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/M4_SS.csv"
+    },
+    {
+      "ruta": "datos/hidratacion/manifiesto.json",
+      "sha256": "3358707fe8387829de2ac2d201eb18eaa12ad5823bd342fb7df89bc3b08e53fb",
+      "bytes": 5651,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/manifiesto.json"
+    },
+    {
+      "ruta": "datos/hidratacion/source_terms.txt",
+      "sha256": "182b4a500dd02060b89dc452f007a379c7ab6cdc569e67de59a04c00d3497956",
+      "bytes": 130366,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/datos/hidratacion/source_terms.txt"
+    },
+    {
+      "ruta": "desarrollo/fundacion/README.md",
+      "sha256": "0a7532234cd9e7f7ec0c4024b9f3c0204ce00d9640d300f1d3ba3c36cd50c2ec",
+      "bytes": 5061,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/desarrollo/fundacion/README.md"
+    },
+    {
+      "ruta": "desarrollo/mcplan/hidratacion_tabular.py",
+      "sha256": "73fe5ea167d0055bd8aecae0e8bb2b1b4461271ae3aaffefa4ee4b96446d359f",
+      "bytes": 2078,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/desarrollo/mcplan/hidratacion_tabular.py"
+    },
+    {
+      "ruta": "desarrollo/mcplan/termica_fundacion.py",
+      "sha256": "45036a5abe56e61f9bbabace67d8a6ae2030acc2f247da12efd344876732f06a",
+      "bytes": 16257,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/desarrollo/mcplan/termica_fundacion.py"
+    },
+    {
+      "ruta": "documentacion/e07_vertidas_volumenes.md",
+      "sha256": "8b5e009a9f3b1d9535f2b64bef0cb4b517c6074f6ae4db98323b3c18ab536d73",
+      "bytes": 10170,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/documentacion/e07_vertidas_volumenes.md"
+    },
+    {
+      "ruta": "entregas/Defensa_F02_controles_termicos.md",
+      "sha256": "0a1bed1557eb31053f457a154cb829f261341fd17ccbc437a0335809a770a41c",
+      "bytes": 4940,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/entregas/Defensa_F02_controles_termicos.md"
+    },
+    {
+      "ruta": "entregas/Defensa_F02_cronogramas_12kW.md",
+      "sha256": "fb7af974b264c53940ee5cb1697f000457561c9c4e54a4044964a510171345f8",
+      "bytes": 4687,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/entregas/Defensa_F02_cronogramas_12kW.md"
+    },
+    {
+      "ruta": "entregas/Defensa_F02_enfriamiento.md",
+      "sha256": "96e4d10c221a4e077ce9c7d4749a7fe903864e469ca605b440e8754b0e91d317",
+      "bytes": 4712,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/entregas/Defensa_F02_enfriamiento.md"
+    },
+    {
+      "ruta": "entregas/Defensa_F02_resultados.md",
+      "sha256": "0c11ebd8a47710ee37c0bb49c342c18552649cb8754faab5ae2765b1a1855d14",
+      "bytes": 5258,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/entregas/Defensa_F02_resultados.md"
+    },
+    {
+      "ruta": "entregas/F02/CONTEXTO_BENJAMIN.md",
+      "sha256": "51e9f2c781a676bbe0ef16a5c706cc86edaeee44c6e215533a8135d079ad8267",
+      "bytes": 5210,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/entregas/F02/CONTEXTO_BENJAMIN.md"
+    },
+    {
+      "ruta": "entregas/F02/CONTEXTO_LUIS.md",
+      "sha256": "27c5953aa58549ef414a6c15c8c871da208b5bf8ac4dac672f2dae00ea661bd3",
+      "bytes": 5498,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/entregas/F02/CONTEXTO_LUIS.md"
+    },
+    {
+      "ruta": "entregas/F02/CONTEXTO_MATIAS.md",
+      "sha256": "50f6f0c20a93b2ba6bb715cb96d0d16d230b9d4dfd224f979f949c20a6a2df70",
+      "bytes": 5569,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/entregas/F02/CONTEXTO_MATIAS.md"
+    },
+    {
+      "ruta": "entregas/F02/PENDIENTES_EQUIPO.md",
+      "sha256": "9559731040575e30f0476d49d1c44e2ab9f49eab27cace466b2d2cb0e434dc3c",
+      "bytes": 11363,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/entregas/F02/PENDIENTES_EQUIPO.md"
+    },
+    {
+      "ruta": "entregas/F02/README.md",
+      "sha256": "ecd9ad5d7a8dcc9674ef6f3bad1b5581b0b7c1a08c66daa98ba3b728c3829e40",
+      "bytes": 6625,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/entregas/F02/README.md"
+    },
+    {
+      "ruta": "resultados/controles_12c/comparacion_malla_0.5_paso900.csv",
+      "sha256": "68ab9f229ac0acea4218e3fdbcdefdfed931ceb93b4b48a8f5b080c5d7294f47",
+      "bytes": 440,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/comparacion_malla_0.5_paso900.csv"
+    },
+    {
+      "ruta": "resultados/controles_12c/escenarios_malla_0.5_paso900.csv",
+      "sha256": "439292a73ebd4390c7fefe5dedb01c0faf0ebcd8244511b85ad7c192f6381652",
+      "bytes": 6608,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/escenarios_malla_0.5_paso900.csv"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c.json",
+      "sha256": "ba4115172c997223dbe736714024f690a703528b59d38559190db2680b21b320",
+      "bytes": 81855,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_22A_ERA5-2023.json",
+      "sha256": "6f95e1e21347df2533e8e5d0626d7fa59d1c16c70cd85b0bbd78d67826351454",
+      "bytes": 6648,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_22A_ERA5-2024.json",
+      "sha256": "100141a52e12c70cff8b1af88e1086d119919b223f5302661048a598d7b1c99b",
+      "bytes": 6631,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_22A_ERA5-2025.json",
+      "sha256": "51316b8b4838ccfa87d5d7bb1383d562fcdcf4b5ea20d04db459c9b964c659d0",
+      "bytes": 6652,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_SS_ERA5-2023.json",
+      "sha256": "5eaf345f495d45a876e3805784696dea2d9404e539186a53e64eec997247ce5e",
+      "bytes": 6651,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_SS_ERA5-2024.json",
+      "sha256": "46c947503f584122024d229aae33da6d61847dc4d510ada33fda9ca516e68bcd",
+      "bytes": 6638,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_SS_ERA5-2025.json",
+      "sha256": "17e450b54bcb60453b7e20c4e28b4ce761c94b54dbf8060fd40b14cfba4754c5",
+      "bytes": 6650,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_22A_ERA5-2023.json",
+      "sha256": "e56ea2cef43f32d553a4c4f8b7360bfcd38b0462f59e9ad8504ddcea93d59c92",
+      "bytes": 6659,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_22A_ERA5-2024.json",
+      "sha256": "66fac8b128a022a8029ac68a5362c430932657a23d477c4e5b92aee600776cc8",
+      "bytes": 6638,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_22A_ERA5-2025.json",
+      "sha256": "9f5193e2a0ff2af2a7f6076ccdf5eed0a6b0a1b82347020321d429e9114f5331",
+      "bytes": 6636,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_SS_ERA5-2023.json",
+      "sha256": "9ed2b752717956b3c832703d1dc71a3a3bb093655c7ac759285ceacb5fe0c185",
+      "bytes": 6658,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_SS_ERA5-2024.json",
+      "sha256": "2f54163a1061688dca13a0c7675ee9916847a06dfa71941572f5c8585d95c7dd",
+      "bytes": 6646,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_SS_ERA5-2025.json",
+      "sha256": "63c64ec75389709133b466809b3c01d8a0b2164fd287f225e36219c6bf1052d7",
+      "bytes": 6643,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_22A_ERA5-2023.json",
+      "sha256": "e84dfc0db9d7794601d646e83d8747cde24dae88ebe86b0c6d1d2e402bf2f9b0",
+      "bytes": 6643,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_22A_ERA5-2024.json",
+      "sha256": "d9d543b258e434dfdeb1c30392e56d8cc30a5b6de4293f555b361929164b1288",
+      "bytes": 6643,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_22A_ERA5-2025.json",
+      "sha256": "028864a2e6de91202111f4656db04c77c3ab4466ddeb8b7bc3fe5b30aecfe523",
+      "bytes": 6633,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_SS_ERA5-2023.json",
+      "sha256": "90301960224a58510c9dc74060d63b90ee3693be9639fc3d86a75092ea62d0d2",
+      "bytes": 6662,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_SS_ERA5-2024.json",
+      "sha256": "352e61325d71063ff4f803d40333ce14292d6d95fe269fe7774467ac231d58b1",
+      "bytes": 6653,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_SS_ERA5-2025.json",
+      "sha256": "321f7117f99aa19f541305b69163b126d5c0990c5ea69bb1791f62530881dd20",
+      "bytes": 6650,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_22A_ERA5-2023.json",
+      "sha256": "416e4b2b804db21101f6c4b91f823f50bbabd565b739a229c96020a40fbf9cf0",
+      "bytes": 6657,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_22A_ERA5-2024.json",
+      "sha256": "f565375d0639f60cc4ee6374728fb244515f31dd67e748210bec26b66f60a191",
+      "bytes": 6631,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_22A_ERA5-2025.json",
+      "sha256": "e35ec41bc3b2a8172da29f01e9da34b78947731753912ee43cfc79f2f8e6b524",
+      "bytes": 6641,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_SS_ERA5-2023.json",
+      "sha256": "e557a21c1b27459c96b7d844cb4fb81a745a55e22e653f7da26508a23015a0a2",
+      "bytes": 6648,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_SS_ERA5-2024.json",
+      "sha256": "9bcdbf502c0eabc9b9593aa08f64043c0e5bf69ce0f8a66669553282f98de11b",
+      "bytes": 6627,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_SS_ERA5-2025.json",
+      "sha256": "650e58912a531a941f2307294514e2dfb0f9d6a3eb9bbb95c2fed4cae9891550",
+      "bytes": 6647,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/comparacion_malla_0.5_paso900.csv",
+      "sha256": "008358f1c7f0cc3a3247a7ebd0c117585544eaf6c5d9ed71c3b901833e457075",
+      "bytes": 453,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/comparacion_malla_0.5_paso900.csv"
+    },
+    {
+      "ruta": "resultados/controles_obra/escenarios_malla_0.5_paso900.csv",
+      "sha256": "993a8e026f5b58aeb2e22b1fbf4ec6c6af3c0e7a4a4b5726ba3e1296b1047ec4",
+      "bytes": 6599,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/escenarios_malla_0.5_paso900.csv"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw.json",
+      "sha256": "e445755eda2f35e3e3b86a8cf0171d25ca74cc53093df19c580b3ada8ac41ae4",
+      "bytes": 82198,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_22A_ERA5-2023.json",
+      "sha256": "c97dacad979a7a1d114b973f95713315c654aca772f4f904f220137c5a56c668",
+      "bytes": 6643,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_22A_ERA5-2024.json",
+      "sha256": "799d3330ebb018240feb1d26e3d8944a555c3bb9217d77088d499a3edea8bf78",
+      "bytes": 6638,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_22A_ERA5-2025.json",
+      "sha256": "90b8debb6e45789dbccdd7ba0c2ffb5d2de6d3199d786b73acddfd9787f63c50",
+      "bytes": 6649,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_SS_ERA5-2023.json",
+      "sha256": "24d8652223c0269dd934ea59ce034d51d59e28bfabaf90b4717396abb86ad37c",
+      "bytes": 6659,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_SS_ERA5-2024.json",
+      "sha256": "f702969f3f9ada347a236363750b3361d5567d1825bef3ac91fb58c5117a2310",
+      "bytes": 6640,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_SS_ERA5-2025.json",
+      "sha256": "a9da94c32668739592a3f52a378b5417e5e6e5d28f1cfc379fa02fc050e9ec8e",
+      "bytes": 6645,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_22A_ERA5-2023.json",
+      "sha256": "5072fa6f3ce00fc5ab124673ea07cc944947c9836bbedd37093a956739b60704",
+      "bytes": 6664,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_22A_ERA5-2024.json",
+      "sha256": "7fb04b7efbe969850206490100cb75293c621770ecf72c26869321170c289d55",
+      "bytes": 6644,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_22A_ERA5-2025.json",
+      "sha256": "27d35204257cfd0f67a204988b596a41ab4f0dcb15330b1e8914cd04d4d86fd6",
+      "bytes": 6645,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_SS_ERA5-2023.json",
+      "sha256": "03efbdf4c0c2557ece3e39399b0a52b0f8faa07fdd317132006c27d09a95b62c",
+      "bytes": 6657,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_SS_ERA5-2024.json",
+      "sha256": "1d5f2ef2951ef4f6f3c79b5243803134ea90043578ca6a3af881164dfc0a20e3",
+      "bytes": 6637,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_SS_ERA5-2025.json",
+      "sha256": "959f4bbc212db249f20cd6a5c8ee8dbbe40ebf2a6407aa83e3fd236ba52c7558",
+      "bytes": 6649,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_22A_ERA5-2023.json",
+      "sha256": "a977305cf8e72fb1c47e528b67715f5cd43868bc87e35ef3f9312fdcaa593427",
+      "bytes": 6664,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_22A_ERA5-2024.json",
+      "sha256": "d8543a2c5cba5668411058e6e48cedf707f42c5595056e3bf511f3bb44c55933",
+      "bytes": 6641,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_22A_ERA5-2025.json",
+      "sha256": "18c58d1945b328830ac7e859beaee2280d188693be3e3db1547cc9164a24ac66",
+      "bytes": 6634,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_SS_ERA5-2023.json",
+      "sha256": "19c37ef9bc8b35dcaab9548fb318d6e3bd5e1a9bdb5b6108987f3bb41e457b62",
+      "bytes": 6671,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_SS_ERA5-2024.json",
+      "sha256": "413af79c4f6e2eb0d8098137ea23119d321771e1167abc99c4d6202ab55f6b52",
+      "bytes": 6644,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_SS_ERA5-2025.json",
+      "sha256": "25d92f1dc37aad80227b07fe7db84bbdf407574a470410649df2da76f0dbe554",
+      "bytes": 6650,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_22A_ERA5-2023.json",
+      "sha256": "048cbe9fbd35565c60b74d6ece140fcdae593db8d34ae17f4e7ebe38d80cc708",
+      "bytes": 6664,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_22A_ERA5-2024.json",
+      "sha256": "dd81bf0767324e51a1d23bb85cd62b9f9416431f840636c27ba42d95157d3cb3",
+      "bytes": 6643,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_22A_ERA5-2025.json",
+      "sha256": "6f3abcefcdd5a4342b55ff8b6fbf50dc1dd31ffe3184db7c403f222577b4f3f7",
+      "bytes": 6640,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_SS_ERA5-2023.json",
+      "sha256": "c9bf49d2c5307fc439e58fb25fff6dcc4631a31c15f426df4129aca21a3aaef6",
+      "bytes": 6653,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_SS_ERA5-2024.json",
+      "sha256": "03d6a0e424a92c868c47d6fa525e6e57218722cd30d812b737639c28985491be",
+      "bytes": 6642,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_SS_ERA5-2025.json",
+      "sha256": "edeb51e3ae40c8125593b1a4b6ead94316def87dbb3064e7a21fc96ab1ca57d3",
+      "bytes": 6649,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/lenta_12kw.json",
+      "sha256": "b4faba729c346d1e9f7e572fbb508609ce8a83ae0357312619a8c560b98c9805",
+      "bytes": 97438,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/lenta_12kw.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/lenta_12kw_refinar.json",
+      "sha256": "7dd3ac7beab22ddba8baa6fd70f00378584c1e86499941b139fbf2e6d6f8b609",
+      "bytes": 18036,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/lenta_12kw_refinar.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/rapida_estratos_6h.json",
+      "sha256": "69a130804dcfc6b619d7eda7694cf6f020cbcc6363b65adc25e039b564881076",
+      "bytes": 119725,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/rapida_estratos_6h.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/unica_10kw.json",
+      "sha256": "fc93dfeb3fcc6c376bfd825821ceca6aa552f3c8c04a415857aeb79affa3d3cf",
+      "bytes": 77248,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/unica_10kw.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/unica_10kw_refinar.json",
+      "sha256": "063bed6c4c6b7f5164869856681e7f58f572ba960a363d9e82841d2c3a274fe2",
+      "bytes": 4607,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/unica_10kw_refinar.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/unica_16c.json",
+      "sha256": "e9f4b1ce2fe0945010f58986deb93f5716a4a63aeb6e0b293fdbe97b63a485a1",
+      "bytes": 77278,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/unica_16c.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/unica_16c_10kw.json",
+      "sha256": "d5b9542199601f2056720c097ffe1c146dbac3300cfc1bc2dacec1f333525bf1",
+      "bytes": 77110,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/unica_16c_10kw.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/unica_18c.json",
+      "sha256": "98d649618711da0914b9be7f1179543e3078f6e436e594eb5af4720ca48b1691",
+      "bytes": 77227,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/unica_18c.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/unica_apagado_360h.json",
+      "sha256": "dbdf97b02cb8cad708d62c29e706e366e06e250223da68afc4bff6de8eb80653",
+      "bytes": 77387,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/unica_apagado_360h.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/unica_apagado_360h_colas.json",
+      "sha256": "171dacadc8e12ce2f8574ed50cf9d954bc697663bbbf8601f35bfe1ead1d8fba",
+      "bytes": 77410,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/unica_apagado_360h_colas.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/unica_estratos_6h.json",
+      "sha256": "236af8d5b85810aab1d2dcd4dbcdb1167bc54e09db3940eded5622b9a12f2be1",
+      "bytes": 119951,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/unica_estratos_6h.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/matrices/unica_estratos_retrasado.json",
+      "sha256": "37198ca2e3ade2e0910e824c7f363903717725dd06e708c91c31dc43077f22fa",
+      "bytes": 120035,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/matrices/unica_estratos_retrasado.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/reproduccion_publicada.json",
+      "sha256": "645c053f8544717e90032df855133330f3fcef736527b548c8ba3afe27ca95bd",
+      "bytes": 55860,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/reproduccion_publicada.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/sensibilidad_numerica.json",
+      "sha256": "8425ac484a49a94fa3a04d5a54942b86df163723744819e2d7840c07ca1a8542",
+      "bytes": 8628,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/sensibilidad_numerica.json"
+    },
+    {
+      "ruta": "resultados/f02_verificaciones/trazas_c6.json",
+      "sha256": "e274ab27e6776da270f9924c688b50b17794f6e54a14c87e603f87be5ea7553b",
+      "bytes": 672289,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/f02_verificaciones/trazas_c6.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/base/resumen.json",
+      "sha256": "ccbf82bd0a0eb991fe6a013f0e46ec1e1496b841cc67863551915877a9361b2b",
+      "bytes": 80181,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/base/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/base/escenarios.csv",
+      "sha256": "5eaca7e23f932051a443a477f00d4522623fd21aa67a2c5af715ebb80086592b",
+      "bytes": 2674,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/base/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/base/resumen.json",
+      "sha256": "60446db5baa23ab7b003f761458af19ee2d6007eced8d47ce41f757d2b790816",
+      "bytes": 91993,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/base/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/combinada/escenarios.csv",
+      "sha256": "553419583630ca2ca711f37806cea6fa8edf75569b012034416a99a16b711c0a",
+      "bytes": 2687,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/combinada/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/combinada/resumen.json",
+      "sha256": "f3ffd4d0f5bfb07d9d6006d7c841b955b696fb274541d30f4d7427e55a3ef28a",
+      "bytes": 92059,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/combinada/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/frio/escenarios.csv",
+      "sha256": "3c16b8cadb268e4da1e6f0b268c90189c8060efbd4809e0ffc7dbdd418eb8b0b",
+      "bytes": 2685,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/frio/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/frio/resumen.json",
+      "sha256": "4b255d63035acc8bcc166d6abd693a79f3311fa3ae36754ab07a04d9bd3cc2ef",
+      "bytes": 92007,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/frio/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/proteccion/escenarios.csv",
+      "sha256": "adfca9e853b3027813a072c4142edc5feb836718014d21032410ed9f2c660ec6",
+      "bytes": 2679,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/proteccion/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/proteccion/resumen.json",
+      "sha256": "aeaa058be82aefdce2b75286eb88ce8b941f432aad0420f4dda8641d3ebea2fd",
+      "bytes": 92020,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/proteccion/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/retiro_escalonado/escenarios.csv",
+      "sha256": "3d2f4792184589279fc1c9d8021fe08e2759d7fc23c826a2dab0acafe1701899",
+      "bytes": 2693,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/retiro_escalonado/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/retiro_escalonado/resumen.json",
+      "sha256": "678f7c939c752753ba346c367621095f02d27a82813963ae8617514f88435274",
+      "bytes": 92429,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/retiro_escalonado/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.25m_900s/escenarios.csv",
+      "sha256": "3337ff663bb7ea47a8dea2c7e70f4ea5ee33e071432c76ea370773ca9b55ff80",
+      "bytes": 432,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.25m_900s/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.25m_900s/resumen.json",
+      "sha256": "577cd9dd7091c9b4bfd7467b9f6628f25bd832b3b49608cd43e0884f47c7e57a",
+      "bytes": 13214,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.25m_900s/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.5m_450s/escenarios.csv",
+      "sha256": "b0df288f3bfa36c2548ef4516572e9956ce0b195603752ab1df41f0d77d126ba",
+      "bytes": 436,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.5m_450s/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.5m_450s/resumen.json",
+      "sha256": "1d6cc6c47c38c60bbf0f252ef5b61711f3f40ac5ebb0993d30103f669212a7f5",
+      "bytes": 13188,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.5m_450s/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/curvas_reales/escenarios.csv",
+      "sha256": "893c00fbd61fb2f7df8eaa55b8c01dc47452eaa3fda2100cf7052a2e54f01e45",
+      "bytes": 25698,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/curvas_reales/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/curvas_reales/resumen.json",
+      "sha256": "ec1b4acdf2c7063db2c23c16f842030ebd53d16d792f9d34247312c974256e7c",
+      "bytes": 391234,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/curvas_reales/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/curvas_reales/sensibilidad_malla_paso.json",
+      "sha256": "6944ac7f94c44a542707ff3f83828c0db2a22c697285312aee64d30b4e162c2e",
+      "bytes": 9071,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/curvas_reales/sensibilidad_malla_paso.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u15_tope30/cribado/escenarios.csv",
+      "sha256": "00ac13e845436e28dc2f3dcd93de477dfaea4247e73844e118e3cc953b9a3457",
+      "bytes": 765,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u15_tope30/cribado/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u15_tope30/cribado/resumen.json",
+      "sha256": "907357bd63342c9665d48170fa7937cfb56748a8a7d9adc24497ddaf14481c2d",
+      "bytes": 25577,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u15_tope30/cribado/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u2_tope5/cribado/escenarios.csv",
+      "sha256": "b684b106e5013e787f62652710c6553e9808bbb49e4354f56cabb543e4a594d9",
+      "bytes": 761,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u2_tope5/cribado/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u2_tope5/cribado/resumen.json",
+      "sha256": "5c61e0264b45f158ddb06128f8d183d3b1bd7815fc34e64f31c53363ff3572c6",
+      "bytes": 25616,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u2_tope5/cribado/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u3_tope8/cribado/escenarios.csv",
+      "sha256": "50ac04d835ccd5b465cd6012700d899008bd424621358e951fff97f4e5395b47",
+      "bytes": 757,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u3_tope8/cribado/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u3_tope8/cribado/resumen.json",
+      "sha256": "d66c87227279a3fd6b39cbdd27d68506917e7f620707129243b7f2d1d6c044a5",
+      "bytes": 25618,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u3_tope8/cribado/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u40_tope60/cribado/escenarios.csv",
+      "sha256": "84bb79dc7d058483634eca276024602b9ee6dfe376293a98c5648d2b03c33db8",
+      "bytes": 761,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u40_tope60/cribado/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u40_tope60/cribado/resumen.json",
+      "sha256": "9a9f6a02ee76f0a11a5be599e68c3b966a514b04dfe931a9c1fac7dc9623e120",
+      "bytes": 25564,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u40_tope60/cribado/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u4_tope10/cribado/escenarios.csv",
+      "sha256": "5118afd79bb9683dbffa489064f8ebd5e9af9ba1b41d1606519d77c08e19f73d",
+      "bytes": 759,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u4_tope10/cribado/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u4_tope10/cribado/resumen.json",
+      "sha256": "9c4fada51d2b38a71e599a6e87af3f28a5658cfe22f35b7c50166087c511d420",
+      "bytes": 25622,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u4_tope10/cribado/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u4_tope10/escenarios.csv",
+      "sha256": "83332376de6b48dd4869293b24127d689073ad5d05c9434cdc195ed375d6593e",
+      "bytes": 2709,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u4_tope10/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u4_tope10/resumen.json",
+      "sha256": "82221f260072fa54eb4b27a344a3a88c08543d0c2c490131506575adfd6fff08",
+      "bytes": 96484,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u4_tope10/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/escenarios.csv",
+      "sha256": "7f02c6e25683d72638a95449f1baf817ff315f8eeb5f35c53ba12b30694c593d",
+      "bytes": 2707,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/resumen.json",
+      "sha256": "fcd5784d8a15070e8845322887f5b9b09f86009e59ff60234e1ecfa2e690639b",
+      "bytes": 96356,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.25m_900s/escenarios.csv",
+      "sha256": "3d9170995c231abfcc172d971c8238fb708ee2165408e055f896be9e4c20d750",
+      "bytes": 437,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.25m_900s/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.25m_900s/resumen.json",
+      "sha256": "ed64b92d7e7f6b6ed89508e63574bc82f11bd1de0320930170882ad2664d6fe5",
+      "bytes": 13934,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.25m_900s/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.5m_450s/escenarios.csv",
+      "sha256": "b97167a3dfd36842d40fdf7c1c2c56646676882679dab10bac11f1431be0e817",
+      "bytes": 436,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.5m_450s/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.5m_450s/resumen.json",
+      "sha256": "f8a498dabdee0d97bfb83032ce34f0086d64b82e48c85f959b73e94a5a96e5d2",
+      "bytes": 13897,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.5m_450s/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/separacion_3h/escenarios.csv",
+      "sha256": "1ad2d149b5c2564dff3392352a63e6f45d20a3abad5d39013c5a4ed14c3f45c7",
+      "bytes": 2708,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/separacion_3h/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/separacion_3h/resumen.json",
+      "sha256": "d7b4b7c03fd6e717f157008ae6c048b92bf4cf0d14a19958f4b8e30a5ea14d3e",
+      "bytes": 96570,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/separacion_3h/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/unica/escenarios.csv",
+      "sha256": "2c35c4d6e799d1e3fa00147d7398ae5ebb5299ac198729edb607211dcded6b0a",
+      "bytes": 2719,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/unica/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/unica/resumen.json",
+      "sha256": "6ca3bcbc0c3506a8821f628e19513c95af1fdb391d3e0d964518086c76432755",
+      "bytes": 76440,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/unica/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.25m_900s/escenarios.csv",
+      "sha256": "8a2062bec70ff2249a966bae8222c4b6b01cb6482cd1ed7f0b3fd675189e5c7d",
+      "bytes": 435,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.25m_900s/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.25m_900s/resumen.json",
+      "sha256": "83519920fe22397d2d9a4dcb60b562a2bb37d912a11bfdd8049c94eb4f879ac8",
+      "bytes": 10714,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.25m_900s/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.5m_450s/escenarios.csv",
+      "sha256": "9c9828a9684695c09e85e613cc7388d93e1f08626b1dc3f4ab22adce2e917e8c",
+      "bytes": 434,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.5m_450s/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.5m_450s/resumen.json",
+      "sha256": "8cf5b062aeb0abbaef9d99a9a948eba82d063e97691d3db06b2a4faa1c5fb37a",
+      "bytes": 10676,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.5m_450s/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/unica/tras_colocacion/escenarios.csv",
+      "sha256": "07166cdfeeb4e714ac1a9140f460f85151c606a7fdd6eebe2d8cd617600ca3a7",
+      "bytes": 2720,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/unica/tras_colocacion/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/unica/tras_colocacion/resumen.json",
+      "sha256": "ba0d90cabe44c6d2705d99ced07574b5b59a794faf13030ec9019af8e34588a3",
+      "bytes": 76463,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/unica/tras_colocacion/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u5_tope12/unica/tras_colocacion/visualizador.html",
+      "sha256": "e1bbadc085b64f67536d1a3401baef2056279c720d43d5e55e8ebb3c7897b8da",
+      "bytes": 205521,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u5_tope12/unica/tras_colocacion/visualizador.html"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u6_tope15/cribado/escenarios.csv",
+      "sha256": "1f155753c4b1f501f38c3e58342a28c3809b92b0218c4bbcbe2bbfda95209c56",
+      "bytes": 763,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u6_tope15/cribado/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u6_tope15/cribado/resumen.json",
+      "sha256": "d94fea786bd318c58a8d18f285158db42c405ff869a8b3abf93a18b84abb19b0",
+      "bytes": 25643,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u6_tope15/cribado/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u6_tope15/escenarios.csv",
+      "sha256": "ead968d5257fa21116a77bdd49b66a5fcff06f1947d962e6de2d064f8a3e9f21",
+      "bytes": 2710,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u6_tope15/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u6_tope15/resumen.json",
+      "sha256": "e53637bfda7ceaeb8d71e53611424c9fc2b6f077aac7f306aa1077542c446587",
+      "bytes": 96424,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u6_tope15/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.25m_900s/escenarios.csv",
+      "sha256": "d7e423560d59a7ac1f309761824eaa1e8d128cffce195c47d20f914e61f86c49",
+      "bytes": 433,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.25m_900s/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.25m_900s/resumen.json",
+      "sha256": "3cff88df04163976285e3f1151a3153556d632251f1386baab20753e285cc636",
+      "bytes": 13839,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.25m_900s/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.5m_450s/escenarios.csv",
+      "sha256": "8929166342f8066097033d9cf1bc6bde31cbf2be3a23bea2cba72a5fa7c528e6",
+      "bytes": 437,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.5m_450s/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.5m_450s/resumen.json",
+      "sha256": "c637ad6fe9a9518f8baa1a0ee3a0a61d62818e2269ccbe9bf6b37b2b0b8a67dd",
+      "bytes": 13848,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.5m_450s/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u80_tope100/cribado/escenarios.csv",
+      "sha256": "4c791ba356621302645c4a202ebcaa74c19b7d80ae630829b7690bb7fa6991de",
+      "bytes": 761,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u80_tope100/cribado/escenarios.csv"
+    },
+    {
+      "ruta": "resultados/incertidumbre/enfriamiento/u80_tope100/cribado/resumen.json",
+      "sha256": "adef24ad70538008b0616d2b16c56c92539beaea2b7432c67bce5efe90d5e952",
+      "bytes": 25610,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/enfriamiento/u80_tope100/cribado/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/malla_025/resumen.json",
+      "sha256": "98a4aa09cb82adb2effb17c386869bcea9a5e69c4836debb885e0a5dc04da612",
+      "bytes": 80353,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/malla_025/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/paso_450/resumen.json",
+      "sha256": "8b923c94468d9b14bc6382ac3544055a4c6d2ddd717cdff308ee7b5407986562",
+      "bytes": 80295,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/paso_450/resumen.json"
+    },
+    {
+      "ruta": "resultados/incertidumbre/s25_050/resumen.json",
+      "sha256": "84fde11bbfeaef95f46b911f3af6df5efef2b5b480e4e6236054c48aaa5c36d6",
+      "bytes": 80149,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/incertidumbre/s25_050/resumen.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/comparacion.csv",
+      "sha256": "e96a1eec1a071c95bc3772770a1d04009a86add97133973d83a9d82d1f2c0fb2",
+      "bytes": 1652,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/comparacion.csv"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_10/lenta_12kw.json",
+      "sha256": "ec744a2b879bcd8fde3beeef04b181f3f8f8b91841f1500770ad56b2175467de",
+      "bytes": 101698,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_10/lenta_12kw.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_10/procedencia.json",
+      "sha256": "104b780528ecab2d6c006e45e6bc0fe6a51b6b8b4afda4e630c2fcd1955d5d55",
+      "bytes": 385,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_10/procedencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_10/publicada_rapida.json",
+      "sha256": "88e0aa6fde253cfe9a1e39965bf077df57343da90f79723b4561bf2478ec0de8",
+      "bytes": 101952,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_10/publicada_rapida.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_10/publicada_referencia.json",
+      "sha256": "c3044fa390bca4f6840a579fd6533a76a2b1d90c3ef89a67fe6b65211b0d3383",
+      "bytes": 101933,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_10/publicada_referencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_10/publicada_unica.json",
+      "sha256": "ff65dfe4b52297b60911bbd427bb0c9700c4303892bd75996c069dcfb9dbb268",
+      "bytes": 80704,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_10/publicada_unica.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_20/lenta_12kw.json",
+      "sha256": "e53b61abbb257a6fdb56aa08dfc341fa22445bfd5f1862db7d8d43ae8d06b20c",
+      "bytes": 101813,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_20/lenta_12kw.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_20/procedencia.json",
+      "sha256": "c15c68c79f5ccf65eb4de9ecb1e26ce34e9c16282af86265e02567d1c7e3470f",
+      "bytes": 385,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_20/procedencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_20/publicada_rapida.json",
+      "sha256": "be915f1e129858115848b9581f29a39f71f6caefda8d4c329bbbceea17fec91c",
+      "bytes": 102017,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_20/publicada_rapida.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_20/publicada_referencia.json",
+      "sha256": "570c927c223139e0da06741c5237fbe9db67c9966587055df65a8b2618e9e043",
+      "bytes": 101921,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_20/publicada_referencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_20/publicada_unica.json",
+      "sha256": "f15714b2ef4867fbe4f7d40905baa9f8a3c7eb2713e55a6856a34b782a43883e",
+      "bytes": 80710,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_20/publicada_unica.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_5/lenta_12kw.json",
+      "sha256": "1e3b5e53f9ff038c3cec7b79b4f066a503199de0897f7fcda9c2a86948a6bc13",
+      "bytes": 101803,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_5/lenta_12kw.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_5/procedencia.json",
+      "sha256": "fa8d0c35457653b47577ba5f0a476b90dce9517a82d859f4c67c153b2c5e5409",
+      "bytes": 384,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_5/procedencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_5/publicada_rapida.json",
+      "sha256": "0535066b2b3801a90092dfa9c9fbead229ca543b169a815f251e7b13fd8b5333",
+      "bytes": 101640,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_5/publicada_rapida.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_5/publicada_referencia.json",
+      "sha256": "8295c21c9aa55de29986da294b93c3512e9d80cb5ee7001fc18021c42c36f17a",
+      "bytes": 101468,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_5/publicada_referencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/h_5/publicada_unica.json",
+      "sha256": "9ab730fb716e37fd546b65ce717bd824dd49a4da4ce746e16293cf18c5610ccf",
+      "bytes": 80523,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/h_5/publicada_unica.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/comparacion_por_escenario.csv",
+      "sha256": "7898c652000a09ff11cbbbd5519b1eb2df4929b03ac2a5e0ed7b16d183b1f703",
+      "bytes": 11723,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/comparacion_por_escenario.csv"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/procedencia.json",
+      "sha256": "0cba49ddc602bddfcc237ff86f3b7cd60960e2a11b63419106348c75d014f7bc",
+      "bytes": 395,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/procedencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_22A_ERA5-2023.json",
+      "sha256": "9b498f84db96ce72ea8a5e694ecc1a32e87bcef2ed93e412f851a8117d7b8f68",
+      "bytes": 5262,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_22A_ERA5-2024.json",
+      "sha256": "766e7a31b0ef52ccbb19d5a4c81d04381586f1f675204a5caec71502d534b41d",
+      "bytes": 5248,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_22A_ERA5-2025.json",
+      "sha256": "04acba87307ca0bb733cd808e921a08d7f747947fcee6813237b6875aabe06e2",
+      "bytes": 5256,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_SS_ERA5-2023.json",
+      "sha256": "47af964655909bd294efbe1582546337c26ee873149917188b1ee97522814d61",
+      "bytes": 5259,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_SS_ERA5-2024.json",
+      "sha256": "391e8ef2d00a2d1f2dce6f55817e73c9cea2df458ea3ef217e7b0b62e89c655b",
+      "bytes": 5256,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_SS_ERA5-2025.json",
+      "sha256": "85c3321156e4babe960b9741611f16acafb72a3aeb072cb832f0e83a0e765b3d",
+      "bytes": 5260,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_22A_ERA5-2023.json",
+      "sha256": "a490b818281886f70ffc6c827d25c7a2c8f1a3c3d4b2f2f9f420c1a2cc574acb",
+      "bytes": 5252,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_22A_ERA5-2024.json",
+      "sha256": "8391f4b5eba5c6e0230fc02c532f12ee385f6472b9b426a06c618c77bdbd72d8",
+      "bytes": 5254,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_22A_ERA5-2025.json",
+      "sha256": "7c0b431d2844817a586e63e15b6525466756ba701bd66300421995b1fe61322b",
+      "bytes": 5235,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_SS_ERA5-2023.json",
+      "sha256": "ed2a44e1ccd4b6fc79d39cc4d2fa6ed8a802be15e87bddff3413ed18e61711ca",
+      "bytes": 5252,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_SS_ERA5-2024.json",
+      "sha256": "778e31817b35f7baec0cc2149e4e5fc8a6223095317976bbb87341ede58bfc48",
+      "bytes": 5256,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_SS_ERA5-2025.json",
+      "sha256": "b39d11db8f96f14b841dd51187d303f0a7469445575a31ee1ab849725cfd3b3c",
+      "bytes": 5252,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_22A_ERA5-2023.json",
+      "sha256": "772b8ef715e5132ca0f4ed6ac44cb780cd0da33a4af6bbdc82b3a9666090a036",
+      "bytes": 5241,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_22A_ERA5-2024.json",
+      "sha256": "24f1ddc3c6f390c09b04dec098f960958719c9309e886b66662656bad82dae21",
+      "bytes": 5253,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_22A_ERA5-2025.json",
+      "sha256": "6004632ce400f4f312b72bfebb6c7980b165cc29f15247e07f27c6095f1af099",
+      "bytes": 5256,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_SS_ERA5-2023.json",
+      "sha256": "ee705ce2883c37acd12d1aa564110ccb09e7038105699d2aa11ee44c71b6efc3",
+      "bytes": 5254,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_SS_ERA5-2024.json",
+      "sha256": "2564d2a0f3f24682aa533c14b018f44e3e4a3d52185d1f80eb263dff6fc1c2df",
+      "bytes": 5253,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_SS_ERA5-2025.json",
+      "sha256": "7501b4af188e1a2e1a1fe5329e38f71692b7ae832a9b89d5451f2b87baff68e2",
+      "bytes": 5263,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_22A_ERA5-2023.json",
+      "sha256": "834f53724612faf407537c97c2efaea1e45a2bd5be36b9144e9fc812315dc9e2",
+      "bytes": 5249,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_22A_ERA5-2024.json",
+      "sha256": "2bed1ab836f49588d5a9ca1fb3dda4c2ca83ee2025e93efaad21b58b64bb3d78",
+      "bytes": 5247,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_22A_ERA5-2025.json",
+      "sha256": "b3fb003c78c5d8806ba09dad0677814d3421e31fd8c47f2d8c031201f0ac5fc5",
+      "bytes": 5250,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_SS_ERA5-2023.json",
+      "sha256": "f4f20f04804d05489891e92b8c2198be1e0b1e19d44856f299574a378bba1154",
+      "bytes": 5249,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_SS_ERA5-2024.json",
+      "sha256": "3ff0956b6e1672b70123bd03e0355d3e71c55d4c960f952c557392536e109187",
+      "bytes": 5247,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_SS_ERA5-2025.json",
+      "sha256": "145b2cd624561e623ef652ba5669d7150ee5386b3c11b21c2b5879617d709b1a",
+      "bytes": 5243,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/procedencia.json",
+      "sha256": "188deab85e14353a1649ac8eb9c65b46146f738c30cab64ee46db5453a25851b",
+      "bytes": 394,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/procedencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_22A_ERA5-2023.json",
+      "sha256": "e774730e5d21d1d5dab6028270bf1e411502f406958d3cef9e30b6e461600968",
+      "bytes": 5246,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_22A_ERA5-2024.json",
+      "sha256": "2ba068ad36362b4ae7979aec9ccbe92f46d42e0ef6402cbb2c69f50d307d4a64",
+      "bytes": 5239,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_22A_ERA5-2025.json",
+      "sha256": "46f414118ecdaf4a8610543f4c936f8c7cf4e22bfde88df0b7720a9229cd1e4a",
+      "bytes": 5236,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_SS_ERA5-2023.json",
+      "sha256": "bc2b1701aae5428339db7167da323423b6bbf282a7cd6e7e89e9ac5ec3f600d4",
+      "bytes": 5242,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_SS_ERA5-2024.json",
+      "sha256": "b5beeb0dbcb08565f4ac081c6c620d3fb10c009f695b89b4ce400d1c13542428",
+      "bytes": 5235,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_SS_ERA5-2025.json",
+      "sha256": "8d834c4fea8be52ffbc341956211ac23662353642c13d691b409cc9a4c6f9568",
+      "bytes": 5237,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_22A_ERA5-2023.json",
+      "sha256": "b9e2bca9c89b1f09716e85f2e4bf5e0feb0a97138fd277e2cb1b15ab651d5c95",
+      "bytes": 5238,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_22A_ERA5-2024.json",
+      "sha256": "22ab51972a680ff329f9121b2708f9ed4bcddb0f4c51a02d13dbe4f8c1b5a27b",
+      "bytes": 5221,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_22A_ERA5-2025.json",
+      "sha256": "e67898ad32c765940c11c1a5ee62d348efd595d3234f4e9c799cc0c4a43aac8a",
+      "bytes": 5228,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_SS_ERA5-2023.json",
+      "sha256": "a12dae3bf729ef8f495ca926f62013161797b35a5c0b0410eb72dfe27db23cdd",
+      "bytes": 5244,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_SS_ERA5-2024.json",
+      "sha256": "8eca051d77a294695f2308e73ac83a01c530cac7ce9c10b314b3fa7ba75f2e5a",
+      "bytes": 5241,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_SS_ERA5-2025.json",
+      "sha256": "542f5a29abb25521bf3436221b96280b5cb8a3ac12a1b8e217c1bdb49dcc618c",
+      "bytes": 5234,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_22A_ERA5-2023.json",
+      "sha256": "3b6468a1f87277c0100acff7de3331711e74cc43551b2d4d20aed53623d74e63",
+      "bytes": 5215,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_22A_ERA5-2024.json",
+      "sha256": "867ecd49993d83fa61c3379aeb17d9de664740907073803454640f4b434dbe61",
+      "bytes": 5233,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_22A_ERA5-2025.json",
+      "sha256": "1d7f1f8f964dadeb8aaeac65e10fe153b0fba187519f61cbdc87ebdcb99816a7",
+      "bytes": 5220,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_SS_ERA5-2023.json",
+      "sha256": "69686e1c74516b5a58935453da275fd615cdebf0d0a6c51ec0d2a375396815b8",
+      "bytes": 5223,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_SS_ERA5-2024.json",
+      "sha256": "95967f4eb92ce5163af26ff67143de65bed1e5f4a7ced14afb559f4ac4168b8e",
+      "bytes": 5246,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_SS_ERA5-2025.json",
+      "sha256": "f487bb30da9c5d006c015e5773d3584e2508e029712477297b925c40792f9385",
+      "bytes": 5243,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_22A_ERA5-2023.json",
+      "sha256": "af043277e7f6cebc5c626dbf58c1d43f806ee56a6018bb65e788a1d0b6eab783",
+      "bytes": 5236,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_22A_ERA5-2024.json",
+      "sha256": "06fee9515f8139ba91ca8b55e9d07a3ef78665060371b439d87b96217fe34b12",
+      "bytes": 5239,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_22A_ERA5-2025.json",
+      "sha256": "0696c2dcd30c4623d7e3e1c4ef2e08c8e049e5e9d08a7268f4d4e66e4ebaaf4e",
+      "bytes": 5228,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_SS_ERA5-2023.json",
+      "sha256": "f1accd92507bfc80059d576b10f0a46a3a2e605581c496da20d1a6e833ac5d20",
+      "bytes": 5241,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_SS_ERA5-2024.json",
+      "sha256": "0c465c867cf040c3db9a0af1b5a16dee4eb30baea2d01974cf77b2d20eb4921b",
+      "bytes": 5229,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_SS_ERA5-2025.json",
+      "sha256": "fbfe282bff8a91f88913728e2a52a3ee9ecab45401568e9b372291e057701b15",
+      "bytes": 5239,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/refinamiento_unica_h20/riesgo_por_resolucion.csv",
+      "sha256": "7beb4e016e976381d3572a7603998685dce0f5b0e7c229e78763abf1615f4e3f",
+      "bytes": 359,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/refinamiento_unica_h20/riesgo_por_resolucion.csv"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/comparacion.csv",
+      "sha256": "6a5110dd7725861fc8f048e6076ff615476a5dcfd91231707a07e9a9320c43ec",
+      "bytes": 1316,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/comparacion.csv"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/lenta_12kw.json",
+      "sha256": "6dc265c8566095ba611be5264679667cb21cd4d8408486e3aeac401935c801be",
+      "bytes": 102926,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/lenta_12kw.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/publicada_rapida.json",
+      "sha256": "d76ffccdf3861e8f711dce17fc3d309385899cf810b7d7595e04926a36a79133",
+      "bytes": 103047,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/publicada_rapida.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/publicada_referencia.json",
+      "sha256": "2d33d122682950dcc43ef134d48087dd1de0f99661c13e2a1faa0e8eedc17bab",
+      "bytes": 103028,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/publicada_referencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/publicada_unica.json",
+      "sha256": "3f82a3ff9422a89294eb6bdd6b88f53b11d0f31927c22a70cd7534cef678a5ae",
+      "bytes": 81781,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/publicada_unica.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/estadisticas_viento_h.csv",
+      "sha256": "72f0a4731c31abcb4e3789907bbccbb39aced05de7bc2faa1d790fee5d14d6ed",
+      "bytes": 2387,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/estadisticas_viento_h.csv"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica.json",
+      "sha256": "03274de03d1ffb55cf74f66617d3bb570b5d2271390532b99979c873509b7d77",
+      "bytes": 81606,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_22A_ERA5-2023.json",
+      "sha256": "5cc98b74946c43e6f433599e0c5e9e049ab6175ea11a08109ab6fa443da0fd92",
+      "bytes": 6290,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_22A_ERA5-2024.json",
+      "sha256": "c9ce514fa142dce9dfb74ea07d622b5ddf94712c095e3f67a2241ff3f8712c5e",
+      "bytes": 6294,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_22A_ERA5-2025.json",
+      "sha256": "be87aaff946aa2ab2767aeecf69bf7514eb9374c0c7427b0609f8b9d58d84866",
+      "bytes": 6284,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_SS_ERA5-2023.json",
+      "sha256": "5c2c4b37fad04e51bd085133c8eee8c3b5237758ac232d08e9dfb1677f693b38",
+      "bytes": 6310,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_SS_ERA5-2024.json",
+      "sha256": "f272071c1c682a213f12358c3195c97d41b75899e4bf70cca03a19c8a4edd6c4",
+      "bytes": 6298,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_SS_ERA5-2025.json",
+      "sha256": "4e380d95dc7b300911fc4ea7c60025d9ffd051030dcb36110893caba13382232",
+      "bytes": 6301,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_22A_ERA5-2023.json",
+      "sha256": "b7e727891b220c71de6180baeeb1c58bb975c497fc4567f1e637ae5f7f57bb99",
+      "bytes": 6294,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_22A_ERA5-2024.json",
+      "sha256": "6ba338f493149394018541fd8649bd908719fbe89e060c87e192fc4903f19297",
+      "bytes": 6291,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_22A_ERA5-2025.json",
+      "sha256": "52b8832cc32421c5cef14bcc283b07e9193e864cf41166c3dd9814c91d96f643",
+      "bytes": 6297,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_SS_ERA5-2023.json",
+      "sha256": "c2fad50514dd29d5e371b4bc69320c5fbc0525d1d5657ed6b173ce37c2875659",
+      "bytes": 6284,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_SS_ERA5-2024.json",
+      "sha256": "b512354e75aa446b44e8c050e67d62dc28199b6b8b298c96dc378025cf719c0d",
+      "bytes": 6286,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_SS_ERA5-2025.json",
+      "sha256": "34335471844aefd7f27a5696e2325daeaa278771aa97c7e45b760e71434c71bd",
+      "bytes": 6290,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_22A_ERA5-2023.json",
+      "sha256": "7597b7d32881e58a4d11bef3b0e8b2f2352c184ea928a88c8d6b5dfe242930c4",
+      "bytes": 6272,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_22A_ERA5-2024.json",
+      "sha256": "c0a7fb2a4fbec8dce379ca8aed8b7dbb43fbcee6b72185b568c1ab575a93f3ef",
+      "bytes": 6291,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_22A_ERA5-2025.json",
+      "sha256": "75fda4f867cf877be5aae828fa01c0a31552c7d67fe23eab82ca9bb5c1ad655c",
+      "bytes": 6277,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_SS_ERA5-2023.json",
+      "sha256": "751d718e64822b6f3f6733bcb1d53958ca4e3c664459d1d7969a899eaacafda2",
+      "bytes": 6299,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_SS_ERA5-2024.json",
+      "sha256": "c357182e1f6efbae4ef11f95d2995cdb33dd0843403e91acddcf8f783b1ee3b1",
+      "bytes": 6298,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_SS_ERA5-2025.json",
+      "sha256": "014961f99b615304e1234cbd40875b23c9e94b7a605be5b9f67a7ac5179fd630",
+      "bytes": 6305,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_22A_ERA5-2023.json",
+      "sha256": "b364f13fb7a5995b0160878362ba4446cf654e5f0c51e117a63adef114ebe9b6",
+      "bytes": 6301,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_22A_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_22A_ERA5-2024.json",
+      "sha256": "4138bacf07232ef815c55cda86becdc984a664af23caac406382750dac04b2c0",
+      "bytes": 6301,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_22A_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_22A_ERA5-2025.json",
+      "sha256": "3838083e88a87c94680c4b1e9475793eb0c49c37876ea1a51f9dc3482e9b02c1",
+      "bytes": 6300,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_22A_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_SS_ERA5-2023.json",
+      "sha256": "e1c4a60d005c654a3a266ec92f43aad012794c1920bf5949191355f827786a97",
+      "bytes": 6288,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_SS_ERA5-2023.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_SS_ERA5-2024.json",
+      "sha256": "a5161338984172f63469a1fcf5515c44d9f90bf36946776fe8bec3197094e6a6",
+      "bytes": 6285,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_SS_ERA5-2024.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_SS_ERA5-2025.json",
+      "sha256": "566600968d22a4ec1e3bfd0846546c237f4f340d85166588f1362d3c6d61e97f",
+      "bytes": 6296,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_SS_ERA5-2025.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/lenta_12kw.json",
+      "sha256": "13ab159ddf27eaa71fa89bf9cd62c343da1c1381cbecb5f6c50d159efc0de362",
+      "bytes": 102887,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/lenta_12kw.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/publicada_rapida.json",
+      "sha256": "b43a411b08a051039150bb90b660093f96dc0a93a83578d2f0b464f3ab00e303",
+      "bytes": 103047,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/publicada_rapida.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/publicada_referencia.json",
+      "sha256": "5a00a5be86ab8182437277a60e266b626b886ba534975b52256d436c5256356b",
+      "bytes": 102974,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/publicada_referencia.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/publicada_unica.json",
+      "sha256": "a47b19df96b4fd01c82507fe75ebaa77dbd23b2de6c0e8d7db227971cefd7757",
+      "bytes": 81800,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/publicada_unica.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/modelo_viento.json",
+      "sha256": "bb33dee4bf03c1349fe53e6e895770296790d1511c92db1b2308b12d084e3d50",
+      "bytes": 1059,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/modelo_viento.json"
+    },
+    {
+      "ruta": "resultados/sensibilidad_h/viento/series_h.json",
+      "sha256": "4a84856386d010ce5a5721e03e011c16cc5e0e84e6f4aae6e61a075f831eec87",
+      "bytes": 133452,
+      "url": "https://raw.githubusercontent.com/benjagarciag/Proyecto-2-MCOC/496dafa470afc9815d0451ee412d0a3e1fbb8dcd/resultados/sensibilidad_h/viento/series_h.json"
+    }
+  ]
+}

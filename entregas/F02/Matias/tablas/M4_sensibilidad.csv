@@ -1,0 +1,6 @@
+﻿plan,sensibilidad,P_T,P_delta,P_f,n_con_peso,cumple
+Única,pesos publicados,0.0,0.0,0.0,24,Sí
+Única,solo SS (exploración por menor confianza de 22A),0.0,0.0,0.0,12,Sí
+Única,doble peso a ERA5-2023,0.0,0.0,0.0,24,Sí
+Única,doble peso a ERA5-2024,0.0,0.0,0.0,24,Sí
+Única,doble peso a ERA5-2025,0.0,0.0,0.0,24,Sí

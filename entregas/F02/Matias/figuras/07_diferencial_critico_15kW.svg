@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490">
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="55" font-family="Arial, sans-serif" font-weight="700" font-size="29" text-anchor="start" fill="#172a41">Dos temperaturas en el instante del mayor diferencial</text>
+<text x="55" y="85" font-family="Arial, sans-serif" font-weight="400" font-size="16" text-anchor="start" fill="#47566b">M4_SS × ERA5-2025 · única · hora 380 · 12 °C / tope 15 kW · h horario</text>
+<line x1="180.0" y1="163" x2="180.0" y2="381" stroke="#dbe4ec" stroke-width="1"/>
+<text x="180.0" y="403" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">0</text>
+<line x1="308.57142857142856" y1="163" x2="308.57142857142856" y2="381" stroke="#dbe4ec" stroke-width="1"/>
+<text x="308.57142857142856" y="403" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">10</text>
+<line x1="437.14285714285717" y1="163" x2="437.14285714285717" y2="381" stroke="#dbe4ec" stroke-width="1"/>
+<text x="437.14285714285717" y="403" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">20</text>
+<line x1="565.7142857142858" y1="163" x2="565.7142857142858" y2="381" stroke="#dbe4ec" stroke-width="1"/>
+<text x="565.7142857142858" y="403" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">30</text>
+<line x1="694.2857142857143" y1="163" x2="694.2857142857143" y2="381" stroke="#dbe4ec" stroke-width="1"/>
+<text x="694.2857142857143" y="403" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">40</text>
+<line x1="822.8571428571429" y1="163" x2="822.8571428571429" y2="381" stroke="#dbe4ec" stroke-width="1"/>
+<text x="822.8571428571429" y="403" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">50</text>
+<line x1="951.4285714285714" y1="163" x2="951.4285714285714" y2="381" stroke="#dbe4ec" stroke-width="1"/>
+<text x="951.4285714285714" y="403" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">60</text>
+<line x1="1080.0" y1="163" x2="1080.0" y2="381" stroke="#dbe4ec" stroke-width="1"/>
+<text x="1080.0" y="403" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">70</text>
+<line x1="180" y1="381.0" x2="1080" y2="381.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="168" y="385.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">0</text>
+<line x1="180" y1="163.0" x2="1080" y2="163.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="168" y="167.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">1</text>
+<text x="180" y="150" font-family="Arial, sans-serif" font-weight="700" font-size="15" text-anchor="start" fill="#172a41"></text>
+<text x="630.0" y="425" font-family="Arial, sans-serif" font-weight="400" font-size="14" text-anchor="middle" fill="#172a41">Temperatura [°C]</text>
+<rect x="122" y="150" width="54" height="243" fill="white" stroke="none"/>
+<line x1="352.4891575806139" y1="242" x2="575.7938204841247" y2="242" stroke="#456379" stroke-width="4"/>
+<circle cx="352.4891575806139" cy="242" r="10" fill="#ad5721"/>
+<text x="352.4891575806139" y="291" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle" fill="#ad5721">S25 mínimo</text>
+<text x="352.4891575806139" y="316" font-family="Arial, sans-serif" font-weight="400" font-size="16" text-anchor="middle" fill="#ad5721">13,416 °C</text>
+<circle cx="575.7938204841247" cy="242" r="10" fill="#175b83"/>
+<text x="575.7938204841247" y="290" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle" fill="#175b83">Máximo en hormigón</text>
+<text x="575.7938204841247" y="315" font-family="Arial, sans-serif" font-weight="400" font-size="16" text-anchor="middle" fill="#175b83">30,784 °C</text>
+<text x="464.1414890323693" y="214" font-family="Arial, sans-serif" font-weight="700" font-size="20" text-anchor="middle" fill="#172a41">ΔT = 17,368 K</text>
+<circle cx="775.0838316175099" cy="242" r="7" fill="#7e8894"/>
+<text x="775.0838316175099" y="290" font-family="Arial, sans-serif" font-weight="400" font-size="16" text-anchor="middle" fill="#596777">Pico térmico de esta corrida</text>
+<text x="775.0838316175099" y="315" font-family="Arial, sans-serif" font-weight="400" font-size="15" text-anchor="middle" fill="#596777">46,284 °C a 111,25 h</text>
+<text x="55" y="468" font-family="Arial, sans-serif" font-weight="400" font-size="14" text-anchor="start" fill="#47566b">F02 · corte 18-11-2026 · GitHub 496dafa · las dos temperaturas coloreadas corresponden al mismo instante.</text>
+</svg>

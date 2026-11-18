@@ -1,0 +1,188 @@
+﻿archivo,n_corridas,modelo,plan,colocacion_C,tope_W,lado_m,paso_max_s,registros_de_un_solo_escenario
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c.json,24,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,False
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_22A_ERA5-2023.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_22A_ERA5-2024.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_22A_ERA5-2025.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_SS_ERA5-2023.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_SS_ERA5-2024.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M1_SS_ERA5-2025.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_22A_ERA5-2023.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_22A_ERA5-2024.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_22A_ERA5-2025.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_SS_ERA5-2023.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_SS_ERA5-2024.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M2_SS_ERA5-2025.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_22A_ERA5-2023.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_22A_ERA5-2024.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_22A_ERA5-2025.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_SS_ERA5-2023.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_SS_ERA5-2024.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M3_SS_ERA5-2025.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_22A_ERA5-2023.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_22A_ERA5-2024.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_22A_ERA5-2025.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_SS_ERA5-2023.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_SS_ERA5-2024.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_12c/unica_15kw_12c/malla_0.5_paso900/unica_15kw_12c_M4_SS_ERA5-2025.json,1,12 °C / 15 kW,unica_15kw_12c,12,15000,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw.json,24,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,False
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_22A_ERA5-2023.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_22A_ERA5-2024.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_22A_ERA5-2025.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_SS_ERA5-2023.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_SS_ERA5-2024.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M1_SS_ERA5-2025.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_22A_ERA5-2023.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_22A_ERA5-2024.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_22A_ERA5-2025.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_SS_ERA5-2023.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_SS_ERA5-2024.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M2_SS_ERA5-2025.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_22A_ERA5-2023.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_22A_ERA5-2024.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_22A_ERA5-2025.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_SS_ERA5-2023.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_SS_ERA5-2024.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M3_SS_ERA5-2025.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_22A_ERA5-2023.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_22A_ERA5-2024.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_22A_ERA5-2025.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_SS_ERA5-2023.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_SS_ERA5-2024.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/controles_obra/potencia_15kw/malla_0.5_paso900/potencia_15kw_M4_SS_ERA5-2025.json,1,Antecedente o sensibilidad,potencia_15kw,12.23183336836238,15000.0,0.5,900,True
+resultados/f02_verificaciones/matrices/lenta_12kw.json,24,Antecedente o sensibilidad,lenta_12kw,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/f02_verificaciones/matrices/lenta_12kw_refinar.json,4,Antecedente o sensibilidad,lenta_12kw,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.25,450,False
+resultados/f02_verificaciones/matrices/rapida_estratos_6h.json,24,Antecedente o sensibilidad,rapida_estratos_6h,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/f02_verificaciones/matrices/unica_10kw.json,24,Antecedente o sensibilidad,unica_10kw,12.23183336836238,10000,0.5,900,False
+resultados/f02_verificaciones/matrices/unica_10kw_refinar.json,1,Antecedente o sensibilidad,unica_10kw,12.23183336836238,10000,0.25,450,True
+resultados/f02_verificaciones/matrices/unica_16c.json,24,Antecedente o sensibilidad,unica_16c,16,12000.0,0.5,900,False
+resultados/f02_verificaciones/matrices/unica_16c_10kw.json,24,Antecedente o sensibilidad,unica_16c_10kw,16,10000,0.5,900,False
+resultados/f02_verificaciones/matrices/unica_18c.json,24,Antecedente o sensibilidad,unica_18c,18,12000.0,0.5,900,False
+resultados/f02_verificaciones/matrices/unica_apagado_360h.json,24,Antecedente o sensibilidad,unica_apagado_360h,12.23183336836238,12000.0,0.5,900,False
+resultados/f02_verificaciones/matrices/unica_apagado_360h_colas.json,24,Antecedente o sensibilidad,unica_apagado_360h,12.23183336836238,12000.0,0.5,900,False
+resultados/f02_verificaciones/matrices/unica_estratos_6h.json,24,Antecedente o sensibilidad,unica_estratos_6h,12.23183336836238,12000.0,0.5,900,False
+resultados/f02_verificaciones/matrices/unica_estratos_retrasado.json,24,Antecedente o sensibilidad,unica_estratos_retrasado,12.23183336836238,12000.0,0.5,900,False
+resultados/f02_verificaciones/sensibilidad_numerica.json,6,Antecedente o sensibilidad,,,12000,,,False
+resultados/incertidumbre/base/resumen.json,12,Antecedente o sensibilidad,,,,0.5,900,False
+resultados/incertidumbre/controles/base/resumen.json,24,Antecedente o sensibilidad,,19.0 / 18.0 / 18.0 / 18.0 / 18.0,,0.5,900,False
+resultados/incertidumbre/controles/combinada/resumen.json,24,Antecedente o sensibilidad,,15.0 / 14.0 / 14.0 / 14.0 / 14.0,,0.5,900,False
+resultados/incertidumbre/controles/frio/resumen.json,24,Antecedente o sensibilidad,,15.0 / 14.0 / 14.0 / 14.0 / 14.0,,0.5,900,False
+resultados/incertidumbre/controles/proteccion/resumen.json,24,Antecedente o sensibilidad,,19.0 / 18.0 / 18.0 / 18.0 / 18.0,,0.5,900,False
+resultados/incertidumbre/controles/retiro_escalonado/resumen.json,24,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,,0.5,900,False
+resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.25m_900s/resumen.json,3,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,,0.25,900,False
+resultados/incertidumbre/controles/retiro_escalonado/sensibilidad_0.5m_450s/resumen.json,3,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,,0.5,450.0,False
+resultados/incertidumbre/curvas_reales/resumen.json,96,Antecedente o sensibilidad,,,,0.5,900,False
+resultados/incertidumbre/enfriamiento/u15_tope30/cribado/resumen.json,6,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,30000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u2_tope5/cribado/resumen.json,6,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,5000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u3_tope8/cribado/resumen.json,6,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,8000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u40_tope60/cribado/resumen.json,6,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,60000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u4_tope10/cribado/resumen.json,6,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,10000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u4_tope10/resumen.json,24,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,10000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u5_tope12/resumen.json,24,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.25m_900s/resumen.json,3,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.25,900,False
+resultados/incertidumbre/enfriamiento/u5_tope12/sensibilidad_0.5m_450s/resumen.json,3,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,450.0,False
+resultados/incertidumbre/enfriamiento/u5_tope12/separacion_3h/resumen.json,24,Antecedente o sensibilidad,separacion_3h,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u5_tope12/unica/resumen.json,24,Antecedente o sensibilidad,unica,12.23183336836238,12000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.25m_900s/resumen.json,3,Antecedente o sensibilidad,unica,12.23183336836238,12000.0,0.25,900,False
+resultados/incertidumbre/enfriamiento/u5_tope12/unica/sensibilidad_0.5m_450s/resumen.json,3,Antecedente o sensibilidad,unica,12.23183336836238,12000.0,0.5,450.0,False
+resultados/incertidumbre/enfriamiento/u5_tope12/unica/tras_colocacion/resumen.json,24,Antecedente o sensibilidad,unica,12.23183336836238,12000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u6_tope15/cribado/resumen.json,6,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,15000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u6_tope15/resumen.json,24,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,15000.0,0.5,900,False
+resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.25m_900s/resumen.json,3,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,15000.0,0.25,900,False
+resultados/incertidumbre/enfriamiento/u6_tope15/sensibilidad_0.5m_450s/resumen.json,3,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,15000.0,0.5,450.0,False
+resultados/incertidumbre/enfriamiento/u80_tope100/cribado/resumen.json,6,Antecedente o sensibilidad,,13.0 / 12.0 / 12.0 / 12.0 / 12.0,100000.0,0.5,900,False
+resultados/incertidumbre/malla_025/resumen.json,12,Antecedente o sensibilidad,,,,0.25,900,False
+resultados/incertidumbre/paso_450/resumen.json,12,Antecedente o sensibilidad,,,,0.5,450.0,False
+resultados/incertidumbre/s25_050/resumen.json,12,Antecedente o sensibilidad,,,,0.5,900,False
+resultados/sensibilidad_h/h_10/lenta_12kw.json,24,Antecedente o sensibilidad,lenta_12kw,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_10/publicada_rapida.json,24,Antecedente o sensibilidad,publicada_rapida,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_10/publicada_referencia.json,24,Antecedente o sensibilidad,publicada_referencia,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_10/publicada_unica.json,24,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_20/lenta_12kw.json,24,Antecedente o sensibilidad,lenta_12kw,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_20/publicada_rapida.json,24,Antecedente o sensibilidad,publicada_rapida,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_20/publicada_referencia.json,24,Antecedente o sensibilidad,publicada_referencia,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_20/publicada_unica.json,24,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_5/lenta_12kw.json,24,Antecedente o sensibilidad,lenta_12kw,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_5/publicada_rapida.json,24,Antecedente o sensibilidad,publicada_rapida,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_5/publicada_referencia.json,24,Antecedente o sensibilidad,publicada_referencia,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/h_5/publicada_unica.json,24,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,900,False
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M1_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M2_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M3_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_025_paso900/publicada_unica_M4_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M1_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M2_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M3_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/refinamiento_unica_h20/malla_050_paso450/publicada_unica_M4_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,450,True
+resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/lenta_12kw.json,24,Antecedente o sensibilidad,lenta_12kw,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/publicada_rapida.json,24,Antecedente o sensibilidad,publicada_rapida,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/publicada_referencia.json,24,Antecedente o sensibilidad,publicada_referencia,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/viento/constante_media/malla_0.5_paso900/publicada_unica.json,24,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,900,False
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica.json,24,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,False
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M1_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M2_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M3_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_22A_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_22A_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_22A_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_SS_ERA5-2023.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_SS_ERA5-2024.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.25_paso900/publicada_unica_M4_SS_ERA5-2025.json,1,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.25,900,True
+resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/lenta_12kw.json,24,Antecedente o sensibilidad,lenta_12kw,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/publicada_rapida.json,24,Antecedente o sensibilidad,publicada_rapida,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/publicada_referencia.json,24,Antecedente o sensibilidad,publicada_referencia,13.0 / 12.0 / 12.0 / 12.0 / 12.0,12000.0,0.5,900,False
+resultados/sensibilidad_h/viento/horario/malla_0.5_paso900/publicada_unica.json,24,Antecedente o sensibilidad,publicada_unica,12.23183336836238,12000.0,0.5,900,False

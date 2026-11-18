@@ -1,0 +1,5 @@
+﻿plan,duracion_h,Tmax_C,DeltaTmax_K,P_T,P_delta,P_f,cumple,n_escenarios
+Única,10.612919878220794,46.28429801469522,17.368140448050845,0.0,0.0,0.0,"Sí, en la resolución publicada",24
+Rápida,15.639578336446347,,,,,,Pendiente: falta matriz,0
+Referencia,24.63957833644635,,,,,,Pendiente: falta matriz,0
+Lenta,36.63957833644635,,,,,,Pendiente: falta matriz,0

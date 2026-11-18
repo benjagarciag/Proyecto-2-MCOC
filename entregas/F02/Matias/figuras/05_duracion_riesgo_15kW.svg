@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640">
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="55" font-family="Arial, sans-serif" font-weight="700" font-size="29" text-anchor="start" fill="#172a41">Duración y riesgo de la familia candidata</text>
+<text x="55" y="85" font-family="Arial, sans-serif" font-weight="400" font-size="16" text-anchor="start" fill="#47566b">12 °C / tope 15 kW · h horario · 0,50 m / 900 s · máximo por escenario hasta 600 h</text>
+<line x1="107.0" y1="172" x2="107.0" y2="497" stroke="#dbe4ec" stroke-width="1"/>
+<text x="107.0" y="519" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">0</text>
+<line x1="232.0" y1="172" x2="232.0" y2="497" stroke="#dbe4ec" stroke-width="1"/>
+<text x="232.0" y="519" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">5</text>
+<line x1="357.0" y1="172" x2="357.0" y2="497" stroke="#dbe4ec" stroke-width="1"/>
+<text x="357.0" y="519" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">10</text>
+<line x1="482.0" y1="172" x2="482.0" y2="497" stroke="#dbe4ec" stroke-width="1"/>
+<text x="482.0" y="519" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">15</text>
+<line x1="607.0" y1="172" x2="607.0" y2="497" stroke="#dbe4ec" stroke-width="1"/>
+<text x="607.0" y="519" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">20</text>
+<line x1="732.0" y1="172" x2="732.0" y2="497" stroke="#dbe4ec" stroke-width="1"/>
+<text x="732.0" y="519" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">25</text>
+<line x1="857.0" y1="172" x2="857.0" y2="497" stroke="#dbe4ec" stroke-width="1"/>
+<text x="857.0" y="519" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">30</text>
+<line x1="982.0" y1="172" x2="982.0" y2="497" stroke="#dbe4ec" stroke-width="1"/>
+<text x="982.0" y="519" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">35</text>
+<line x1="1107.0" y1="172" x2="1107.0" y2="497" stroke="#dbe4ec" stroke-width="1"/>
+<text x="1107.0" y="519" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#172a41">40</text>
+<line x1="107" y1="497.0" x2="1107" y2="497.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="501.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">0</text>
+<line x1="107" y1="464.5" x2="1107" y2="464.5" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="468.5" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">1</text>
+<line x1="107" y1="432.0" x2="1107" y2="432.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="436.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">2</text>
+<line x1="107" y1="399.5" x2="1107" y2="399.5" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="403.5" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">3</text>
+<line x1="107" y1="367.0" x2="1107" y2="367.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="371.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">4</text>
+<line x1="107" y1="334.5" x2="1107" y2="334.5" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="338.5" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">5</text>
+<line x1="107" y1="302.0" x2="1107" y2="302.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="306.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">6</text>
+<line x1="107" y1="269.5" x2="1107" y2="269.5" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="273.5" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">7</text>
+<line x1="107" y1="237.0" x2="1107" y2="237.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="241.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">8</text>
+<line x1="107" y1="204.5" x2="1107" y2="204.5" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="208.5" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">9</text>
+<line x1="107" y1="172.0" x2="1107" y2="172.0" stroke="#dbe4ec" stroke-width="1"/>
+<text x="95" y="176.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="end" fill="#172a41">10</text>
+<text x="107" y="159" font-family="Arial, sans-serif" font-weight="700" font-size="15" text-anchor="start" fill="#172a41">Probabilidad conjunta P_f [%]</text>
+<text x="607.0" y="541" font-family="Arial, sans-serif" font-weight="400" font-size="14" text-anchor="middle" fill="#172a41">Fin de colocación D [h]</text>
+<line x1="107.0" y1="334.5" x2="1107.0" y2="334.5" stroke="#ae3d3d" stroke-width="2.5" stroke-dasharray="8 5"/>
+<text x="1099.5" y="325.5" font-family="Arial, sans-serif" font-weight="700" font-size="14" text-anchor="end" fill="#ae3d3d">Límite 5 %</text>
+<circle cx="372.32299695551984" cy="497.0" r="8" fill="#175b83"/>
+<text x="384.32299695551984" y="485.0" font-family="Arial, sans-serif" font-weight="700" font-size="15" text-anchor="start" fill="#172a41">Única · 0,00%</text>
+<line x1="497.98945841115864" y1="520.0" x2="497.98945841115864" y2="530.0" stroke="#7a8898" stroke-width="2"/>
+<text x="497.98945841115864" y="585.0" font-family="Arial, sans-serif" font-weight="700" font-size="14" text-anchor="middle" fill="#172a41">Rápida</text>
+<text x="497.98945841115864" y="603.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#596b7d">Sin matriz</text>
+<line x1="722.9894584111587" y1="520.0" x2="722.9894584111587" y2="530.0" stroke="#7a8898" stroke-width="2"/>
+<text x="722.9894584111587" y="585.0" font-family="Arial, sans-serif" font-weight="700" font-size="14" text-anchor="middle" fill="#172a41">Referencia</text>
+<text x="722.9894584111587" y="603.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#596b7d">Sin matriz</text>
+<line x1="1022.9894584111587" y1="520.0" x2="1022.9894584111587" y2="530.0" stroke="#7a8898" stroke-width="2"/>
+<text x="1022.9894584111587" y="585.0" font-family="Arial, sans-serif" font-weight="700" font-size="14" text-anchor="middle" fill="#172a41">Lenta</text>
+<text x="1022.9894584111587" y="603.0" font-family="Arial, sans-serif" font-weight="400" font-size="13" text-anchor="middle" fill="#596b7d">Sin matriz</text>
+<text x="55" y="618" font-family="Arial, sans-serif" font-weight="400" font-size="14" text-anchor="start" fill="#47566b">F02 · corte 18-11-2026 · GitHub 496dafa · debajo del eje se marcan las duraciones de los planes cuyo riesgo sigue pendiente.</text>
+</svg>
