@@ -1,0 +1,11 @@
+{
+  "decision": "Temperatura de colocación uniforme de 12 °C para todas las vertidas de los planes comparados",
+  "temperatura_colocacion_C": 12,
+  "nota": "Objetivo de suministro por confirmar con planta. No modifica el IFC ni los resultados anteriores a 13/12 °C o 12,231833 °C.",
+  "casos": {
+    "unica_15kw_12c": {"plan": "unica", "edad_inicio_h": 6, "tope_W": 15000, "temperatura_C": 12},
+    "rapida_15kw_12c": {"plan": "separacion_3h", "edad_inicio_h": 6, "tope_W": 15000, "temperatura_C": 12},
+    "referencia_15kw_12c": {"plan": "separacion_6h", "edad_inicio_h": 6, "tope_W": 15000, "temperatura_C": 12},
+    "lenta_15kw_12c": {"plan": "separacion_9h", "edad_inicio_h": 6, "tope_W": 15000, "temperatura_C": 12}
+  }
+}

@@ -5,6 +5,8 @@ Cada evaluación tendrá una carpeta con su identificador oficial, por ejemplo
 
 | Evaluación | Fecha | Estado |
 | --- | --- | --- |
+| E13: incertidumbre | 18 de noviembre de 2026 | [Estado y respaldo integrado](F02/README.md); candidata exploratoria y pendientes identificados |
+| [F02: defensa final](F02/README.md) | 19 de noviembre de 2026 | [Reparto del trabajo restante](F02/PENDIENTES_EQUIPO.md); defensa aún en preparación |
 | [E01: revisión oral BIM, difusión y solver 1D](E01/README.md) | 21 de octubre de 2026 | En preparación |
 | [E04: revisión oral 2D/3D y condiciones de borde](E04/README.md) | 28 de octubre de 2026 | Implementación y 251 pruebas; defensa oral por realizar |
 | [E10: entorno, moldaje y clima](E10/README.md) | 11 de noviembre de 2026 | Preparada para revisión oral con bordes, suelo, capas y snapshot real |

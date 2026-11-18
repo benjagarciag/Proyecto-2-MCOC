@@ -1,0 +1,126 @@
+[
+  {
+    "variante": "resistencia_doble",
+    "escenarios": 24,
+    "peso_total": 1.0,
+    "P_f": 0.125,
+    "Tmax_C": 46.80040428586104,
+    "DeltaTmax_K": 21.97504920040904,
+    "escenario_critico": [
+      "M4_SS",
+      "ERA5-2024"
+    ],
+    "hora_critica": 428.0,
+    "alertas": 0,
+    "horizontes_h": [
+      600
+    ],
+    "max_residuo_J": 6.103515625e-05,
+    "tiempo_s": 140.98206870000058,
+    "cambios": [
+      {
+        "curva": "M2_SS",
+        "clima": "ERA5-2024",
+        "delta_K": 20.47821852955856
+      }
+    ],
+    "menor_margen_abs_K": 0.07307060512009045
+  },
+  {
+    "variante": "resistencia_mitad",
+    "escenarios": 24,
+    "peso_total": 1.0,
+    "P_f": 0.125,
+    "Tmax_C": 46.78875181241578,
+    "DeltaTmax_K": 20.45850054002577,
+    "escenario_critico": [
+      "M4_SS",
+      "ERA5-2025"
+    ],
+    "hora_critica": 213.0,
+    "alertas": 0,
+    "horizontes_h": [
+      600
+    ],
+    "max_residuo_J": 6.4849853515625e-05,
+    "tiempo_s": 148.37248459999978,
+    "cambios": [
+      {
+        "curva": "M4_SS",
+        "clima": "ERA5-2023",
+        "delta_K": 20.37134314253659
+      }
+    ],
+    "menor_margen_abs_K": 0.3713431425365883
+  },
+  {
+    "variante": "temperatura_12",
+    "escenarios": 24,
+    "peso_total": 1.0,
+    "P_f": 0.08333333333333333,
+    "Tmax_C": 46.79204576647269,
+    "DeltaTmax_K": 20.707445714078922,
+    "escenario_critico": [
+      "M4_SS",
+      "ERA5-2024"
+    ],
+    "hora_critica": 428.0,
+    "alertas": 0,
+    "horizontes_h": [
+      600
+    ],
+    "max_residuo_J": 7.62939453125e-05,
+    "tiempo_s": 181.32257020000043,
+    "cambios": [],
+    "menor_margen_abs_K": 0.4957316222943007
+  },
+  {
+    "variante": "temperatura_18",
+    "escenarios": 24,
+    "peso_total": 1.0,
+    "P_f": 0.08333333333333333,
+    "Tmax_C": 46.79876821899196,
+    "DeltaTmax_K": 21.304920501520506,
+    "escenario_critico": [
+      "M4_SS",
+      "ERA5-2024"
+    ],
+    "hora_critica": 428.0,
+    "alertas": 0,
+    "horizontes_h": [
+      600
+    ],
+    "max_residuo_J": 6.103515625e-05,
+    "tiempo_s": 165.2834388000001,
+    "cambios": [],
+    "menor_margen_abs_K": 0.1790801476961299
+  },
+  {
+    "variante": "temperatura_22",
+    "escenarios": 24,
+    "peso_total": 1.0,
+    "P_f": 0.125,
+    "Tmax_C": 46.80321658670927,
+    "DeltaTmax_K": 21.667307880969087,
+    "escenario_critico": [
+      "M4_SS",
+      "ERA5-2024"
+    ],
+    "hora_critica": 428.0,
+    "alertas": 0,
+    "horizontes_h": [
+      600,
+      672
+    ],
+    "max_residuo_J": 4.1961669921875e-05,
+    "tiempo_s": 137.86864250000008,
+    "cambios": [
+      {
+        "curva": "M2_SS",
+        "clima": "ERA5-2024",
+        "delta_K": 20.20386669040601
+      }
+    ],
+    "menor_margen_abs_K": 0.20386669040600935
+  }
+]

@@ -1,0 +1,9 @@
+# Estos estudios guardan SHA-256 de scripts y referencias JSON en bytes.
+# Conservar sus finales de línea exactos al clonar en Windows o Linux.
+casos/sensibilidad_h/*.py -text
+casos/sensibilidad_h/*.json -text
+resultados/sensibilidad_h/**/*.json -text
+resultados/sensibilidad_k/**/*.json -text
+resultados/sensibilidad_suelo/**/*.json -text
+resultados/controles_obra/**/*.json -text
+resultados/controles_12c/**/*.json -text

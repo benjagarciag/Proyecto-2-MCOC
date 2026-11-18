@@ -1,0 +1,207 @@
+E13 — Miércoles: taller de consultas y cierre técnico
+Fecha: miércoles 18 de noviembre de 2026.
+Duración de referencia: 3 horas.
+Puntaje existente: 5 puntos; evidencia del modelo de incertidumbre y su comprensión.
+
+Esta guía prepara la defensa del jueves 19 y el
+artículo del viernes 20 (movido al lunes siguiente).
+
+1. Propósito y preparación
+Cada grupo debe poder sostener esta afirmación:
+
+Nuestro plan termina de colocar todo el hormigón en D horas. Es el más rápido
+de la familia de planes evaluada que satisface una probabilidad de excedencia
+conjunta no mayor que 5%, bajo el modelo de incertidumbre declarado.
+
+Se necesitan tres argumentos: el modelo representa el problema, el solver resuelve
+razonablemente ese modelo y la comparación permite tomar esa decisión.
+
+Traer:
+
+Computador, repositorio ejecutable y commit identificado.
+Geometría/IFC, voxelización y corrida completa del caso en una sola vertida.
+Las ocho curvas reales de hidratación entregadas por el profesor, archivos
+originales, unidades y antecedentes disponibles del ensayo.
+Clima realmente descargado: archivo, fuente/modelo, sitio, fechas, zona horaria,
+unidades y cobertura. Revisar los archivos, no solamente el código de descarga.
+Propuesta de vertidas, parámetros, bordes y resultados preliminares.
+Evidencia de verificación y hasta tres consultas prioritarias.
+Si algo no funciona, traer el error reproducible y el último caso funcional. Los datos
+faltantes deben convertirse en tareas concretas; no suponer que ya están disponibles.
+
+ 
+
+2. Problema de decisión común
+Sea (u) un plan: partición y orden de vertidas, inicios y duraciones de colocación,
+temperatura de colocación, protecciones y retiros. El objetivo es
+
+[
+D(u)=\maxj t{j,\mathrm{fin}}-t0,\qquad\min{u\in\mathcal U}D(u).
+]
+
+Fijar (t_0) el jueves 19 de noviembre de 2026, con hora declarada, común a los
+planes. Postergar la primera vertida cuenta en D. Reportar enfriamiento posterior
+aparte. El objetivo no es tiempo de CPU ni suma de horas efectivas de bombeo.
+
+Mantener volumen, geometría final y recursos comparables. Declarar capacidad de
+colocación (por ejemplo (d_j=V_j/r_j)), simultaneidad admisible, esperas mínimas y
+controles disponibles. No mejorar D suponiendo recursos ilimitados. Si se activa una
+vertida instantáneamente, reconocer la aproximación térmica y contabilizar su duración
+física en el cronograma.
+
+En cada escenario (s), calcular
+
+[
+MT(u,s)=\max{t,,x\in\Omegac(t)}T(x,t),
+]
+[
+M\Delta(u,s)=\maxt\left[\max{x\in\Omegac(t)}T(x,t)
+-\min{x\in S_{25}(t)}T(x,t)\right].
+]
+
+(\Omegac(t)) incluye sólo hormigón colocado: excluir suelo, aire y celdas futuras.
+(S{25}(t)) representa hormigón aproximadamente 25 mm bajo las superficies exteriores
+existentes. Explicar qué cambia al agregar una vertida. Si la malla no resuelve 25 mm,
+mostrar aproximación y sensibilidad; un centro de celda gruesa no representa esa
+profundidad automáticamente.
+
+El evento de falla del proyecto es
+
+[
+F(u,s)={MT>70,^\circ\mathrm C}\cup{M\Delta>20,^\circ\mathrm C},
+\qquad P_f(u)\le0.05.
+]
+
+Reportar también las probabilidades marginales. Imponer 5% a cada marginal por separado
+no garantiza 5% para la unión. El evento abarca todos los lugares y tiempos evaluados,
+no un sensor u hora seleccionados después de ver los resultados.
+
+Conservar 14 días desde t0. Si la última vertida queda tarde, hay máximos al final
+o temperaturas todavía crecientes, extender hasta capturar los picos relevantes de
+todas las vertidas y reportar ambos horizontes. No esconder un pico fuera de la ventana.
+
+4. Ruta probabilística simplificada recomendada
+4.1 Entender las ocho curvas antes de asignar probabilidades
+Graficarlas juntas e identificar qué midió el ensayo. Conservar la curva completa en
+cada escenario: no sortear puntos horarios independientes ni mezclar el pico de una
+curva con la cola de otra sin un modelo que lo justifique.
+
+Comprobar si son réplicas comparables. Mezclas, contenidos de cemento o temperaturas
+de ensayo diferentes no son automáticamente variabilidad de una misma población.
+La mezcla seleccionada es una decisión; no se sortea entre recetas. Si faltan metadatos,
+declarar el supuesto y tratar el conjunto como escenarios de incertidumbre de modelo.
+
+Si se midió incremento adiabático (\Delta T_{ad,m}(a)), con propiedades constantes:
+
+[
+\dot q{h,m}(a)=\rho c_p\frac{d\Delta T{ad,m}}{da}\quad[\mathrm{W/m^3}],
+\qquad a=t-t_{\mathrm{activación}}.
+]
+
+Si se midió calor acumulado por masa de cementante (Hm(a),[\mathrm{J/kg}]), usar
+(\dot q{h,m}=b,dH_m/da), con (b,[\mathrm{kg/m^3}]). Convertir horas a segundos
+y J/g a J/kg según corresponda. Una temperatura medida en ensayo no adiabático
+requiere un balance del ensayo; no es directamente calor generado.
+
+Explicar interpolación, suavizado, derivación y cola; comprobar integral/calor total.
+Reiniciar edad por vertida. Se admite fuente prescrita por edad, declarando la limitación
+de ignorar el efecto de T en la cinética. No agregar madurez/Arrhenius sin datos suficientes.
+
+4.2 Pocas historias meteorológicas completas
+Elegir, por ejemplo, tres trayectorias plausibles para sitio y período, desde miembros
+representativos de un ensemble o bloques históricos comparables. Preservar ciclo diario,
+persistencia y coherencia entre las variables utilizadas. Si se agrupan miembros,
+explicar reducción, extremos perdidos y usar pesos según la fracción representada.
+
+El frío puede aumentar el diferencial: no es automáticamente favorable. Evaluar ambos
+mecanismos. Un desplazamiento supuesto del pronóstico puede servir como sensibilidad,
+pero necesita fundamento adicional para recibir probabilidad.
+
+Si no hay datos para estimar pesos, declararlos como hipótesis del modelo y estudiar
+su efecto. No llamar percentiles observados a tres casos elegidos a mano. No ajustar
+pesos para hacer pasar un plan. Documentar cómo se completa el horizonte faltante.
+
+4.3 Enumeración ponderada
+Cuando las ocho curvas sean admisibles como escenarios del material, combinarlas con
+tres historias climáticas da 24 corridas por plan. El número es orientativo; adaptarlo
+si las curvas tienen otro significado. Con pesos de material (p_m) y clima (q_k):
+
+[
+w{mk}=p_mq_k,\qquad P_f^{esc}(u)=\sum{m,k}w{mk}\mathbf1{F(u,m,k)},
+\qquad\sum{m,k}w{mk}=1.
+]
+
+El producto supone independencia material–clima. Si no corresponde, usar pesos conjuntos.
+Conservar juntas las propiedades asociadas a cada curva. Se puede representar el material
+con una misma realización en todas las vertidas; justificar cualquier otro modelo entre lotes.
+Usar los mismos escenarios y pesos para comparar planes.
+
+La equiprobabilidad de ocho curvas es una hipótesis empírica posible, no una consecuencia
+de tener ocho archivos. Fijar razonadamente otras propiedades y hacer sensibilidades
+sin convertir cada parámetro en otra dimensión aleatoria.
+
+Ejemplo aritmético: con 24 escenarios equiprobables una falla conjunta pesa 4.17%;
+dos, 8.33%. Con ocho, una pesa 12.5%, por lo que sólo cero fallas satisface 5%.
+No duplicar escenarios ni alterar pesos para mejorar artificialmente esa resolución.
+
+Enumerar todo calcula exactamente la probabilidad del modelo discreto; no hay error
+de muestreo Monte Carlo. Sí hay incertidumbre en representatividad, pesos, reducción
+climática y física. Mostrar al menos una sensibilidad razonada a pesos o escenarios
+omitidos; si cambia la decisión, reconocer la fragilidad.
+
+Conclusión admisible: «cumple bajo el conjunto y los pesos declarados». Las ocho curvas
+no certifican por sí solas 95% de confiabilidad real. El criterio térmico tampoco
+constituye una demostración mecánica de ausencia de grietas.
+
+4.4 Monte Carlo: alternativa opcional
+Si ya está implementado, declarar distribución conjunta, N, semillas, fallas y cota
+binomial. Con cero fallas independientes, la cota superior unilateral al 95% es
+(1-0.05^{1/N}): con N=8 es 31.2%; con N=60, 4.87%. La construcción de límites
+binomiales exactos se explica en NISTEnlaces a un sitio externo..
+
+Remuestrear ocho curvas no produce nuevos ensayos. La cota es condicional a la distribución
+postulada. Si se selecciona el plan con muestras, reservar otras independientes para
+comprobar el plan ya fijado; no repetir hasta que por azar pase. No asignar intervalos
+binomiales a una enumeración ponderada ni confundir riesgo de 5% con confianza de 95%.
+
+5. Buscar el plan más rápido en un computador local
+Delimitar una familia construible y pequeña: por ejemplo, fijar partición/recursos
+y recorrer esperas con paso declarado. Informar otras particiones exploradas.
+Medir costo de una corrida. Seis planes por 24 escenarios son 144 corridas:
+presupuestar tiempo antes de ejecutarlas y guardar métricas automáticamente.
+Explorar con malla verificada. Una malla más gruesa exige estimar su error;
+no descartar candidatos marginales que podrían cambiar al refinar.
+Evaluar en resolución final propuesta y competidores que puedan superarla.
+Mostrar estabilidad de clasificación o reconocer indeterminación.
+Comparar al menos vertida única, propuesta, desviación más rápida y más lenta.
+La más rápida debe mostrar por qué no se prefiere si excede el riesgo; la más lenta,
+cuánto tiempo agrega y qué obtiene a cambio.
+Las desviaciones pueden modificar espera, orden o protección. Explicar el efecto que
+realmente se obtiene. Si una es más rápida y también cumple, mejorar la propuesta.
+No fabricar una alternativa fallida. No suponer monotonía con las esperas: clima y
+protecciones pueden cambiar el orden.
+
+Una vecindad no prueba optimalidad global. Informar «menor D entre los planes evaluados»
+y resolución de búsqueda, por ejemplo esperas cada 6 h. Para afirmar optimalidad dentro
+de una familia discreta, recorrerla completa o fundamentar las exclusiones.
+
+Si la vertida única cumple y alcanza la duración mínima con los recursos fijados,
+puede ser la recomendación. Si ningún plan cumple, informar que no se encontró solución
+factible y qué habría que cambiar; no relajar umbrales ni ocultar fallas.
+
+6. Consultas de teoría y método
+El grupo debe explicar con sus variables:
+
+Balance continuo, términos, unidades, parámetros y supuestos físicos.
+Dominio activo, condiciones iniciales y edad de hidratación por vertida.
+Bordes por superficie/etapa: suelo, convección, moldaje, aislación, retiro e interfaces.
+Balance de celda, conductancias, caras y paso temporal.
+Estabilidad explícita o sistema implícito, solución y tolerancias.
+Verificación contra un caso conocido, balance energético y sensibilidad espacial/temporal
+de las métricas de decisión, incluida la profundidad de 25 mm.
+Qué se calibró, qué se verificó y qué se pudo validar con observaciones independientes.
+Ajustar hidratación no valida la fundación 3D completa.
+Qué limita la recomendación: datos, idealizaciones, discretización o escenarios.
+No se exige desarrollar física nueva en la clase; se exige comprender y comprobar la
+implementada. Priorizar solver verificable → datos trazables → comparación justa →
+probabilidad interpretable → figuras y exposición.

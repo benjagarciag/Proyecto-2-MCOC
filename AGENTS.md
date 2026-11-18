@@ -1,5 +1,22 @@
 # Contexto del repositorio
 
+- Avance integrado F02 del 18/11/2026: main incorpora por fast-forward la
+  rama `f02-verificaciones-complementarias` hasta `6718163`. El usuario
+  autorizó publicar main con mensaje `Avance miercoles entrega final`.
+  Estado y comandos en `entregas/F02/README.md`; pendientes humanos de
+  Benjamín/Luis/Matías en `entregas/F02/PENDIENTES_EQUIPO.md`, informe conjunto.
+  Sensibilidades en `casos/sensibilidad_h/` reconstruyen automáticamente
+  base congelada 6718163 en `.venv/cache/f02_sensibilidad_h` mediante Git.
+  No modificar los scripts históricos con procedencia hash para reanudar
+  sus salidas; usar otra salida si cambian. Última candidata única a 12 °C
+  exactos/15 kW/h horario: 24 pares, 0,50 m/900 s, 600 h, sin alertas,
+  Tmax46,2843/DeltaT17,3681 y P_f0 bajo catálogo discreto. Es exploratoria:
+  faltan confirmación de malla/tiempo, activación/control construibles y
+  comparación final. Los otros tres planes a12°C/15kW están habilitados
+  en `colocacion_12c.py`, aún no ejecutados. No confundir resultados antiguos
+  de12kW o12,231833°C con este caso. Mantener preferencia de ejecución
+  personal; no lanzar nuevas simulaciones al integrar/publicar.
+
 - E12 cerrada el 13 de noviembre de 2026 en `Reportes/Reporte_E12.md`, bajo
   1400 palabras, con figuras leídas de resultados existentes (sin nuevas
   simulaciones del agente). Corridas del usuario del 12/11: 336 h, mallas

@@ -17,7 +17,23 @@ Coordenadas del caso: `-37.277929`, `-72.368271`.
 [Ejecutores E07](casos/e07/README.md) ·
 [Laboratorio E07/E08](Visualizadores/E07.html)
 
-## Entrega E10 y avances de E11 y E12
+## Avance integrado F02 — 18 de noviembre
+
+[Estado actual, resultados y comandos](entregas/F02/README.md) ·
+[Pendientes repartidos: Benjamín, Luis y Matías](entregas/F02/PENDIENTES_EQUIPO.md).
+
+Se incorporó la rama del compañero hasta `6718163` y la revisión posterior
+de viento, materiales, suelo y controles. La candidata única con 12 °C
+uniformes y extracción equivalente limitada a 15 kW obtiene Tmax=46,2843 °C,
+ΔTmax=17,3681 K y 0/24 excedencias en 0,50 m/900 s, hasta 600 h.
+Faltan confirmación numérica de esta configuración, fundamento constructivo
+del control y comparación final. Los resultados históricos conservan sus
+parámetros; no representan todos esta candidata. El informe se hace entre los tres.
+
+La publicación lleva el mensaje `Avance miercoles entrega final`;
+su SHA se obtiene con `git log -1 --format=%H --grep="^Avance miercoles entrega final$"`.
+
+## Entrega E10 y avances de E11 y E12 (histórico)
 
 Estado actualizado el 11 de noviembre de 2026.
 
@@ -42,7 +58,7 @@ Las propiedades, el suelo, las capas y los retiros son supuestos docentes.
 E12 usa ERA5 de 2025 asignado por hora relativa al escenario hipotético
 del 27 de noviembre de 2026.
 
-La fuente real es exponencial por edad, con q₀ = 900 W/m³ y τ = 30 h.
+En aquel caso E12 se usó una fuente exponencial por edad, con q₀ = 900 W/m³ y τ = 30 h.
 El gráfico cosenoidal es una referencia didáctica opcional.
 Uso y reproducción en la guía de E11. La revisión detallada está en
 [documentacion/revision_semana4.md](documentacion/revision_semana4.md).

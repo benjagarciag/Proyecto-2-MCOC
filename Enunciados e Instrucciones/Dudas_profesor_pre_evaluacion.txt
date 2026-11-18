@@ -1,0 +1,3 @@
+Preguntas al profesor
+1. ¿M1–M4 de SS y 22A corresponden a la misma dosificación? ¿Son ocho probetas distintas o hay registros relacionados entre campañas? ¿Debemos considerarlas realizaciones equiprobables o escenarios alternativos de estimación de la fuente?
+2. ¿El inicio de la ventana retenida debe tomarse como edad cero para las simulaciones y se admite fuente nula después del registro?

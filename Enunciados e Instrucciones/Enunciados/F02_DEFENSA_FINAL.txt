@@ -1,0 +1,275 @@
+F02 — Instrucciones autocontenidas para la defensa final
+Proyecto: planificación de vertidas de hormigón masivo. Fecha: jueves 19 de noviembre de 2026, 10:30–12:30. Participantes: 9 grupos. Puntaje: 40 puntos por estudiante.
+
+Este documento contiene las reglas, el procedimiento probabilístico, los contenidos sugeridos y la rúbrica de la defensa. No es necesario consultar otra pauta para interpretar estas instrucciones.
+
+1. Pregunta que deben responder
+¿Cómo colocarían todo el hormigón en el menor tiempo posible, respetando una probabilidad no mayor que 5% de exceder cualquiera de los dos límites térmicos, bajo un modelo de incertidumbre explícito y fundamentado?
+
+Deben convencer al evaluador de que el modelo físico es razonable, el método numérico es confiable para esta decisión, los datos reales se utilizan correctamente y la propuesta es la más rápida factible entre las alternativas evaluadas. Toda decisión relevante requiere fundamento: datos, bibliografía, comprobación numérica o un supuesto declarado con análisis de sus consecuencias.
+
+2. Formato y tiempos
+Por grupo: 7 minutos de exposición + 5 de preguntas + 1 de transición = 13 minutos. Apertura de 3 minutos y nueve turnos completan las dos horas. El orden se comunica al iniciar. La exposición se corta a los 7 minutos para resguardar las preguntas.
+
+No se exige simular en vivo. Llevar resultados precalculados, configuraciones y métricas por escenario, disponibles sin depender de internet. Cualquier integrante puede recibir preguntas sobre cualquier parte del trabajo. Distribuir el tiempo de preguntas para que cada integrante tenga una oportunidad de demostrar comprensión.
+
+3. Qué se minimiza y qué significa cumplir
+3.1 Objetivo temporal y restricciones
+Un plan u define partición, secuencia, inicios y duraciones de vertidas, temperatura de colocación, moldajes, aislación y sus retiros. Minimizar
+
+ es el inicio de construcción, fijado el jueves 19 de noviembre, con hora y zona horaria declaradas y comunes a todos los planes del grupo. D incluye colocación y esperas, incluso postergar la primera vertida. El enfriamiento posterior se informa aparte.
+
+Mantener igual geometría final, volumen, recursos y restricciones. Declarar tasa de colocación, duración física de cada vertida, simultaneidad admisible, esperas mínimas y controles disponibles. Si el modelo activa una vertida instantáneamente, reconocer la aproximación y conservar su duración física en D. El caso «una sola vertida» es una operación continua para todo el volumen, con duración constructiva declarada.
+
+3.2 Métricas térmicas por simulación
+En cada escenario s, evaluar
+
+ es sólo el hormigón ya colocado: excluir aire, suelo y celdas futuras. 
+son puntos representativos aproximadamente 25 mm bajo las superficies exteriores existentes. Explicar cómo se actualizan al agregar una vertida y cómo se aproxima esa profundidad si la malla es más gruesa. El diferencial se calcula entre temperaturas del mismo instante, antes de tomar su máximo temporal.
+
+Usar 14 días desde t0. Si hay picos al final, temperaturas todavía crecientes o vertidas tardías, extender hasta capturar los máximos relevantes e informar ambos horizontes. No obtener una ventaja truncando la respuesta térmica.
+
+3.3 Evento de falla y requisito del 5%
+Definir para cada escenario:
+
+Una corrida falla si excede al menos uno de los límites, en cualquier lugar o tiempo evaluado. Si excede ambos, cuenta una sola vez en el evento conjunto. El requisito es
+
+Los límites de 70 °C y 20 °C son criterios del proyecto docente. Cumplirlos controla indicadores térmicos; no demuestra ausencia de fisuración mediante un análisis mecánico. No clasificar con porcentajes redondeados: 5.004% supera 5%. Si el error numérico puede cambiar la clasificación, refinar o reconocer que el cumplimiento queda indeterminado.
+
+4. Cómo calcular las probabilidades sin HPC
+Paso 1. Revisar y representar las ocho curvas reales
+Mostrar las ocho curvas suministradas por el profesor, sus unidades y antecedentes. Comprobar si son réplicas comparables de un mismo material o corresponden a mezclas o condiciones distintas. No sortear recetas como si fueran variabilidad de la mezcla elegida. Si faltan metadatos, declarar qué se supone y limitar la interpretación a escenarios de modelo.
+
+Cada escenario conserva una curva completa. No elegir valores horarios independientes ni mezclar partes de distintas curvas. Para simplificar, se admite usar una misma curva en todas las vertidas de una realización, explicando que se asume variación común del material. Si se modelan lotes diferentes, justificar su dependencia.
+
+Si el ensayo entrega aumento adiabático \Delta T_{ad,m}(a), con propiedades constantes:
+
+ó
+Si entrega calor acumulado por masa de cementante 
+, usar 
+, con 
+. En ambos casos obtener W/m^3, convirtiendo horas a segundos cuando corresponda. Explicar interpolación, derivación, cola del ensayo y control de calor total. Una temperatura de ensayo no adiabático no es directamente una fuente: requiere un balance adicional. La edad se reinicia por vertida.
+
+Paso 2. Definir pocas historias climáticas completas
+Se recomienda, como ejemplo de costo manejable, tres historias meteorológicas del sitio y período. Pueden provenir de miembros representativos de un ensemble o bloques históricos comparables. Conservar ciclo diario, persistencia y coherencia entre variables. Un escenario frío también puede ser desfavorable por el diferencial térmico.
+
+Documentar fuente, modelo, sitio/coordenadas, descarga, zona horaria, unidades, cobertura y continuación del horizonte faltante. Los tres casos no tienen que ser equiprobables. Si representan grupos de miembros, fundamentar pesos mediante las fracciones representadas y explicar extremos que podrían perderse. Un desplazamiento supuesto del pronóstico sirve como sensibilidad; para asignarle probabilidad se necesita fundamento adicional.
+
+Si no hay datos para estimar pesos, identificarlos como hipótesis y evaluar sensibilidad. No presentar casos elegidos a mano como percentiles medidos. Un único pronóstico fijo permite evaluar incertidumbre del material condicionada a ese clima; no representa por sí solo incertidumbre meteorológica.
+
+Paso 3. Asignar pesos antes de comparar planes
+Sea 
+ el peso de la curva 
+ y 
+ el de la historia climática 
+. Con ocho curvas admisibles y tres historias hay 
+ escenarios por plan. Bajo independencia material–clima:
+
+Si no se puede asumir independencia, definir directamente pesos conjuntos w_{mk} no negativos que sumen uno. Mantener juntas las propiedades asociadas a cada curva. La equiprobabilidad es una hipótesis posible que debe justificarse; no se deduce de tener ocho archivos. Si las curvas no son todas admisibles para la misma mezcla, explicar el conjunto alternativo utilizado, sin excluir curvas para obtener un resultado favorable.
+
+Los pesos representan plausibilidad/probabilidad bajo el modelo. No son pesos de preferencia del planificador. Fijar y documentar escenarios y pesos antes de evaluar la comparación; usar los mismos en todos los planes.
+
+Paso 4. Ejecutar y guardar una fila por escenario y plan
+Cada corrida usa el plan, una curva y una historia climática, y entrega:
+
+Plan	Curva	Clima	Peso w	M_T [°C]	M_Δ [°C]	I_T	I_Δ	I_F
+…	…	…	…	…	…	0 o 1	0 o 1	0 o 1
+Conservar también instante y ubicación de los máximos. No reemplazar las simulaciones por una corrida con la curva promedio: la probabilidad depende de las excedencias de cada realización, no sólo de la respuesta media.
+
+Paso 5. Sumar los pesos de las corridas fallidas
+Equivalentemente, 
+. Multiplicar por 100 para informar porcentajes. No contar ambos límites como dos fallas de una misma corrida ni dividir por 48 por tener dos indicadores en 24 escenarios.
+
+Pseudocódigo de agregación por plan:
+
+verificar pesos >= 0 y suma(pesos) = 1
+P_T = P_delta = P_f = 0
+para cada escenario s:
+    I_T = 1 si M_T[s] > 70; de otro modo 0
+    I_delta = 1 si M_delta[s] > 20; de otro modo 0
+    I_f = max(I_T, I_delta)
+    P_T += peso[s] * I_T
+    P_delta += peso[s] * I_delta
+    P_f += peso[s] * I_f
+cumple = (P_f <= 0.05)
+Paso 6. Ejemplo ilustrativo y resolución
+Los siguientes números son ficticios; no son resultados esperados del proyecto. Supónganse 24 escenarios equiprobables, con w=1/24:
+
+Escenarios	Cantidad	I_T por corrida	I_Δ por corrida	I_F por corrida
+1 a 22	22	0	0	0
+23	1	1	0	1
+24	1	0	1	1
+Entonces 
+, pero 
+: el plan no cumple, aunque cada marginal sea menor que 5%. Si sólo una corrida excediera ambos límites, la probabilidad conjunta sería 
+, pues esa corrida se cuenta una sola vez.
+
+Con 24 escenarios equiprobables se admite a lo sumo una falla; con ocho equiprobables, una pesa 12.5%, por lo que se requieren cero. Con pesos desiguales manda la suma de pesos fallidos, no la cantidad. Por ejemplo, si 
+ y una historia tiene 
+, su combinación con una curva pesa 2.5%; ese peso climático es sólo un ejemplo aritmético, no una probabilidad que deban adoptar.
+
+No duplicar escenarios ni alterar pesos para mejorar artificialmente la resolución.
+
+Paso 7. Explicar qué permite concluir
+Enumerar todos los escenarios calcula exactamente la probabilidad del modelo discreto: no hay error de muestreo Monte Carlo. Sí hay incertidumbre en datos, representatividad, pesos y física. Mostrar al menos una sensibilidad fundamentada a pesos o escenarios omitidos e indicar si cambia la recomendación.
+
+Una formulación correcta es: «la probabilidad de excedencia conjunta es X% bajo estos escenarios y pesos». No afirmar que ocho ensayos certifican una probabilidad real de falla inferior a 5%. El 5% de riesgo tampoco es un nivel de confianza estadístico.
+
+Si el grupo ya utiliza Monte Carlo: puede mantenerlo, explicando distribución conjunta, semillas, tamaño de muestra, fallas y cota/intervalo binomial. No se exige añadirlo a la enumeración. Cero fallas en N muestras independientes tiene cota superior unilateral al 95% 1-0.05^{1/N}: N=8 da 31.2% y N=60 da 4.87%, condicionadas a la distribución postulada. Remuestrear ocho curvas no crea nuevos ensayos. Si se usa muestreo para seleccionar el plan, comprobarlo con muestras independientes después de fijarlo, sin repetir hasta que pase por azar. Véase la referencia de límites binomiales de NIST.
+
+5. Cómo sostener que el plan es el más rápido
+Definir una familia construible: variables de decisión, rangos, paso de búsqueda y restricciones. Por ejemplo, fijar partición/recursos y explorar esperas cada cierto número de horas. Evaluar alternativas competitivas; una comparación elegida sólo para favorecer la propuesta no demuestra su superioridad.
+
+Se puede explorar con malla más gruesa si se estima su error. Confirmar en resolución final la propuesta y los candidatos que puedan superarla, sin descartar casos marginales por una diferencia numérica no resuelta. Seis planes por 24 escenarios son 144 corridas: medir primero el costo local y guardar métricas automáticamente.
+
+Mostrar al menos:
+
+Caso	Qué debe demostrar
+Una sola vertida	Consecuencia de colocar todo en una operación continua
+Propuesto	Duración y cumplimiento conjunto
+Desviación más rápida	Por qué acelerar deja de ser preferible, si supera el riesgo
+Desviación más lenta	Cuánto tiempo agrega y qué cambia en seguridad/margen
+Las variantes pueden modificar esperas, orden o protecciones, siempre dentro de recursos y controles declarados. Explicar lo que ocurre, sin fabricar una falla. No presuponer que esperar más reduce siempre el riesgo: clima y protecciones pueden cambiarlo.
+
+Si una opción más rápida también cumple, revisar la propuesta. Si la vertida única cumple y alcanza el límite inferior de D según la capacidad disponible, puede ser el plan recomendado; justificar entonces por qué no existe una desviación más rápida. No es necesario presentar cuatro nombres para casos físicamente idénticos.
+
+Afirmar «el más rápido entre los planes evaluados, con esta resolución de búsqueda». Una vecindad no prueba optimalidad global. Para sostener óptimo en una familia discreta, recorrerla completa o fundamentar las exclusiones. Si ningún plan cumple, decirlo y proponer qué cambio concreto habría que estudiar, sin declarar validada una medida no simulada.
+
+6. Contenidos sugeridos: ocho diapositivas en siete minutos
+N.º	Contenido	Tiempo
+1	Decisión: sitio, geometría, propuesta, duración y probabilidad conjunta; anunciar el argumento que se demostrará	0:30
+2	Datos: ocho curvas y significado, fuente/clima real, unidades, principales parámetros y procedencia	0:45
+3	Continuo: balance, fuente, condiciones iniciales y esquema de bordes/interfaces por etapa; justificar hipótesis	1:00
+4	Método y evaluación: celda/malla, avance temporal, estabilidad o solución, verificación y sensibilidad cuantitativa	1:00
+5	Probabilidad: escenarios, pesos/dependencias, una fila de ejemplo, evento conjunto, alcance del 5%	1:00
+6	Comparación: cronogramas y tabla de vertida única, propuesta y variantes; gráfico D versus P_f con línea de 5%	1:00
+7	Mecanismo y búsqueda: curvas/corte comparables, explicación de las desviaciones y evidencia del menor D factible	1:00
+8	Cierre: recomendación, principal limitación, sensores/contingencia y condición que podría cambiar la decisión	0:45
+Total	7:00
+La secuencia es sugerida. Se evalúa la evidencia y su explicación, no usar exactamente ocho diapositivas. Sintetizar lo principal y mantener respaldo técnico para preguntas; no intentar leer una derivación completa durante el turno.
+
+Teoría y método que deben poder explicar
+El balance continuo implementado, por ejemplo
+
+
+con 
+, 
+, 
+ y 
+. Explicar sus hipótesis y la condición inicial por vertida. Mostrar bordes sobre la geometría: suelo, convección, moldaje, aislación y retiro. Para Robin, con normal saliente: 
+. Justificar parámetros y cambios al cubrir una cara con nueva vertida; formular continuidad o resistencia de contacto según corresponda. Diferenciar fuente volumétrica de flujo superficial.
+
+Explicar el balance discreto realmente utilizado:
+
+conductancias, caras, interfaces y activación. Escribir la actualización temporal y fundamentar estabilidad si es explícita, o sistema/solución/tolerancias si es implícita. Presentar al menos un caso conocido de verificación, un balance energético y sensibilidad espacial y temporal de las métricas, comparando al menos dos mallas y dos pasos temporales por separado. Informar diferencias y si cambian la clasificación del plan; dos niveles permiten estudiar sensibilidad, sin demostrar un orden de convergencia asintótico. Diferenciar verificación, calibración y validación; si no hay mediciones independientes de la fundación, reconocer esa limitación.
+
+Resultados que deben verse
+La tabla comparativa debe contener, al menos:
+
+Plan	D [h]	P_T [%]	P_Δ [%]	P_f conjunta [%]	¿Cumple?
+Una vertida					
+Propuesto					
+Más rápido					
+Más lento					
+Mostrar además cronogramas, curvas núcleo/superficie y diferencial con umbrales, y al menos un corte/campo con instante y escala de colores. Identificar qué escenario se grafica y dónde/cuándo ocurren los máximos. Conservar escalas comparables.
+
+Respaldo técnico disponible
+Tabla completa de parámetros/fuentes y bordes por etapa; ocho curvas; clima y metadatos; balance y algoritmo; verificación/refinamiento; catálogo de escenarios/pesos; métricas por corrida; familia explorada; plan de sensores y acciones ante condiciones adversas. Cualquier integrante debe poder explicar cómo se obtiene una probabilidad desde esas filas.
+
+7. Material a entregar al comenzar la sesión
+Presentación PDF con autores y grupo, incluidas diapositivas de respaldo.
+
+Repositorio y SHA de defensa; entorno y comandos para un caso y la comparación.
+
+Identificadores de curvas, sitio, t0, zona horaria y snapshot meteorológico utilizado.
+
+Configuraciones de planes, escenarios y pesos; métricas por escenario y tabla agregada.
+
+Congelar el clima al preparar las corridas, documentar antigüedad y usar los mismos insumos en la comparación. No se exige descargar ni recalcular durante la defensa. Explicar información nueva no incorporada. El artículo del viernes puede corregir observaciones, conservando trazabilidad respecto del SHA y resultados de defensa.
+
+8. Rúbrica de evaluación: 40 puntos
+C1–C7 son grupales (31 puntos); C8 es individual (9 puntos). Para el estudiante i:
+
+$$
+S_i=G+I_i,\qquad 0\le G\le31,\quad0\le I_i\le9.
+$$
+No hay multiplicador individual sobre la nota del grupo. Los 40 son puntos del proyecto, no una conversión automática a nota de 1 a 7. No se exige que todas las personas expongan igual cantidad de diapositivas; sí que cada una comprenda el trabajo.
+
+Cada criterio se califica con uno de cinco niveles: Completo (100%), Adecuado (75%), Parcial (50%), Incipiente (25%) o Sin evidencia (0%) de su máximo. Se selecciona el nivel que mejor describe la evidencia y se registra un comentario si hay una carencia material. Los descriptores de cada criterio delimitan qué se califica para evitar contar la misma carencia varias veces. No se aplican penalizaciones adicionales no indicadas.
+
+El criterio individual se funda en las respuestas de cada estudiante a preguntas de dificultad comparable; no se asigna cero por no haberle dado oportunidad de responder. La evidencia incompleta debe registrarse como pendiente de evaluación individual, no sustituirse por la respuesta de otro integrante.
+
+C1. Decisión y búsqueda del menor tiempo — 6 puntos (grupal)
+Evalúa la formulación del objetivo, las restricciones y el alcance de la búsqueda; la interpretación física de las desviaciones se evalúa en C6.
+
+Nivel	Puntos	Descriptor observable
+Completo	6	Define D desde un inicio común, capacidad y restricciones; informa variables, rangos y paso de búsqueda; compara candidatos competitivos y justifica el menor tiempo factible dentro de la familia evaluada, delimitando la optimalidad.
+Adecuado	4.5	Objetivo y restricciones son claros y la elección tiene comparación suficiente; falta un detalle menor del rango, paso o descarte de candidatos que no cambia la conclusión.
+Parcial	3	Define duración y compara opciones, pero la búsqueda es escasa o las restricciones incompletas; sólo sostiene que el plan mejora algunas alternativas.
+Incipiente	1.5	Recomienda un plan sin explorar opciones competitivas o compara duraciones con orígenes/recursos inconsistentes; la superioridad temporal no queda sustentada.
+Sin evidencia	0	No presenta objetivo temporal ni una selección de plan sustentada en resultados.
+C2. Modelo continuo y fundamento físico — 5 puntos (grupal)
+Evalúa ecuaciones, hipótesis, parámetros, condiciones iniciales y de borde; procedencia de datos en C4 y método numérico en C5.
+
+Nivel	Puntos	Descriptor observable
+Completo	5	Explica balance continuo, términos y unidades; fundamenta parámetros y simplificaciones; formula hidratación por edad, condiciones iniciales, bordes e interfaces por etapa de forma consistente con la implementación.
+Adecuado	3.75	Modelo y condiciones principales son correctos y fundamentados; hay una omisión menor que no altera la interpretación física.
+Parcial	2.5	Presenta ecuación y bordes principales, pero explica parcialmente parámetros, fuente, interfaces o hipótesis; quedan decisiones físicas sin fundamento suficiente.
+Incipiente	1.25	Muestra ecuaciones sin conectarlas al caso o comete errores importantes en fuente, unidades, bordes o activación que comprometen el modelo.
+Sin evidencia	0	No presenta un modelo físico interpretable ni condiciones que definan el problema.
+C3. Probabilidad conjunta y alcance del 5% — 5 puntos (grupal)
+Evalúa la construcción probabilística y su cálculo; la trazabilidad de los datos originales se evalúa en C4.
+
+Nivel	Puntos	Descriptor observable
+Completo	5	Define escenarios, pesos y dependencias con fundamento; calcula máximos por corrida, probabilidades marginales y unión sin doble conteo; aplica Pf <= 0.05 y explica resolución, sensibilidad y alcance condicionado al modelo.
+Adecuado	3.75	Cálculo y decisión son correctos; explica pesos y alcance, con una omisión menor en sensibilidad o dependencias que no cambia la clasificación.
+Parcial	2.5	El cálculo conjunto es identificable, pero la justificación de pesos/dependencias o el análisis de representatividad es débil; la conclusión es sólo parcialmente sustentada.
+Incipiente	1.25	Usa sólo valores medios o marginales, suma sin corregir doble conteo, cambia pesos para aprobar o equipara cero fallas con certeza; el 5% no queda demostrado bajo su propio modelo.
+Sin evidencia	0	No presenta un cálculo probabilístico verificable.
+C4. Datos reales e integración BIM–hidratación–clima — 4 puntos (grupal)
+Evalúa procedencia, significado y uso efectivo de los insumos, sin duplicar la derivación física de C2.
+
+Nivel	Puntos	Descriptor observable
+Completo	4	Conecta geometría/IFC con la malla y las vertidas; identifica las ocho curvas, sus unidades y comparabilidad; documenta el clima real, sitio, fechas, cobertura y faltantes; los archivos usados son trazables.
+Adecuado	3	Los tres componentes están integrados y los datos usados son identificables; falta un metadato menor sin efecto material.
+Parcial	2	Usa datos reales y geometría, pero una parte de la integración o de la trazabilidad es incompleta; quedan dudas relevantes sobre curvas o cobertura climática.
+Incipiente	1	Muestra archivos o capturas sin demostrar su uso en el solver, o emplea insumos de significado/procedencia inciertos sin reconocerlo.
+Sin evidencia	0	No hay evidencia de integración ni de uso de los datos reales requeridos.
+C5. Discretización, solución y evaluación numérica — 4 puntos (grupal)
+Evalúa el paso del continuo al código, la verificación y la posibilidad de reproducir la evidencia; no exige HPC.
+
+Nivel	Puntos	Descriptor observable
+Completo	4	Explica balance de celda, conductancias, paso temporal y algoritmo; justifica estabilidad o solución/tolerancias; muestra verificación cuantitativa, balance energético y sensibilidad espacial/temporal, y enlaza configuraciones con métricas reproducibles.
+Adecuado	3	Método y algoritmo son claros y existe evidencia numérica suficiente; falta un detalle menor de verificación o reproducción sin impacto en la decisión.
+Parcial	2	Describe discretización y presenta alguna comprobación, pero sensibilidad, conservación o reproducción son insuficientes para valorar plenamente el error.
+Incipiente	1	El programa produce gráficos, pero no explica el esquema ni demuestra estabilidad/solución y verificación; el error numérico podría controlar la decisión.
+Sin evidencia	0	No presenta un método numérico identificable ni evidencia evaluable del solver.
+C6. Comparación de casos e interpretación de desviaciones — 4 puntos (grupal)
+Evalúa la evidencia térmica y la explicación física de vertida única, propuesta y variantes; la amplitud de búsqueda se evalúa en C1.
+
+Nivel	Puntos	Descriptor observable
+Completo	4	Compara vertida única, propuesta y variantes más rápida y más lenta con datos/recursos comunes; cuantifica riesgo y tiempo, explica mecanismos con curvas/campos y revisa la elección si una variante la supera. Justifica excepciones físicas.
+Adecuado	3	Incluye los casos requeridos y una interpretación correcta del intercambio tiempo–riesgo; falta un detalle gráfico o cuantitativo menor.
+Parcial	2	La comparación es útil pero falta una variante o la explicación del cambio térmico es superficial; el perjuicio temporal o de riesgo queda sólo parcialmente cuantificado.
+Incipiente	1	Presenta sólo el plan o casos no comparables, o afirma que una desviación empeora sin resultados que lo sostengan.
+Sin evidencia	0	No presenta comparación de casos ni resultados de desviaciones.
+C7. Comunicación y uso del tiempo — 3 puntos (grupal)
+Evalúa claridad expositiva, figuras, síntesis y cumplimiento del turno, sin volver a calificar el contenido técnico.
+
+Nivel	Puntos	Descriptor observable
+Completo	3	Expone una línea argumental clara en 7 minutos, abre y cierra con la decisión; figuras/tablas tienen unidades, escenarios y leyendas legibles; distingue resultados de supuestos y deja tiempo de preguntas.
+Adecuado	2.25	Exposición clara y dentro del tiempo, con problemas menores de legibilidad, secuencia o síntesis.
+Parcial	1.5	Se entiende el resultado principal, pero el exceso de contenido, figuras poco legibles o desorden dificultan seguir la evidencia.
+Incipiente	0.75	La exposición es difícil de seguir o llega al corte de tiempo sin mostrar la comparación y la recomendación completas.
+Sin evidencia	0	No realiza una exposición evaluable.
+C8. Comprensión y razonamiento individual — 9 puntos (individual)
+Se califica por estudiante con preguntas de dificultad comparable sobre física, método, probabilidad o decisión; no por el número de diapositivas que presenta.
+
+Nivel	Puntos	Descriptor observable
+Completo	9	Explica por sí mismo los conceptos y cálculos consultados, los conecta con su implementación/resultados y razona correctamente ante una variación o repregunta; reconoce límites.
+Adecuado	6.75	Responde correctamente lo esencial y lo conecta con el trabajo; requiere una aclaración menor o comete un error secundario que corrige.
+Parcial	4.5	Demuestra comprensión básica, pero necesita guía y no completa la conexión con el cálculo, el código o la decisión.
+Incipiente	2.25	Repite definiciones o resultados sin explicar su origen; mantiene errores importantes aun con una repregunta aclaratoria.
+Sin evidencia	0	Tras tener oportunidad de responder, no demuestra comprensión de lo consultado o no ofrece respuesta evaluable.
+Lectura de la calificación
+Un resultado térmico desfavorable no implica automáticamente cero: se evalúan método, evidencia y honestidad de la conclusión. Una afirmación de cumplimiento calculada incorrectamente no obtiene el nivel completo en C3. La falta de búsqueda afecta C1; la falta de explicación física de la desviación afecta C6. La comprensión individual se evalúa en C8 y puede diferir aun cuando los resultados grupales sean comunes.

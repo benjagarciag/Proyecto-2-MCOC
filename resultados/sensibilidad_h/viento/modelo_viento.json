@@ -1,0 +1,18 @@
+{
+  "commit_fuentes": "6718163118123c4b05667b91ad5b4d50124dcf2d",
+  "fuente_correlacion": "https://energyplus.readthedocs.io/en/stable/guides/engineering-reference/3.5-outside-surface-heat-balance.html",
+  "correlacion": "h=5.7+3.8*v_local (SI)",
+  "altura_referencia_viento_m": 10,
+  "altura_representativa_m": 2.0,
+  "exponente_perfil": 0.14,
+  "terreno": "campo abierto supuesto; mismo perfil en ambas alturas",
+  "h_constante_media_600h_W_m2K": 17.08623874768515,
+  "clima_sha256": {
+    "ERA5-2023": "04b984bbbbbf04967ac479721b0c256ad656d1ec7040e0eecd68973e61e18dbd",
+    "ERA5-2024": "de4521250b41bd3a727b0a1a928163e7bdc83d8be9288bd27c4781e3d745377b",
+    "ERA5-2025": "892ebb69bf54b45367de53010a1f116aa16b588640969fa3d8d699d53fe0a81b"
+  },
+  "discretizacion_h": "constante por intervalo horario, valor de su marca inicial",
+  "hipotesis": "Mismo h en caras expuestas; sin apantallamiento, dirección ni rugosidad de superficie.",
+  "radiacion": "No incorporada; h representa convección, con componente natural de la correlación."
+}
