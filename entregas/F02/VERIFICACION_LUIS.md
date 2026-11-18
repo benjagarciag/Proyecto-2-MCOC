@@ -105,6 +105,104 @@ python -X utf8 -B casos/sensibilidad_h/verificacion_luis.py --activacion estrato
 Para una corrida refinada, agregar `--lado 0.25 --paso-max 450` y seleccionar
 el par con `--escenario M4_SS ERA5-2023`.
 
+## Circulación por ciclos y por sectores
+
+Se probaron los mismos 24 pares con la vertida única por estratos.
+Ambas reglas se habilitan después de terminar la colocación a las
+10,613 h, con referencia de agua constante de 18 °C, U volumétrico de
+5 W/(m³·K), tope de extracción total de 15 kW y apagado a las 432 h.
+Las mantas se retiran a 240 y 360 h de edad. Se mantiene el intercambio
+con signo en el modelo. Con agua más caliente que una celda refrigerable,
+esa celda recibe calor. Se guarda la energía transferida en cada sentido.
+
+- **Ciclos.** Se habilita toda la zona refrigerable 1 h y luego se
+  apaga 1 h. El primer ciclo empieza al terminar la colocación.
+- **Sectores.** Se agrupa la zona refrigerable en franjas delimitadas
+  por z = 1,5 y 3,0 m. Cada franja se habilita cuando la menor temperatura
+  de sus celdas refrigerables supera 19 °C. Se suspende si esa temperatura
+  cae a 18 °C o menos. Los umbrales y franjas son supuestos del ensayo.
+
+| Regla | Mayor Tmáx [°C] | Peor ΔT [K] | Excedencias conjuntas | Máx. calor devuelto en un escenario [kWh térmicos] |
+| --- | ---: | ---: | ---: | ---: |
+| 1 h encendido / 1 h apagado | 47,51 | 27,86 | 13/24 | 36,37 |
+| Por sectores | 46,46 | 18,03 | 0/24 | 0,00 |
+
+**Se recomienda la regla por sectores para F02.** Su peor diferencial
+refinado es 18,28 K (malla de 0,25 m, paso máximo 450 s, M4_SS × ERA5-2025).
+En ese mismo escenario, los ciclos dieron 25,93 K. El refinamiento
+adicional de los ciclos en M4_SS × ERA5-2024 dio 27,59 K a las 428 h.
+En el escenario común refinado, los ciclos extrajeron 3,08 MWh térmicos
+brutos frente a 6,10 MWh por sectores. El menor tiempo de extracción
+deja el interior más caliente cuando se enfría la superficie.
+
+El circuito es un intercambio volumétrico con referencia local fija de
+18 °C. La ausencia de devolución de calor en el control por sectores
+proviene de la regla de encendido con esa referencia. El trazado, el
+caudal y el calentamiento del agua tramo a tramo quedan por verificar
+para trasladar la regla a obra.
+
+[Resultados por escenario y refinamientos](../../resultados/f02_luis/circulacion/).
+
+~~~sh
+python -X utf8 -B casos/sensibilidad_h/verificacion_luis.py --activacion estratos-tardio --circulacion ciclos --salida salida_f02/ciclos.json
+python -X utf8 -B casos/sensibilidad_h/verificacion_luis.py --activacion estratos-tardio --circulacion sectores --salida salida_f02/sectores.json
+~~~
+
+## Propuesta de circuito idealizado
+
+La prueba anterior verificó el control por sectores con una referencia fija
+de 18 °C dentro de la zona refrigerada. La siguiente propuesta usa 18 °C
+solo en la entrada y calcula cómo cambia la temperatura del agua en su
+recorrido. Sus umbrales, reparto hidráulico y resultados térmicos quedan
+por evaluar con esta formulación.
+
+- Tres serpentines en paralelo con una válvula por sector. Se mantienen las
+  franjas inferior, media y superior de la prueba, delimitadas a 1,50 m y
+  3,00 m. El reparto de caudal es igual entre ramales abiertos en el ensayo.
+- La entrada de cada ramal abierto se mantiene a 18 °C. El caudal total
+  es 43 L/min mientras circule agua y cero cuando todos los ramales estén
+  cerrados. Con 43 L/min, una extracción de 15 kW requiere cerca de 5 K de
+  aumento de temperatura, equivalente a un retorno mezclado de 23 °C.
+  Los 15 kW son la capacidad térmica propuesta. Si el balance del circuito
+  pide más, hay que revisar si el equipo puede sostener esa consigna.
+- El modelo inicial conserva el corte global a las 432 h desde el inicio
+  de la colocación para facilitar la comparación.
+
+Se divide cada serpentín en tramos asociados a las celdas de hormigón
+cercanas. Se representa el intercambio de cada tramo mediante una resistencia
+equivalente, en K/W, que incluye el hormigón entre la celda y el tubo, la
+pared del tubo y la convección interior. Para cada tramo se resuelve
+conjuntamente el intercambio y el balance de energía del agua.
+
+$$
+P_{\rm tramo}=\frac{T_{\rm hormigón}-T_{\rm agua,media}}{R_{\rm tramo}},
+\qquad
+T_{\rm salida}=T_{\rm entrada}+\frac{P_{\rm tramo}}{\dot m\,c_{p,\rm agua}}.
+$$
+
+La salida de cada tramo alimenta al siguiente. En el balance del hormigón se
+resta la potencia $P_{\rm tramo}$ que gana el agua. Si la diferencia cambia
+de signo, el agua cede calor al hormigón. La potencia total se comprueba
+también con el retorno mezclado y el caudal total.
+[Referencia sobre el balance agua–hormigón](https://www.techscience.com/CMES/v138n1/54261/html).
+
+**Regla de encendido propuesta**
+
+1. Habilitar el sistema después de terminar toda la colocación, a las
+   10 h 37 min desde su inicio.
+2. Abrir un sector cuando el hormigón esté al menos 1 °C por encima de la
+   temperatura local prevista del agua en todos sus tramos, evaluado con
+   el caudal que tendría ese sector al abrir.
+3. Pausar el sector si esa diferencia llega a 0 °C o menos en algún tramo.
+   Permitir que vuelva a abrir cuando recupere el margen de 1 °C. Pueden
+   operar varios sectores a la vez. Cada cambio de válvulas requiere
+   recalcular los caudales y revisar los sectores abiertos.
+
+El siguiente cálculo requiere definir el trazado y las resistencias por
+tramo. Se debe verificar la capacidad de extracción, las temperaturas de
+retorno y el cumplimiento del diferencial de 20 K en el catálogo. Los
+18,28 K refinados de la sección anterior corresponden al modelo equivalente.
+
 ## Comparación provisional de planes (L5)
 
 Todos los planes de esta tabla tienen 12 °C uniformes, 15 kW, h horario,

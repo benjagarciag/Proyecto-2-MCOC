@@ -109,7 +109,7 @@ def cambiar(fuente, antes, despues):
     return fuente.replace(antes,despues)
 
 
-def cargar_motor(series_h):
+def cargar_motor(series_h, *, adaptar_solver=None):
     # Importa dependencias congeladas. Los archivos originales no se editan.
     insumos, _, _ = _preparacion.cargar()
     original_importar = insumos.importar_solver
@@ -137,7 +137,8 @@ def cargar_motor(series_h):
     modulo.__file__=str(ruta_solver)
     modulo.__package__="mcplan"
     sys.modules[nombre]=modulo
-    exec(compile(codigo,str(ruta_solver),"exec"),modulo.__dict__)
+    fuente_solver = adaptar_solver(codigo) if adaptar_solver is not None else codigo
+    exec(compile(fuente_solver,str(ruta_solver),"exec"),modulo.__dict__)
 
     def importar(origen):
         elementos=list(original_importar(origen))

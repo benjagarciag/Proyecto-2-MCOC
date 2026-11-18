@@ -11,6 +11,7 @@ from types import SimpleNamespace
 import numpy as np
 
 import viento
+from circulacion_f02 import POLITICAS, transformacion
 
 
 FISICA = {
@@ -27,14 +28,14 @@ def huella(datos):
     return sha256(datos).hexdigest()
 
 
-def modelo(fisica):
+def modelo(fisica, *, adaptar_solver=None):
     viento._preparacion.preparar()
     meta, series, _ = viento.analizar(2., .14)
     coeficientes = {nombre: d["h_W_m2K"] for nombre, d in series.items()}
     if fisica == "h_medio":
         coeficientes = {nombre: [meta["h_constante_media_600h_W_m2K"]]*len(serie)
                         for nombre, serie in coeficientes.items()}
-    insumos, motor, solver, hashes = viento.cargar_motor(coeficientes)
+    insumos, motor, solver, hashes = viento.cargar_motor(coeficientes, adaptar_solver=adaptar_solver)
     referencia = viento.leer(viento.RAIZ / "resultados/controles_12c/unica_15kw_12c/"
                              "malla_0.5_paso900/unica_15kw_12c.json")
     anterior = referencia["estudio_controles"]
@@ -122,6 +123,7 @@ def main():
     p.add_argument("--paso-max", type=int, choices=(900, 450), default=900)
     p.add_argument("--activacion", choices=("bloque", "estratos", "estratos-tardio"), default="bloque")
     p.add_argument("--fisica", choices=FISICA, default="base")
+    p.add_argument("--circulacion", choices=POLITICAS)
     p.add_argument("--retiro-final-h", type=int, choices=(312, 324, 336, 348, 360),
                    help="Edad de retiro de la última manta en coronación y laterales.")
     p.add_argument("--escenario", nargs=2, action="append", metavar=("CURVA", "CLIMA"))
@@ -137,7 +139,10 @@ def main():
         p.error("Elegir el retiro final con una sola opción.")
     if a.salida is not None and a.salida.exists():
         p.error("La salida ya existe. Elegir otra ruta.")
-    insumos, motor, solver, meta, hashes, referencia = modelo(a.fisica)
+    if a.circulacion and (a.caso != "unica_15kw_12c" or a.activacion != "estratos-tardio"):
+        p.error("La circulación alternativa requiere vertida única y activación por estratos.")
+    adaptar, huellas_circulacion = transformacion(a.circulacion) if a.circulacion else (None, {})
+    insumos, motor, solver, meta, hashes, referencia = modelo(a.fisica, adaptar_solver=adaptar)
     viento.verificar(solver)
     if a.comprobar:
         verificar_interfaz_y_s25(solver)
@@ -200,6 +205,10 @@ def main():
                   duracion_auditoria_s=sum(f["cpu_s"] for f in filas), corridas=filas)
     if a.retiro_final_h is not None:
         salida["retiro_final_edad_h"] = a.retiro_final_h
+    if a.circulacion:
+        salida["circulacion"] = dict(modo=a.circulacion, no_antes_del_fin_de_colocacion=True,
+                                     intercambio_bidireccional=True,
+                                     **POLITICAS[a.circulacion], **huellas_circulacion)
     if traza_critica is not None:
         salida["traza_critica"] = traza_critica
     a.salida.parent.mkdir(parents=True,exist_ok=True)
