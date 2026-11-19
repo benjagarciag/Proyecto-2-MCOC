@@ -1,0 +1,258 @@
+% Guion F02 ampliado a6:45 por solicitud del usuario el19/11/2026.
+% Esta revisión edita el documento LaTeX abierto; conserva responsables y diapositivas.
+% Codificación UTF-8. Compilar con pdfLaTeX (por ejemplo, en Overleaf).
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[a4paper,margin=2.2cm,headheight=15pt]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\definecolor{petroleo}{HTML}{166C65}
+\definecolor{grisindicacion}{HTML}{52616B}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Guion oral F02 -- Grupo 6}
+\fancyhead[R]{\small Duración objetivo: 6:45}
+\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+\newenvironment{indicacion}{\begin{quote}\small\color{grisindicacion}}{\end{quote}}
+\newcommand{\lamina}[4]{%
+  \section*{\color{petroleo}Diapositiva #1: #2}%
+  \textbf{Responsable:} #3\hfill\textbf{Intervalo:} #4\par
+}
+\hypersetup{pdftitle={Guion oral F02 por diapositiva},pdfauthor={Benjamin Garcia, Luis Noriega y Matias Stierling}}
+\begin{document}
+
+\lamina{1}{Decisión y objetivo}{Benjamín}{0:00--0:40}
+
+\begin{indicacion}\textbf{Uso:} el texto normal se dice en voz alta. Las indicaciones en gris y las marcas de clic no se leen. Se conserva el reparto por diapositiva. Objetivo: 6:45 a ritmo conversacional, aproximadamente 130--140 palabras por minuto durante el discurso, con pausas breves para clics y relevos. Los intervalos son referencias para ensayar, no una duración medida.\end{indicacion}
+
+\begin{indicacion}\emph{Al entrar en pantalla:} Fundación en 3D, título del grupo y autores. Nada más.\end{indicacion}
+
+
+Buenos días. Somos el grupo 6 y buscamos colocar la fundación de El Rosal en el menor tiempo posible, respetando los límites térmicos.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 1} --- aparece: 10,61 h y «60 m\textsuperscript{3}/h \ensuremath{\cdot} 12 \ensuremath{^\circ}C \ensuremath{\cdot} 9 circuitos». \emph{Cuándo:} apenas termines el saludo.\end{indicacion}
+
+
+Proponemos una operación continua a 60 metros cúbicos por hora, con hormigón a 12 grados y nueve circuitos de refrigeración. La colocación completa dura 10,61 horas.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 2} --- aparece: «0 / 24 excedencias» y los límites. \emph{Cuándo:} después de decir «10,61 horas».\end{indicacion}
+
+
+Evaluamos 24 escenarios con viento y radiación: ninguno excede los límites en los 14 días exigidos ni hasta los 28 simulados. Ahora explicaremos qué hace posible ese resultado y bajo qué supuestos.
+
+
+
+\clearpage
+
+\lamina{2}{Por qué aparece el diferencial}{Benjamín}{0:40--1:35}
+
+\begin{indicacion}\emph{Al entrar en pantalla:} Corte de la fundación en gris y, a la derecha, la ecuación de balance.\end{indicacion}
+
+
+El problema físico comienza con la hidratación del cemento.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 1} --- aparece: mancha naranja «hidratación Q(a)». \emph{Cuándo:} después de presentar la hidratación.\end{indicacion}
+
+
+Esa reacción libera calor dentro del hormigón. Como la fundación es masiva, el calor del interior tarda en alcanzar el exterior por conducción. Por eso la temperatura no es uniforme.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 2} --- aparece: punto caliente, punto S25 y la ecuación de \ensuremath{\Delta}T. \emph{Cuándo:} antes de «el interior conserva calor».\end{indicacion}
+
+
+El interior conserva calor mientras el borde puede enfriarse. Medimos la diferencia entre la máxima del hormigón colocado y la mínima de S25, siempre en el mismo instante. S25 corresponde a puntos del hormigón a unos 25 milímetros bajo las superficies exteriores; no es la temperatura del suelo.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 3} --- aparece: flechas de borde, viento, sol, mantas y suelo. \emph{Cuándo:} al decir «en los bordes».\end{indicacion}
+
+
+En los bordes actúan la convección por viento, el sol y la radiación hacia el cielo. Las mantas frenan ese intercambio. Representamos el suelo a 15 grados, sin resolver su calentamiento.
+
+
+
+\clearpage
+
+\lamina{3}{Cómo colocamos y refrigeramos}{Benjamín}{1:35--2:38}
+
+\begin{indicacion}\emph{Al entrar en pantalla:} Solo el suelo y el título; el corte se construye con el primer clic.\end{indicacion}
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 1} --- aparece: las 11 capas suben una por una y aparecen los dos frentes. \emph{Cuándo:} al empezar a hablar.\end{indicacion}
+
+
+Colocamos once capas de hasta 40 centímetros con dos frentes de 30 metros cúbicos por hora. Es continuo: no esperamos que cada capa endurezca. La unión exige mantener la trabajabilidad; la ventana de 150 minutos es una condición por verificar.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 2} --- aparece: los 4 niveles de tubos, el agua circulando y las cifras de la derecha. \emph{Cuándo:} cuando digas «dentro van nueve circuitos».\end{indicacion}
+
+
+Dentro van nueve circuitos en cuatro alturas, con 18 litros por minuto por ramal abierto. El agua se idealiza uniforme a 18 grados. El modelo extrae calor según la diferencia de temperatura, con un tope global de 15 kilowatts; no significa extraer siempre esa potencia.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 3} --- aparece: gráfico de la regla 19/18 \ensuremath{^\circ}C y protección 504 h + sombra 90 \%. \emph{Cuándo:} antes de explicar la regla de apertura y las protecciones.\end{indicacion}
+
+
+Cada circuito abre cuando está cubierto y su mínima monitoreada alcanza 19 grados; cierra a 18. Mantenemos la última manta hasta 504 horas desde la colocación de cada capa. Después, sombra del 90 por ciento y control térmico continuo. Luis explicará cómo comprobamos el cálculo.
+
+
+
+\begin{indicacion}\emph{Relevo Benjamín \ensuremath{\rightarrow} Luis: quien sigue se acerca mientras se dice la última frase.}\end{indicacion}
+
+\clearpage
+
+\lamina{4}{Cómo comprobamos el cálculo}{Luis}{2:38--3:31}
+
+\begin{indicacion}\emph{Al entrar en pantalla:} Solo el título.\end{indicacion}
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 1} --- aparece: IFC \ensuremath{\rightarrow} malla \ensuremath{\rightarrow} una celda con sus flechas. \emph{Cuándo:} después de «gracias, Benjamín».\end{indicacion}
+
+
+Gracias, Benjamín. Transformamos el IFC en cubos de 40 centímetros. En cada celda calculamos cuánto calor almacena, cuánto intercambia con sus vecinas y con el exterior, cuánto genera la hidratación y cuánto extraen los circuitos.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 2} --- aparece: la ecuación del balance y los dos \ensuremath{\checkmark}. \emph{Cuándo:} antes de «esta ecuación reúne ese balance».\end{indicacion}
+
+
+Esta ecuación reúne ese balance. Comprobamos la conservación de energía y la respuesta frente a un caso de difusión con solución conocida: eso verifica el método numérico.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 3} --- aparece: tabla de sensibilidad espacio/tiempo. \emph{Cuándo:} al decir «después afinamos la malla».\end{indicacion}
+
+
+Después afinamos la malla a 20 centímetros para los 24 escenarios y, por separado, reducimos el paso máximo de 300 a 150 segundos en dos casos decisivos. El diferencial cambió hasta 0,88 grados por malla y 0,0014 por tiempo. La clasificación se mantiene; esto no calibra la refrigeración real.
+
+
+
+\clearpage
+
+\lamina{5}{Qué muestran las temperaturas}{Luis}{3:31--4:31}
+
+\begin{indicacion}\emph{Al entrar en pantalla:} Título y ejes vacíos.\end{indicacion}
+
+
+Veamos un escenario: fuente M4 de la campaña SS y clima de 2024.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 1} --- aparece: gráfico de arriba (Tmax y S25) y el rótulo del pico. \emph{Cuándo:} al terminar de presentar el escenario.\end{indicacion}
+
+
+En rojo está la máxima del hormigón y en azul, la mínima de S25. La máxima llega a 46,7 grados cerca de las 128 horas y luego disminuye. Distinguimos así el calentamiento de la masa del enfriamiento del borde.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 2} --- aparece: gráfico de \ensuremath{\Delta}T con el límite de 20 K y la marca de 14 días. \emph{Cuándo:} cuando digas «abajo está la diferencia».\end{indicacion}
+
+
+Abajo está la diferencia calculada en cada instante. Su máximo ocurre después del pico de temperatura, porque el borde se enfría mientras el interior todavía conserva calor.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 3} --- aparece: corte a 267 h, la resta 42,12 \ensuremath{-} 25,59 y el resultado fino. \emph{Cuándo:} antes de «el peor momento de este escenario».\end{indicacion}
+
+
+El peor momento de este escenario ocurre a las 267 horas: 42,12 menos 25,59 da 16,53 grados. En el catálogo fino, el peor diferencial es 15,72. La combinación de manta hasta 504 horas y sombra posterior también cumple hasta el día 28. Matías explicará qué significa ese cumplimiento.
+
+
+
+\begin{indicacion}\emph{Relevo Luis \ensuremath{\rightarrow} Matías: quien sigue se acerca mientras se dice la última frase.}\end{indicacion}
+
+\clearpage
+
+\lamina{6}{Qué significa la probabilidad}{Matías}{4:31--5:25}
+
+\begin{indicacion}\emph{Al entrar en pantalla:} Título y ejes vacíos.\end{indicacion}
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 1} --- aparece: las 8 curvas de calor de hidratación. \emph{Cuándo:} después de «gracias, Luis».\end{indicacion}
+
+
+Gracias, Luis. Conservamos las ocho curvas completas del profesor: cada una representa una historia de generación de calor. No las promediamos ni combinamos sus valores horarios.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 2} --- aparece: los 3 climas y la matriz 8 \ensuremath{\times} 3. \emph{Cuándo:} cuando digas «con tres climas».\end{indicacion}
+
+
+Con tres climas históricos de El Rosal, de 2023, 2024 y 2025, formamos 24 escenarios. Suponemos independencia entre material y clima, y damos a cada combinación un peso de uno sobre 24. Sin dosificaciones confirmadas, interpretamos las probetas como escenarios de modelo.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 3} --- aparece: las ecuaciones de falla y P\_f = 0 \%. \emph{Cuándo:} antes de definir el evento de falla.\end{indicacion}
+
+
+Un escenario falla si supera 70 grados de máxima o 20 de diferencial. Si supera ambos, cuenta una sola vez. Sumamos los pesos de las fallas: da cero en el catálogo, sin certificar riesgo real cero.
+
+
+
+\clearpage
+
+\lamina{7}{Por qué elegimos 60 m\textsuperscript{3}/h}{Matías}{5:25--6:10}
+
+\begin{indicacion}\emph{Al entrar en pantalla:} Solo el título.\end{indicacion}
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 1} --- aparece: tabla de los dos ritmos y la exclusión por capacidad. \emph{Cuándo:} al empezar a hablar.\end{indicacion}
+
+
+Comparamos 60 y 55 metros cúbicos por hora manteniendo la misma protección, recursos y escenarios. Ambos planes cumplen los límites hasta los 28 días.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 2} --- aparece: cronogramas de 11 capas y gráfico D--P\_f con la meta del 5 \%. \emph{Cuándo:} cuando digas «la diferencia es el tiempo».\end{indicacion}
+
+
+La diferencia es el tiempo: a 55, la colocación dura 11,58 horas, unos 58 minutos adicionales. Esperar más no garantiza menor diferencial: también influyen el clima y la exposición.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 3} --- aparece: la cota D \ensuremath{\geq} V/Q y el recuadro en la fila de 60. \emph{Cuándo:} al decir «y más rápido no se puede».\end{indicacion}
+
+
+Y más rápido, con estos recursos, no se puede: dividir los 636,775 metros cúbicos por la capacidad máxima adoptada de 60 da 10,61 horas. Nuestra propuesta alcanza esa cota; no estamos demostrando un óptimo para cualquier capacidad o sistema constructivo.
+
+
+
+\clearpage
+
+\lamina{8}{Recomendación y condiciones}{Matías}{6:10--6:45}
+
+\begin{indicacion}\emph{Al entrar en pantalla:} Recomendación, resultado fino (47,03 \ensuremath{^\circ}C \ensuremath{\cdot} 15,72 K \ensuremath{\cdot} 0/24) y la barra de margen.\end{indicacion}
+
+
+Recomendamos colocar a 60 metros cúbicos por hora y 12 grados, con nueve circuitos, última manta hasta 21 días de edad local y sombra posterior.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 1} --- aparece: monitoreo propuesto y la condición de recalcular. \emph{Cuándo:} cuando digas «proponemos medir».\end{indicacion}
+
+
+Proponemos medir núcleo, S25, caudal y temperatura del agua. Si cambian el clima o el frío, actualizamos la predicción antes de retirar protecciones.
+
+
+
+\begin{indicacion}\textbf{\ensuremath{\blacktriangleright} CLIC 2} --- aparece: recuadro de limitación. \emph{Cuándo:} al decir «la limitación».\end{indicacion}
+
+
+La limitación principal es que refrigeración y sombra están idealizadas. El resultado respalda esta decisión dentro del modelo; falta comprobarlo en obra. Muchas gracias.
+
+
+
+\end{document}

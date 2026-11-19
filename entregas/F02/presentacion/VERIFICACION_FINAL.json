@@ -1,0 +1,41 @@
+{
+  "source_sha256": "b99d564d808b6dfbc9b6e127c2512711981107c478903bf7241ddb0500626728",
+  "diapositivas_originales_identicas": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "respaldo_nuevo": 25,
+  "partes_originales_modificadas": [
+    "ppt/presentation.xml",
+    "ppt/_rels/presentation.xml.rels",
+    "[Content_Types].xml"
+  ],
+  "nota": "Se añade B16 al final; índice original sin cambios para conservar toda edición del usuario.",
+  "final_sha256": "ea4020143be22a956cc8e979d65c9bcd5e7ecfe0663c01a8fe83a1b02a4d9430",
+  "validacion_estructura": "aprobada,0hallazgos",
+  "validacion_geometria": "aprobada,0hallazgos",
+  "revision_visual": "B16inspeccionada;ecuaciones nativas editables",
+  "graficos": "No modificados; gate exacto detectó diferencias preexistentes de serialización; se preservó el original por instrucción expresa."
+}

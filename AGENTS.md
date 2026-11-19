@@ -1,5 +1,18 @@
 # Contexto del repositorio
 
+- Presentación final19/11: usuario pidió conservar todos sus cambios, añadir ecuaciones y dejar un soloPPT. `entregas/F02/presentacion/F02_Grupo6_FINAL.pptx` es el único PPTX deF02. Base fue Bordes_resumen guardado01:23:38;24láminas y recursos originales idénticos byte por byte, nuevaB16/diap25con8ecuacionesOMML editables. Índice original intacto;accederB16al final. Eliminados6PPTprevios(incluido temporizado) yPDFanteriores;MP4/materialoficial conservados. `VERIFICACION_FINAL.json` registra conservación,estructura/geometría aprobadas y diferencias previas de serialización de gráficos;no se reescribieron ni se afirma gate exacto de caché aprobado. Sin nuevas simulaciones ni publicación. No regenerar desde versiones anteriores ni restaurar residuales sin pedido del usuario.
+
+- Video de práctica pedido 18/11 en `entregas/F02/presentacion/video_practica/`:
+  `F02_video_practica.mp4` (≈5:52) desde S1–S8 de la pre-entrega, animaciones reales
+  a tiempos del guion; Benjamín sin voz (texto amarillo, quiere practicar), Luis
+  es-CL-LorenzoNeural y Matías es-MX-JorgeNeural vía edge-tts (usuario aceptó enviar
+  el guion al servicio). Franja inferior con hablante/texto/«▶ CLIC n». Temporizar
+  por XML (`temporizar_xml.py`), NO por COM: cambiar disparadores por COM deja los
+  efectos «con el anterior» en el grupo previo. Corrección autorizada 19/11 en
+  `F02_Grupo6_Pre_entrega.pptx`: ids duplicados (S4 s4_tabla, S7 s7_tabla, número de
+  página en S2/S3/S6/S7 y no animados en 10/15/20) renumerados por XML; ahora clics
+  2-3-3-3-3-3-3-2 = guion, 247 efectos, abre en PowerPoint. Guardar con COM ese PPTX
+  lo dejó ilegible (restaurado del respaldo): editar por XML. PDF sin cambios (estático).
 - Preentrega F02 integrada por petición del usuario: `presentacion/F02_Grupo6_Pre_entrega.pptx/.pdf` son vigentes (24láminas:8principales+índice+15respaldos). Guion conserva intervalos personales0:00–6:25, reparto y clics;577palabras frente a597. Notas1–8 idénticas al guion. Ocho árboles de animación originales idénticos (247efectos);9gráficos nativos/libros. Se actualizaron504h+sombra90%,336/672h,60/55,0,882K espacial y0,0014K temporal selectivo. `VERIFICACION_PRE_ENTREGA.json` registra checks;24renders inspeccionados, sin ensayo oral ni reproducción de animaciones enPowerPoint. Usuario autorizó publicar main con commit `Pre-entrega F02`. Identificar SHA real con git log, sin inventarlo en el PPT.
 
 - Cierre de §§5–6 completado por petición «finalicemos puntos restantes».

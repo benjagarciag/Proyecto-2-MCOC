@@ -1,20 +1,11 @@
-# Preentrega F02
+# Presentación final F02
 
-Archivos vigentes: `F02_Grupo6_Pre_entrega.pptx` y `F02_Grupo6_Pre_entrega.pdf`.
+Único PowerPoint de entrega: `F02_Grupo6_FINAL.pptx`.
 
-Ocho láminas principales, índice y quince respaldos (24 en total). Se conservan las ocho secuencias de animación y los247efectos del PPT fuente, sus destinos y orden. Tablas, nueve gráficos y ecuaciones siguen editables. Los libros embebidos coinciden exactamente con las cachés de los gráficos. El PDF es estático, con24páginas y navegación; su texto está rasterizado a doble resolución.
+Se tomó la versión que el usuario modificó y guardó el19/11/2026 a01:23:38 (`F02_Grupo6_Bordes_resumen.pptx`). Sus24diapositivas, notas, animaciones, gráficos, libros y recursos se conservaron byte por byte. Solo se añaden las partes necesarias para B16: «Ecuaciones del modelo», diapositiva25, al final de las preguntas. El índice original no se alteró; B16 se alcanza avanzando desde la última lámina. El botón de retorno vuelve al índice.
 
-El guion conserva los ocho intervalos personalizados, reparto y clics, con objetivo6:25. Se modificaron solo contenidos necesarios: manta504h/sombra90%, alcance14y28d, comparación60/55, sensibilidad y limitaciones. Las notas S1–S8 contienen ese mismo diálogo. No se afirma ensayo oral ni reproducción de animaciones en PowerPoint.
+La nueva lámina contiene balance continuo, balance exterior con radiación, resistencias, suelo, actualización por celda, extracción equivalente, integración de hidratación y hhorario. Las ecuaciones son nativas editables. Los detalles y unidades están en las notas deB16.
 
-La propuesta fina tiene24pares completos a0,20m/300s hasta672h: Tmax47,0322°C,Δ15,7202K,Pf0 bajo el catálogo. Conservar el10%solar residual. Ni la cola cero de la fuente implica fin de hidratación ni cumplir estas métricas valida una instalación real.
+Se eliminaron los otros PPTX de esta carpeta y el PPT temporizado de práctica, además de los PDF antiguos que no correspondían al archivo final. El video de práctica y el material oficial del profesor se conservan. Los scripts previos son herramientas históricas; no ejecutarlos para sobrescribir la versión final. La reproducción de esta edición usa `editar_ecuaciones_final.mjs`, `agregar_ecuaciones_final.py` y `renderizar_ecuaciones_final.mjs`, con intermedios privados bajo `.venv/cache/f02_final_ecuaciones/`.
 
-Fuentes: [cierre final](../cierre_revision_final/RESULTADOS_CIERRE.md), [guion](../GUION_ORAL_F02.md), [brief](../BRIEF_DIAPOSITIVAS_F02.md), [puntos restantes](../CIERRE_PUNTOS_RESTANTES.md). Archivos con nombres anteriores son antecedentes, no la propuesta vigente.
-
-## Reproducción documental
-
-1. `preparar_pre_entrega.py` lee el guion actual y genera `recursos/contenido_pre_entrega.json`. El flag `--actualizar-guion` requiere la copia privada original y no debe ejecutarse sobre futuras ediciones del usuario.
-2. `editar_pre_entrega.mjs` importa la copia fuente mediante Artifact Tool; realiza las ediciones de texto.
-3. `postprocesar_pre_entrega.py` reintegra la autoría sin perder animaciones, actualiza datos nativos, respaldos y notas. Requiere Python documental con lxml/openpyxl.
-4. `finalizar_pre_entrega.mjs` valida paquete, geometría, fuentes, tablas/gráficos y24láminas; exporta el PDF (alternativa ReportLab con renders2x si falta fuente del exportador nativo).
-
-Intermedios privados en `.venv/cache/pre_entrega_f02/`. Los scripts numéricos con huellas no fueron alterados para esta edición. La identificación de la publicación se obtiene con `git log -1 -- entregas/F02/presentacion/F02_Grupo6_Pre_entrega.pptx`; no confundir el SHA base6718163 con el commit de preentrega.
+`VERIFICACION_FINAL.json` registra la huella de origen/final y el alcance de las comprobaciones. Estructura y geometría: aprobadas. Se conservaron sin reescribir los gráficos del usuario, incluidas diferencias preexistentes de serialización detectadas por la comparación exacta de cachés/libros. No se afirma reproducción nativa de los efectos en PowerPoint para esta revisión. No se ejecutaron simulaciones ni se publicó un nuevo commit en esta tarea.
