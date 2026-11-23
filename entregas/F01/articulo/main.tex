@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=3cm}
+
+\usepackage[spanish,es-tabla]{babel}
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[authoryear,round]{natbib}
+\setcitestyle{aysep={,},notesep={: }}
+\usepackage{fancyhdr}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\usepackage{adjustbox}
+\hypersetup{hidelinks}
+
+% Tablas compactas: interlineado simple dentro de tablas
+\usepackage{etoolbox}
+\AtBeginEnvironment{tabular}{\linespread{1}\selectfont}
+\captionsetup{font=small,labelfont=bf,skip=6pt}
+% Separación compacta entre figuras/tablas y texto.
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+
+\def\unidad{Universidad de los Andes}
+\def\programa{Facultad de Ingenier\'ia y Ciencias Aplicadas}
+\def\titulo{Planificación de la colocación de una fundación de hormigón masivo}
+\def\subtitulo{Métodos Computacionales en IOC}
+% COMPLETAR: nombres de los integrantes del grupo
+\def\autores{
+    Benjamín García \\
+    Luis Noriega\\
+    Matias Stierling\\
+    [0.4cm]
+    \normalsize Grupo $6$\\
+}
+\def\fecha{$23$ de noviembre de $2026$}
+\def\lugar{
+    Santiago,
+    Chile
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{Métodos Computacionales en IOC \vspace{0.3cm}}
+\lhead{\includegraphics[width=3cm]{Imagenes/marca_principal.jpg}}
+\lfoot{\scriptsize Facultad Ingenier\'ia y Ciencias Aplicadas\\Universidad de los Andes}
+\rfoot{\thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+\addtolength{\headheight}{1.5cm}
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\footskip}{10pt}
+
+\begin{document}
+
+\input{Portada}
+
+\newpage
+\pagenumbering{gobble} % Oculta el número de página de índice y resumen
+
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic} % Empieza a contar las páginas desde la introducción
+\input{secciones/01_introduccion}
+\input{secciones/02_caso_estudio_datos}
+\input{secciones/03_modelo_continuo}
+\input{secciones/04_discretizacion_algoritmos}
+\input{secciones/05_verificacion_evaluacion}
+
+\newpage
+\renewcommand{\refname}{Referencias}
+\addcontentsline{toc}{section}{Referencias}
+\bibliographystyle{dcu}
+\renewcommand{\harvardand}{y}
+\renewcommand{\harvardurl}{URL:}
+\bibliography{Ref}
+
+\newpage
+%\input{secciones/anexo}
+
+\end{document}

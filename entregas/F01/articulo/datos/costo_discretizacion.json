@@ -1,0 +1,676 @@
+{
+  "filas": [
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 84.91474700000254,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 87.23860340000101,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 85.74492040000041,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 54.96698679999827,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 91.16421460000129,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 57.103813199995784,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 88.5043880000012,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 85.38529330000165,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 88.90028569999413,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 90.9387829000043,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 96.26419069999974,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 91.624198599995,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 84.98125159999472,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 84.55118339999899,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 87.1941638999997,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 94.4967531000002,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 84.73194420000073,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 95.31443089999811,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 85.47518919999857,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 76.29830800000491,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 84.55378080000082,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 84.23168530000112,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 86.1431115000014,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 55,
+      "h": 0.4,
+      "segundos": 85.57810400000017,
+      "ruta": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q55\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8105
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 550.2895881000004,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 551.0286970000016,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 550.2160618999987,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_22A_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 712.2463835000017,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 703.2089444000012,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 721.865218400002,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M1_SS_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 790.9510143000007,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 791.3658606000026,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 802.5130131999977,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_22A_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 732.7839132999943,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 719.8695970000044,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 719.6655387999999,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M2_SS_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 870.2247613,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 851.1488624000049,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 869.2031834999943,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_22A_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 801.5110321999964,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 774.0460768000048,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 790.5413027000031,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M3_SS_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 538.5690766000043,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2023.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2023.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 555.3650597000014,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 545.8528609999994,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2025.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_22A_ERA5-2025.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 260.83035190000373,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_SS_ERA5-2023.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.2_paso300\\M4_SS_ERA5-2023.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 244.5357206999979,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_SS_ERA5-2024.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.2_paso300\\M4_SS_ERA5-2024.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.2,
+      "segundos": 295.7930082000021,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.2_paso300\\M4_SS_ERA5-2025.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.2_paso300\\M4_SS_ERA5-2025.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 37.62966830000369,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M1_22A_ERA5-2023.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 36.95617750000383,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M1_22A_ERA5-2024.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 48.657833699995535,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M1_22A_ERA5-2025.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 53.08423720000428,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M1_SS_ERA5-2023.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 46.84391070000129,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M1_SS_ERA5-2024.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 48.67868769999768,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M1_SS_ERA5-2025.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 37.274388899997575,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M2_22A_ERA5-2023.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 49.39551989999745,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M2_22A_ERA5-2024.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 44.01538740000251,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M2_22A_ERA5-2025.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 56.56353749999835,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M2_SS_ERA5-2023.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 49.2419407999987,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M2_SS_ERA5-2024.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 50.153084199999284,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M2_SS_ERA5-2025.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 37.05675429999974,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M3_22A_ERA5-2023.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 56.991980399994645,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M3_22A_ERA5-2024.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 38.409307900001295,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M3_22A_ERA5-2025.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 43.06482539999706,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M3_SS_ERA5-2023.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 48.922904299994116,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M3_SS_ERA5-2024.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 58.282147999998415,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M3_SS_ERA5-2025.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 36.76092630000494,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M4_22A_ERA5-2023.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 48.85302070000034,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M4_22A_ERA5-2024.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 38.044729900000675,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M4_22A_ERA5-2025.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 40.06795720000082,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M4_SS_ERA5-2023.json",
+      "reutilizado": true,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 51.8159799999994,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "origen": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2024.json",
+      "reutilizado": false,
+      "pasos": 8096
+    },
+    {
+      "q": 60,
+      "h": 0.4,
+      "segundos": 37.38843160000397,
+      "ruta": "resultados\\cierre_f02\\q60\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "origen": "resultados\\proteccion_postdesmolde\\combinada_504_sombra_90\\malla_0.4_paso300\\M4_SS_ERA5-2025.json",
+      "reutilizado": true,
+      "pasos": 8096
+    }
+  ],
+  "temporales": [
+    {
+      "year": 2024,
+      "segundos": 88.8877291999961,
+      "delta": -0.001355644335568229,
+      "tmax": -0.001148182288389421
+    },
+    {
+      "year": 2025,
+      "segundos": 90.96575780000421,
+      "delta": -0.001365106683934414,
+      "tmax": -0.0010260139797537704
+    }
+  ],
+  "alcance": "Tiempos por pieza recuperados de su cálculo de origen; suma de duraciones de procesos, no tiempo de pared ni campaña histórica completa.",
+  "hardware_consultado_2026_11_22": {
+    "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "logicos": 12,
+    "memoria_fisica_GiB": 7.8708953857421875,
+    "sistema": "Windows-10-10.0.19045-SP0",
+    "alcance": "Consulta actual del equipo; no registro histórico por corrida."
+  },
+  "suma_72_h": 5.242799666055558,
+  "suma_74_h": 5.292758968000003
+}

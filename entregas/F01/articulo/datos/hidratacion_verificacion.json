@@ -1,0 +1,97 @@
+{
+  "original": "datos\\hidratacion\\source_terms.txt",
+  "sha256_original": "e5e9a8ba9a5a3a5bb082fc7b0eff0240d0e35fdf2f465e038c0a313aedc28829",
+  "paso_fuente_s": 600,
+  "paso_comprobacion_s": 300,
+  "filas": [
+    {
+      "curva": "M1_SS",
+      "muestras": 1443,
+      "fin_h": 240.33333333333334,
+      "qmax_tabulado_W_m3": 467.75,
+      "ultima_fuente_W_m3": 1.57,
+      "calor_MJ_m3": 88.148355,
+      "error_max_csv_J_m3": 0.0,
+      "error_integral_J_m3": 0.0,
+      "csv_sha256": "601abc72a4bf304333860bc14026175ae74880f3fb73f4f9f92801b80a4a1818"
+    },
+    {
+      "curva": "M2_SS",
+      "muestras": 1443,
+      "fin_h": 240.33333333333334,
+      "qmax_tabulado_W_m3": 531.11,
+      "ultima_fuente_W_m3": 0.0,
+      "calor_MJ_m3": 95.715228,
+      "error_max_csv_J_m3": 0.0,
+      "error_integral_J_m3": 0.0,
+      "csv_sha256": "273c15287da8dadbc4fb9104a88ccee41b4d6acf4865f50f54fff9072e730ada"
+    },
+    {
+      "curva": "M3_SS",
+      "muestras": 1443,
+      "fin_h": 240.33333333333334,
+      "qmax_tabulado_W_m3": 553.01,
+      "ultima_fuente_W_m3": 0.0,
+      "calor_MJ_m3": 94.149018,
+      "error_max_csv_J_m3": 0.0,
+      "error_integral_J_m3": 0.0,
+      "csv_sha256": "e48b3ae517de7ac808e5e94390f78d2202ea8f25ceba72f8c4faec47d31fff1b"
+    },
+    {
+      "curva": "M4_SS",
+      "muestras": 1443,
+      "fin_h": 240.33333333333334,
+      "qmax_tabulado_W_m3": 568.94,
+      "ultima_fuente_W_m3": 0.0,
+      "calor_MJ_m3": 100.166118,
+      "error_max_csv_J_m3": 0.0,
+      "error_integral_J_m3": 0.0,
+      "csv_sha256": "55ee95ff1d8a94deff55fecc01c902ec7391b05ca4e7400599aa4f563b0b5937"
+    },
+    {
+      "curva": "M1_22A",
+      "muestras": 979,
+      "fin_h": 163.0,
+      "qmax_tabulado_W_m3": 473.38,
+      "ultima_fuente_W_m3": 0.0,
+      "calor_MJ_m3": 61.212021,
+      "error_max_csv_J_m3": 0.0,
+      "error_integral_J_m3": 0.0,
+      "csv_sha256": "9934f1a9805492e27155735d974fb9400396cfcc85ce2a55b14f6479d8027978"
+    },
+    {
+      "curva": "M2_22A",
+      "muestras": 979,
+      "fin_h": 163.0,
+      "qmax_tabulado_W_m3": 625.29,
+      "ultima_fuente_W_m3": 0.0,
+      "calor_MJ_m3": 82.446225,
+      "error_max_csv_J_m3": 0.0,
+      "error_integral_J_m3": 0.0,
+      "csv_sha256": "0bfbc392dba46f9ccac9d8026db270f31d9db6b4b0b9df593692504ca0e23980"
+    },
+    {
+      "curva": "M3_22A",
+      "muestras": 979,
+      "fin_h": 163.0,
+      "qmax_tabulado_W_m3": 589.7,
+      "ultima_fuente_W_m3": 0.0,
+      "calor_MJ_m3": 73.28883,
+      "error_max_csv_J_m3": 0.0,
+      "error_integral_J_m3": 0.0,
+      "csv_sha256": "bfa92b335980bef9eb9ae536ae0b29acdc585634776483542a5331190dc04fa9"
+    },
+    {
+      "curva": "M4_22A",
+      "muestras": 979,
+      "fin_h": 163.0,
+      "qmax_tabulado_W_m3": 596.08,
+      "ultima_fuente_W_m3": 0.0,
+      "calor_MJ_m3": 73.628343,
+      "error_max_csv_J_m3": 0.0,
+      "error_integral_J_m3": 0.0,
+      "csv_sha256": "a12017588d3210fbfad7ed69b2df3b7c628cc152b90e9dd7db2387bec07a4fa2"
+    }
+  ],
+  "alcance": "Comprobación de conversión tabular e integral; sin solver de conducción ni ajuste inverso nuevo."
+}

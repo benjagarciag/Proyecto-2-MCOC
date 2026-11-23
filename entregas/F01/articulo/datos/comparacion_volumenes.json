@@ -1,0 +1,24 @@
+{
+  "volumen_referencia_IFC_m3": 636.7751926932476,
+  "filas": [
+    {
+      "h_m": 0.4,
+      "N_ocupadas": 10011,
+      "V_h_m3": 640.7040000000002,
+      "delta_V_m3": 3.92880730675256,
+      "diferencia_relativa_pct": 0.6169849818011325,
+      "archivo": "resultados/cierre_f02/q60/malla_0.4_paso300/M4_SS_ERA5-2024.npz",
+      "sha256": "cd916f2cc99745c54d1caf9e37196cb2ee4cf5e08b211f6c6dd24f23f4bdeca7"
+    },
+    {
+      "h_m": 0.2,
+      "N_ocupadas": 79868,
+      "V_h_m3": 638.9440000000002,
+      "delta_V_m3": 2.1688073067525693,
+      "diferencia_relativa_pct": 0.34059230504561194,
+      "archivo": ".venv/cache/f02_mapa_circuitos_02.npz",
+      "sha256": "d31993ca4f970ff7b5a4c82bc722b72413b2b5e050898a3020d7615cf18198df"
+    }
+  ],
+  "alcance": "Lectura de geometrías existentes y cálculo de diferencias; sin solver térmico."
+}

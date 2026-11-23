@@ -1,0 +1,209 @@
+F01 — Artículo académico final
+Puntaje: 20 puntos.
+
+Condicion: El artículo deberá ser aprobado por el centro de escritura antes del cierre de semestre. 
+
+Esta entrega reemplaza el informe breve de Plan de Control de Temperatura originalmente
+previsto. Se entrega un artículo académico autocontenido, que explica y fundamenta
+el trabajo completo. El plan de control se conserva como resultado del estudio.
+
+1. Pregunta y formato
+¿Qué plan termina de colocar todo el hormigón en el menor tiempo, dentro de las
+alternativas consideradas, manteniendo la probabilidad conjunta de exceder 70 °C
+o un diferencial de 20 °C en no más de 5%, bajo la incertidumbre modelada?
+
+No basta describir el programa o reunir capturas: formular, explicar, fundamentar y
+mostrar qué respaldan los resultados.
+
+PDF en español, título, autores, grupo, curso/afiliación y fecha.
+4000–6000 palabras orientativas de texto principal; priorizar claridad y completitud.
+Resumen de 150–250 palabras y 4–6 palabras clave.
+Figuras/tablas numeradas, unidades, leyendas legibles y referencia desde el texto.
+Citas consistentes donde se usan parámetros, métodos y afirmaciones.
+Anexos para derivaciones largas, tablas completas y reproducción. El argumento
+principal debe entenderse sin consultar código ni anexos.
+Entregar PDF, repositorio y SHA final, configuraciones, resultados por escenario
+y datos o instrucciones precisas de acceso. Conservar el SHA de defensa. Se permiten
+correcciones posteriores al jueves: agregar nota de cambios, motivo y efecto sobre
+la recomendación. No reemplazar resultados silenciosamente.
+
+2. Estructura y contenido exigido
+Título, resumen y palabras clave
+El resumen debe indicar problema, datos reales, método, alternativas, resultados
+cuantitativos y alcance. Incluir duración elegida, probabilidad conjunta e intercambio
+relevante con otras opciones. Si no se encontró solución factible, informar ese resultado.
+
+1. Introducción
+Explicar generación/disipación de calor, conflicto entre duración y control térmico y
+necesidad de incertidumbre. Situar el estudio en bibliografía del curso y formular
+objetivo y preguntas concretas. Los límites de 70 °C y 20 °C son criterios docentes;
+no atribuirlos indistintamente a toda norma o exposición.
+
+2. Caso de estudio y datos
+Describir sitio, coordenadas, geometría oficial, volumen, simplificaciones y flujo
+BIM/IFC→voxelización. Mostrar dimensiones, vertidas y superficies. Indicar qué información
+del IFC consume el solver y comparar volumen geométrico y discretizado.
+
+Presentar tabla de datos/parámetros: símbolo, significado, unidad, valor/rango, fuente
+y clasificación como medido, bibliográfico, ajustado o supuesto. Cubrir (\rho,c_p,k),
+hidratación, colocación, suelo, convección y propiedades de protecciones.
+
+Para las ocho curvas reales de hidratación:
+
+Identificar ensayo, magnitud, unidades, origen temporal y condiciones conocidas.
+Mostrar todas; verificar si son réplicas, mezclas o condiciones distintas antes de
+asignar interpretación probabilística. Explicar cada exclusión fundamentada.
+Describir limpieza, interpolación/ajuste, derivación, conversiones y extrapolación.
+Mostrar fuente resultante y comprobar integral/calor acumulado.
+Explicar cómo se usa cada curva; promediarlas no representa su incertidumbre.
+Para el clima: fuente/modelo, coordenadas, tipo de producto (observación, reanálisis,
+pronóstico o ensemble), fecha de descarga, zona horaria, variables, unidades y cobertura.
+Mostrar series realmente utilizadas y tratamiento de faltantes/cola. Conservar snapshots
+anteriores si existen; no inventar una segunda descarga retrospectiva. Comparar todos
+los planes con la misma información congelada.
+
+3. Modelo continuo
+Desarrollar el balance local de energía y la ley de Fourier hasta la ecuación implementada,
+por ejemplo para propiedades constantes por material:
+
+[
+\rho c_p\frac{\partial T}{\partial t}=\nabla\cdot(k\nabla T)+\dot q_h.
+]
+
+Definir dominio, materiales, términos, parámetros y unidades. Fundamentar hipótesis,
+propiedades y procesos omitidos. Explicar dominio activo y edad local
+(a=t-t_{activación}). Formular condiciones iniciales del terreno y de cada vertida,
+con temperatura de colocación y cronología.
+
+Relacionar matemáticamente la medición de hidratación y (\dot qh). Para incremento
+adiabático y propiedades constantes, (\dot q_h=\rho c_p,d\Delta T{ad}/da).
+La relación debe corresponder al ensayo real: temperaturas no adiabáticas requieren
+un balance adicional. Explicar si se modela o ignora la dependencia de la cinética con T.
+
+Incluir tabla de condiciones de borde por superficie y etapa, con ecuación, parámetros,
+fuente y fundamento. Definir normal saliente y signos. Para convección y protecciones
+sin capacidad térmica propia, una aproximación es
+
+[
+-k\nabla T\cdot n=h{eq}(t)[T-T\infty(t)],\qquad
+h{eq}^{-1}=h^{-1}+\sum\ell e\ell/k\ell.
+]
+
+Explicar su validez y cambios al retirar protecciones. Si el moldaje se resuelve como
+dominio, no duplicar su resistencia. Explicar suelo, borde remoto y estado inicial.
+En contacto perfecto entre vertidas, plantear continuidad de T y flujo; si existe
+resistencia, escribir la relación usada. Una cara cubierta por una nueva vertida deja
+de intercambiar con el aire como antes.
+
+Si se incluye radiación, definir flujos, temperaturas absolutas cuando corresponda,
+orientación y datos; si se omite, fundamentar su importancia relativa. No incluir física
+que no esté implementada. Se puede contrastar la formulación general con la
+documentación de INL; el núcleo del
+solver sigue siendo propio del equipo.
+
+4. Discretización y algoritmos
+Derivar el balance de celda desde el continuo:
+
+[
+Ci\frac{dT_i}{dt}=\sum_jG{ij}(Tj-T_i)+\dot q{h,i}Vi+Q{b,i},
+\qquad Ci=\rho_i c{p,i}V_i.
+]
+
+Definir conductancias/resistencias, materiales, distancias, áreas, caras, celdas activas
+y bordes. Explicar aproximación geométrica y extracción aproximadamente a 25 mm.
+
+Escribir la actualización temporal efectivamente usada. Para un esquema explícito lineal
+con conductancias positivas, discutir la restricción local
+(\Delta t\le Ci/(\sum_jG{ij}+G_{b,i})) y otras restricciones de su formulación.
+Para uno implícito, mostrar sistema, solución, convergencia y tolerancias; estabilidad
+no equivale a exactitud temporal.
+
+Presentar pseudocódigo: leer datos → activar vertidas/actualizar bordes → edad/fuente →
+avanzar → extraer métricas → agregar escenarios. Informar malla, paso temporal,
+hardware local, duración de una corrida y costo total. No se evalúa sofisticación del hardware.
+
+5. Verificación y evaluación del modelo
+Distinguir verificación del método/código, calibración de parámetros y
+validación con observaciones independientes. Presentar evidencia cuantitativa:
+
+Al menos un caso conocido para ecuación y condiciones relevantes.
+Balance energético con fuentes y flujos identificados.
+Sensibilidad espacial y temporal por separado: al menos dos resoluciones de cada una,
+diferencias en máximos y efecto en clasificación. Dos niveles permiten evaluar
+sensibilidad; no demostrar un orden asintótico.
+Errores geométricos, datos e idealizaciones que afectan la recomendación.
+Fundamentar tolerancias frente a los márgenes disponibles. Si el error puede cambiar
+el cumplimiento, refinar o declarar que la decisión está indeterminada. Reproducir los
+datos de ajuste no es validación independiente. Sin mediciones térmicas de la fundación,
+reconocer que no existe validación integral del caso.
+
+6. Incertidumbre y optimización
+Formular (D=\maxjt{j,fin}-t_0), decisiones y restricciones de capacidad, secuencia,
+esperas y controles. Mantener t0 el jueves 19 de noviembre, hora/zona declaradas;
+el artículo del viernes no desplaza el origen de construcción.
+
+Definir máximos espaciales/temporales, superficies consideradas, evento conjunto y
+(P_f\le0.05). Conservar 14 días y justificar extensión para no truncar picos tardíos.
+
+Explicar escenarios, pesos conjuntos, dependencias y parámetros fijados. En enumeración
+completa, calcular suma ponderada y distinguir exactitud para ese modelo de su
+representatividad real. Informar resolución probabilística y sensibilidad a pesos o
+escenarios. En Monte Carlo, informar N, semillas, incertidumbre binomial y separación
+entre selección y comprobación. Aplican las cautelas de la guía del miércoles.
+
+Describir familia explorada, rangos, paso, cribado y evaluaciones finales. Fundamentar
+exclusiones y resolver candidatos competitivos con calidad suficiente. Delimitar la
+optimalidad: habitualmente «mejor entre los planes evaluados», sin prometer óptimo global.
+
+7. Resultados
+Comparar vertida única, propuesta, variante más rápida y variante más lenta, con
+las excepciones físicas justificadas en la pauta de defensa. Incluir:
+
+Cronogramas con inicio/fin, duración y retiros de protecciones.
+Tabla por plan: D, probabilidades marginales y conjunta, cumplimiento y máximos
+con instante, ubicación y escenario correspondiente.
+Curvas núcleo/superficie y diferencial con umbrales, en casos comparables.
+Cortes/campos que expliquen evolución y zonas críticas.
+Duración versus probabilidad conjunta, línea del 5% y candidato elegido.
+Sensibilidades numéricas y probabilísticas que respaldan la elección.
+Distinguir realización, extremo del conjunto y promedio. El máximo de un campo promedio
+no sustituye la distribución de máximos. Cuantificar cómo las desviaciones afectan riesgo
+y duración. Si una mejora el objetivo y cumple, revisar la propuesta.
+
+8. Discusión y plan de control resultante
+Interpretar acumulación/disipación, edad relativa de vertidas, clima y efecto de aislación.
+Discutir representatividad de ocho curvas, pesos, recursos y margen numérico. No equiparar
+excedencia térmica con una probabilidad calculada de fisuración mecánica.
+
+Traducir la recomendación en plan operativo: colocación, secuencia, protecciones/retiro;
+sensores en núcleo, cerca de superficies críticas y ambiente; redundancia, frecuencia,
+duración y responsables; acciones ante temperaturas o clima fuera de lo esperado.
+Fundamentar disparadores de contingencia. No retirar aislación automáticamente sin
+revisar el diferencial que podría inducir.
+
+Si no hay plan factible, indicar qué cambio de controles, recursos o diseño habría que
+estudiar. No presentar una medida no simulada como validada.
+
+9. Conclusiones
+Responder con números: plan, duración, mejora temporal, probabilidad conjunta bajo el
+modelo y principal condición de validez. Separar lo demostrado de lo pendiente.
+
+Referencias y anexos de reproducción
+Citar bibliografía del curso, datos del profesor, meteorología y métodos/bibliotecas
+realmente utilizados. No atribuir una fuente externa a datos de procedencia desconocida.
+
+Documentar entorno, comandos exactos para un caso y la comparación, configuraciones,
+escenarios/pesos, semillas si corresponde, métricas y figuras archivadas. Los resultados
+principales deben poder leerse sin ejecutar de nuevo toda la campaña.
+
+3. Rúbrica
+Criterio	Puntos
+Problema, datos reales y trazabilidad	1.2
+Continuo, ecuaciones, parámetros, bordes y fundamento	2.0
+Discretización, algoritmos y verificación	1.8
+Incertidumbre, evento conjunto y limitaciones	1.5
+Comparación, búsqueda temporal y recomendación	1.8
+Discusión, monitoreo y contingencias	0.8
+Escritura, figuras, referencias y reproducibilidad	0.9
+Total	10.0
+Una explicación honesta y completa tiene más valor que una afirmación fuerte sin respaldo.

@@ -1,0 +1,214 @@
+\section{Modelo continuo}
+\label{sec:modelo-continuo}
+
+\subsection{Dominio y supuestos físicos}
+
+El modelo describe cómo cambia la temperatura del hormigón por la generación de calor de hidratación, la conducción dentro de la fundación y los intercambios con su entorno. Se incorpora también la extracción equivalente de los circuitos de refrigeración. Esta combinación permite estudiar qué ocurre tanto en el interior como cerca de las superficies, sin suponer que toda la fundación tiene una temperatura uniforme.
+
+Se denomina $\Omega_j$ al volumen de la capa $j$ y $t_j$ a su instante de activación, medido desde el inicio constructivo $t_0$. El dominio térmico aumenta con la colocación:
+\begin{equation}
+  \Omega_c(t)=\bigcup_{j:\,t\geq t_j}\Omega_j,
+  \qquad a_j(t)=t-t_j.
+  \label{eq:dominio-edad}
+\end{equation}
+tal que $\Omega_c(t)$ contiene únicamente el hormigón colocado y $a_j$ es la edad local de cada capa. Las capas futuras no almacenan ni generan calor. Las coordenadas espaciales se expresan en metros y el tiempo de las ecuaciones, en segundos; las edades de retiro indicadas en horas se convierten antes del cálculo.
+\newpage
+
+El hormigón se considera un material homogéneo e isótropo, con $\rho$, $c_p$ y $k_c$ constantes, según la Tabla~\ref{tab:param-materiales}. No se calcula el movimiento del hormigón fresco, la evaporación, el transporte de humedad ni la respuesta mecánica de las armaduras y del hormigón. El suelo y las protecciones intervienen mediante resistencias térmicas, sin campos de temperatura transitorios propios. Estas hipótesis reducen los datos necesarios para el cálculo, pero condicionan la interpretación de sus resultados.
+
+\subsection{Balance local de energía y conducción}
+
+En un volumen fijo $V$ situado dentro del hormigón activo, el aumento de energía debe ser igual al calor que entra por su superficie, más el generado por hidratación y menos el retirado por los circuitos. Para propiedades constantes:
+\begin{equation}
+  \frac{d}{dt}\int_V \rho c_p(T-T_{\mathrm{ref}})\,dV
+  =-\int_{\partial V}\vec{q}\cdot\vec{n}\,dA
+   +\int_V(\dot q_h-\dot q_r)\,dV.
+  \label{eq:balance-integral}
+\end{equation}
+tal que $T$ es la temperatura, $T_{\mathrm{ref}}$ una referencia constante de energía, $\vec{q}$ el flujo conductivo en $\mathrm{W\,m^{-2}}$ y $\vec{n}$ la normal saliente. El signo negativo del flujo superficial expresa que el calor que sale reduce la energía del volumen. Las potencias volumétricas $\dot q_h$ y $\dot q_r$, en $\mathrm{W\,m^{-3}}$, representan generación y extracción, respectivamente.
+
+La ley de Fourier establece que el calor se conduce hacia las zonas de menor temperatura:
+\begin{equation}
+  \vec{q}=-k_c\nabla T.
+  \label{eq:fourier}
+\end{equation}
+Al aplicar el teorema de la divergencia al balance y considerar que debe cumplirse en cualquier volumen interior, se obtiene la ecuación utilizada:
+\begin{equation}
+  \rho c_p\frac{\partial T}{\partial t}
+  =\nabla\cdot(k_c\nabla T)+\dot q_h-\dot q_r,
+  \qquad \vec{x}\in\Omega_c(t).
+  \label{eq:calor-modelo}
+\end{equation}
+Todos sus términos tienen unidades de $\mathrm{W\,m^{-3}}$. La temperatura puede expresarse en grados Celsius para conducción y diferencias térmicas; los términos radiativos requieren temperatura absoluta. La formulación general es consistente con el balance de conducción presentado por INL \citep{inlTransferencia}; el solver y sus adaptaciones fueron desarrollados por el equipo.
+
+\subsection{Colocación, condiciones iniciales e hidratación}
+
+La cronología se construye con los volúmenes físicos de las once capas. Para una tasa constante $q$, sin esperas, la duración de la capa es:
+\begin{equation}
+    d_j=\frac{V_j}{q}
+\end{equation}
+y su inicio es:
+\begin{equation}
+    t_j=\sum_{r<j}d_r
+\end{equation}
+usando unidades de tiempo compatibles. 
+\newpage
+La propuesta de $60\,\mathrm{m^3/h}$ comienza en $t=0$ y termina de colocar en $10{,}6129\,\mathrm{h}$; para $55\,\mathrm{m^3/h}$ se conserva la secuencia y se escalan las duraciones por $60/55$. El origen absoluto sigue siendo el $19$ de noviembre de $2026$ a las $10{:}00$, UTC$-03{:}00$. Cada capa ingresa al cálculo con su temperatura de colocación:
+\begin{equation}
+  T(\vec{x},t_j^+)=T_{\mathrm{col}}=12\,^{\circ}\mathrm{C},
+  \qquad \vec{x}\in\Omega_j.
+  \label{eq:inicial-colocacion}
+\end{equation}
+La temperatura del hormigón colocado anteriormente se conserva. Numéricamente se activa toda la capa al inicio de su intervalo físico: no se resuelve el avance horizontal del frente. Su duración de colocación sí se mantiene en el cronograma y en el objetivo temporal. La energía sensible del material que ingresa debe contabilizarse por separado de la hidratación al verificar el balance global. La fuente se prescribe mediante las curvas del apartado~\ref{sec:Hidratación y curvas}:
+\begin{equation}
+  \dot q_h(\vec{x},t)=\frac{dH_m}{da}\bigl(a_j(t)\bigr),
+  \qquad \vec{x}\in\Omega_j,\quad t\geq t_j.
+  \label{eq:fuente-edad}
+\end{equation}
+tal que $H_m$ es el calor acumulado de la curva elegida, en $\mathrm{J\,m^{-3}}$. Se mantiene la misma curva para todas las capas de una realización, con edades distintas. La fuente no cambia con la temperatura calculada: no se introduce una ley de madurez ni una corrección de Arrhenius sin parámetros que las sustenten.
+
+Esta elección corresponde a la información experimental disponible. Si el ensayo fuera adiabático, el balance daría $\dot q_h=\rho c_p\,d\Delta T_{\mathrm{ad}}/da$. En las probetas del archivo docente, en cambio, existen pérdidas hacia el ambiente. El balance que fundamenta la estimación de una fuente espacialmente uniforme es:
+\begin{equation}
+  \dot q_m(t)=\frac{1}{V_p}\frac{d}{dt}
+       \int_{V_p}\rho c_p(T_p-T_{\mathrm{ref}})\,dV
+       +\frac{1}{V_p}\int_{\partial V_p}\beta_p(T_{p,s}-T_a)\,dA.
+  \label{eq:balance-probeta}
+\end{equation}
+tal que $V_p$ es el volumen de la probeta, $T_p$ su temperatura interior, $T_{p,s}$ su temperatura superficial, $T_a$ la del ambiente y $\beta_p=2{,}5\,\mathrm{W\,m^{-2}\,K^{-1}}$ la conductancia adoptada en la inversión docente. La fuente debe explicar tanto el calor almacenado como el perdido. Se utilizan los resultados de esa inversión, sin volver a estimarlos a partir de una derivada de temperatura.
+
+\subsection{Refrigeración equivalente y control}
+
+La extracción actúa en las zonas asignadas a los nueve circuitos. Se representa con un coeficiente volumétrico $U_v=5\,\mathrm{W\,m^{-3}\,K^{-1}}$, agua uniforme a $T_w=18\,^{\circ}\mathrm{C}$ y una potencia máxima conjunta de $P_{\max}=15\,\mathrm{kW}$. Una forma continua de expresar esa ley es:
+\begin{align}
+  \dot q_r^0(\vec{x},t)&=U_v\sum_{b=1}^{9}
+       \chi_b(\vec{x})\,s_b(t)\max(T-T_w,0),\\
+  P_r^0(t)&=\int_{\Omega_c(t)}\dot q_r^0\,dV,
+  \qquad \dot q_r=\lambda(t)\dot q_r^0,
+  \label{eq:extraccion-equivalente}
+\end{align}
+tal que $\chi_b$ identifica la zona refrigerable del circuito $b$, $s_b$ vale $1$ cuando está abierto y $0$ cuando está cerrado, y $\lambda=\min(1,P_{\max}/P_r^0)$ si $P_r^0>0$; si no hay extracción, se toma $\lambda=1$. El factor común limita la potencia total sin alterar su reparto relativo.
+
+Los circuitos comienzan cerrados. Solo se permite la apertura después de su cobertura física por hormigón y si la mínima temperatura entre sus puntos de control alcanza $19\,^{\circ}\mathrm{C}$. Un circuito abierto se cierra cuando esa mínima baja a $18\,^{\circ}\mathrm{C}$ o menos; entre ambos umbrales conserva su estado. La implementación evalúa estas condiciones en los pasos de cálculo y evita que la extracción, por sí sola, enfríe una celda por debajo del agua en un paso. Ese límite adicional se describe con el algoritmo numérico.
+
+El caudal nominal del anteproyecto no determina $U_v$. La representación no resuelve la pared del tubo, la resistencia de contacto, la película interior ni el calentamiento axial del agua. Por ello, la ley permite evaluar una capacidad de extracción supuesta, pero no acredita que una instalación real alcance esa transferencia.
+
+\subsection{Superficies expuestas y protecciones}
+
+Se distinguen la temperatura de la cara del hormigón $T_b$ y la del exterior de la última protección $T_s$. La resistencia de las capas instaladas es:
+\begin{equation}
+  R_p(a)=\sum_{\ell\,\mathrm{instalada}}\frac{e_\ell}{k_\ell},
+  \qquad T_s-T_b=R_p(a)\,\phi,
+  \label{eq:resistencia-proteccion}
+\end{equation}
+tal que $R_p$ se expresa en $\mathrm{m^2\,K\,W^{-1}}$ y $\phi=-\vec{q}\cdot\vec{n}=k_c\nabla T\cdot\vec{n}$ es el flujo positivo hacia el hormigón. Esta convención es la opuesta al flujo saliente de la Ecuación~\eqref{eq:balance-integral}. Cuando no quedan protecciones, $R_p=0$ y $T_s=T_b$.
+
+La madera y las mantas ofrecen resistencia al paso del calor, sin almacenar energía propia. No se resuelve un dominio adicional para el moldaje ni se agrega otra resistencia de contacto. Esta aproximación permite representar el efecto aislante sin conocer su evolución térmica interna; su validez depende de que ese almacenamiento y los contactos omitidos no controlen la respuesta de interés. Los espesores y conductividades proceden de las referencias del apartado~\ref{sec:Parametros y condiciones}.
+
+Si se consideran únicamente convección y protecciones, el balance se reduce a una condición de Robin:
+\begin{equation}
+  -k_c\nabla T\cdot\vec{n}=h_{\mathrm{eq}}(T_b-T_a),
+  \qquad h_{\mathrm{eq}}^{-1}=h_c^{-1}+R_p.
+  \label{eq:robin-equivalente}
+\end{equation}
+En las corridas finales también actúa la radiación, por lo que se utiliza el balance más completo de la Ecuación~\eqref{eq:balance-exterior}. No se suma un término radiativo oculto dentro de $h_c$. Al retirar una protección se elimina su resistencia según la edad de la capa, manteniendo las otras que continúan instaladas.
+
+El viento se ajusta mediante $v_2=v_{10}(2/10)^{0{,}14}$ y el coeficiente se calcula como $h_c=5{,}7+3{,}8v_2$ en unidades SI. Se aplica el mismo valor horario a todas las caras al aire, sin resolver efectos de dirección del viento ni diferencias de rugosidad. El balance exterior combina así una convección variable en el tiempo con la resistencia de las protecciones que permanecen en cada cara. Para relacionar esta condición de superficie con su aplicación al centro de celda, el código utiliza:
+\begin{equation}
+  R_i=d_i/k_c+R_p  
+\end{equation}
+tal que $d_i$ es la distancia del centro a la cara.
+\newpage
+El flujo hacia la celda es $(T_s-T_i)/R_i$. La resistencia de media celda pertenece al hormigón discretizado y no constituye una segunda capa de moldaje; el desarrollo de esta aproximación corresponde a la discretización.
+
+\subsection{Radiación solar y de onda larga}
+
+En cada cara expuesta se determina $T_s$ haciendo que el calor recibido desde el entorno coincida con el transmitido hacia el hormigón:
+\begin{equation}
+  \phi=\mathcal F(T_s)
+  =h_c(T_a-T_s)+\alpha_{\mathrm{SW}}I_f
+   +\varepsilon\sigma\left[
+      F_{\mathrm{sky}}T_{\mathrm{sky},K}^{4}
+      +(1-F_{\mathrm{sky}})T_{a,K}^{4}-T_{s,K}^{4}\right].
+  \label{eq:balance-exterior}
+\end{equation}
+La convección puede aportar o retirar calor según las temperaturas; la radiación solar absorbida lo aporta, y la onda larga puede actuar en ambos sentidos. Los términos se expresan en $\mathrm{W\,m^{-2}}$. Se utilizan $\alpha_{\mathrm{SW}}=0{,}60$, $\varepsilon=0{,}90$ y $\sigma=5{,}670374419\times10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$. Todas las temperaturas elevadas a la cuarta potencia son absolutas, con $T_K=T[^{\circ}\mathrm C]+273{,}15$. Este balance exterior sigue la separación de mecanismos descrita en EnergyPlus \citep{energyplusMcAdams}.
+
+La orientación adoptada es $+x$ hacia el este y $+y$ hacia el norte. La cara horizontal superior recibe $I_f=\mathrm{GHI}$; para las caras verticales se utiliza:
+\begin{equation}
+  I_f=\mathrm{DNI}\max(0,\vec{s}\cdot\vec{n}_f)
+       +\frac{\mathrm{DHI}}{2}+\frac{r_g\,\mathrm{GHI}}{2},
+  \label{eq:solar-orientada}
+\end{equation}
+tal que $\vec{s}$ es el vector unitario hacia el sol, $\vec{n}_f$ la normal exterior de la cara y $r_g=0{,}20$ el albedo del entorno. La componente directa se anula bajo el horizonte. Las medias horarias se orientan con la posición solar del punto medio del intervalo, calculada con las fechas históricas y las coordenadas del sitio según el procedimiento de NOAA \citep{noaaSolar}. La radiación difusa se supone distribuida de manera isotrópica y no se calculan sombras geométricas entre superficies. Las caras escalonadas de la voxelización reciben la orientación de sus planos cartesianos, no la inclinación exacta del IFC. Una cara inferior eventualmente expuesta al aire recibe $r_g\,\mathrm{GHI}$; las caras en contacto con suelo siguen exclusivamente su condición conductiva.
+
+Después del retiro de la última manta se reduce la irradiancia de cada cara según su edad local:
+\begin{equation}
+  I_f^{\mathrm{sombra}}=\tau(a_j)I_f,
+  \qquad
+  \tau(a_j)=
+  \begin{cases}
+    1, & a_j<504\,\mathrm{h},\\
+    0{,}10, & a_j\geq504\,\mathrm{h}.
+  \end{cases}
+  \label{eq:sombra-local}
+\end{equation}
+Se trata de una cubierta idealizada que atenúa la radiación solar, conservando la convección y el intercambio de onda larga. Permanece durante el seguimiento; no se ha evaluado su desmontaje ni se atribuye a un producto comercial una transmisión acreditada del $10~\%$.
+
+\newpage
+
+La temperatura efectiva del cielo se estima mediante las relaciones de Clark--Allen y Walton documentadas en EnergyPlus \citep{energyplusCielo}:
+\begin{align}
+  \varepsilon_{\mathrm{sky}}^*&=
+  \left[0{,}787+0{,}764\ln\left(\frac{T_{d,K}}{273\,\mathrm K}\right)\right]
+  \left(1+0{,}0224N-0{,}0035N^2+0{,}00028N^3\right),\\
+  \varepsilon_{\mathrm{sky}}&=\min(1,\max(0,\varepsilon_{\mathrm{sky}}^*)),
+  \qquad T_{\mathrm{sky},K}^4=\varepsilon_{\mathrm{sky}}T_{a,K}^4.
+  \label{eq:cielo-efectivo}
+\end{align}
+tal que $T_{d,K}$ es el punto de rocío en kelvin y $N$ la nubosidad en décimas de cielo, entre $0$ y $10$. La nubosidad total de ERA5 se utiliza como aproximación de la opaca. El factor de vista al cielo $F_{\mathrm{sky}}$ vale $1$ en caras superiores, $0{,}5$ en verticales y $0$ en inferiores; el resto del entorno se representa a temperatura del aire. La emisividad atmosférica estimada se distingue de la emisividad de la superficie. No se dispone de mediciones infrarrojas para validar esta aproximación en el sitio.
+
+\subsection{Suelo, interfaces y cambios de borde}
+
+En la base se utiliza una resistencia de suelo $R_g=L_g/k_g$, con $L_g=0{,}50\,\mathrm m$ y $k_g=1{,}2\,\mathrm{W\,m^{-1}\,K^{-1}}$. El reservorio remoto mantiene $T_g=15\,^{\circ}\mathrm C$ desde el comienzo y durante todo el seguimiento:
+\begin{equation}
+  -k_c\nabla T\cdot\vec{n}=\frac{T_b-T_g}{R_g}.
+  \label{eq:borde-suelo}
+\end{equation}
+Esta ley permite perder calor hacia el terreno o recibirlo si el hormigón está más frío. No se resuelve una ecuación transitoria dentro del suelo: su condición inicial queda representada por el reservorio prescrito y no por un campo numérico de temperaturas. Tampoco se agrega convección, radiación ni resistencia de contacto en la base. Al aplicarla al centro de celda se incorpora la resistencia $d_i/k_c$ en serie con $R_g$.
+
+Cuando dos capas activas se encuentran, se supone contacto térmico perfecto:
+\begin{equation}
+  T^-=T^+,\qquad
+  -k^-\nabla T^-\cdot\vec{n}_j
+  =-k^+\nabla T^+\cdot\vec{n}_j.
+  \label{eq:contacto-capas}
+\end{equation}
+tal que los signos $-$ y $+$ distinguen ambos lados y $\vec{n}_j$ apunta de una capa a la otra. Se conserva la temperatura de contacto y el calor que sale de una entra en la siguiente, sin una resistencia adicional de junta. Esta condición rige una vez establecido el contacto; las temperaturas iniciales de las capas pueden ser diferentes al incorporarse el hormigón nuevo. Antes de cubrirse, la cara de la capa inferior intercambia con el aire y sus protecciones. Al activarse la nueva capa deja de ser un borde exterior y pasa a conducir hacia el vecino: no conserva simultáneamente el intercambio previo con el ambiente.
+
+La Tabla~\ref{tab:bordes-etapas} resume las condiciones y las resistencias instaladas. Se escribe $R_m=e_m/k_m$ para la madera y $R_a=e_a/k_a$ para cada manta; $a$ es la edad de la capa que aporta la cara expuesta. En las expresiones se usa el flujo entrante $\phi$ y la función ambiental $\mathcal F$ de la Ecuación~\eqref{eq:balance-exterior}. En toda cara al aire se cumple además $T_s-T_b=R_p\phi$.
+\newpage
+
+\begin{table}[htbp]
+  \centering
+  \caption{Condiciones de borde e interfaces por superficie y etapa}
+  \label{tab:bordes-etapas}
+  \small
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{p{2.5cm}p{2.0cm}p{3.7cm}p{3.0cm}p{4.5cm}}
+    \toprule
+    Superficie & Etapa & Ecuación & Parámetros & Fuente y fundamento \\
+    \midrule
+    Lateral al aire & $0\leq a<72\,\mathrm h$ & $\phi=\mathcal F(T_s)$ & $R_p=R_m+2R_a$ & AraucoPly, Aislanglass y plan: madera con dos mantas \\
+    Lateral al aire & $72\leq a<240\,\mathrm h$ & $\phi=\mathcal F(T_s)$ & $R_p=2R_a$ & Plan: retiro de madera y conservación de mantas \\
+    Superior al aire & $0\leq a<240\,\mathrm h$ & $\phi=\mathcal F(T_s)$ & $R_p=2R_a$ & Aislanglass y plan: dos mantas, sin madera \\
+    Lateral o superior al aire & $240\leq a<504\,\mathrm h$ & $\phi=\mathcal F(T_s)$ & $R_p=R_a$ & Plan: retiro de la primera manta \\
+    Lateral o superior al aire & $a\geq504\,\mathrm h$ & $\phi=\mathcal F(T_b)$ con $I_f$ atenuada & $R_p=0$, $\tau=0{,}10$ & Plan: retiro de última manta y sombra idealizada \\
+    Base sobre suelo & Desde su activación & $\phi=(T_g-T_b)/R_g$ & $T_g=15\,^{\circ}\mathrm C$, $R_g=L_g/k_g$ & Supuesto de reservorio y conducción equivalente \\
+    Interfaz interna & Ambas capas activas & $T^-=T^+$ y continuidad de flujo, Ec.~\eqref{eq:contacto-capas} & Resistencia de junta nula & Contacto perfecto supuesto, sin borde de aire \\
+    \bottomrule
+  \end{tabular}
+  \captionsetup{skip=2pt}
+  \caption*{Fuente: configuración final del estudio, referencias de materiales y ecuaciones del modelo implementado.}
+\end{table}
+
+La programación de bordes explica por qué el retiro de una manta puede cambiar el diferencial térmico aun después de terminar la colocación. El modelo evalúa esa evolución durante las dos ventanas de seguimiento, pero no reemplaza una comprobación de resistencia o fisuración mecánica. La solución numérica de estas ecuaciones, la reconstrucción de temperaturas de superficie y las comprobaciones de estabilidad y conservación se presentan en los apartados siguientes.
