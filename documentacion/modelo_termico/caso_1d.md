@@ -3,9 +3,9 @@
 ## Qué caso usamos
 
 Desde el 20 de octubre usamos como caso base el script del video:
-[01_1d_dirichlet_verification.py](../casos/1d/codigos/01_1d_dirichlet_verification.py).
+[01_1d_dirichlet_verification.py](../../casos/1d/codigos/01_1d_dirichlet_verification.py).
 Se conserva sin modificar. Las entradas están en
-[casos/1d/parametros.json](../casos/1d/parametros.json).
+[casos/1d/parametros.json](../../casos/1d/parametros.json).
 
 | Magnitud | Valor del script |
 | --- | --- |
@@ -99,10 +99,10 @@ numérico transiente**. Los gráficos y métricas la identifican de esa forma.
 
 ## Verificación separada: el seno de la guía
 
-La [guía extensa, §7](../Enunciados%20e%20Instrucciones/Guias/DIFUSION_DE_CALOR_1D_2D_3D.md)
+La [guía extensa, §7](../../Enunciados%20e%20Instrucciones/Guias/DIFUSION_DE_CALOR_1D_2D_3D.md)
 usa otro ejemplo: extremos a 20 °C, amplitud 50 K, mismo $L$, $\alpha$ y 101
 nodos, pero tiempo final de 1500 s. Sus entradas están en
-[verificacion_seno.json](../casos/1d/verificacion_seno.json).
+[verificacion_seno.json](../../casos/1d/verificacion_seno.json).
 
 $$T(x,0)=20+50\sin(\pi x/L),\qquad T(0,t)=T(L,t)=20.$$
 
@@ -121,12 +121,12 @@ y operaciones activos, y corrige los rótulos en nuestros gráficos.
 
 ## Evidencia y límites
 
-- [Solver propio](../desarrollo/mcplan/difusion_1d.py): mismo FTCS, con IO separado.
-- [Tests](../desarrollo/tests/test_difusion_1d.py): reproducción de los 20 perfiles del video
+- [Solver propio](../../desarrollo/mcplan/difusion_1d.py): mismo FTCS, con IO separado.
+- [Tests](../../desarrollo/tests/test_difusion_1d.py): reproducción de los 20 perfiles del video
   con tolerancia $10^{-12}$ °C, solución exacta sinusoidal, estados estacionarios,
   actualización manual, estabilidad, ajuste de tiempos e inputs inválidos.
-- [Notebook ejecutado](explicacion_solver_1d.ipynb): explicación y experimentos.
-- [Caso ejecutable y resultados](../casos/1d/README.md).
+- [Notebook ejecutado](../explicacion_solver_1d.ipynb): explicación y experimentos.
+- [Caso ejecutable y resultados](../../casos/1d/README.md).
 
 El refinamiento conjunto del caso sinusoidal mantiene $r$ casi constante
 (puede disminuir por el ajuste temporal) y comprueba el comportamiento esperado
@@ -135,7 +135,7 @@ pendiente. Comparar con el script del profesor comprueba reproducción, mientras
 que la solución exacta aporta una verificación independiente.
 
 Neumann, Robin y calor interno también se ejecutan desde `ejecutar.py`, mediante
-[ejemplos_1d.py](../desarrollo/mcplan/ejemplos_1d.py). Los bloques de Dirichlet
+[ejemplos_1d.py](../../desarrollo/mcplan/ejemplos_1d.py). Los bloques de Dirichlet
 y la verificación exacta siguen en `difusion_1d.py`. No hay hidratación ni simulación
 de la fundación real; este ejemplo no evalúa los límites docentes de 70 y 20 °C.
 

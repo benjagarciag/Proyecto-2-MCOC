@@ -6,9 +6,9 @@ a las 17 h de Chile. En Canvas se declara repositorio y SHA evaluado.
 
 ## Abrir los resultados
 
-- [Visualizador E11](../../resultados/e11/visualizador.html).
-- [Visualizador E12](../../resultados/e12/visualizador.html).
-- [Reporte determinista de E12](../../Reportes/Reporte_E12.md).
+- [Visualizador E11](../../../resultados/e11/visualizador.html).
+- [Visualizador E12](../../../resultados/e12/visualizador.html).
+- [Reporte determinista de E12](../../reportes/Reporte_E12.md).
 
 Descarga el repositorio y abre el HTML con doble clic en Chrome o Edge.
 Cada archivo incorpora sus datos y funciona sin conexión. Recarga con Ctrl+F5
@@ -22,13 +22,13 @@ después de regenerarlo.
 
 ## Recorrido de la demo
 
-1. Abrir el [snapshot GFS](../../datos/clima/forecasts/20261110T190042897941Z_44b1a950.json).
+1. Abrir el [snapshot GFS](../../../datos/clima/forecasts/20261110T190042897941Z_44b1a950.json).
    Mostrar fuente, modelo, coordenadas, unidades y descarga del 10 de noviembre
    de 2026 a las 19:00:42 UTC, junto con la respuesta horaria.
 2. Abrir Resultados y entorno en el HTML. La ficha separa los datos meteorológicos
    utilizados del calendario de la simulación y muestra hora de Chile.
 3. Mostrar cómo el aire horario alimenta las condiciones de borde.
-   [El solver](../../desarrollo/mcplan/termica_fundacion.py) interpola la serie.
+   [El solver](../../../desarrollo/mcplan/termica_fundacion.py) interpola la serie.
    El coeficiente convectivo h permanece fijo en 5 W/(m²·K).
 4. Ejecutar la corrida corta si el ayudante lo solicita. Con 0,50 m tiene
    192 pasos y alcanza 50,67 °C a las 48 h.
@@ -123,10 +123,10 @@ en Python. Los controles del HTML recorren los resultados guardados.
 Los parámetros de entrada posteriores a «Entrega E11» usan moldaje de madera
 de 18 mm (k=0,158 W/(m·K), referencia de familia AraucoPly) y aislación
 Aislanglass de 40 mm (k=0,042 W/(m·K)).
-[Fuentes y alcance](../../documentacion/e10_seleccion_moldaje_aislacion.md).
+[Fuentes y alcance](../../../documentacion/entorno_termico/seleccion_moldaje_aislacion.md).
 Se conserva la cobertura solo lateral y los retiros docentes de 72/96 h.
 Las corridas E12 del 12 de noviembre ya incorporan esas capas en ambas mallas;
-el [reporte E12](../../Reportes/Reporte_E12.md) y sus figuras describen los
+el [reporte E12](../../reportes/Reporte_E12.md) y sus figuras describen los
 resultados actualizados. Los valores de referencia de 48 h de esta guía
 proceden de la corrida indicada en cada resumen; comprobar los parámetros
 efectivos antes de comparar ejecuciones. Los resúmenes conservan lo que se

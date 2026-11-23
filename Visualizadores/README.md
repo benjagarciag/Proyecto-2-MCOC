@@ -8,7 +8,7 @@ estudio y la barra 3D con fuente localizada; no depende de una entrega E05.
 
 - [E11 con resultados Python](../resultados/e11/visualizador.html).
 - [E12 con resultados Python](../resultados/e12/visualizador.html).
-- [Guía de ejecución y demo](../entregas/E11/README.md).
+- [Guía de ejecución y demo](../archivo/entregas_intermedias/E11/README.md).
 
 Estos HTML incorporan resultados calculados por Python. Permiten seleccionar
 0,50 o 0,25 m, reproducir temperaturas, hacer cortes y clipping, consultar clima,
@@ -99,7 +99,7 @@ E08 añade `node desarrollo/tests/test_e08_termico_web.cjs`: solución
 adiabática con integral exacta de fuente, edades distintas, entradas editables,
 controladores y corrida de hidratación sobre IFC durante 14 días. Ambas
 comprobaciones JavaScript se ejecutaron y aprobaron; no se volvió a ejecutar
-la batería Python histórica. Ver [recorrido E08](../entregas/E08/README.md).
+la batería Python histórica. Ver [recorrido E08](../archivo/entregas_intermedias/E08/README.md).
 
 ## Abrir
 

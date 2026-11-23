@@ -1,18 +1,12 @@
-# Casos para ejecutar
+# Ejecutores por tarea
 
-Cada subcarpeta reúne las entradas y el script de ejecución de un problema.
-El código que pueda reutilizarse entre problemas se guarda en `desarrollo/mcplan/`.
+Ejecuta los comandos desde la raíz del repositorio. Las rutas internas se mantienen para que sigan funcionando los comandos históricos y las auditorías con manifiestos de huellas.
 
-| Caso | Contenido y estado |
+| Tarea | Entradas |
 | --- | --- |
-| [1d/](1d/README.md) | Caso base del video (interior 20 °C y extremos 0/10 °C) y verificación sinusoidal de la guía. |
-| [2d/](2d/README.md) | Difusión 2D con Dirichlet y solución sinusoidal exacta. |
-| [3d/](3d/README.md) | Difusión 3D con Dirichlet y cortes del volumen. |
-| [bordes/](bordes/README.md) | Neumann, aislamiento y Robin en 2D/3D. |
-| [fuentes/](fuentes/README.md) | Generación volumétrica uniforme/localizada y convección. |
-| [materiales/](materiales/README.md) | Dos materiales, contacto perfecto y comparación homogénea. |
-| [Visualizador unificado](../Visualizadores/README.md) | Ventana común para modificar parámetros, ejecutar tests y reproducir casos 1D/2D/3D. |
-
-Cada caso incluye README, parámetros y ejecutor. Las figuras se guardan en
-`resultados/`, en carpetas fijas que se actualizan al ejecutar. Para el recorrido
-completo, abrir [E04](../entregas/E04/README.md).
+| Auditar y reproducir el cierre final | [Comprobación de solo lectura](sensibilidad_h/verificar_resultados_publicados.py) · [Auditor original](sensibilidad_h/auditar_cierre_f02.py) · [Ejecutor](sensibilidad_h/ejecutar_cierre_f02.py) · [Configuración](sensibilidad_h/cierre_f02.json) |
+| Explorar controles de obra | [Circuitos](sensibilidad_h/confirmar_circuitos.py) · [Radiación](sensibilidad_h/sensibilidad_radiacion.py) · [Protección posterior](sensibilidad_h/proteccion_postdesmolde.py) |
+| Construir y comparar escenarios | [Catálogo y parámetros](incertidumbre/parametros.json) · [Ejecutor de incertidumbre](incertidumbre/ejecutar.py) · [Verificaciones complementarias](f02_verificaciones/README.md) |
+| Importar IFC y discretizar la fundación | [Extracción, voxelización, vertidas y activación](e07/README.md) |
+| Visualizar simulaciones deterministas previas | [Ejecutor de 48 h y 14 días](semana4/ejecutar.py) · [Vista 3D](semana4/ver_3d.py) · [Dependencias de vista](semana4/requirements-vista.txt) |
+| Comprobar difusión y balances básicos | [1D](1d/codigos/README.md) · [2D](2d/) · [3D](3d/) · [Bordes](bordes/) · [Fuentes](fuentes/) · [Materiales](materiales/) |

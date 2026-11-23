@@ -22,7 +22,7 @@ cero antes de activar e integral exacta por intervalo, incluso si cruza una colo
 `resumen_hidratacion.json` en `resultados/e07/hidratacion/`. `--solo-datos`
 omite figuras. No se calcula la temperatura espacial de la fundación ni clima.
 Ecuaciones, API, unidades, uso y pendientes en
-[e07_hidratacion.md](../../documentacion/e07_hidratacion.md).
+[e07_hidratacion.md](../../documentacion/modelo_termico/hidratacion.md).
 
 ## Etapa 5: activación temporal
 
@@ -42,7 +42,7 @@ Resultados en `resultados/e07/activacion_temporal/`: `secuencia_constructiva.png
 `resumen_construccion.json`. Se conservan los PNG anteriores.
 
 **481 pruebas aprobadas: 434 anteriores + 47 nuevas.** Funciones, campos,
-limitaciones y comandos en [e07_activacion_temporal.md](../../documentacion/e07_activacion_temporal.md).
+limitaciones y comandos en [e07_activacion_temporal.md](../../documentacion/geometria_y_activacion/activacion_temporal.md).
 M1 es una etiqueta; falta definir sus propiedades físicas. La resolución sigue
 sin certificar y no se corrigen capas ausentes al activar.
 
@@ -62,7 +62,7 @@ vecinos como exterior, interna o interfaz, sin duplicar contactos.
 
 **434 pruebas aprobadas: las 410 anteriores + 24 nuevas.** Las áreas, funciones,
 comandos de prueba y limitaciones están en
-[e07_superficies.md](../../documentacion/e07_superficies.md).
+[e07_superficies.md](../../documentacion/geometria_y_activacion/superficies.md).
 Con h=1 m desaparecen los contactos 01–02 y 02–03 y surge 01–03 artificial.
 Ninguna resolución queda certificada. Estas superficies son geométricas del
 modelo completo; no se implementa todavía exposición térmica temporal.
@@ -79,7 +79,7 @@ Entradas: `vertidas_volumenes.json` (h=1,0.5,0.25 m, mismo origen y tolerancia).
 `--solo-datos` imprime tablas sin gráficos. Se leen las cinco mallas una sola
 vez; cada ocupado recibe un ID 1..5 y los vacíos conservan 0. Los solapes de
 interiores se rechazan con diagnóstico. El criterio de frontera y todas las
-tablas están en [e07_vertidas_volumenes.md](../../documentacion/e07_vertidas_volumenes.md).
+tablas están en [e07_vertidas_volumenes.md](../../documentacion/geometria_y_activacion/vertidas_volumenes.md).
 
 Figuras fijas en `resultados/e07/vertidas_volumenes/`: `vertidas_y_corte.png`,
 `comparacion_resoluciones.png`, `errores_volumen.png`.
@@ -121,7 +121,7 @@ python -B -m pytest -q -p no:cacheprovider --basetemp=.venv/cache/pytest_etapa2
 
 Resultado actual: **389 pruebas aprobadas: 353 anteriores y 36 nuevas**.
 La tolerancia, política de frontera y limitaciones están en
-[e07_voxelizacion.md](../../documentacion/e07_voxelizacion.md).
+[e07_voxelizacion.md](../../documentacion/geometria_y_activacion/voxelizacion.md).
 
 ## Etapa 1: extracción conservada
 
@@ -194,4 +194,4 @@ IFC inválidas se crean allí, nunca sobre `fundacion.ifc`. Resultado: **353 tes
 aprobados: 320 anteriores + 33 nuevos**. No se generan gráficos durante pytest.
 
 Validaciones, tolerancias, resultados y límites en
-[e07_extraccion_ifc.md](../../documentacion/e07_extraccion_ifc.md).
+[e07_extraccion_ifc.md](../../documentacion/geometria_y_activacion/extraccion_ifc.md).

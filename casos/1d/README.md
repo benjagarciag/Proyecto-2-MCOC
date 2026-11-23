@@ -8,7 +8,7 @@ interno, entrar en [codigos/](codigos/README.md).
 El caso base usa una barra de 1 m, interior a 20 °C, extremos a 0 y 10 °C,
 alpha = 10⁻⁴ m²/s, 101 nodos y 4500 s. El caso sinusoidal de la guía se usa
 por separado para verificación exacta. La física y las diferencias están en
-[la documentación del caso 1D](../../documentacion/caso_1d.md).
+[la documentación del caso 1D](../../documentacion/modelo_termico/caso_1d.md).
 
 ## Archivos
 
@@ -84,4 +84,4 @@ se generan cuando ejecutes el caso. Valores de referencia de las comprobaciones 
 La distancia a la recta estacionaria del caso base no es error transiente.
 La solución exacta solo se utiliza para el caso sinusoidal, que tiene esa referencia.
 
-Evaluación que lo utiliza: [E01](../../entregas/E01/README.md).
+Evaluación que lo utiliza: [E01](../../archivo/entregas_intermedias/E01/README.md).

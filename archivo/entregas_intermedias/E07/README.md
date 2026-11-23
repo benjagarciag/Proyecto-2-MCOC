@@ -10,7 +10,7 @@ La actividad no exige informe.
 
 ## Laboratorio HTML actualizado
 
-Abrir [Visualizadores/E07.html](../../Visualizadores/E07.html). Contiene las
+Abrir [Visualizadores/E07.html](../../../Visualizadores/E07.html). Contiene las
 mismas tres grillas IFC, volúmenes, superficies y colocaciones. Añade un ensayo
 didáctico de conducción 3D sobre voxeles activos, calor interno directo y bordes
 Dirichlet, Neumann y Robin. Calcula Tmin/Tmax por instante y de toda la corrida,

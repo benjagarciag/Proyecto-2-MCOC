@@ -43,13 +43,13 @@ Windows. No se incluyen el entorno `.venv`, cachés ni configuración personal.
 
 | Etapa | Código/ejemplo | Explicación |
 |---|---|---|
-| 2D Dirichlet | [Caso 2D](../../casos/2d/README.md) | [Balance 2D](../../documentacion/e04_2d.md) |
-| 3D Dirichlet | [Caso 3D](../../casos/3d/README.md) | [Balance 3D](../../documentacion/e04_3d.md) |
-| Neumann/Robin | [Bordes](../../casos/bordes/README.md) | [Bordes y estabilidad](../../documentacion/e04_bordes.md) |
-| Generación W/m³ | [Fuentes](../../casos/fuentes/README.md) | [Unidades y energía](../../documentacion/e04_fuentes.md) |
-| Dos materiales | [Materiales](../../casos/materiales/README.md) | [Interfaz y conductividad armónica](../../documentacion/e04_materiales.md) |
+| 2D Dirichlet | [Caso 2D](../../../casos/2d/README.md) | [Balance 2D](../../../documentacion/modelo_termico/2d.md) |
+| 3D Dirichlet | [Caso 3D](../../../casos/3d/README.md) | [Balance 3D](../../../documentacion/modelo_termico/3d.md) |
+| Neumann/Robin | [Bordes](../../../casos/bordes/README.md) | [Bordes y estabilidad](../../../documentacion/modelo_termico/bordes.md) |
+| Generación W/m³ | [Fuentes](../../../casos/fuentes/README.md) | [Unidades y energía](../../../documentacion/modelo_termico/fuentes.md) |
+| Dos materiales | [Materiales](../../../casos/materiales/README.md) | [Interfaz y conductividad armónica](../../../documentacion/modelo_termico/materiales.md) |
 
-El núcleo ampliado es [difusion_bordes.py](../../desarrollo/mcplan/difusion_bordes.py).
+El núcleo ampliado es [difusion_bordes.py](../../../desarrollo/mcplan/difusion_bordes.py).
 Reutiliza el avance explícito, bordes y fuentes con argumentos opcionales. Los
 solvers iniciales y sus pruebas permanecen disponibles. Las explicaciones por
 etapa conservan el estado histórico local; este índice resume la versión publicada.
@@ -67,18 +67,18 @@ se recalculan. Propiedades didácticas, sin calibración de la fundación.
 
 | Ejemplo | Figura |
 |---|---|
-| 2D Dirichlet | [Temperaturas y error](../../resultados/2d/base/perfiles_temperatura.png) |
-| 3D Dirichlet | [Cortes del volumen](../../resultados/3d/base/perfiles_temperatura.png) |
-| 2D adiabático | [Conservación](../../resultados/bordes/2d_adiabatico/perfiles_temperatura.png) |
-| 2D Robin | [Enfriamiento](../../resultados/bordes/2d_robin/perfiles_temperatura.png) |
-| 3D Neumann | [Flujo impuesto](../../resultados/bordes/3d_neumann/perfiles_temperatura.png) |
-| 3D Robin | [Convección](../../resultados/bordes/3d_robin/perfiles_temperatura.png) |
-| Fuente uniforme | [Solución adiabática exacta](../../resultados/fuentes/uniforme/perfiles_temperatura.png) |
-| Fuente localizada | [Distribución espacial](../../resultados/fuentes/localizada/perfiles_temperatura.png) |
-| Fuente y Robin | [Generación y pérdidas](../../resultados/fuentes/robin/perfiles_temperatura.png) |
-| Dos materiales 2D | [Contacto y comparación](../../resultados/materiales/2d/perfiles_temperatura.png) |
-| Dos materiales 3D | [Bloques y cortes](../../resultados/materiales/3d/perfiles_temperatura.png) |
-| Interfaz estacionaria | [Perfil exacto y continuidad del flujo](../../resultados/materiales/verificacion_interfaz/perfiles_temperatura.png) |
+| 2D Dirichlet | [Temperaturas y error](../../../resultados/2d/base/perfiles_temperatura.png) |
+| 3D Dirichlet | [Cortes del volumen](../../../resultados/3d/base/perfiles_temperatura.png) |
+| 2D adiabático | [Conservación](../../../resultados/bordes/2d_adiabatico/perfiles_temperatura.png) |
+| 2D Robin | [Enfriamiento](../../../resultados/bordes/2d_robin/perfiles_temperatura.png) |
+| 3D Neumann | [Flujo impuesto](../../../resultados/bordes/3d_neumann/perfiles_temperatura.png) |
+| 3D Robin | [Convección](../../../resultados/bordes/3d_robin/perfiles_temperatura.png) |
+| Fuente uniforme | [Solución adiabática exacta](../../../resultados/fuentes/uniforme/perfiles_temperatura.png) |
+| Fuente localizada | [Distribución espacial](../../../resultados/fuentes/localizada/perfiles_temperatura.png) |
+| Fuente y Robin | [Generación y pérdidas](../../../resultados/fuentes/robin/perfiles_temperatura.png) |
+| Dos materiales 2D | [Contacto y comparación](../../../resultados/materiales/2d/perfiles_temperatura.png) |
+| Dos materiales 3D | [Bloques y cortes](../../../resultados/materiales/3d/perfiles_temperatura.png) |
+| Interfaz estacionaria | [Perfil exacto y continuidad del flujo](../../../resultados/materiales/verificacion_interfaz/perfiles_temperatura.png) |
 
 ## Alcance y preparación oral
 

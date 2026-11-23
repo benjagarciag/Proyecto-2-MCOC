@@ -35,7 +35,7 @@ estos últimos no se ejecutaron al preparar el commit, por preferencia del usuar
 El conjunto incorpora soluciones 2D/3D,
 Neumann, Robin, conservación adiabática, fuentes, materiales, barra y fuente
 temporal, además de **29 variantes editables para E05** en
-`test_e05_parametros.py`. Ver la [guía de estudio](../../entregas/E05/README.md).
+`test_e05_parametros.py`. Ver la [guía de estudio](../../archivo/entregas_intermedias/E05/README.md).
 
 Para imprimir parámetros y errores, sin generar archivos:
 

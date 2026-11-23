@@ -1,34 +1,8 @@
-# Entregas y evaluaciones
+# Entregas finales
 
-Cada evaluación tendrá una carpeta con su identificador oficial, por ejemplo
-`E01/` o `E02/`. Su README indicará requisitos, estado y enlaces a la evidencia.
-
-| Evaluación | Fecha | Estado |
+| Entrega | Documento final | Respaldo |
 | --- | --- | --- |
-| E13: incertidumbre | 18 de noviembre de 2026 | [Estado y respaldo integrado](F02/README.md); candidata exploratoria y pendientes identificados |
-| [F02: defensa final](F02/README.md) | 19 de noviembre de 2026 | [Reparto del trabajo restante](F02/PENDIENTES_EQUIPO.md); defensa aún en preparación |
-| [E01: revisión oral BIM, difusión y solver 1D](E01/README.md) | 21 de octubre de 2026 | En preparación |
-| [E04: revisión oral 2D/3D y condiciones de borde](E04/README.md) | 28 de octubre de 2026 | Implementación y 251 pruebas; defensa oral por realizar |
-| [E10: entorno, moldaje y clima](E10/README.md) | 11 de noviembre de 2026 | Preparada para revisión oral con bordes, suelo, capas y snapshot real |
-| [E11: weather pipeline y 3D](E11/README.md) | 12 de noviembre de 2026 | Avance de 48 h, HTML multirresolución y VTI |
-| [E12: simulación determinista de 14 días](../Reportes/Reporte_E12.md) | 13 de noviembre de 2026 | Reporte actualizado, 336 h con madera 18 mm y lana 40 mm, dos mallas, capturas y VTI |
+| F01 · Artículo y plan de control térmico | [PDF](F01/Articulo-Final/F01_Grupo6.pdf) | [Overleaf](F01/Articulo-Final/F01_Grupo6_Overleaf.zip) · [Fuentes LaTeX](F01/articulo/README.md) |
+| F02 · Defensa | [PowerPoint final](F02/presentacion/F02_Grupo6_FINAL.pptx) | [Guion](F02/GUION_ORAL_F02.md) · [Cierre técnico](F02/README.md) |
 
-Crear las carpetas de las evaluaciones siguientes al empezar a trabajarlas.
-El calendario completo permanece en el material del profesor.
-
-Los documentos, el código, los modelos y los resultados conservan su ubicación
-por propósito. Aquí se enlazan para preparar la revisión, sin copiarlos.
-
-Cada actividad debe registrar su repositorio y commit evaluado. El SHA queda
-congelado al comenzar la evaluación y debe incluir toda la evidencia enlazada.
-
-
-La publicación de Semana 4 lleva el mensaje Entrega E10 - avances de E11 y E12.
-El README de E10 indica cómo identificar el SHA exacto de esa publicación.
-Los resúmenes identifican además el código que ejecutó la simulación y los
-archivos de entrada. E12 es un escenario provisional y supera el diferencial
-de 20 K con las dos mallas térmicas verificadas.
-
-El cierre E12 se publica con el mensaje **Entrega E12**. Su SHA se obtiene con
-`git log -1 --format=%H --grep="^Entrega E12$"`; el SHA base registrado en los
-resúmenes de cálculo no debe confundirse con ese commit evaluado.
+Las [entregas intermedias y los reportes](../archivo/README.md) sirven para consultar la evolución del proyecto.

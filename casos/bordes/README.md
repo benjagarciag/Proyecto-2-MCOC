@@ -2,7 +2,7 @@
 
 > Versión publicada E04: ejecutar desde la raíz del repositorio con el entorno
 > `.venv` preparado según el README principal. El total actual es 251 pruebas;
-> los recuentos de cada etapa son históricos. [Índice E04](../../entregas/E04/README.md).
+> los recuentos de cada etapa son históricos. [Índice E04](../../archivo/entregas_intermedias/E04/README.md).
 
 Trabajar desde la raíz de **E04_pruebas_2d**, no desde el proyecto original.
 Los módulos anteriores se conservan; estos ejemplos usan la extensión nueva
@@ -96,4 +96,4 @@ Desde la misma raíz:
 
 Resultado de esta etapa: **156 pruebas aprobadas**, 83 anteriores más 73 nuevas.
 Las pruebas no generan figuras. Explicación y defensa oral en
-[e04_bordes.md](../../documentacion/e04_bordes.md).
+[e04_bordes.md](../../documentacion/modelo_termico/bordes.md).

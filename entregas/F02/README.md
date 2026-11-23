@@ -1,34 +1,25 @@
-# F02: cierre revisado con manta504h y sombra90%
+# F02 · Defensa y evidencia de cierre
 
-**Preentrega F02:** [PPT/PDF](presentacion/README.md) y [guion](GUION_ORAL_F02.md) actualizados con el cierre. Ocho principales, índice yB01–B15;24láminas.
-**Resultado técnico de cierre:** [matrices, resultados y reproducción](cierre_revision_final/RESULTADOS_CIERRE.md). La propuesta60m³/h/12°C tiene24pares completos0,20m/300s hasta672h: Tmax47,0322°C,ΔT15,7202K,Punión0 y sin alertas. La matriz gruesa60 y su vecina55 usan la misma protección y también cumplen. Auditoría72piezas/2045transiciones aprobada;se conservan336h y seguimiento672h. Entrada nueva`casos/sensibilidad_h/ejecutar_cierre_f02.py`,sin simulación por defecto. Configuración[final revisada](cierre_revision_final/CONFIGURACION_FINAL_REVISADA.json),[desarrollo de puntos5–6](CIERRE_PUNTOS_RESTANTES.md). Siete figuras,parámetros y144filas de métricas/balance disponibles en`cierre_revision_final/`. PPT/PDF y guion integrados en la preentrega: [presentación vigente](presentacion/README.md). Se conserva la estructura personalizada de6:25.
+[PowerPoint final](presentacion/F02_Grupo6_FINAL.pptx) · [Guion oral](GUION_ORAL_F02.md) · [Notas de la versión final](presentacion/README.md)
 
-## Antecedentes de la revisión
+## Propuesta y comparación
 
-Los textos siguientes conservan la evolución anterior. En particular,`modelo_f02.py`y`MODELO_VIGENTE.json`corresponden a la configuración anterior360h sin sombra;para reproducir el cierre revisado usar la entrada nueva y su configuración indicadas arriba.
+| Colocación continua | Resolución | Duración [h] | Mayor Tmax [°C] | Mayor ΔT [K] | Riesgo conjunto |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 60 m³/h | 0,40 m / 300 s | 10,6129 | 47,4941 | 16,5306 | 0/24 |
+| 55 m³/h | 0,40 m / 300 s | 11,5777 | 47,5128 | 16,6011 | 0/24 |
+| 60 m³/h, confirmación fina | 0,20 m / 300 s | 10,6129 | 47,0322 | 15,7202 | 0/24 |
 
-**Nuevo ensayo de protección posterior:** [tres alternativas simuladas](proteccion_postdesmolde/RESULTADO_TRES_ALTERNATIVAS.md). La combinación última manta hasta504h de edad local+sombra solar90% posterior cumple24pares gruesos a672h, Tmax47,4941°C/ΔT16,5306K/Punión0 y sin alarmas. Tres confirmaciones finas y dos temporales también cumplen, selectivas. Las medidas por separado no cumplen. Estudio79piezas/2787transiciones auditado; no sustituye automáticamente configuración vigente ni actualiza aún PPT/guion. La sombra es idealizada y permanece hasta672h; no se acredita su retiro ni instalación real.
+Las tres matrices usan 12 °C, once capas, nueve circuitos equivalentes, radiación solar y de onda larga, última manta hasta 504 h de edad local y sombra solar ideal del 90 % posterior. Hay 24 escenarios por matriz y se conservan las dos ventanas de 336 y 672 h. La confirmación fina mantiene la recomendación a 60 m³/h. La disponibilidad del caudal, la instalación del enfriamiento y la sombra son supuestos de obra. [Resultados y alcance](cierre_revision_final/RESULTADOS_CIERRE.md)
 
-**Revisión en curso de la pauta:** [desarrollo de apartados1–3.3](revision_puntos_1_3/DESARROLLO_PUNTOS_1_A_3_3.md). Incluye t₀, cronograma completo, dominio/S25 e indicadores y compara24pares a336/672h. El cumplimiento336h no acredita el plan extendido:24/24excedenΔT y16conservan alarma de cola. La recomendación completa requiere revisar protección/control. PPT y guion se actualizarán después de revisar el resto deF02, según instrucción del usuario.
+## Respaldo por tema
 
-Se incorporan solar y onda larga, con el enfriamiento equivalente de nueve circuitos. Entrada: `casos/sensibilidad_h/modelo_f02.py`. Sin opciones consulta el estado sin simular. `--ejecutar` resuelve o reutiliza los24 pares de la candidata. `--comparar-planes --ejecutar` incluye60/55/50/45m3/h. `--malla 0.2 --ejecutar` reproduce la matriz fina de la candidata. `--auditar` revisa la evidencia.
+| Tema | Material |
+| --- | --- |
+| Parámetros y cálculo | [Configuración final](cierre_revision_final/CONFIGURACION_FINAL_REVISADA.json) · [Ecuaciones](ECUACIONES_MODELO_VIGENTE.md) · [Parámetros](cierre_revision_final/PARAMETROS_FINAL.csv) |
+| Geometría, colocación y refrigeración | [Circuitos y capas](CIRCUITOS_Y_CAPAS_ADOPTADOS.md) · [Cota de duración](JUSTIFICACION_DURACION_MINIMA.md) · [Suministro](MATERIAL_Y_SUMINISTRO.md) |
+| Incertidumbre, verificación y matrices | [Comparación](cierre_revision_final/COMPARACION_PLANES.csv) · [Métricas por escenario](cierre_revision_final/METRICAS_144_FILAS.csv) · [Balances](cierre_revision_final/BALANCES_144_FILAS.csv) · [Matrices originales](../../resultados/cierre_f02/) |
+| Figuras para revisión | [Duración y riesgo](cierre_revision_final/01_D_VS_PROBABILIDAD.png) · [Cronogramas](cierre_revision_final/02_CRONOGRAMAS.png) · [Curvas](cierre_revision_final/03_CURVAS_COMPARABLES.png) · [Cortes](cierre_revision_final/04_CORTES_COMPARABLES_672H.png) |
+| Estudios previos | [Protección posterior](proteccion_postdesmolde/RESULTADO_TRES_ALTERNATIVAS.md) · [Sensibilidad a radiación](SENSIBILIDAD_RADIACION.md) · [Antecedentes del proyecto](../../archivo/README.md) |
 
-- [Comparacion completa y resultados](COMPARACION_CIRCUITOS_FINAL.md).
-- [Ecuaciones del modelo](ECUACIONES_MODELO_VIGENTE.md).
-- [Interaccion real y equivalente de tuberias](INTERCAMBIO_TUBERIAS.md).
-- [Guion oral actualizado](GUION_ORAL_F02.md).
-- [Brief detallado de diapositivas](BRIEF_DIAPOSITIVAS_F02.md).
-- [Presentacion y reproduccion](presentacion/README.md).
-- [Configuracion y hashes vigentes](MODELO_VIGENTE.json).
-
-## Evidencia actual
-
-Ventana comun0-336h desde la primera colocacion. Cuatro matrices gruesas de24 pares a0,40m/300s y matriz fina completa de la candidata a0,20m/300s. Todas sin excedencias en14dias bajo el catalogo discreto. Candidata fina: Tmax47,0322C y diferencial15,7202K. Seis contrastes finos de alternativas y tres temporales son selectivos. Auditoria5matrices/129piezas/1161registros aprobada.
-
-La refrigeracion usa Uvol5W/(m3K), agua uniforme18C, tope global15kW y control19/18 con cobertura. No resuelve pared de tubo, pelicula interior o agua axial. El caudal operativo18L/min por ramal no determina la extraccion del solver. Los resultados no acreditan una instalacion real ni riesgo real <=5%.
-
-Seguimiento posterior con radiacion600-672h:24 excedencias del diferencial y16picos pendientes. No confundir ese diagnostico con el requisito14dias ni autorizar retiros posteriores por cumplirlo. La ultima manta se retira nominalmente a360h de edad local.
-
-Resultados vigentes: `resultados/familia_radiacion_336h/`. Tablas y siete figuras: `evidencia_f02_radiacion/`. La sensibilidad inicial se conserva en [su informe](SENSIBILIDAD_RADIACION.md). Matrices sin radiacion y sus figuras permanecen como antecedentes en `resultados/comparacion_circuitos/` y `evidencia_circuitos/`.
-
-El grupo prepara conjuntamente el informe y debe ensayar la defensa. La publicacion/SHA final y ensayo oral no forman parte de esta actualizacion. No se altero el IFC ni se fusionaron ramas nuevas.
+El informe escrito y sus archivos de edición están en [F01](../F01/README.md).

@@ -1,5 +1,7 @@
 # Contexto del repositorio
 
+- El README de raíz prioriza el artículo F01, la defensa F02 y la navegación por tema. Las entregas y reportes intermedios se consultan en `archivo/`. Las rutas mencionadas en notas históricas corresponden a la etapa registrada. Conserva las rutas y los bytes de los insumos, matrices y scripts que respaldan el cierre.
+
 - Presentación final19/11: usuario pidió conservar todos sus cambios, añadir ecuaciones y dejar un soloPPT. `entregas/F02/presentacion/F02_Grupo6_FINAL.pptx` es el único PPTX deF02. Base fue Bordes_resumen guardado01:23:38;24láminas y recursos originales idénticos byte por byte, nuevaB16/diap25con8ecuacionesOMML editables. Índice original intacto;accederB16al final. Eliminados6PPTprevios(incluido temporizado) yPDFanteriores;MP4/materialoficial conservados. `VERIFICACION_FINAL.json` registra conservación,estructura/geometría aprobadas y diferencias previas de serialización de gráficos;no se reescribieron ni se afirma gate exacto de caché aprobado. Sin nuevas simulaciones ni publicación. No regenerar desde versiones anteriores ni restaurar residuales sin pedido del usuario.
 
 - Video de práctica pedido 18/11 en `entregas/F02/presentacion/video_practica/`:

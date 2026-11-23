@@ -68,7 +68,7 @@ Finalmente, aplicamos Robin solamente en la cara x máxima y mantuvimos las dem�
 
 *Figura 1. Captura del modelo en Blender. Se distinguen la base octagonal, la transición inclinada hacia el centro y el pedestal cilíndrico superior. El terreno verde forma parte de la presentación visual; las dimensiones indicadas en la tabla se obtuvieron del IFC.*
 
-La lectura del [IFC versionado](../desarrollo/fundacion/fundacion.ifc) recuperó cinco objetos IfcFooting con GUID propio y las siete propiedades del conjunto UANDES_HormigonMasivo. El archivo conserva 19 °C en la primera vertida y 18 °C en las restantes, como datos de práctica. Inicio_h representa el inicio planificado relativo; moldaje y aislación siguen pendientes de definición.
+La lectura del [IFC versionado](../../desarrollo/fundacion/fundacion.ifc) recuperó cinco objetos IfcFooting con GUID propio y las siete propiedades del conjunto UANDES_HormigonMasivo. El archivo conserva 19 °C en la primera vertida y 18 °C en las restantes, como datos de práctica. Inicio_h representa el inicio planificado relativo; moldaje y aislación siguen pendientes de definición.
 
 | Vertida | Envolvente X × Y × Z [m] | Intervalo vertical [m] |
 | --- | --- | --- |
@@ -86,7 +86,7 @@ Las simplificaciones adoptadas se declaran explícitamente.
 4. La división en cinco volúmenes reproduce la guía de Bonsai y todavía no constituye un plan de vertidas optimizado.
 5. Se omiten armaduras, pernos, ductos, detalles de juntas y geometría del suelo.
 
-Estas decisiones siguen la [guía docente](../Enunciados%20e%20Instrucciones/Guias/GUIA_BONSAI_FUNDACION.md), sujetas a una geometría oficial posterior. La triangulación no demuestra ausencia de solapes ni estanqueidad. Tampoco se ha conectado aún este BIM al solver mediante voxelización.
+Estas decisiones siguen la [guía docente](../../Enunciados%20e%20Instrucciones/Guias/GUIA_BONSAI_FUNDACION.md), sujetas a una geometría oficial posterior. La triangulación no demuestra ausencia de solapes ni estanqueidad. Tampoco se ha conectado aún este BIM al solver mediante voxelización.
 
 ## Reproducción de la evidencia
 

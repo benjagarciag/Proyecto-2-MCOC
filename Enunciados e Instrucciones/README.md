@@ -7,6 +7,8 @@ el 20 de octubre y el material anterior.
 | --- | --- |
 | Encargo, criterios, calendario, sitio y presentación | [Instrucciones/](Instrucciones/) |
 | Guías G00 a G08 y guía extensa de difusión | [Guias/](Guias/) |
+| Evaluaciones finales | [Artículo F01](Enunciados/F01_PLAN_CONTROL_TEMPERATURA_FINAL.txt) · [Defensa F02](Enunciados/F02_DEFENSA_FINAL.txt) |
+| Evaluaciones intermedias | [Enunciados archivados](../archivo/enunciados_intermedios/) |
 
 Las guías recibidas están disponibles directamente en `Guias/`.
 Los códigos ejecutables del caso 1D están en
@@ -23,4 +25,4 @@ enunciados y guías. No es necesario descomprimir archivos para trabajar.
   desarrollan la base 1D, la estabilidad y los bordes.
 
 La guía extensa y el video no usan exactamente las mismas entradas. Nuestra
-[definición 1D](../documentacion/caso_1d.md) documenta las diferencias.
+[definición 1D](../documentacion/modelo_termico/caso_1d.md) documenta las diferencias.

@@ -2,7 +2,7 @@
 
 > Versión publicada E04: ejecutar desde la raíz del repositorio con el entorno
 > `.venv` preparado según el README principal. El total actual es 251 pruebas;
-> los recuentos de cada etapa son históricos. [Índice E04](../../entregas/E04/README.md).
+> los recuentos de cada etapa son históricos. [Índice E04](../../archivo/entregas_intermedias/E04/README.md).
 
 Trabajar en la copia `E04_pruebas_2d`. Esta etapa no cambia el BIM ni el proyecto
 original. Reutiliza el avance temporal y los bordes existentes con el argumento
@@ -69,4 +69,4 @@ no generan figuras. Otro computador debe usar su intérprete con dependencias
 del `requirements.txt`; la ruta anterior corresponde a este computador.
 
 Explicación física, ecuaciones y evidencia en
-[e04_materiales.md](../../documentacion/e04_materiales.md).
+[e04_materiales.md](../../documentacion/modelo_termico/materiales.md).

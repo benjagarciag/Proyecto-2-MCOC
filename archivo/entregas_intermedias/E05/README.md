@@ -1,6 +1,6 @@
 # E05: práctica de la batería de verificación térmica
 
-**Modo interactivo solicitado:** abrir el [visualizador unificado](../../Visualizadores/README.md)
+**Modo interactivo solicitado:** abrir el [visualizador unificado](../../../Visualizadores/README.md)
 para modificar parámetros, ejecutar personalmente cada test y reproducir la evolución.
 La ventana abre sin calcular. Sus parámetros y verificaciones son compartidos con
 `test_e05_visualizador.py`; la batería de variantes descrita abajo sigue disponible.

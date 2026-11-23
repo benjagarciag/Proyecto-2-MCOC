@@ -22,11 +22,11 @@ original, cambia `python` por `../Proyecto-2-MCOC/.venv/bin/python`.
 
 | Mostrar | Archivo y función |
 |---|---|
-| Bordes clásicos | [bordes_termicos.py](../../desarrollo/mcplan/bordes_termicos.py), `coeficientes_cara` |
-| Suelo, capas y onda corta | [entorno_termico.py](../../desarrollo/mcplan/entorno_termico.py), `borde_suelo`, `borde_aire`, `Capa` |
-| Cliente y trazabilidad | [clima.py](../../desarrollo/mcplan/clima.py), `url_pronostico`, `guardar_snapshot`, `cargar_snapshot`, `cobertura` |
-| Clima → potencia en la cara | [ejecutar.py](../../casos/e10/ejecutar.py), `comparar_bordes` |
-| Evidencia reproducible | [Snapshot real del 10 de noviembre](../../datos/clima/forecasts/20261110T190042897941Z_44b1a950.json) y [pruebas](../../desarrollo/tests/test_e10.py) |
+| Bordes clásicos | [bordes_termicos.py](../../../desarrollo/mcplan/bordes_termicos.py), `coeficientes_cara` |
+| Suelo, capas y onda corta | [entorno_termico.py](../../../desarrollo/mcplan/entorno_termico.py), `borde_suelo`, `borde_aire`, `Capa` |
+| Cliente y trazabilidad | [clima.py](../../../desarrollo/mcplan/clima.py), `url_pronostico`, `guardar_snapshot`, `cargar_snapshot`, `cobertura` |
+| Clima → potencia en la cara | [ejecutar.py](../../../casos/e10/ejecutar.py), `comparar_bordes` |
+| Evidencia reproducible | [Snapshot real del 10 de noviembre](../../../datos/clima/forecasts/20261110T190042897941Z_44b1a950.json) y [pruebas](../../../desarrollo/tests/test_e10.py) |
 
 ## Qué explicar
 
@@ -34,7 +34,7 @@ Actualización posterior a «Entrega E11»: la demo E10 lee las capas de
 `casos/semana4/parametros.json`, igual que el solver integrado. Se propone
 ARAUCOPLY de 18 mm con k=0,158 W/(m·K) como referencia de familia y
 Aislanglass Rollo Libre de 40 mm con k=0,042 W/(m·K).
-[Fuentes, alcance y pendientes](../../documentacion/e10_seleccion_moldaje_aislacion.md).
+[Fuentes, alcance y pendientes](../../../documentacion/entorno_termico/seleccion_moldaje_aislacion.md).
 Los retiros de 72/96 h se mantienen como hipótesis del escenario, no como
 prescripciones de fabricantes. La aislación posterior al desmolde requiere
 soporte independiente, asumido ideal en el cálculo.
@@ -90,7 +90,7 @@ soporte independiente, asumido ideal en el cálculo.
   conservando juntas T, viento y solar y etiquetando la procedencia y el empalme.
   Si no hay cobertura desde el inicio, el escenario es totalmente histórico
   y provisional. El cliente de E10 **reporta** el faltante; la demo de E10 no implementa
-  ese relleno. [E12](../../Reportes/Reporte_E12.md) ejecuta el escenario histórico completo.
+  ese relleno. [E12](../../reportes/Reporte_E12.md) ejecuta el escenario histórico completo.
 
 ## Fuente y alcance
 
@@ -120,8 +120,8 @@ git log -1 --format=%H --fixed-strings --grep="Entrega E10 - avances de E11 y E1
 En Canvas se declara ese SHA junto con el repositorio. E10 tiene revisión oral
 y se entrega sin informe. La guía de E11 describe los avances posteriores.
 
-Los visualizadores [E11](../../resultados/e11/visualizador.html) y
-[E12](../../resultados/e12/visualizador.html) muestran los bordes, el clima,
+Los visualizadores [E11](../../../resultados/e11/visualizador.html) y
+[E12](../../../resultados/e12/visualizador.html) muestran los bordes, el clima,
 el estado de las capas por edad y los resultados calculados. La demo de este
 README permite explicar las potencias de una cara por separado.
 

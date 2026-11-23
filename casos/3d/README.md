@@ -2,7 +2,7 @@
 
 > Versión publicada E04: ejecutar desde la raíz del repositorio con el entorno
 > `.venv` preparado según el README principal. El total actual es 251 pruebas;
-> los recuentos de cada etapa son históricos. [Índice E04](../../entregas/E04/README.md).
+> los recuentos de cada etapa son históricos. [Índice E04](../../archivo/entregas_intermedias/E04/README.md).
 
 Etapa experimental autorizada, exclusivamente en `E04_pruebas_2d`.
 La referencia de partida es `4c4a1d3`; esta etapa forma parte de la rama E04
@@ -46,4 +46,4 @@ No contiene Neumann, Robin, fuentes ni interfaces entre materiales.
 Implementación: `desarrollo/mcplan/difusion_3d.py`.
 Balance común por ejes: `desarrollo/mcplan/balance_cartesiano.py`.
 Pruebas: `desarrollo/tests/test_difusion_3d.py`.
-Explicación oral y resultados: `documentacion/e04_3d.md`.
+La [guía de difusión 3D](../../documentacion/modelo_termico/3d.md) reúne la explicación y los resultados.

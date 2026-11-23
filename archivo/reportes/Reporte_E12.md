@@ -20,8 +20,8 @@ no corresponde a una fecha de obra aprobada.
 
 | Archivo conservado | Descarga UTC | Uso en E12 |
 | --- | --- | --- |
-| [Pronóstico GFS de Open-Meteo](../datos/clima/forecasts/20261110T190042897941Z_44b1a950.json) | 10-11-2026, 19:00:42 | Termina el 25 de noviembre UTC: cubre **0 de las 336 h** del escenario. |
-| [Reanálisis ERA5 de Open-Meteo](../datos/clima/reanalisis/era5_2025-11-27_2025-12-11_20261110T204052478858Z.json) | 10-11-2026, 20:40:52 | Aporta todo el período mediante un bloque histórico de 2025. |
+| [Pronóstico GFS de Open-Meteo](../../datos/clima/forecasts/20261110T190042897941Z_44b1a950.json) | 10-11-2026, 19:00:42 | Termina el 25 de noviembre UTC: cubre **0 de las 336 h** del escenario. |
+| [Reanálisis ERA5 de Open-Meteo](../../datos/clima/reanalisis/era5_2025-11-27_2025-12-11_20261110T204052478858Z.json) | 10-11-2026, 20:40:52 | Aporta todo el período mediante un bloque histórico de 2025. |
 
 Se asignaron por hora relativa los datos del **27-11-2025 10:00 al
 11-12-2025 10:00**, con 337 marcas e interpolación lineal. No se empalmó una
@@ -29,14 +29,14 @@ cola: todo el escenario es histórico. Esto permite estudiar el modelo, pero
 **no predice el clima de noviembre de 2026**. Los archivos incluyen metadata
 y sus hashes se conservan en los resúmenes.
 
-![Temperatura del aire usada en las 336 horas](../resultados/e12/aire.png)
+![Temperatura del aire usada en las 336 horas](../../resultados/e12/aire.png)
 
 *Figura 1. Entrada meteorológica: temperatura del aire a 2 m. Las horas se
 cuentan desde la primera colocación; no son la edad de todas las vertidas.*
 
 ## 2. Vertidas, materiales y condiciones de borde
 
-La geometría y el calendario provienen del [IFC](../desarrollo/fundacion/fundacion.ifc).
+La geometría y el calendario provienen del [IFC](../../desarrollo/fundacion/fundacion.ifc).
 Al colocar una vertida se activan sus celdas y comienza su hidratación;
 el hormigón previo conserva su temperatura.
 
@@ -96,19 +96,19 @@ Los dos extremos pueden pertenecer a vertidas distintas.
 | Máximo del dominio a 213 h: 61,387 °C | V04 | (−0,25; −0,25; 2,25) |
 | Mínimo S25 a 213 h: 18,123 °C | V02 | (−3,75; −8,75; 0,975) |
 
-![Temperaturas y diferencial durante los 14 días](../resultados/e12/temperaturas.png)
+![Temperaturas y diferencial durante los 14 días](../../resultados/e12/temperaturas.png)
 
 *Figura 2. La sonda interior sigue un punto fijo de V03 y comienza al colocarla,
 a las 12 h. Los extremos espaciales pueden cambiar de ubicación. La franja
 marca los retiros escalonados; el máximo diferencial aparece después.*
 
-![Cortes 3D en los dos instantes críticos](../resultados/e12/estados_3d.png)
+![Cortes 3D en los dos instantes críticos](../../resultados/e12/estados_3d.png)
 
 *Figura 3. Capturas PyVista de los VTI actuales: 154 h y 213 h, con la misma
 escala de colores. El corte pasa por el máximo; el volumen transparente da
 contexto. Los colores representan centros de celdas. El marcador S25 muestra
 un valor reconstruido fuera del plano del corte. Cortar la vista no modifica
-los bordes físicos. [Captura ampliada del diferencial](../resultados/e12/corte.png).*
+los bordes físicos. [Captura ampliada del diferencial](../../resultados/e12/corte.png).*
 
 ## 4. Comparación de mallas y alcance
 
@@ -117,7 +117,7 @@ los bordes físicos. [Captura ampliada del diferencial](../resultados/e12/corte.
 | 0,50 m | 642,500 | 62,167 / 154 | 43,264 / 213 |
 | 0,25 m | 633,375 | 61,821 / 154,5 | 43,156 / 213 |
 
-![Comparación de las curvas para las dos mallas](../resultados/e12/comparacion_mallas.png)
+![Comparación de las curvas para las dos mallas](../../resultados/e12/comparacion_mallas.png)
 
 *Figura 4. Ambas resoluciones llevan a la misma conclusión de incumplimiento
 del diferencial. La cercanía de curvas no valida por sí sola la malla.*
@@ -138,7 +138,7 @@ Toda la aislación ya fue retirada a las 120 h y los horizontales nunca la
 tuvieron. Conviene estudiar permanencia y cobertura de la protección;
 estas corridas no aíslan causalmente el efecto de cada medida. Cambiar solo
 de 40 a 50 mm redujo el diferencial apenas 0,031 °C en la
-[comparación guardada](../resultados/e12/comparacion_aislacion/malla_050/comparacion.md),
+[comparación guardada](../../resultados/e12/comparacion_aislacion/malla_050/comparacion.md),
 sin satisfacer el límite. Se conserva 40 mm como referencia de estudio.
 
 No se concluye cumplimiento de obra, ausencia de grietas ni probabilidades
@@ -147,14 +147,14 @@ validación adicional. El residuo energético de la referencia es
 **1,34×10⁻⁵ J**, frente a **62,45 GJ** liberados por hidratación: indica
 cierre numérico del balance, no validación física.
 
-[HTML interactivo](../resultados/e12/visualizador.html) ·
-[Resumen 0,50 m](../resultados/e12/resumen.json) ·
-[Resumen 0,25 m](../resultados/e12/malla_025/resumen.json) ·
-[VTI del pico](../resultados/e12/pico.vti) ·
-[VTI del diferencial](../resultados/e12/diferencial.vti) ·
-[Entradas](../casos/semana4/parametros.json).
+[HTML interactivo](../../resultados/e12/visualizador.html) ·
+[Resumen 0,50 m](../../resultados/e12/resumen.json) ·
+[Resumen 0,25 m](../../resultados/e12/malla_025/resumen.json) ·
+[VTI del pico](../../resultados/e12/pico.vti) ·
+[VTI del diferencial](../../resultados/e12/diferencial.vti) ·
+[Entradas](../../casos/semana4/parametros.json).
 
-Desde la raíz, con las [dependencias preparadas](../entregas/E11/README.md):
+Desde la raíz, con las [dependencias preparadas](../entregas_intermedias/E11/README.md):
 
 ```powershell
 python -X utf8 -B casos/semana4/ejecutar.py e12

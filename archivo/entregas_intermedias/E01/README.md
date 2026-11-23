@@ -2,7 +2,7 @@
 
 **Fecha:** miércoles 21 de octubre de 2026. **Puntaje:** 3 puntos.
 
-Fuente: [enunciado oficial E01](../../Enunciados%20e%20Instrucciones/E01_Semana_1_Revision_oral_BIM_difusion_y_solver_1D.txt).
+Fuente: [enunciado oficial E01](../../enunciados_intermedios/E01_Semana_1_Revision_oral_BIM_difusion_y_solver_1D.txt).
 
 ## Requisitos y estado
 
@@ -14,7 +14,7 @@ Fuente: [enunciado oficial E01](../../Enunciados%20e%20Instrucciones/E01_Semana_
 - [ ] Preparación oral de cada integrante.
 
 G00, G01, G02 y G05 ya están disponibles en
-[el índice de material del profesor](../../Enunciados%20e%20Instrucciones/README.md).
+[el índice de material del profesor](../../../Enunciados%20e%20Instrucciones/README.md).
 Cada integrante debe completar su lectura; la disponibilidad no certifica que
 el equipo las haya leído.
 
@@ -22,14 +22,14 @@ el equipo las haya leído.
 
 | Parte | Ubicación | Estado |
 | --- | --- | --- |
-| Instalación | [README principal](../../README.md#instalar-en-otro-computador) | Preparada |
-| Dependencias | [requirements.txt](../../requirements.txt) | Versiones fijadas |
-| Problema físico y solución exacta | [caso_1d.md](../../documentacion/caso_1d.md) | Definidos |
-| Solver | [difusion_1d.py](../../desarrollo/mcplan/difusion_1d.py) | Implementado con Dirichlet y control de estabilidad |
-| Caso ejecutable | [casos/1d/](../../casos/1d/README.md) | Ejecuta los cuatro casos; JSON para Dirichlet |
-| Explicación para estudiar | [Notebook 1D](../../documentacion/explicacion_solver_1d.ipynb) | Cuatro scripts explicados y ejecutados: Dirichlet, Neumann, Robin y calor interno |
-| Tests | [desarrollo/tests/](../../desarrollo/tests/README_TESTS.md) | 31 casos pasan, incluida reproducción de los 20 perfiles del video |
-| BIM/IFC | [Fundación IFC](../../desarrollo/fundacion/README.md) | IFC4, cinco IfcFooting con propiedades y geometrías trianguladas desde Python |
+| Instalación | [README principal](../../../README.md#reproducción) | Preparada |
+| Dependencias | [requirements.txt](../../../requirements.txt) | Versiones fijadas |
+| Problema físico y solución exacta | [caso_1d.md](../../../documentacion/modelo_termico/caso_1d.md) | Definidos |
+| Solver | [difusion_1d.py](../../../desarrollo/mcplan/difusion_1d.py) | Implementado con Dirichlet y control de estabilidad |
+| Caso ejecutable | [casos/1d/](../../../casos/1d/README.md) | Ejecuta los cuatro casos; JSON para Dirichlet |
+| Explicación para estudiar | [Notebook 1D](../../../documentacion/explicacion_solver_1d.ipynb) | Cuatro scripts explicados y ejecutados: Dirichlet, Neumann, Robin y calor interno |
+| Tests | [desarrollo/tests/](../../../desarrollo/tests/README_TESTS.md) | 31 casos pasan, incluida reproducción de los 20 perfiles del video |
+| BIM/IFC | [Fundación IFC](../../../desarrollo/fundacion/README.md) | IFC4, cinco IfcFooting con propiedades y geometrías trianguladas desde Python |
 | Caso base del video | `resultados/1d/base/` | Se genera al ejecutar; referencia previa del centro ≈ 5,22483 °C |
 | Verificación exacta | `resultados/1d/verificacion_seno/` | Se genera al ejecutar; referencia previa del error final ≈ 0,00235449 K |
 

@@ -1,39 +1,14 @@
-# Desarrollo y verificación
+# Código y verificación
 
-Esta carpeta reúne los archivos técnicos. Para ejecutar los ejemplos y estudiar
-su explicación, usar [casos/](../casos/README.md) y
-[documentacion/](../documentacion/README.md).
+El paquete [mcplan](mcplan/) implementa el cálculo de la fundación. Los [ejecutores y sus configuraciones](../casos/README.md) indican qué datos consume cada caso. El [cierre final](../entregas/F02/README.md) enlaza las matrices y su reproducción.
 
-| Ubicación | Contenido |
+| Área | Módulos principales |
 | --- | --- |
-| [mcplan/difusion_1d.py](mcplan/difusion_1d.py) | Núcleo reutilizable de difusión 1D, sin fuente y con Dirichlet independientes. |
-| [mcplan/ejemplos_1d.py](mcplan/ejemplos_1d.py) | Cálculo de los ejemplos Neumann, Robin y calor interno, sin IO. |
-| [mcplan/difusion_2d.py](mcplan/difusion_2d.py), [mcplan/difusion_3d.py](mcplan/difusion_3d.py) | Solvers iniciales con Dirichlet. |
-| [mcplan/difusion_bordes.py](mcplan/difusion_bordes.py) | Núcleo común 2D/3D ampliado con bordes, fuentes y materiales opcionales. |
-| [mcplan/bordes_termicos.py](mcplan/bordes_termicos.py) | Tipos de borde y sus potencias. |
-| [mcplan/fuentes_volumetricas.py](mcplan/fuentes_volumetricas.py) | Fuentes prescritas y localización conservativa. |
-| [mcplan/materiales_termicos.py](mcplan/materiales_termicos.py) | Propiedades locales y resistencias de medias celdas. |
-| [tests/](tests/README_TESTS.md) | Pruebas automatizadas del solver. |
-| [ejecutar_notebook.py](ejecutar_notebook.py) | Ejecutar y guardar todas las celdas del notebook. |
-| [fundacion/](fundacion/README.md) | Modelo IFC y script para agregar propiedades a las cinco vertidas (punto 23 de Bonsai). |
+| BIM y geometría | [Lectura IFC](mcplan/bim.py) · [Grilla y ocupación](mcplan/voxel.py) · [Identificación de vertidas](mcplan/vertidas_voxel.py) · [Caras e interfaces](mcplan/superficies_voxel.py) |
+| Colocación e hidratación | [Activación por edad](mcplan/construccion.py) · [Fuentes de calor tabulares](mcplan/hidratacion_tabular.py) |
+| Balance térmico | [Solver de la fundación](mcplan/termica_fundacion.py) · [Suelo, moldajes y aire](mcplan/entorno_termico.py) · [Conductancias y capacidades](mcplan/materiales_termicos.py) |
+| Clima y escenarios | [Reanálisis](mcplan/clima_historico.py) · [Pronósticos](mcplan/clima.py) · [Adaptador de radiación del cierre](../casos/sensibilidad_h/radiacion_borde.py) |
+| Exportación y visualización | [Exportación HTML](mcplan/exportacion_html.py) · [Visualizadores](../Visualizadores/README.md) |
+| Verificación | [Pruebas automatizadas](tests/README_TESTS.md) · [Ejecutores de difusión, bordes y fuentes](../casos/README.md) |
 
-Todos los comandos se ejecutan desde la raíz del proyecto:
-
-```powershell
-# Pruebas: la configuración raíz encuentra desarrollo/tests y desarrollo/mcplan.
-.\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider
-
-# Comprobar dependencias.
-.\.venv\Scripts\python.exe -m pip check
-
-# Ejecutar el notebook completo y guardar sus salidas.
-.\.venv\Scripts\python.exe desarrollo/ejecutar_notebook.py
-```
-
-El script del caso `casos/1d/ejecutar.py` encuentra el paquete `mcplan` en esta
-carpeta. No hace falta mover los archivos ni instalar otro solver.
-El ejecutor incluye los cuatro ejemplos. Sus condiciones de borde y fuente
-también se estudian en `casos/1d/codigos/` y en el notebook.
-
-Los ejecutores E04 también encuentran `mcplan` automáticamente. Hay **251
-pruebas** en total; consultar [la evidencia E04](../entregas/E04/README.md).
+El IFC, el modelo de Blender y sus herramientas están en [fundacion](fundacion/README.md). Para estudiar la formulación, consulta la [documentación técnica por tema](../documentacion/README.md).

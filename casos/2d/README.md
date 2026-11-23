@@ -90,7 +90,7 @@ Las entradas están al inicio del script. Opciones:
 inestable se rechaza antes de ajustarlo. Las pruebas sinusoidales anteriores
 se conservan en `desarrollo/tests/test_difusion_2d.py`; su solución exacta
 de un solo modo no corresponde a esta condición inicial uniforme.
-La explicación histórica está en `documentacion/e04_2d.md`.
+La explicación está en [Difusión 2D](../../documentacion/modelo_termico/2d.md).
 
 ## Demostración de pasos mayores que la cota de estabilidad
 

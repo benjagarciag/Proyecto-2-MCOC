@@ -2,7 +2,7 @@
 
 > Versión publicada E04: ejecutar desde la raíz del repositorio con el entorno
 > `.venv` preparado según el README principal. El total actual es 251 pruebas;
-> los recuentos de cada etapa son históricos. [Índice E04](../../entregas/E04/README.md).
+> los recuentos de cada etapa son históricos. [Índice E04](../../archivo/entregas_intermedias/E04/README.md).
 
 Esta etapa usa los solvers 2D/3D con bordes existentes y el nuevo argumento
 opcional `fuente_W_m3`. La fuente predeterminada es cero; los comandos anteriores
@@ -80,4 +80,4 @@ figuras. Para otro computador, usar su intérprete y las dependencias fijadas en
 `requirements.txt`; no copiar la ruta del intérprete de Matías.
 
 Explicación del balance y recorrido oral en
-[e04_fuentes.md](../../documentacion/e04_fuentes.md).
+[e04_fuentes.md](../../documentacion/modelo_termico/fuentes.md).
