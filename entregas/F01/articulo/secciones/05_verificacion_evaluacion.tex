@@ -2,65 +2,30 @@
 \label{sec:verificacion-evaluacion}
 
 \subsection{Alcance de las comprobaciones}
-
-Antes de utilizar los resultados para recomendar un plan, se distinguen tres tareas. La \textit{verificación} comprueba si el método y su implementación resuelven correctamente las ecuaciones planteadas. La \textit{calibración} consiste en ajustar parámetros a partir de mediciones. La \textit{validación} evalúa si el modelo representa el comportamiento observado mediante datos independientes de los empleados para ajustarlo. Resolver correctamente una ecuación es necesario, pero no basta para demostrar que todas sus hipótesis representan una obra real.
-
-En este trabajo se dispone de verificaciones analíticas, balances de energía, comprobaciones de componentes y contrastes de discretización. Las fuentes de hidratación entregadas por el curso proceden de un ajuste a ensayos; reproducir esos mismos registros permite evaluar dicho ajuste, pero no constituye una validación independiente. Tampoco se calibraron las propiedades del terreno ni la transferencia de los circuitos con mediciones de esta fundación. Al no contar con temperaturas registradas en ella, no existe una validación integral del caso de estudio.
+La verificación comprueba que el programa resuelva las ecuaciones planteadas. La calibración estima parámetros a partir de datos, como ocurrió en la inversión docente de las probetas. Validar la predicción de la fundación requeriría compararla con temperaturas independientes medidas durante su construcción. Esas observaciones no están disponibles.
 
 \subsection{Comparación con una solución conocida}
-
-Para comprobar el componente de conducción transitoria se utilizó una barra unidimensional sin fuente, con propiedades constantes y extremos a temperatura fija. Si su perfil inicial es sinusoidal, la solución exacta permite conocer cómo debe disminuir la temperatura sin recurrir a otra simulación:
+Se consideró una barra sin fuentes, de longitud $L=1\,\mathrm m$ y difusividad $\alpha=10^{-4}\,\mathrm{m^2/s}$. Ambos extremos se mantuvieron a $T_b=20\,^\circ\mathrm C$ y se impuso el perfil inicial $T_b+A\sin(\pi x/L)$, con $A=50\,\mathrm K$. Para esas condiciones, la solución exacta de $\partial T/\partial t=\alpha\,\partial^2T/\partial x^2$ conserva la forma del perfil y reduce su amplitud con el tiempo:
 \begin{equation}
-  \begin{aligned}
-    \frac{\partial T}{\partial t}&=\alpha\frac{\partial^2 T}{\partial x^2},
-    &0<x<L,\quad t>0,\\
-    T(0,t)&=T(L,t)=T_b,
-    &T(x,0)=T_b+A\sin\left(\frac{\pi x}{L}\right),\\
-    T_{\mathrm{ex}}(x,t)&=T_b+A\sin\left(\frac{\pi x}{L}\right)
-      \exp\left(-\alpha\frac{\pi^2}{L^2}t\right).
-  \end{aligned}
+  T_{\mathrm{ex}}(x,t)=T_b+A\sin\left(\frac{\pi x}{L}\right)
+  \exp\left(-\frac{\alpha\pi^2t}{L^2}\right),
   \label{eq:caso-seno-verificacion}
 \end{equation}
-tal que $L$ es la longitud de la barra, $T_b$ la temperatura de los extremos, $A$ la amplitud inicial y $\alpha$ la difusividad térmica.
-
-El caso archivado utiliza $L=1\,\mathrm m$, $T_b=20\,{}^\circ\mathrm C$, $A=50\,\mathrm K$ y $\alpha=10^{-4}\,\mathrm{m^2/s}$. Se consideran $100$ intervalos espaciales y un seguimiento de $1500\,\mathrm s$. El paso se obtiene con un número de Fourier objetivo de $0{,}45$ y se ajusta para terminar exactamente en el tiempo final, por lo que resulta aproximadamente $0{,}44991\,\mathrm s$. El error se evalúa sobre todos los nodos y tiempos guardados:
-\begin{equation}
-  e_\infty=\max_{n,i}\left|T_i^n-T_{\mathrm{ex}}(x_i,t_n)\right|.
-  \label{eq:error-seno-verificacion}
-\end{equation}
-Se obtuvo $e_\infty=0{,}0025714\,\mathrm K$, por debajo de la tolerancia de $0{,}003\,\mathrm K$ establecida para esta prueba. El registro de ejecución conserva además $24$ pruebas aprobadas del módulo unidimensional, entre ellas conservación del equilibrio, actualización simultánea y rechazo de pasos inestables.
-
-Esta comparación comprueba la difusión y el tratamiento de temperaturas impuestas en un problema conocido. Su error no se traslada como una estimación del error de la fundación tridimensional, que incorpora geometría escalonada, activación de capas y bordes diferentes. Para estos últimos se dispone de comprobaciones adicionales del balance superficial con radiación, incluida la comparación de la solución de Newton con bisección, y de pruebas de apertura, cierre, reapertura y límite de potencia de los circuitos. Estas revisiones complementan el caso analítico, sin sustituir la evaluación del modelo completo.
+Con $100$ intervalos, un paso de aproximadamente $0{,}44991\,\mathrm s$ y un horizonte de $1500\,\mathrm s$, el mayor error absoluto entre los nodos y tiempos guardados fue $0{,}0025714\,\mathrm K$. El valor quedó bajo la tolerancia de $0{,}003\,\mathrm K$ del ensayo. También se contrastó la solución superficial de Newton con bisección y se comprobaron las transiciones y el límite de potencia de los circuitos. La barra permite aislar el error de difusión sin confundirlo con el efecto de la geometría de la fundación.
 
 \subsection{Cierre del balance energético}
-
-El balance global permite comprobar que el cambio de energía del hormigón coincide con las entradas y salidas calculadas. Como el dominio crece durante la colocación, se contabiliza también la energía que incorpora cada capa al activarse. Para la referencia sensible de $0\,{}^\circ\mathrm C$ utilizada en el registro, se define:
-\begin{equation}
-  E_c(t)=\sum_{i\in\mathcal A(t)}\rho_i c_{p,i}V_i
-  \left[T_i(t)-T_{\mathrm{ref}}\right],
-  \qquad T_{\mathrm{ref}}=0\,{}^\circ\mathrm C.
-  \label{eq:energia-activa-verificacion}
-\end{equation}
-tal que $\mathcal A(t)$ es el conjunto de celdas activas. Esta referencia solo fija el origen de la energía sensible; las capas se incorporan a la temperatura de colocación indicada en el modelo.
-
-Con todos los aportes acumulados hasta el mismo instante, el residuo se calcula mediante:
+La energía sensible $E_c$ se calcula sobre las celdas activas respecto de $0\,^\circ\mathrm C$. Su cambio debe recoger tanto el calor generado como la energía que ingresa al colocar hormigón nuevo. Con los aportes acumulados en julios, el residuo es
 \begin{equation}
   R_E=E_c-\left(E_{\mathrm{col}}+E_h+E_{\mathrm{aire}}
   +E_{\mathrm{suelo}}+E_{\mathrm{frio}}\right).
   \label{eq:residuo-energia-verificacion}
 \end{equation}
-Aquí, $E_{\mathrm{col}}$ es la energía incorporada con las capas, $E_h$ el calor de hidratación y los términos restantes representan intercambios con el exterior. Todos se expresan en julios y se consideran positivos cuando aportan energía al hormigón. Por ello, la extracción de los circuitos se registra con signo negativo. El término de aire contiene el intercambio neto del balance superficial con convección y radiación, transmitido a través de las protecciones cuando existen; la radiación no se suma de nuevo como otra entrada. Los flujos entre celdas se cancelan al sumar el dominio, porque lo que sale de una entra en la vecina.
+$E_{\mathrm{col}}$ corresponde a la colocación y $E_h$ a la hidratación. El término de aire incluye convección y radiación, ya transmitidas a través de las protecciones. Suelo y refrigeración llevan el signo de su aporte al hormigón, de modo que la extracción es negativa. Los flujos internos se cancelan al sumar las celdas.
 
-Se revisaron los $144$ balances conservados para las $72$ piezas finales, evaluadas a $336$ y $672\,\mathrm h$. El mayor residuo absoluto fue $2{,}4796\times10^{-4}\,\mathrm J$. La auditoría de las piezas finales a $672\,\mathrm h$ obtuvo un mayor residuo relativo de $2{,}3908\times10^{-15}$, calculado al dividir el residuo absoluto por la suma de los valores absolutos de los cinco aportes energéticos, con un denominador mínimo de $1\,\mathrm J$. Son máximos de sus respectivos conjuntos y no necesariamente pertenecen al mismo escenario.
-
-El cierre es compatible con el redondeo de las operaciones numéricas y permite descartar una pérdida de energía apreciable en la contabilidad implementada. Sin embargo, un balance cerrado también puede corresponder a propiedades o bordes inadecuados: esta comprobación no demuestra por sí sola que los intercambios representen los de la obra.
+Se revisaron $144$ balances, dos horizontes para cada una de las $72$ simulaciones finales. El mayor residuo absoluto fue $2{,}48\times10^{-4}\,\mathrm J$. A las $672\,\mathrm h$, el mayor residuo relativo fue $2{,}39\times10^{-15}$ respecto de la suma de magnitudes de los aportes, con denominador mínimo de $1\,\mathrm J$. Esta comprobación respalda la contabilidad energética incluso cuando crece el dominio.
 
 \subsection{Sensibilidad espacial y temporal}
-
-Para separar ambos efectos, se comparó primero el tamaño de celda manteniendo el paso máximo y, luego, el paso máximo manteniendo la malla. En ambos contrastes se conservaron las fuentes, las historias climáticas, las capas físicas, la zona refrigerable y la protección final: última manta hasta una edad de $504\,\mathrm h$, seguida de sombra con reducción solar del $90\,\text{\%}$. El seguimiento fue de $0$ a $672\,\mathrm h$.
-
-La comparación espacial comprende los $24$ escenarios de la propuesta de $60\,\mathrm{m^3/h}$, con tamaños de celda de $0{,}40$ y $0{,}20\,\mathrm m$ y paso máximo de $300\,\mathrm s$. La Tabla~\ref{tab:maximos-verificacion} presenta los mayores valores de cada matriz. Estos máximos pueden corresponder a escenarios diferentes; para medir la sensibilidad se contrastó también cada escenario con su equivalente, según la Tabla~\ref{tab:contrastes-discretizacion}.
-
+La Tabla~\ref{tab:maximos-verificacion} muestra los extremos de las matrices espaciales. Para evaluar el refinamiento se comparó, además, cada escenario consigo mismo (Tabla~\ref{tab:contrastes-discretizacion}). El mayor cambio de diferencial entre mallas fue $0{,}882\,\mathrm K$ en los $24$ pares. Al reducir solo el paso fue $0{,}00137\,\mathrm K$ en los dos casos estudiados. Ninguna de estas comparaciones cambió la clasificación.
 \begin{table}[htbp]
   \centering
   \caption{Máximos del catálogo de la propuesta en las dos mallas}
@@ -75,29 +40,13 @@ La comparación espacial comprende los $24$ escenarios de la propuesta de $60\,\
     \bottomrule
   \end{tabular}
   \captionsetup{skip=2pt}
-  \caption*{Fuente: matrices y comparación pareada del cierre técnico.}
+  \caption*{Fuente: elaboración propia a partir de las simulaciones con ambas mallas.}
 \end{table}
 
-Entre escenarios equivalentes, el mayor cambio absoluto fue de $0{,}669459\,\mathrm K$ en la temperatura máxima y $0{,}881712\,\mathrm K$ en el diferencial máximo. Ningún escenario pasó de cumplir a exceder alguno de los límites de $70\,{}^\circ\mathrm C$ y $20\,\mathrm K$. En consecuencia, la probabilidad conjunta calculada con los pesos del catálogo se mantuvo en $0$ en ambas mallas.
-
-La comparación temporal utiliza la malla de $0{,}40\,\mathrm m$ con pasos máximos de $300$ y $150\,\mathrm s$, para la curva \texttt{M4\_SS} combinada con las historias ERA5-$2024$ y ERA5-$2025$. La mayor diferencia absoluta fue de $0{,}001148\,\mathrm K$ en temperatura máxima y $0{,}001365\,\mathrm K$ en diferencial máximo. Los dos casos conservaron su clasificación de cumplimiento. Se trata de una comprobación selectiva; no permite atribuir una segunda evaluación temporal completa a los $24$ escenarios ni cuantificar directamente la sensibilidad temporal de la malla fina.
-
-Los cambios observados son mayores al refinar el espacio que al reducir el paso en los casos temporales ensayados. Por ello se adoptó la malla de $0{,}20\,\mathrm m$ para confirmar la propuesta completa, conservando el paso máximo de $300\,\mathrm s$ sujeto a las restricciones descritas anteriormente. Dos resoluciones por contraste permiten evaluar sensibilidad, pero no demostrar un orden asintótico ni obtener una cota rigurosa del error.
-
 \subsection{Márgenes y criterio para aceptar la resolución}
-
-Las tolerancias se interpretan frente a la decisión que se desea tomar. El error inferior a $0{,}003\,\mathrm K$ del ensayo sinusoidal y el residuo energético evalúan componentes distintos; ninguno se utiliza como tolerancia global de la fundación. Para esta última, la evidencia principal es la estabilidad de la clasificación al cambiar la discretización y la comparación de esas diferencias con los márgenes disponibles.
-
-En la matriz fina, el margen térmico más restrictivo es el diferencial: su mayor valor de $15{,}7202\,\mathrm K$ deja $4{,}2798\,\mathrm K$ hasta el límite. El margen de temperatura máxima es de $22{,}9678\,\mathrm K$. La diferencia espacial pareada de $0{,}881712\,\mathrm K$ es menor que el primero, y la diferencia temporal observada es todavía menor. Junto con la conservación de la clasificación en los casos comparados, esto respalda la resolución adoptada para la propuesta dentro del catálogo estudiado. No convierte el margen restante en una garantía frente a errores de los datos o de las hipótesis físicas.
-
-Si una alternativa presentara un margen comparable con los cambios de discretización, o cambiara de clasificación al refinar, correspondería realizar un contraste adicional del caso que gobierna la decisión. Mientras esa diferencia no se resolviera, su cumplimiento debería declararse indeterminado. Tampoco se traslada automáticamente la confirmación fina de la propuesta a otros planes evaluados solo con la malla inicial.
+En la malla fina, el diferencial más alto deja $4{,}28\,\mathrm K$ hasta el límite de $20\,\mathrm K$. Ese margen supera el mayor cambio observado por refinamiento espacial. Los dos niveles permiten juzgar la sensibilidad de la decisión, pero son insuficientes para establecer un orden de convergencia o acotar todo el error. Si un refinamiento desplazara un máximo de un lado al otro del límite, habría que refinar la malla o el paso, según el origen de la diferencia, o declarar indeterminado el cumplimiento.
 
 \subsection{Errores e idealizaciones que condicionan la recomendación}
+La malla aproxima tanto la posición de las caras como la temperatura a $25\,\mathrm{mm}$. Al mismo tiempo, el suelo a temperatura fija, el contacto perfecto y la activación instantánea de cada capa simplifican procesos que en obra tienen extensión y duración. Una concordancia entre mallas puede coexistir con un sesgo común a ambas.
 
-La discretización modifica la forma y el volumen representados. Respecto del volumen geométrico de aproximadamente $636{,}775\,\mathrm{m^3}$, las mallas de $0{,}40$ y $0{,}20\,\mathrm m$ representan $640{,}704$ y $638{,}944\,\mathrm{m^3}$, con diferencias de $+0{,}617\,\text{\%}$ y $+0{,}341\,\text{\%}$, respectivamente. Al refinar disminuye la diferencia global, aunque esto no asegura igual precisión en cada superficie. Las caras escalonadas alteran áreas y orientaciones, y la extracción a aproximadamente $25\,\mathrm{mm}$ se reconstruye desde caras cartesianas. La duración de colocación conserva el volumen geométrico oficial, evitando que cambie por el exceso de volumen voxelizado.
-
-También existen incertidumbres en los datos. Las fuentes de hidratación dependen del balance inverso del ensayo, sus parámetros y el tratamiento de los extremos de los registros; no incorporan una cinética adicional dependiente de la temperatura calculada. Las ocho curvas no acreditan por sí solas réplicas independientes de una misma población. Del mismo modo, las tres historias climáticas son reconstrucciones históricas de una celda meteorológica y no un pronóstico de la obra ni un catálogo exhaustivo de extremos. Los pesos adoptados permiten comparar planes con una información común, pero no demostrar una probabilidad real de falla.
-
-Entre las idealizaciones físicas destacan el contacto perfecto entre capas, las propiedades constantes y el terreno como reservorio a temperatura fija, sin resolver su inercia. La activación simultánea de cada capa aproxima una colocación que en obra es progresiva. La refrigeración utiliza agua uniforme y transferencia equivalente, sin resolver hidráulica ni calentamiento axial; la sombra reduce idealmente la radiación solar sin representar el montaje de una cubierta real. Por ello, el cumplimiento calculado no acredita que una instalación concreta entregue esas prestaciones. La edad de retiro de $504\,\mathrm h$ corresponde a la programación ensayada, sin demostrar que sea el retiro más temprano posible; la sombra se conserva hasta el final del seguimiento.
-
-Finalmente, los criterios térmicos se utilizan como indicadores de evaluación docente. No se resuelven tensiones, evolución de resistencia ni apertura de fisuras. La recomendación queda sustentada por la verificación numérica y los escenarios declarados, y requiere comprobar materiales, condiciones de obra y temperaturas medidas antes de trasladarse a una decisión constructiva real.
+Las curvas de probeta y los años históricos cubren solo parte de las condiciones posibles. También queda por medir qué potencia pueden extraer los tubos y qué fracción de la radiación intercepta la cubierta instalada. Estas limitaciones orientan las mediciones y las decisiones de retiro que se proponen en la sección~\ref{sec:discusion-control}.

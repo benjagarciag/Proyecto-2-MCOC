@@ -1,0 +1,45 @@
+\subsection{Cronogramas por capa y detalle del cálculo}
+\label{an:detalles}
+
+\subsubsection{Secuencia de colocación y retiros}
+La Figura~\ref{fig:cronogramas-resultados} compara las duraciones globales. Las Tablas~\ref{tab:cronograma-60} y~\ref{tab:cronograma-55} desglosan las once capas de cada plan, con tiempos referidos a las $10{:}00$ del $19$ de noviembre. Para trasladar un retiro al calendario se suma la edad de la protección al inicio de su capa.
+
+\input{datos/tabla_cronograma_60}
+\input{datos/tabla_cronograma_55}
+
+\subsubsection{Reconstrucción de las fuentes de hidratación}
+Para cada curva $m$, de potencia volumétrica $\dot q_{m,r}$ a la edad $a_r$ en segundos, el calor acumulado por unidad de volumen en la muestra $j$ es
+\begin{equation}
+ H_{m,j}=\sum_{r=0}^{j-1}\frac{\dot q_{m,r}+\dot q_{m,r+1}}{2}(a_{r+1}-a_r).
+\end{equation}
+Se interpola linealmente este acumulado. La pendiente del segmento es la fuente efectiva, constante dentro del intervalo correspondiente. La diferencia entre los acumulados de dos edades da la energía generada por unidad de volumen durante un paso, incluso si este atraviesa más de un intervalo de muestreo.
+
+\subsubsection{Balance de la cara exterior y estabilidad}
+Si $\mathcal F$ denota el flujo ambiental de la ecuación~\eqref{eq:balance-exterior}, la temperatura superficial se obtiene anulando
+\begin{equation}
+ F_f(T_s)=\frac{T_s-T_i^n}{R_{i,f}}-\mathcal F(T_s).
+\end{equation}
+En cada iteración se divide el residuo por la derivada $R_{i,f}^{-1}+h_c+4\varepsilon\sigma T_{s,K}^3$ y se resta la corrección a la temperatura anterior. La sensibilidad del flujo entrante de la cara a la temperatura de la celda queda acotada por
+\begin{equation}
+ \left|\frac{\partial(A_f\phi_f)}{\partial T_i}\right|
+ =\frac{A_f(h_c+4\varepsilon\sigma T_{s,K}^3)}
+ {1+R_{i,f}(h_c+4\varepsilon\sigma T_{s,K}^3)}
+ \leq\frac{A_f}{R_{i,f}}.
+\end{equation}
+La suma de conductancias que determina el paso de la ecuación~\eqref{eq:paso-utilizado} es
+\begin{equation}
+ S_i=\sum_{j\in\mathcal N_i}G_{ij}
+ +\sum_{f\in\mathcal B_{i,a}}A_f/R_{i,f}
+ +\sum_{f\in\mathcal B_{i,g}}G_{g,f}+\chi_{r,i}U_vV_i.
+\end{equation}
+Los conjuntos $\mathcal B_{i,a}$ y $\mathcal B_{i,g}$ contienen las caras al aire y al suelo, respectivamente. La función $\chi_{r,i}$ distingue las celdas refrigerables. El último término se incluye aunque el circuito esté cerrado, de modo que abrirlo conserve el margen de estabilidad previsto.
+
+\subsubsection{Temperatura efectiva del cielo}
+La temperatura radiativa del cielo se estima a partir del punto de rocío $T_{d,K}$ en kelvin y la nubosidad $N$ en décimas \citep{energyplusCielo}. Se utiliza la nubosidad total como aproximación de la opaca:
+\begin{equation}\begin{aligned}
+  \varepsilon_{\mathrm{sky}}^*&=
+  \left[0{,}787+0{,}764\ln\left(\frac{T_{d,K}}{273\,\mathrm K}\right)\right]
+  \left(1+0{,}0224N-0{,}0035N^2+0{,}00028N^3\right),\\
+  \varepsilon_{\mathrm{sky}}&=\min(1,\max(0,\varepsilon_{\mathrm{sky}}^*)),
+  \qquad T_{\mathrm{sky},K}^4=\varepsilon_{\mathrm{sky}}T_{a,K}^4.
+\end{aligned}\end{equation}

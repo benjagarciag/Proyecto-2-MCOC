@@ -2,14 +2,12 @@
 \label{sec:caso-datos}
 
 %-------------------------------------------
+
 \subsection{Emplazamiento y geometría de la fundación}
 \label{sec:emplazamiento-geometria}
-%-------------------------------------------
+La fundación corresponde al caso docente del Parque Eólico El Rosal, en el sector de Los Ángeles, región del Biobío \citep{cursoSitios2026}. El punto de consulta meteorológica se sitúa en $(-37{,}277929^\circ,-72{,}368271^\circ)$. Estas coordenadas vinculan la geometría común del curso con un clima local. La ubicación exacta de una fundación construida se desconoce.
 
-El caso de estudio corresponde a una fundación de hormigón masivo para un aerogenerador, evaluada bajo las condiciones meteorológicas del sector de Los Ángeles, región del Biobío. El sitio de referencia es el Parque Eólico El Rosal y el punto de consulta climática se fija en la latitud $-37{,}277929^{\circ}$ y la longitud $-72{,}368271^{\circ}$. Estas coordenadas representan el punto meteorológico del caso docente y no la ubicación exacta de una fundación construida. De esta manera, el estudio combina una geometría común del proyecto académico con condiciones ambientales asociadas al sitio asignado.
-
-La geometría se obtiene del archivo oficial de trabajo \texttt{fundacion.ifc}, conservado en el repositorio. El modelo contiene cinco objetos de clase \texttt{IfcFooting}, denominados \texttt{Vertida\_01} a \texttt{Vertida\_05}, que conforman un cuerpo de base octogonal, una transición de sección decreciente y un pedestal superior cilíndrico, como se muestra en la Figura~\ref{fig:geometria-ifc}. La extensión máxima en planta es de $18\times18\,\mathrm{m}$ y la altura total alcanza $4{,}30\,\mathrm{m}$. El pedestal ocupa el tramo entre las cotas $3{,}30$ y $4{,}30\,\mathrm{m}$, con un diámetro nominal de $7\,\mathrm{m}$.
-
+El modelo digital de construcción (BIM) se entregó en formato IFC (\emph{Industry Foundation Classes}). La Figura~\ref{fig:geometria-ifc} muestra los cinco objetos de clase \texttt{IfcFooting} del archivo \texttt{fundacion.ifc}. Sobre la base octogonal, de hasta $18\times18\,\mathrm m$, la sección se estrecha hasta el pedestal cilíndrico, de $7\,\mathrm m$ de diámetro. La Tabla~\ref{tab:geometria-ifc} distingue las dimensiones envolventes del volumen del sólido. La fundación alcanza $4{,}30\,\mathrm m$ de altura y reúne $636{,}775\,\mathrm{m^3}$ de hormigón.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.85\linewidth]{Imagenes/geometria_ifc.png}
@@ -18,9 +16,6 @@ La geometría se obtiene del archivo oficial de trabajo \texttt{fundacion.ifc}, 
   \captionsetup{skip=2pt}
   \caption*{Fuente: elaboración propia en Blender/Bonsai a partir de \texttt{fundacion.ifc}.}
 \end{figure}
-
-La Tabla~\ref{tab:geometria-ifc} resume las cotas, las dimensiones envolventes y los volúmenes obtenidos de las superficies trianguladas del IFC. La suma de los volúmenes de las cinco vertidas es de $636{,}775\,\mathrm{m^3}$. Las dimensiones envolventes indican la extensión máxima de cada pieza; su producto no representa el volumen del sólido, debido a la forma octogonal y a las superficies inclinadas. Esta distinción evita sustituir la geometría real del modelo por bloques rectangulares de mayor volumen.
-
 \begin{table}[htbp]
   \centering
   \caption{Características geométricas de los objetos de la fundación}
@@ -43,38 +38,13 @@ La Tabla~\ref{tab:geometria-ifc} resume las cotas, las dimensiones envolventes y
   \caption*{Fuente: extracción propia del archivo IFC.}
 \end{table}
 
-Se distinguen la base en contacto con el terreno, las superficies laterales y la coronación expuestas al ambiente. La representación térmica considera el volumen de hormigón, sin resolver explícitamente las armaduras ni los anclajes del aerogenerador.
-
-La partición geométrica del IFC se mantiene como referencia de identidad y forma, pero se distingue de la secuencia constructiva evaluada. Aunque los objetos conservan el nombre de vertidas, la propuesta distribuye la colocación en once capas físicas sin alterar la geometría final. La definición de esas capas, su cronología y los controles térmicos se presentan en los apartados siguientes. Asimismo, la comparación entre el volumen geométrico y el volumen representado por la malla se desarrolla al describir la voxelización.
-
-
-%-------------------------------------------
-%-------------------------------------------
 \subsection{Representación BIM y voxelización}
 \label{sec:BIM-Voxelización}
-%-------------------------------------------
+El lector de IfcOpenShell recupera los identificadores y las superficies trianguladas de los cinco objetos, aplica su posición y convierte las coordenadas a metros \citep{ifcopenshellGeometria}. El cálculo térmico utiliza esa geometría para distinguir la base en contacto con el suelo, los laterales y la coronación. Las propiedades térmicas, el cronograma y los controles proceden de la configuración del plan. Por ello es posible colocar la misma fundación en once capas sin modificar las cinco piezas del IFC.
 
-El flujo de trabajo parte del modelo BIM almacenado en formato IFC y transforma su geometría en una malla cartesiana para el cálculo térmico. La lectura se realiza con IfcOpenShell, que permite obtener los vértices y las caras trianguladas de los sólidos \citep{ifcopenshellGeometria}. Se aplican las posiciones de los objetos y la conversión de unidades a metros, conservando las coordenadas locales del proyecto. Los nombres y los identificadores de los objetos se mantienen para vincular la representación numérica con el archivo de origen.
+La malla comienza en el mínimo geométrico, próximo a $(-9,-9,0)\,\mathrm m$. Cada celda cúbica de lado $h$ cuenta una vez si su centro cae dentro de algún sólido o sobre su frontera, con tolerancia de $10^{-7}\,\mathrm m$. Con $N_h$ celdas ocupadas, el volumen representado es $V_h=N_hh^3$. El criterio aproxima las caras inclinadas mediante escalones y omite armaduras y anclajes.
 
-La información geométrica utilizada comprende las superficies trianguladas, las dimensiones y la posición relativa de las cinco piezas. El lector también recupera sus propiedades constructivas, pero el cálculo del plan adoptado utiliza un cronograma externo de once capas, junto con las temperaturas de colocación y los controles definidos para la comparación. Por tanto, los valores iniciales almacenados en los campos del IFC no se adoptan automáticamente como condiciones del estudio. Las propiedades térmicas del material y los datos ambientales se incorporan desde archivos de configuración independientes.
-
-La voxelización consiste en dividir la caja envolvente del conjunto en celdas cúbicas de lado $h$. El origen de la malla coincide con el mínimo geométrico del IFC, aproximadamente $(-9,-9,0)\,\mathrm{m}$, y se mantiene al refinar. Cada centro de celda se clasifica respecto de las superficies trianguladas: la celda se considera ocupada si el centro está dentro de alguno de los sólidos o sobre su frontera, con una tolerancia geométrica de $10^{-7}\,\mathrm{m}$. La pertenencia a varios objetos no duplica su ocupación. 
-
-Este criterio asigna el volumen completo de la celda y no calcula fracciones de intersección, por lo que aproxima las superficies curvas e inclinadas mediante un contorno escalonado. Para cuantificar esta aproximación se calcula el volumen discretizado como:
-\begin{equation}
-    V_h=N_h \cdot h^3
-\end{equation}
-tal que $N_h$ es el número de celdas ocupadas y $h$ es el lado de cada celda. Este volumen se compara con la referencia geométrica $V_{\mathrm{IFC}}=636{,}775\,\mathrm{m^3}$, obtenida como la suma de los volúmenes de las piezas trianguladas.
-La diferencia firmada es: 
-\begin{equation}
-    \Delta V=V_h-V_{\mathrm{IFC}}
-\end{equation}
-y su magnitud relativa es:
-\begin{equation}
-    \varepsilon_V=\frac{|\Delta V|}{V_{\mathrm{IFC}}} \cdot 100
-\end{equation}
-tal que $\varepsilon_V$ es la magnitud de la diferencia relativa expresada en porcentaje. La Tabla~\ref{tab:volumen-voxelizacion} presenta los valores recuperados de las geometrías guardadas para las dos resoluciones utilizadas. Las diferencias se calculan con los valores sin redondear; el redondeo se aplica únicamente para su presentación.
-
+La Tabla~\ref{tab:volumen-voxelizacion} compara $V_h$ con el volumen geométrico. Al reducir el lado de celda a la mitad, la sobreestimación baja del $0{,}617\,\text{\%}$ al $0{,}341\,\text{\%}$. El cronograma usa el volumen físico en ambas mallas para que el refinamiento solo afecte al cálculo térmico.
 \begin{table}[htbp]
   \centering
   \caption{Comparación del volumen geométrico y discretizado de la fundación}
@@ -92,29 +62,16 @@ tal que $\varepsilon_V$ es la magnitud de la diferencia relativa expresada en po
   \caption*{Fuente: elaboración propia a partir de las geometrías archivadas.}
 \end{table}
 
-En ambas mallas el volumen discretizado supera al geométrico, aunque la diferencia disminuye al pasar de $0{,}40$ a $0{,}20\,\mathrm{m}$. Este resultado caracteriza la aproximación global del volumen, pero no demuestra por sí solo la exactitud de las superficies ni la convergencia de las temperaturas. Para calcular la duración de colocación se conserva el volumen físico del plan, sin sustituirlo por el volumen voxelizado; así, un cambio de malla no modifica artificialmente el objetivo constructivo.
-
-Finalmente, las celdas ocupadas se agrupan por altura en las once capas del plan, manteniendo esa misma partición física en ambas resoluciones. La máscara geométrica representa la fundación completa y se distingue del dominio activo: durante el cálculo solo participan las capas cuya colocación ya se ha activado. La activación y la identificación de las caras exteriores permiten actualizar las superficies de intercambio a medida que avanza la construcción. Su formulación térmica se desarrolla en las secciones de modelo continuo y discretización.
-
-%-------------------------------------------
-%-------------------------------------------
 \subsection{Parámetros térmicos y condiciones de colocación}
 \label{sec:Parametros y condiciones}
-%-------------------------------------------
-
-Para comparar los planes en las mismas condiciones, se conservan los datos del material, del ambiente y de los sistemas de protección y refrigeración; entre las dos alternativas cambia la tasa de colocación. Las Tablas~\ref{tab:param-materiales} a~\ref{tab:param-plan} reúnen estos parámetros y señalan su procedencia. La clasificación bibliográfico corresponde a valores publicados; ajustado, a resultados obtenidos al ajustar un modelo a datos; y supuesto, a valores o decisiones adoptados para el estudio. Un dato se presenta como medido únicamente si se dispone de antecedentes que acrediten su medición.
-
-La densidad y el calor específico se toman del archivo docente de hidratación \citep{fuentesDocentes}. La conductividad del hormigón, en cambio, se adopta como un valor fijo que no se ajustó a mediciones de la fundación. Ese archivo también entrega las curvas que describen cuánto calor genera el hormigón a medida que envejece; su origen y tratamiento se explican en el apartado siguiente.
-
-Para la madera y las mantas se utilizan los valores publicados para AraucoPly y Aislanglass \citep{araucoCatalogo,volcanCES}. La referencia de AraucoPly corresponde al catálogo internacional de esa familia de tableros, por lo que su aplicación al producto utilizado en obra requiere comprobar que sus características sean equivalentes. En ambos materiales, la información publicada permite representar su resistencia térmica, pero no sustituye la comprobación del montaje de las protecciones.
-
+Las Tablas~\ref{tab:param-materiales}, \ref{tab:param-ambiente} y~\ref{tab:param-plan} reúnen los datos del material, el entorno y la operación. La densidad y el calor específico proceden del archivo docente \citep{fuentesDocentes}. La conductividad del hormigón es un supuesto. Para las protecciones se adoptaron valores publicados de AraucoPly y Aislanglass, cuya equivalencia con los productos instalados deberá comprobarse en obra \citep{araucoCatalogo,volcanCES}.
 \begin{table}[htbp]
   \centering
   \caption{Propiedades del hormigón y de las protecciones térmicas}
   \label{tab:param-materiales}
   \small
   \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{p{1.4cm}p{4.0cm}p{2.1cm}p{2.0cm}p{3.8cm}p{2.7cm}}
+  \begin{tabular}{L{1.4cm}L{3.8cm}L{2.1cm}L{2.0cm}L{3.8cm}L{2.7cm}}
     \toprule
     Símbolo & Significado & Unidad & Valor & Procedencia & Clasificación \\
     \midrule
@@ -129,24 +86,20 @@ Para la madera y las mantas se utilizan los valores publicados para AraucoPly y 
     \bottomrule
   \end{tabular}
   \captionsetup{skip=2pt}
-  \caption*{Fuente: Archivo docente de hidratación, documentación de ARAUCO y Volcán, y configuración del estudio.}
+  \caption*{Fuente: archivo docente de hidratación, documentación de ARAUCO y Volcán, y configuración del estudio.}
 \end{table}
-
-Para representar la pérdida de calor hacia el suelo, se supone que el terreno mantiene una temperatura constante y que el calor atraviesa una distancia equivalente de suelo. No se calcula cómo se calienta o enfría el terreno con el tiempo. El intercambio con el aire depende del viento y se estima con la relación de McAdams presentada en la documentación de EnergyPlus \citep{energyplusMcAdams}, expresada en unidades SI como:
+El terreno se representa mediante una resistencia térmica hacia un reservorio a temperatura fija. Para las caras al aire se calcula el coeficiente convectivo a partir del viento trasladado a $2\,\mathrm m$ de altura con la correlación de McAdams \citep{energyplusMcAdams}. En unidades SI, el viento $v_2$ y el coeficiente $h_c$ se relacionan mediante
 \begin{equation}
     h_c(t)=5{,}7+3{,}8~v_2(t)
 \end{equation}
-tal que $v_2(t)$ es la velocidad horaria del viento en $\mathrm{m\,s^{-1}}$, referida a una altura de $2\,\mathrm{m}$, y $h_c(t)$ relaciona el intercambio de calor con la diferencia de temperatura entre la superficie y el aire. 
-\newpage
-La altura de referencia y el exponente usado para ajustar el viento se adoptan como supuestos. También se fijan la fracción de radiación solar absorbida por la superficie, denominada absortancia; su capacidad de emitir radiación térmica, representada por la emisividad; y la fracción de radiación solar reflejada por el entorno, o albedo. Estos valores no proceden de mediciones del acabado de la fundación. La Tabla~\ref{tab:param-ambiente} los reúne junto con los parámetros del suelo y de la sombra. El subíndice de $h_c$ permite distinguir este coeficiente del lado de celda $h$.
-
+La absortancia, la emisividad y el albedo se mantuvieron fijos en la comparación.
 \begin{table}[htbp]
   \centering
   \caption{Parámetros del suelo y del intercambio con el ambiente}
   \label{tab:param-ambiente}
   \small
   \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{p{1.4cm}p{3.5cm}p{2.1cm}p{1.8cm}p{3.8cm}p{2.2cm}}
+  \begin{tabular}{L{1.4cm}L{3.5cm}L{2.1cm}L{1.8cm}L{3.8cm}L{2.2cm}}
     \toprule
     Símbolo & Significado & Unidad & Valor & Procedencia & Clasificación \\
     \midrule
@@ -163,20 +116,16 @@ La altura de referencia y el exponente usado para ajustar el viento se adoptan c
     \bottomrule
   \end{tabular}
   \captionsetup{skip=2pt}
-  \caption*{Fuente: Documentación de EnergyPlus y configuración del estudio.}
+  \caption*{Fuente: documentación de EnergyPlus y configuración del estudio.}
 \end{table}
-Los planes parten del $19$ de noviembre de $2026$ a las $10{:}00$, con desfase UTC$-03{:}00$. La propuesta considera dos frentes de hasta $30\,\mathrm{m^3/h}$ cada uno, sin esperas entre las once capas y con hormigón colocado a $12\,^{\circ}\mathrm{C}$. Los laterales se cubren con madera y dos mantas, mientras que la cara superior recibe las dos mantas sin madera. El retiro se cuenta desde la colocación de cada capa: la madera permanece $72\,\mathrm{h}$, la primera manta $240\,\mathrm{h}$ y la segunda $504\,\mathrm{h}$. Al retirar la última manta se incorpora una sombra idealizada que deja pasar el $10~\%$ de la radiación solar y se conserva hasta el final del seguimiento de $672\,\mathrm{h}$, manteniendo las demás condiciones de intercambio. Las edades de retiro forman parte de la programación simulada. Los resultados respaldan el cumplimiento de los criterios térmicos al mantener la última manta hasta las $504\,\mathrm{h}$ de edad de cada capa y aplicar posteriormente la sombra, bajo los escenarios y supuestos evaluados. No se buscó determinar la menor edad de retiro admisible. Su aplicación en obra requiere comprobar las temperaturas y la resistencia del hormigón.
-\newpage
-
-El efecto de los circuitos se incorpora como una extracción de calor distribuida en la zona refrigerable, con agua a temperatura uniforme y una potencia total limitada. Un circuito solo puede abrirse después de quedar cubierto por hormigón y cuando todos sus puntos de control alcanzan al menos $19\,^{\circ}\mathrm{C}$; se cierra si alguno baja a $18\,^{\circ}\mathrm{C}$ o menos. La diferencia entre ambas temperaturas evita aperturas y cierres repetidos alrededor de un único umbral. Este control puede actuar durante todo el seguimiento, sin una fecha fija de apagado general. El coeficiente $U_v$ representa el intercambio térmico equivalente adoptado: no se obtiene del caudal nominal de los ramales. El modelo no calcula el paso de calor a través de la pared del tubo y su contacto con el hormigón, ni el calentamiento del agua a lo largo del recorrido. Por ello, el comportamiento calculado todavía requiere una comprobación del diseño hidráulico y de la transferencia real de calor.
-
+El plan combina hormigón a $12\,^\circ\mathrm C$, dos frentes de colocación y nueve circuitos de refrigeración. Los laterales reciben madera y dos mantas, y la coronación recibe solo las dos mantas. El retiro de cada protección se cuenta desde la activación de la capa correspondiente. Después del último retiro, la sombra deja pasar el $10\,\text{\%}$ de la radiación solar hasta el final del seguimiento.
 \begin{table}[htbp]
   \centering
   \caption{Condiciones de colocación y refrigeración adoptadas}
   \label{tab:param-plan}
   \small
   \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{p{1.4cm}p{3.8cm}p{2.1cm}p{2.0cm}p{3.7cm}p{2.8cm}}
+  \begin{tabular}{L{1.4cm}L{3.8cm}L{2.1cm}L{2.0cm}L{3.7cm}L{2.8cm}}
     \toprule
     Símbolo & Significado & Unidad & Valor o conjunto & Procedencia & Clasificación \\
     \midrule
@@ -196,54 +145,29 @@ El efecto de los circuitos se incorpora como una extracción de calor distribuid
     \bottomrule
   \end{tabular}
   \captionsetup{skip=2pt}
-  \caption*{Fuente: Configuración final del estudio y anteproyecto de circuitos del equipo.}
+  \caption*{Fuente: configuración final del estudio y anteproyecto de circuitos del equipo.}
 \end{table}
 
-
-%-------------------------------------------
 \subsection{Datos de hidratación y tratamiento de las ocho curvas}
 \label{sec:Hidratación y curvas}
-%-------------------------------------------
+Las ocho curvas docentes expresan potencia térmica por unidad de volumen, en $\mathrm{W\,m^{-3}}$. Se estimaron a partir de temperaturas de probetas cilíndricas de $0{,}0375\,\mathrm m$ de radio y $0{,}15\,\mathrm m$ de altura. La inversión docente considera pérdidas hacia el aire, corrige desplazamientos de los sensores y ajusta una curva suave de generación mediante $16$ funciones de base y regularización de segundas diferencias \citep{fuentesDocentes}.
 
-Para describir el calor de hidratación se utilizan las ocho curvas del archivo docente \texttt{source\_terms.txt}: \texttt{M1\_SS} a \texttt{M4\_SS} y \texttt{M1\_22A} a \texttt{M4\_22A}. Cada curva indica la potencia térmica generada por unidad de volumen de hormigón, en $\mathrm{W\,m^{-3}}$. Estos valores se estimaron a partir de registros de temperatura de probetas, ajustando un modelo para determinar la generación de calor que explica las temperaturas observadas \citep{fuentesDocentes}. Este procedimiento se denomina inversión. Las curvas entregadas ya son fuentes de calor, por lo que se incorporan sin volver a derivar una temperatura adiabática.
-\newpage
+Las etiquetas \texttt{M1} a \texttt{M4} identifican probetas de las campañas \texttt{SS} y \texttt{22A}. La edad cero corresponde al inicio del registro retenido, dos horas después del comienzo original. El error de ajuste fue de unos $0{,}1$ a $0{,}2\,\mathrm K$ en \texttt{SS} y de $0{,}4\,\mathrm K$ en \texttt{22A}, cuyo sensor ambiental representa peor las oscilaciones diarias. La información disponible impide confirmar que se trate de réplicas independientes de una misma mezcla. Se conservaron las ocho respuestas y se examinó por separado el efecto de excluir cada campaña.
 
-El archivo describe probetas cilíndricas de radio $0{,}0375\,\mathrm{m}$ y altura $0{,}15\,\mathrm{m}$. Para estimar el calor generado se utilizó un modelo de volúmenes finitos que aprovecha la simetría del cilindro y considera sus pérdidas hacia el ambiente mediante una conductancia de borde fija de $2{,}5\,\mathrm{W\,m^{-2}\,K^{-1}}$. La curva se representó con B-splines cúbicos, es decir, funciones polinómicas unidas de forma suave, con $16$ funciones base. El ajuste incorporó regularización de Tikhonov, con una penalización de segundas diferencias de $0{,}05$, y correcciones de los desplazamientos de lectura de cada sensor. Estos procedimientos buscan controlar las oscilaciones del ajuste y las diferencias sistemáticas entre sensores. Se conservó ese procesamiento docente, sin repetirlo para el estudio de la fundación.
+Las muestras están separadas por $600\,\mathrm s$. Los marcadores vacíos posteriores al final de cada serie se descartaron. No hubo huecos interiores ni se aplicó otro suavizado. Se integró la potencia por trapecios para obtener el calor volumétrico acumulado $H_m$ de cada curva $m$. Entre muestras se interpoló linealmente $H_m$, de modo que el aporte durante un paso es exactamente $H_m(a_f)-H_m(a_i)$ por unidad de volumen.
 
-Las etiquetas \texttt{M1} a \texttt{M4} identifican las probetas. Las curvas \texttt{SS} corresponden a registros del $13$ al $20$ de abril de $2025$, y las \texttt{22A}, al $22$ de abril del mismo año. En ambos grupos se toma como edad cero el comienzo de la parte del registro que se conservó, situada dos horas después del inicio original. Ese instante se usa como aproximación del inicio de hidratación de cada capa. El calor de las dos horas descartadas no se reconstruye, lo que limita la representación de las primeras edades.
-
-No se dispone de antecedentes suficientes para confirmar que las ocho curvas provengan de ensayos independientes de una misma dosificación. Se conservan como ocho respuestas posibles del material dentro del modelo, sin atribuirles una representatividad estadística que los datos no demuestran. Además, el archivo señala que las curvas \texttt{22A} tienen menor confianza, porque el sensor ambiental no explica adecuadamente la respuesta de las probetas a los cambios diarios de temperatura. El error de ajuste reportado, medido como raíz del error cuadrático medio, es de aproximadamente $0{,}4\,\mathrm{K}$ para \texttt{22A} y de $0{,}1$--$0{,}2\,\mathrm{K}$ para \texttt{SS}. Se mantienen las ocho curvas en la comparación, reconociendo que la calidad del ajuste difiere entre ambas campañas.
-
-Se conserva cada serie hasta su última muestra disponible. Los valores \texttt{NaN} que aparecen después indican que el registro terminó; no se interpretan como mediciones de calor nulo. No se encontraron datos faltantes dentro de los tramos conservados ni se aplicó un nuevo suavizado. Las muestras están separadas por $600\,\mathrm{s}$, equivalentes a diez minutos, y se utiliza ese intervalo para evitar diferencias debidas al redondeo de las horas en el archivo. El calor acumulado se obtiene sumando el aporte entre muestras mediante la regla del trapecio:
-\begin{equation}
-    H_{m,j}=\sum_{r=0}^{j-1}
-    \frac{\dot q_{m,r}+\dot q_{m,r+1}}{2}
-    (a_{r+1}-a_r), \qquad H_{m,0}=0,
-\end{equation}
-tal que $m$ identifica la curva, $j$ y $r$ indican las posiciones de las muestras y $a_r$ es la edad en segundos. El valor $H_{m,j}$ representa el calor generado hasta esa edad por unidad de volumen de hormigón, en $\mathrm{J\,m^{-3}}$.
-
-Para incorporar estos datos al cálculo, se unen con segmentos rectos los valores del calor acumulado $H_m(a)$. Así se puede obtener la energía generada entre dos edades, aunque no coincidan con las muestras originales. La pendiente de cada segmento representa la fuente efectiva utilizada en ese intervalo:
-\begin{equation}
-    \dot q_{h,m}(a)=\frac{H_{m,j+1}-H_{m,j}}{a_{j+1}-a_j},
-    \qquad a_j\leq a<a_{j+1}.
-\end{equation}
-\newpage
-
-Durante un paso que va de la edad $a_i$ a la edad $a_f$, el calor incorporado por unidad de volumen es:
-\begin{equation}
-    H_m(a_f)-H_m(a_i)
-\end{equation}
-De esta forma, el aporte depende del calor acumulado entre ambos instantes y se conserva aunque el paso de cálculo difiera del intervalo de los datos. La Figura~\ref{fig:hidratacion-fuentes} muestra las ocho curvas entregadas, las fuentes utilizadas durante las primeras $48\,\mathrm{h}$ y sus calores acumulados.
-
-La Tabla~\ref{tab:hidratacion-calor} resume el máximo de cada curva y su calor total. Al integrar las fuentes se recuperan, a la precisión de los archivos, los acumulados guardados en los ocho CSV. El mismo resultado se obtiene al sumar los aportes con intervalos de $300\,\mathrm{s}$. Esta comprobación confirma que el tratamiento conserva la energía de los datos; no permite concluir que el ajuste de las probetas o las temperaturas de la fundación hayan sido validados con mediciones independientes.
-
-Después de la última muestra se mantiene constante el calor acumulado. Esto equivale a suponer que no se genera más calor después de aproximadamente $240{,}333\,\mathrm{h}$ para \texttt{SS} y $163\,\mathrm{h}$ para \texttt{22A}. Se trata de una hipótesis para completar el período sin datos, y no de una observación del fin de la hidratación. De hecho, la última muestra de \texttt{M1\_SS} todavía indica una fuente de $1{,}57\,\mathrm{W\,m^{-3}}$.
-
-En cada simulación se asigna una misma curva completa a todas las capas, pero la edad comienza a contarse al activar cada una. Esto supone que el material de toda la fundación comparte una misma respuesta de hidratación. La generación de calor depende únicamente de esa edad, sin modificar su velocidad según la temperatura calculada. Cada curva se conserva por separado: no se combinan partes de distintas series ni se utiliza una curva promedio para reemplazarlas. Los pesos asignados y sus consecuencias se explican en la sección de incertidumbre.
-
-\begin{table}[htbp]
+La Figura~\ref{fig:hidratacion-fuentes} distingue los datos recibidos, la fuente efectiva y el calor acumulado. La integral de cada fuente reproduce el valor archivado, también al subdividir el tiempo en pasos de $300\,\mathrm s$ (Tabla~\ref{tab:hidratacion-calor}). Después de la última muestra se mantiene $H_m$ constante. Esta decisión supone generación posterior nula, aun cuando la última lectura de \texttt{M1\_SS} todavía alcanza $1{,}57\,\mathrm{W\,m^{-3}}$.
+\begin{figure}[!htbp]
   \centering
-  \caption{Duración de registro, máximos tabulados y calor acumulado de las fuentes de hidratación}
+  \includegraphics[width=0.90\linewidth]{Imagenes/hidratacion_fuentes_calor.png}
+  \caption{Fuentes tabuladas, fuente efectiva y calor acumulado de las ocho curvas de hidratación}
+  \label{fig:hidratacion-fuentes}
+  \captionsetup{skip=2pt}
+  \caption*{Fuente: elaboración propia a partir de \texttt{source\_terms.txt} y de los archivos tabulares del modelo.}
+\par\medskip
+\begin{minipage}{\linewidth}
+  \centering
+  \captionof{table}{Duración de registro, máximos tabulados y calor acumulado de las fuentes de hidratación}
   \label{tab:hidratacion-calor}
   \small
   \begin{tabular}{lccc}
@@ -261,32 +185,13 @@ En cada simulación se asigna una misma curva completa a todas las capas, pero l
     \bottomrule
   \end{tabular}
   \captionsetup{skip=2pt}
-  \caption*{Fuente: Elaboración propia a partir del archivo docente y de los acumulados conservados en el repositorio.}
-\end{table}
-\newpage
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.98\linewidth]{Imagenes/hidratacion_fuentes_calor.png}
-  \caption{Fuentes tabuladas, fuente efectiva y calor acumulado de las ocho curvas de hidratación}
-  \label{fig:hidratacion-fuentes}
-  \captionsetup{skip=2pt}
-  \caption*{Fuente: Elaboración propia a partir de \texttt{source\_terms.txt} y de los archivos tabulares del modelo.}
+  \caption*{Fuente: elaboración propia a partir del archivo docente y de los acumulados conservados en el repositorio.}
+\end{minipage}
 \end{figure}
 
-
-%-------------------------------------------
 \subsection{Datos meteorológicos y tratamiento temporal}
 \label{sec:Meteorologicos}
-%-------------------------------------------
-
-El clima se representa mediante tres historias horarias de los años $2023$, $2024$ y $2025$, obtenidas de ERA5 a través de la API histórica de Open-Meteo \citep{openmeteoHistorico}. ERA5 es un reanálisis: combina observaciones y un modelo atmosférico para reconstruir las condiciones del pasado. Por ello, estas series se utilizan como escenarios históricos del sitio y no como pronósticos del tiempo que ocurriría durante la construcción en $2026$.
-
-Las consultas utilizan las coordenadas del apartado~\ref{sec:emplazamiento-geometria}. La respuesta del proveedor corresponde al punto de grilla de latitud $-37{,}25^{\circ}$ y longitud $-72{,}25^{\circ}$. Esta diferencia refleja la representación espacial del producto; los valores no son mediciones tomadas en la posición exacta de la fundación. Las solicitudes conservadas permiten identificar tanto las coordenadas pedidas como las devueltas.
-\newpage
-
-Cada archivo abarca del $19$ de noviembre al $17$ de diciembre de su año, desde las $00{:}00$ del primer día hasta las $23{:}00$ del último, en UTC, con $696$ marcas horarias. Los datos iniciales incluyen temperatura del aire, viento y radiación global. Posteriormente se descargaron archivos complementarios para incorporar las variables necesarias para radiación, sin reemplazar los anteriores. La Tabla~\ref{tab:descargas-clima} identifica ambas descargas; los instantes se muestran hasta el segundo, y los metadatos conservan su precisión original.
-
+Se utilizaron tres historias horarias del reanálisis ERA5, correspondientes a $2023$, $2024$ y $2025$, obtenidas de Open-Meteo \citep{hersbach2020,openmeteoHistorico}. Un reanálisis combina observaciones y un modelo atmosférico para reconstruir el tiempo pasado. Las series representan condiciones históricas posibles en el sitio. El proveedor devolvió la celda centrada en $(-37{,}25^\circ,-72{,}25^\circ)$. Cada archivo contiene $696$ marcas UTC, del $19$ de noviembre al $17$ de diciembre. Las $13{:}00$ UTC del primer día se hicieron coincidir con las $10{:}00$ del inicio constructivo en \texttt{America/Santiago}.
 \begin{table}[htbp]
   \centering
   \caption{Descargas de las historias meteorológicas utilizadas}
@@ -304,18 +209,13 @@ Cada archivo abarca del $19$ de noviembre al $17$ de diciembre de su año, desde
   \captionsetup{skip=2pt}
   \caption*{Fuente: metadatos de los archivos descargados de Open-Meteo.}
 \end{table}
-
-Para relacionar cada historia con la obra, se toma el $19$ de noviembre de su año a las $10{:}00$, UTC$-03{:}00$, como inicio de tiempo relativo. Esa hora corresponde a las $13{:}00$ UTC. A partir de ella se conserva la secuencia horaria completa y se aplica al inicio constructivo del $19$ de noviembre de $2026$, declarado en el apartado anterior. Así se mantienen los ciclos diarios y la relación entre las variables de cada historia. La posición solar se calcula con las fechas históricas correspondientes. Los archivos se almacenan en UTC y el inicio de obra se identifica con la zona \texttt{America/Santiago}, evitando confundir ambas referencias.
-
-La Tabla~\ref{tab:variables-clima} resume las variables que intervienen en los intercambios térmicos. La temperatura del aire, el viento y la radiación global de las descargas complementarias coinciden exactamente con los archivos iniciales en las tres historias. La radiación directa horizontal también se conserva para comprobar su suma con la difusa frente a la global. La temperatura del cielo se estima a partir del punto de rocío y la nubosidad total; no se dispone de una medición infrarroja del cielo. El suelo mantiene el tratamiento equivalente descrito en el apartado~\ref{sec:Parametros y condiciones}, sin utilizar una serie de temperatura del terreno.
-
 \begin{table}[htbp]
   \centering
   \caption{Variables meteorológicas y uso en el modelo térmico}
   \label{tab:variables-clima}
   \small
   \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{p{5.0cm}p{1.8cm}p{9.0cm}}
+  \begin{tabular}{L{5.0cm}L{1.8cm}L{9.0cm}}
     \toprule
     Variable & Unidad & Uso \\
     \midrule
@@ -329,46 +229,28 @@ La Tabla~\ref{tab:variables-clima} resume las variables que intervienen en los i
     \bottomrule
   \end{tabular}
   \captionsetup{skip=2pt}
-  \caption*{Fuente: Archivos meteorológicos y tratamiento implementado en el modelo.}
+  \caption*{Fuente: archivos meteorológicos y tratamiento implementado en el modelo.}
 \end{table}
-\newpage
+Las Tablas~\ref{tab:descargas-clima} y~\ref{tab:variables-clima} identifican las fechas de descarga, las variables y sus unidades. En las descargas complementarias se verificó que el viento, la temperatura del aire y la irradiancia global coincidieran con las series iniciales. La temperatura del aire, el punto de rocío y la nubosidad se interpolaron linealmente. Para cada hora se mantuvo el coeficiente convectivo del comienzo del intervalo y se tomó la irradiancia de la marca final, que representa el promedio de la hora precedente.
 
-Entre las marcas horarias se interpola linealmente la temperatura del aire, el punto de rocío y la nubosidad. El coeficiente convectivo se mantiene constante durante cada hora, calculado con el viento de su marca inicial. Las irradiancias representan el promedio de la hora precedente \citep{openmeteoHistorico}: para el intervalo entre dos marcas se utiliza el dato de la marca final, con la posición solar evaluada en el punto medio. Este tratamiento respeta el intervalo temporal al que pertenece la energía solar.
-
-Las Figuras~\ref{fig:clima-ambiente} y~\ref{fig:clima-radiacion} muestran las series utilizadas durante las $672\,\mathrm{h}$ y el coeficiente convectivo calculado. La línea vertical en $336\,\mathrm{h}$ distingue el horizonte obligatorio del seguimiento extendido. Se verificó la continuidad horaria y la ausencia de valores faltantes en las variables utilizadas. La cobertura disponible permite completar ambos horizontes sin repetir días, rellenar huecos ni prolongar la última temperatura. Las diferencias entre estas tres historias representan parte de la variación climática posible; su número limitado no permite tratarlas como una descripción completa de los extremos meteorológicos del sitio.
-
+Las Figuras~\ref{fig:clima-ambiente} y~\ref{fig:clima-radiacion} muestran las horas transcurridas desde el inicio y distinguen los tres años por color. El ciclo día--noche se reconoce en la irradiancia, mientras que la convección aumenta durante los episodios de viento. La marca a las $336\,\mathrm h$ indica el final de los primeros catorce días. Las tres series cubrieron las $672\,\mathrm h$ sin huecos ni prolongaciones artificiales.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.95\linewidth]{Imagenes/clima_ambiente.png}
   \caption{Temperatura del aire, viento, punto de rocío y nubosidad de las tres historias climáticas}
   \label{fig:clima-ambiente}
   \captionsetup{skip=2pt}
-  \caption*{Fuente: Elaboración propia a partir de los archivos ERA5 descargados de Open-Meteo.}
+  \caption*{Fuente: elaboración propia a partir de los archivos ERA5 descargados de Open-Meteo.}
 \end{figure}
-\newpage
-\begin{figure}[h]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.95\linewidth]{Imagenes/clima_radiacion_conveccion.png}
   \caption{Radiación solar y coeficiente convectivo utilizados en las tres historias climáticas}
   \label{fig:clima-radiacion}
   \captionsetup{skip=2pt}
-  \caption*{Fuente: Elaboración propia a partir de los archivos ERA5 y de la correlación convectiva adoptada.}
+  \caption*{Fuente: elaboración propia a partir de los archivos ERA5 y de la correlación convectiva adoptada.}
 \end{figure}
 
-En ambas figuras, el eje horizontal representa las horas transcurridas desde el inicio de construcción y los colores distinguen las tres historias climáticas. Los ejes verticales indican la variable representada y su unidad.
-
-La Figura~\ref{fig:clima-ambiente} muestra los ciclos diarios de temperatura y las diferencias de viento, punto de rocío y nubosidad entre las historias. En la Figura~\ref{fig:clima-radiacion} se observa la alternancia de la radiación solar entre el día y la noche, mientras que el coeficiente convectivo cambia con la velocidad del viento. Estas variaciones hacen que las condiciones de intercambio de calor entre la fundación y el ambiente cambien durante el seguimiento.
-
-%-------------------------------------------
 \subsection{Trazabilidad y congelación de los datos}
 \label{sec:Trazabilidad}
-%-------------------------------------------
-
-La comparación utiliza copias locales de los datos, conservadas sin cambios durante la campaña de cálculo. Cada archivo meteorológico guarda la respuesta original del proveedor y los metadatos de la consulta: dirección de acceso, variables, coordenadas, unidades, zona horaria y fecha de descarga. El manifiesto de radiación vincula cada archivo complementario con su descarga inicial y registra la coincidencia de las variables comunes. Esto permite reconstruir qué información se utilizó sin depender de una nueva consulta al servicio.
-
-\newpage
-El repositorio conserva las descargas históricas en \path{datos/clima/reanalisis}, las complementarias en \path{datos/clima/radiacion} y los pronósticos previos en \path{datos/clima/forecasts}. Entre estos últimos existen archivos descargados el $10$ y el $17$ de noviembre de $2026$. Se mantienen como antecedentes de las etapas anteriores; la comparación final de este artículo se basa en las tres historias ERA5 descritas, sin mezclarlas con esos pronósticos. La ampliación de variables del $18$ de noviembre corresponde a una descarga efectivamente registrada, no a una reconstrucción retrospectiva de información supuestamente disponible antes.
-
-La configuración final identifica el IFC, las curvas de hidratación, los planes y las condiciones térmicas. Los resultados por escenario registran esas referencias junto con huellas SHA-256, códigos que permiten comprobar si un archivo ha cambiado. Se contrastaron las referencias climáticas de las $72$ corridas archivadas del cierre: las dos tasas de colocación y la confirmación fina de la propuesta utilizan los mismos datos meteorológicos para cada historia. De esta forma, la comparación no obtiene ventajas por cambiar el clima entre planes o resoluciones.
-
-Para facilitar la revisión del artículo, se archivaron las series mostradas en las figuras, los metadatos y las huellas de los insumos en \path{entregas/F01/articulo/datos}. Las configuraciones y métricas completas permanecen en sus carpetas de origen. Cualquier corrección posterior a la defensa debe conservar la versión previa y registrar qué cambió, por qué y si modifica la recomendación. Los identificadores de los commits de defensa y de entrega final se documentarán junto con los comandos de reproducción en el anexo correspondiente; las huellas de archivos no sustituyen esos identificadores.
+Los planes utilizaron las mismas copias locales de la geometría, las curvas y el clima. Se comprobaron las referencias meteorológicas de las $72$ simulaciones finales. Los pronósticos descargados el $10$ y el $17$ de noviembre de $2026$ se conservaron como antecedentes y quedaron fuera de la comparación con ERA5. El Anexo~\ref{an:reproduccion} identifica las configuraciones, los datos y los resultados por escenario.

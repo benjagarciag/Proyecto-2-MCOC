@@ -1,0 +1,107 @@
+\section{Incertidumbre y optimización}
+\label{sec:incertidumbre-optimizacion}
+
+\subsection{Objetivo y restricciones de colocación}
+Se busca el plan $u$ que termine antes la colocación. El origen $t_0$ es el jueves $19$ de noviembre de $2026$ a las $10{:}00$ de \texttt{America/Santiago} (UTC$-03{:}00$), común a todos los planes. La duración de la colocación y la secuencia ascendente de capas satisfacen
+\begin{equation}
+  D(u)=\max_j t_{j,\mathrm{fin}}-t_0.
+  \label{eq:duracion-plan}
+\end{equation}
+\begin{equation}
+  t_{j,\mathrm{fin}}=t_{j,\mathrm{ini}}+\frac{V_j}{q_j},
+  \qquad
+  t_{j+1,\mathrm{ini}}\geq t_{j,\mathrm{fin}}+w_j,
+  \qquad w_j\geq0.
+  \label{eq:secuencia-colocacion}
+\end{equation}
+Aquí $V_j$ es el volumen físico de la capa, $q_j$ su tasa y $w_j$ la espera mínima antes de la siguiente. Cada uno de los dos frentes aporta hasta $30\,\mathrm{m^3/h}$ y su aporte conjunto alcanza como máximo $60\,\mathrm{m^3/h}$. Las esperas y cualquier retraso del primer inicio se cuentan en el plazo. La comparación final conserva el orden, comienza en $t_0$ y prescinde de esperas.
+
+\subsection{Decisiones exploradas y controles conservados}
+Se variaron la tasa de colocación y la programación de la protección final. En la comparación entre tasas se mantuvieron el hormigón a $12\,^\circ\mathrm C$, los nueve circuitos y la misma secuencia de madera, mantas y sombra. Así, la diferencia de plazo se debe al rendimiento y el efecto de las protecciones se estudia a una tasa común. El caudal nominal de $18\,\mathrm{L/min}$ por circuito abierto y el suministro total de $162\,\mathrm{L/min}$ con derivación son hipótesis de operación.
+
+\subsection{Máximos térmicos, evento conjunto y horizonte}
+Para un escenario $s$ y horizonte $H$, se busca la mayor temperatura del dominio activo y la mayor diferencia simultánea entre su punto más caliente y el más frío del conjunto $S_{25}$, situado aproximadamente a $25\,\mathrm{mm}$ de las superficies exteriores activas. Se incluyen base, laterales y coronación:
+\begin{equation}
+  M_T(u,s;H)=\max_{0\leq\tau\leq H}
+  \left[\max_{\vec x\in\Omega_c(\tau)}T(\vec x,\tau;u,s)\right],
+  \label{eq:maximo-temperatura-escenario}
+\end{equation}
+\begin{equation}
+  M_\Delta(u,s;H)=\max_{0\leq\tau\leq H}
+  \left[
+  \max_{\vec x\in\Omega_c(\tau)}T(\vec x,\tau;u,s)
+  -\min_{\vec x\in S_{25}(\tau)}T(\vec x,\tau;u,s)
+  \right].
+  \label{eq:maximo-diferencial-escenario}
+\end{equation}
+El evento de excedencia ocurre si se supera cualquiera de los dos criterios docentes:
+\begin{equation}
+  F(u,s;H)=
+  \left\{M_T(u,s;H)>70\,{}^\circ\mathrm C\right\}
+  \cup
+  \left\{M_\Delta(u,s;H)>20\,\mathrm K\right\}.
+  \label{eq:evento-conjunto}
+\end{equation}
+La igualdad con el umbral es admisible. Se conservó la evaluación obligatoria de los primeros $14$ días y se amplió el seguimiento a $28$ días. La última manta de la propuesta sigue instalada al día $14$ y su retiro puede exponer una superficie a un ciclo de calentamiento y enfriamiento que altere el máximo diferencial.
+
+\subsection{Escenarios y dependencias adoptadas}
+Cada escenario combina una de las ocho historias de hidratación con uno de los tres años meteorológicos. La curva es común a todas las capas y se desplaza según su edad. El año se conserva completo, de modo que viento, temperatura y radiación mantienen su relación temporal. La independencia entre curva y año y sus pesos iguales son decisiones del estudio:
+\begin{equation}
+  p_m=\frac{1}{8},\qquad r_k=\frac{1}{3},\qquad
+  w_{mk}=p_mr_k=\frac{1}{24},\qquad
+  \sum_{m=1}^{8}\sum_{k=1}^{3}w_{mk}=1.
+  \label{eq:pesos-escenarios}
+\end{equation}
+Las propiedades térmicas, la capacidad de los frentes, la transferencia de los tubos y la eficacia de la sombra permanecen fijas. El catálogo permite explorar la variación contenida en los datos, sin atribuir frecuencias de obra a los ensayos ni a los tres años elegidos.
+
+\subsection{Cálculo de probabilidades y resolución del catálogo}
+Se evaluaron todas las combinaciones. El indicador $I_F$ vale uno si el escenario excede cualquiera de los dos límites y cero en caso contrario. Un escenario que supera ambos cuenta una sola vez. Las probabilidades marginales se calculan aplicando la misma suma a cada criterio por separado:
+\begin{equation}
+  P_f^{\mathrm{esc}}(u;H)=
+  \sum_{m=1}^{8}\sum_{k=1}^{3}
+  w_{mk}\,I_F(u,m,k;H).
+  \label{eq:probabilidad-enumerada}
+\end{equation}
+\begin{equation}
+  \min_{u\in\mathcal U}D(u),
+  \qquad P_f^{\mathrm{esc}}(u;336\,\mathrm h)\leq0{,}05,
+  \qquad P_f^{\mathrm{esc}}(u;672\,\mathrm h)\leq0{,}05,
+  \label{eq:problema-optimizacion}
+\end{equation}
+Con pesos iguales, un escenario cambia la probabilidad en $1/24$, unos $4{,}17$ puntos porcentuales. Una excedencia todavía satisface el límite del $5\,\text{\%}$; dos lo superan. La suma es exacta para los escenarios y pesos definidos. La enumeración no utiliza semillas ni estimación por muestreo.
+
+\subsection{Sensibilidad a los pesos y al conjunto representado}
+La Tabla~\ref{tab:sensibilidad-pesos} repite la evaluación para cada campaña por separado. Como ningún par de la propuesta excede, la probabilidad sigue siendo cero con cualquier redistribución de pesos dentro de ese conjunto. El argumento cambia al incorporar condiciones nuevas: si un escenario adicional excediera y recibiera peso $\eta$, la probabilidad resultante sería $\eta$. Un peso superior a $0{,}05$ bastaría para invertir la decisión.
+\begin{table}[htbp]
+  \centering
+  \caption{Sensibilidad de la probabilidad a la selección de curvas del catálogo}
+  \label{tab:sensibilidad-pesos}
+  \small
+  \begin{tabular}{lccc}
+    \toprule
+    Curvas incluidas & Pares & Peso uniforme por par & $P_f^{\mathrm{esc}}$ a $672\,\mathrm h$ \\
+    \midrule
+    Todas las curvas & $24$ & $1/24$ & $0$ \\
+    Solo familia \texttt{SS} & $12$ & $1/12$ & $0$ \\
+    Solo familia \texttt{22A} & $12$ & $1/12$ & $0$ \\
+    \bottomrule
+  \end{tabular}
+  \captionsetup{skip=2pt}
+  \caption*{Fuente: elaboración propia a partir de los indicadores de las matrices finales.}
+\end{table}
+
+\subsection{Exploración, cribado y comparación final}
+Se exploraron tasas entre $45$ y $60\,\mathrm{m^3/h}$ en incrementos de $5\,\mathrm{m^3/h}$. Las tasas de $45$ y $50\,\mathrm{m^3/h}$ pertenecen a exploraciones anteriores y su mayor duración ya impide mejorar el objetivo. A $60\,\mathrm{m^3/h}$ se evaluaron tres alternativas de protección a $672\,\mathrm h$. La sección~\ref{sec:resultados} cuantifica el efecto del retiro y la sombra sobre el riesgo.
+
+La comparación final conserva la combinación que cumple y evalúa las dos tasas vecinas, $55$ y $60\,\mathrm{m^3/h}$, en los $24$ escenarios con la malla base. Se refinó la propuesta en los $24$ porque era la candidata de menor duración. Para la alternativa de sombra con retiro temprano bastaron dos excedencias confirmadas con malla fina para superar el peso admisible.
+
+\subsection{Alcance de la optimalidad}
+El volumen y la capacidad fijan un límite inferior al plazo:
+\begin{equation}
+  D\geq\frac{V}{q_{\max}}
+  =\frac{636{,}7751548866\,\mathrm{m^3}}
+  {60\,\mathrm{m^3/h}}
+  =10{,}6129192481\,\mathrm h.
+  \label{eq:cota-duracion}
+\end{equation}
+La propuesta alcanza ese límite porque comienza en $t_0$ y sostiene la tasa máxima sin esperas. La vertida única, entendida como una operación continua, coincide aquí con la propuesta y conserva las once activaciones físicas. Una alternativa más rápida exigiría otra capacidad o un inicio anterior. El resultado delimita la mejor opción entre los planes evaluados con estos recursos; deja abierta la comparación con otros diseños y la búsqueda de la primera edad admisible de retiro.

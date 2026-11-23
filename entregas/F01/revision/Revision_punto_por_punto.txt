@@ -1,0 +1,42 @@
+REVISIÓN DEL ARTÍCULO F01 · GRUPO 6
+23 de noviembre de 2026
+
+Se contrastó el PDF recibido (56 páginas) con el Taller de Escritura 2026, el enunciado F01 y los resultados archivados del proyecto. Las páginas que se citan a continuación corresponden a la numeración impresa del artículo revisado. La portada, el resumen y el índice preceden a la página 1.
+
+FORMATO Y ESCRITURA
+
+• Preliminares. La portada reúne título, modalidad de entrega, autores, grupo, curso, afiliación, lugar y fecha. Se incorporaron un resumen de extensión comprendida entre 150 y 250 palabras y cinco palabras clave. El resumen identifica pregunta, datos, método, comparación, resultado y principal condición de validez.
+• Extensión. El cuerpo de las secciones 1 a 9 pasó de unas 15.400 a unas 6.000 palabras de prosa, según el mismo conteo aproximado de los archivos LaTeX. Se excluyeron expresiones matemáticas, tablas, figuras y bibliografía. El enunciado califica el intervalo de 4.000 a 6.000 como orientativo. La versión revisada ocupa 38 páginas físicas con figuras y anexos.
+• Índice y navegación. Se conservaron las secciones principales en negrita, los subapartados numerados y las referencias internas. La introducción y sus objetivos ocupan una página. La bibliografía figura como «10. Referencias». Los anexos se agrupan en la sección 11.
+• Redacción. Se acortaron repeticiones sobre la malla, los 24 escenarios y los retiros. El método explica qué se calculó, los resultados presentan lo observado y el plan operativo distingue las acciones propuestas. Se introducen los términos técnicos antes de utilizarlos en la decisión.
+• Figuras y tablas. Las nueve figuras y las diecinueve tablas tienen número, título, fuente y llamada en el texto. Los títulos se presentan sin punto final. La fuente queda en una línea separada. La coma decimal se usa en el texto y en las tablas de presentación; los identificadores y comandos conservan su sintaxis.
+• Citas. Se mantuvo el estilo Harvard de autor y año. Se precisó la fuente institucional de ICH de 2019, se incorporó el estudio de campo de Sargam y colaboradores y se añadió la publicación que describe ERA5. Las fichas de productos, los datos docentes y las hipótesis de operación se identifican por separado.
+• Alcance de las convenciones. El taller pide numeración, título, fuente y explicación de tablas e imágenes. No prescribe una negrita específica para «Figura X», márgenes numéricos ni una familia tipográfica determinada. La pauta F01 identifica los datos obligatorios de la portada. El taller además ilustra una portada de laboratorio con docente y una contraportada con carrera. La revisión sigue los datos confirmados y la estructura específica del artículo F01. El nombre del docente y la carrera de los integrantes requerirían confirmación si se adopta ese modelo de laboratorio.
+
+REVISIÓN POR SECCIÓN
+
+1 · Introducción, p. 1. Se explica por qué el núcleo y el contorno evolucionan a distinto ritmo y cómo esto afecta la colocación. Se incorporó una hipótesis que se retoma en las conclusiones. Se conservan el objetivo general, los cuatro objetivos específicos y el carácter docente de los límites.
+
+2 · Caso de estudio y datos, desde p. 2. Se describe el punto meteorológico asignado, la geometría, el flujo IFC–malla y la diferencia entre los cinco objetos y las once capas. La comparación volumétrica incluye ambas mallas. Las tablas identifican símbolos, unidades, valores, procedencia y clasificación. Las ocho fuentes se conservan por separado, con sus campañas, edad cero, pérdidas de probeta, interpolación, comprobación integral y cola. Las series climáticas incluyen coordenadas, producto, unidades, fechas reales de descarga, zona horaria y cobertura. La comparación usa las mismas series en todos los planes.
+
+3 · Modelo continuo, desde p. 9. Se enlazaron el balance integral, la normal saliente, Fourier y la ecuación con generación y refrigeración. Se explican edad y temperatura de activación, inversión no adiabática, contacto entre capas, suelo equivalente y bordes que cambian al colocar hormigón. La tabla de bordes resume las etapas. La radiación solar se trata por orientación y la onda larga con temperaturas absolutas.
+
+4 · Discretización y algoritmos, desde p. 12. Se mantienen el balance de celda, conductancias, avance temporal explícito, límite local de estabilidad, restricciones por eventos y estimación a 25 mm. Se redujo el algoritmo a seis pasos numerados. La tabla de tiempos informa por separado las simulaciones base, las finas y los contrastes temporales. La suma de tiempos por proceso se distingue del tiempo de campaña.
+
+5 · Verificación y evaluación, desde p. 16. El caso analítico tuvo un error máximo de 0,0025714 K. Se identifican las entradas y salidas del balance y el mayor residuo absoluto, de aproximadamente 2,48 × 10⁻⁴ J. Se comparan dos mallas en 24 casos y dos pasos temporales en dos casos. El mayor cambio espacial del diferencial, 0,882 K, se interpreta frente al margen fino de 4,28 K. Se distinguen verificación, calibración de la fuente y validación pendiente.
+
+6 · Incertidumbre y optimización, desde p. 18. Se definen origen, objetivo, capacidad, secuencia, esperas y variables retenidas. La excedencia incluye cualquiera de los dos umbrales, con temperaturas simultáneas para el diferencial. Se conserva la evaluación de 14 días y se justifica la extensión a 28. La resolución probabilística es 1/24. Se explica qué cambia al reponderar, excluir una campaña o introducir un escenario ausente. La comparación entre planes respeta la cota física de capacidad.
+
+7 · Resultados, desde p. 21. El gráfico principal presenta los cronogramas y el apartado 11.2 permite consultar cada capa. Las tablas reúnen duración, probabilidades marginales y conjunta, cumplimiento, máximos, instantes, escenarios y posiciones. La tabla de localización es ahora la Tabla 15 y conserva columnas independientes para el punto caliente y el punto próximo al contorno. Las curvas y cortes siguen una realización común. Se cuantifica el efecto en plazo y riesgo y se fundamentan las excepciones para la vertida única y la alternativa más rápida.
+
+8 · Discusión y plan de control, desde p. 25. Se interpreta el papel de las edades relativas, el clima y la aislación. Las alarmas tienen responsables y márgenes; el monitoreo tiene ubicaciones, redundancia, frecuencia y duración. La revisión previa al retiro contempla resistencia, sensores, diferencial, clima y predicción. La eficacia de una contingencia o del desmontaje final necesita una evaluación propia.
+
+9 · Conclusiones, p. 30. Se responde con el plan de 60 m³/h, su duración de 10,61 h, el ahorro de 57,89 min (8,33 % frente a 55 m³/h) y el 0 % de excedencia dentro del catálogo. Se identifica la comprobación de las prestaciones físicas como condición para la obra. Los datos disponibles permiten evaluar excedencia térmica; una probabilidad de fisuración requeriría estudiar la respuesta mecánica.
+
+10 · Referencias y anexos, desde p. 31. Se comprobaron catorce entradas bibliográficas citadas. El apartado 11.1 enlaza el repositorio, conserva el identificador de la entrega de defensa, localiza configuraciones y métricas por escenario y documenta entorno, consulta, caso individual, comparación y auditoría. El apartado 11.2 reúne cronogramas completos y expresiones auxiliares. La nota posterior a la defensa declara el alcance editorial y su efecto sobre la recomendación.
+
+COMPROBACIONES Y CIERRE
+
+El documento se compiló con Tectonic y BibTeX, con todas las imágenes incluidas. Se inspeccionaron las páginas renderizadas y se comprobaron destinos de las referencias, insumos del ZIP y ausencia de citas o referencias sin resolver. Los valores principales se contrastaron con el cierre archivado. Se ejecutó la consulta de resultados existentes, sin nuevas simulaciones.
+
+Para la entrega administrativa falta asociar el PDF definitivo al SHA del commit final de F01. El SHA de la defensa ya está en el apartado 11.1. La aprobación del Centro de Escritura corresponde a su revisión institucional.

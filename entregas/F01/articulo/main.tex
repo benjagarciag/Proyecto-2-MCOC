@@ -9,20 +9,22 @@
 \usepackage[spanish,es-tabla]{babel}
 
 \usepackage{url}
-\usepackage{hyperref}
 \usepackage{multirow}
 \usepackage{siunitx}
 \usepackage{amsmath}
 \usepackage{float}
 \usepackage{graphicx}
-\usepackage{booktabs}
+\usepackage{booktabs,array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \usepackage[authoryear,round]{natbib}
 \setcitestyle{aysep={,},notesep={: }}
 \usepackage{fancyhdr}
+\usepackage{hyperref}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.5em}
 \usepackage{adjustbox}
-\hypersetup{hidelinks}
+\hypersetup{hidelinks,pdfauthor={Benjamín García, Luis Noriega y Matías Stierling},pdftitle={Planificación de la colocación de una fundación de hormigón masivo}}
+\urlstyle{same}
 
 % Tablas compactas: interlineado simple dentro de tablas
 \usepackage{etoolbox}
@@ -31,17 +33,20 @@
 % Separación compacta entre figuras/tablas y texto.
 \setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
 \setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.75}
 \setlength{\floatsep}{8pt plus 2pt minus 2pt}
 
 \def\unidad{Universidad de los Andes}
 \def\programa{Facultad de Ingenier\'ia y Ciencias Aplicadas}
 \def\titulo{Planificación de la colocación de una fundación de hormigón masivo}
 \def\subtitulo{Métodos Computacionales en IOC}
-% COMPLETAR: nombres de los integrantes del grupo
 \def\autores{
     Benjamín García \\
     Luis Noriega\\
-    Matias Stierling\\
+    Matías Stierling\\
     [0.4cm]
     \normalsize Grupo $6$\\
 }
@@ -55,39 +60,58 @@
 \fancyhf{}
 \chead{Métodos Computacionales en IOC \vspace{0.3cm}}
 \lhead{\includegraphics[width=3cm]{Imagenes/marca_principal.jpg}}
-\lfoot{\scriptsize Facultad Ingenier\'ia y Ciencias Aplicadas\\Universidad de los Andes}
+\lfoot{\scriptsize Facultad de Ingenier\'ia y Ciencias Aplicadas\\Universidad de los Andes}
 \rfoot{\thepage}
 \renewcommand{\footrulewidth}{0.5pt}
 \addtolength{\headheight}{1.5cm}
 \renewcommand{\baselinestretch}{1.5}
-\setlength{\footskip}{10pt}
+% Reservar espacio para la línea y las dos líneas de texto del pie.
+\addtolength{\textheight}{-24pt}
+\setlength{\footskip}{38pt}
 
+% Conservar juntos los renglones de cada párrafo al paginar.
+\interlinepenalty=10000
+\raggedbottom
 \begin{document}
 
+\hypersetup{pageanchor=false}
 \input{Portada}
 
 \newpage
 \pagenumbering{gobble} % Oculta el número de página de índice y resumen
 
-\tableofcontents
+\input{secciones/resumen}
+\clearpage
+{\small\linespread{1.05}\selectfont\setlength{\parskip}{0pt}\tableofcontents\par}
 
 \newpage
 \pagenumbering{arabic} % Empieza a contar las páginas desde la introducción
+\hypersetup{pageanchor=true}
 \input{secciones/01_introduccion}
+\clearpage
 \input{secciones/02_caso_estudio_datos}
 \input{secciones/03_modelo_continuo}
 \input{secciones/04_discretizacion_algoritmos}
 \input{secciones/05_verificacion_evaluacion}
+\input{secciones/06_incertidumbre_optimizacion}
+\input{secciones/07_resultados}
+\input{secciones/08_discusion_control}
+\clearpage
+\input{secciones/09_conclusiones}
 
-\newpage
+\clearpage
 \renewcommand{\refname}{Referencias}
-\addcontentsline{toc}{section}{Referencias}
+\renewcommand{\bibsection}{\section{\refname}}
 \bibliographystyle{dcu}
 \renewcommand{\harvardand}{y}
 \renewcommand{\harvardurl}{URL:}
-\bibliography{Ref}
+{\raggedright\linespread{1.05}\selectfont\setlength{\bibsep}{0.45em}\bibliography{Ref}}
 
-\newpage
-%\input{secciones/anexo}
+\clearpage
+\section{Anexos}
+\linespread{1.15}\selectfont
+\setlength{\parskip}{0.35em}
+\input{secciones/anexo_reproduccion}
+\input{secciones/anexo_detalles}
 
 \end{document}

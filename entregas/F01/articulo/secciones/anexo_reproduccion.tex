@@ -1,0 +1,36 @@
+\subsection{Reproducción de la comparación}
+\label{an:reproduccion}
+
+El repositorio del proyecto se encuentra en \url{https://github.com/benjagarciag/Proyecto-2-MCOC}. La entrega de defensa está identificada en Git como \texttt{Entrega F02}.
+
+\noindent SHA de la defensa\quad\texttt{d0ed4cd1e80a3c8ca1acf26fba0be232f3ed88d3}.
+
+ Esta revisión del artículo reorganiza la exposición, incorpora bibliografía y facilita la consulta de la evidencia. Conserva la configuración, los resultados numéricos y la recomendación de esa entrega. El identificador de la entrega F01 se proporciona junto con el PDF al cerrar la versión en el repositorio.
+
+\subsubsection{Lectura de la evidencia archivada}
+
+Desde la raíz del repositorio, la carpeta \path{entregas/F02/cierre_revision_final/} reúne la documentación necesaria para consultar los resultados sin simular:
+\begin{itemize}
+\item \path{CONFIGURACION_FINAL_REVISADA.json} y \path{PARAMETROS_FINAL.csv} identifican la geometría, los planes, las propiedades, los controles y sus fuentes.
+\item \path{COMPARACION_PLANES.csv} resume las tres matrices. \path{METRICAS_144_FILAS.csv} presenta los máximos de cada escenario, sus instantes y posiciones a $336$ y $672\,\mathrm h$. Cada combinación de curva y año pesa $1/24$ en la comparación principal.
+\item \path{BALANCES_144_FILAS.csv} y \path{SENSIBILIDAD_ESPACIAL_24_PARES.csv} permiten revisar la conservación de energía y los cambios entre mallas. Las figuras numeradas de la carpeta y \path{MANIFIESTO_EVIDENCIA.json} vinculan estos resultados con sus archivos.
+\end{itemize}
+La carpeta \path{datos/hidratacion/} contiene las fuentes docentes. Las series históricas iniciales y complementarias se conservan en \path{datos/clima/reanalisis/} y \path{datos/clima/radiacion/}. Las tablas, las series graficadas y los metadatos del artículo se encuentran en \path{entregas/F01/articulo/datos/}. La enumeración es determinista.
+
+\subsubsection{Entorno y comandos}
+
+El entorno local utiliza Python $3.12.10$ en Windows. Las versiones de NumPy, IfcOpenShell y las demás dependencias figuran en \path{requirements.txt}. Desde la raíz de una copia del repositorio con historial Git, estas instrucciones de PowerShell preparan el entorno y muestran las matrices archivadas:
+\begin{verbatim}
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+$py = ".\.venv\Scripts\python.exe"
+$cierre = "casos/sensibilidad_h/ejecutar_cierre_f02.py"
+& $py -X utf8 -B $cierre
+\end{verbatim}
+
+La primera orden siguiente reproduce o recupera un caso de la propuesta fina. La segunda recorre las dos matrices base y la matriz fina. Los resultados compatibles se reutilizan. La tercera ejecuta la auditoría de la campaña local cuando están disponibles sus archivos de ejecución.
+\begin{verbatim}
+& $py -X utf8 -B $cierre --ejecutar --escenario M4_SS ERA5-2024
+& $py -X utf8 -B $cierre --comparar --ejecutar
+& $py -X utf8 -B $cierre --auditar
+\end{verbatim}

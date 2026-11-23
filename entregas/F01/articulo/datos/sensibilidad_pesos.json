@@ -1,0 +1,168 @@
+{
+  "fuente": "entregas/F02/cierre_revision_final/METRICAS_144_FILAS.csv",
+  "metodo": "Reagregacion documental de indicadores existentes; sin nuevas simulaciones",
+  "sensibilidad": [
+    {
+      "q_m3_h": 55.0,
+      "malla_m": 0.4,
+      "horizonte_h": 336.0,
+      "familia": "todas",
+      "pares": 24,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 55.0,
+      "malla_m": 0.4,
+      "horizonte_h": 336.0,
+      "familia": "SS",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 55.0,
+      "malla_m": 0.4,
+      "horizonte_h": 336.0,
+      "familia": "22A",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 55.0,
+      "malla_m": 0.4,
+      "horizonte_h": 672.0,
+      "familia": "todas",
+      "pares": 24,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 55.0,
+      "malla_m": 0.4,
+      "horizonte_h": 672.0,
+      "familia": "SS",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 55.0,
+      "malla_m": 0.4,
+      "horizonte_h": 672.0,
+      "familia": "22A",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.2,
+      "horizonte_h": 336.0,
+      "familia": "todas",
+      "pares": 24,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.2,
+      "horizonte_h": 336.0,
+      "familia": "SS",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.2,
+      "horizonte_h": 336.0,
+      "familia": "22A",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.2,
+      "horizonte_h": 672.0,
+      "familia": "todas",
+      "pares": 24,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.2,
+      "horizonte_h": 672.0,
+      "familia": "SS",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.2,
+      "horizonte_h": 672.0,
+      "familia": "22A",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.4,
+      "horizonte_h": 336.0,
+      "familia": "todas",
+      "pares": 24,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.4,
+      "horizonte_h": 336.0,
+      "familia": "SS",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.4,
+      "horizonte_h": 336.0,
+      "familia": "22A",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.4,
+      "horizonte_h": 672.0,
+      "familia": "todas",
+      "pares": 24,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.4,
+      "horizonte_h": 672.0,
+      "familia": "SS",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    },
+    {
+      "q_m3_h": 60.0,
+      "malla_m": 0.4,
+      "horizonte_h": 672.0,
+      "familia": "22A",
+      "pares": 12,
+      "excedencias": 0,
+      "P_f": 0.0
+    }
+  ]
+}

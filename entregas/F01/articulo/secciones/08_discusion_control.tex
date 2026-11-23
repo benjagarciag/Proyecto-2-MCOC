@@ -1,0 +1,74 @@
+\section{Discusión y plan de control resultante}
+\label{sec:discusion-control}
+
+\subsection{Interpretación del comportamiento térmico}
+Al principio de la colocación, el calor de hidratación se acumula en el interior más deprisa de lo que puede salir por las caras de la fundación. A medida que disminuye la generación, el intercambio con el aire y el suelo adquiere mayor importancia. Por eso el momento crítico para el diferencial puede llegar cuando la temperatura del núcleo ya está bajando.
+
+Cada capa inicia su propia historia de hidratación sobre hormigón que ya ha empezado a calentarse. La diferencia entre las dos tasas ensayadas apenas altera las edades relativas. Una espera prolongada sí dejaría una cara expuesta durante más tiempo y cambiaría las condiciones al colocar la siguiente capa. Su efecto requeriría una nueva evaluación.
+
+Las mantas frenan el enfriamiento superficial y retienen calor en el conjunto. Al retirarlas, la superficie vuelve a responder con mayor rapidez al viento y al enfriamiento nocturno. La sombra limita la radiación solar diurna, mientras continúa el intercambio con el cielo. Esta combinación explica por qué tan importante como la edad de retiro es el clima que encuentra la cara recién expuesta.
+
+\subsection{Representatividad, recursos y margen de la decisión}
+Los ensayos cubren ocho respuestas de probeta y tres historias meteorológicas. La asignación de pesos iguales permite comparar los planes bajo la misma información, aunque la frecuencia real de esas condiciones se desconoce. El margen calculado de $4{,}28\,\mathrm K$ supera los cambios espaciales y temporales observados. Parte de ese margen podría consumirse por variaciones de mezcla, de transferencia en los tubos o de exposición que el cálculo mantiene fijas.
+
+La propuesta depende también de sostener dos frentes, una recepción a $12\,^\circ\mathrm C$ y una sombra con la eficacia supuesta. La probabilidad calculada corresponde a exceder temperaturas o diferenciales. Estimar la probabilidad de fisuración exigiría representar además la resistencia, las deformaciones restringidas y las tensiones del hormigón.
+
+\subsection{Programación operativa y autorización de retiros}
+Antes de colocar, el equipo de obra debería comprobar el suministro, las protecciones, la refrigeración y los sensores. Durante las once capas deberá registrar temperatura de recepción, volumen e instantes efectivos. Ante una demora o una llegada más caliente, el responsable térmico actualizará la predicción con esas condiciones antes de decidir el siguiente paso.
+
+Las edades locales de $72$, $240$ y $504\,\mathrm h$ sirven para programar revisiones. Para autorizar cada retiro se propone comprobar resistencia suficiente, instrumentación operativa, ausencia de alarmas y diferencial observado de hasta $18\,\mathrm K$. La predicción deberá incorporar la cara descubierta, el pronóstico vigente y al menos las siguientes $48\,\mathrm h$, incluido el enfriamiento nocturno. Si persisten dudas sobre una excedencia o un pico posterior, corresponde mantener la protección y evaluar el nuevo cronograma.
+
+\subsection{Instrumentación, registro y responsabilidades}
+La Tabla~\ref{tab:instrumentacion-control} asigna funciones a la colocación, al monitoreo y a la autorización de cambios. Se proponen sondas interiores y sensores aproximadamente a $25\,\mathrm{mm}$ de las superficies reales, en base, laterales y coronación, con redundancia en los puntos críticos. Los cortes sugieren dónde concentrar la instrumentación; las posiciones definitivas deben ajustarse a armaduras, anclajes y accesos.
+\begin{table}[htbp]
+  \centering
+  \caption{Instrumentación y funciones propuestas para el control térmico}
+  \label{tab:instrumentacion-control}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{L{2.2cm}L{7.0cm}L{5.0cm}}
+    \toprule
+    Conjunto & Ubicación y finalidad & Función responsable \\
+    \midrule
+    Hormigón interior & Núcleo de la base y pedestal; pares redundantes en zonas calientes para seguir la acumulación y el enfriamiento & Encargado de instrumentación y monitoreo \\
+    Contorno & Puntos próximos a $25\,\mathrm{mm}$ de base, laterales y coronación; caras opuestas y sectores críticos & Encargado de instrumentación y monitoreo \\
+    Circuitos y agua & Temperaturas a lo largo de cada circuito; caudal y temperatura de entrada y retorno, estado de válvulas y disponibilidad del sistema & Operador de refrigeración \\
+    Ambiente y protección & Aire protegido de radiación, viento representativo e inspección de mantas y sombra; radiación si se dispone de medición & Encargado de monitoreo y jefe de obra \\
+    Colocación & Temperatura de recepción, volúmenes, secuencia, inicio y fin por capa & Jefe de obra y responsable de suministro \\
+    Revisión térmica & Contraste con predicción, diagnóstico de alarmas y autorización de cambios o retiros & Responsable técnico del plan térmico \\
+    \bottomrule
+  \end{tabular}
+  \captionsetup{skip=2pt}
+  \caption*{Fuente: elaboración propia a partir de los resultados y controles del modelo.}
+\end{table}
+Se propone adquirir datos cada minuto durante la colocación, los retiros y las alarmas, y archivarlos como máximo cada cinco minutos durante todo el seguimiento. Los relojes deben estar sincronizados para que el diferencial compare lecturas simultáneas. El encargado de turno revisará los registros al menos cada hora y después de cada evento. Una alarma requiere atención inmediata y una lectura discordante debe contrastarse con el sensor redundante.
+
+\subsection{Disparadores de contingencia y acciones}
+La Tabla~\ref{tab:contingencias-control} propone advertencia a $65\,^\circ\mathrm C$ o $18\,\mathrm K$ e intervención prioritaria a $68\,^\circ\mathrm C$ o $19\,\mathrm K$. El primer nivel deja $5\,\mathrm K$ hasta el límite de temperatura y $2\,\mathrm K$ hasta el de diferencial. En el segundo nivel queda solo $1\,\mathrm K$ para el diferencial, comparable con el cambio espacial observado. Esa proximidad justifica investigar la tendencia desde el primer aviso.
+\begin{table}[htbp]
+  \centering
+  \caption{Disparadores y respuestas propuestas ante desviaciones}
+  \label{tab:contingencias-control}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{L{3.0cm}L{7.1cm}L{4.1cm}}
+    \toprule
+    Disparador & Respuesta propuesta & Coordinación \\
+    \midrule
+    Advertencia térmica o tendencia fuera de la predicción & Suspender la autorización de retiros, verificar sensores y contrastar clima, protecciones y refrigeración; actualizar la predicción & Monitoreo y responsable térmico \\
+    Nivel prioritario o excedencia observada & Activar revisión técnica inmediata, mantener vigilancia continua y definir la intervención según la causa; no continuar retiros por calendario & Responsable térmico y jefe de obra \\
+    Enfriamiento del contorno, viento o daño de mantas & Revisar cobertura, fijación y humedad; evaluar restitución de protección y el diferencial que induciría cada cambio & Jefe de obra y responsable térmico \\
+    Falla de caudal, válvula, agua o sensado de circuito & Comprobar el ramal y la redundancia, registrar la indisponibilidad y aplicar el procedimiento de falla definido para el equipo; reevaluar capacidad disponible & Operador de refrigeración y responsable térmico \\
+    Cambio de suministro, temperatura o secuencia & Registrar las condiciones reales por capa, revisar continuidad constructiva y recalcular cronograma y respuesta térmica antes de aceptar el cambio & Jefe de obra y responsable térmico \\
+    Clima fuera del conjunto representado & Incorporar la información observada y prevista como nuevos datos de evaluación, conservando la trazabilidad del catálogo original & Monitoreo y responsable térmico \\
+    \bottomrule
+  \end{tabular}
+  \captionsetup{skip=2pt}
+  \caption*{Fuente: elaboración propia como propuesta operativa derivada del análisis térmico.}
+\end{table}
+Un aumento de refrigeración puede bajar la máxima y, al mismo tiempo, enfriar demasiado otra zona. De forma similar, descubrir una superficie puede ampliar el diferencial. Antes de cambiar potencia, agua, sombra o aislamiento se deberá comprobar la medición y evaluar la medida con una predicción actualizada. Estas intervenciones son propuestas de contingencia.
+
+\subsection{Condiciones que obligarían a revisar la recomendación}
+La vigilancia abarca al menos las $672\,\mathrm h$ estudiadas, con seguimiento reforzado durante las $24\,\mathrm h$ posteriores a cada retiro. Para liberar definitivamente los sistemas se propone exigir resistencia suficiente, sensores válidos, al menos $24\,\mathrm h$ sin demanda de reapertura y una evaluación de la retirada durante las siguientes $48\,\mathrm h$ y hasta descartar picos relevantes. La sombra permaneció en todas las simulaciones finales, por lo que su desmontaje requiere un cálculo adicional.
+
+Si el suministro, la refrigeración o la sombra disponibles difieren del diseño, procede estudiar cambios de preenfriamiento, capacidad, secuencia o protecciones. La recomendación solo podrá trasladarse a obra una vez comprobadas esas prestaciones y contrastada la predicción con mediciones independientes.

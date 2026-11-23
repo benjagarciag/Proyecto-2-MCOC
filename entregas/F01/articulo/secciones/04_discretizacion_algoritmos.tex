@@ -2,14 +2,15 @@
 \label{sec:discretizacion}
 
 \subsection{Balance de energía por celda}
-
-La geometría voxelizada se utiliza como una malla de volúmenes finitos. Cada celda ocupada representa un volumen de hormigón cuya temperatura $T_i$ se aproxima mediante un único valor situado en su centro. La celda participa en el balance una vez activada la capa a la que pertenece. Para celdas cúbicas de lado $h$, el volumen, el área de cada cara y la distancia del centro a una cara son:
+Cada celda activa tiene volumen $V_i=h^3$, caras de área $A_f=h^2$ y distancia $d_i=h/2$ desde el centro a una cara. Al integrar la ecuación de energía en ese volumen y aplicar el teorema de la divergencia, el término conductivo queda expresado como una suma de flujos por caras:
 \begin{equation}
-  V_i=h^3,\qquad A_f=h^2,\qquad d_i=\frac{h}{2}.
-  \label{eq:geometria-celda}
+  \frac{d}{dt}\int_{V_i}\rho c_pT\,dV
+  =\sum_{f\subset\partial V_i}\int_{A_f}
+  k\vec{\nabla}T\cdot\vec{n}_{i,f}\,dA
+  +\int_{V_i}\dot q_h\,dV-P_{r,i}.
+  \label{eq:balance-integral-celda}
 \end{equation}
-
-Al integrar la Ecuación~\eqref{eq:calor-modelo} sobre una celda activa y aproximar los intercambios por sus caras, se obtiene:
+Al aproximar cada flujo por su valor en la cara y la temperatura por el valor del centro, se obtiene
 \begin{equation}
   C_i\frac{dT_i}{dt}
   =\sum_{j\in\mathcal N_i}G_{ij}(T_j-T_i)
@@ -17,100 +18,29 @@ Al integrar la Ecuación~\eqref{eq:calor-modelo} sobre una celda activa y aproxi
   \qquad C_i=\rho_i c_{p,i}V_i.
   \label{eq:balance-celda}
 \end{equation}
-tal que $\mathcal N_i$ reúne los vecinos activos que comparten una cara, $C_i$ es la capacidad térmica en $\mathrm{J\,K^{-1}}$, $G_{ij}$ la conductancia entre celdas en $\mathrm{W\,K^{-1}}$, $Q_{b,i}$ la potencia neta de borde entrante y $P_{r,i}$ la potencia extraída por refrigeración, ambas en $\mathrm W$. El balance sigue la misma convención del modelo continuo: un aporte positivo eleva la energía del hormigón.
-
-Entre dos centros vecinos, las resistencias de ambas medias celdas se suman:
+Aquí $\mathcal N_i$ reúne las celdas activas que comparten una cara con $i$. La capacidad $C_i$ se expresa en $\mathrm{J\,K^{-1}}$, la conductancia $G_{ij}$ en $\mathrm{W\,K^{-1}}$, y las potencias de borde entrante $Q_{b,i}$ y de refrigeración $P_{r,i}$ en vatios. Las resistencias de las dos medias celdas se suman en serie:
 \begin{equation}
   G_{ij}=\frac{A_{ij}}{d_i/k_i+d_j/k_j}.
   \label{eq:conductancia-vecinos}
 \end{equation}
-En este estudio se utiliza el mismo hormigón en todas las capas, por lo que la conductancia se simplifica a:
-\begin{equation}
-  k_i=k_j=k_c,\qquad G_{ij}=\frac{k_cA_{ij}}{h}.
-  \label{eq:conductancia-homogenea}
-\end{equation}
-No se agrega resistencia en las juntas entre capas. Cada intercambio interno se calcula una sola vez y se incorpora con signos opuestos en las dos celdas, de modo que no cree ni elimine energía del conjunto.
-
-Las caras sin vecino activo reciben la condición de aire o suelo que les corresponde. En una cara al aire, la resistencia entre el centro y el exterior de las protecciones es:
-\begin{equation}
-  R_{i,f}=\frac{d_i}{k_c}+R_p.
-  \label{eq:resistencia-celda-aire}
-\end{equation}
-El balance superficial determina el flujo entrante $\phi_f$. Al sumar sus aportes en las caras de borde de la celda se obtiene:
-\begin{equation}
-  Q_{b,i}=\sum_{f\in\mathcal B_i}A_f\phi_f,
-  \label{eq:potencia-bordes-celda}
-\end{equation}
-tal que $\mathcal B_i$ reúne las caras de borde de la celda $i$. En el suelo se utiliza la conductancia:
-\begin{equation}
-  G_{g,f}=\frac{A_f}{d_i/k_c+L_g/k_g}.
-  \label{eq:conductancia-celda-suelo}
-\end{equation}
-La madera y las mantas se incorporan mediante sus resistencias, sin añadir celdas de esos materiales. Cuando se activa una capa vecina, la cara compartida deja de aportar un flujo de aire y pasa a conducir entre celdas.
+La potencia de borde suma $A_f\phi_f$ sobre las caras exteriores de la celda. En el suelo, la resistencia por unidad de área es $d_i/k_c+L_g/k_g$; en el aire, la resistencia entre el centro y la superficie exterior es $R_{i,f}=d_i/k_c+R_p$. Una cara compartida por dos celdas activas aporta potencias de igual magnitud y signo contrario.
 
 \subsection{Avance temporal y balance radiativo}
-
-Las temperaturas del hormigón se actualizan con Euler explícito: la conducción, los flujos de borde y la extracción se evalúan a partir del estado conocido al comienzo del paso. El calor de hidratación se integra mediante la diferencia de acumulados, como se explicó en el apartado~\ref{sec:Hidratación y curvas}. La actualización efectiva es:
+El avance explícito de Euler evalúa los intercambios con las temperaturas conocidas al comienzo del paso. Para la hidratación se utiliza directamente el incremento del calor acumulado, que conserva el aporte aun cuando el paso no coincida con el intervalo de las muestras:
 \begin{equation}
-\begin{split}
-  T_i^{n+1}=T_i^n+\frac{1}{C_i}\Bigl\{
-  &\Delta t_n\Bigl[\sum_{j\in\mathcal N_i}G_{ij}(T_j^n-T_i^n)
-     +Q_{b,i}^n-P_{r,i}^n\Bigr]\\
-  &+V_i\bigl[H_m(a_i^{n+1})-H_m(a_i^n)\bigr]\Bigr\}.
-\end{split}
+  T_i^{n+1}=T_i^n+\frac{1}{C_i}\Bigl\{\Delta t_n\Bigl[\sum_{j\in\mathcal N_i}G_{ij}(T_j^n-T_i^n)+Q_{b,i}^n-P_{r,i}^n\Bigr]+V_i\bigl[H_m(a_i^{n+1})-H_m(a_i^n)\bigr]\Bigr\}.
   \label{eq:euler-fundacion}
 \end{equation}
-tal que $n$ identifica el paso, $\Delta t_n$ su duración y $a_i^n$ la edad de la capa de la celda $i$. Los valores nuevos se obtienen sin resolver un sistema global de temperaturas. La integración de la fuente conserva el calor tabulado incluso si un paso cruza una muestra del acumulado; esto no elimina el error temporal de los otros términos.
-
-La radiación requiere resolver un balance local para la temperatura exterior $T_s$ de cada cara. Con $T_i^n$ conocido, se define el residuo:
-\begin{equation}
-  F_f(T_s)=\frac{T_s-T_i^n}{R_{i,f}}-\mathcal F(T_s).
-  \label{eq:residuo-cara}
-\end{equation}
-Para encontrar la temperatura que anula este residuo se aplica Newton:
-\begin{equation}
-  T_s^{(r+1)}=T_s^{(r)}-
-  \frac{F_f(T_s^{(r)})}
-       {R_{i,f}^{-1}+h_c+4\varepsilon\sigma(T_{s,K}^{(r)})^3}.
-  \label{eq:newton-cara}
-\end{equation}
-La implementación permite hasta nueve iteraciones y exige una corrección máxima menor que $10^{-10}\,\mathrm K$. Además, comprueba que el residuo del balance superficial no supere $2\times10^{-8}\,\mathrm{W\,m^{-2}}$; si estas condiciones fallan, detiene el cálculo. Esta iteración resuelve únicamente el balance exterior y no convierte el avance del hormigón en un esquema implícito.
-
-La extracción de cada celda refrigerable se calcula con la ley de los circuitos abiertos. Antes de aplicar el límite global, se impone la restricción:
-\begin{equation}
-  0\leq P_{r,i}^n\leq
-  \frac{C_i\max(T_i^n-T_w,0)}{\Delta t_n}.
-  \label{eq:limite-extraccion-paso}
-\end{equation}
-Así, el retiro de calor por sí solo no cruza la temperatura del agua durante un paso. Si la suma todavía supera $P_{\max}$, se reduce proporcionalmente. La conducción y los demás aportes se incorporan después en el mismo balance, sin recortar artificialmente la temperatura final.
+En cada cara expuesta se obtiene $T_s$ igualando $(T_s-T_i^n)/R_{i,f}$ con el flujo exterior del balance radiativo. Se emplea Newton con un máximo de nueve iteraciones, una corrección inferior a $10^{-10}\,\mathrm K$ y una comprobación del residuo de $2\times10^{-8}\,\mathrm{W\,m^{-2}}$. La extracción de cada celda se limita a la energía disponible sobre $T_w$ durante el paso antes de aplicar el tope conjunto. El avance del hormigón sigue siendo explícito.
 
 \subsection{Selección del paso y estabilidad}
-
-Para un problema lineal explícito con conductancias positivas, una restricción local suficiente para conservar coeficientes de actualización no negativos es:
+Para que los coeficientes de una actualización lineal con conductancias positivas sean no negativos, la capacidad de cada celda y su conductancia total de borde $G_{b,i}$ imponen
 \begin{equation}
   \Delta t\leq
   \frac{C_i}{\displaystyle\sum_{j\in\mathcal N_i}G_{ij}+G_{b,i}},
   \label{eq:limite-lineal}
 \end{equation}
-tal que $G_{b,i}$ representa la suma de conductancias de borde. Una extracción lineal añade su conductancia al denominador. Esta condición limita cuánto puede variar la energía de una celda por intercambio durante el paso; no demuestra que el resultado sea suficientemente preciso en el tiempo.
-
-En el balance radiativo, el intercambio exterior depende de la cuarta potencia de la temperatura absoluta. Para temperaturas absolutas positivas, su sensibilidad respecto de $T_i$ queda acotada por la conductancia entre el centro y el exterior de las protecciones:
-\begin{equation}
-  \left|\frac{\partial(A_f\phi_f)}{\partial T_i}\right|
-  =\frac{A_f\bigl(h_c+4\varepsilon\sigma T_{s,K}^3\bigr)}
-  {1+R_{i,f}\bigl(h_c+4\varepsilon\sigma T_{s,K}^3\bigr)}
-  \leq\frac{A_f}{R_{i,f}}.
-  \label{eq:cota-conductancia-radiativa}
-\end{equation}
-El código utiliza esa cota para las caras al aire y la conductancia equivalente para suelo. También incluye la conductancia de extracción en las celdas refrigerables, incluso si su circuito está cerrado. Con esas contribuciones se forma la suma conservadora:
-\begin{equation}
-  S_i=\sum_{j\in\mathcal N_i}G_{ij}
-      +\sum_{f\in\mathcal B_{i,a}}\frac{A_f}{R_{i,f}}
-      +\sum_{f\in\mathcal B_{i,g}}G_{g,f}
-      +\chi_{r,i}U_vV_i,
-  \label{eq:suma-conductancias-paso}
-\end{equation}
-tal que $\mathcal B_{i,a}$ y $\mathcal B_{i,g}$ reúnen las caras al aire y al suelo, respectivamente, y $\chi_{r,i}$ vale $1$ en una celda refrigerable y $0$ fuera de esa zona. El paso utilizado es:
+En el problema con radiación, la suma conservadora $S_i$ incluye las conductancias entre vecinos, $A_f/R_{i,f}$ en las caras al aire, las conductancias hacia el suelo y $U_vV_i$ en las celdas refrigerables. El término de aire acota la variación del flujo no lineal respecto de la temperatura interior. El cálculo aplica el siguiente paso:
 \begin{equation}
   \Delta t_n=\min\left(
      \Delta t_{\max},\;
@@ -118,11 +48,10 @@ tal que $\mathcal B_{i,a}$ y $\mathcal B_{i,g}$ reúnen las caras al aire y al s
      t_{\mathrm{evento}}-t_n\right).
   \label{eq:paso-utilizado}
 \end{equation}
-El último término evita atravesar una activación, un retiro de protección, una cobertura de circuito, un cambio de hora meteorológica o el final del horizonte sin actualizar el estado correspondiente. El factor $0{,}8$ aporta un margen respecto del límite de conductancia. Los umbrales de apertura y cierre se comprueban en los pasos; no se busca por separado el instante exacto en que una temperatura los cruza. Las sensibilidades temporales permiten evaluar parte del efecto de esta aproximación.
+El factor $0{,}8$ deja margen y el último término hace coincidir el avance con activaciones, retiros, cambios horarios y fin del horizonte. La apertura y el cierre se evalúan en los pasos. La restricción de estabilidad se complementó con un contraste temporal para comprobar cuánto cambian los resultados.
 
-\subsection{Temperatura superficial y extracción a $25\,\mathrm{mm}$}
-
-La malla representa los contornos curvos e inclinados mediante escalones, y sus centros no se encuentran a $25\,\mathrm{mm}$ de las superficies. Por ello, no se utiliza directamente la temperatura de la primera celda como temperatura a esa profundidad. Se reconstruye un perfil lineal entre el centro y la cara del hormigón usando el flujo calculado:
+\subsection{Temperatura superficial y extracción a \texorpdfstring{$25\,\mathrm{mm}$}{25 mm}}
+La primera celda tiene su centro a más de $25\,\mathrm{mm}$ del contorno en ambas mallas. Para estimar la temperatura a esa profundidad se reconstruye un perfil lineal a partir del flujo entrante en cada cara exterior, incluida la base:
 \begin{equation}
   T_{b,f}=T_i+\phi_f\frac{d_i}{k_c},
   \qquad
@@ -130,21 +59,17 @@ La malla representa los contornos curvos e inclinados mediante escalones, y sus 
   \qquad \delta=0{,}025\,\mathrm m.
   \label{eq:reconstruccion-s25}
 \end{equation}
-Esta reconstrucción se aplica a las caras exteriores existentes, incluidas las que intercambian con suelo. $T_{b,f}$ representa la cara del hormigón, mientras que $T_s$ representa el exterior de las protecciones. La aproximación de $T_{25,f}$ corresponde a un desplazamiento hacia el interior según la normal de cada cara cartesiana; no resuelve exactamente una superficie curva situada a distancia constante del IFC.
-
-En cada evaluación se toma la mayor temperatura entre los centros activos y las caras reconstruidas, y la menor de los puntos $T_{25,f}$. Su diferencia se calcula en ese mismo instante y después se actualiza el máximo temporal. Se guardan también la posición, la capa, el tiempo y la fase anterior o posterior a un cambio de borde. Los extremos se buscan durante el avance y a ambos lados de los eventos, no solamente en las salidas horarias usadas para gráficos.
+El desplazamiento $\delta$ sigue la normal interior de la cara cartesiana. Las caras escalonadas explican por qué la posición reconstruida es aproximada en los contornos inclinados. En cada instante se comparan centros y caras para obtener el máximo, y se busca el mínimo entre todos los puntos reconstruidos a $\delta$. El diferencial utiliza ambas temperaturas simultáneas.
 
 \subsection{Resoluciones y sensibilidad de la discretización}
-
-La comparación inicial utiliza celdas de $0{,}40\,\mathrm m$ y un paso máximo de $300\,\mathrm s$. Para comprobar si esa elección condicionaba la decisión, se efectuaron contrastes espaciales y temporales por separado, manteniendo las fuentes, el clima y la protección final de $504\,\mathrm h$ seguida de sombra. La propuesta se confirmó con los $24$ escenarios completos a $0{,}20\,\mathrm m$, conservando el paso máximo de $300\,\mathrm s$. El origen de malla, las once capas físicas y la zona refrigerable se mantienen al refinar; esta última se transfiere por pertenencia a la máscara de $0{,}40\,\mathrm m$, sin rediseñar los circuitos.
-
+Las dos tasas se compararon con $h=0{,}40\,\mathrm m$ y paso máximo de $300\,\mathrm s$. Para aislar el efecto espacial se refinó la malla de la propuesta manteniendo el origen, las once capas, el paso y la zona refrigerable. En el contraste temporal se mantuvo la malla base y se redujo el paso máximo a la mitad. La Tabla~\ref{tab:contrastes-discretizacion} indica cuántos escenarios cubrió cada prueba.
 \begin{table}[htbp]
   \centering
   \caption{Contrastes de sensibilidad utilizados para evaluar la discretización}
   \label{tab:contrastes-discretizacion}
   \small
   \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{p{2.0cm}p{3.6cm}p{3.2cm}p{2.5cm}p{2.5cm}}
+  \begin{tabular}{L{2.0cm}L{3.6cm}L{3.8cm}L{2.5cm}L{2.5cm}}
     \toprule
     Contraste & Configuraciones & Escenarios & Mayor cambio de $T_{\max}$ [K] & Mayor cambio de $\Delta T_{\max}$ [K] \\
     \midrule
@@ -153,52 +78,22 @@ La comparación inicial utiliza celdas de $0{,}40\,\mathrm m$ y un paso máximo 
     \bottomrule
   \end{tabular}
   \captionsetup{skip=2pt}
-  \caption*{Fuente: comparaciones pareadas y resultados archivados del cierre técnico.}
+  \caption*{Fuente: elaboración propia a partir de las simulaciones con ambas resoluciones.}
 \end{table}
 
-La Tabla~\ref{tab:contrastes-discretizacion} informa diferencias absolutas entre resultados del mismo escenario durante $0$--$672\,\mathrm h$. Los dos contrastes temporales son selectivos y no constituyen otra matriz completa de $24$ escenarios. No cambiaron la clasificación de cumplimiento de los casos comprobados. El mayor diferencial fino fue $15{,}7202\,\mathrm K$, con un margen de $4{,}2798\,\mathrm K$ respecto del límite docente. La diferencia espacial observada es menor que ese margen, pero no se interpreta como una cota rigurosa del error ni como demostración de un orden asintótico de convergencia. Las comprobaciones y su alcance se retoman en la evaluación del modelo.
-
 \subsection{Secuencia del algoritmo}
-
-El algoritmo calcula la evolución de la temperatura de la fundación desde que se coloca la primera capa hasta el final del seguimiento. Primero se leen la geometría del IFC, las propiedades del hormigón, las protecciones, las curvas de hidratación y los archivos climáticos. Con esa información se prepara la malla y se identifica a qué capa y zona de refrigeración pertenece cada celda.
-
-A continuación, se define el cronograma del plan que se desea evaluar. Para ese plan se realiza un cálculo por cada combinación de una curva de hidratación completa y una historia climática. Antes de comenzar, se comprueba si existe un resultado guardado con los mismos datos, parámetros y método; si coincide, se recupera para evitar repetir una simulación ya realizada.
-
-Cada cálculo comienza con los circuitos cerrados y con la activación de la primera capa a su temperatura de colocación. Las capas restantes se incorporan cuando llega su instante programado, conservando la temperatura que ya alcanzó el hormigón anterior. Al agregar una capa se revisan las caras de contacto: las que quedan cubiertas dejan de intercambiar calor con el aire y pasan a conducir hacia el hormigón nuevo. También se actualizan las protecciones cuando corresponde retirarlas por edad.
-
-El tiempo avanza mediante pasos cuya duración respeta el límite de estabilidad y se acorta para llegar a los eventos programados. En cada paso se calcula cuánto calor genera la hidratación según la edad de cada capa, cuánto se intercambia entre celdas y cuánto entra o sale por las superficies. Para las caras expuestas se resuelve el balance con el aire y la radiación; para la base se calcula el intercambio con el suelo. Se evalúa además qué circuitos deben abrirse o cerrarse y la potencia que pueden extraer. La suma de estos aportes permite actualizar la temperatura de cada celda activa.
-
-Durante el avance se reconstruyen las temperaturas de las caras y de los puntos situados aproximadamente a $25\,\mathrm{mm}$ bajo la superficie. Con los valores de un mismo instante se calcula el diferencial térmico y se comprueba si se han alcanzado nuevos máximos. Se conservan su valor, ubicación y tiempo de ocurrencia, incluyendo los estados anteriores y posteriores a los cambios de borde. Al finalizar se guardan también el balance energético, la actividad de los circuitos y las referencias de los archivos utilizados.
-
-Una vez completados los escenarios de un plan, se identifica en cuáles se superó al menos uno de los límites térmicos y se suman sus pesos para obtener la probabilidad conjunta. Un escenario que supera ambos límites se cuenta una sola vez. El procedimiento se repite para los demás planes y permite comparar su duración y cumplimiento bajo los mismos datos. La definición de los pesos y el criterio de selección se desarrollan en la sección de incertidumbre y optimización.
-
-El siguiente pseudocódigo resume esta secuencia:
-
+Para seguir una realización basta escoger un plan, una curva y una historia meteorológica. La secuencia se repite con las mismas reglas para todas las combinaciones:
 \begin{enumerate}
-    \item Leer la geometría IFC, los parámetros, las curvas de hidratación y las historias climáticas. Preparar la malla, las capas y las zonas de los circuitos.
-    \item Seleccionar un plan y definir su cronograma y controles. Para cada combinación de curva e historia climática, comprobar si existe un resultado compatible; si existe, recuperarlo y pasar al siguiente escenario.
-    \item Si se requiere calcular el escenario, iniciar los circuitos cerrados y activar la primera capa a su temperatura de colocación.
-    \item Repetir el avance hasta completar el horizonte de seguimiento:
-    \begin{enumerate}
-        \item Actualizar las capas activas, sus vecinos y las condiciones de borde cuando corresponda, y evaluar las temperaturas del estado actual.
-        \item Elegir un paso que respete la estabilidad y termine, como máximo, en el siguiente evento programado.
-        \item Calcular la edad de cada capa y el calor de hidratación generado durante el paso.
-        \item Resolver el balance de las superficies y calcular los intercambios con el aire, la radiación, el suelo y las celdas vecinas.
-        \item Evaluar la apertura o el cierre de los circuitos y limitar su potencia de extracción.
-        \item Actualizar las temperaturas y acumular los aportes de energía.
-        \item Registrar los extremos durante el avance y a ambos lados de los cambios de borde; incorporar las nuevas capas al llegar a sus instantes de activación.
-    \end{enumerate}
-    \item Guardar los máximos, sus posiciones y tiempos, el balance energético y la procedencia de los datos. Repetir desde la selección del escenario hasta completar todas sus combinaciones.
-    \item Sumar los pesos de los escenarios que exceden los límites, contando una sola vez los que superan ambos. Guardar las probabilidades marginales y conjunta del plan.
-    \item Repetir el procedimiento para los demás planes y comparar sus duraciones y su cumplimiento para seleccionar la alternativa recomendada.
+\item Leer la geometría, preparar la malla y asignar a cada celda su capa y su zona de refrigeración. Cargar el cronograma, las propiedades y los datos del escenario.
+\item Comenzar con los circuitos cerrados. Al llegar al inicio de una capa, incorporarla a su temperatura de colocación y actualizar las caras que pasan del aire al contacto con hormigón.
+\item Revisar las protecciones según la edad local, calcular el paso admisible y obtener la energía de hidratación generada entre sus dos extremos.
+\item Resolver el intercambio de cada cara, comprobar el estado de los circuitos y avanzar simultáneamente las temperaturas. Registrar la energía que entra, sale y queda almacenada.
+\item Buscar extremos durante el avance y a ambos lados de los cambios de borde. Guardar sus posiciones e instantes hasta completar el seguimiento.
+\item Repetir para los escenarios restantes. Sumar los pesos de los que exceden algún umbral y comparar los planes por su duración y cumplimiento.
 \end{enumerate}
 
-Cada escenario conserva su propia evolución térmica y sus máximos. Por ello, la comparación utiliza los resultados individuales y no los reemplaza por una simulación con una curva de hidratación o un clima promedio.
-
 \subsection{Equipo y costo computacional}
-
-El equipo local se identificó durante la preparación del artículo como un Intel Core i7-10750H a $2{,}60\,\mathrm{GHz}$, con $12$ procesadores lógicos, Windows $10$ y aproximadamente $7{,}87\,\mathrm{GiB}$ de memoria física reconocida por el sistema. El ejecutor permite distribuir casos entre procesos independientes y fija un hilo de BLAS/OMP por proceso. La identificación actual del equipo no sustituye un registro histórico por corrida; las duraciones siguientes sí proceden de los archivos de ejecución.
-
+El equipo identificado al preparar el artículo utilizaba Windows $10$, un Intel Core i7-10750H y $12$ procesadores lógicos. Los tiempos de la Tabla~\ref{tab:tiempos-corridas} proceden de los registros de cada ejecución, también cuando se recuperó un cálculo anterior. La mediana de una simulación fina fue de aproximadamente $12\,\mathrm{min}$.
 \begin{table}[htbp]
   \centering
   \caption{Duraciones registradas de las corridas a $672\,\mathrm h$}
@@ -217,5 +112,4 @@ El equipo local se identificó durante la preparación del artículo como un Int
   \captionsetup{skip=2pt}
   \caption*{Fuente: tiempos conservados en los resultados originales de cada pieza.}
 \end{table}
-
-La Tabla~\ref{tab:tiempos-corridas} muestra la variación entre casos y ejecuciones, que también depende de la carga simultánea del equipo. Para las piezas reutilizadas se recuperó el tiempo de su simulación original, en lugar del tiempo empleado en copiar o consultar el resultado. La suma de las duraciones de las $72$ piezas finales es de $5{,}243\,\mathrm h$; con los dos contrastes temporales alcanza $5{,}293\,\mathrm h$. Se trata de una suma de tiempos transcurridos por proceso, no de tiempo de pared de toda la campaña ni de horas de uso exclusivo de CPU. En el cierre se reutilizaron $26$ piezas y se calcularon $46$ nuevas, cuyas duraciones registradas suman $4{,}731\,\mathrm h$. Estas cifras no incluyen todas las exploraciones anteriores, la preparación del entorno ni el trabajo de documentación.
+Las $72$ simulaciones finales suman $5{,}243\,\mathrm h$ por proceso, o $5{,}293\,\mathrm h$ al incluir los dos contrastes temporales. Se reutilizaron $26$ resultados y se calcularon $46$ nuevos, que sumaron $4{,}731\,\mathrm h$. La ejecución simultánea impide interpretar esa suma como el tiempo transcurrido entre el comienzo y el final de la campaña.
